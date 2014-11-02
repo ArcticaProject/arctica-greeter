@@ -1,3 +1,13 @@
+unity-greeter (14.04.10-0ubuntu1+x2go1) trusty; urgency=medium
+
+  * Non-maintainer upload.
+  * Add X2Go support to RLS.
+  * Turn package into format 3.0 (quilt).
+  * Provide via ppa:x2go/ppa and ppa:x2go/stable on Launchpad.
+
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 02 Nov 2014 19:12:50 +0100
+
 unity-greeter (14.04.10-0ubuntu1) trusty; urgency=medium
 
   * New upstream release:
