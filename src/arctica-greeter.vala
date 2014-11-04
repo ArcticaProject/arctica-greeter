@@ -325,15 +325,15 @@ public class ArcticaGreeter
         var xevent = (X.Event*)gxevent;
         if (xevent.type == X.EventType.MapNotify)
         {
-            var display = Gdk.x11_lookup_xdisplay (xevent.xmap.display);
+            var display = Gdk.X11.Display.lookup_for_xdisplay (xevent.xmap.display);
             var xwin = xevent.xmap.window;
-            var win = Gdk.X11Window.foreign_new_for_display (display, xwin);
+            var win = new Gdk.X11.Window.foreign_for_display (display, xwin);
             if (win != null && !xevent.xmap.override_redirect)
             {
                 /* Check to see if this window is our onboard window, since we don't want to focus it. */
                 X.Window keyboard_xid = 0;
                 if (main_window.menubar.keyboard_window != null)
-                    keyboard_xid = Gdk.X11Window.get_xid (main_window.menubar.keyboard_window.get_window ());
+                    keyboard_xid = (main_window.menubar.keyboard_window.get_window () as Gdk.X11.Window).get_xid ();
 
                 if (xwin != keyboard_xid && win.get_type_hint() != Gdk.WindowTypeHint.NOTIFICATION)
                 {
@@ -386,10 +386,10 @@ public class ArcticaGreeter
     {
         var visual = screen.get_system_visual ();
 
-        unowned X.Display display = Gdk.X11Display.get_xdisplay (screen.get_display ());
+        unowned X.Display display = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
 
         var pixmap = X.CreatePixmap (display,
-                                     Gdk.X11Window.get_xid (screen.get_root_window ()),
+                                     (screen.get_root_window () as Gdk.X11.Window).get_xid (),
                                      screen.get_width (),
                                      screen.get_height (),
                                      visual.get_depth ());
@@ -397,7 +397,7 @@ public class ArcticaGreeter
         /* Convert into a Cairo surface */
         var surface = new Cairo.XlibSurface (display,
                                              pixmap,
-                                             Gdk.X11Visual.get_xvisual (visual),
+                                             (visual as Gdk.X11.Visual).get_xvisual (),
                                              screen.get_width (), screen.get_height ());
 
         return surface;
@@ -407,16 +407,16 @@ public class ArcticaGreeter
     {
         Gdk.flush ();
 
-        unowned X.Display display = Gdk.X11Display.get_xdisplay (screen.get_display ());
+        unowned X.Display display = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
 
         /* Ensure Cairo has actually finished its drawing */
         surface.flush ();
         /* Use this pixmap for the background */
         X.SetWindowBackgroundPixmap (display,
-                                     Gdk.X11Window.get_xid (screen.get_root_window ()),
+                                     (screen.get_root_window () as Gdk.X11.Window).get_xid (),
                                      surface.get_drawable ());
 
-        X.ClearWindow (display, Gdk.X11Window.get_xid (screen.get_root_window ()));
+        X.ClearWindow (display, (screen.get_root_window () as Gdk.X11.Window).get_xid ());
     }
 
     private static void log_cb (string? log_domain, LogLevelFlags log_level, string message)
