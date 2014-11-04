@@ -211,6 +211,6 @@ public class IdleMonitor
 public class IdleMonitorWatch
 {
     public uint id;
-    public IdleMonitorWatchFunc callback;
+    public unowned IdleMonitorWatchFunc callback;
     public X.ID xalarm;
 }
