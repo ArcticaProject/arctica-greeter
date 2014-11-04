@@ -46,21 +46,22 @@ public class FlatButton : Gtk.Button
         return base.draw (c);
     }
 
-    public override void pressed ()
+    public override bool button_press_event (Gdk.EventButton event)
     {
         // Do nothing.  The normal handler sets priv->button_down which
         // internally causes draw() to draw a special border and background
         // that we don't want.
         did_press = true;
+        return true;
     }
 
-    public override void released ()
+    public override bool button_release_event (Gdk.EventButton event)
     {
         if (did_press)
         {
-            base.pressed (); // fake an insta-click
+            base.button_press_event (event); // fake an insta-click
             did_press = false;
         }
-        base.released ();
+        return base.button_release_event (event);
     }
 }
