@@ -1,8 +1,16 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Source: https://launchpad.net/unity-greeter
+Upstream-Name: unity-greeter-x2go
+Upstream-Contact: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Source: http://code.x2go.org/gitweb?p=unity-greeter-x2go.git;a=summary
 
 Files: *
-Copyright: 2011-2013 Canonical Ltd
+Copyright: 2011-2013, Canonical Ltd
+           2012-2014, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+License: GPL-3
+
+Files: debian/*
+Copyright: 2011-2013, Canonical Ltd
+           2012-2014, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 License: GPL-3
 
 License: GPL-3
