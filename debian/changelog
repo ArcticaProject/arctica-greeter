@@ -11,6 +11,7 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
   * debian/control:
     + Rename (src:)package: unity-greeter -> unity-greeter-x2go.
     + Put myself in Maintainer: field.
+    + Bump Standards: to 3.9.6. No changes needed.
 
  -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 02 Nov 2014 19:12:50 +0100
 
