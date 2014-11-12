@@ -40,8 +40,8 @@ Recommends: unity-settings-daemon,
             network-manager-gnome,
             lightdm,
 Suggests: lightdm-remote-session-freerdp,
-          lightdm-remote-session-uccsconfigure,
-          remote-login-service,
+          lightdm-remote-session-x2go,
+          remote-login-service-x2go,
 Provides: lightdm-greeter
 Breaks: edubuntu-artwork (<< 12.01.1~)
 Description: Unity Greeter

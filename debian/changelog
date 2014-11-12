@@ -2,6 +2,10 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
 
   * First forked/upstream release (1.0.0.1):
     - Apply patch 01_x2go+rls.patch. Natively support X2Go Session.
+  * debian/control:
+    + Add to S: lightdm-remote-session-x2go.
+    + Drop from S: lightdm-remote-session-uccsconfigure.
+    + Replace in S: remote-login-service -> remote-login-service-x2go.
 
  -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 02 Nov 2014 19:12:50 +0100
 
