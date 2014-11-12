@@ -14,6 +14,9 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
     + Bump Standards: to 3.9.6. No changes needed.
   * debian/copyright:
     + Adapt file to forked context of unity-greeter-x2go.
+  * debian/watch:
+    + Drop file (i.e. reference to original unity-greeter
+      upstream download resource).
 
  -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 02 Nov 2014 19:12:50 +0100
 
