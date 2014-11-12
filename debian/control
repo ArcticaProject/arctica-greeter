@@ -1,7 +1,7 @@
 Source: unity-greeter-x2go
 Section: x11
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: Mike Gabriel <mike.gabriel@das-netzwerkteam.de> 
 Standards-Version: 3.9.3
 Build-Depends: appmenu-gtk3,
                at-spi2-core,
