@@ -15,7 +15,7 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	dh_auto_install
-	cp logo.png debian/unity-greeter-x2go/usr/s#hare/unity-greeter/logo.png
+	cp logo.png debian/unity-greeter-x2go/usr/share/unity-greeter/logo.png
 
 override_dh_auto_clean:
 	dh_auto_clean
