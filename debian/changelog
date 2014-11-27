@@ -17,6 +17,8 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
   * debian/watch:
     + Drop file (i.e. reference to original unity-greeter
       upstream download resource).
+  * debian/rules:
+    + Fix installation of logo.png into bin:package.
 
  -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 02 Nov 2014 19:12:50 +0100
 
