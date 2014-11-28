@@ -293,9 +293,6 @@ public class UserList : GreeterList
         if (remote_directory_server_list.length() > 0 && !always_show_manual) {
             debug ("removing manual login since we have a remote login entry");
             remove_entry ("*other");
-            if (!UnityGreeter.singleton.has_guest_account_hint () && UnityGreeter.singleton.hide_users_hint () ) {
-                set_active_first_entry_with_prefix ("*remote_directory");
-            }
         }
     }
 
