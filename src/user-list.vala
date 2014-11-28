@@ -788,7 +788,7 @@ public class UserList : GreeterList
                             debug ("Calling get_cached_domains_for_server in com.canonical.RemoteLogin dbus service failed. Error: %s", e.message);
                         }
 
-                        var entry = add_prompt (_("Email address:"));
+                        var entry = add_prompt (_("Email:") + " / " + _("Username:"));
                         entry.text = default_value;
                         widget = entry;
                         if (email_domains.length > 0)
