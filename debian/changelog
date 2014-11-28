@@ -17,6 +17,7 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
     + Upgrade to D (unity-greeter): lightdm.
     + Upgrade to R (unity-greeter): remote-login-service,
       lightdm-remote-login-x2go, lightdm-remote-login-freerdp.
+    + Add to R (unity-greeter-x2go): xinput.
   * debian/copyright:
     + Adapt file to forked context of unity-greeter-x2go.
   * debian/watch:

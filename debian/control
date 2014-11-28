@@ -41,6 +41,7 @@ Recommends: unity-settings-daemon,
             lightdm-remote-session-freerdp,
             lightdm-remote-session-x2go,
             remote-login-service-x2go,
+            xinput,
 Provides: lightdm-greeter
 Breaks: unity-greeter,
  edubuntu-artwork (<< 12.01.1~),
