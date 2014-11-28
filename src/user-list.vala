@@ -421,7 +421,7 @@ public class UserList : GreeterList
             /* Check email address is valid
              * Using the html5 definition of a valid e-mail address
              * http://www.w3.org/TR/html5/states-of-the-type-attribute.html#valid-e-mail-address */
-            var re = new Regex ("[a-zA-Z0-9.!#$%&'\\*\\+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*");
+            var re = new Regex ("[a-zA-Z0-9.!#$%&'\\*\\+/=?^_`{|}~-]+(|@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*)");
             MatchInfo info;
             email_valid = re.match_all (email, 0, out info);
             email_valid = email_valid && info.get_match_count () > 0 && info.fetch (0) == email;
