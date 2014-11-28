@@ -12,6 +12,9 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
     + Rename (src:)package: unity-greeter -> unity-greeter-x2go.
     + Put myself in Maintainer: field.
     + Bump Standards: to 3.9.6. No changes needed.
+    + Upgrade to D (unity-greeter): lightdm.
+    + Upgrade to R (unity-greeter): remote-login-service,
+      lightdm-remote-login-x2go, lightdm-remote-login-freerdp.
   * debian/copyright:
     + Adapt file to forked context of unity-greeter-x2go.
   * debian/watch:
