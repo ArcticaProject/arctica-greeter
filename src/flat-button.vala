@@ -63,6 +63,8 @@ public class FlatButton : Gtk.Button
             base.button_press_event (event); // fake an insta-click
             did_press = false;
         }
+
+        event.type = Gdk.EventType.BUTTON_RELEASE;
         return base.button_release_event (event);
     }
 }
