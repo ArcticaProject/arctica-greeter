@@ -464,7 +464,7 @@ public abstract class GreeterList : FadableBox
         {
             if (entries.length () == 1)
                 index = 0;
-            if (index >= entries.length () && index > 0)
+            else if (index >= entries.length () && index > 0)
                 index--;
             else if (index < entries.length ())
                 index++;
