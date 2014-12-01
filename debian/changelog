@@ -15,6 +15,8 @@ unity-greeter-x2go (14.04.10-0x2go1) UNRELEASED; urgency=medium
     + Add to S: lightdm-remote-session-x2go.
     + Drop from S: lightdm-remote-session-uccsconfigure.
     + Replace in S: remote-login-service -> remote-login-service-x2go.
+    + Add to D: network-manager. TODO: Without network-manager no Remote Login.
+      This needs to be addressed later.
   * debian/source/format:
     + Switch to format 1.0.
   * debian/control:

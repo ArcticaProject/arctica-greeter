@@ -30,6 +30,7 @@ Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          lightdm,
+         network-manager,
 Recommends: unity-settings-daemon,
             indicator-application,
             indicator-datetime,
