@@ -462,6 +462,8 @@ public abstract class GreeterList : FadableBox
        /* Select another entry if the selected one was removed */
         if (entry == selected_entry)
         {
+            if (entries.length () == 1)
+                index = 0;
             if (index >= entries.length () && index > 0)
                 index--;
             else if (index < entries.length ())
