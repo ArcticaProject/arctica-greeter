@@ -456,22 +456,23 @@ public abstract class GreeterList : FadableBox
             return;
 
         var index = entries.index (entry);
-        entry.destroy ();
-        entries.remove (entry);
 
-       /* Select another entry if the selected one was removed */
+        /* Select another entry if the selected one was removed */
         if (entry == selected_entry)
         {
-            if (entries.length () == 1)
-                index = 0;
-            else if (index >= entries.length () && index > 0)
+            if (index > 0) {
                 index--;
-            else if (index < entries.length ())
+                if (entries.nth_data (index) != null)
+                    select_entry (entries.nth_data (index), -1.0);
+            }
+            else if (index < entries.length () -1 ) {
                 index++;
-            
-            if (entries.nth_data (index) != null)
-                select_entry (entries.nth_data (index), -1.0);
+                if (entries.nth_data (index) != null)
+                    select_entry (entries.nth_data (index), +1.0);
+            }
         }
+        entries.remove (entry);
+        entry.destroy ();
 
         /* Show a manual login if no users and no remote login entry */
         if (!have_entries () && !UnityGreeter.singleton.show_remote_login_hint ())
