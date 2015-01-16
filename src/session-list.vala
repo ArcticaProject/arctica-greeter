@@ -108,6 +108,7 @@ public class SessionList : GreeterList
             return "gnome_badge.png";
         case "kde":
         case "kde-plasma":
+        case "plasma":
             return "kde_badge.png";
         case "xterm":
             return "recovery_console_badge.png";
