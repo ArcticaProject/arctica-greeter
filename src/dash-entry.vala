@@ -95,7 +95,6 @@ public class DashEntry : Gtk.Entry, Fadable
 
         // See construct method for explanation of why we remove classes
         style_ctx.save ();
-        style_ctx.remove_class (Gtk.STYLE_CLASS_SPINNER);
         c.save ();
         c.push_group ();
         base.draw (c);
