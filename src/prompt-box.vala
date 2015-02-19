@@ -201,6 +201,7 @@ public class PromptBox : FadableBox
         name_grid.attach (align, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
 
         option_button = new FlatButton ();
+        option_button.get_style_context ().add_class ("option-button");
         option_button.hexpand = true;
         option_button.halign = Gtk.Align.END;
         option_button.valign = Gtk.Align.START;
@@ -212,16 +213,7 @@ public class PromptBox : FadableBox
         option_button.clicked.connect (option_button_clicked_cb);
         option_image = new CachedImage (null);
         option_image.show ();
-        try
-        {
-            var style = new Gtk.CssProvider ();
-            style.load_from_data ("* {padding: 2px;}", -1);
-            option_button.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        }
-        catch (Error e)
-        {
-            debug ("Internal error loading session chooser style: %s", e.message);
-        }
+
         option_button.add (option_image);
         name_grid.attach (option_button, COL_NAME_OPTIONS, ROW_NAME, 1, 1);
 
