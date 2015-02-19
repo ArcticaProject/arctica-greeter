@@ -39,13 +39,6 @@ public class FlatButton : Gtk.Button
         }
     }
 
-    public override bool draw (Cairo.Context c)
-    {
-        // Make sure we don't react to mouse hovers
-        unset_state_flags (Gtk.StateFlags.PRELIGHT);
-        return base.draw (c);
-    }
-
     public override bool button_press_event (Gdk.EventButton event)
     {
         // Do nothing.  The normal handler sets priv->button_down which

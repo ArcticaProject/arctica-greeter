@@ -66,15 +66,20 @@ public class ToggleBox : Gtk.Box
     private void select (Gtk.Button button)
     {
         if (selected_button != null)
+        {
             selected_button.relief = Gtk.ReliefStyle.NONE;
+            selected_button.get_style_context ().remove_class ("selected");
+        }
         selected_button = button;
         selected_button.relief = Gtk.ReliefStyle.NORMAL;
+        selected_button.get_style_context ().add_class ("selected");
         selected_key = selected_button.get_data<string> ("toggle-list-key");
     }
 
     private Gtk.Button make_button (string key, string name_in, Gdk.Pixbuf? icon)
     {
         var item = new FlatButton ();
+        item.get_style_context ().add_class ("toggle-button");
         item.relief = Gtk.ReliefStyle.NONE;
         item.clicked.connect (button_clicked_cb);
 
