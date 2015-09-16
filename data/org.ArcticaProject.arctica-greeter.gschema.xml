@@ -94,6 +94,10 @@
       <default>[]</default>
       <summary>List of usernames that are hidden until a special key combination is hit</summary>
     </key>
+    <key name="group-filter" type="as">
+      <default>[]</default>
+      <summary>List of groups that users must be part of to be shown (empty list shows all users)</summary>
+    </key>
     <key name="idle-timeout" type="i">
       <default>300</default>
       <summary>Number of seconds of inactivity before blanking the screen. Set to 0 to never timeout.</summary>

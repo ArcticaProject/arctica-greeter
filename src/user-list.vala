@@ -1044,11 +1044,42 @@ public class UserList : GreeterList
                     return;
         }
 
+        if (!filter_group (user.name))
+            return;
+
         var label = user.real_name;
         if (user.real_name == "")
             label = user.name;
 
         add_user (user.name, label, user.background, user.logged_in, user.has_messages, user.session);
+    }
+
+    private bool filter_group (string user_name)
+    {
+        var group_filter = UGSettings.get_strv (UGSettings.KEY_GROUP_FILTER);
+
+        /* Empty list means do not filter by group */
+        if (group_filter.length == 0)
+            return true;
+
+        foreach (var group_name in group_filter)
+            if (in_group (group_name, user_name))
+                return true;
+
+        return false;
+    }
+
+    private bool in_group (string group_name, string user_name)
+    {
+        unowned Posix.Group? group = Posix.getgrnam (group_name);
+        if (group == null)
+            return false;
+
+        foreach (var name in group.gr_mem)
+            if (name == user_name)
+                return true;
+
+        return false;
     }
 
     private void user_removed_cb (LightDM.User user)
