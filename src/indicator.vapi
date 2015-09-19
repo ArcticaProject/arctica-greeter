@@ -36,7 +36,7 @@ namespace Indicator {
 		[NoWrapper]
 		public virtual unowned string get_name_hint ();
 		public virtual bool get_show_now (Indicator.ObjectEntry entry);
-		public virtual int get_position ();
+//		public virtual int get_position ();
 		[NoWrapper]
 		public virtual void reserved1 ();
 		[NoWrapper]
@@ -56,11 +56,12 @@ namespace Indicator {
 		public virtual signal void menu_show (Indicator.ObjectEntry entry, uint timestamp);
 		public virtual signal void show_now_changed (Indicator.ObjectEntry entry, bool show_now_state);
 	}
-	[CCode (cheader_filename = "libindicator/indicator-ng.h")]
-	public class Ng : Object {
-		[CCode (has_construct_function = false)]
-		public Ng.for_profile (string filename, string profile) throws GLib.Error;
-	}
+
+//	[CCode (cheader_filename = "libindicator/indicator-ng.h")]
+//	public class Ng : Object {
+//		[CCode (has_construct_function = false)]
+//		public Ng.for_profile (string filename, string profile) throws GLib.Error;
+//	}
 	[Compact]
 	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
 	public class ObjectEntry {
@@ -159,7 +160,7 @@ namespace Indicator {
 	public static void image_helper_update (Gtk.Image image, string name);
 }
 
-[CCode (cheader_filename="libido/libido.h", lower_case_cprefix = "ido_")]
-namespace Ido {
-	public void init ();
-}
+//[CCode (cheader_filename="libido/libido.h", lower_case_cprefix = "ido_")]
+//namespace Ido {
+//	public void init ();
+//}

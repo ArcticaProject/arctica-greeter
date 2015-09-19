@@ -17,11 +17,12 @@ dnl ###########################################################################
 dnl Dependencies
 dnl ###########################################################################
 
+
+dnl #### removed from PKG_CHECK_MODULES: libido3-0.
 PKG_CHECK_MODULES(ARCTICA_GREETER, [
     gtk+-3.0
     gdk-x11-3.0
     indicator3-0.4
-    libido3-0.1 >= 13.10.0
     liblightdm-gobject-1 >= 1.4.0
     gnome-desktop-3.0
     freetype2
@@ -36,11 +37,11 @@ AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/unity/indicators"], [
 INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator3-0.4`
 AC_SUBST(INDICATORDIR)
 
-USD_BINARY=`$PKG_CONFIG --variable=binary unity-settings-daemon`
-if test -z "$USD_BINARY"; then
-    AC_MSG_ERROR([Could not find path to unity-settings-daemon binary])
+MSD_BINARY=`$PKG_CONFIG --variable=binary mate-settings-daemon`
+if test -z "$MSD_BINARY"; then
+    AC_MSG_ERROR([Could not find path to mate-settings-daemon binary])
 fi
-AC_DEFINE_UNQUOTED([USD_BINARY], ["$USD_BINARY"], [Path to g-s-d])
+AC_DEFINE_UNQUOTED([MSD_BINARY], ["$MSD_BINARY"], [Path to m-s-d])
 
 dnl ###########################################################################
 dnl Internationalization

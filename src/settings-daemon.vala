@@ -156,15 +156,15 @@ public class SettingsDaemon : Object
         if (n_names != 0)
             return;
 
-        debug ("All bus names acquired, starting unity-settings-daemon");
+        debug ("All bus names acquired, starting mate-settings-daemon");
 
         try
         {
-            Process.spawn_command_line_async (Config.USD_BINARY);
+            Process.spawn_command_line_async (Config.MSD_BINARY);
         }
         catch (SpawnError e)
         {
-            debug ("Could not start unity-settings-daemon: %s", e.message);
+            debug ("Could not start mate-settings-daemon: %s", e.message);
         }
     }
 }

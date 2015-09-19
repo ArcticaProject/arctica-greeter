@@ -488,7 +488,7 @@ public class ArcticaGreeter
         }
 
         Gtk.init (ref args);
-        Ido.init ();
+    //  Ido.init ();
 
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
