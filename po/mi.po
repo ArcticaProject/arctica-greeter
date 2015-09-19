@@ -1,11 +1,11 @@
-# Maori translation for unity-greeter
+# Maori translation for arctica-greeter
 # Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
-# This file is distributed under the same license as the unity-greeter package.
+# This file is distributed under the same license as the arctica-greeter package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: unity-greeter\n"
+"Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-04-06 06:45+0000\n"
 "PO-Revision-Date: 2012-07-23 04:23+0000\n"
@@ -107,22 +107,22 @@ msgid "%s (Default)"
 msgstr ""
 
 #. Help string for command line --version flag
-#: ../src/unity-greeter.vala:484
+#: ../src/arctica-greeter.vala:484
 msgid "Show release version"
 msgstr "Whakaatu te whakaaturanga"
 
 #. Help string for command line --test-mode flag
-#: ../src/unity-greeter.vala:487
+#: ../src/arctica-greeter.vala:487
 msgid "Run in test mode"
 msgstr "Whakatere momo whakamātautau"
 
 #. Arguments and description for --help text
-#: ../src/unity-greeter.vala:493
-msgid "- Unity Greeter"
-msgstr "- Te Mihia Unity"
+#: ../src/arctica-greeter.vala:493
+msgid "- Arctica Greeter"
+msgstr "- Te Mihia Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/unity-greeter.vala:504
+#: ../src/arctica-greeter.vala:504
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "Whakatere '%s --help', ka titiro kōwhiringa tono-ā-tuhi."

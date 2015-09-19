@@ -23,7 +23,7 @@ public class FlatButton : Gtk.Button
 
     construct
     {
-        UnityGreeter.add_style_class (this);
+        ArcticaGreeter.add_style_class (this);
         try
         {
             var style = new Gtk.CssProvider ();

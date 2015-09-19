@@ -1,4 +1,4 @@
-Source: unity-greeter-x2go
+Source: arctica-greeter
 Section: x11
 Priority: optional
 Maintainer: Mike Gabriel <mike.gabriel@das-netzwerkteam.de> 
@@ -20,12 +20,11 @@ Build-Depends: appmenu-gtk3,
                libpixman-1-dev,
                valac (>= 0.20.0),
                xvfb,
-Homepage: http://www.x2go.org
-Vcs-Git: git://code.x2go.org/unity-greeter-x2go.git
-Vcs-Browser: http://code.x2go.org/gitweb?p=unity-greeter-x2go.git;a=summary
+Homepage: http://arctica-project.org
+Vcs-Git: git://cgit.arctica-project.org/arctica-greeter.git
+Vcs-Browser: https://cgit.arctica-project.org/arctica-greeter.git/
 
-
-Package: unity-greeter-x2go
+Package: arctica-greeter
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
@@ -44,9 +43,15 @@ Recommends: unity-settings-daemon,
             remote-login-service-x2go,
             xinput,
 Provides: lightdm-greeter
-Breaks: unity-greeter,
+Breaks:
  edubuntu-artwork (<< 12.01.1~),
-Replaces: unity-greeter,
-Description: Unity Greeter
- A greeter shell for the LightDM login manager. This fork of Unity Greeter
- provides X2Go remote login support with Unity Greeter.
+Description: Arctica Greeter
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ Remote sessions supported by Arctica Greeter:
+ .
+   - Arctica Remote Desktop Sessions
+   - X2Go sessions (desktop type)
+   - FreeRDP sessions
+   - Citrix remote desktop sessions

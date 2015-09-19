@@ -1,9 +1,9 @@
 # -*- Mode: Automake; indent-tabs-mode: t; tab-width: 4 -*-
 
-sbin_PROGRAMS = unity-greeter
+sbin_PROGRAMS = arctica-greeter
 noinst_PROGRAMS = logo-generator
 
-unity_greeter_SOURCES = \
+arctica_greeter_SOURCES = \
 	config.vapi \
 	fixes.vapi \
 	indicator.vapi \
@@ -31,26 +31,26 @@ unity_greeter_SOURCES = \
 	settings-daemon.vala \
 	shutdown-dialog.vala \
 	toggle-box.vala \
-	unity-greeter.vala \
+	arctica-greeter.vala \
 	user-list.vala \
 	user-prompt-box.vala
 
 logo_generator_SOURCES = logo-generator.vala
 
-unity_greeter_CFLAGS = \
-	$(UNITY_GREETER_CFLAGS) \
+arctica_greeter_CFLAGS = \
+	$(ARCTICA_GREETER_CFLAGS) \
 	-w \
 	-DGNOME_DESKTOP_USE_UNSTABLE_API \
 	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-DVERSION=\"$(VERSION)\" \
-	-DCONFIG_FILE=\""$(sysconfdir)/lightdm/unity-greeter.conf"\" \
+	-DCONFIG_FILE=\""$(sysconfdir)/lightdm/arctica-greeter.conf"\" \
 	-DPKGDATADIR=\""$(pkgdatadir)"\" \
 	-DINDICATORDIR=\""$(INDICATORDIR)"\"
 
-logo_generator_CFLAGS = $(unity_greeter_CFLAGS)
+logo_generator_CFLAGS = $(arctica_greeter_CFLAGS)
 
-unity_greeter_VALAFLAGS = \
+arctica_greeter_VALAFLAGS = \
 	--pkg posix \
 	--pkg gtk+-3.0 \
 	--pkg gdk-x11-3.0 \
@@ -62,15 +62,15 @@ unity_greeter_VALAFLAGS = \
 	--pkg pixman-1 \
 	--target-glib 2.32
 
-logo_generator_VALAFLAGS = $(unity_greeter_VALAFLAGS)
+logo_generator_VALAFLAGS = $(arctica_greeter_VALAFLAGS)
 
-unity_greeter_LDADD = \
-	$(UNITY_GREETER_LIBS) \
+arctica_greeter_LDADD = \
+	$(ARCTICA_GREETER_LIBS) \
 	-lm
 
-logo_generator_LDADD = $(unity_greeter_LDADD)
+logo_generator_LDADD = $(arctica_greeter_LDADD)
 
-unity_greeter_vala.stamp: $(top_srcdir)/config.h
+arctica_greeter_vala.stamp: $(top_srcdir)/config.h
 
 DISTCLEANFILES = \
 	Makefile.in

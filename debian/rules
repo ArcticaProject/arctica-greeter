@@ -15,8 +15,15 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	dh_auto_install
-	cp logo.png debian/unity-greeter-x2go/usr/share/unity-greeter/logo.png
+	cp logo.png debian/arctica-greeter/usr/share/arctica-greeter/logo.png
+	mkdir -p debian/arctica-greeter/var/lib/polkit-1/localauthority/10-vendor.d/
+	cp debian/arctica-greeter.pkla debian/arctica-greeter/var/lib/polkit-1/localauthority/10-vendor.d/
+	mkdir -p debian/arctica-greeter/usr/share/lightdm/lightdm.conf.d/
+	cp debian/50-arctica-greeter.conf debian/arctica-greeter/usr/share/lightdm/lightdm.conf.d/
+	mkdir -p debian/arctica-greeter/etc/lightdm/lightdm.conf.d/
+	cp debian/90-arctica-greeter.conf debian/arctica-greeter/etc/lightdm/lightdm.conf.d/
 
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -f logo.png
+

@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: unity-greeter-x2go
+Upstream-Name: arctica-greeter
 Upstream-Contact: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
-Source: http://code.x2go.org/gitweb?p=unity-greeter-x2go.git;a=summary
+Source: https://github.com/ArcticaProject/arctica-greeter
 
 Files: *
 Copyright: 2011-2013, Canonical Ltd

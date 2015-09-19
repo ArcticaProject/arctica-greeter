@@ -47,7 +47,7 @@ public class DashEntry : Gtk.Entry, Fadable
         }
     }
 
-    private static const string NO_BORDER_CLASS = "unity-greeter-no-border";
+    private static const string NO_BORDER_CLASS = "arctica-greeter-no-border";
 
     protected FadeTracker fade_tracker { get; protected set; }
     private Gdk.Window arrow_win;
@@ -308,10 +308,10 @@ public class DashEntry : Gtk.Entry, Fadable
         // This is a workaroud for bug https://launchpad.net/bugs/944159
         // The problem is that orca seems to not notice that it's in a password
         // field on startup.  We just need to kick orca in the pants.
-        if (UnityGreeter.singleton.orca_needs_kick)
+        if (ArcticaGreeter.singleton.orca_needs_kick)
         {
             Signal.emit_by_name (get_accessible (), "focus-event", true);
-            UnityGreeter.singleton.orca_needs_kick = false;
+            ArcticaGreeter.singleton.orca_needs_kick = false;
         }
 
         return base.key_press_event (event);

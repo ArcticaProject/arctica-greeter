@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Arctica Greeter
+Comment=Arctica Greeter
+Exec=arctica-greeter
+Type=Application
+X-Ubuntu-Gettext-Domain=arctica-greeter

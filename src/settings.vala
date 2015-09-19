@@ -97,5 +97,5 @@ public class UGSettings
         return gsettings.set_strv (key, value);
     }
 
-    private static const string SCHEMA = "com.canonical.unity-greeter";
+    private static const string SCHEMA = "org.ArcticaProject.arctica-greeter";
 }

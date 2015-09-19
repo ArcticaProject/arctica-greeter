@@ -24,7 +24,7 @@ private int get_grid_offset (int size)
     return (int) (size % grid_size) / 2;
 }
 
-[DBus (name="com.canonical.UnityGreeter.List")]
+[DBus (name="com.canonical.ArcticaGreeter.List")]
 public class ListDBusInterface : Object
 {
     private GreeterList list;
@@ -231,7 +231,7 @@ public abstract class GreeterList : FadableBox
 
     public void cancel_authentication ()
     {
-        UnityGreeter.singleton.cancel_authentication ();
+        ArcticaGreeter.singleton.cancel_authentication ();
         entry_selected (selected_entry.id);
     }
 
@@ -266,7 +266,7 @@ public abstract class GreeterList : FadableBox
     protected void add_with_class (Gtk.Widget widget)
     {
         fixed.add (widget);
-        UnityGreeter.add_style_class (widget);
+        ArcticaGreeter.add_style_class (widget);
     }
 
     protected void redraw_greeter_box ()
@@ -475,7 +475,7 @@ public abstract class GreeterList : FadableBox
         entry.destroy ();
 
         /* Show a manual login if no users and no remote login entry */
-        if (!have_entries () && !UnityGreeter.singleton.show_remote_login_hint ())
+        if (!have_entries () && !ArcticaGreeter.singleton.show_remote_login_hint ())
             add_manual_entry ();
 
         queue_draw ();
@@ -781,9 +781,9 @@ public abstract class GreeterList : FadableBox
 
     protected void connect_to_lightdm ()
     {
-        UnityGreeter.singleton.show_message.connect (show_message_cb);
-        UnityGreeter.singleton.show_prompt.connect (show_prompt_cb);
-        UnityGreeter.singleton.authentication_complete.connect (authentication_complete_cb);
+        ArcticaGreeter.singleton.show_message.connect (show_message_cb);
+        ArcticaGreeter.singleton.show_prompt.connect (show_prompt_cb);
+        ArcticaGreeter.singleton.authentication_complete.connect (authentication_complete_cb);
     }
 
     protected void show_message_cb (string text, LightDM.MessageType type)
@@ -797,10 +797,10 @@ public abstract class GreeterList : FadableBox
         /* Notify the greeter on what user has been logged */
         if (get_selected_id () == "*other" && manual_name == null)
         {
-            if (UnityGreeter.singleton.test_mode)
+            if (ArcticaGreeter.singleton.test_mode)
                 manual_name = test_username;
             else
-                manual_name = UnityGreeter.singleton.authentication_user();
+                manual_name = ArcticaGreeter.singleton.authentication_user();
         }
 
         prompted = true;
@@ -826,10 +826,10 @@ public abstract class GreeterList : FadableBox
             return;
 
         bool is_authenticated;
-        if (UnityGreeter.singleton.test_mode)
+        if (ArcticaGreeter.singleton.test_mode)
             is_authenticated = test_is_authenticated;
         else
-            is_authenticated = UnityGreeter.singleton.is_authenticated();
+            is_authenticated = ArcticaGreeter.singleton.is_authenticated();
 
         if (is_authenticated)
         {
@@ -837,7 +837,7 @@ public abstract class GreeterList : FadableBox
             if (prompted && !unacknowledged_messages)
             {
                 login_complete ();
-                if (UnityGreeter.singleton.test_mode)
+                if (ArcticaGreeter.singleton.test_mode)
                     start_session ();
                 else
                 {
@@ -890,16 +890,16 @@ public abstract class GreeterList : FadableBox
 
         greeter_authenticating_user = get_selected_id ();
 
-        if (UnityGreeter.singleton.test_mode)
+        if (ArcticaGreeter.singleton.test_mode)
             test_start_authentication ();
         else
         {
             if (get_selected_id () == "*other")
-                UnityGreeter.singleton.authenticate ();
+                ArcticaGreeter.singleton.authenticate ();
             else if (get_selected_id () == "*guest")
-                UnityGreeter.singleton.authenticate_as_guest ();
+                ArcticaGreeter.singleton.authenticate_as_guest ();
             else
-                UnityGreeter.singleton.authenticate (get_selected_id ());
+                ArcticaGreeter.singleton.authenticate (get_selected_id ());
         }
     }
 
@@ -914,7 +914,7 @@ public abstract class GreeterList : FadableBox
 
     private void start_session ()
     {
-        if (!UnityGreeter.singleton.start_session (get_lightdm_session (), background))
+        if (!ArcticaGreeter.singleton.start_session (get_lightdm_session (), background))
         {
             show_message (_("Failed to start session"), true);
             start_authentication ();

@@ -122,7 +122,7 @@ public class SettingsDaemon : Object
                                                          new Variant ("(ssss)",
                                                                       "handle-power-key",
                                                                       Environment.get_user_name (),
-                                                                      "Unity Greeter handling keypresses",
+                                                                      "Arctica Greeter handling keypresses",
                                                                       "block"),
                                                          new VariantType ("(h)"),
                                                          DBusCallFlags.NONE,

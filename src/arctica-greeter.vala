@@ -19,9 +19,9 @@
 
 public const int grid_size = 40;
 
-public class UnityGreeter
+public class ArcticaGreeter
 {
-    public static UnityGreeter singleton;
+    public static ArcticaGreeter singleton;
 
     public signal void show_message (string text, LightDM.MessageType type);
     public signal void show_prompt (string text, LightDM.PromptType type);
@@ -48,7 +48,7 @@ public class UnityGreeter
 
     private DialogDBusInterface dbus_object;
 
-    private UnityGreeter (bool test_mode_)
+    private ArcticaGreeter (bool test_mode_)
     {
         singleton = this;
         test_mode = test_mode_;
@@ -80,7 +80,7 @@ public class UnityGreeter
             settings_daemon.start ();
         }
 
-        var state_dir = Path.build_filename (Environment.get_user_cache_dir (), "unity-greeter");
+        var state_dir = Path.build_filename (Environment.get_user_cache_dir (), "arctica-greeter");
         DirUtils.create_with_parents (state_dir, 0775);
         
         var xdg_seat = GLib.Environment.get_variable("XDG_SEAT");
@@ -100,7 +100,7 @@ public class UnityGreeter
 
         main_window = new MainWindow ();
 
-        Bus.own_name (BusType.SESSION, "com.canonical.UnityGreeter", BusNameOwnerFlags.NONE);
+        Bus.own_name (BusType.SESSION, "com.canonical.ArcticaGreeter", BusNameOwnerFlags.NONE);
 
         dbus_object = new DialogDBusInterface ();
         dbus_object.open_dialog.connect ((type) =>
@@ -272,7 +272,7 @@ public class UnityGreeter
 
     public void authenticate_remote (string? session, string? userid)
     {
-        UnityGreeter.singleton.greeter.authenticate_remote (session, userid);
+        ArcticaGreeter.singleton.greeter.authenticate_remote (session, userid);
     }
 
     public void cancel_authentication ()
@@ -493,7 +493,7 @@ public class UnityGreeter
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
 
-        debug ("Starting unity-greeter %s UID=%d LANG=%s", Config.VERSION, (int) Posix.getuid (), Environment.get_variable ("LANG"));
+        debug ("Starting arctica-greeter %s UID=%d LANG=%s", Config.VERSION, (int) Posix.getuid (), Environment.get_variable ("LANG"));
 
         /* Set the cursor to not be the crap default */
         debug ("Setting cursor");
@@ -512,7 +512,7 @@ public class UnityGreeter
 
         debug ("Loading command line options");
         var c = new OptionContext (/* Arguments and description for --help text */
-                                   _("- Unity Greeter"));
+                                   _("- Arctica Greeter"));
         c.add_main_entries (options, Config.GETTEXT_PACKAGE);
         c.add_group (Gtk.get_option_group (true));
         try
@@ -530,7 +530,7 @@ public class UnityGreeter
         if (do_show_version)
         {
             /* Note, not translated so can be easily parsed */
-            stderr.printf ("unity-greeter %s\n", Config.VERSION);
+            stderr.printf ("arctica-greeter %s\n", Config.VERSION);
             return Posix.EXIT_SUCCESS;
         }
 
@@ -561,8 +561,8 @@ public class UnityGreeter
         if (value != "")
             settings.set ("gtk-xft-rgba", value, null);
 
-        debug ("Creating Unity Greeter");
-        var greeter = new UnityGreeter (do_test_mode);
+        debug ("Creating Arctica Greeter");
+        var greeter = new ArcticaGreeter (do_test_mode);
 
         debug ("Showing greeter");
         greeter.show ();

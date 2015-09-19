@@ -4,16 +4,16 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">unity-greeter</name>
-  <shortdesc xml:lang="en">Unity Greeter</shortdesc>
-  <homepage rdf:resource="https://launchpad.net/unity-greeter" />
-  <bug-database rdf:resource="https://bugs.launchpad.net/unity-greeter" />
+  <name xml:lang="en">arctica-greeter</name>
+  <shortdesc xml:lang="en">Arctica Greeter</shortdesc>
+  <homepage rdf:resource="https://github.com/ArcticaProject/arctica-greeter" />
+  <bug-database rdf:resource="https://github.com/ArcticaProject/arctica-greeter/issues" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Robert Ancell</foaf:name>
-      <foaf:mbox rdf:resource="mailto:robert.ancell@canonical.com" />
+      <foaf:name>Mike Gabriel</foaf:name>
+      <foaf:mbox rdf:resource="mailto:mike.gabriel@das-netzwerkteam.de" />
     </foaf:Person>
   </maintainer>
 </Project>
