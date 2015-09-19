@@ -2,7 +2,7 @@
 <schemalist gettext-domain="arctica-greeter">
   <schema id="org.ArcticaProject.arctica-greeter" path="/org.ArcticaProject.arctica-greeter/">
     <key name="background" type="s">
-      <default>'/usr/share/backgrounds/warty-final-ubuntu.png'</default>
+      <default>'/usr/share/backgrounds/arctica-greeter.png'</default>
       <summary>Background file to use, either an image path or a color (e.g. #772953)</summary>
     </key>
     <key name="background-color" type="s">

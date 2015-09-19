@@ -3,6 +3,10 @@
 xgreeterdir = $(datarootdir)/xgreeters
 dist_xgreeter_DATA = arctica-greeter.desktop
 
+backgroundsdir = $(datarootdir)/backgrounds
+dist_backgrounds_DATA = \
+	arctica-greeter.png
+
 dist_pkgdata_DATA = \
 	a11y.svg \
 	active.png \
