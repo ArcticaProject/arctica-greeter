@@ -52,8 +52,8 @@ public class UserList : GreeterList
 
     private uint change_background_timeout = 0;
 
-    private uint remote_login_service_watch;
-    private RemoteLoginService remote_login_service;
+    private uint remote_logon_service_watch;
+    private RemoteLoginService remote_logon_service;
     private List<RemoteServer?> remote_directory_server_list = new List<RemoteServer?> ();
     private List<RemoteServer?> remote_login_server_list = new List<RemoteServer?> ();
     private HashTable<string, Gtk.Widget> current_remote_fields;
@@ -166,11 +166,11 @@ public class UserList : GreeterList
 
         if (!ArcticaGreeter.singleton.test_mode &&
             ArcticaGreeter.singleton.show_remote_login_hint ())
-            remote_login_service_watch = Bus.watch_name (BusType.SESSION,
-                                            "com.canonical.RemoteLogin",
+            remote_logon_service_watch = Bus.watch_name (BusType.SESSION,
+                                            "org.ArticaProject.RemoteLogon",
                                             BusNameWatcherFlags.AUTO_START,
-                                            on_remote_login_service_appeared,
-                                            on_remote_login_service_vanished);
+                                            on_remote_logon_service_appeared,
+                                            on_remote_logon_service_vanished);
 
     }
 
@@ -196,12 +196,12 @@ public class UserList : GreeterList
         try
         {
             RemoteServer[] server_list;
-            yield remote_login_service.get_servers (out server_list);
+            yield remote_logon_service.get_servers (out server_list);
             set_remote_directory_servers (server_list);
         }
         catch (IOError e)
         {
-            debug ("Calling GetServers on com.canonical.RemoteLogin dbus service failed. Error: %s", e.message);
+            debug ("Calling GetServers on org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
             remove_remote_servers ();
         }
     }
@@ -346,7 +346,7 @@ public class UserList : GreeterList
     {
         if (currently_browsing_server_url == url && currently_browsing_server_email == email_address)
         {
-            /* Something happened and we are being asked for re-authentication by the remote-login-service */
+            /* Something happened and we are being asked for re-authentication by the remote-logon-service */
             remove_remote_login_servers ();
             currently_browsing_server_url = "";
             currently_browsing_server_email = "";
@@ -356,36 +356,36 @@ public class UserList : GreeterList
         }
     }
 
-    private void on_remote_login_service_appeared (DBusConnection conn, string name)
+    private void on_remote_logon_service_appeared (DBusConnection conn, string name)
     {
         Bus.get_proxy.begin<RemoteLoginService> (BusType.SESSION,
-            "com.canonical.RemoteLogin",
-            "/com/canonical/RemoteLogin",
+            "org.ArticaProject.RemoteLogon",
+            "/org/ArticaProject/RemoteLogon",
             0,
             null,
             (obj, res) => {
                 try
                 {
-                    remote_login_service = Bus.get_proxy.end<RemoteLoginService> (res);
-                    remote_login_service.servers_updated.connect (set_remote_directory_servers);
-                    remote_login_service.login_servers_updated.connect (remote_login_servers_updated);
-                    remote_login_service.login_changed.connect (remote_login_changed);
+                    remote_logon_service = Bus.get_proxy.end<RemoteLoginService> (res);
+                    remote_logon_service.servers_updated.connect (set_remote_directory_servers);
+                    remote_logon_service.login_servers_updated.connect (remote_login_servers_updated);
+                    remote_logon_service.login_changed.connect (remote_login_changed);
                     query_directory_servers.begin ();
                 }
                 catch (IOError e)
                 {
-                    debug ("Getting the com.canonical.RemoteLogin dbus service failed. Error: %s", e.message);
+                    debug ("Getting the org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                     remove_remote_servers ();
-                    remote_login_service = null;
+                    remote_logon_service = null;
                 }
             }
         );
     }
 
-    private void on_remote_login_service_vanished (DBusConnection conn, string name)
+    private void on_remote_logon_service_vanished (DBusConnection conn, string name)
     {
         remove_remote_servers ();
-        remote_login_service = null;
+        remote_logon_service = null;
 
         /* provide a fallback manual login option */
         if (ArcticaGreeter.singleton.hide_users_hint ()) {
@@ -482,14 +482,14 @@ public class UserList : GreeterList
                     // If we had an error and are retrying the same user and server, do not use the cache on R-L-S
                     if (selected_entry.has_errors && currently_browsing_server_email == email && currently_browsing_server_url == url)
                         allowcache = false;
-                    yield remote_login_service.get_servers_for_login (url, email, password_field.text, allowcache, out login_success, out data_type, out server_list);
+                    yield remote_logon_service.get_servers_for_login (url, email, password_field.text, allowcache, out login_success, out data_type, out server_list);
                 }
                 currently_browsing_server_url = url;
                 currently_browsing_server_email = email;
             }
             catch (IOError e)
             {
-                debug ("Calling get_servers in com.canonical.RemoteLogin dbus service failed. Error: %s", e.message);
+                debug ("Calling get_servers in org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
             }
 
             if (login_success)
@@ -538,7 +538,7 @@ public class UserList : GreeterList
         else
         {
             ArcticaGreeter.singleton.authenticate_remote (get_lightdm_session (), null);
-            remote_login_service.set_last_used_server.begin (currently_browsing_server_url, url_from_remote_loding_server_list_name (selected_entry.id));
+            remote_logon_service.set_last_used_server.begin (currently_browsing_server_url, url_from_remote_loding_server_list_name (selected_entry.id));
         }
     }
 
@@ -777,12 +777,12 @@ public class UserList : GreeterList
                             if (ArcticaGreeter.singleton.test_mode)
                                 email_domains = { "canonical.com", "ubuntu.org", "candy.com", "urban.net" };
                             else
-                                yield remote_login_service.get_cached_domains_for_server (url, out email_domains);
+                                yield remote_logon_service.get_cached_domains_for_server (url, out email_domains);
                         }
                         catch (IOError e)
                         {
                             email_domains.resize (0);
-                            debug ("Calling get_cached_domains_for_server in com.canonical.RemoteLogin dbus service failed. Error: %s", e.message);
+                            debug ("Calling get_cached_domains_for_server in org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                         }
 
                         var entry = add_prompt (_("Email:") + " / " + _("Username:"));

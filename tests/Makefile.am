@@ -15,7 +15,7 @@ arctica_greeter_test_SOURCES = \
 	../src/toggle-box.vala \
 	../src/user-list.vala \
 	../src/greeter-list.vala \
-	../src/remote-login-service.vala \
+	../src/remote-logon-service.vala \
 	../src/background.vala \
 	../src/email-autocompleter.vala \
 	../src/config.vapi \

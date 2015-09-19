@@ -26,7 +26,7 @@ arctica_greeter_SOURCES = \
 	menubar.vala \
 	prompt-box.vala \
 	session-list.vala \
-	remote-login-service.vala \
+	remote-logon-service.vala \
 	settings.vala \
 	settings-daemon.vala \
 	shutdown-dialog.vala \

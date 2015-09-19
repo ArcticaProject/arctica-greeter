@@ -40,7 +40,7 @@ Recommends: unity-settings-daemon,
             network-manager-gnome,
             lightdm-remote-session-freerdp,
             lightdm-remote-session-x2go,
-            remote-login-service-x2go,
+            remote-logon-service,
             xinput,
 Provides: lightdm-greeter
 Breaks:
