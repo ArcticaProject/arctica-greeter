@@ -105,6 +105,7 @@ public class SessionList : GreeterList
         case "gnome-fallback-compiz":
         case "gnome-fallback":
         case "gnome-shell":
+        case "gnome-wayland":
         case "gnome":
             return "gnome_badge.png";
         case "kde":

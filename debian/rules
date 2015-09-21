@@ -11,7 +11,7 @@ override_dh_autoreconf:
 
 override_dh_auto_build:
 	dh_auto_build
-	./src/logo-generator --logo data/logo-bare.png --text '15.04' --output logo.png
+	./src/logo-generator --logo data/logo-bare.png --text '15.10' --output logo.png
 
 override_dh_auto_install:
 	dh_auto_install
