@@ -34,22 +34,6 @@ namespace Gtk
     }
 }
 
-namespace Gnome
-{
-    [CCode (cheader_filename = "libgnome-desktop/gnome-idle-monitor.h")]
-    public class IdleMonitor : GLib.Object
-    {
-        public IdleMonitor ();
-        public IdleMonitor.for_device (Gdk.Device device);
-        public uint add_idle_watch (uint64 interval_msec, IdleMonitorWatchFunc callback, GLib.DestroyNotify? notify = null);
-        public uint add_user_active_watch (IdleMonitorWatchFunc callback, GLib.DestroyNotify? notify = null);
-        public void remove_watch (uint id);
-        public int64 get_idletime ();
-    }
-
-    public delegate void IdleMonitorWatchFunc (IdleMonitor monitor, uint id);
-}
-
 // Note, fixed in 1.10.0
 namespace LightDM
 {

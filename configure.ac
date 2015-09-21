@@ -24,12 +24,12 @@ PKG_CHECK_MODULES(ARCTICA_GREETER, [
     gdk-x11-3.0
     indicator3-0.4
     liblightdm-gobject-1 >= 1.4.0
-    gnome-desktop-3.0
     freetype2
     cairo-ft
     libcanberra
     pixman-1
     x11
+    xext
 ])
 
 AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/unity/indicators"], [Indicator files are searched for in this directory])

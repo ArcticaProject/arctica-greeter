@@ -7,6 +7,7 @@ arctica_greeter_SOURCES = \
 	config.vapi \
 	fixes.vapi \
 	indicator.vapi \
+	xsync.vapi \
 	animate-timer.vala \
 	background.vala \
 	cached-image.vala \
@@ -20,6 +21,7 @@ arctica_greeter_SOURCES = \
 	fading-label.vala \
 	flat-button.vala \
 	greeter-list.vala \
+	idle-monitor.vala \
 	list-stack.vala \
 	main-window.vala \
 	menu.vala \
@@ -40,7 +42,6 @@ logo_generator_SOURCES = logo-generator.vala
 arctica_greeter_CFLAGS = \
 	$(ARCTICA_GREETER_CFLAGS) \
 	-w \
-	-DGNOME_DESKTOP_USE_UNSTABLE_API \
 	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-DVERSION=\"$(VERSION)\" \

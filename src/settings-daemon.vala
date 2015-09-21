@@ -174,13 +174,13 @@ public class ScreenSaverInterface : Object
 {
     public signal void active_changed (bool value);
 
-    private Gnome.IdleMonitor idle_monitor;
+    private IdleMonitor idle_monitor;
     private bool _active = false;
     private uint idle_watch = 0;
 
     public ScreenSaverInterface ()
     {
-        idle_monitor = new Gnome.IdleMonitor ();
+        idle_monitor = new IdleMonitor ();
         _set_active (false);       
     }
 

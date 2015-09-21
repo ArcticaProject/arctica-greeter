@@ -7,38 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-04-06 06:45+0000\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"PO-Revision-Date: 2014-05-08 12:01+0000\n"
+"Last-Translator: Åka Sikrom <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-07 06:40+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
+"X-Generator: Launchpad (build 17163)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "Skriv inn passord for %s"
 
-#: ../src/greeter-list.vala:803 ../src/user-list.vala:701
+#: ../src/greeter-list.vala:805 ../src/user-list.vala:701
 msgid "Password:"
-msgstr ""
+msgstr "Passord:"
 
-#: ../src/greeter-list.vala:805 ../src/user-list.vala:695
+#: ../src/greeter-list.vala:807 ../src/user-list.vala:695
 msgid "Username:"
-msgstr ""
+msgstr "Brukernavn:"
 
-#: ../src/greeter-list.vala:857
+#: ../src/greeter-list.vala:859
 msgid "Invalid password, please try again"
 msgstr "Ugyldig passord. Prøv igjen"
 
-#: ../src/greeter-list.vala:868
+#: ../src/greeter-list.vala:870
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Klarte ikke å autentisere"
 
-#: ../src/greeter-list.vala:923
+#: ../src/greeter-list.vala:916
+msgid "Failed to start session"
+msgstr "Klarte ikke å starte økt"
+
+#: ../src/greeter-list.vala:931
 msgid "Logging in…"
 msgstr "Logger inn …"
 
@@ -52,15 +56,15 @@ msgstr "Tilbake"
 
 #: ../src/menubar.vala:220
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "Skjermtastatur"
 
 #: ../src/menubar.vala:225
 msgid "High Contrast"
-msgstr ""
+msgstr "Høy kontrast"
 
 #: ../src/menubar.vala:231
 msgid "Screen Reader"
-msgstr ""
+msgstr "Skjermleser"
 
 #: ../src/prompt-box.vala:211
 msgid "Session Options"
@@ -109,29 +113,30 @@ msgid "%s (Default)"
 msgstr "%s (standard)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:484
+#: ../src/arctica-greeter.vala:506
 msgid "Show release version"
-msgstr ""
+msgstr "Vis utgivelsesversjon"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:487
+#: ../src/arctica-greeter.vala:509
 msgid "Run in test mode"
-msgstr ""
+msgstr "Kjør i testmodus"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:493
+#: ../src/arctica-greeter.vala:515
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- Arctica velkomstskjerm"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:504
+#: ../src/arctica-greeter.vala:526
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Kjør «%s --help» for å se en liste over alle tilgjengelige kommandolinjevalg."
 
 #: ../src/user-list.vala:45
 msgid "Guest Session"
-msgstr ""
+msgstr "Gjesteøkt"
 
 #: ../src/user-list.vala:438
 msgid "Please enter a complete e-mail address"
@@ -206,7 +211,7 @@ msgstr "Logg inn"
 #: ../src/user-list.vala:826
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Logg inn som %s"
 
 #: ../src/user-list.vala:830
 msgid "Retry"
@@ -219,7 +224,7 @@ msgstr "Prøv igjen som %s"
 
 #: ../src/user-list.vala:869
 msgid "Login"
-msgstr ""
+msgstr "Påloggingsnavn"
 
 #~ msgid "_Back"
 #~ msgstr "_Tilbake"

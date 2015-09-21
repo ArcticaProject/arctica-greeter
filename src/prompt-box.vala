@@ -283,9 +283,6 @@ public class PromptBox : FadableBox
         base.get_preferred_height (out min, out nat);
         min = round_to_grid (min + GreeterList.BORDER * 2) - GreeterList.BORDER * 2;
         nat = round_to_grid (nat + GreeterList.BORDER * 2) - GreeterList.BORDER * 2;
-
-        if (position <= -1 || position >= 1)
-            min = nat = grid_size;
     }
 
     public void set_zone (Gtk.Widget zone)

@@ -7,38 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-04-06 06:45+0000\n"
+"POT-Creation-Date: 2014-08-20 06:06+0000\n"
 "PO-Revision-Date: 2012-01-24 16:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-07 06:40+0000\n"
-"X-Generator: Launchpad (build 16976)\n"
+"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
+"X-Generator: Launchpad (build 17163)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr ""
 
-#: ../src/greeter-list.vala:803 ../src/user-list.vala:701
+#: ../src/greeter-list.vala:805 ../src/user-list.vala:701
 msgid "Password:"
 msgstr ""
 
-#: ../src/greeter-list.vala:805 ../src/user-list.vala:695
+#: ../src/greeter-list.vala:807 ../src/user-list.vala:695
 msgid "Username:"
 msgstr ""
 
-#: ../src/greeter-list.vala:857
+#: ../src/greeter-list.vala:859
 msgid "Invalid password, please try again"
 msgstr ""
 
-#: ../src/greeter-list.vala:868
+#: ../src/greeter-list.vala:870
 msgid "Failed to authenticate"
 msgstr ""
 
-#: ../src/greeter-list.vala:923
+#: ../src/greeter-list.vala:916
+msgid "Failed to start session"
+msgstr ""
+
+#: ../src/greeter-list.vala:931
 msgid "Logging in…"
 msgstr "Prihlasuje sa…"
 
@@ -107,22 +111,22 @@ msgid "%s (Default)"
 msgstr "%s (Predvolené)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:484
+#: ../src/arctica-greeter.vala:506
 msgid "Show release version"
 msgstr ""
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:487
+#: ../src/arctica-greeter.vala:509
 msgid "Run in test mode"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:493
+#: ../src/arctica-greeter.vala:515
 msgid "- Arctica Greeter"
 msgstr ""
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:504
+#: ../src/arctica-greeter.vala:526
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
