@@ -160,7 +160,7 @@ public class SettingsDaemon : Object
 
         try
         {
-            Process.spawn_command_line_async (Config.MSD_BINARY);
+            Process.spawn_command_line_async (Config.SD_BINARY);
         }
         catch (SpawnError e)
         {

@@ -37,11 +37,29 @@ AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/unity/indicators"], [
 INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator3-0.4`
 AC_SUBST(INDICATORDIR)
 
-MSD_BINARY=`$PKG_CONFIG --variable=binary mate-settings-daemon`
-if test -z "$MSD_BINARY"; then
-    AC_MSG_ERROR([Could not find path to mate-settings-daemon binary])
+if $PKG_CONFIG --exists unity-settings-daemon; then
+    USD_BINARY=`$PKG_CONFIG --variable=binary unity-settings-daemon`
+    if test -z "$USD_BINARY"; then
+        AC_MSG_NOTICE([Could not find path to unity-settings-daemon binary])
+    else
+        SD_BINARY="$USD_BINARY"
+    fi
+
+elif $PKG_CONFIG --exists mate-settings-daemon; then
+    MSD_BINARY=`$PKG_CONFIG --variable=binary mate-settings-daemon`
+    if test -z "$MSD_BINARY"; then
+        AC_MSG_NOTICE([Could not find path to mate-settings-daemon binary])
+    else
+        SD_BINARY="$MSD_BINARY"
+    fi
+
 fi
-AC_DEFINE_UNQUOTED([MSD_BINARY], ["$MSD_BINARY"], [Path to m-s-d])
+
+if test -z "$SD_BINARY"; then
+    AC_MSG_ERROR([Could not find any of the supported X11 settings daemons])
+else
+    AC_DEFINE_UNQUOTED([SD_BINARY], ["$MSD_BINARY"], [Path to m-s-d])
+fi
 
 dnl ###########################################################################
 dnl Internationalization
