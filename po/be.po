@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"POT-Creation-Date: 2015-04-12 05:44+0000\n"
 "PO-Revision-Date: 2012-01-24 16:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Belarusian <be@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2015-04-13 05:30+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
@@ -40,7 +40,7 @@ msgstr ""
 
 #: ../src/greeter-list.vala:916
 msgid "Failed to start session"
-msgstr ""
+msgstr "Не атрымалася запусціць сэсію"
 
 #: ../src/greeter-list.vala:931
 msgid "Logging in…"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Screen Reader"
 msgstr ""
 
-#: ../src/prompt-box.vala:211
+#: ../src/prompt-box.vala:212
 msgid "Session Options"
 msgstr "Параметры сеансу"
 
@@ -91,6 +91,8 @@ msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"Іншыя карыстальнікі зараз ўвайшлі ў гэты кампутар, выключэнне закрые таксама "
+"і іх сеансы."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
@@ -105,7 +107,7 @@ msgid "Restart"
 msgstr "Перазапусціць"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:93
+#: ../src/toggle-box.vala:98
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Стандартна)"

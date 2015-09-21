@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"POT-Creation-Date: 2015-04-12 05:44+0000\n"
 "PO-Revision-Date: 2014-04-28 22:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Armenian <hy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2015-04-13 05:30+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
@@ -28,7 +28,7 @@ msgstr "Գաղտնաբառ"
 
 #: ../src/greeter-list.vala:807 ../src/user-list.vala:695
 msgid "Username:"
-msgstr "Օգտվողի անուն"
+msgstr "Օգտվողի անունը՝"
 
 #: ../src/greeter-list.vala:859
 msgid "Invalid password, please try again"
@@ -36,7 +36,7 @@ msgstr "Գաղտնաբառը սխալ է. նորի՛ց փորձեք։"
 
 #: ../src/greeter-list.vala:870
 msgid "Failed to authenticate"
-msgstr "Մուտքը կատարել չհաջողվեց։"
+msgstr "Մուտք կատարել չհաջողվեց"
 
 #: ../src/greeter-list.vala:916
 msgid "Failed to start session"
@@ -66,7 +66,7 @@ msgstr "Բարձր ցայտունություն"
 msgid "Screen Reader"
 msgstr "Էկրանի ընթերցիչ"
 
-#: ../src/prompt-box.vala:211
+#: ../src/prompt-box.vala:212
 msgid "Session Options"
 msgstr "Գործաժամի ընտրանքներ"
 
@@ -76,7 +76,7 @@ msgstr "Ընտրեք միջերեսային միջավայրը։"
 
 #: ../src/shutdown-dialog.vala:101
 msgid "Goodbye. Would you like to…"
-msgstr "Ցտեսություն։ Ցանկանում եք..."
+msgstr "Ցտեսություն։ Ցանկանում եք դուք..."
 
 #: ../src/shutdown-dialog.vala:105 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
@@ -94,18 +94,18 @@ msgstr ""
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr "Անցնել սպասման ռեժիմի։"
+msgstr "Անցնել սպասման ռեժիմի"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr "Անցնել ննջման ռեժիմի։"
+msgstr "Անցնել ննջման ռեժիմի"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
 msgstr "Վերագործարկել"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:93
+#: ../src/toggle-box.vala:98
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (լռելյայն)"
@@ -130,6 +130,8 @@ msgstr "- Unity-ի ողջույնի էկրանը"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"%s --help հրահանգով ծանոթացեք հրահանգային տողի առկա ընտրանքների ամբողջական "
+"ցանկին։"
 
 #: ../src/user-list.vala:45
 msgid "Guest Session"
@@ -137,17 +139,19 @@ msgstr "Հյուրի գործաժամ"
 
 #: ../src/user-list.vala:438
 msgid "Please enter a complete e-mail address"
-msgstr ""
+msgstr "Խնդում ենք մուտքագրել էլեկտրոնային փոստի ամբողջական հասցեն"
 
 #: ../src/user-list.vala:518
 msgid "Incorrect e-mail address or password"
-msgstr "Սխալ հասցե կամ գաղտնաբառ։"
+msgstr "Սխալ էլէկտրոնային հասցե կամ գաղտնաբառ"
 
 #: ../src/user-list.vala:549
 msgid ""
 "If you have an account on an RDP or Citrix server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
+"Եթե RDP կամ Citrix սպասարկիչում բացված հաշիվ ունեք, հեռակա մուտքի միջոցով "
+"(Remote Login) կկարողանաք այդ սպասարկիչից ծրագրեր գործարկել։"
 
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:551
@@ -155,6 +159,8 @@ msgid ""
 "If you have an account on an RDP server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
+"Եթե RDP սպասարկիչում բացված հաշիվ ունեք, հեռակա մուտքի (Remote Login) "
+"միջոցով կկարողանաք այդ սպասարկիչից ծրագրեր գործարկել։"
 
 #: ../src/user-list.vala:554
 msgid "Cancel"
@@ -162,7 +168,7 @@ msgstr "Չեղարկել"
 
 #: ../src/user-list.vala:555
 msgid "Set Up…"
-msgstr ""
+msgstr "Կարգավորում..."
 
 #: ../src/user-list.vala:557
 msgid ""
@@ -170,7 +176,7 @@ msgid ""
 "to set up an account now?"
 msgstr ""
 "Այս ծառայությունից օգտվելու համար պետք է Ubuntu Remote Login-ի հաշիվ "
-"ունենաք։ Կամենո՞ւմ եք հենց հիմա հաշիվ բացել։"
+"ունենաք։ Կամենո՞ւմ եք հաշիվը բացել հիմա։"
 
 #: ../src/user-list.vala:561
 msgid "OK"
@@ -186,11 +192,11 @@ msgstr ""
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
-msgstr ""
+msgstr "Սերվերի այս տեսակը չի աջակցվում:"
 
 #: ../src/user-list.vala:720
 msgid "Domain:"
-msgstr ""
+msgstr "Դոմեյն։"
 
 #: ../src/user-list.vala:781
 msgid "Email address:"

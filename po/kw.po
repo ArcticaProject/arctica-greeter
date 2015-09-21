@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"POT-Creation-Date: 2015-04-12 05:44+0000\n"
 "PO-Revision-Date: 2012-03-30 22:58+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Cornish <kw@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2015-04-13 05:30+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
-msgstr "Entrewgh ger-tremena rag %s"
+msgstr "Entrewgh an ger-tremena rag %s"
 
 #: ../src/greeter-list.vala:805 ../src/user-list.vala:701
 msgid "Password:"
@@ -66,17 +66,17 @@ msgstr "Gorthwedh ughel"
 msgid "Screen Reader"
 msgstr "Redyer skrin"
 
-#: ../src/prompt-box.vala:211
+#: ../src/prompt-box.vala:212
 msgid "Session Options"
 msgstr "Dewisyow an esedhek"
 
 #: ../src/session-list.vala:34
 msgid "Select desktop environment"
-msgstr "Dewisewgh kerhynnedh an desktop"
+msgstr "Dewisewgh kerghynnedh penn an desk"
 
 #: ../src/shutdown-dialog.vala:101
 msgid "Goodbye. Would you like to…"
-msgstr "Duw genowgh. A via da genowgh…"
+msgstr "Duw genowgh. Eus hwans dhywgh…"
 
 #: ../src/shutdown-dialog.vala:105 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
@@ -105,7 +105,7 @@ msgid "Restart"
 msgstr "Dastalleth"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:93
+#: ../src/toggle-box.vala:98
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Defowt)"

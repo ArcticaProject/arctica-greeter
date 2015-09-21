@@ -691,15 +691,18 @@ public class Background : Gtk.Fixed
     void publish_average_color ()
     {
         notify_property ("average-color");
-        var rgba = current.average_color.to_string ();
-        var root = get_screen ().get_root_window ();
 
-        Gdk.property_change (root,
-                             Gdk.Atom.intern_static_string ("_GNOME_BACKGROUND_REPRESENTATIVE_COLORS"),
-                             Gdk.Atom.intern_static_string ("STRING"),
-                             8,
-                             Gdk.PropMode.REPLACE,
-                             rgba.data,
-                             rgba.data.length);
+        if (!ArcticaGreeter.singleton.test_mode)
+        {
+            var rgba = current.average_color.to_string ();
+            var root = get_screen ().get_root_window ();
+            Gdk.property_change (root,
+                                 Gdk.Atom.intern_static_string ("_GNOME_BACKGROUND_REPRESENTATIVE_COLORS"),
+                                 Gdk.Atom.intern_static_string ("STRING"),
+                                 8,
+                                 Gdk.PropMode.REPLACE,
+                                 rgba.data,
+                                 rgba.data.length);
+        }
     }
 }

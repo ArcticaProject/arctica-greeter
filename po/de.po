@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
-"PO-Revision-Date: 2012-05-16 18:01+0000\n"
-"Last-Translator: Claudius Henrichs <claudius.h@gmx.de>\n"
+"POT-Creation-Date: 2015-04-12 05:44+0000\n"
+"PO-Revision-Date: 2014-12-27 16:04+0000\n"
+"Last-Translator: Tobias Bannert <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2015-04-13 05:30+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
@@ -44,7 +44,7 @@ msgstr "Starten der Sitzung fehlgeschlagen"
 
 #: ../src/greeter-list.vala:931
 msgid "Logging in…"
-msgstr "Anmelden …"
+msgstr "Anmeldevorgang …"
 
 #: ../src/main-window.vala:49
 msgid "Login Screen"
@@ -66,7 +66,7 @@ msgstr "Starker Kontrast"
 msgid "Screen Reader"
 msgstr "Bildschirmleser"
 
-#: ../src/prompt-box.vala:211
+#: ../src/prompt-box.vala:212
 msgid "Session Options"
 msgstr "Sitzungsoptionen"
 
@@ -107,7 +107,7 @@ msgid "Restart"
 msgstr "Neustarten"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:93
+#: ../src/toggle-box.vala:98
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Standard)"
@@ -132,8 +132,8 @@ msgstr "- Arctica Greeter"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Führen Sie »%s --help« aus, um eine vollständige Liste der verfügbaren "
-"Optionen zu sehen."
+"Bitte »%s --help« eingeben, um eine vollständige Liste der verfügbaren "
+"Befehlszeilenoptionen einzusehen."
 
 #: ../src/user-list.vala:45
 msgid "Guest Session"
@@ -141,7 +141,7 @@ msgstr "Gastzugang"
 
 #: ../src/user-list.vala:438
 msgid "Please enter a complete e-mail address"
-msgstr "Bitte geben Sie eine vollständige E-Mail-Adresse ein"
+msgstr "Bitte eine vollständige E-Mail-Adresse eingeben"
 
 #: ../src/user-list.vala:518
 msgid "Incorrect e-mail address or password"

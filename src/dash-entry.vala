@@ -47,8 +47,6 @@ public class DashEntry : Gtk.Entry, Fadable
         }
     }
 
-    private static const string NO_BORDER_CLASS = "arctica-greeter-no-border";
-
     protected FadeTracker fade_tracker { get; protected set; }
     private Gdk.Window arrow_win;
     private static Gdk.Pixbuf arrow_pixbuf;
@@ -89,27 +87,6 @@ public class DashEntry : Gtk.Entry, Fadable
         {
             debug ("Internal error loading padding style: %s", e.message);
         }
-
-        // We add the styles and classes we need for normal operation of the
-        // spinner animation.  These are always "on" and we just turn them off
-        // right before drawing our parent class's draw function.  This is done
-        // opt-out like that rather than just turning the styles on when we
-        // need to draw the spinner because the animation doesn't work right
-        // otherwise.  See the draw() function for how we turn it off.
-        var no_border_provider = new Gtk.CssProvider ();
-        try
-        {
-            var css = ".%s {border: 0px;}".printf (NO_BORDER_CLASS);
-            no_border_provider.load_from_data (css, -1);
-        }
-        catch (Error e)
-        {
-            debug ("Internal error loading spinner style: %s", e.message);
-        }
-        style_ctx.add_provider (no_border_provider,
-                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        style_ctx.add_class (NO_BORDER_CLASS);
-        style_ctx.add_class (Gtk.STYLE_CLASS_SPINNER);
     }
 
     public override bool draw (Cairo.Context c)
@@ -119,7 +96,6 @@ public class DashEntry : Gtk.Entry, Fadable
         // See construct method for explanation of why we remove classes
         style_ctx.save ();
         style_ctx.remove_class (Gtk.STYLE_CLASS_SPINNER);
-        style_ctx.remove_class (NO_BORDER_CLASS);
         c.save ();
         c.push_group ();
         base.draw (c);

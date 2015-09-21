@@ -7,24 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2014-08-20 06:06+0000\n"
-"PO-Revision-Date: 2012-04-10 16:12+0000\n"
+"POT-Creation-Date: 2015-04-12 05:44+0000\n"
+"PO-Revision-Date: 2015-03-04 22:03+0000\n"
 "Last-Translator: Saša Teković <Unknown>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-08-21 05:56+0000\n"
-"X-Generator: Launchpad (build 17163)\n"
+"X-Launchpad-Export-Date: 2015-04-13 05:30+0000\n"
+"X-Generator: Launchpad (build 17423)\n"
 
 #: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "Upišite lozinku za %s"
 
 #: ../src/greeter-list.vala:805 ../src/user-list.vala:701
 msgid "Password:"
-msgstr ""
+msgstr "Lozinka:"
 
 #: ../src/greeter-list.vala:807 ../src/user-list.vala:695
 msgid "Username:"
@@ -32,19 +32,19 @@ msgstr "Korisničko ime:"
 
 #: ../src/greeter-list.vala:859
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Neispravna lozinka, pokušajte ponovno"
 
 #: ../src/greeter-list.vala:870
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Ovjera nije uspjela"
 
 #: ../src/greeter-list.vala:916
 msgid "Failed to start session"
-msgstr ""
+msgstr "Neuspjelo pokretanje sesije"
 
 #: ../src/greeter-list.vala:931
 msgid "Logging in…"
-msgstr ""
+msgstr "Prijavljivanje…"
 
 #: ../src/main-window.vala:49
 msgid "Login Screen"
@@ -52,7 +52,7 @@ msgstr "Zaslon prijave"
 
 #: ../src/main-window.vala:116
 msgid "Back"
-msgstr ""
+msgstr "Natrag"
 
 #: ../src/menubar.vala:220
 msgid "Onscreen keyboard"
@@ -64,11 +64,11 @@ msgstr "Visok kontrast"
 
 #: ../src/menubar.vala:231
 msgid "Screen Reader"
-msgstr ""
+msgstr "Čitač zaslona"
 
-#: ../src/prompt-box.vala:211
+#: ../src/prompt-box.vala:212
 msgid "Session Options"
-msgstr ""
+msgstr "Mogućnosti prijave"
 
 #: ../src/session-list.vala:34
 msgid "Select desktop environment"
@@ -76,36 +76,38 @@ msgstr "Odaberi okruženje radne površine"
 
 #: ../src/shutdown-dialog.vala:101
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "Doviđenja. Želite li..."
 
 #: ../src/shutdown-dialog.vala:105 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
-msgstr ""
+msgstr "Isključiti"
 
 #: ../src/shutdown-dialog.vala:112
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "Sigurno želite isključiti računalo?"
 
 #: ../src/shutdown-dialog.vala:137
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"Drugi korisnici su trenutno prijavljeni na ovo računalo, trenutno "
+"isključivanje će isto tako odjaviti te druge sesije."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr ""
+msgstr "Suspendirati"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr ""
+msgstr "Hibernirati"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "Ponovno pokrenuti"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:93
+#: ../src/toggle-box.vala:98
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Zadano)"
@@ -113,7 +115,7 @@ msgstr "%s (Zadano)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:506
 msgid "Show release version"
-msgstr ""
+msgstr "Prikaži inačicu izdanja"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:509
@@ -148,6 +150,8 @@ msgid ""
 "If you have an account on an RDP or Citrix server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
+"Ako imate račun na RDP ili Citrix poslužitelju, Udaljena prijava vam dopušta "
+"pokretanje aplikacija s tog poslužitelja."
 
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:551
@@ -155,6 +159,8 @@ msgid ""
 "If you have an account on an RDP server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
+"Ako imate račun na RDP poslužitelju, Udaljena prijava dopušta vam pokretanje "
+"aplikacije s tog poslužitelja."
 
 #: ../src/user-list.vala:554
 msgid "Cancel"
@@ -162,23 +168,27 @@ msgstr "Odustani"
 
 #: ../src/user-list.vala:555
 msgid "Set Up…"
-msgstr ""
+msgstr "Postavljanje…"
 
 #: ../src/user-list.vala:557
 msgid ""
 "You need an Ubuntu Remote Login account to use this service. Would you like "
 "to set up an account now?"
 msgstr ""
+"Potreban vam je račun Ubuntu udaljene prijave za korištenje ove usluge. "
+"Želite li postaviti račun odmah?"
 
 #: ../src/user-list.vala:561
 msgid "OK"
-msgstr "OK"
+msgstr "U redu"
 
 #: ../src/user-list.vala:562
 msgid ""
 "You need an Ubuntu Remote Login account to use this service. Visit "
 "uccs.canonical.com to set up an account."
 msgstr ""
+"Potreban vam je račun Ubuntu udaljene prijave za korištenje ove usluge. "
+"Posjetite uccs.canonical.com za postavljanje računa."
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
@@ -200,7 +210,7 @@ msgstr "Prijava"
 #: ../src/user-list.vala:826
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Prijavi se kao %s"
 
 #: ../src/user-list.vala:830
 msgid "Retry"
@@ -209,11 +219,11 @@ msgstr "Pokušaj ponovno"
 #: ../src/user-list.vala:831
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "Pokušaj kao %s"
 
 #: ../src/user-list.vala:869
 msgid "Login"
-msgstr ""
+msgstr "Prijava"
 
 #~ msgid "_Back"
 #~ msgstr "_Natrag"

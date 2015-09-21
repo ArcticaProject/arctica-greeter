@@ -6,7 +6,7 @@ AC_INIT(arctica-greeter, 0.99.0.1)
 AC_CONFIG_MACRO_DIR(m4)
 AM_INIT_AUTOMAKE
 AM_PROG_CC_C_O
-AM_PROG_VALAC([0.20.0])
+AM_PROG_VALAC([0.24.0])
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES(yes)])
@@ -23,7 +23,7 @@ PKG_CHECK_MODULES(ARCTICA_GREETER, [
     gtk+-3.0
     gdk-x11-3.0
     indicator3-0.4
-    liblightdm-gobject-1 >= 1.4.0
+    liblightdm-gobject-1 >= 1.12.0
     freetype2
     cairo-ft
     libcanberra
