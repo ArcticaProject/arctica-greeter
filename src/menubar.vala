@@ -231,6 +231,7 @@ public class MenuBar : Gtk.MenuBar
         var item = new Gtk.CheckMenuItem.with_label (_("Screen Reader"));
         item.toggled.connect (screen_reader_toggled_cb);
         item.add_accelerator ("activate", accel_group, Gdk.Key.s, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
+        item.add_accelerator ("activate", accel_group, Gdk.Key.s, Gdk.ModifierType.SUPER_MASK | Gdk.ModifierType.MOD1_MASK, Gtk.AccelFlags.VISIBLE);
         item.show ();
         submenu.append (item);
         item.set_active (UGSettings.get_boolean (UGSettings.KEY_SCREEN_READER));
