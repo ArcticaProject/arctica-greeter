@@ -18,7 +18,7 @@
  *          Michael Terry <michael.terry@canonical.com>
  */
 
-public class UGSettings
+public class AGSettings
 {
     public static const string KEY_BACKGROUND = "background";
     public static const string KEY_BACKGROUND_COLOR = "background-color";

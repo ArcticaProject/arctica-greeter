@@ -44,7 +44,7 @@ public class MainWindow : Gtk.Window
         add_accel_group (accel_group);
 
         var bg_color = Gdk.RGBA ();
-        bg_color.parse (UGSettings.get_string (UGSettings.KEY_BACKGROUND_COLOR));
+        bg_color.parse (AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR));
         override_background_color (Gtk.StateFlags.NORMAL, bg_color);
         get_accessible ().set_name (_("Login Screen"));
         has_resize_grip = false;
@@ -52,9 +52,9 @@ public class MainWindow : Gtk.Window
 
         realize ();
         background = new Background (Gdk.cairo_create (get_window ()).get_target ());
-        background.draw_grid = UGSettings.get_boolean (UGSettings.KEY_DRAW_GRID);
-        background.default_background = UGSettings.get_string (UGSettings.KEY_BACKGROUND);
-        background.set_logo (UGSettings.get_string (UGSettings.KEY_LOGO), UGSettings.get_string (UGSettings.KEY_BACKGROUND_LOGO));
+        background.draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
+        background.default_background = AGSettings.get_string (AGSettings.KEY_BACKGROUND);
+        background.set_logo (AGSettings.get_string (AGSettings.KEY_LOGO), AGSettings.get_string (AGSettings.KEY_BACKGROUND_LOGO));
         background.show ();
         add (background);
         ArcticaGreeter.add_style_class (background);

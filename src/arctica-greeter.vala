@@ -237,7 +237,7 @@ public class ArcticaGreeter
         /* Launch canberra */
         Canberra.Context.create (out canberra_context);
 
-        if (UGSettings.get_boolean (UGSettings.KEY_PLAY_READY_SOUND))
+        if (AGSettings.get_boolean (AGSettings.KEY_PLAY_READY_SOUND))
             canberra_context.play (0,
                                    Canberra.PROP_CANBERRA_XDG_THEME_NAME,
                                    "ubuntu",
@@ -540,24 +540,24 @@ public class ArcticaGreeter
         /* Set GTK+ settings */
         debug ("Setting GTK+ settings");
         var settings = Gtk.Settings.get_default ();
-        var value = UGSettings.get_string (UGSettings.KEY_THEME_NAME);
+        var value = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
         if (value != "")
             settings.set ("gtk-theme-name", value, null);
-        value = UGSettings.get_string (UGSettings.KEY_ICON_THEME_NAME);
+        value = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
         if (value != "")
             settings.set ("gtk-icon-theme-name", value, null);
-        value = UGSettings.get_string (UGSettings.KEY_FONT_NAME);
+        value = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
         if (value != "")
             settings.set ("gtk-font-name", value, null);
-        var double_value = UGSettings.get_double (UGSettings.KEY_XFT_DPI);
+        var double_value = AGSettings.get_double (AGSettings.KEY_XFT_DPI);
         if (double_value != 0.0)
             settings.set ("gtk-xft-dpi", (int) (1024 * double_value), null);
-        var boolean_value = UGSettings.get_boolean (UGSettings.KEY_XFT_ANTIALIAS);
+        var boolean_value = AGSettings.get_boolean (AGSettings.KEY_XFT_ANTIALIAS);
         settings.set ("gtk-xft-antialias", boolean_value, null);
-        value = UGSettings.get_string (UGSettings.KEY_XFT_HINTSTYLE);
+        value = AGSettings.get_string (AGSettings.KEY_XFT_HINTSTYLE);
         if (value != "")
             settings.set ("gtk-xft-hintstyle", value, null);
-        value = UGSettings.get_string (UGSettings.KEY_XFT_RGBA);
+        value = AGSettings.get_string (AGSettings.KEY_XFT_RGBA);
         if (value != "")
             settings.set ("gtk-xft-rgba", value, null);
 

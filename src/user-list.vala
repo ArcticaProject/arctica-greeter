@@ -80,7 +80,7 @@ public class UserList : GreeterList
                 return;
             }
 
-            var hidden_users = UGSettings.get_strv (UGSettings.KEY_HIDDEN_USERS);
+            var hidden_users = AGSettings.get_strv (AGSettings.KEY_HIDDEN_USERS);
             if (!value)
             {
                 foreach (var username in hidden_users)
@@ -582,7 +582,7 @@ public class UserList : GreeterList
     private bool change_background_timeout_cb ()
     {
         string? new_background_file = null;
-        if (menubar.high_contrast || !UGSettings.get_boolean (UGSettings.KEY_DRAW_USER_BACKGROUNDS))
+        if (menubar.high_contrast || !AGSettings.get_boolean (AGSettings.KEY_DRAW_USER_BACKGROUNDS))
             new_background_file = null;
         else if (selected_entry is UserPromptBox)
             new_background_file = (selected_entry as UserPromptBox).background;
@@ -1038,7 +1038,7 @@ public class UserList : GreeterList
 
         if (!show_hidden_users)
         {
-            var hidden_users = UGSettings.get_strv (UGSettings.KEY_HIDDEN_USERS);
+            var hidden_users = AGSettings.get_strv (AGSettings.KEY_HIDDEN_USERS);
             foreach (var username in hidden_users)
                 if (username == user.name)
                     return;

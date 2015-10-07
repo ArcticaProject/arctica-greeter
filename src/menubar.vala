@@ -106,7 +106,7 @@ public class MenuBar : Gtk.MenuBar
      */
     public void set_keyboard_state ()
     {
-        onscreen_keyboard_item.set_active (UGSettings.get_boolean (UGSettings.KEY_ONSCREEN_KEYBOARD));
+        onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
     }
 
     private string default_theme_name;
@@ -122,7 +122,7 @@ public class MenuBar : Gtk.MenuBar
 
         pack_direction = Gtk.PackDirection.RTL;
 
-        if (UGSettings.get_boolean (UGSettings.KEY_SHOW_HOSTNAME))
+        if (AGSettings.get_boolean (AGSettings.KEY_SHOW_HOSTNAME))
         {
             var label = new Gtk.Label (Posix.utsname ().nodename);
             label.show ();
@@ -227,13 +227,13 @@ public class MenuBar : Gtk.MenuBar
         high_contrast_item.add_accelerator ("activate", accel_group, Gdk.Key.h, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
         high_contrast_item.show ();
         submenu.append (high_contrast_item);
-        high_contrast_item.set_active (UGSettings.get_boolean (UGSettings.KEY_HIGH_CONTRAST));
+        high_contrast_item.set_active (AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST));
         var item = new Gtk.CheckMenuItem.with_label (_("Screen Reader"));
         item.toggled.connect (screen_reader_toggled_cb);
         item.add_accelerator ("activate", accel_group, Gdk.Key.s, Gdk.ModifierType.SUPER_MASK | Gdk.ModifierType.MOD1_MASK, Gtk.AccelFlags.VISIBLE);
         item.show ();
         submenu.append (item);
-        item.set_active (UGSettings.get_boolean (UGSettings.KEY_SCREEN_READER));
+        item.set_active (AGSettings.get_boolean (AGSettings.KEY_SCREEN_READER));
         return a11y_item;
     }
 
@@ -338,7 +338,7 @@ public class MenuBar : Gtk.MenuBar
 
         debug ("LANG=%s LANGUAGE=%s", Environment.get_variable ("LANG"), Environment.get_variable ("LANGUAGE"));
 
-        var indicator_list = UGSettings.get_strv(UGSettings.KEY_INDICATORS);
+        var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
 
         var update_indicator_list = false;
         for (var i = 0; i < indicator_list.length; i++)
@@ -351,7 +351,7 @@ public class MenuBar : Gtk.MenuBar
         }
 
         if (update_indicator_list)
-            UGSettings.set_strv(UGSettings.KEY_INDICATORS, indicator_list);
+            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
 
         foreach (var indicator in indicator_list)
             load_indicator(indicator);
@@ -379,7 +379,7 @@ public class MenuBar : Gtk.MenuBar
         /* var settings = new Settings ("org.gnome.desktop.a11y.applications");*/
         /*settings.set_boolean ("screen-keyboard-enabled", item.active);*/
 
-        UGSettings.set_boolean (UGSettings.KEY_ONSCREEN_KEYBOARD, item.active);
+        AGSettings.set_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD, item.active);
 
         if (keyboard_window == null)
         {
@@ -440,7 +440,7 @@ public class MenuBar : Gtk.MenuBar
         else
             settings.set ("gtk-theme-name", default_theme_name);
         high_contrast = item.active;
-        UGSettings.set_boolean (UGSettings.KEY_HIGH_CONTRAST, high_contrast);
+        AGSettings.set_boolean (AGSettings.KEY_HIGH_CONTRAST, high_contrast);
     }
 
     private void screen_reader_toggled_cb (Gtk.CheckMenuItem item)
@@ -451,7 +451,7 @@ public class MenuBar : Gtk.MenuBar
         /*var settings = new Settings ("org.gnome.desktop.a11y.applications");*/
         /*settings.set_boolean ("screen-reader-enabled", item.active);*/
 
-        UGSettings.set_boolean (UGSettings.KEY_SCREEN_READER, item.active);
+        AGSettings.set_boolean (AGSettings.KEY_SCREEN_READER, item.active);
 
         /* Hardcoded orca: */
         if (item.active)
