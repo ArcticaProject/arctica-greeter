@@ -23,7 +23,7 @@ extern bool gtk_style_context_lookup_color (Gtk.StyleContext ctx, string color_n
 
 public class DashEntry : Gtk.Entry, Fadable
 {
-    public static string font = "Ubuntu 14";
+    public static string font = "Cabin 14";
     public signal void respond ();
 
     public string constant_placeholder_text { get; set; }
@@ -163,7 +163,7 @@ public class DashEntry : Gtk.Entry, Fadable
 
         /* Draw text */
         var layout = create_pango_layout (constant_placeholder_text);
-        layout.set_font_description (Pango.FontDescription.from_string ("Ubuntu 13"));
+        layout.set_font_description (Pango.FontDescription.from_string ("Cabin 13"));
         Pango.cairo_show_layout (c, layout);
 
         c.restore ();

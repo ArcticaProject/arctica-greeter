@@ -38,7 +38,7 @@
       <summary>Icon theme to use</summary>
     </key>
     <key name="font-name" type="s">
-      <default>'Cantarell 11'</default>
+      <default>'Cabin 11'</default>
       <summary>Font to use</summary>
     </key>
     <key name="xft-antialias" type="b">

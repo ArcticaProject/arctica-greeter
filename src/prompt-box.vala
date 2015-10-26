@@ -172,7 +172,7 @@ public class PromptBox : FadableBox
         name_grid.hexpand = true;
 
         name_label = new FadingLabel ("");
-        name_label.override_font (Pango.FontDescription.from_string ("Ubuntu 13"));
+        name_label.override_font (Pango.FontDescription.from_string ("Cabin 13"));
         name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         name_label.valign = Gtk.Align.START;
         name_label.vexpand = true;
@@ -236,7 +236,7 @@ public class PromptBox : FadableBox
         small_name_grid.column_spacing = 4;
 
         small_name_label = new FadingLabel ("");
-        small_name_label.override_font (Pango.FontDescription.from_string ("Ubuntu 13"));
+        small_name_label.override_font (Pango.FontDescription.from_string ("Cabin 13"));
         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
@@ -436,7 +436,7 @@ public class PromptBox : FadableBox
     {
         var label = new FadingLabel (text);
 
-        label.override_font (Pango.FontDescription.from_string ("Ubuntu 10"));
+        label.override_font (Pango.FontDescription.from_string ("Cabin 10"));
 
         Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
         if (is_error)

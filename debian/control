@@ -27,6 +27,8 @@ Package: arctica-greeter
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+         fonts-cantarell,
+         fonts-cabin,
          lightdm,
          network-manager,
          upstart-bin,
