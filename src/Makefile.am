@@ -75,3 +75,5 @@ arctica_greeter_vala.stamp: $(top_srcdir)/config.h
 
 DISTCLEANFILES = \
 	Makefile.in
+	src/arctica_greeter_vala.stamp
+	src/logo_generator_vala.stamp
