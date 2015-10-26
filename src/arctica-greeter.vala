@@ -497,7 +497,7 @@ public class ArcticaGreeter
 
         /* Set the cursor to not be the crap default */
         debug ("Setting cursor");
-        Gdk.get_default_root_window ().set_cursor (new Gdk.Cursor (Gdk.CursorType.LEFT_PTR));
+        Gdk.get_default_root_window ().set_cursor (new Gdk.Cursor.for_display (Gdk.Display.get_default (), Gdk.CursorType.LEFT_PTR));
 
         bool do_show_version = false;
         bool do_test_mode = false;

@@ -234,7 +234,7 @@ public class DashEntry : Gtk.Entry, Fadable
     {
         base.realize ();
 
-        var cursor = new Gdk.Cursor (Gdk.CursorType.LEFT_PTR);
+        var cursor = new Gdk.Cursor.for_display (get_display (), Gdk.CursorType.LEFT_PTR);
         var attrs = Gdk.WindowAttr ();
         attrs.x = 0;
         attrs.y = 0;
