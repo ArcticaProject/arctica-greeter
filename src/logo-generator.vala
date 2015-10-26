@@ -22,21 +22,22 @@ public class Main : Object
 	    stdout.printf ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
 	    return 0;
 	}
-	Cairo.ImageSurface surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, 245, 43);
+	Cairo.ImageSurface surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, 245, 44);
 	Cairo.Context context = new Cairo.Context (surface);
-	context.translate (42, 11);
 	Cairo.ImageSurface logo = new Cairo.ImageSurface.from_png (file);
 	context.set_source_surface (logo, 0, 0);
 	context.paint();
 
-	context.set_source_rgba (1, 1, 1, 1);
-	context.translate (logo.get_width() + 0.25*logo.get_height(), logo.get_height());
+	context.set_source_rgb (0.7, 0.7, 0.7);
+	context.translate (logo.get_width() + 0.1*logo.get_height(), logo.get_height());
+	context.move_to (10, -24);
 
 	var font_description = new Pango.FontDescription();
-	font_description.set_family("Cantarell");
-	font_description.set_size((int)(0.75*logo.get_height() * Pango.SCALE));
+	font_description.set_family("Droid Sans");
+	font_description.set_size((int)(0.4*logo.get_height() * Pango.SCALE));
 	var layout = Pango.cairo_create_layout (context);
 	layout.set_font_description (font_description);
+	layout.set_spacing (10);
 	layout.set_text (text, -1);
 	Pango.cairo_show_layout_line(context, layout.get_line(0));
 
