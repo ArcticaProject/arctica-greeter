@@ -70,4 +70,3 @@ CLEANFILES = \
 
 DISTCLEANFILES = \
 	Makefile.in
-	tests/arctica_greeter_test_vala.stamp
