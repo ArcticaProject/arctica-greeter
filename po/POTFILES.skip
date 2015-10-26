@@ -29,4 +29,3 @@ tests/session-list.c
 tests/shutdown-dialog.c
 tests/toggle-box.c
 tests/user-list.c
-

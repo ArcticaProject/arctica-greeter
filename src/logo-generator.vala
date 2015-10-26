@@ -33,7 +33,7 @@ public class Main : Object
 	context.translate (logo.get_width() + 0.25*logo.get_height(), logo.get_height());
 
 	var font_description = new Pango.FontDescription();
-	font_description.set_family("Ubuntu");
+	font_description.set_family("Cantarell");
 	font_description.set_size((int)(0.75*logo.get_height() * Pango.SCALE));
 	var layout = Pango.cairo_create_layout (context);
 	layout.set_font_description (font_description);
