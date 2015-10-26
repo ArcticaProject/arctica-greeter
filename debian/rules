@@ -26,3 +26,5 @@ override_dh_auto_clean:
 	rm -f src/arctica_greeter_vala.stamp
 	rm -f src/logo_generator_vala.stamp
 	rm -f tests/arctica_greeter_test_vala.stamp
+	rm -f src/*.c
+	rm -f tests/*.c
