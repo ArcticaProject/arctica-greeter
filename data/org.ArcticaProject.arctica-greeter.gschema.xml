@@ -98,5 +98,9 @@
       <default>300</default>
       <summary>Number of seconds of inactivity before blanking the screen. Set to 0 to never timeout.</summary>
     </key>
+    <key name="remote-service-fqdn" type="s">
+      <default>'service.arctica-project.org'</default>
+      <summary>Default FQDN for host offering Remote Logon Service</summary>
+    </key>
   </schema>
 </schemalist>

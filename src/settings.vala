@@ -41,6 +41,7 @@ public class AGSettings
     public static const string KEY_INDICATORS = "indicators";
     public static const string KEY_HIDDEN_USERS = "hidden-users";
     public static const string KEY_IDLE_TIMEOUT = "idle-timeout";    
+    public static const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
 
     public static bool get_boolean (string key)
     {

@@ -554,12 +554,12 @@ public class UserList : GreeterList
             dialog.add_button (_("Cancel"), 0);
             var b = dialog.add_button (_("Set Up…"), 1);
             b.grab_focus ();
-            dialog.text = _("You need an Ubuntu Remote Login account to use this service. Would you like to set up an account now?");
+            dialog.text = _("You need a Remote Logon account to use this service. Would you like to set up an account now?");
         }
         else
         {
             dialog.add_button (_("OK"), 0);
-            dialog.text = _("You need an Ubuntu Remote Login account to use this service. Visit uccs.canonical.com to set up an account.");
+            dialog.text = _("You need a Remote Logon account to use this service. Visit https://%s to set up an account.", AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_FQDN));
         }
 
         dialog.show_all ();
