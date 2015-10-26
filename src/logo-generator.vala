@@ -29,7 +29,7 @@ public class Main : Object
 	context.paint();
 
 	context.set_source_rgb (0.7, 0.7, 0.7);
-	context.translate (logo.get_width() + 0.1*logo.get_height(), logo.get_height());
+	context.translate (logo.get_width(), logo.get_height());
 	context.move_to (10, -24);
 
 	var font_description = new Pango.FontDescription();
