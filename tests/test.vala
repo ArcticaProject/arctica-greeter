@@ -755,6 +755,8 @@ public class Test
             DirUtils.create_with_parents(schema_dir, 0700);
 
             var data_dirs = Environment.get_variable("XDG_DATA_DIRS");
+            if (data_dirs == null)
+                data_dirs = "/usr/share";
             Environment.set_variable("XDG_DATA_DIRS", "%s:%s".printf(Path.build_filename(dir, "share"), data_dirs), true);
 
             var top_srcdir = Environment.get_variable("top_srcdir");
