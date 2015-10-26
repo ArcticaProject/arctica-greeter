@@ -559,7 +559,7 @@ public class UserList : GreeterList
         else
         {
             dialog.add_button (_("OK"), 0);
-            dialog.text = _("You need a Remote Logon account to use this service. Visit https://%s to set up an account.", AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_FQDN));
+            dialog.text = _("You need a Remote Logon account to use this service. Visit https://%s to set up an account.").printf(AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_FQDN)));
         }
 
         dialog.show_all ();
