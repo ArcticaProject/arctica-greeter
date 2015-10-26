@@ -322,7 +322,7 @@ public class MenuBar : Gtk.MenuBar
         greeter_set_env ("GIO_USE_VFS", "local");
         greeter_set_env ("GVFS_DISABLE_FUSE", "1");
 
-        /* Hint to have mate-settings-daemon run in greeter mode */
+        /* Hint to have gnome-settings-daemon run in greeter mode */
         greeter_set_env ("RUNNING_UNDER_GDM", "1");
 
         /* Let indicators know about our unique dbus name */

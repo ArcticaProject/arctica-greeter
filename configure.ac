@@ -45,12 +45,12 @@ if $PKG_CONFIG --exists unity-settings-daemon; then
         SD_BINARY="$USD_BINARY"
     fi
 
-elif $PKG_CONFIG --exists mate-settings-daemon; then
-    MSD_BINARY=`$PKG_CONFIG --variable=binary mate-settings-daemon`
-    if test -z "$MSD_BINARY"; then
-        AC_MSG_NOTICE([Could not find path to mate-settings-daemon binary])
+elif $PKG_CONFIG --exists gnome-settings-daemon; then
+    GSD_BINARY=`$PKG_CONFIG --variable=binary gnome-settings-daemon`
+    if test -z "$GSD_BINARY"; then
+        AC_MSG_NOTICE([Could not find path to gnome-settings-daemon binary])
     else
-        SD_BINARY="$MSD_BINARY"
+        SD_BINARY="$GSD_BINARY"
     fi
 
 fi
@@ -58,7 +58,7 @@ fi
 if test -z "$SD_BINARY"; then
     AC_MSG_ERROR([Could not find any of the supported X11 settings daemons])
 else
-    AC_DEFINE_UNQUOTED([SD_BINARY], ["$MSD_BINARY"], [Path to m-s-d])
+    AC_DEFINE_UNQUOTED([SD_BINARY], ["$SD_BINARY"], [Path to u-s-d/g-s-d])
 fi
 
 dnl ###########################################################################

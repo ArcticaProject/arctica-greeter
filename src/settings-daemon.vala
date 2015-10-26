@@ -156,7 +156,7 @@ public class SettingsDaemon : Object
         if (n_names != 0)
             return;
 
-        debug ("All bus names acquired, starting mate-settings-daemon");
+        debug ("All bus names acquired, starting %s", Config.SD_BINARY);
 
         try
         {
@@ -164,7 +164,7 @@ public class SettingsDaemon : Object
         }
         catch (SpawnError e)
         {
-            debug ("Could not start mate-settings-daemon: %s", e.message);
+            debug ("Could not start %s: %s", Config.SD_BINARY, e.message);
         }
     }
 }
