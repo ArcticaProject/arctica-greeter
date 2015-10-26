@@ -37,15 +37,7 @@ AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/unity/indicators"], [
 INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator3-0.4`
 AC_SUBST(INDICATORDIR)
 
-if $PKG_CONFIG --exists unity-settings-daemon; then
-    USD_BINARY=`$PKG_CONFIG --variable=binary unity-settings-daemon`
-    if test -z "$USD_BINARY"; then
-        AC_MSG_NOTICE([Could not find path to unity-settings-daemon binary])
-    else
-        SD_BINARY="$USD_BINARY"
-    fi
-
-elif $PKG_CONFIG --exists gnome-settings-daemon; then
+if $PKG_CONFIG --exists gnome-settings-daemon; then
     GSD_BINARY=`$PKG_CONFIG --variable=binary gnome-settings-daemon`
     if test -z "$GSD_BINARY"; then
         AC_MSG_NOTICE([Could not find path to gnome-settings-daemon binary])
@@ -56,9 +48,9 @@ elif $PKG_CONFIG --exists gnome-settings-daemon; then
 fi
 
 if test -z "$SD_BINARY"; then
-    AC_MSG_ERROR([Could not find any of the supported X11 settings daemons])
+    AC_MSG_ERROR([Could not find any supported X11 settings daemon])
 else
-    AC_DEFINE_UNQUOTED([SD_BINARY], ["$SD_BINARY"], [Path to u-s-d/g-s-d])
+    AC_DEFINE_UNQUOTED([SD_BINARY], ["$SD_BINARY"], [Path to g-s-d])
 fi
 
 dnl ###########################################################################
