@@ -468,7 +468,7 @@ public class ArcticaGreeter
         Environment.set_variable ("GTK_MODULES", "atk-bridge", false);
 
         Pid atspi_pid = 0;
-        Pid upstart_pid = 0;
+//      Pid upstart_pid = 0;
 
         try
         {
