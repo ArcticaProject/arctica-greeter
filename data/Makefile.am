@@ -37,6 +37,9 @@ dist_pkgdata_DATA = \
 	ubuntu_badge.png \
 	unknown_badge.png
 
+logo.png: logo-bare.png
+	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png
+
 @GSETTINGS_RULES@
 gsettings_SCHEMAS = org.ArcticaProject.arctica-greeter.gschema.xml
 
@@ -46,4 +49,5 @@ EXTRA_DIST = \
 	$(gsettings_SCHEMAS)
 
 DISTCLEANFILES = \
-	Makefile.in
+	Makefile.in \
+	logo.png
