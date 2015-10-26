@@ -14,7 +14,6 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	dh_auto_install
-	cp logo.png debian/arctica-greeter/usr/share/arctica-greeter/logo.png
 	mkdir -p debian/arctica-greeter/var/lib/polkit-1/localauthority/10-vendor.d/
 	cp debian/arctica-greeter.pkla debian/arctica-greeter/var/lib/polkit-1/localauthority/10-vendor.d/
 	mkdir -p debian/arctica-greeter/usr/share/lightdm/lightdm.conf.d/
