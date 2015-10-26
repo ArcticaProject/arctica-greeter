@@ -23,7 +23,6 @@ override_dh_auto_install:
 
 override_dh_auto_clean:
 	dh_auto_clean
-	rm -f logo.png
 	src/arctica_greeter_vala.stamp
 	src/logo_generator_vala.stamp
 	tests/arctica_greeter_test_vala.stamp
