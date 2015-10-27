@@ -36,6 +36,7 @@ dist_pkgdata_DATA = \
 	switcher_corner.png \
 	switcher_left.png \
 	switcher_top.png \
+	twm_badge.png \
 	ubuntu_badge.png \
 	unknown_badge.png \
 	xfce_badge.png
