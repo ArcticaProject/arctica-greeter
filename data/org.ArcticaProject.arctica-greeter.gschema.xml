@@ -6,7 +6,7 @@
       <summary>Background file to use, either an image path or a color (e.g. #772953)</summary>
     </key>
     <key name="background-color" type="s">
-      <default>'#2C001E'</default>
+      <default>'#2F70C6'</default>
       <summary>Background color (e.g. #772953), set before wallpaper is seen</summary>
     </key>
     <key name="draw-user-backgrounds" type="b">
