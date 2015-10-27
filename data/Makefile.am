@@ -24,6 +24,7 @@ dist_pkgdata_DATA = \
 	lxde_badge.png \
 	mate_badge.png \
 	message.png \
+	openbox_badge.png \
 	recovery_console_badge.png \
 	remote_login_help.png \
 	restart_highlight.png \

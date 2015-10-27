@@ -105,9 +105,11 @@ public class SessionList : GreeterList
         case "gnome-shell":
         case "gnome-wayland":
         case "gnome":
+        case "openbox-gnome":
             return "gnome_badge.png";
         case "kde":
         case "kde-plasma":
+        case "openbox-kde":
         case "plasma":
             return "kde_badge.png";
         case "lxde":
@@ -115,6 +117,8 @@ public class SessionList : GreeterList
             return "lxde_badge.png";
         case "mate":
             return "mate_badge.png";
+        case "openbox":
+            return "openbox_badge.png";
         case "twm":
             return "twm_badge.png";
         case "xfce":
