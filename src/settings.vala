@@ -43,6 +43,8 @@ public class AGSettings
     public static const string KEY_GROUP_FILTER = "group-filter";
     public static const string KEY_IDLE_TIMEOUT = "idle-timeout";    
     public static const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
+    public static const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
+    public static const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
 
     public static bool get_boolean (string key)
     {
