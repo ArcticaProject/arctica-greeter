@@ -40,7 +40,8 @@ dist_pkgdata_DATA = \
 	twm_badge.png \
 	ubuntu_badge.png \
 	unknown_badge.png \
-	xfce_badge.png
+	xfce_badge.png \
+	xsession_badge.png
 
 logo.png: logo-bare.png
 	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png

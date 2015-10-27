@@ -112,6 +112,8 @@ public class SessionList : GreeterList
         case "openbox-kde":
         case "plasma":
             return "kde_badge.png";
+        case "lightdm-xsession":
+            return "xsession_badge.png";
         case "lxde":
         case "LXDE":
             return "lxde_badge.png";
