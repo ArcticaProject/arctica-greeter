@@ -100,7 +100,7 @@ public class ArcticaGreeter
 
         main_window = new MainWindow ();
 
-        Bus.own_name (BusType.SESSION, "com.canonical.ArcticaGreeter", BusNameOwnerFlags.NONE);
+        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE);
 
         dbus_object = new DialogDBusInterface ();
         dbus_object.open_dialog.connect ((type) =>
@@ -119,7 +119,7 @@ public class ArcticaGreeter
             main_window.show_shutdown_dialog (dialog_type);
         });
         dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
-        Bus.own_name (BusType.SESSION, "com.canonical.Unity", BusNameOwnerFlags.NONE,
+        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeterSession", BusNameOwnerFlags.NONE,
                       (c) =>
                       {
                           try
@@ -132,7 +132,7 @@ public class ArcticaGreeter
                           }
                       },
                       null,
-                      () => debug ("Failed to acquire name com.canonical.Unity"));
+                      () => debug ("Failed to acquire name org.ArcticaProject.ArcticaGreeterSession"));
 
         start_fake_wm ();
         Gdk.threads_add_idle (ready_cb);

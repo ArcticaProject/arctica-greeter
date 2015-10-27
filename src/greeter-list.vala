@@ -24,7 +24,7 @@ private int get_grid_offset (int size)
     return (int) (size % grid_size) / 2;
 }
 
-[DBus (name="com.canonical.ArcticaGreeter.List")]
+[DBus (name="org.ArcticaProject.ArcticaGreeter.List")]
 public class ListDBusInterface : Object
 {
     private GreeterList list;

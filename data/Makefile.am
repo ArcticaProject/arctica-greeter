@@ -41,7 +41,9 @@ logo.png: logo-bare.png
 	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png
 
 @GSETTINGS_RULES@
-gsettings_SCHEMAS = org.ArcticaProject.arctica-greeter.gschema.xml
+gsettings_SCHEMAS = \
+	org.ArcticaProject.arctica-greeter.gschema.xml \
+	org.ArcticaProject.ArcticaGreeterSession.gschema.xml
 
 dist_man1_MANS = arctica-greeter.1
 
