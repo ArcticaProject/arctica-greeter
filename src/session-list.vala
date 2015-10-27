@@ -115,6 +115,8 @@ public class SessionList : GreeterList
             return "lxde_badge.png";
         case "mate":
             return "mate_badge.png";
+        case "xfce":
+            return "xfce_badge.png";
         case "xterm":
             return "recovery_console_badge.png";
         case "remote-login":
