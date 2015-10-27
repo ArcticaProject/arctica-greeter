@@ -10,7 +10,7 @@
     <value nick="Expanded" value="1" />
   </enum>
 
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/" id="org.ArcticaProject.ArcticaGreeterSession" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/" id="org.ArcticaProject.ArcticaGreeterSession" gettext-domain="arctica-greeter">
     <key enum="form-factor-enum" name="form-factor">
       <default>"Automatic"</default>
       <summary>The form factor Unity should target.</summary>
@@ -69,7 +69,7 @@
         the mouse cursor is over the relative mouse area.</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/interface/" id="org.ArcticaProject.ArcticaGreeterSession.Interface" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/interface/" id="org.ArcticaProject.ArcticaGreeterSession.Interface" gettext-domain="arctica-greeter">
     <key type="d" name="text-scale-factor">
       <default>1.0</default>
       <range min="0.5" max="3.0"/>
@@ -99,7 +99,7 @@
         defined in 'app-scale-factor-monitor' is not provided or available.</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/launcher/" id="org.ArcticaProject.ArcticaGreeterSession.Launcher" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/launcher/" id="org.ArcticaProject.ArcticaGreeterSession.Launcher" gettext-domain="arctica-greeter">
     <key type="as" name="favorites">
       <default>[
         'application://ubiquity.desktop',
@@ -137,14 +137,14 @@
       <description>This is a detection key for the favorite migration script to know whether the needed migration is done or not.</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/devices/" id="org.ArcticaProject.ArcticaGreeterSession.Devices" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/devices/" id="org.ArcticaProject.ArcticaGreeterSession.Devices" gettext-domain="arctica-greeter">
     <key type="as" name="blacklist">
         <default>[]</default>
         <summary>List of device uuid blacklist from the launcher.</summary>
         <description>These devices are not shown in the launcher by default.</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/dash/" id="org.ArcticaProject.ArcticaGreeterSession.Dash" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/dash/" id="org.ArcticaProject.ArcticaGreeterSession.Dash" gettext-domain="arctica-greeter">
     <key type="as" name="scopes">
       <default>[ 'home.scope', 'applications.scope', 'files.scope', 'video.scope', 'music.scope', 'photos.scope', 'social.scope' ]</default>
       <summary>List of scope ids specifying which scopes should be created and the order to display them in.</summary>
@@ -156,7 +156,7 @@
       <description>List of favorite scopes displayed in the dash.</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/decorations/" id="org.ArcticaProject.ArcticaGreeterSession.Decorations" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/decorations/" id="org.ArcticaProject.ArcticaGreeterSession.Decorations" gettext-domain="arctica-greeter">
     <key type="u" name="grab-wait">
       <default>175</default>
       <range min="0" max="1000"/>
@@ -165,7 +165,7 @@
         showing the proper mouse cursor, and grabbing the window)</description>
     </key>
   </schema>
-  <schema path="/org/ArcticaProject/ArcticaGreeterSession/integrated-menus/" id="org.ArcticaProject.ArcticaGreeterSession.IntegratedMenus" gettext-domain="unity">
+  <schema path="/org/ArcticaProject/ArcticaGreeterSession/integrated-menus/" id="org.ArcticaProject.ArcticaGreeterSession.IntegratedMenus" gettext-domain="arctica-greeter">
     <key type="u" name="click-movement-threshold">
       <default>15</default>
       <range min="0" max="30"/>
