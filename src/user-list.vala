@@ -1056,7 +1056,7 @@ public class UserList : GreeterList
 
     private bool filter_group (string user_name)
     {
-        var group_filter = UGSettings.get_strv (UGSettings.KEY_GROUP_FILTER);
+        var group_filter = AGSettings.get_strv (AGSettings.KEY_GROUP_FILTER);
 
         /* Empty list means do not filter by group */
         if (group_filter.length == 0)
