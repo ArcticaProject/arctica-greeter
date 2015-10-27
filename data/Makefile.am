@@ -21,6 +21,8 @@ dist_pkgdata_DATA = \
 	hibernate.png \
 	kde_badge.png \
 	logo.png \
+	lxde_badge.png \
+	mate_badge.png \
 	message.png \
 	recovery_console_badge.png \
 	remote_login_help.png \
@@ -35,7 +37,8 @@ dist_pkgdata_DATA = \
 	switcher_left.png \
 	switcher_top.png \
 	ubuntu_badge.png \
-	unknown_badge.png
+	unknown_badge.png \
+	xfce_badge.png
 
 logo.png: logo-bare.png
 	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png
