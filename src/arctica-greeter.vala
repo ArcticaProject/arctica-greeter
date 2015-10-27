@@ -119,7 +119,7 @@ public class ArcticaGreeter
             main_window.show_shutdown_dialog (dialog_type);
         });
         dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
-        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeterSession", BusNameOwnerFlags.NONE,
+        Bus.own_name (BusType.SESSION, "org.gnome.SessionManager", BusNameOwnerFlags.NONE,
                       (c) =>
                       {
                           try
@@ -132,7 +132,7 @@ public class ArcticaGreeter
                           }
                       },
                       null,
-                      () => debug ("Failed to acquire name org.ArcticaProject.ArcticaGreeterSession"));
+                      () => debug ("Failed to acquire name org.gnome.SessionManager"));
 
         start_fake_wm ();
         Gdk.threads_add_idle (ready_cb);
