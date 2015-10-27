@@ -45,8 +45,7 @@ logo.png: logo-bare.png
 
 @GSETTINGS_RULES@
 gsettings_SCHEMAS = \
-	org.ArcticaProject.arctica-greeter.gschema.xml \
-	org.ArcticaProject.ArcticaGreeterSession.gschema.xml
+	org.ArcticaProject.arctica-greeter.gschema.xml
 
 dist_man1_MANS = arctica-greeter.1
 
