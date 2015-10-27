@@ -30,11 +30,11 @@ public class Main : Object
 
 	context.set_source_rgb (0.7, 0.7, 0.7);
 	context.translate (logo.get_width(), logo.get_height());
-	context.move_to (10, -24);
+	context.move_to (0.2*logo.get_height(),-24);
 
 	var font_description = new Pango.FontDescription();
 	font_description.set_family("Droid Sans");
-	font_description.set_size((int)(0.4*logo.get_height() * Pango.SCALE));
+	font_description.set_size((int)(0.35*logo.get_height() * Pango.SCALE));
 	var layout = Pango.cairo_create_layout (context);
 	layout.set_font_description (font_description);
 	layout.set_spacing (10);
