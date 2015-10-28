@@ -44,6 +44,8 @@ public class ToggleBox : Gtk.Box
 
     public void set_normal_button_style (Gtk.Button button)
     {
+        try
+        {
             /* Tighten padding on buttons to not be so large, default color scheme for buttons */
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {padding: 8px;}\n"+
@@ -56,7 +58,12 @@ public class ToggleBox : Gtk.Box
                                   "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
                                   "}\n", -1);
             button.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            return;
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading session chooser style: %s", e.message);
+        }
+        return;
     }
 
     private Gtk.Button selected_button;
@@ -125,14 +132,7 @@ public class ToggleBox : Gtk.Box
         item.add (hbox);
         hbox.show_all ();
 
-        try
-        {
-            set_normal_button_style (item);
-        }
-        catch (Error e)
-        {
-            debug ("Internal error loading session chooser style: %s", e.message);
-        }
+        set_normal_button_style (item);
 
         item.set_data<string> ("toggle-list-key", key);
         return item;
