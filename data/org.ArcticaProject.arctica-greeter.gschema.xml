@@ -95,7 +95,7 @@
       <summary>Whether to play sound when greeter is ready</summary>
     </key>
     <key name="indicators" type="as">
-      <default>['ug-accessibility', 'com.canonical.indicator.keyboard', 'com.canonical.indicator.session', 'com.canonical.indicator.datetime', 'com.canonical.indicator.power', 'com.canonical.indicator.sound', 'application']</default>
+      <default>['ug-accessibility', 'org.ayatana.indicator.keyboard', 'org.ayatana.indicator.session', 'org.ayatana.indicator.datetime', 'org.ayatana.indicator.power', 'org.ayatana.indicator.sound', 'application']</default>
       <summary>Which indicators to load</summary>
     </key>
     <key name="hidden-users" type="as">

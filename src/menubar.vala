@@ -244,9 +244,9 @@ public class MenuBar : Gtk.MenuBar
     //  string path;
     //  Indicator.Object io;
 
-    //  /* To stay backwards compatible, use com.canonical.indicator as the default prefix */
+    //  /* To stay backwards compatible, use org.ayatana.indicator as the default prefix */
     //  if (indicator_name.index_of_char ('.') < 0)
-    //      path = @"$dir/com.canonical.indicator.$indicator_name";
+    //      path = @"$dir/org.ayatana.indicator.$indicator_name";
     //  else
     //      path = @"$dir/$indicator_name";
 
@@ -345,7 +345,7 @@ public class MenuBar : Gtk.MenuBar
         {
             if (indicator_list[i] == "ug-keyboard")
             {
-                indicator_list[i] = "com.canonical.indicator.keyboard";
+                indicator_list[i] = "org.ayatana.indicator.keyboard";
                 update_indicator_list = true;
             }
         }
