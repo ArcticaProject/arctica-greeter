@@ -22,7 +22,8 @@ dnl #### removed from PKG_CHECK_MODULES: libido3-0.
 PKG_CHECK_MODULES(ARCTICA_GREETER, [
     gtk+-3.0
     gdk-x11-3.0
-    indicator3-0.4
+    libayatana-ido3-0.4 >= 0.4.0
+    ayatana-indicator3-0.4 >= 0.6.0
     liblightdm-gobject-1 >= 1.12.0
     freetype2
     cairo-ft
@@ -32,9 +33,9 @@ PKG_CHECK_MODULES(ARCTICA_GREETER, [
     xext
 ])
 
-AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/unity/indicators"], [Indicator files are searched for in this directory])
+AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/ayatana/indicators"], [Indicator files are searched for in this directory])
 
-INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator3-0.4`
+INDICATORDIR=`$PKG_CONFIG --variable=indicatordir ayatana-indicator3-0.4`
 AC_SUBST(INDICATORDIR)
 
 if $PKG_CONFIG --exists gnome-settings-daemon; then

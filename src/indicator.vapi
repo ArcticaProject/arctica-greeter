@@ -1,6 +1,6 @@
 [CCode (cprefix = "Indicator", lower_case_cprefix = "indicator_")]
 namespace Indicator {
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public class DesktopShortcuts : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public DesktopShortcuts (string file, string identity);
@@ -11,7 +11,7 @@ namespace Indicator {
 		[NoAccessorMethod]
 		public string identity { owned get; construct; }
 	}
-	[CCode (cheader_filename = "libindicator/indicator-object.h")]
+	[CCode (cheader_filename = "libayatana-indicator/indicator-object.h")]
 	public class Object : GLib.Object {
 		[CCode (has_construct_function = false)]
 		protected Object ();
@@ -36,7 +36,7 @@ namespace Indicator {
 		[NoWrapper]
 		public virtual unowned string get_name_hint ();
 		public virtual bool get_show_now (Indicator.ObjectEntry entry);
-//		public virtual int get_position ();
+		public virtual int get_position ();
 		[NoWrapper]
 		public virtual void reserved1 ();
 		[NoWrapper]
@@ -57,13 +57,13 @@ namespace Indicator {
 		public virtual signal void show_now_changed (Indicator.ObjectEntry entry, bool show_now_state);
 	}
 
-//	[CCode (cheader_filename = "libindicator/indicator-ng.h")]
-//	public class Ng : Object {
-//		[CCode (has_construct_function = false)]
-//		public Ng.for_profile (string filename, string profile) throws GLib.Error;
-//	}
+	[CCode (cheader_filename = "libayatana-indicator/indicator-ng.h")]
+	public class Ng : Object {
+		[CCode (has_construct_function = false)]
+		public Ng.for_profile (string filename, string profile) throws GLib.Error;
+	}
 	[Compact]
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public class ObjectEntry {
 		public weak string accessible_desc;
 		public weak Gtk.Image image;
@@ -77,7 +77,7 @@ namespace Indicator {
 		public static void activate (Indicator.Object io, Indicator.ObjectEntry entry, uint timestamp);
 		public static void close (Indicator.Object io, Indicator.ObjectEntry entry, uint timestamp);
 	}
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public class Service : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public Service (string name);
@@ -95,7 +95,7 @@ namespace Indicator {
 		public string name { owned get; set; }
 		public virtual signal void shutdown ();
 	}
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public class ServiceManager : GLib.Object {
 		[CCode (has_construct_function = false)]
 		public ServiceManager (string dbus_name);
@@ -115,52 +115,52 @@ namespace Indicator {
 		public string name { owned get; set; }
 		public virtual signal void connection_change (bool connected);
 	}
-	[CCode (cprefix = "INDICATOR_OBJECT_SCROLL_", has_type_id = false, cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cprefix = "INDICATOR_OBJECT_SCROLL_", has_type_id = false, cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public enum ScrollDirection {
 		UP,
 		DOWN,
 		LEFT,
 		RIGHT
 	}
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h", has_target = false)]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h", has_target = false)]
 	public delegate GLib.Type get_type_t ();
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h", has_target = false)]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h", has_target = false)]
 	public delegate unowned string get_version_t ();
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string GET_TYPE_S;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string GET_VERSION_S;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_ACCESSIBLE_DESC_UPDATE;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_ENTRY_ADDED;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_ENTRY_MOVED;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_ENTRY_REMOVED;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_ENTRY_SCROLLED;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_MENU_SHOW;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string OBJECT_SIGNAL_SHOW_NOW_CHANGED;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string SERVICE_MANAGER_SIGNAL_CONNECTION_CHANGE;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string SERVICE_SIGNAL_SHUTDOWN;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const int SET_VERSION;
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public const string VERSION;
-	[CCode (cname = "get_version", cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cname = "get_version", cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public static unowned string get_version ();
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public static unowned Gtk.Image image_helper (string name);
-	[CCode (cheader_filename = "gtk/gtk.h,libindicator/indicator.h,libindicator/indicator-desktop-shortcuts.h,libindicator/indicator-image-helper.h,libindicator/indicator-object.h,libindicator/indicator-service.h,libindicator/indicator-service-manager.h")]
+	[CCode (cheader_filename = "gtk/gtk.h,libayatana-indicator/indicator.h,libayatana-indicator/indicator-desktop-shortcuts.h,libayatana-indicator/indicator-image-helper.h,libayatana-indicator/indicator-object.h,libayatana-indicator/indicator-service.h,libayatana-indicator/indicator-service-manager.h")]
 	public static void image_helper_update (Gtk.Image image, string name);
 }
 
-//[CCode (cheader_filename="libido/libido.h", lower_case_cprefix = "ido_")]
-//namespace Ido {
-//	public void init ();
-//}
+[CCode (cheader_filename="libayatana-ido/libayatana-ido.h", lower_case_cprefix = "ido_")]
+namespace Ido {
+	public void init ();
+}

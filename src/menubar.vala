@@ -237,36 +237,36 @@ public class MenuBar : Gtk.MenuBar
         return a11y_item;
     }
 
-    //private Indicator.Object? load_indicator_file (string indicator_name)
-    //{
+    private Indicator.Object? load_indicator_file (string indicator_name)
+    {
 
-    //  string dir = Config.INDICATOR_FILE_DIR;
-    //  string path;
-    //  Indicator.Object io;
+        string dir = Config.INDICATOR_FILE_DIR;
+        string path;
+        Indicator.Object io;
 
-    //  /* To stay backwards compatible, use org.ayatana.indicator as the default prefix */
-    //  if (indicator_name.index_of_char ('.') < 0)
-    //      path = @"$dir/org.ayatana.indicator.$indicator_name";
-    //  else
-    //      path = @"$dir/$indicator_name";
+        /* To stay backwards compatible, use org.ayatana.indicator as the default prefix */
+        if (indicator_name.index_of_char ('.') < 0)
+            path = @"$dir/org.ayatana.indicator.$indicator_name";
+        else
+            path = @"$dir/$indicator_name";
 
-    //  try
-    //  {
-    //      io = new Indicator.Ng.for_profile (path, "desktop_greeter");
-    //  }
-    //  catch (FileError error)
-    //  {
-    //      /* the calling code handles file-not-found; don't warn here */
-    //      return null;
-    //  }
-    //  catch (Error error)
-    //  {
-    //      warning ("unable to load %s: %s", indicator_name, error.message);
-    //      return null;
-    //  }
+        try
+        {
+            io = new Indicator.Ng.for_profile (path, "desktop_greeter");
+        }
+        catch (FileError error)
+        {
+            /* the calling code handles file-not-found; don't warn here */
+            return null;
+        }
+        catch (Error error)
+        {
+            warning ("unable to load %s: %s", indicator_name, error.message);
+            return null;
+        }
 
-    //    return io;
-    //}
+        return io;
+    }
 
     private Indicator.Object? load_indicator_library (string indicator_name)
     {
@@ -294,13 +294,10 @@ public class MenuBar : Gtk.MenuBar
         }
         else
         {
-    //      var io = load_indicator_file (indicator_name);
+            var io = load_indicator_file (indicator_name);
 
-    //      if (io == null)
-    //          io = load_indicator_library (indicator_name);
-
-    // Use the below line of code instead...
-            var io = load_indicator_library (indicator_name);
+            if (io == null)
+                io = load_indicator_library (indicator_name);
 
             if (io != null)
             {
@@ -356,17 +353,17 @@ public class MenuBar : Gtk.MenuBar
         foreach (var indicator in indicator_list)
             load_indicator(indicator);
 
-    // indicator_objects.sort((a, b) => {
-    //     int pos_a = a.get_position ();
-    //     int pos_b = b.get_position ();
+       indicator_objects.sort((a, b) => {
+           int pos_a = a.get_position ();
+           int pos_b = b.get_position ();
 
-    //     if (pos_a < 0)
-    //         pos_a = 1000;
-    //     if (pos_b < 0)
-    //         pos_b = 1000;
+           if (pos_a < 0)
+               pos_a = 1000;
+           if (pos_b < 0)
+               pos_b = 1000;
 
-    //      return pos_a - pos_b;
-    //  });
+           return pos_a - pos_b;
+        });
 
         debug ("LANG=%s LANGUAGE=%s", Environment.get_variable ("LANG"), Environment.get_variable ("LANGUAGE"));
     }
