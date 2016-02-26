@@ -53,7 +53,7 @@ public class UserList : GreeterList
     private uint change_background_timeout = 0;
 
     private uint remote_logon_service_watch;
-    private RemoteLoginService remote_logon_service;
+    private RemoteLogonService remote_logon_service;
     private List<RemoteServer?> remote_directory_server_list = new List<RemoteServer?> ();
     private List<RemoteServer?> remote_login_server_list = new List<RemoteServer?> ();
     private HashTable<string, Gtk.Widget> current_remote_fields;
@@ -358,7 +358,7 @@ public class UserList : GreeterList
 
     private void on_remote_logon_service_appeared (DBusConnection conn, string name)
     {
-        Bus.get_proxy.begin<RemoteLoginService> (BusType.SESSION,
+        Bus.get_proxy.begin<RemoteLogonService> (BusType.SESSION,
             "org.ArcticaProject.RemoteLogon",
             "/org/ArcticaProject/RemoteLogon",
             0,
@@ -366,7 +366,7 @@ public class UserList : GreeterList
             (obj, res) => {
                 try
                 {
-                    remote_logon_service = Bus.get_proxy.end<RemoteLoginService> (res);
+                    remote_logon_service = Bus.get_proxy.end<RemoteLogonService> (res);
                     remote_logon_service.servers_updated.connect (set_remote_directory_servers);
                     remote_logon_service.login_servers_updated.connect (remote_login_servers_updated);
                     remote_logon_service.login_changed.connect (remote_login_changed);

@@ -41,7 +41,7 @@ protected struct RemoteServer
 }
 
 [DBus (name = "org.ArcticaProject.RemoteLogon")]
-interface RemoteLoginService : Object
+interface RemoteLogonService : Object
 {
     public abstract async void get_servers (out RemoteServer[] serverList) throws IOError;
     public abstract async void get_servers_for_login (string url, string emailAddress, string password, bool allowCache, out bool loginSuccess, out string dataType, out RemoteServer[] serverList) throws IOError;
