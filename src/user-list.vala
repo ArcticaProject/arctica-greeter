@@ -167,7 +167,7 @@ public class UserList : GreeterList
         if (!ArcticaGreeter.singleton.test_mode &&
             ArcticaGreeter.singleton.show_remote_login_hint ())
             remote_logon_service_watch = Bus.watch_name (BusType.SESSION,
-                                            "org.ArticaProject.RemoteLogon",
+                                            "org.ArcticaProject.RemoteLogon",
                                             BusNameWatcherFlags.AUTO_START,
                                             on_remote_logon_service_appeared,
                                             on_remote_logon_service_vanished);
@@ -201,7 +201,7 @@ public class UserList : GreeterList
         }
         catch (IOError e)
         {
-            debug ("Calling GetServers on org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
+            debug ("Calling GetServers on org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
             remove_remote_servers ();
         }
     }
@@ -359,8 +359,8 @@ public class UserList : GreeterList
     private void on_remote_logon_service_appeared (DBusConnection conn, string name)
     {
         Bus.get_proxy.begin<RemoteLoginService> (BusType.SESSION,
-            "org.ArticaProject.RemoteLogon",
-            "/org/ArticaProject/RemoteLogon",
+            "org.ArcticaProject.RemoteLogon",
+            "/org/ArcticaProject/RemoteLogon",
             0,
             null,
             (obj, res) => {
@@ -374,7 +374,7 @@ public class UserList : GreeterList
                 }
                 catch (IOError e)
                 {
-                    debug ("Getting the org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
+                    debug ("Getting the org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                     remove_remote_servers ();
                     remote_logon_service = null;
                 }
@@ -489,7 +489,7 @@ public class UserList : GreeterList
             }
             catch (IOError e)
             {
-                debug ("Calling get_servers in org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
+                debug ("Calling get_servers in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
             }
 
             if (login_success)
@@ -782,7 +782,7 @@ public class UserList : GreeterList
                         catch (IOError e)
                         {
                             email_domains.resize (0);
-                            debug ("Calling get_cached_domains_for_server in org.ArticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
+                            debug ("Calling get_cached_domains_for_server in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                         }
 
                         var entry = add_prompt (_("Email:") + " / " + _("Username:"));

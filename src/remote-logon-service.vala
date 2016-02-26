@@ -40,7 +40,7 @@ protected struct RemoteServer
     public RemoteServerApplication[] applications;
 }
 
-[DBus (name = "org.ArticaProject.RemoteLogon")]
+[DBus (name = "org.ArcticaProject.RemoteLogon")]
 interface RemoteLoginService : Object
 {
     public abstract async void get_servers (out RemoteServer[] serverList) throws IOError;
