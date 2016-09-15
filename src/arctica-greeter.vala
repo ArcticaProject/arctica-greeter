@@ -47,15 +47,14 @@ public class ArcticaGreeter
     private static Timer log_timer;
 
     private DialogDBusInterface dbus_object;
+    private SettingsDaemonDBusInterface  settings_daemon_proxy;
+    public signal void xsettings_ready ();
+    public signal void greeter_ready ();
 
     private ArcticaGreeter (bool test_mode_)
     {
         singleton = this;
         test_mode = test_mode_;
-
-        /* Prepare to set the background */
-        debug ("Creating background surface");
-        background_surface = create_root_surface (Gdk.Screen.get_default ());
 
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
@@ -98,44 +97,32 @@ public class ArcticaGreeter
                 warning ("Failed to load state from %s: %s\n", state_file, e.message);
         }
 
-        main_window = new MainWindow ();
+        /* Render things after xsettings is ready */
+        xsettings_ready.connect ( xsettings_ready_cb );
 
-        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE);
-
-        dbus_object = new DialogDBusInterface ();
-        dbus_object.open_dialog.connect ((type) =>
-        {
-            ShutdownDialogType dialog_type;
-            switch (type)
-            {
-            default:
-            case 1:
-                dialog_type = ShutdownDialogType.LOGOUT;
-                break;
-            case 2:
-                dialog_type = ShutdownDialogType.RESTART;
-                break;
-            }
-            main_window.show_shutdown_dialog (dialog_type);
-        });
-        dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
-        Bus.own_name (BusType.SESSION, "org.ArcticaProject.GreeterSession", BusNameOwnerFlags.NONE,
-                      (c) =>
-                      {
-                          try
-                          {
-                              c.register_object ("/org/gnome/SessionManager/EndSessionDialog", dbus_object);
-                          }
-                          catch (Error e)
-                          {
-                              warning ("Failed to register /org/gnome/SessionManager/EndSessionDialog: %s", e.message);
-                          }
-                      },
-                      null,
-                      () => debug ("Failed to acquire name org.ArcticaProject.GreeterSession"));
-
-        start_fake_wm ();
-        Gdk.threads_add_idle (ready_cb);
+        GLib.Bus.watch_name (BusType.SESSION, "org.gnome.SettingsDaemon", BusNameWatcherFlags.NONE,
+                             (c, name, owner) =>
+                             {
+                                try {
+                                    settings_daemon_proxy = GLib.Bus.get_proxy_sync (
+                                        BusType.SESSION, "org.gnome.SettingsDaemon", "/org/gnome/SettingsDaemon");
+                                    settings_daemon_proxy.plugin_activated.connect (
+                                        (name) =>
+                                        {
+                                            if (name == "xsettings") {
+                                                debug ("xsettings is ready");
+                                                xsettings_ready ();
+                                            }
+                                        }
+                                    );
+                                }
+                                catch (Error e)
+                                {
+                                    debug ("Failed to get USD proxy, proceed anyway");
+                                    xsettings_ready ();
+                                }
+                            },
+                            null);
     }
 
     public string? get_state (string key)
@@ -450,6 +437,53 @@ public class ArcticaGreeter
         stderr.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
     }
 
+    private void xsettings_ready_cb ()
+    {
+        /* Prepare to set the background */
+        debug ("Creating background surface");
+        background_surface = create_root_surface (Gdk.Screen.get_default ());
+
+        main_window = new MainWindow ();
+
+        Bus.own_name (BusType.SESSION, "org.arctica-project.ArcticaGreeter", BusNameOwnerFlags.NONE);
+
+        dbus_object = new DialogDBusInterface ();
+        dbus_object.open_dialog.connect ((type) =>
+        {
+            ShutdownDialogType dialog_type;
+            switch (type)
+            {
+            default:
+            case 1:
+                dialog_type = ShutdownDialogType.LOGOUT;
+                break;
+            case 2:
+                dialog_type = ShutdownDialogType.RESTART;
+                break;
+            }
+            main_window.show_shutdown_dialog (dialog_type);
+        });
+        dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
+        Bus.own_name (BusType.SESSION, "org.arctica-project.GreeterSession", BusNameOwnerFlags.NONE,
+                      (c) =>
+                      {
+                          try
+                          {
+                              c.register_object ("/org/gnome/SessionManager/EndSessionDialog", dbus_object);
+                          }
+                          catch (Error e)
+                          {
+                              warning ("Failed to register /org/gnome/SessionManager/EndSessionDialog: %s", e.message);
+                          }
+                      },
+                      null,
+                      () => debug ("Failed to acquire name org.arctica-project.GreeterSession"));
+
+        start_fake_wm ();
+        Gdk.threads_add_idle (ready_cb);
+        greeter_ready ();
+    }
+
     public static int main (string[] args)
     {
         /* Protect memory from being paged to disk, as we deal with passwords */
@@ -564,8 +598,11 @@ public class ArcticaGreeter
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
 
-        debug ("Showing greeter");
-        greeter.show ();
+        greeter.greeter_ready.connect (() => {
+            debug ("Showing greeter");
+            greeter.show ();
+        });
+
 
         if (!do_test_mode)
         {
@@ -657,4 +694,11 @@ public class DialogDBusInterface : Object
     {
         close_dialog ();
     }
+}
+
+[DBus (name="org.gnome.SettingsDaemon")]
+private interface SettingsDaemonDBusInterface : Object
+{
+    public signal void plugin_activated (string name);
+    public signal void plugin_deactivated (string name);
 }
