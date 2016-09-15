@@ -425,6 +425,8 @@ public class Background : Gtk.Fixed
         timer = new AnimateTimer (AnimateTimer.ease_in_out, 700);
         timer.animate.connect (animate_cb);
 
+	resize_mode = Gtk.ResizeMode.QUEUE;
+
         loaders = new HashTable<string?, BackgroundLoader> (str_hash, str_equal);
 
         notify["current-background"].connect (() => { reload (); });
