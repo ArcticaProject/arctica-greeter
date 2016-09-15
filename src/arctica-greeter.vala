@@ -170,11 +170,16 @@ public class ArcticaGreeter
 
     public bool start_session (string? session, Background bg)
     {
+        /* Explicitly set the right scale before closing window */
+        var screen = Gdk.Screen.get_default ();
+        var scale = screen.get_monitor_scale_factor (screen.get_number ());
+        background_surface.set_device_scale (scale, scale);
+
         /* Paint our background onto the root window before we close our own window */
         var c = new Cairo.Context (background_surface);
         bg.draw_full (c, Background.DrawFlags.NONE);
         c = null;
-        refresh_background (Gdk.Screen.get_default (), background_surface);
+        refresh_background (screen, background_surface);
 
         if (test_mode)
         {
@@ -374,18 +379,19 @@ public class ArcticaGreeter
         var visual = screen.get_system_visual ();
 
         unowned X.Display display = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
+        unowned X.Screen xscreen = (screen as Gdk.X11.Screen).get_xscreen ();
 
         var pixmap = X.CreatePixmap (display,
                                      (screen.get_root_window () as Gdk.X11.Window).get_xid (),
-                                     screen.get_width (),
-                                     screen.get_height (),
+                                     xscreen.width_of_screen (),
+                                     xscreen.height_of_screen (),
                                      visual.get_depth ());
 
         /* Convert into a Cairo surface */
         var surface = new Cairo.XlibSurface (display,
                                              pixmap,
                                              (visual as Gdk.X11.Visual).get_xvisual (),
-                                             screen.get_width (), screen.get_height ());
+                                             xscreen.width_of_screen (), xscreen.height_of_screen ());
 
         return surface;
     }
