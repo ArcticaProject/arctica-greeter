@@ -6,8 +6,10 @@ LDFLAGS+=-Wl,--as-needed
 	dh $@ --with autoreconf --fail-missing
 
 override_dh_autoreconf:
+	if [ ! -e po/arctica-greeter.pot.bak ]; then \
+	    cp po/arctica-greeter.pot po/arctica-greeter.pot.bak; \
+	fi
 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
-
 
 override_dh_auto_build:
 	dh_auto_build
@@ -23,6 +25,9 @@ override_dh_auto_install:
 
 override_dh_auto_clean:
 	dh_auto_clean
+	if [ -e po/arctica-greeter.pot.bak ]; then \
+	    mv -f po/arctica-greeter.pot.bak po/arctica-greeter.pot; \
+	fi
 	rm -f src/arctica_greeter_vala.stamp
 	rm -f src/logo_generator_vala.stamp
 	rm -f tests/arctica_greeter_test_vala.stamp
