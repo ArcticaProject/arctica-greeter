@@ -70,7 +70,7 @@ public class MenuBar : Gtk.MenuBar
     public Gtk.Window? keyboard_window { get; private set; default = null; }
     public Gtk.AccelGroup? accel_group { get; construct; }
 
-    private static const int HEIGHT = 24;
+    private const int HEIGHT = 24;
 
     public MenuBar (Background bg, Gtk.AccelGroup ag)
     {

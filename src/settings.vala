@@ -20,31 +20,31 @@
 
 public class AGSettings
 {
-    public static const string KEY_BACKGROUND = "background";
-    public static const string KEY_BACKGROUND_COLOR = "background-color";
-    public static const string KEY_DRAW_USER_BACKGROUNDS = "draw-user-backgrounds";
-    public static const string KEY_DRAW_GRID = "draw-grid";
-    public static const string KEY_SHOW_HOSTNAME = "show-hostname";
-    public static const string KEY_LOGO = "logo";
-    public static const string KEY_BACKGROUND_LOGO = "background-logo";
-    public static const string KEY_THEME_NAME = "theme-name";
-    public static const string KEY_ICON_THEME_NAME = "icon-theme-name";
-    public static const string KEY_FONT_NAME = "font-name";
-    public static const string KEY_XFT_ANTIALIAS = "xft-antialias";
-    public static const string KEY_XFT_DPI = "xft-dpi";
-    public static const string KEY_XFT_HINTSTYLE = "xft-hintstyle";
-    public static const string KEY_XFT_RGBA = "xft-rgba";
-    public static const string KEY_ONSCREEN_KEYBOARD = "onscreen-keyboard";
-    public static const string KEY_HIGH_CONTRAST = "high-contrast";
-    public static const string KEY_SCREEN_READER = "screen-reader";
-    public static const string KEY_PLAY_READY_SOUND = "play-ready-sound";
-    public static const string KEY_INDICATORS = "indicators";
-    public static const string KEY_HIDDEN_USERS = "hidden-users";
-    public static const string KEY_GROUP_FILTER = "group-filter";
-    public static const string KEY_IDLE_TIMEOUT = "idle-timeout";    
-    public static const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
-    public static const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
-    public static const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
+    public const string KEY_BACKGROUND = "background";
+    public const string KEY_BACKGROUND_COLOR = "background-color";
+    public const string KEY_DRAW_USER_BACKGROUNDS = "draw-user-backgrounds";
+    public const string KEY_DRAW_GRID = "draw-grid";
+    public const string KEY_SHOW_HOSTNAME = "show-hostname";
+    public const string KEY_LOGO = "logo";
+    public const string KEY_BACKGROUND_LOGO = "background-logo";
+    public const string KEY_THEME_NAME = "theme-name";
+    public const string KEY_ICON_THEME_NAME = "icon-theme-name";
+    public const string KEY_FONT_NAME = "font-name";
+    public const string KEY_XFT_ANTIALIAS = "xft-antialias";
+    public const string KEY_XFT_DPI = "xft-dpi";
+    public const string KEY_XFT_HINTSTYLE = "xft-hintstyle";
+    public const string KEY_XFT_RGBA = "xft-rgba";
+    public const string KEY_ONSCREEN_KEYBOARD = "onscreen-keyboard";
+    public const string KEY_HIGH_CONTRAST = "high-contrast";
+    public const string KEY_SCREEN_READER = "screen-reader";
+    public const string KEY_PLAY_READY_SOUND = "play-ready-sound";
+    public const string KEY_INDICATORS = "indicators";
+    public const string KEY_HIDDEN_USERS = "hidden-users";
+    public const string KEY_GROUP_FILTER = "group-filter";
+    public const string KEY_IDLE_TIMEOUT = "idle-timeout";    
+    public const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
+    public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
+    public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
 
     public static bool get_boolean (string key)
     {
@@ -101,5 +101,5 @@ public class AGSettings
         return gsettings.set_strv (key, value);
     }
 
-    private static const string SCHEMA = "org.ArcticaProject.arctica-greeter";
+    private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
 }
