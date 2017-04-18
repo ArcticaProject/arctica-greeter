@@ -68,7 +68,7 @@ public class ArcticaGreeter
         }
         catch (Error e)
         {
-            warning ("Failed to connect to LightDM daemon");
+            warning ("Failed to connect to LightDM daemon: %s", e.message);
         }
         if (!connected && !test_mode)
             Posix.exit (Posix.EXIT_FAILURE);
