@@ -3,7 +3,7 @@
 check_PROGRAMS = arctica-greeter-test
 
 check: arctica-greeter-test
-	UBUNTU_MENUPROXY=0 top_srcdir=$(top_srcdir) . xvfb-run -s "-extension GLX" -a ./arctica-greeter-test
+	UBUNTU_MENUPROXY=0 top_srcdir=$(top_srcdir) @VALGRIND@ xvfb-run -s "-extension GLX" -a ./arctica-greeter-test
 
 arctica_greeter_test_SOURCES = \
 	test.vala \

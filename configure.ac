@@ -54,6 +54,9 @@ else
     AC_DEFINE_UNQUOTED([SD_BINARY], ["$SD_BINARY"], [Path to g-s-d])
 fi
 
+AC_CHECK_PROG(VALGRIND, valgrind, valgrind --trace-children=yes --num-callers=256)
+AC_SUBST(VALGRIND)
+
 dnl ###########################################################################
 dnl Internationalization
 dnl ###########################################################################

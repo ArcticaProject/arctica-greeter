@@ -19,6 +19,7 @@ Build-Depends: at-spi2-core,
                lightdm-vala | liblightdm-gobject-1-dev,
                libpixman-1-dev,
                valac (>= 0.20.0),
+               valgrind [amd64],
                xvfb,
                xauth,
 Homepage: http://arctica-project.org
