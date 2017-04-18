@@ -97,32 +97,36 @@ public class ArcticaGreeter
                 warning ("Failed to load state from %s: %s\n", state_file, e.message);
         }
 
-        /* Render things after xsettings is ready */
-        xsettings_ready.connect ( xsettings_ready_cb );
+        if (!test_mode) {
+            /* Render things after xsettings is ready */
+            xsettings_ready.connect ( xsettings_ready_cb );
 
-        GLib.Bus.watch_name (BusType.SESSION, "org.gnome.SettingsDaemon", BusNameWatcherFlags.NONE,
-                             (c, name, owner) =>
-                             {
-                                try {
-                                    settings_daemon_proxy = GLib.Bus.get_proxy_sync (
-                                        BusType.SESSION, "org.gnome.SettingsDaemon", "/org/gnome/SettingsDaemon");
-                                    settings_daemon_proxy.plugin_activated.connect (
-                                        (name) =>
-                                        {
-                                            if (name == "xsettings") {
-                                                debug ("xsettings is ready");
-                                                xsettings_ready ();
+            GLib.Bus.watch_name (BusType.SESSION, "org.gnome.SettingsDaemon", BusNameWatcherFlags.NONE,
+                                 (c, name, owner) =>
+                                 {
+                                    try {
+                                        settings_daemon_proxy = GLib.Bus.get_proxy_sync (
+                                            BusType.SESSION, "org.gnome.SettingsDaemon", "/org/gnome/SettingsDaemon");
+                                        settings_daemon_proxy.plugin_activated.connect (
+                                            (name) =>
+                                            {
+                                                if (name == "xsettings") {
+                                                    debug ("xsettings is ready");
+                                                    xsettings_ready ();
+                                                }
                                             }
-                                        }
-                                    );
-                                }
-                                catch (Error e)
-                                {
-                                    debug ("Failed to get USD proxy, proceed anyway");
-                                    xsettings_ready ();
-                                }
-                            },
-                            null);
+                                        );
+                                    }
+                                    catch (Error e)
+                                    {
+                                        debug ("Failed to get USD proxy, proceed anyway");
+                                        xsettings_ready ();
+                                    }
+                                },
+                                null);
+        }
+        else
+            xsettings_ready_cb ();
     }
 
     public string? get_state (string key)
@@ -604,14 +608,14 @@ public class ArcticaGreeter
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
 
-        greeter.greeter_ready.connect (() => {
-            debug ("Showing greeter");
-            greeter.show ();
-        });
-
-
         if (!do_test_mode)
         {
+
+            greeter.greeter_ready.connect (() => {
+                debug ("Showing greeter");
+                greeter.show ();
+            });
+
 //          /* Start the indicator services */
 //          try
 //          {
@@ -642,6 +646,8 @@ public class ArcticaGreeter
                 warning ("Error starting nm-applet: %s", e.message);
             }
         }
+        else
+            greeter.show ();
 
         /* Setup a handler for TERM so we quit cleanly */
         GLib.Unix.signal_add(GLib.ProcessSignal.TERM, () => {
