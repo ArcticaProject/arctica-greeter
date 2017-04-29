@@ -110,12 +110,12 @@ public class ArcticaGreeter
             /* Render things after xsettings is ready */
             xsettings_ready.connect ( xsettings_ready_cb );
 
-            GLib.Bus.watch_name (BusType.SESSION, "org.gnome.SettingsDaemon", BusNameWatcherFlags.NONE,
+            GLib.Bus.watch_name (BusType.SESSION, "org.mate.SettingsDaemon", BusNameWatcherFlags.NONE,
                                  (c, name, owner) =>
                                  {
                                     try {
                                         settings_daemon_proxy = GLib.Bus.get_proxy_sync (
-                                            BusType.SESSION, "org.gnome.SettingsDaemon", "/org/gnome/SettingsDaemon");
+                                            BusType.SESSION, "org.mate.SettingsDaemon", "/org/mate/SettingsDaemon");
                                         settings_daemon_proxy.plugin_activated.connect (
                                             (name) =>
                                             {
@@ -752,7 +752,7 @@ public class DialogDBusInterface : Object
     }
 }
 
-[DBus (name="org.gnome.SettingsDaemon")]
+[DBus (name="org.mate.SettingsDaemon")]
 private interface SettingsDaemonDBusInterface : Object
 {
     public signal void plugin_activated (string name);

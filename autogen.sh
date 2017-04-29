@@ -14,8 +14,8 @@ REQUIRED_AUTOMAKE_VERSION=1.7
     exit 1
 }
 
-which gnome-autogen.sh || {
-    echo "You need to install gnome-common from the GNOME CVS"
+which mate-autogen || {
+    echo "You need to install mate-common from the MATE Desktop Environment"
     exit 1
 }
-USE_GNOME2_MACROS=1 USE_COMMON_DOC_BUILD=yes . gnome-autogen.sh
+USE_COMMON_DOC_BUILD=yes . mate-autogen

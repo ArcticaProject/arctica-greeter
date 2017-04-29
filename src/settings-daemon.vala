@@ -26,28 +26,28 @@ public class SettingsDaemon : Object
 
     public void start ()
     {
-        string[] disabled = { "org.gnome.settings-daemon.plugins.background",
-                              "org.gnome.settings-daemon.plugins.clipboard",
-                              "org.gnome.settings-daemon.plugins.font",
-                              "org.gnome.settings-daemon.plugins.gconf",
-                              "org.gnome.settings-daemon.plugins.gsdwacom",
-                              "org.gnome.settings-daemon.plugins.housekeeping",
-                              "org.gnome.settings-daemon.plugins.keybindings",
-                              "org.gnome.settings-daemon.plugins.keyboard",
-                              "org.gnome.settings-daemon.plugins.media-keys",
-                              "org.gnome.settings-daemon.plugins.mouse",
-                              "org.gnome.settings-daemon.plugins.print-notifications",
-                              "org.gnome.settings-daemon.plugins.smartcard",
-                              "org.gnome.settings-daemon.plugins.sound",
-                              "org.gnome.settings-daemon.plugins.wacom" };
+        string[] disabled = { "org.mate.settings-daemon.plugins.background",
+                              "org.mate.settings-daemon.plugins.clipboard",
+                              "org.mate.settings-daemon.plugins.font",
+                              "org.mate.settings-daemon.plugins.gconf",
+                              "org.mate.settings-daemon.plugins.gsdwacom",
+                              "org.mate.settings-daemon.plugins.housekeeping",
+                              "org.mate.settings-daemon.plugins.keybindings",
+                              "org.mate.settings-daemon.plugins.keyboard",
+                              "org.mate.settings-daemon.plugins.media-keys",
+                              "org.mate.settings-daemon.plugins.mouse",
+                              "org.mate.settings-daemon.plugins.print-notifications",
+                              "org.mate.settings-daemon.plugins.smartcard",
+                              "org.mate.settings-daemon.plugins.sound",
+                              "org.mate.settings-daemon.plugins.wacom" };
 
-        string[] enabled =  { "org.gnome.settings-daemon.plugins.a11y-keyboard",
-                              "org.gnome.settings-daemon.plugins.a11y-settings",
-                              "org.gnome.settings-daemon.plugins.color",
-                              "org.gnome.settings-daemon.plugins.cursor",
-                              "org.gnome.settings-daemon.plugins.power",
-                              "org.gnome.settings-daemon.plugins.xrandr",
-                              "org.gnome.settings-daemon.plugins.xsettings" };
+        string[] enabled =  { "org.mate.settings-daemon.plugins.a11y-keyboard",
+                              "org.mate.settings-daemon.plugins.a11y-settings",
+                              "org.mate.settings-daemon.plugins.color",
+                              "org.mate.settings-daemon.plugins.cursor",
+                              "org.mate.settings-daemon.plugins.power",
+                              "org.mate.settings-daemon.plugins.xrandr",
+                              "org.mate.settings-daemon.plugins.xsettings" };
 
         foreach (var schema in disabled)
             set_plugin_enabled (schema, false);
