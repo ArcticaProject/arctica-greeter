@@ -28,24 +28,20 @@ public class SettingsDaemon : Object
     {
         string[] disabled = { "org.mate.settings-daemon.plugins.background",
                               "org.mate.settings-daemon.plugins.clipboard",
-                              "org.mate.settings-daemon.plugins.font",
-                              "org.mate.settings-daemon.plugins.gconf",
-                              "org.mate.settings-daemon.plugins.gsdwacom",
                               "org.mate.settings-daemon.plugins.housekeeping",
                               "org.mate.settings-daemon.plugins.keybindings",
                               "org.mate.settings-daemon.plugins.keyboard",
                               "org.mate.settings-daemon.plugins.media-keys",
                               "org.mate.settings-daemon.plugins.mouse",
-                              "org.mate.settings-daemon.plugins.print-notifications",
+                              "org.mate.settings-daemon.plugins.mpris",
                               "org.mate.settings-daemon.plugins.smartcard",
                               "org.mate.settings-daemon.plugins.sound",
-                              "org.mate.settings-daemon.plugins.wacom" };
+                              "org.mate.settings-daemon.plugins.typing-break",
+                              "org.mate.settings-daemon.plugins.xrdb" };
 
         string[] enabled =  { "org.mate.settings-daemon.plugins.a11y-keyboard",
                               "org.mate.settings-daemon.plugins.a11y-settings",
-                              "org.mate.settings-daemon.plugins.color",
-                              "org.mate.settings-daemon.plugins.cursor",
-                              "org.mate.settings-daemon.plugins.power",
+                              "org.mate.settings-daemon.plugins.media-keys",
                               "org.mate.settings-daemon.plugins.xrandr",
                               "org.mate.settings-daemon.plugins.xsettings" };
 
