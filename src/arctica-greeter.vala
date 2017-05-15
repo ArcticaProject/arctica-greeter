@@ -665,7 +665,7 @@ public class ArcticaGreeter
             {
                 string[] argv;
 
-                Shell.parse_argv ("systemctl --user --start ayatana-indicator-service", out argv);
+                Shell.parse_argv ("systemctl --user --start ayatana-indicator-application", out argv);
                 Process.spawn_async (null,
                                      argv,
                                      null,
@@ -712,7 +712,7 @@ public class ArcticaGreeter
             {
                 string[] argv;
 
-                Shell.parse_argv ("systemctl --user --stop ayatana-indicator-services", out argv);
+                Shell.parse_argv ("systemctl --user --stop ayatana-indicator-application", out argv);
                 Process.spawn_async (null,
                                      argv,
                                      null,
