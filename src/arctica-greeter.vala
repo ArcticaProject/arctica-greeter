@@ -556,7 +556,7 @@ public class ArcticaGreeter
         Environment.set_variable ("GTK_MODULES", "atk-bridge", false);
 
         Pid atspi_pid = 0;
-//      Pid upstart_pid = 0;
+        Pid systemd_pid = 0;
 
         try
         {
@@ -660,23 +660,23 @@ public class ArcticaGreeter
                 greeter.show ();
             });
 
-//          /* Start the indicator services */
-//          try
-//          {
-//              string[] argv;
-//
-//              Shell.parse_argv ("init --user --startup-event indicator-services-start", out argv);
-//              Process.spawn_async (null,
-//                                   argv,
-//                                   null,
-//                                   SpawnFlags.SEARCH_PATH,
-//                                   null,
-//                                   out upstart_pid);
-//          }
-//          catch (Error e)
-//          {
-//              warning ("Error starting Upstart for indicators: %s", e.message);
-//          }
+            /* Start the indicator services */
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user --start ayatana-indicator-service", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out systemd_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting Ayatana Indicators Application Service: %s", e.message);
+            }
 
             /* Make nm-applet hide items the user does not have permissions to interact with */
             Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
@@ -705,17 +705,27 @@ public class ArcticaGreeter
 
         debug ("Cleaning up");
 
-//      if (upstart_pid != 0)
-//      {
-//          Posix.kill (upstart_pid, Posix.SIGTERM);
-//          int status;
-//          Posix.waitpid (upstart_pid, out status, 0);
-//          if (Process.if_exited (status))
-//              debug ("Upstart exited with return value %d", Process.exit_status (status));
-//          else
-//              debug ("Upstart terminated with signal %d", Process.term_sig (status));
-//          upstart_pid = 0;
-//      }
+        if (systemd_pid != 0)
+        {
+            /* Start the indicator services */
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user --stop ayatana-indicator-services", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out systemd_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error stopping Ayatana Indicators Application Service: %s", e.message);
+            }
+            systemd_pid = 0;
+        }
 
         if (atspi_pid != 0)
         {
