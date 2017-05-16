@@ -556,7 +556,6 @@ public class ArcticaGreeter
         Environment.set_variable ("GTK_MODULES", "atk-bridge", false);
 
         Pid atspi_pid = 0;
-        Pid systemd_pid = 0;
 
         try
         {
@@ -652,6 +651,8 @@ public class ArcticaGreeter
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
 
+        Pid dummy_pid = 0;
+
         if (!do_test_mode)
         {
 
@@ -671,11 +672,27 @@ public class ArcticaGreeter
                                      null,
                                      SpawnFlags.SEARCH_PATH,
                                      null,
-                                     out systemd_pid);
+                                     out dummy_pid);
             }
             catch (Error e)
             {
                 warning ("Error starting Ayatana Indicators Application Service: %s", e.message);
+            }
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user start ayatana-indicator-power", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out dummy_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting Ayatana Indicators Power Service: %s", e.message);
             }
 
             /* Make nm-applet hide items the user does not have permissions to interact with */
@@ -705,9 +722,10 @@ public class ArcticaGreeter
 
         debug ("Cleaning up");
 
-        if (systemd_pid != 0)
+        if (!do_test_mode)
         {
-            /* Start the indicator services */
+
+            /* Stop the indicator services */
             try
             {
                 string[] argv;
@@ -718,13 +736,28 @@ public class ArcticaGreeter
                                      null,
                                      SpawnFlags.SEARCH_PATH,
                                      null,
-                                     out systemd_pid);
+                                     out dummy_pid);
             }
             catch (Error e)
             {
                 warning ("Error stopping Ayatana Indicators Application Service: %s", e.message);
             }
-            systemd_pid = 0;
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user stop ayatana-indicator-power", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out dummy_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error stopping Ayatana Indicators Power Service: %s", e.message);
+            }
         }
 
         if (atspi_pid != 0)
