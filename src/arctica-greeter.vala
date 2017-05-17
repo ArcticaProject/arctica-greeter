@@ -651,7 +651,25 @@ public class ArcticaGreeter
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
 
-        Pid dummy_pid = 0;
+        string systemd_stderr;
+        int systemd_exitcode = 0;
+
+        var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
+
+        var update_indicator_list = false;
+        for (var i = 0; i < indicator_list.length; i++)
+        {
+            if (indicator_list[i] == "ug-keyboard")
+            {
+                indicator_list[i] = "org.ayatana.indicator.keyboard";
+                update_indicator_list = true;
+            }
+        }
+
+        if (update_indicator_list)
+            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
+
+        var launched_indicator_services = new List<string>();
 
         if (!do_test_mode)
         {
@@ -661,56 +679,46 @@ public class ArcticaGreeter
                 greeter.show ();
             });
 
-            /* Start the indicator services */
-            try
+            var indicator_service = "";
+            foreach (unowned string indicator in indicator_list)
             {
-                string[] argv;
+                if ("ug-" in indicator && ! ("." in indicator))
+                    continue;
 
-                Shell.parse_argv ("systemctl --user start ayatana-indicator-application", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting Ayatana Indicators Application Service: %s", e.message);
-            }
-            try
-            {
-                string[] argv;
+                if ("org.ayatana.indicator." in indicator)
+                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set(".")[3]);
+                else if ("ayatana-" in indicator)
+                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set("-")[1]);
+                else
+                    indicator_service = indicator;
 
-                Shell.parse_argv ("systemctl --user start ayatana-indicator-power", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting Ayatana Indicators Power Service: %s", e.message);
-            }
-            try
-            {
-                string[] argv;
+                try {
+                    /* Start the indicator service */
+                    string[] argv;
 
-                Shell.parse_argv ("systemctl --user start ayatana-indicator-session", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting Ayatana Indicators Session Service: %s", e.message);
-            }
+                    Shell.parse_argv ("systemctl --user start %s".printf(indicator_service), out argv);
+                    Process.spawn_sync (null,
+                                        argv,
+                                        null,
+                                        SpawnFlags.SEARCH_PATH,
+                                        null,
+                                        null,
+                                        out systemd_stderr,
+                                        out systemd_exitcode);
 
+                    if (systemd_exitcode == 0)
+                    {
+                        launched_indicator_services.append(indicator_service);
+                        debug ("Successfully started Indicator Service '%s'", indicator_service);
+                    }
+                    else {
+                        warning ("Systemd failed to start Indicator Service '%s': %s", indicator_service, systemd_stderr);
+                    }
+                }
+                catch (Error e) {
+                    warning ("Error starting Indicator Service '%s': %s", indicator_service, e.message);
+                }
+            }
 
             /* Make nm-applet hide items the user does not have permissions to interact with */
             Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
@@ -742,54 +750,34 @@ public class ArcticaGreeter
         if (!do_test_mode)
         {
 
-            /* Stop the indicator services */
-            try
+            foreach (unowned string indicator_service in launched_indicator_services)
             {
-                string[] argv;
 
-                Shell.parse_argv ("systemctl --user stop ayatana-indicator-application", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error stopping Ayatana Indicators Application Service: %s", e.message);
-            }
-            try
-            {
-                string[] argv;
+                try {
+                    /* Stop this indicator service */
+                    string[] argv;
 
-                Shell.parse_argv ("systemctl --user stop ayatana-indicator-power", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error stopping Ayatana Indicators Power Service: %s", e.message);
-            }
-            try
-            {
-                string[] argv;
+                    Shell.parse_argv ("systemctl --user stop %s".printf(indicator_service), out argv);
+                    Process.spawn_sync (null,
+                                        argv,
+                                        null,
+                                        SpawnFlags.SEARCH_PATH,
+                                        null,
+                                        null,
+                                        out systemd_stderr,
+                                        out systemd_exitcode);
 
-                Shell.parse_argv ("systemctl --user stop ayatana-indicator-session", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out dummy_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error stopping Ayatana Indicators Session Service: %s", e.message);
+                    if (systemd_exitcode == 0)
+                    {
+                        debug ("Successfully stopped Indicator Service '%s' via systemd", indicator_service);
+                    }
+                    else {
+                        warning ("Systemd failed to stop Indicator Service '%s': %s", indicator_service, systemd_stderr);
+                    }
+                }
+                catch (Error e) {
+                    warning ("Error stopping Indicator Service '%s': %s", indicator_service, e.message);
+                }
             }
         }
 
