@@ -654,6 +654,8 @@ public class ArcticaGreeter
         string systemd_stderr;
         int systemd_exitcode = 0;
 
+        Pid nmapplet_pid = 0;
+
         var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
 
         var update_indicator_list = false;
@@ -725,12 +727,21 @@ public class ArcticaGreeter
 
             try
             {
-                Process.spawn_command_line_async ("nm-applet");
+                string[] argv;
+
+                Shell.parse_argv ("nm-applet", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out nmapplet_pid);
             }
             catch (Error e)
             {
-                warning ("Error starting nm-applet: %s", e.message);
+                warning ("Error starting the Network Manager Applet: %s", e.message);
             }
+
         }
         else
             greeter.show ();
@@ -779,6 +790,18 @@ public class ArcticaGreeter
                     warning ("Error stopping Indicator Service '%s': %s", indicator_service, e.message);
                 }
             }
+        }
+
+        if (nmapplet_pid != 0)
+        {
+            Posix.kill (nmapplet_pid, Posix.SIGTERM);
+            int status;
+            Posix.waitpid (nmapplet_pid, out status, 0);
+            if (Process.if_exited (status))
+                debug ("Network Manager Applet exited with return value %d", Process.exit_status (status));
+            else
+                debug ("Network Manager Applet terminated with signal %d", Process.term_sig (status));
+            atspi_pid = 0;
         }
 
         if (atspi_pid != 0)
