@@ -694,6 +694,23 @@ public class ArcticaGreeter
             {
                 warning ("Error starting Ayatana Indicators Power Service: %s", e.message);
             }
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user start ayatana-indicator-session", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out dummy_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting Ayatana Indicators Session Service: %s", e.message);
+            }
+
 
             /* Make nm-applet hide items the user does not have permissions to interact with */
             Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
@@ -757,6 +774,22 @@ public class ArcticaGreeter
             catch (Error e)
             {
                 warning ("Error stopping Ayatana Indicators Power Service: %s", e.message);
+            }
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv ("systemctl --user stop ayatana-indicator-session", out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out dummy_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error stopping Ayatana Indicators Session Service: %s", e.message);
             }
         }
 
