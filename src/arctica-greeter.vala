@@ -724,25 +724,25 @@ public class ArcticaGreeter
                 }
             }
 
-            /* Make nm-applet hide items the user does not have permissions to interact with */
-            Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
-
-            try
-            {
-                string[] argv;
-
-                Shell.parse_argv ("nm-applet", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out nmapplet_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting the Network Manager Applet: %s", e.message);
-            }
+//            /* Make nm-applet hide items the user does not have permissions to interact with */
+//            Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
+//
+//            try
+//            {
+//                string[] argv;
+//
+//                Shell.parse_argv ("nm-applet", out argv);
+//                Process.spawn_async (null,
+//                                     argv,
+//                                     null,
+//                                     SpawnFlags.SEARCH_PATH,
+//                                     null,
+//                                     out nmapplet_pid);
+//            }
+//            catch (Error e)
+//            {
+//                warning ("Error starting the Network Manager Applet: %s", e.message);
+//            }
 
         }
         else
