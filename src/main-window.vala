@@ -51,10 +51,13 @@ public class MainWindow : Gtk.Window
         ArcticaGreeter.add_style_class (this);
 
         realize ();
-        background = new Background (Gdk.cairo_create (get_window ()).get_target ());
+        Gdk.DrawingContext background_context;
+        background_context = get_window().begin_draw_frame(get_window().get_visible_region());
+        background = new Background (background_context.get_cairo_context().get_target());
         background.draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
         background.default_background = AGSettings.get_string (AGSettings.KEY_BACKGROUND);
         background.set_logo (AGSettings.get_string (AGSettings.KEY_LOGO), AGSettings.get_string (AGSettings.KEY_BACKGROUND_LOGO));
+        get_window().end_draw_frame(background_context);
         background.show ();
         add (background);
         ArcticaGreeter.add_style_class (background);
