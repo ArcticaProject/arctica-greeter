@@ -38,11 +38,11 @@
       <summary>Background logo file to use</summary>
     </key>
     <key name="theme-name" type="s">
-      <default>'Adwaita'</default>
+      <default>'Numix'</default>
       <summary>GTK+ theme to use</summary>
     </key>
     <key name="icon-theme-name" type="s">
-      <default>'gnome'</default>
+      <default>'Numix'</default>
       <summary>Icon theme to use</summary>
     </key>
     <key name="font-name" type="s">
