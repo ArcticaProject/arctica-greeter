@@ -121,8 +121,25 @@ public class MainWindow : Gtk.Window
         var image = new Gtk.Image.from_file (Path.build_filename (Config.PKGDATADIR, "arrow_left.png", null));
         image.show ();
         back_button.set_size_request (grid_size - GreeterList.BORDER * 2, grid_size - GreeterList.BORDER * 2);
+
+        try
+        {
+            var style = new Gtk.CssProvider ();
+            style.load_from_data ("* {background-color: transparent;
+                                      %s
+                                     }".printf(shadow_style), -1);
+            var context = back_button.get_style_context();
+            context.add_provider (style,
+                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading back button style: %s", e.message);
+        }
+
         back_button.add (image);
         back_button.clicked.connect (pop_list);
+
         align.add (back_button);
 
         align = new Gtk.Alignment (0.0f, 0.5f, 0.0f, 1.0f);
