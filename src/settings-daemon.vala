@@ -51,7 +51,7 @@ public class SettingsDaemon : Object
         foreach (var schema in enabled)
             set_plugin_enabled (schema, true);
 
-        /* Pretend to be GNOME session */
+        /* Pretend to be MATE/GNOME session */
         session_manager = new SessionManagerInterface ();
         n_names++;
         GLib.Bus.own_name (BusType.SESSION, "org.gnome.SessionManager", BusNameOwnerFlags.NONE,
