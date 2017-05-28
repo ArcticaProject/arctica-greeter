@@ -731,7 +731,7 @@ public class ArcticaGreeter
             {
                 string[] argv;
 
-                Shell.parse_argv ("nm-applet --indicators", out argv);
+                Shell.parse_argv ("nm-applet --indicator", out argv);
                 Process.spawn_async (null,
                                      argv,
                                      null,
