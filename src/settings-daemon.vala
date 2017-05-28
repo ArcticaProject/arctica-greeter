@@ -225,6 +225,6 @@ public class ScreenSaverInterface : Object
 public class SessionManagerInterface : Object
 {
     public bool session_is_active { get { return true; } }
-    public string session_name { get { return "ubuntu"; } }
+    public string session_name { get { return "greeter"; } }
     public uint32 inhibited_actions { get { return 0; } }
 }
