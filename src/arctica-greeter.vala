@@ -511,7 +511,7 @@ public class ArcticaGreeter
             {
             default:
             case 1:
-                dialog_type = ShutdownDialogType.LOGOUT;
+                dialog_type = ShutdownDialogType.SHUTDOWN;
                 break;
             case 2:
                 dialog_type = ShutdownDialogType.RESTART;

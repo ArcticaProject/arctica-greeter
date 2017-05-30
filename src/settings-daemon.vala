@@ -74,10 +74,10 @@ public class SettingsDaemon : Object
                            () => debug ("Failed to acquire name org.gnome.SessionManager"));
 
         /* The power plugin does the screen saver screen blanking and disables
-         * the builtin X screen saver. It relies on gnome-screensaver to generate
-         * the event to trigger this (which actually comes from gnome-session).
-         * We implement the gnome-screensaver inteface and start the settings
-         * daemon once it is registered on the bus so gnome-screensaver is not
+         * the builtin X screen saver. It relies on mate-screensaver to generate
+         * the event to trigger this (which actually comes from mate-session).
+         * We implement the mate-screensaver inteface and start the settings
+         * daemon once it is registered on the bus so mate-screensaver is not
          * started when it accesses this interface */
         screen_saver = new ScreenSaverInterface ();
         n_names++;
