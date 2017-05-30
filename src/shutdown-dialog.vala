@@ -200,6 +200,8 @@ public class ShutdownDialog : Gtk.Fixed
                     warning ("Failed to restart: %s", e.message);
                 }
             });
+            if (type == ShutdownDialogType.RESTART)
+                show.connect(() => { button.grab_focus (); });
         }
 
         if (LightDM.get_can_shutdown ())
@@ -218,7 +220,7 @@ public class ShutdownDialog : Gtk.Fixed
                 }
             });
 
-            if (type != ShutdownDialogType.SHUTDOWN)
+            if (type == ShutdownDialogType.SHUTDOWN)
                 show.connect(() => { button.grab_focus (); });
         }
 
