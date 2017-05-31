@@ -1,0 +1,6 @@
+[Sound Theme]
+Name=Arctica Greeter
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

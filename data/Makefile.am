@@ -7,6 +7,14 @@ backgroundsdir = $(datarootdir)/backgrounds
 dist_backgrounds_DATA = \
 	arctica-greeter.png
 
+soundsdir = $(datarootdir)/sounds/arctica-greeter
+dist_sounds_DATA = \
+	sounds/index.theme
+
+soundsstereodir = $(datarootdir)/sounds/arctica-greeter/stereo
+dist_soundsstereo_DATA = \
+	sounds/stereo/system-ready.ogg
+
 dist_pkgdata_DATA = \
 	a11y.svg \
 	active.png \

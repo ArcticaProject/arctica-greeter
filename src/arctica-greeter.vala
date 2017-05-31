@@ -247,7 +247,7 @@ public class ArcticaGreeter
         if (AGSettings.get_boolean (AGSettings.KEY_PLAY_READY_SOUND))
             canberra_context.play (0,
                                    Canberra.PROP_CANBERRA_XDG_THEME_NAME,
-                                   "ubuntu",
+                                   "arctica-greeter",
                                    Canberra.PROP_EVENT_ID,
                                    "system-ready");
 
