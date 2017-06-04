@@ -501,7 +501,7 @@ public class ArcticaGreeter
 
         main_window = new MainWindow ();
 
-        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE);
+        Bus.own_name (BusType.SESSION, "org.ayatana.Greeter", BusNameOwnerFlags.NONE);
 
         dbus_object = new DialogDBusInterface ();
         dbus_object.open_dialog.connect ((type) =>
