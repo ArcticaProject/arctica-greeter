@@ -22,7 +22,7 @@ public class SettingsDaemon : Object
     private int logind_inhibit_fd = -1;
     private ScreenSaverInterface screen_saver;
     private SessionManagerInterface session_manager;
-    private int n_names = 0;
+    private int n_names = 2;
 
     public void start ()
     {
@@ -53,7 +53,6 @@ public class SettingsDaemon : Object
 
         /* Pretend to be MATE/GNOME session */
         session_manager = new SessionManagerInterface ();
-        n_names++;
         GLib.Bus.own_name (BusType.SESSION, "org.gnome.SessionManager", BusNameOwnerFlags.NONE,
                            (c) =>
                            {
@@ -80,7 +79,6 @@ public class SettingsDaemon : Object
          * daemon once it is registered on the bus so mate-screensaver is not
          * started when it accesses this interface */
         screen_saver = new ScreenSaverInterface ();
-        n_names++;
         GLib.Bus.own_name (BusType.SESSION, "org.gnome.ScreenSaver", BusNameOwnerFlags.NONE,
                            (c) =>
                            {
