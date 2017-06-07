@@ -41,7 +41,6 @@ public class SettingsDaemon : Object
 
         string[] enabled =  { "org.mate.settings-daemon.plugins.a11y-keyboard",
                               "org.mate.settings-daemon.plugins.a11y-settings",
-                              "org.mate.settings-daemon.plugins.media-keys",
                               "org.mate.settings-daemon.plugins.xrandr",
                               "org.mate.settings-daemon.plugins.xsettings" };
 
