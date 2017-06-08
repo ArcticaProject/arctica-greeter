@@ -794,6 +794,8 @@ public class ArcticaGreeter
             }
         }
 
+        greeter.settings_daemon.stop();
+
         if (nmapplet_pid != 0)
         {
             Posix.kill (nmapplet_pid, Posix.SIGTERM);

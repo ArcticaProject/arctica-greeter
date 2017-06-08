@@ -19,6 +19,7 @@
 
 public class SettingsDaemon : Object
 {
+    public  int sd_pid = 0;
     private int logind_inhibit_fd = -1;
     private ScreenSaverInterface screen_saver;
     private SessionManagerInterface session_manager;
@@ -132,6 +133,11 @@ public class SettingsDaemon : Object
         }
     }
 
+    public void stop ()
+    {
+        stop_settings_daemon();
+    }
+
     private void set_plugin_enabled (string schema_name, bool enabled)
     {
         var source = SettingsSchemaSource.get_default ();
@@ -153,13 +159,37 @@ public class SettingsDaemon : Object
 
         try
         {
-            Process.spawn_command_line_async (Config.SD_BINARY);
+            string[] argv;
+
+            Shell.parse_argv (Config.SD_BINARY, out argv);
+            Process.spawn_async (null,
+                                 argv,
+                                 null,
+                                 SpawnFlags.SEARCH_PATH,
+                                 null,
+                                 out sd_pid);
         }
-        catch (SpawnError e)
+        catch (Error e)
         {
             debug ("Could not start %s: %s", Config.SD_BINARY, e.message);
         }
     }
+
+    private void stop_settings_daemon ()
+    {
+        if (sd_pid != 0)
+        {
+            Posix.kill (sd_pid, Posix.SIGKILL);
+            int status;
+            Posix.waitpid (sd_pid, out status, 0);
+            if (Process.if_exited (status))
+                debug ("SettingsDaemon exited with return value %d", Process.exit_status (status));
+            else
+                debug ("SettingsDaemon terminated with signal %d", Process.term_sig (status));
+            sd_pid = 0;
+        }
+    }
+
 }
 
 [DBus (name="org.gnome.ScreenSaver")]
