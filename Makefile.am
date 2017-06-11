@@ -2,6 +2,8 @@
 
 SUBDIRS = src data po tests
 
+sbin_SCRIPTS = arctica-guest-account-script
+
 EXTRA_DIST = \
 	autogen.sh \
 	arctica-greeter.doap

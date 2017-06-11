@@ -47,9 +47,6 @@ Recommends: ayatana-indicator-application,
             ayatana-indicator-session,
             ayatana-indicator-sound,
             network-manager-gnome,
-            lightdm-remote-session-freerdp,
-            lightdm-remote-session-x2go,
-            remote-logon-service,
             mate-settings-daemon,
             xinput,
 Provides: lightdm-greeter
@@ -58,10 +55,33 @@ Breaks:
 Description: LightDM Arctica Greeter
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
  local display manager as well as thin client login manager.
+
+Package: arctica-greeter-guest-session
+Architecture: all
+Depends: ${misc:Depends},
+         adduser,
+Recommends: openbox,
+Description: LightDM Arctica Greeter - Guest Session Support
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
  .
- Remote sessions supported by Arctica Greeter:
+ This package adds guest account support to the Arctica Greeter login manager.
+
+Package: arctica-greeter-remote-logon
+Architecture: all
+Depends: ${misc:Depends},
+         arctica-greeter-guest-session,
+         remote-logon-service,
+Recommends: lightdm-remote-session-freerdp,
+            lightdm-remote-session-x2go,
+Description: LightDM Arctica Greeter - Remote Login Support
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ This package adds remote logon support to Arctica Greeter. Remote
+ sessions supported by Arctica Greeter are:
  .
    - Arctica Remote Desktop Sessions
-   - X2Go sessions (desktop type)
-   - FreeRDP sessions
-   - Citrix remote desktop sessions
+   - X2Go Desktop Sessions
+   - Windows RDP sessions (FreeRDP)
+   - Citrix Remote Desktop Sessions

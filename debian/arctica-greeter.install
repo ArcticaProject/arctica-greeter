@@ -1,0 +1,4 @@
+etc/lightdm/lightdm.conf.d/90-arctica-greeter.conf
+usr/sbin/arctica-greeter
+usr/share/
+var/lib/polkit-1/localauthority/10-vendor.d/arctica-greeter.pkla
