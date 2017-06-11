@@ -47,7 +47,6 @@ Recommends: ayatana-indicator-application,
             ayatana-indicator-session,
             ayatana-indicator-sound,
             network-manager-gnome,
-            mate-settings-daemon,
             xinput,
 Provides: lightdm-greeter
 Breaks:
