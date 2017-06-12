@@ -1,3 +1,6 @@
 [Seat:*]
 greeter-session=arctica-greeter
-greeter-wrapper=@pkglibexecdir@/lightdm-arctica-greeter-session
+
+### FIXME: disabling the greeter wrapper so far, as systemctl --user calls will fail with the wrapper
+### enabled.
+#greeter-wrapper=@pkglibexecdir@/lightdm-arctica-greeter-session
