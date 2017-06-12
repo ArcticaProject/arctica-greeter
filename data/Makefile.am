@@ -1,5 +1,22 @@
 # -*- Mode: Automake; indent-tabs-mode: t; tab-width: 4 -*-
 
+50-arctica-greeter.conf: 50-arctica-greeter.conf.in
+	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
+
+50-arctica-guest-wrapper.conf: 50-arctica-guest-wrapper.conf.in
+	$(AM_V_GEN) sed -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
+
+lightdm_confdir = $(datadir)/lightdm/lightdm.conf.d
+lightdm_conf_DATA = \
+	50-arctica-greeter.conf \
+	50-arctica-guest-wrapper.conf
+
+arctica-guest-session-startup.desktop: arctica-guest-session-startup.desktop.in
+	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
+
+guestsession_autostartdir = $(datadir)/arctica-greeter/guest-session/skel/.config/autostart
+guestsession_autostart_DATA = arctica-guest-session-startup.desktop
+
 xgreeterdir = $(datarootdir)/xgreeters
 dist_xgreeter_DATA = arctica-greeter.desktop
 
@@ -64,5 +81,8 @@ EXTRA_DIST = \
 	$(gsettings_SCHEMAS)
 
 DISTCLEANFILES = \
+	50-arctica-greeter.conf \
+	50-arctica-guest-wrapper.conf \
+	arctica-guest-session-startup.desktop \
 	Makefile.in \
 	logo.png

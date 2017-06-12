@@ -1,0 +1,3 @@
+[Seat:*]
+greeter-session=arctica-greeter
+greeter-wrapper=@pkglibexecdir@/lightdm-arctica-greeter-session

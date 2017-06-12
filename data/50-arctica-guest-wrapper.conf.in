@@ -1,0 +1,2 @@
+[Seat:*]
+guest-wrapper=@libexecdir@/lightdm/lightdm-guest-session

@@ -77,8 +77,8 @@ add_account ()
     }
   fi
 
-  dist_gs=/usr/share/lightdm/guest-session
-  site_gs=/etc/guest-session
+  dist_gs=/usr/share/arctica-greeter/guest-session
+  site_gs=/etc/arctica-greeter/guest-session
 
   # create temporary home directory
   mount -t tmpfs -o mode=700,uid=${GUEST_USER} none ${GUEST_HOME} || {
@@ -139,7 +139,7 @@ add_account ()
   fi
 
   # setup session
-  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} ${dist_gs}/setup.sh"
+  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} @pkglibexecdir@/arctica-guest-session-setup"
 
   # set possible local guest session preferences
   source_local_prefs() {

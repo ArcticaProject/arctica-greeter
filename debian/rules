@@ -18,8 +18,6 @@ override_dh_auto_install:
 	dh_auto_install
 	mkdir -p debian/tmp/var/lib/polkit-1/localauthority/10-vendor.d/
 	cp debian/arctica-greeter.pkla debian/tmp/var/lib/polkit-1/localauthority/10-vendor.d/
-	mkdir -p debian/tmp/usr/share/lightdm/lightdm.conf.d/
-	cp debian/50-arctica-greeter.conf debian/tmp/usr/share/lightdm/lightdm.conf.d/
 	mkdir -p debian/tmp/etc/lightdm/lightdm.conf.d/
 	cp debian/90-arctica-greeter.conf debian/tmp/etc/lightdm/lightdm.conf.d/
 	cp debian/91-arctica-greeter-guest-session.conf debian/tmp/etc/lightdm/lightdm.conf.d/
