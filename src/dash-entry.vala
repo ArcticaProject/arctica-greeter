@@ -23,7 +23,10 @@ extern bool gtk_style_context_lookup_color (Gtk.StyleContext ctx, string color_n
 
 public class DashEntry : Gtk.Entry, Fadable
 {
-    public static string font = "Cabin 14";
+    public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
+    public static string font_family = font.split_set(" ")[0];
+    public static int font_size = int.parse(font.split_set(" ")[1]);
+
     public signal void respond ();
 
     public string constant_placeholder_text { get; set; }
@@ -71,8 +74,6 @@ public class DashEntry : Gtk.Entry, Fadable
             }
         }
 
-        override_font (Pango.FontDescription.from_string (font));
-
         var style_ctx = get_style_context ();
 
         try
@@ -86,6 +87,21 @@ public class DashEntry : Gtk.Entry, Fadable
         catch (Error e)
         {
             debug ("Internal error loading padding style: %s", e.message);
+        }
+
+        if (font_size < 6)
+            font_size = 6;
+        try
+        {
+            var font_provider = new Gtk.CssProvider ();
+            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size+3);
+            font_provider.load_from_data (css, -1);
+            style_ctx.add_provider (font_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size+3, e.message);
         }
     }
 
@@ -162,7 +178,7 @@ public class DashEntry : Gtk.Entry, Fadable
 
         /* Draw text */
         var layout = create_pango_layout (constant_placeholder_text);
-        layout.set_font_description (Pango.FontDescription.from_string ("Cabin 13"));
+        layout.set_font_description (Pango.FontDescription.from_string ("%s %d".printf(font_family, font_size+2)));
         Pango.cairo_show_layout (c, layout);
 
         c.restore ();

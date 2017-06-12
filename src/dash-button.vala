@@ -22,6 +22,10 @@ public class DashButton : FlatButton, Fadable
     protected FadeTracker fade_tracker { get; protected set; }
     private Gtk.Label text_label;
 
+    public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
+    public static string font_family = font.split_set(" ")[0];
+    public static int font_size = int.parse(font.split_set(" ")[1]);
+
     private string _text = "";
     public string text
     {
@@ -29,15 +33,17 @@ public class DashButton : FlatButton, Fadable
         set
         {
             _text = value;
-            text_label.set_markup ("<span font=\"Cabin 13\">%s</span>".printf (value));
+            text_label.set_markup ("<span font=\"%s %d\">%s</span>".printf (font_family, font_size+2, value));
         }
     }
-
     public DashButton (string text)
     {
         fade_tracker = new FadeTracker (this);
 
         var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+
+        if (font_size < 6)
+            font_size = 6;
 
         /* Add text */
         text_label = new Gtk.Label ("");

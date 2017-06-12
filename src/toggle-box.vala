@@ -23,6 +23,10 @@ public class ToggleBox : Gtk.Box
     public string starting_key {get; construct;}
     public string selected_key {get; protected set;}
 
+    public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
+    public static string font_family = font.split_set(" ")[0];
+    public static int font_size = int.parse(font.split_set(" ")[1]);
+
     public ToggleBox (string? default_key, string? starting_key)
     {
         Object (default_key: default_key, starting_key: starting_key,
@@ -124,7 +128,7 @@ public class ToggleBox : Gtk.Box
         }
 
         var label = new Gtk.Label (null);
-        label.set_markup ("<span font=\"Cabin 13\" fgcolor=\"%s\">%s</span>".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), name));
+        label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size+2, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), name));
         label.halign = Gtk.Align.START;
         hbox.pack_start (label, true, true, 0);
 

@@ -25,6 +25,10 @@ public class PromptBox : FadableBox
     public signal void show_options ();
     public signal void name_clicked ();
 
+    public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
+    public static string font_family = font.split_set(" ")[0];
+    public static int font_size = int.parse(font.split_set(" ")[1]);
+
     public bool has_errors { get; set; default = false; }
     public string id { get; construct; }
 
@@ -111,6 +115,9 @@ public class PromptBox : FadableBox
             Entry.........
          */
 
+        if (font_size < 6)
+            font_size = 6;
+
         active_indicator = new ActiveIndicator ();
         active_indicator.valign = Gtk.Align.START;
         active_indicator.margin_top = (grid_size - ActiveIndicator.HEIGHT) / 2;
@@ -172,7 +179,21 @@ public class PromptBox : FadableBox
         name_grid.hexpand = true;
 
         name_label = new FadingLabel ("");
-        name_label.override_font (Pango.FontDescription.from_string ("Cabin 13"));
+
+        var style_ctx = name_label.get_style_context();
+        try
+        {
+            var font_provider = new Gtk.CssProvider ();
+            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size+2);
+            font_provider.load_from_data (css, -1);
+            style_ctx.add_provider (font_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size+2, e.message);
+        }
+
         name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         name_label.valign = Gtk.Align.START;
         name_label.vexpand = true;
@@ -228,7 +249,22 @@ public class PromptBox : FadableBox
         small_name_grid.column_spacing = 4;
 
         small_name_label = new FadingLabel ("");
-        small_name_label.override_font (Pango.FontDescription.from_string ("Cabin 13"));
+
+	var style_ctx = small_name_label.get_style_context();
+
+        try
+        {
+            var font_provider = new Gtk.CssProvider ();
+            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size);
+            font_provider.load_from_data (css, -1);
+            style_ctx.add_provider (font_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size, e.message);
+        }
+
         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
@@ -431,7 +467,20 @@ public class PromptBox : FadableBox
     {
         var label = new FadingLabel (text);
 
-        label.override_font (Pango.FontDescription.from_string ("Cabin 10"));
+        var style_ctx = label.get_style_context();
+
+        try
+        {
+            var font_provider = new Gtk.CssProvider ();
+            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size-1);
+            font_provider.load_from_data (css, -1);
+            style_ctx.add_provider (font_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size-1, e.message);
+        }
 
         Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
         if (is_error)
@@ -509,7 +558,20 @@ public class PromptBox : FadableBox
 
         combo.get_style_context ().add_class ("lightdm-combo");
         combo.get_child ().get_style_context ().add_class ("lightdm-combo");
-        combo.get_child ().override_font (Pango.FontDescription.from_string (DashEntry.font));
+
+        var style_ctx = combo.get_child ().get_style_context();
+        try
+        {
+            var font_provider = new Gtk.CssProvider ();
+            var css = "* {font-family: %s; font-size: %dpt;}".printf (DashEntry.font_family, DashEntry.font_size);
+            font_provider.load_from_data (css, -1);
+            style_ctx.add_provider (font_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size+2, e.message);
+        }
 
         attach_item (combo, false);
 

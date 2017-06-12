@@ -102,10 +102,9 @@ public class ShutdownDialog : Gtk.Fixed
         }
         else
         {
-            var title_label = new Gtk.Label (_("Shut Down"));
+            var title_label = new Gtk.Label (null);
             title_label.visible = true;
-            title_label.override_font (Pango.FontDescription.from_string ("Cantarell 15"));
-            title_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+            title_label.set_markup ("<span font=\"Cantarell 15\" fgcolor=\"%s\">%s</span>".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), _("Shut Down")));
             title_label.set_alignment (0.0f, 0.5f);
             vbox.pack_start (title_label, false, false, 0);
 
@@ -136,10 +135,9 @@ public class ShutdownDialog : Gtk.Fixed
         if (have_open_sessions)
             text = "%s\n\n%s".printf (_("Other users are currently logged in to this computer, shutting down now will also close these other sessions."), text);
 
-        var label = new Gtk.Label (text);
+        var label = new Gtk.Label (null);
         label.set_line_wrap (true);
-        label.override_font (Pango.FontDescription.from_string ("Cantarell 12"));
-        label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+        label.set_markup ("<span font=\"Cantarell 12\" fgcolor=\"%s\">%s</span>".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
         label.set_alignment (0.0f, 0.5f);
         label.visible = true;
         vbox.pack_start (label, false, false, 0);
@@ -560,7 +558,21 @@ private class DialogButton : Gtk.Button
         if (l != null)
         {
             l.visible = true;
-            l.override_font (Pango.FontDescription.from_string ("Cantarell 12"));
+
+            var style_ctx = l.get_style_context();
+            try
+            {
+                var font_provider = new Gtk.CssProvider ();
+                var css = "* {font-family: Cantarell; font-size: 12pt;}";
+                font_provider.load_from_data (css, -1);
+                style_ctx.add_provider (font_provider,
+                                        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+            catch (Error e)
+            {
+                debug ("Internal error loading font style (Cantarell 12pt): %s", e.message);
+            }
+
             l.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 0.0f });
             l.override_color (Gtk.StateFlags.FOCUSED, { 1.0f, 1.0f, 1.0f, 1.0f });
             l.override_color (Gtk.StateFlags.ACTIVE, { 1.0f, 1.0f, 1.0f, 1.0f });
