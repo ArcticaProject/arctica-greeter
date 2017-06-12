@@ -805,7 +805,7 @@ public class ArcticaGreeter
                 debug ("Network Manager Applet exited with return value %d", Process.exit_status (status));
             else
                 debug ("Network Manager Applet terminated with signal %d", Process.term_sig (status));
-            atspi_pid = 0;
+            nmapplet_pid = 0;
         }
 
         if (atspi_pid != 0)
