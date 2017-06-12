@@ -19,6 +19,7 @@ DISTCLEANFILES = \
 	Makefile.in \
 	aclocal.m4 \
 	arctica-guest-account-script \
+	compile \
 	configure \
 	config.h.in \
 	config.h \
