@@ -44,6 +44,7 @@ dist_pkgdata_DATA = \
 	gnome_badge.png \
 	hibernate_highlight.png \
 	hibernate.png \
+	i3_badge.png \
 	kde_badge.png \
 	logo.png \
 	lxde_badge.png \
