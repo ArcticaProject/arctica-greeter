@@ -98,6 +98,8 @@ public class SessionList : GreeterList
         {
         case "awesome":
             return "awesome_badge.png";
+        case "budgie-desktop":
+            return "budgie_badge.png";
         case "ubuntu":
         case "ubuntu-2d":
             return "ubuntu_badge.png";
