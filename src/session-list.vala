@@ -96,6 +96,8 @@ public class SessionList : GreeterList
     {
         switch (session)
         {
+        case "awesome":
+            return "awesome_badge.png";
         case "ubuntu":
         case "ubuntu-2d":
             return "ubuntu_badge.png";

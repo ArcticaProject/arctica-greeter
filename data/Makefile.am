@@ -37,6 +37,7 @@ dist_pkgdata_DATA = \
 	active.png \
 	arrow_left.png \
 	arrow_right.png \
+	awesome_badge.png \
 	cof.png \
 	dialog_close.png \
 	dialog_close_highlight.png \
