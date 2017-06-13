@@ -48,6 +48,7 @@ dist_pkgdata_DATA = \
 	kde_badge.png \
 	logo.png \
 	lxde_badge.png \
+	matchbox_badge.png \
 	mate_badge.png \
 	message.png \
 	openbox_badge.png \
