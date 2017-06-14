@@ -62,6 +62,7 @@ dist_pkgdata_DATA = \
 	shadow.png \
 	shutdown_highlight.png \
 	shutdown.png \
+	sugar_badge.png \
 	surf_badge.png \
 	suspend_highlight.png \
 	suspend.png \
