@@ -111,6 +111,8 @@ public class SessionList : GreeterList
         case "gnome":
         case "openbox-gnome":
             return "gnome_badge.png";
+        case "wmaker-common":
+            return "gnustep_badge.png";
         case "kde":
         case "kde-plasma":
         case "openbox-kde":

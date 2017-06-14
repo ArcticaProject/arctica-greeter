@@ -44,6 +44,7 @@ dist_pkgdata_DATA = \
 	dialog_close_highlight.png \
 	dialog_close_press.png \
 	gnome_badge.png \
+	gnustep_badge.png \
 	hibernate_highlight.png \
 	hibernate.png \
 	i3_badge.png \
