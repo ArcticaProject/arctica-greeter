@@ -138,6 +138,8 @@ public class SessionList : GreeterList
             return "xfce_badge.png";
         case "xterm":
             return "recovery_console_badge.png";
+        case "xmonad":
+            return "xmonad_badge.png";
         case "remote-login":
             return "remote_login_help.png";
         default:

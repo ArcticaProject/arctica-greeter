@@ -71,6 +71,7 @@ dist_pkgdata_DATA = \
 	ubuntu_badge.png \
 	unknown_badge.png \
 	xfce_badge.png \
+	xmonad_badge.png \
 	xsession_badge.png
 
 logo.png: logo-bare.png
