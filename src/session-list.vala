@@ -132,6 +132,8 @@ public class SessionList : GreeterList
             return "mate_badge.png";
         case "openbox":
             return "openbox_badge.png";
+        case "surf-display":
+            return "surf_badge.png";
         case "twm":
             return "twm_badge.png";
         case "xfce":
