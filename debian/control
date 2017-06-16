@@ -84,3 +84,14 @@ Description: LightDM Arctica Greeter - Remote Login Support
    - X2Go Desktop Sessions
    - Windows RDP sessions (FreeRDP)
    - Citrix Remote Desktop Sessions
+
+Package: arctica-greeter-theme-debian
+Architecture: all
+Depends: ${misc:Depends},
+         arctica-greeter,
+         libglib2.0-bin,
+Description: LightDM Arctica Greeter - Debian Theme
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ This package themes Arctica Greeter with a Debian look'n'feel.
