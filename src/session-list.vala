@@ -27,6 +27,13 @@ public class SessionPrompt : PromptBox
         Object (id: id, session: session, default_session: default_session);
     }
 
+    private GLib.List<LightDM.Session> sessions_sorted_ci (GLib.List<LightDM.Session> sessions)
+    {
+        var ci_sorted_sessions = sessions.copy();
+        ci_sorted_sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold(), b.name.casefold()));
+        return ci_sorted_sessions;
+    }
+
     private ToggleBox box;
 
     construct
@@ -44,7 +51,7 @@ public class SessionPrompt : PromptBox
         }
         else
         {
-            foreach (var session in LightDM.get_sessions ())
+            foreach (var session in sessions_sorted_ci( LightDM.get_sessions() ) )
             {
                 debug ("Adding session %s (%s)", session.key, session.name);
                 box.add_item (session.key, session.name, SessionList.get_badge (session.key));
