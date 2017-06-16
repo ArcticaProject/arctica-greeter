@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-15 09:21+0000\n"
+"POT-Creation-Date: 2017-06-16 13:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Login Screen"
 msgstr ""
 
-#: ../src/main-window.vala:116
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr ""
 
@@ -67,11 +67,11 @@ msgstr ""
 msgid "Screen Reader"
 msgstr ""
 
-#: ../src/prompt-box.vala:212
+#: ../src/prompt-box.vala:233
 msgid "Session Options"
 msgstr ""
 
-#: ../src/session-list.vala:34
+#: ../src/session-list.vala:41
 msgid "Select desktop environment"
 msgstr ""
 
@@ -79,55 +79,55 @@ msgstr ""
 msgid "Goodbye. Would you like to…"
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:105 ../src/shutdown-dialog.vala:207
+#: ../src/shutdown-dialog.vala:107 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:112
+#: ../src/shutdown-dialog.vala:111
 msgid "Are you sure you want to shut down the computer?"
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:137
+#: ../src/shutdown-dialog.vala:136
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:153
 msgid "Suspend"
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:170
 msgid "Hibernate"
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:188
 msgid "Restart"
 msgstr ""
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:123
+#: ../src/toggle-box.vala:127
 #, c-format
 msgid "%s (Default)"
 msgstr ""
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:546
+#: ../src/arctica-greeter.vala:595
 msgid "Show release version"
 msgstr ""
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:549
+#: ../src/arctica-greeter.vala:598
 msgid "Run in test mode"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:555
+#: ../src/arctica-greeter.vala:604
 msgid "- Arctica Greeter"
 msgstr ""
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:566
+#: ../src/arctica-greeter.vala:615
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -219,4 +219,35 @@ msgstr ""
 
 #: ../src/user-list.vala:876
 msgid "Login"
+msgstr ""
+
+#. does not exist, so create it
+#: ../arctica-guest-account-script.sh.in:76
+#, sh-format
+msgid "Guest"
+msgstr ""
+
+#: ../arctica-guest-session-auto.sh:33
+#, sh-format
+msgid "Temporary Guest Session"
+msgstr ""
+
+#: ../arctica-guest-session-auto.sh:34
+#, sh-format
+msgid ""
+"All data created during this guest session will be deleted\n"
+"when you log out, and settings will be reset to defaults.\n"
+"Please save files on some external device, for instance a\n"
+"USB stick, if you would like to access them again later."
+msgstr ""
+
+#: ../arctica-guest-session-auto.sh:38
+#, sh-format
+msgid ""
+"Another alternative is to save files in the\n"
+"/var/guest-data folder."
+msgstr ""
+
+#: ../data/arctica-greeter.desktop.in.h:1
+msgid "Arctica Greeter"
 msgstr ""
