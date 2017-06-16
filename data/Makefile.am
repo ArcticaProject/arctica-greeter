@@ -18,7 +18,9 @@ guestsession_autostartdir = $(datadir)/arctica-greeter/guest-session/skel/.confi
 guestsession_autostart_DATA = arctica-guest-session-startup.desktop
 
 xgreeterdir = $(datarootdir)/xgreeters
-dist_xgreeter_DATA = arctica-greeter.desktop
+dist_xgreeter_in_files = arctica-greeter.desktop.in
+dist_xgreeter_DATA = $(dist_xgreeter_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
 
 backgroundsdir = $(datarootdir)/backgrounds
 dist_backgrounds_DATA = \
@@ -91,6 +93,7 @@ EXTRA_DIST = \
 DISTCLEANFILES = \
 	50-arctica-greeter.conf \
 	50-arctica-guest-wrapper.conf \
+	arctica-greeter.desktop \
 	arctica-guest-session-startup.desktop \
 	Makefile.in \
 	logo.png

@@ -1,0 +1,5 @@
+[Desktop Entry]
+_Name=Arctica Greeter
+_Comment=Arctica Greeter
+Exec=arctica-greeter
+Type=Application
