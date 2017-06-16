@@ -16,6 +16,8 @@
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=arctica-greeter
 
+DIALOG_SLEEP=${DIALOG_SLEEP:-4}
+
 # disable screen locking (GNOME, Unity)
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 
