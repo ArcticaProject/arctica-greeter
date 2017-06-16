@@ -6,43 +6,45 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2015-08-04 05:29+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-16 13:01+0200\n"
 "PO-Revision-Date: 2012-08-31 18:55+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:302
 #, c-format
 msgid "Enter password for %s"
 msgstr "Введіть пароль для %s"
 
-#: ../src/greeter-list.vala:805 ../src/user-list.vala:701
+#: ../src/greeter-list.vala:810 ../src/user-list.vala:701
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ../src/greeter-list.vala:807 ../src/user-list.vala:695
+#: ../src/greeter-list.vala:812 ../src/user-list.vala:695
+#: ../src/user-list.vala:788
 msgid "Username:"
 msgstr "Ім'я користувача:"
 
-#: ../src/greeter-list.vala:859
+#: ../src/greeter-list.vala:867
 msgid "Invalid password, please try again"
 msgstr "Некоректний пароль, повторіть спробу"
 
-#: ../src/greeter-list.vala:870
+#: ../src/greeter-list.vala:878
 msgid "Failed to authenticate"
 msgstr "Помилка автентифікації"
 
-#: ../src/greeter-list.vala:916
+#: ../src/greeter-list.vala:924
 msgid "Failed to start session"
 msgstr "Не вдалося розпочати сеанс"
 
-#: ../src/greeter-list.vala:931
+#: ../src/greeter-list.vala:939
 msgid "Logging in…"
 msgstr "Входимо…"
 
@@ -50,7 +52,7 @@ msgstr "Входимо…"
 msgid "Login Screen"
 msgstr "Вікно входу"
 
-#: ../src/main-window.vala:116
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr "Назад"
 
@@ -66,11 +68,11 @@ msgstr "Висока контрастність"
 msgid "Screen Reader"
 msgstr "Читання з екрана"
 
-#: ../src/prompt-box.vala:212
+#: ../src/prompt-box.vala:233
 msgid "Session Options"
 msgstr "Параметри сеансу"
 
-#: ../src/session-list.vala:34
+#: ../src/session-list.vala:41
 msgid "Select desktop environment"
 msgstr "Виберіть стільничне середовище"
 
@@ -78,15 +80,15 @@ msgstr "Виберіть стільничне середовище"
 msgid "Goodbye. Would you like to…"
 msgstr "До побачення. Хочете…"
 
-#: ../src/shutdown-dialog.vala:105 ../src/shutdown-dialog.vala:207
+#: ../src/shutdown-dialog.vala:107 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
 msgstr "Вимкнути комп’ютер"
 
-#: ../src/shutdown-dialog.vala:112
+#: ../src/shutdown-dialog.vala:111
 msgid "Are you sure you want to shut down the computer?"
 msgstr "Ви справді хочете вимкнути комп’ютер?"
 
-#: ../src/shutdown-dialog.vala:137
+#: ../src/shutdown-dialog.vala:136
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -94,41 +96,41 @@ msgstr ""
 "Зараз у системі працюють інші користувачі. Вимикання комп’ютера призведе до "
 "завершення сеансів роботи цих користувачів."
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:153
 msgid "Suspend"
 msgstr "Призупинити роботу"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:170
 msgid "Hibernate"
 msgstr "Приспати комп’ютер"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:188
 msgid "Restart"
 msgstr "Перезавантажити комп’ютер"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:98
+#: ../src/toggle-box.vala:127
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (типове)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:506
+#: ../src/arctica-greeter.vala:595
 msgid "Show release version"
 msgstr "Показати версію випуску"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:509
+#: ../src/arctica-greeter.vala:598
 msgid "Run in test mode"
 msgstr "Запустити в тестовому режимі"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:515
+#: ../src/arctica-greeter.vala:604
 msgid "- Arctica Greeter"
 msgstr "- Вітальне вікно Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:526
+#: ../src/arctica-greeter.vala:615
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -173,9 +175,10 @@ msgid "Set Up…"
 msgstr "Налаштувати…"
 
 #: ../src/user-list.vala:557
+#, fuzzy
 msgid ""
-"You need an Ubuntu Remote Login account to use this service. Would you like "
-"to set up an account now?"
+"You need a Remote Logon account to use this service. Would you like to set "
+"up an account now?"
 msgstr ""
 "Для користування цією послугою вам потрібен обліковий запис віддаленого "
 "входу до Ubuntu. Хочете налаштувати цей запис зараз?"
@@ -185,9 +188,10 @@ msgid "OK"
 msgstr "Гаразд"
 
 #: ../src/user-list.vala:562
+#, fuzzy, c-format
 msgid ""
-"You need an Ubuntu Remote Login account to use this service. Visit "
-"uccs.canonical.com to set up an account."
+"You need a Remote Logon account to use this service. Visit https://%s to set "
+"up an account."
 msgstr ""
 "Для користування цією послугою вам потрібен обліковий запис віддаленого "
 "входу до Ubuntu. Відвідайте сторінку uccs.canonical.com, щоб налаштувати "
@@ -197,36 +201,74 @@ msgstr ""
 msgid "Server type not supported."
 msgstr "Підтримки серверів цього типу не передбачено."
 
-#: ../src/user-list.vala:720
+#: ../src/user-list.vala:707
+#, fuzzy
+msgid "X2Go Session:"
+msgstr "Гостьовий сеанс"
+
+#: ../src/user-list.vala:727
 msgid "Domain:"
 msgstr "Домен:"
 
-#: ../src/user-list.vala:781
-msgid "Email address:"
+#: ../src/user-list.vala:788
+#, fuzzy
+msgid "Email:"
 msgstr "Адреса ел. пошти:"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:825
+#: ../src/user-list.vala:832
 msgid "Log In"
 msgstr "Увійти"
 
-#: ../src/user-list.vala:826
+#: ../src/user-list.vala:833
 #, c-format
 msgid "Login as %s"
 msgstr "Увійти від імені %s"
 
-#: ../src/user-list.vala:830
+#: ../src/user-list.vala:837
 msgid "Retry"
 msgstr "Повторити"
 
-#: ../src/user-list.vala:831
+#: ../src/user-list.vala:838
 #, c-format
 msgid "Retry as %s"
 msgstr "Повторити як %s"
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:876
 msgid "Login"
 msgstr "Увійти"
+
+#. does not exist, so create it
+#: ../arctica-guest-account-script.sh.in:76
+#, sh-format
+msgid "Guest"
+msgstr ""
+
+#: ../arctica-guest-session-auto.sh:33
+#, fuzzy, sh-format
+msgid "Temporary Guest Session"
+msgstr "Гостьовий сеанс"
+
+#: ../arctica-guest-session-auto.sh:34
+#, sh-format
+msgid ""
+"All data created during this guest session will be deleted\n"
+"when you log out, and settings will be reset to defaults.\n"
+"Please save files on some external device, for instance a\n"
+"USB stick, if you would like to access them again later."
+msgstr ""
+
+#: ../arctica-guest-session-auto.sh:38
+#, sh-format
+msgid ""
+"Another alternative is to save files in the\n"
+"/var/guest-data folder."
+msgstr ""
+
+#: ../data/arctica-greeter.desktop.in.h:1
+#, fuzzy
+msgid "Arctica Greeter"
+msgstr "- Вітальне вікно Arctica"
 
 #~ msgid "Logging in..."
 #~ msgstr "Вхід до системи…"
