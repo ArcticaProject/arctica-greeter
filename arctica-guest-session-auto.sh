@@ -11,8 +11,10 @@
 
 # This script is run via autostart at the launch of a guest session.
 
-export TEXTDOMAINDIR=/usr/share/locale-langpack
-export TEXTDOMAIN=lightdm
+. gettext.sh
+
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=arctica-greeter
 
 # disable screen locking (GNOME, Unity)
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
@@ -28,12 +30,12 @@ gsettings set apps.light-locker lock-on-suspend false
 
 # info dialog about the temporary nature of a guest session
 dialog_content () {
-	TITLE=$(gettext 'Temporary Guest Session')
-	TEXT=$(gettext 'All data created during this guest session will be deleted
+	TITLE=$(eval_gettext 'Temporary Guest Session')
+	TEXT=$(eval_gettext 'All data created during this guest session will be deleted
 when you log out, and settings will be reset to defaults.
 Please save files on some external device, for instance a
 USB stick, if you would like to access them again later.')
-	para2=$(gettext 'Another alternative is to save files in the
+	para2=$(eval_gettext 'Another alternative is to save files in the
 /var/guest-data folder.')
 	test -w /var/guest-data && TEXT="$TEXT\n\n$para2"
 }

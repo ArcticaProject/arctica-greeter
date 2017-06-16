@@ -8,8 +8,10 @@
 # If this succeeds, this script needs to print the username as the last line to
 # stdout.
 
-export TEXTDOMAINDIR=/usr/share/locale-langpack
-export TEXTDOMAIN=lightdm
+. gettext.sh
+
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=arctica-greeter
 
 # set the system wide locale for gettext calls
 if [ -f /etc/default/locale ]; then
@@ -71,7 +73,7 @@ add_account ()
     fi
   else
     # does not exist, so create it
-    useradd --system --home-dir ${GUEST_HOME} --comment $(gettext "Guest") --user-group --shell /bin/bash ${GUEST_USER} || {
+    useradd --system --home-dir ${GUEST_HOME} --comment $(eval_gettext "Guest") --user-group --shell /bin/bash ${GUEST_USER} || {
       rm -rf ${GUEST_HOME}
       exit 1
     }
@@ -139,7 +141,7 @@ add_account ()
   fi
 
   # setup session
-  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} @pkglibexecdir@/arctica-guest-session-setup"
+  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} @pkglibexecdir@/arctica-guest-session-setup.sh"
 
   # set possible local guest session preferences
   source_local_prefs() {

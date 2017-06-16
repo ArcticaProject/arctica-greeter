@@ -2,4 +2,4 @@
 Name=Custom startup command for Arctica Greeter's guest session
 Type=Application
 NoDisplay=true
-Exec=@pkglibexecdir@//arctica-guest-session-auto
+Exec=@pkglibexecdir@//arctica-guest-session-auto.sh

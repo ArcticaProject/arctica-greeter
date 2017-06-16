@@ -2,14 +2,14 @@
 
 SUBDIRS = src data po tests
 
-arctica-guest-account-script: arctica-guest-account-script.in
+arctica-guest-account-script: arctica-guest-account-script.sh.in
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
 
 sbin_SCRIPTS = arctica-guest-account-script
 
 pkglibexec_SCRIPTS = lightdm-arctica-greeter-session \
-	arctica-guest-session-auto \
-	arctica-guest-session-setup
+	arctica-guest-session-auto.sh \
+	arctica-guest-session-setup.sh
 
 EXTRA_DIST = \
 	autogen.sh \

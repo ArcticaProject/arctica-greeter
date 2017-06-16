@@ -24,3 +24,5 @@ src/toggle-box.vala
 src/arctica-greeter.vala
 src/user-list.vala
 src/user-prompt-box.vala
+arctica-guest-account-script.sh.in
+arctica-guest-session-auto.sh
