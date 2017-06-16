@@ -11,6 +11,11 @@ override_dh_autoreconf:
 	fi
 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
 
+override_dh_install:
+	# FIXME: this should adapt to more than one Debian version
+	cp debian/theme-debian-logo-v9.png debian/theme-debian-logo.png
+	dh_install --fail-missing
+
 override_dh_auto_build:
 	dh_auto_build
 
