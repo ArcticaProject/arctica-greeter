@@ -27,11 +27,10 @@ public class SessionPrompt : PromptBox
         Object (id: id, session: session, default_session: default_session);
     }
 
-    private GLib.List<LightDM.Session> sessions_sorted_ci (GLib.List<LightDM.Session> sessions)
+    private unowned GLib.List<LightDM.Session> sessions_sorted_ci (GLib.List<LightDM.Session> sessions)
     {
-        var ci_sorted_sessions = sessions.copy();
-        ci_sorted_sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold(), b.name.casefold()));
-        return ci_sorted_sessions;
+        sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold(), b.name.casefold()));
+        return sessions;
     }
 
     private ToggleBox box;
