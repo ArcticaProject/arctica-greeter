@@ -296,6 +296,7 @@ public class PromptBox : FadableBox
         last_row = start_row;
     }
 
+#if HAVE_GTK_3_20_0
     private int round_to_grid (int size)
     {
         var num_grids = size / grid_size;
@@ -315,6 +316,7 @@ public class PromptBox : FadableBox
         if (position <= -1 || position >= 1)
             min = nat = grid_size;
     }
+#endif
 
     public void set_zone (Gtk.Widget zone)
     {
