@@ -19,7 +19,7 @@
 
 public class SettingsDaemon : Object
 {
-    public  int sd_pid = 0;
+    private int sd_pid = 0;
     private int logind_inhibit_fd = -1;
     private ScreenSaverInterface screen_saver;
     private SessionManagerInterface session_manager;
