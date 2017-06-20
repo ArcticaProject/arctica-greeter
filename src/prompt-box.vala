@@ -374,7 +374,23 @@ public class PromptBox : FadableBox
     public void clear ()
     {
         prompt_visibility = PromptVisibility.HIDDEN;
-        foreach_prompt_widget ((w) => { w.destroy (); });
+
+        /* Hold a ref while removing the prompt widgets -
+         * if we just do w.destroy() we get this warning:
+         * CRITICAL: pango_layout_get_cursor_pos: assertion 'index >= 0 && index <= layout->length' failed
+         * by GtkWidget's screen-changed signal being called on
+         * widget when we destroy it.
+         */
+        foreach_prompt_widget ((w) => {
+#if HAVE_GTK_3_20_0
+            w.ref ();
+            w.get_parent().remove(w);
+            w.unref ();
+#else
+            w.destroy ();
+#endif
+        });
+
         reset_last_row ();
         has_errors = false;
     }
