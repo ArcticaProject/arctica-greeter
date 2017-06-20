@@ -19,10 +19,6 @@ override_dh_install:
 override_dh_auto_build:
 	dh_auto_build
 
-override_dh_install:
-	src/logo-generator --logo debian/theme-debian-logo-bare.png --text "$$(head -n1 /etc/debian_version)" --width=280 --height=82 --output debian/theme-debian-logo.png
-	dh_install --fail-missing
-
 override_dh_auto_install:
 	dh_auto_install
 	mkdir -p debian/tmp/var/lib/polkit-1/localauthority/10-vendor.d/
