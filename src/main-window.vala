@@ -56,7 +56,7 @@ public class MainWindow : Gtk.Window
         background = new Background (background_context.get_cairo_context().get_target());
         background.draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
         background.default_background = AGSettings.get_string (AGSettings.KEY_BACKGROUND);
-        background.set_logo (AGSettings.get_string (AGSettings.KEY_LOGO), AGSettings.get_string (AGSettings.KEY_BACKGROUND_LOGO));
+        background.set_logo (AGSettings.get_string (AGSettings.KEY_LOGO));
         get_window().end_draw_frame(background_context);
         background.show ();
         add (background);

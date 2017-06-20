@@ -59,7 +59,6 @@ dist_pkgdata_DATA = \
 	active.png \
 	arrow_left.png \
 	arrow_right.png \
-	cof.png \
 	dialog_close.png \
 	dialog_close_highlight.png \
 	dialog_close_press.png \

@@ -415,9 +415,6 @@ public class Background : Gtk.Fixed
     private Cairo.Surface? version_logo_surface = null;
     private int version_logo_width;
     private int version_logo_height;
-    private Cairo.Surface? background_logo_surface = null;
-    private int background_logo_width;
-    private int background_logo_height;
 
     public Background (Cairo.Surface target_surface)
     {
@@ -432,10 +429,9 @@ public class Background : Gtk.Fixed
         notify["current-background"].connect (() => { reload (); });
     }
 
-    public void set_logo (string version_logo, string background_logo)
+    public void set_logo (string version_logo)
     {
         version_logo_surface = load_image (version_logo, out version_logo_width, out version_logo_height);
-        background_logo_surface = load_image (background_logo, out background_logo_width, out background_logo_height);
     }
 
     private Cairo.Surface? load_image (string filename, out int width, out int height)
@@ -561,25 +557,6 @@ public class Background : Gtk.Fixed
             c.clip ();
             c.paint_with_alpha (alpha);
             c.restore ();
-
-            if (monitor != active_monitor && background_logo_surface != null)
-            {
-                var width = background_logo_width;
-                var height = background_logo_height;
-
-                c.save ();
-                pattern = new Cairo.Pattern.for_surface (background_logo_surface);
-                matrix = Cairo.Matrix.identity ();
-                var x = monitor.x + (monitor.width - width) / 2;
-                var y = monitor.y + (monitor.height - height) / 2;
-                matrix.translate (-x, -y);
-                pattern.set_matrix (matrix);
-                c.set_source (pattern);
-                c.rectangle (x, y, width, height);
-                c.clip ();
-                c.paint_with_alpha (alpha);
-                c.restore ();
-            }
         }
     }
 
