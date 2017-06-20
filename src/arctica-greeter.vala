@@ -639,6 +639,7 @@ public class ArcticaGreeter
                                      SpawnFlags.SEARCH_PATH,
                                      null,
                                      out atspi_pid);
+            debug ("Launched at-spi-bus-launcher. PID: %d", atspi_pid);
         }
         catch (Error e)
         {
@@ -807,6 +808,7 @@ public class ArcticaGreeter
                                      SpawnFlags.SEARCH_PATH,
                                      null,
                                      out nmapplet_pid);
+                debug ("Launched nm-applet. PID: %d", nmapplet_pid);
             }
             catch (Error e)
             {
