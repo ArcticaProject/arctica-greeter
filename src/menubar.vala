@@ -106,7 +106,8 @@ public class MenuBar : Gtk.MenuBar
      */
     public void set_keyboard_state ()
     {
-        onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
+        if (!ArcticaGreeter.singleton.test_mode)
+            onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
     }
 
     private string default_theme_name;
@@ -286,25 +287,28 @@ public class MenuBar : Gtk.MenuBar
 
     private void load_indicator (string indicator_name)
     {
-        if (indicator_name == "ug-accessibility")
+        if (!ArcticaGreeter.singleton.test_mode)
         {
-            var a11y_item = make_a11y_indicator ();
-            insert (a11y_item, (int) get_children ().length () - 1);
-        }
-        else
-        {
-            var io = load_indicator_file (indicator_name);
-
-            if (io == null)
-                io = load_indicator_library (indicator_name);
-
-            if (io != null)
+            if (indicator_name == "ug-accessibility")
             {
-                indicator_objects.append (io);
-                io.entry_added.connect (indicator_added_cb);
-                io.entry_removed.connect (indicator_removed_cb);
-                foreach (var entry in io.get_entries ())
-                    indicator_added_cb (io, entry);
+                var a11y_item = make_a11y_indicator ();
+                insert (a11y_item, (int) get_children ().length () - 1);
+            }
+            else
+            {
+                var io = load_indicator_file (indicator_name);
+
+                if (io == null)
+                    io = load_indicator_library (indicator_name);
+
+                if (io != null)
+                {
+                    indicator_objects.append (io);
+                    io.entry_added.connect (indicator_added_cb);
+                    io.entry_removed.connect (indicator_removed_cb);
+                    foreach (var entry in io.get_entries ())
+                        indicator_added_cb (io, entry);
+                }
             }
         }
     }
