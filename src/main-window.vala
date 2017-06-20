@@ -199,6 +199,12 @@ public class MainWindow : Gtk.Window
         }
     }
 
+    public void before_session_start()
+    {
+        debug ("Cleaning up menu bar related processes (i.e. orca, onboard");
+        menubar.cleanup();
+    }
+
     private void monitors_changed_cb (Gdk.Screen screen)
     {
         Gdk.Display display;

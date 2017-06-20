@@ -196,6 +196,8 @@ public class ArcticaGreeter
         c = null;
         refresh_background (screen, background_surface);
 
+        main_window.before_session_start();
+
         if (test_mode)
         {
             debug ("Successfully logged in! Quitting...");
