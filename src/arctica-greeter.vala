@@ -601,46 +601,6 @@ public class ArcticaGreeter
         */
         GLib.Environment.set_variable ("GDK_CORE_DEVICE_EVENTS", "1", true);
 
-        Pid atspi_pid = 0;
-
-        try
-        {
-            string[] argv = null;
-
-            if (FileUtils.test ("/usr/lib/at-spi2-core/at-spi-bus-launcher", FileTest.EXISTS)) {
-                // Debian & derivatives...
-                Shell.parse_argv ("/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately", out argv);
-            }
-            else if  (FileUtils.test ("/usr/libexec/at-spi-bus-launcher", FileTest.EXISTS)) {
-                // Fedora & derivatives...
-                Shell.parse_argv ("/usr/libexec/at-spi-bus-launcher --launch-immediately", out argv);
-            }
-            if (argv != null)
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out atspi_pid);
-            debug ("Launched at-spi-bus-launcher. PID: %d", atspi_pid);
-        }
-        catch (Error e)
-        {
-            warning ("Error starting the at-spi registry: %s", e.message);
-        }
-
-        Gtk.init (ref args);
-        Ido.init ();
-
-        log_timer = new Timer ();
-        Log.set_default_handler (log_cb);
-
-        debug ("Starting arctica-greeter %s UID=%d LANG=%s", Config.VERSION, (int) Posix.getuid (), Environment.get_variable ("LANG"));
-
-        /* Set the cursor to not be the crap default */
-        debug ("Setting cursor");
-        Gdk.get_default_root_window ().set_cursor (new Gdk.Cursor.for_display (Gdk.Display.get_default (), Gdk.CursorType.LEFT_PTR));
-
         bool do_show_version = false;
         bool do_test_mode = false;
         OptionEntry versionOption = { "version", 'v', 0, OptionArg.NONE, ref do_show_version,
@@ -678,6 +638,49 @@ public class ArcticaGreeter
 
         if (do_test_mode)
             debug ("Running in test mode");
+
+        Pid atspi_pid = 0;
+        if (!do_test_mode)
+        {
+
+            try
+            {
+                string[] argv = null;
+
+                if (FileUtils.test ("/usr/lib/at-spi2-core/at-spi-bus-launcher", FileTest.EXISTS)) {
+                    // Debian & derivatives...
+                    Shell.parse_argv ("/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately", out argv);
+                }
+                else if  (FileUtils.test ("/usr/libexec/at-spi-bus-launcher", FileTest.EXISTS)) {
+                    // Fedora & derivatives...
+                    Shell.parse_argv ("/usr/libexec/at-spi-bus-launcher --launch-immediately", out argv);
+                }
+                if (argv != null)
+                    Process.spawn_async (null,
+                                         argv,
+                                         null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out atspi_pid);
+                debug ("Launched at-spi-bus-launcher. PID: %d", atspi_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting the at-spi registry: %s", e.message);
+            }
+        }
+
+        Gtk.init (ref args);
+        Ido.init ();
+
+        log_timer = new Timer ();
+        Log.set_default_handler (log_cb);
+
+        debug ("Starting arctica-greeter %s UID=%d LANG=%s", Config.VERSION, (int) Posix.getuid (), Environment.get_variable ("LANG"));
+
+        /* Set the cursor to not be the crap default */
+        debug ("Setting cursor");
+        Gdk.get_default_root_window ().set_cursor (new Gdk.Cursor.for_display (Gdk.Display.get_default (), Gdk.CursorType.LEFT_PTR));
 
         /* Set GTK+ settings */
         debug ("Setting GTK+ settings");
@@ -846,34 +849,34 @@ public class ArcticaGreeter
                     warning ("Error stopping Indicator Service '%s': %s", indicator_service, e.message);
                 }
             }
+
+            greeter.settings_daemon.stop();
+
+            if (nmapplet_pid != 0)
+            {
+                Posix.kill (nmapplet_pid, Posix.SIGTERM);
+                int status;
+                Posix.waitpid (nmapplet_pid, out status, 0);
+                if (Process.if_exited (status))
+                    debug ("Network Manager Applet exited with return value %d", Process.exit_status (status));
+                else
+                    debug ("Network Manager Applet terminated with signal %d", Process.term_sig (status));
+                nmapplet_pid = 0;
+            }
+
+            if (atspi_pid != 0)
+            {
+                Posix.kill (atspi_pid, Posix.SIGKILL);
+                int status;
+                Posix.waitpid (atspi_pid, out status, 0);
+                if (Process.if_exited (status))
+                    debug ("AT-SPI exited with return value %d", Process.exit_status (status));
+                else
+                    debug ("AT-SPI terminated with signal %d", Process.term_sig (status));
+                atspi_pid = 0;
+            }
+
         }
-
-        greeter.settings_daemon.stop();
-
-        if (nmapplet_pid != 0)
-        {
-            Posix.kill (nmapplet_pid, Posix.SIGTERM);
-            int status;
-            Posix.waitpid (nmapplet_pid, out status, 0);
-            if (Process.if_exited (status))
-                debug ("Network Manager Applet exited with return value %d", Process.exit_status (status));
-            else
-                debug ("Network Manager Applet terminated with signal %d", Process.term_sig (status));
-            nmapplet_pid = 0;
-        }
-
-        if (atspi_pid != 0)
-        {
-            Posix.kill (atspi_pid, Posix.SIGKILL);
-            int status;
-            Posix.waitpid (atspi_pid, out status, 0);
-            if (Process.if_exited (status))
-                debug ("AT-SPI exited with return value %d", Process.exit_status (status));
-            else
-                debug ("AT-SPI terminated with signal %d", Process.term_sig (status));
-            atspi_pid = 0;
-        }
-
         debug ("Exiting");
 
         return Posix.EXIT_SUCCESS;
