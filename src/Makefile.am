@@ -51,6 +51,7 @@ arctica_greeter_CFLAGS = \
 logo_generator_CFLAGS = $(arctica_greeter_CFLAGS)
 
 arctica_greeter_VALAFLAGS = \
+	$(AM_VALAFLAGS) \
 	--debug \
 	--pkg posix \
 	--pkg gtk+-3.0 \
