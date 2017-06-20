@@ -576,15 +576,23 @@ public class ArcticaGreeter
 
         try
         {
-            string[] argv;
+            string[] argv = null;
 
-            Shell.parse_argv ("/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately", out argv);
-            Process.spawn_async (null,
-                                 argv,
-                                 null,
-                                 SpawnFlags.SEARCH_PATH,
-                                 null,
-                                 out atspi_pid);
+            if (FileUtils.test ("/usr/lib/at-spi2-core/at-spi-bus-launcher", FileTest.EXISTS)) {
+                // Debian & derivatives...
+                Shell.parse_argv ("/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately", out argv);
+            }
+            else if  (FileUtils.test ("/usr/libexec/at-spi-bus-launcher", FileTest.EXISTS)) {
+                // Fedora & derivatives...
+                Shell.parse_argv ("/usr/libexec/at-spi-bus-launcher --launch-immediately", out argv);
+            }
+            if (argv != null)
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out atspi_pid);
         }
         catch (Error e)
         {
