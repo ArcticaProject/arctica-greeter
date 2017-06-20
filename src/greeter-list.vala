@@ -41,14 +41,8 @@ public class ListDBusInterface : Object
 
     public string get_active_entry ()
     {
-        string entry = "";
-
-        if (list.selected_entry != null && list.selected_entry.id != null)
-            entry = list.selected_entry.id;
-
-        return entry;
+        return list.get_active_entry ();
     }
-
     public void set_active_entry (string entry_name)
     {
         list.set_active_entry (entry_name);
@@ -405,6 +399,16 @@ public abstract class GreeterList : FadableBox
             select_entry (selected_entry, 1.0);
 
         move_names ();
+    }
+
+    public string get_active_entry ()
+    {
+        string entry = "";
+
+        if (selected_entry != null && selected_entry.id != null)
+            entry = selected_entry.id;
+
+        return entry;
     }
 
     public void set_active_entry (string ?name)
