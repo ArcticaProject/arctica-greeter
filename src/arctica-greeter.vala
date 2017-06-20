@@ -181,6 +181,52 @@ public class ArcticaGreeter
         ctx.add_class ("lightdm");
     }
 
+    public static string? get_default_session ()
+    {
+        var sessions = new List<string> ();
+        sessions.append ("lightdm-xsession");
+
+        // FIXME: this list should be obtained from AGSettings, ideally...
+        sessions.append ("mate");
+        sessions.append ("xfce");
+        sessions.append ("kde-plasma");
+        sessions.append ("kde");
+        sessions.append ("gnome");
+        sessions.append ("cinnamon");
+
+        foreach (string session in sessions) {
+            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+            if (FileUtils.test (path, FileTest.EXISTS)) {
+                return session;
+            }
+        }
+
+        warning ("Could not find a default session.");
+        return null;
+    }
+
+    public static string validate_session (string? session)
+    {
+        /* Make sure the given session actually exists. Return it if it does.
+         * otherwise, return the default session.
+         */
+        if (session != null) {
+            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+            if (!FileUtils.test (path, FileTest.EXISTS) ) {
+                debug ("Invalid session: '%s'", session);
+                session = null;
+            }
+        }
+
+        if (session == null) {
+            var default_session = ArcticaGreeter.get_default_session ();
+            debug ("Invalid session: '%s'. Using session '%s' instead.", session, default_session);
+            return default_session;
+        }
+
+        return session;
+    }
+
     public bool start_session (string? session, Background bg)
     {
         /* Explicitly set the right scale before closing window */

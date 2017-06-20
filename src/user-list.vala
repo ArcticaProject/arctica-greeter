@@ -859,7 +859,7 @@ public class UserList : GreeterList
         }
         e.background = background;
         e.is_active = is_active;
-        e.session = session;
+        e.session = ArcticaGreeter.validate_session(session);
         e.label = label;
         e.set_show_message_icon (has_messages);
         e.set_is_active (is_active);

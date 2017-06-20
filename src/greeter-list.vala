@@ -947,7 +947,7 @@ public abstract class GreeterList : FadableBox
 
     protected virtual string get_lightdm_session ()
     {
-        return "ubuntu";
+        return ArcticaGreeter.get_default_session ();
     }
 
     /* Testing code below this */
