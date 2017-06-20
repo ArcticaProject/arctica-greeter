@@ -35,48 +35,48 @@ dist_soundsstereo_DATA = \
 	sounds/stereo/system-ready.ogg
 
 dist_pkgdata_DATA = \
+	badges/awesome_badge.png \
+	badges/budgie_badge.png \
+	badges/gnome_badge.png \
+	badges/gnustep_badge.png \
+	badges/i3_badge.png \
+	badges/kde_badge.png \
+	badges/lxde_badge.png \
+	badges/matchbox_badge.png \
+	badges/mate_badge.png \
+	badges/openbox_badge.png \
+	badges/remote_login_help.png \
+	badges/recovery_console_badge.png \
+	badges/sugar_badge.png \
+	badges/surf_badge.png \
+	badges/twm_badge.png \
+	badges/ubuntu_badge.png \
+	badges/unknown_badge.png \
+	badges/xfce_badge.png \
+	badges/xmonad_badge.png \
+	badges/xsession_badge.png \
 	a11y.svg \
 	active.png \
 	arrow_left.png \
 	arrow_right.png \
-	awesome_badge.png \
-	budgie_badge.png \
 	cof.png \
 	dialog_close.png \
 	dialog_close_highlight.png \
 	dialog_close_press.png \
-	gnome_badge.png \
-	gnustep_badge.png \
 	hibernate_highlight.png \
 	hibernate.png \
-	i3_badge.png \
-	kde_badge.png \
 	logo.png \
-	lxde_badge.png \
-	matchbox_badge.png \
-	mate_badge.png \
 	message.png \
-	openbox_badge.png \
-	recovery_console_badge.png \
-	remote_login_help.png \
 	restart_highlight.png \
 	restart.png \
 	shadow.png \
 	shutdown_highlight.png \
 	shutdown.png \
-	sugar_badge.png \
-	surf_badge.png \
 	suspend_highlight.png \
 	suspend.png \
 	switcher_corner.png \
 	switcher_left.png \
-	switcher_top.png \
-	twm_badge.png \
-	ubuntu_badge.png \
-	unknown_badge.png \
-	xfce_badge.png \
-	xmonad_badge.png \
-	xsession_badge.png
+	switcher_top.png
 
 logo.png: logo-bare.png
 	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png
