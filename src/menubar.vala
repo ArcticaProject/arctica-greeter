@@ -134,7 +134,6 @@ public class MenuBar : Gtk.MenuBar
             append (hostname_item);
 
             /* Hack to get a label showing on the menubar */
-            label.ensure_style ();
             var fg = label.get_style_context ().get_color (Gtk.StateFlags.NORMAL);
             label.override_color (Gtk.StateFlags.INSENSITIVE, fg);
         }
