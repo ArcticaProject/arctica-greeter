@@ -168,7 +168,7 @@ public class SettingsDaemon : Object
                                  SpawnFlags.SEARCH_PATH,
                                  null,
                                  out sd_pid);
-            debug ("Launched %s. PID: %d", Config.SD_BINARY, atspi_pid);
+            debug ("Launched %s. PID: %d", Config.SD_BINARY, sd_pid);
         }
         catch (Error e)
         {
