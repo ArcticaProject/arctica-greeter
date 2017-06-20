@@ -439,14 +439,16 @@ public class Background : Gtk.Fixed
         width = height = 0;
         try
         {
-            var image = new Gdk.Pixbuf.from_file (filename);
-            width = image.width;
-            height = image.height;
-            var surface = new Cairo.Surface.similar (target_surface, Cairo.Content.COLOR_ALPHA, image.width, image.height);
-            var c = new Cairo.Context (surface);
-            Gdk.cairo_set_source_pixbuf (c, image, 0, 0);
-            c.paint ();
-            return surface;
+            if (filename != "") {
+                var image = new Gdk.Pixbuf.from_file (filename);
+                width = image.width;
+                height = image.height;
+                var surface = new Cairo.Surface.similar (target_surface, Cairo.Content.COLOR_ALPHA, image.width, image.height);
+                var c = new Cairo.Context (surface);
+                Gdk.cairo_set_source_pixbuf (c, image, 0, 0);
+                c.paint ();
+                return surface;
+            }
         }
         catch (Error e)
         {
