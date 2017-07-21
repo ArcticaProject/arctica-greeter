@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 13:01+0200\n"
+"POT-Creation-Date: 2017-07-21 16:23+0200\n"
 "PO-Revision-Date: 2012-01-24 16:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Malayalam <ml@li.org>\n"
@@ -18,33 +18,33 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:296
 #, c-format
 msgid "Enter password for %s"
 msgstr "%s-നുള്ള അടയാളവാക്കു് നല്‍കുക"
 
-#: ../src/greeter-list.vala:810 ../src/user-list.vala:701
+#: ../src/greeter-list.vala:818 ../src/user-list.vala:701
 msgid "Password:"
 msgstr "അടയാളവാക്ക്:"
 
-#: ../src/greeter-list.vala:812 ../src/user-list.vala:695
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:695
 #: ../src/user-list.vala:788
 msgid "Username:"
 msgstr "നാമം:"
 
-#: ../src/greeter-list.vala:867
+#: ../src/greeter-list.vala:875
 msgid "Invalid password, please try again"
 msgstr "തെറ്റായ അടയാളവാക്ക്, ദയവായി വീണ്ടും ശ്രമിക്കുക"
 
-#: ../src/greeter-list.vala:878
+#: ../src/greeter-list.vala:886
 msgid "Failed to authenticate"
 msgstr "ആധികാരികത തെളിയിക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: ../src/greeter-list.vala:924
+#: ../src/greeter-list.vala:932
 msgid "Failed to start session"
 msgstr ""
 
-#: ../src/greeter-list.vala:939
+#: ../src/greeter-list.vala:947
 msgid "Logging in…"
 msgstr "പ്രവേശിക്കുന്നു"
 
@@ -52,7 +52,7 @@ msgstr "പ്രവേശിക്കുന്നു"
 msgid "Login Screen"
 msgstr "പ്രവേശന ജാലകം"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:113
 msgid "Back"
 msgstr "പിന്നോട്ട്"
 
@@ -68,11 +68,11 @@ msgstr "ഉയർന്ന തെളിച്ചം"
 msgid "Screen Reader"
 msgstr "യവനികാവായനോപാധി"
 
-#: ../src/prompt-box.vala:233
+#: ../src/prompt-box.vala:236
 msgid "Session Options"
 msgstr "വേളയിലെ ഉപാധികൾ"
 
-#: ../src/session-list.vala:41
+#: ../src/session-list.vala:40
 msgid "Select desktop environment"
 msgstr "ഡെസ്ക്ടോപ്പ് പരിസ്ഥിതി തിരഞ്ഞെടുക്കുക"
 
@@ -113,22 +113,22 @@ msgid "%s (Default)"
 msgstr "%s (സ്വതേ)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:595
+#: ../src/arctica-greeter.vala:608
 msgid "Show release version"
 msgstr "പതിപ്പുവിവരം പ്രദര്‍ശിപ്പിക്കുക"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:598
+#: ../src/arctica-greeter.vala:611
 msgid "Run in test mode"
 msgstr "പരീക്ഷണരൂപേണ പ്രവര്‍ത്തിപ്പിക്കുക"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:604
+#: ../src/arctica-greeter.vala:617
 msgid "- Arctica Greeter"
 msgstr "- Arctica സ്വാഗത ജാലകം"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:615
+#: ../src/arctica-greeter.vala:628
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "ലഭ്യമായ കമാന്‍ഡ് ലൈന്‍ ഉപാധികള്‍ക്കായി '%s --help' കാണുക."
@@ -239,12 +239,12 @@ msgstr "പ്രവേശിക്കുക"
 msgid "Guest"
 msgstr ""
 
-#: ../arctica-guest-session-auto.sh:33
+#: ../arctica-guest-session-auto.sh:35
 #, fuzzy, sh-format
 msgid "Temporary Guest Session"
 msgstr "'അതിഥി' വേള"
 
-#: ../arctica-guest-session-auto.sh:34
+#: ../arctica-guest-session-auto.sh:36
 #, sh-format
 msgid ""
 "All data created during this guest session will be deleted\n"
@@ -253,7 +253,7 @@ msgid ""
 "USB stick, if you would like to access them again later."
 msgstr ""
 
-#: ../arctica-guest-session-auto.sh:38
+#: ../arctica-guest-session-auto.sh:40
 #, sh-format
 msgid ""
 "Another alternative is to save files in the\n"
