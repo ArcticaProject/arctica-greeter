@@ -8,15 +8,18 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2012-08-31 18:55+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@gmail.com>\n"
-"Language-Team: Ukrainian <uk@li.org>\n"
+"PO-Revision-Date: 2017-08-22 17:08+0000\n"
+"Last-Translator: Володимир Бриняк <bardvv@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.17-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:296
 #, c-format
@@ -202,18 +205,16 @@ msgid "Server type not supported."
 msgstr "Підтримки серверів цього типу не передбачено."
 
 #: ../src/user-list.vala:707
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Гостьовий сеанс"
+msgstr "Сесія X2Go:"
 
 #: ../src/user-list.vala:727
 msgid "Domain:"
 msgstr "Домен:"
 
 #: ../src/user-list.vala:788
-#, fuzzy
 msgid "Email:"
-msgstr "Адреса ел. пошти:"
+msgstr "Електронна пошта:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:832
@@ -242,12 +243,12 @@ msgstr "Увійти"
 #: ../arctica-guest-account-script.sh.in:76
 #, sh-format
 msgid "Guest"
-msgstr ""
+msgstr "Гість"
 
 #: ../arctica-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Гостьовий сеанс"
+msgstr "Тимчасова гостьова сесія"
 
 #: ../arctica-guest-session-auto.sh:36
 #, sh-format
@@ -257,6 +258,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Усі дані, створені під час гостьового сеансу, будуть видалені\n"
+"коли ви виходите, налаштування буде скинуто до значень за замовчанням.\n"
+"Збережіть файли на деякому зовнішньому пристрої, наприклад\n"
+"USB-накопичувач, якщо ви хочете пізніше отримати доступ до них."
 
 #: ../arctica-guest-session-auto.sh:40
 #, sh-format
@@ -264,6 +269,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Ще однією альтернативою є збереження файлів у\n"
+"/var/guest-data папці."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 #, fuzzy
