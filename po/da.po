@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2017-08-29 09:32+0000\n"
-"Last-Translator: Kjetil Fleten <kjetil@fleten.net>\n"
+"PO-Revision-Date: 2017-08-30 10:44+0000\n"
+"Last-Translator: Jan Poulsen <jan@fleten.net>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/da/>\n"
 "Language: da\n"
@@ -48,7 +48,7 @@ msgstr "Opstart af session mislykkedes"
 
 #: ../src/greeter-list.vala:947
 msgid "Logging in…"
-msgstr "Logger ind ..."
+msgstr "Logger ind…"
 
 #: ../src/main-window.vala:49
 msgid "Login Screen"
@@ -72,7 +72,7 @@ msgstr "Skærmlæser"
 
 #: ../src/prompt-box.vala:236
 msgid "Session Options"
-msgstr "Sessionsegenskaber"
+msgstr "Sessions egenskaber"
 
 #: ../src/session-list.vala:40
 msgid "Select desktop environment"
@@ -80,7 +80,7 @@ msgstr "Vælg skrivebordsmiljø"
 
 #: ../src/shutdown-dialog.vala:101
 msgid "Goodbye. Would you like to…"
-msgstr "Farvel. Ønsker du at ..."
+msgstr "Farvel. Ønsker du at…"
 
 #: ../src/shutdown-dialog.vala:107 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
@@ -88,7 +88,7 @@ msgstr "Luk ned"
 
 #: ../src/shutdown-dialog.vala:111
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Er du sikker på, at du vil lukke ned for computeren?"
+msgstr "Er du sikker på, at du vil lukke  computeren?"
 
 #: ../src/shutdown-dialog.vala:136
 msgid ""
@@ -119,7 +119,7 @@ msgstr "%s (Standard)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:608
 msgid "Show release version"
-msgstr "Vis udgivelsesversion"
+msgstr "Vis udgivelses-version"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:611
@@ -156,8 +156,8 @@ msgid ""
 "If you have an account on an RDP or Citrix server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
-"Hvis du har en konto på en RDP- eller Citrix-server, så lader Fjernt logind "
-"dig køre programmer fra denne server."
+"Hvis du har en konto på en RDP eller Citrix-server, Fjern-login lader dig "
+"køre programmer fra denne server."
 
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:551
@@ -174,29 +174,28 @@ msgstr "Annullér"
 
 #: ../src/user-list.vala:555
 msgid "Set Up…"
-msgstr "Opsætning ..."
+msgstr "Opsætning…"
 
 #: ../src/user-list.vala:557
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Der kræves en konto til Ubuntu Fjernlogind for at kunne anvende denne "
+"Der kræves en konto til Ubuntu Fjern-login for at kunne anvende denne "
 "tjeneste. Vil du gerne opsætte en konto nu?"
 
 #: ../src/user-list.vala:561
 msgid "OK"
-msgstr "O.k."
+msgstr "O.k"
 
 #: ../src/user-list.vala:562
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Der kræves en konto til Ubuntu Fjernlogind for at kunne anvende denne "
-"tjeneste. Besøg uccs.canonical.com for at opsætte en konto."
+"Der kræves en konto til Ubuntu Fjern login for at kunne anvende denne "
+"tjeneste. Besøg https://%s for at opsætte en konto."
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
@@ -256,6 +255,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Alt data som er lavet under denne gæste session vil blive slettet\n"
+"når du logger ud, vil indstillinger blive sat til standart.\n"
+"Vær venlig at gemme filer på en ekstern enhed, fx. et \n"
+"USB pen, hvis du vil have adgang til dem igen senere."
 
 #: ../arctica-guest-session-auto.sh:40
 #, sh-format
@@ -263,11 +266,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Et andet alternativ vil være at gemme filerne i \n"
+"/var/guest-data mappen."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Velkomstskærmen for Arctica"
+msgstr "Arctica Greeter"
 
 #~ msgid "Logging in..."
 #~ msgstr "Logger ind..."
