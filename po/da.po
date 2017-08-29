@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2012-03-30 03:25+0000\n"
-"Last-Translator: Søren Howe Gersager <syrelyre@gmail.com>\n"
-"Language-Team: Danish <da@li.org>\n"
+"PO-Revision-Date: 2017-08-29 09:32+0000\n"
+"Last-Translator: Kjetil Fleten <kjetil@fleten.net>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.17-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:296
 #, c-format
@@ -201,18 +203,16 @@ msgid "Server type not supported."
 msgstr "Servertype understøttes ikke."
 
 #: ../src/user-list.vala:707
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gæstesession"
+msgstr "X2Go session:"
 
 #: ../src/user-list.vala:727
 msgid "Domain:"
 msgstr "Domæne:"
 
 #: ../src/user-list.vala:788
-#, fuzzy
 msgid "Email:"
-msgstr "E-post-adresse:"
+msgstr "E-post adresse:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:832
@@ -241,12 +241,12 @@ msgstr "Log ind"
 #: ../arctica-guest-account-script.sh.in:76
 #, sh-format
 msgid "Guest"
-msgstr ""
+msgstr "Gæst"
 
 #: ../arctica-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gæstesession"
+msgstr "Midlertidig Gæstesession"
 
 #: ../arctica-guest-session-auto.sh:36
 #, sh-format
