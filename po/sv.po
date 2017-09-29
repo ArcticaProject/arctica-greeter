@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2013-06-30 08:01+0000\n"
-"Last-Translator: Daniel Nylander <yeager@ubuntu.com>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"PO-Revision-Date: 2017-09-30 19:48+0000\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.17-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:296
 #, c-format
@@ -46,7 +48,7 @@ msgstr "Misslyckades med att starta sessionen"
 
 #: ../src/greeter-list.vala:947
 msgid "Logging in…"
-msgstr "Loggar in..."
+msgstr "Loggar in…"
 
 #: ../src/main-window.vala:49
 msgid "Login Screen"
@@ -78,7 +80,7 @@ msgstr "Välj skrivbordsmiljö"
 
 #: ../src/shutdown-dialog.vala:101
 msgid "Goodbye. Would you like to…"
-msgstr "Hej då. Vill du..."
+msgstr "Hej då. Vill du…"
 
 #: ../src/shutdown-dialog.vala:107 ../src/shutdown-dialog.vala:207
 msgid "Shut Down"
@@ -171,47 +173,44 @@ msgstr "Avbryt"
 
 #: ../src/user-list.vala:555
 msgid "Set Up…"
-msgstr "Ställ in..."
+msgstr "Ställ in…"
 
 #: ../src/user-list.vala:557
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Du behöver ett Ubuntu-fjärrinloggningskonto för att använda den här "
-"tjänsten. Vill du skapa ett konto nu?"
+"Du behöver ett fjärrinloggningskonto för att använda den här tjänsten. Vill "
+"du skapa ett konto nu?"
 
 #: ../src/user-list.vala:561
 msgid "OK"
 msgstr "Ok"
 
 #: ../src/user-list.vala:562
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Du behöver ett Ubuntu-fjärrinloggningskonto för att använda den här "
-"tjänsten. Besök uccs.canonical.com för att skapa ett konto."
+"Du behöver ett fjärrinloggningskonto för att använda den här tjänsten. Besök "
+"https://%s för att skapa ett konto."
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
 msgstr "Servertypen stöds inte."
 
 #: ../src/user-list.vala:707
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gästsession"
+msgstr "X2Go-session:"
 
 #: ../src/user-list.vala:727
 msgid "Domain:"
 msgstr "Domän:"
 
 #: ../src/user-list.vala:788
-#, fuzzy
 msgid "Email:"
-msgstr "E-postadress:"
+msgstr "E-post:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:832
@@ -240,12 +239,12 @@ msgstr "Logga in"
 #: ../arctica-guest-account-script.sh.in:76
 #, sh-format
 msgid "Guest"
-msgstr ""
+msgstr "Gäst"
 
 #: ../arctica-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gästsession"
+msgstr "Tillfällig gästsession"
 
 #: ../arctica-guest-session-auto.sh:36
 #, sh-format
@@ -255,6 +254,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Alla data som skapas under denna gästsession kommer\n"
+"att tas bort då du loggar ut, och inställningar kommer att\n"
+"återställas till standardvärden.\n"
+"Spara filer på någon extern enhet, t.ex. en USB-sticka, om\n"
+"du vill kunna komma åt dem senare."
 
 #: ../arctica-guest-session-auto.sh:40
 #, sh-format
@@ -262,11 +266,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Ett annat alternativ är att spara filer i\n"
+"mappen /var/guest-data"
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica-hälsare"
+msgstr "Arctica-hälsare"
 
 #~ msgid "Logging in..."
 #~ msgstr "Loggar in..."
