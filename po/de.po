@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2014-12-27 16:04+0000\n"
-"Last-Translator: Tobias Bannert <Unknown>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2017-10-02 05:16+0000\n"
+"Last-Translator: Marc Schöni <marc.schoeni1@gmail.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.17-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:296
 #, c-format
@@ -175,42 +177,39 @@ msgid "Set Up…"
 msgstr "Einrichten …"
 
 #: ../src/user-list.vala:557
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Sie benötigen ein Ubuntu-Fernzugriffskonto, um diesen Dienst zu nutzen. "
-"Möchten Sie jetzt ein Fernzugriffskonto einrichten?"
+"Sie benötigen ein Remote Login, um diesen Dienst zu nutzen. Möchten Sie "
+"jetzt ein Fernzugriff Konto einrichten?"
 
 #: ../src/user-list.vala:561
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:562
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Sie benötigen ein Ubuntu Fernzugriffskonto, um diesen Dienst zu nutzen. "
-"Besuchen Sie uccs.canonical.com, um ein Konto einzurichten."
+"Sie benötigen ein Remote Login, um diesen Dienst zu nutzen. Besuchen Sie "
+"uccs.canonical.com, um ein Konto einzurichten."
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
 msgstr "Server-Typ nicht unterstützt."
 
 #: ../src/user-list.vala:707
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gastzugang"
+msgstr "X2Go Sitzung:"
 
 #: ../src/user-list.vala:727
 msgid "Domain:"
 msgstr "Domäne:"
 
 #: ../src/user-list.vala:788
-#, fuzzy
 msgid "Email:"
 msgstr "E-Mail-Adresse:"
 
@@ -241,12 +240,12 @@ msgstr "Anmelden"
 #: ../arctica-guest-account-script.sh.in:76
 #, sh-format
 msgid "Guest"
-msgstr ""
+msgstr "Gast"
 
 #: ../arctica-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gastzugang"
+msgstr "Temporärer Gastzugang"
 
 #: ../arctica-guest-session-auto.sh:36
 #, sh-format
@@ -256,6 +255,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Alle Daten erstellt während dieser Gastsitzung werden gelöscht\n"
+"wenn sie sich ausloggen, die Standardeinstellungen werden zurückgesetzt.\n"
+"Bitte speichern sie ihre Daten auf einem Externen Datenträger, zum Beispiel\n"
+"Wenn sie zu einem späteren Zeitpunkt erneut zugreifen möchten."
 
 #: ../arctica-guest-session-auto.sh:40
 #, sh-format
@@ -263,11 +266,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Eine weitere möglichkeit besteht mit dem Sichern der Datei unter\n"
+"/var/guest-data Ordner."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Greeter"
+msgstr "- Arctica Grüsser"
 
 #~ msgid "Logging in..."
 #~ msgstr "Anmeldung läuft …"
