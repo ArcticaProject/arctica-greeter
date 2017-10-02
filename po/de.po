@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2017-10-02 05:16+0000\n"
+"PO-Revision-Date: 2017-10-03 07:46+0000\n"
 "Last-Translator: Marc Schöni <marc.schoeni1@gmail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/de/>\n"
@@ -129,7 +129,7 @@ msgstr "Im Testmodus starten"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:617
 msgid "- Arctica Greeter"
-msgstr "- Arctica Greeter"
+msgstr "- Arctica Empfangsperson"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:628
