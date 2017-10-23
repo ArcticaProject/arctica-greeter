@@ -1179,16 +1179,23 @@ public class UserList : GreeterList
         test_backgrounds = new List<string> ();
         try
         {
-            var dir = Dir.open ("/usr/share/backgrounds/");
-            while (true)
-            {
-                var bg = dir.read_name ();
-                if (bg == null)
-                    break;
-                test_backgrounds.append ("/usr/share/backgrounds/" + bg);
+
+            var directory = File.new_for_path ("/usr/share/backgrounds");
+
+            var enumerator = directory.enumerate_children (FileAttribute.STANDARD_NAME, 0);
+
+            FileInfo file_info;
+            while ((file_info = enumerator.next_file ()) != null) {
+                if(file_info.get_file_type() != FileType.DIRECTORY)
+                {
+                    test_backgrounds.append ("/usr/share/backgrounds/" + file_info.get_name());
+                }
             }
         }
         catch (FileError e)
+        {
+        }
+        catch (GLib.Error e)
         {
         }
 
