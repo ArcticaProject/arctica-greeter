@@ -50,15 +50,7 @@ public class MainWindow : Gtk.Window
         has_resize_grip = false;
         ArcticaGreeter.add_style_class (this);
 
-        realize ();
-        Gdk.DrawingContext background_context;
-        background_context = get_window().begin_draw_frame(get_window().get_visible_region());
-        background = new Background (background_context.get_cairo_context().get_target());
-        background.draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
-        background.default_background = AGSettings.get_string (AGSettings.KEY_BACKGROUND);
-        background.set_logo (AGSettings.get_string (AGSettings.KEY_LOGO));
-        get_window().end_draw_frame(background_context);
-        background.show ();
+        background = new Background ();
         add (background);
         ArcticaGreeter.add_style_class (background);
 
@@ -205,6 +197,17 @@ public class MainWindow : Gtk.Window
     {
         debug ("Cleaning up menu bar related processes (i.e. orca, onboard");
         menubar.cleanup();
+    }
+
+    public override void realize ()
+    {
+        base.realize ();
+        Gdk.DrawingContext background_context;
+        background_context = get_window().begin_draw_frame(get_window().get_visible_region());
+
+        background.set_surface (background_context.get_cairo_context().get_target());
+
+        get_window().end_draw_frame(background_context);
     }
 
     private void monitors_changed_cb (Gdk.Screen screen)

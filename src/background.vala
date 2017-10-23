@@ -394,8 +394,72 @@ public class Background : Gtk.Fixed
         GRID,
     }
 
-    public string default_background { get; set; default = AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR); }
-    public string? current_background { get; set; default = null; }
+    /* Fallback bgcolor - shown upon first startup, until an async background loader finishes,
+     * or until a user background or default background is loaded.
+     */
+    private string _fallback_bgcolor = null;
+    public string fallback_bgcolor {
+        get {
+            if (_fallback_bgcolor == null)
+            {
+                var settings_bgcolor = AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR);
+                var color = Gdk.RGBA ();
+
+                if (settings_bgcolor == "" || !color.parse (settings_bgcolor))
+                {
+                    settings_bgcolor = "#000000";
+                }
+
+                _fallback_bgcolor = settings_bgcolor;
+            }
+
+            return _fallback_bgcolor;
+        }
+    }
+
+    private string _system_background;
+    public string? system_background {
+        get {
+            if (_system_background == null)
+            {
+                var system_bg = AGSettings.get_string (AGSettings.KEY_BACKGROUND);
+
+                if (system_bg == "")
+                {
+                    system_bg = fallback_bgcolor;
+                }
+
+                _system_background = system_bg;
+            }
+
+            return _system_background;
+        }
+    }
+
+    /* Current background - whatever the background object is or should be showing right now.
+     * This could be a simple color or a file name - the BackgroundLoader takes care of deciding
+     * how to deal with it, we just ensure whatever we're sending is valid.
+     */
+
+    private string _current_background;
+    public string? current_background {
+        get { return _current_background; }
+
+        set {
+            if (value == null || value == "")
+            {
+                _current_background = system_background;
+            } else
+            {
+                _current_background = value;
+            }
+
+            reload ();
+        }
+
+        default = fallback_bgcolor;
+    }
+
     public bool draw_grid { get; set; default = true; }
     public double alpha { get; private set; default = 1.0; }
     public Gdk.RGBA average_color { get { return current.average_color; } }
@@ -416,17 +480,27 @@ public class Background : Gtk.Fixed
     private int version_logo_width;
     private int version_logo_height;
 
-    public Background (Cairo.Surface target_surface)
+    public Background ()
     {
-        this.target_surface = target_surface;
-        timer = new AnimateTimer (AnimateTimer.ease_in_out, 700);
-        timer.animate.connect (animate_cb);
+        target_surface = null;
+        timer = null;
 
         resize_mode = Gtk.ResizeMode.QUEUE;
+        draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
 
         loaders = new HashTable<string?, BackgroundLoader> (str_hash, str_equal);
 
-        notify["current-background"].connect (() => { reload (); });
+        show ();
+    }
+
+    public void set_surface (Cairo.Surface target_surface)
+    {
+        this.target_surface = target_surface;
+
+        timer = new AnimateTimer (AnimateTimer.ease_in_out, 700);
+
+        set_logo (AGSettings.get_string (AGSettings.KEY_LOGO));
+        timer.animate.connect (animate_cb);
     }
 
     public void set_logo (string version_logo)
@@ -473,6 +547,12 @@ public class Background : Gtk.Fixed
 
     public override void size_allocate (Gtk.Allocation allocation)
     {
+
+        if(!get_realized())
+        {
+            return;
+        }
+
         var resized = allocation.height != get_allocated_height () || allocation.width != get_allocated_width ();
 
         base.size_allocate (allocation);
@@ -594,7 +674,7 @@ public class Background : Gtk.Fixed
     private BackgroundLoader load_background (string? filename)
     {
         if (filename == null)
-            filename = default_background;
+            filename = fallback_bgcolor;
 
         var b = loaders.lookup (filename);
         if (b == null)
