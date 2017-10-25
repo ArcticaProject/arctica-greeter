@@ -863,6 +863,7 @@ public class UserList : GreeterList
         e.label = label;
         e.set_show_message_icon (has_messages);
         e.set_is_active (is_active);
+        debug("Adding user to list. User: %s, background: %s, is_active: %b, has_messages: %b, session: %s", e.label, e.background, is_active, has_messages, session);
 
         /* Remove manual option when have users */
         if (have_entries () && !always_show_manual)
