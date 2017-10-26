@@ -110,5 +110,9 @@
       <default>'service.arctica-project.org'</default>
       <summary>Default FQDN for host offering Remote Logon Service</summary>
     </key>
+    <key name="activate-numlock" type="b">
+      <default>false</default>
+      <summary>Whether to activate numlock. This features requires the installation of numlockx.</summary>
+    </key>
   </schema>
 </schemalist>

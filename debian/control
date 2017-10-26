@@ -48,6 +48,7 @@ Recommends: ayatana-indicator-application,
             ayatana-indicator-sound,
             network-manager-gnome,
             xinput,
+            numlockx,
 Provides: lightdm-greeter
 Breaks:
  edubuntu-artwork (<< 12.01.1~),
