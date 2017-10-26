@@ -128,7 +128,7 @@ public class ArcticaGreeter
                                     }
                                     catch (Error e)
                                     {
-                                        debug ("Failed to get USD proxy, proceed anyway");
+                                        debug ("Failed to get MSD proxy, proceed anyway");
                                         xsettings_ready ();
                                     }
                                 },
