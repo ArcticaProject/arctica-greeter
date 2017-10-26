@@ -580,6 +580,16 @@ public class ArcticaGreeter
         greeter_ready ();
     }
 
+    private static void set_keyboard_layout ()
+    {
+        try {
+            Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-set-keyboard-layout"), null, null, null);
+        }
+        catch (Error e){
+            warning ("Error while setting the keyboard layout: %s", e.message);
+        }
+    }
+
     private static void activate_numlock ()
     {
         try {
@@ -650,6 +660,9 @@ public class ArcticaGreeter
 
         if (do_test_mode)
             debug ("Running in test mode");
+
+        /* Set the keyboard layout */
+        set_keyboard_layout ();
 
         /* Set the numlock state */
         if (AGSettings.get_boolean (AGSettings.KEY_ACTIVATE_NUMLOCK)) {

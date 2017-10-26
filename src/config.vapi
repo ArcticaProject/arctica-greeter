@@ -6,6 +6,7 @@ namespace Config
   public const string VERSION;
   public const string INDICATOR_FILE_DIR;
   public const string PKGDATADIR;
+  public const string PKGLIBEXECDIR;
   public const string INDICATORDIR;
   public const string SD_BINARY;
 }

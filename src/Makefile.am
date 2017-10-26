@@ -46,6 +46,7 @@ arctica_greeter_CFLAGS = \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-DVERSION=\"$(VERSION)\" \
 	-DPKGDATADIR=\""$(pkgdatadir)"\" \
+	-DPKGLIBEXECDIR=\""$(pkglibexecdir)"\" \
 	-DINDICATORDIR=\""$(INDICATORDIR)"\"
 
 logo_generator_CFLAGS = $(arctica_greeter_CFLAGS)

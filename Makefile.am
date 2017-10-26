@@ -9,7 +9,8 @@ sbin_SCRIPTS = arctica-guest-account-script
 
 pkglibexec_SCRIPTS = lightdm-arctica-greeter-session \
 	arctica-guest-session-auto.sh \
-	arctica-guest-session-setup.sh
+	arctica-guest-session-setup.sh \
+	arctica-greeter-set-keyboard-layout
 
 EXTRA_DIST = \
 	autogen.sh \
