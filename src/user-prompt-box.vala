@@ -16,6 +16,7 @@
  *
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
+ *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  */
 
 public class UserPromptBox : PromptBox

@@ -14,7 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Authored by: Michael Terry <michael.terry@canonical.com>
+ * Authors: Michael Terry <michael.terry@canonical.com>
+ *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  */
 
 public class ListStack : Gtk.Fixed

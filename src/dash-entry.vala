@@ -1,6 +1,7 @@
 /* -*- Mode: Vala; indent-tabs-mode: nil; tab-width: 4 -*-
  *
  * Copyright (C) 2012 Canonical Ltd
+ * Copyright (C) 2015 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -15,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Michael Terry <michael.terry@canonical.com>
+ *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  */
 
 /* Vala's vapi for gtk3 is broken for lookup_color (it forgets the out keyword) */
