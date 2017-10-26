@@ -58,7 +58,7 @@ Description: LightDM Arctica Greeter
  local display manager as well as thin client login manager.
 
 Package: arctica-greeter-guest-session
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends},
          adduser,
 Recommends: openbox,
