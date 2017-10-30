@@ -438,7 +438,7 @@ public class MenuBar : Gtk.MenuBar
     {
         var settings = Gtk.Settings.get_default ();
         if (item.active)
-            settings.set ("gtk-theme-name", "HighContrast");
+            settings.set ("gtk-theme-name", "HighContrastInverse");
         else
             settings.set ("gtk-theme-name", default_theme_name);
         high_contrast = item.active;
