@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-21 16:23+0200\n"
-"PO-Revision-Date: 2017-09-17 23:07+0000\n"
+"PO-Revision-Date: 2017-11-17 23:25+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 2.18-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:296
@@ -176,26 +176,25 @@ msgid "Set Up…"
 msgstr "Sett opp …"
 
 #: ../src/user-list.vala:557
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Du trenger en Ubuntu Remote Login-konto for å bruke denne tjenesten. Vil du "
-"lage en konto nå?"
+"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Vil du lage "
+"en konto nå?"
 
 #: ../src/user-list.vala:561
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:562
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Du trenger en Ubuntu Remote Login-konto for å bruke denne tjenesten. Besøk "
-"uccs.canonical.com for å lage en konto."
+"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Besøk "
+"https://%s for å lage en konto."
 
 #: ../src/user-list.vala:679
 msgid "Server type not supported."
@@ -210,7 +209,6 @@ msgid "Domain:"
 msgstr "Domene:"
 
 #: ../src/user-list.vala:788
-#, fuzzy
 msgid "Email:"
 msgstr "E-postadresse:"
 
@@ -244,9 +242,9 @@ msgid "Guest"
 msgstr "Gjest"
 
 #: ../arctica-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gjesteøkt"
+msgstr "Midlertidig gjesteøkt"
 
 #: ../arctica-guest-session-auto.sh:36
 #, sh-format
@@ -271,9 +269,8 @@ msgstr ""
 "/var/guest-data -mappen."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "Arctica velkomstskjerm"
+msgstr "Arctica-velkomstskjerm"
 
 #~ msgid "_Back"
 #~ msgstr "_Tilbake"
