@@ -1,3 +1,13 @@
+Overview of changes in arctica-greeter 0.99.0.2
+
+    - Allow configuring default numlock status.
+    - Enforce correct keyboard layout setting.
+    - Rename guest session scripts to better fit into the
+      arctica-greeter-* namespace.
+    - Man page improvements
+    - Copyright updates.
+    - Translation update.
+
 Overview of changes in arctica-greeter 0.99.0.1
 
     - Fork from Unity Greeter 15.10.1.

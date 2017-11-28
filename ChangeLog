@@ -1,13 +1,135 @@
-2017-10-23 23:33:58 +0200 Mike Gabriel (9401b74)
+2017-11-28 18:22:53 +0100 Mike Gabriel (ccbcc71)
 
-	* release 0.99.0.1 (HEAD -> master)
+	* release 0.99.0.2 (HEAD -> master)
+
+2017-11-28 18:22:07 +0100 Mike Gabriel (3537ac6)
+
+	* debian/copyright: Update copyright attributions for new man page.
+
+2017-11-28 18:02:56 +0100 Mike Gabriel (96b5cac)
+
+	* data/arctica-greeter.1: Improve (not much, but a little) the
+          arctica-greeter man page.
+
+2017-11-28 18:02:25 +0100 Mike Gabriel (9ef87a0)
+
+	* arctica-greeter-guest-account-script: Add brief man page for the
+          guest account creation script.
+
+2017-11-28 17:17:21 +0100 Mike Gabriel (1a2635a)
+
+	* More places to fix for the guest session script renaming.
+          (origin/master)
+
+2017-11-28 17:09:57 +0100 Mike Gabriel (33f57b4)
+
+	* Update translation files.
+
+2017-11-17 23:24:26 +0000 Allan Nordhøy (27c02f4)
+
+	* Translated using Weblate (Norwegian Bokmål)
+
+2017-11-28 16:46:35 +0100 Mike Gabriel (acd892c)
+
+	* Rename various scripts, so that they have 'arctica-greeter' in
+          their file name (and not just 'arctica').
+
+2017-11-28 16:34:39 +0100 Mike Gabriel (4fe6467)
+
+	* debian/control: Bump Standards-Version: to 4.1.1. No changes
+          needed.
+
+2017-11-28 16:10:47 +0100 Mike Gabriel (a1f2ee0)
+
+	* debian/copyright: Add machine-generated copyright.in file.
+
+2017-11-28 16:10:16 +0100 Mike Gabriel (dec42ab)
+
+	* debian/copyright: Update copyright attributions. Appropriate for
+          official Debian package.
+
+2017-11-28 15:09:15 +0100 Mike Gabriel (55f0154)
+
+	* data/badges/COPYING.badges: Add attributiong for desktop session
+          badges.
+
+2017-11-28 14:52:54 +0100 Mike Gabriel (82e9fb7)
+
+	* Update files update-po(t).sh, includes added license headers.
+
+2017-11-28 14:51:58 +0100 Mike Gabriel (5a19212)
+
+	* no Transifex anymore, we have moved to Weblate...
+
+2017-10-30 09:40:21 +0100 Mike Gabriel (6f8134a)
+
+	* Revert "a11y: Use HighContrast rather than HighContrastInverse."
+
+2017-10-30 09:19:49 +0100 Mike Gabriel (ce53a04)
+
+	* debian/control: Typo fix in D of arctica-greeter (comma vs. dot).
+
+2017-10-26 15:11:55 +0200 Mike Gabriel (a7472c9)
+
+	* debian/control: Add to D (arctica-greeter): x11-xkb-utils (for
+          setxkbmap).
+
+2017-10-26 15:10:56 +0200 Mike Gabriel (64719ae)
+
+	* arctica-greeter-set-keyboard-layout: Add encoding tag to the
+          header.
+
+2017-10-26 15:06:40 +0200 Mike Gabriel (5791c16)
+
+	* arctica-greeter-set-keyboard-layout: Add license header and
+          copyright holder. Assume same license as in COPYING file.
+
+2017-10-26 14:51:25 +0200 Clement Lefebvre (6d087e7)
+
+	* a11y: Use HighContrast rather than HighContrastInverse.
+
+2017-10-26 14:43:24 +0200 Mike Gabriel (818a6c0)
+
+	* debian/control: Switch to Arch: any for bin:pkg
+          arctica-greeter-guest-session.
+
+2017-10-26 14:30:54 +0200 Mike Gabriel (164a06e)
+
+	* Explicitly set the keyboard layout
+
+2017-10-26 14:17:27 +0200 Clement Lefebvre (f192e26)
+
+	* Add support for numlockx.
+
+2017-10-26 14:14:40 +0200 Mike Gabriel (0f7e41f)
+
+	* src/settings.vala: White-space cleanup.
+
+2017-10-26 14:05:59 +0200 Mike Gabriel (b78391b)
+
+	* copyright holdership: Add myself as copyright holder and author to
+          file headers of files I have worked on.
+
+2017-10-26 13:47:01 +0200 Mike Gabriel (afdb9fc)
+
+	* src/arctica-greeter.vala: Fix debug message, we use MSD, not USD.
+
+2017-10-25 19:43:48 +0200 Mike Gabriel (b6e1341)
+
+	* src/user-list.vala: Add debug message providing info about added
+          users / labels.
+
+2017-10-23 23:33:58 +0200 Mike Gabriel (32ffe2d)
+
+	* release 0.99.0.1 (tag: 0.99.0.1, origin/release-builds,
+          release-builds)
 
 2017-10-23 23:18:06 +0200 Mike Gabriel (5ad6cbc)
 
 	* src/user-list.vala: Use directory enumerator for getting a random
           number of background image. Check if the returned
           directory entry is not a sub-directory. If so, then skip
-          it. (origin/master)
+          it.
 
 2017-10-23 23:13:02 +0200 Michael Webster (0003057)
 
@@ -1062,6 +1184,5 @@
 
 2014-11-02 20:40:40 +0100 Mike Gabriel (8e2d33d)
 
-	* Imported Upstream version 14.04.10 (tag: upstream/14.04.10,
-          upstream)
+	* Imported Upstream version 14.04.10 (upstream)
 
