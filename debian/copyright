@@ -35,7 +35,7 @@ Copyright: 2011, Canonical Ltd
   2017, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 License: GPL-3
 
-Files: arctica-guest-session-auto.sh
+Files: arctica-greeter-guest-session-auto.sh
  lightdm-arctica-greeter-session
  src/cached-image.vala
  src/cairo-utils.vala
@@ -267,7 +267,7 @@ Files: arctica-greeter-set-keyboard-layout
 Copyright: 2017, Clement Lefebvre <clement.lefebvre@linuxmint.com>
 License: GPL-3
 
-Files: arctica-guest-account-script.sh.in
+Files: arctica-greeter-guest-account-script.sh.in
 Copyright: 2008, Canonical Ltd.
 License: GPL-2+
 
@@ -287,15 +287,15 @@ Files: AUTHORS
  NEWS.Canonical
  README
  arctica-greeter.doap
- arctica-guest-session-setup.sh
+ arctica-greeter-guest-session-setup.sh
  autogen.sh
  configure.ac
  data/50-arctica-greeter.conf.in
- data/50-arctica-guest-wrapper.conf.in
+ data/50-arctica-greeter-guest-wrapper.conf.in
  data/Makefile.am
  data/arctica-greeter.1
  data/arctica-greeter.desktop.in
- data/arctica-guest-session-startup.desktop.in
+ data/arctica-greeter-guest-session-startup.desktop.in
  data/org.ArcticaProject.arctica-greeter.gschema.xml
  po/LINGUAS
  po/POTFILES.in

@@ -1,6 +1,6 @@
 etc/lightdm/lightdm.conf.d/91*
-usr/sbin/arctica-guest-account-script
-usr/lib/*/arctica-greeter/arctica-guest-session-auto.sh
-usr/lib/*/arctica-greeter/arctica-guest-session-setup.sh
-usr/share/lightdm/lightdm.conf.d/50-arctica-guest-wrapper.conf
-usr/share/arctica-greeter/guest-session/skel/.config/autostart/arctica-guest-session-startup.desktop
+usr/sbin/arctica-greeter-guest-account-script
+usr/lib/*/arctica-greeter/arctica-greeter-guest-session-auto.sh
+usr/lib/*/arctica-greeter/arctica-greeter-guest-session-setup.sh
+usr/share/lightdm/lightdm.conf.d/50-arctica-greeter-guest-wrapper.conf
+usr/share/arctica-greeter/guest-session/skel/.config/autostart/arctica-greeter-guest-session-startup.desktop

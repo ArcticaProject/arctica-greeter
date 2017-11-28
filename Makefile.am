@@ -2,14 +2,14 @@
 
 SUBDIRS = src data po tests
 
-arctica-guest-account-script: arctica-guest-account-script.sh.in
+arctica-greeter-guest-account-script: arctica-greeter-guest-account-script.in
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
 
-sbin_SCRIPTS = arctica-guest-account-script
+sbin_SCRIPTS = arctica-greeter-guest-account-script
 
 pkglibexec_SCRIPTS = lightdm-arctica-greeter-session \
-	arctica-guest-session-auto.sh \
-	arctica-guest-session-setup.sh \
+	arctica-greeter-guest-session-auto.sh \
+	arctica-greeter-guest-session-setup.sh \
 	arctica-greeter-set-keyboard-layout
 
 EXTRA_DIST = \
@@ -19,7 +19,7 @@ EXTRA_DIST = \
 DISTCLEANFILES = \
 	Makefile.in \
 	aclocal.m4 \
-	arctica-guest-account-script \
+	arctica-greeter-guest-account-script \
 	compile \
 	configure \
 	config.h.in \
