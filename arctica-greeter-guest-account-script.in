@@ -141,7 +141,7 @@ add_account ()
   fi
 
   # setup session
-  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} @pkglibexecdir@/arctica-guest-session-setup.sh"
+  su ${GUEST_USER} -c "env HOME=${GUEST_HOME} site_gs=${site_gs} @pkglibexecdir@/arctica-greeter-guest-session-setup.sh"
 
   # set possible local guest session preferences
   source_local_prefs() {
