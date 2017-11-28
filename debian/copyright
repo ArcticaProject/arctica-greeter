@@ -296,6 +296,7 @@ Files: AUTHORS
  data/arctica-greeter.1
  data/arctica-greeter.desktop.in
  data/arctica-greeter-guest-session-startup.desktop.in
+ data/arctica-greeter-guest-account-script.8
  data/org.ArcticaProject.arctica-greeter.gschema.xml
  po/LINGUAS
  po/POTFILES.in
