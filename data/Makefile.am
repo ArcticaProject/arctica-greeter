@@ -85,6 +85,7 @@ gsettings_SCHEMAS = \
 	org.ArcticaProject.arctica-greeter.gschema.xml
 
 dist_man1_MANS = arctica-greeter.1
+dist_man8_MANS = arctica-greeter-guest-account-script.8
 
 EXTRA_DIST = \
 	$(gsettings_SCHEMAS)
