@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-21 16:23+0200\n"
+"POT-Creation-Date: 2017-11-28 17:09+0100\n"
 "PO-Revision-Date: 2014-04-28 22:12+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Armenian <hy@li.org>\n"
@@ -18,137 +18,137 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
-#: ../src/greeter-list.vala:296
+#: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
 msgstr "Մուտքագրեք %s օգտվողի գաղտնաբառը։"
 
-#: ../src/greeter-list.vala:818 ../src/user-list.vala:701
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:703
 msgid "Password:"
 msgstr "Գաղտնաբառ"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:695
-#: ../src/user-list.vala:788
+#: ../src/greeter-list.vala:822 ../src/user-list.vala:697
+#: ../src/user-list.vala:790
 msgid "Username:"
 msgstr "Օգտվողի անունը՝"
 
-#: ../src/greeter-list.vala:875
+#: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
 msgstr "Գաղտնաբառը սխալ է. նորի՛ց փորձեք։"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
 msgstr "Մուտք կատարել չհաջողվեց"
 
-#: ../src/greeter-list.vala:932
+#: ../src/greeter-list.vala:934
 msgid "Failed to start session"
 msgstr "Գործաժամի գործարկումը չհաջողվեց։"
 
-#: ../src/greeter-list.vala:947
+#: ../src/greeter-list.vala:949
 msgid "Logging in…"
 msgstr "Մուտք..."
 
-#: ../src/main-window.vala:49
+#: ../src/main-window.vala:51
 msgid "Login Screen"
 msgstr "Մուտքի էկրան"
 
-#: ../src/main-window.vala:113
+#: ../src/main-window.vala:115
 msgid "Back"
 msgstr "Հետ"
 
-#: ../src/menubar.vala:220
+#: ../src/menubar.vala:222
 msgid "Onscreen keyboard"
 msgstr "Էկրանի ստեղնաշար"
 
-#: ../src/menubar.vala:225
+#: ../src/menubar.vala:227
 msgid "High Contrast"
 msgstr "Բարձր ցայտունություն"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:233
 msgid "Screen Reader"
 msgstr "Էկրանի ընթերցիչ"
 
-#: ../src/prompt-box.vala:236
+#: ../src/prompt-box.vala:238
 msgid "Session Options"
 msgstr "Գործաժամի ընտրանքներ"
 
-#: ../src/session-list.vala:40
+#: ../src/session-list.vala:42
 msgid "Select desktop environment"
 msgstr "Ընտրեք միջերեսային միջավայրը։"
 
-#: ../src/shutdown-dialog.vala:101
+#: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
 msgstr "Ցտեսություն։ Ցանկանում եք դուք..."
 
-#: ../src/shutdown-dialog.vala:107 ../src/shutdown-dialog.vala:207
+#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
 msgstr "Անջատել համակարգիչը"
 
-#: ../src/shutdown-dialog.vala:111
+#: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
 msgstr "Անջատե՞լ համակարգիչը։"
 
-#: ../src/shutdown-dialog.vala:136
+#: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:153
+#: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
 msgstr "Անցնել սպասման ռեժիմի"
 
-#: ../src/shutdown-dialog.vala:170
+#: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
 msgstr "Անցնել ննջման ռեժիմի"
 
-#: ../src/shutdown-dialog.vala:188
+#: ../src/shutdown-dialog.vala:190
 msgid "Restart"
 msgstr "Վերագործարկել"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:127
+#: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (լռելյայն)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:608
+#: ../src/arctica-greeter.vala:630
 msgid "Show release version"
 msgstr "Ցույց տալ թողարկման տարբերակը։"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:611
+#: ../src/arctica-greeter.vala:633
 msgid "Run in test mode"
 msgstr "Գործարկել թեստավորման ռեժիմում։"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:617
+#: ../src/arctica-greeter.vala:639
 #, fuzzy
 msgid "- Arctica Greeter"
 msgstr "- Unity-ի ողջույնի էկրանը"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:628
+#: ../src/arctica-greeter.vala:650
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "%s --help հրահանգով ծանոթացեք հրահանգային տողի առկա ընտրանքների ամբողջական "
 "ցանկին։"
 
-#: ../src/user-list.vala:45
+#: ../src/user-list.vala:47
 msgid "Guest Session"
 msgstr "Հյուրի գործաժամ"
 
-#: ../src/user-list.vala:438
+#: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
 msgstr "Խնդում ենք մուտքագրել էլեկտրոնային փոստի ամբողջական հասցեն"
 
-#: ../src/user-list.vala:518
+#: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
 msgstr "Սխալ էլէկտրոնային հասցե կամ գաղտնաբառ"
 
-#: ../src/user-list.vala:549
+#: ../src/user-list.vala:551
 msgid ""
 "If you have an account on an RDP or Citrix server, Remote Login lets you run "
 "applications from that server."
@@ -157,7 +157,7 @@ msgstr ""
 "(Remote Login) կկարողանաք այդ սպասարկիչից ծրագրեր գործարկել։"
 
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:551
+#: ../src/user-list.vala:553
 msgid ""
 "If you have an account on an RDP server, Remote Login lets you run "
 "applications from that server."
@@ -165,15 +165,15 @@ msgstr ""
 "Եթե RDP սպասարկիչում բացված հաշիվ ունեք, հեռակա մուտքի (Remote Login) "
 "միջոցով կկարողանաք այդ սպասարկիչից ծրագրեր գործարկել։"
 
-#: ../src/user-list.vala:554
+#: ../src/user-list.vala:556
 msgid "Cancel"
 msgstr "Չեղարկել"
 
-#: ../src/user-list.vala:555
+#: ../src/user-list.vala:557
 msgid "Set Up…"
 msgstr "Կարգավորում..."
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:559
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
@@ -182,11 +182,11 @@ msgstr ""
 "Այս ծառայությունից օգտվելու համար պետք է Ubuntu Remote Login-ի հաշիվ "
 "ունենաք։ Կամենո՞ւմ եք հաշիվը բացել հիմա։"
 
-#: ../src/user-list.vala:561
+#: ../src/user-list.vala:563
 msgid "OK"
 msgstr "Այո"
 
-#: ../src/user-list.vala:562
+#: ../src/user-list.vala:564
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
@@ -195,59 +195,53 @@ msgstr ""
 "Այս ծառայությունից օգտվելու համար պետք է Ubuntu Remote Login-ի հաշիվ "
 "ունենաք։ Հաշիվ բացելու համար գնացեք uccs.canonical.com հասցեով։"
 
-#: ../src/user-list.vala:679
+#: ../src/user-list.vala:681
 msgid "Server type not supported."
 msgstr "Սերվերի այս տեսակը չի աջակցվում:"
 
-#: ../src/user-list.vala:707
+#: ../src/user-list.vala:709
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Հյուրի գործաժամ"
 
-#: ../src/user-list.vala:727
+#: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "Դոմեյն։"
 
-#: ../src/user-list.vala:788
+#: ../src/user-list.vala:790
 #, fuzzy
 msgid "Email:"
 msgstr "Էլ. փոստի հասցե՝"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:832
+#: ../src/user-list.vala:834
 msgid "Log In"
 msgstr "Մուտք"
 
-#: ../src/user-list.vala:833
+#: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
 msgstr "Մուտք գործեք որպես %s"
 
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:839
 msgid "Retry"
 msgstr "Նորի՛ց փորձեք։"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:840
 #, c-format
 msgid "Retry as %s"
 msgstr "Փորձեք որպես %s"
 
-#: ../src/user-list.vala:876
+#: ../src/user-list.vala:879
 msgid "Login"
 msgstr "Մուտք"
 
-#. does not exist, so create it
-#: ../arctica-guest-account-script.sh.in:76
-#, sh-format
-msgid "Guest"
-msgstr ""
-
-#: ../arctica-guest-session-auto.sh:35
+#: ../arctica-greeter-guest-session-auto.sh:35
 #, fuzzy, sh-format
 msgid "Temporary Guest Session"
 msgstr "Հյուրի գործաժամ"
 
-#: ../arctica-guest-session-auto.sh:36
+#: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
 msgid ""
 "All data created during this guest session will be deleted\n"
@@ -256,7 +250,7 @@ msgid ""
 "USB stick, if you would like to access them again later."
 msgstr ""
 
-#: ../arctica-guest-session-auto.sh:40
+#: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
 msgid ""
 "Another alternative is to save files in the\n"
