@@ -18,6 +18,8 @@ set -x
 
 GETTEXT_DOMAIN=$(cat configure.ac | grep -E "^GETTEXT_PACKAGE=" | sed -e 's/GETTEXT_PACKAGE=//')
 
+cp po/${GETTEXT_DOMAIN}.pot po/${GETTEXT_DOMAIN}.pot~
+
 cd po/
 cat LINGUAS | while read lingua; do
 	if [ ! -e ${lingua}.po ]; then
@@ -25,5 +27,14 @@ cat LINGUAS | while read lingua; do
 	else
 		intltool-update --gettext-package ${GETTEXT_DOMAIN} $(basename ${lingua})
 	fi
+
+	sed -e 's/\.xml\.in\.h:/.xml.in:/g'	\
+	    -e 's/\.ini\.in\.h:/.ini.in:/g'	\
+	    -e 's/\.xml\.h:/.xml:/g'		\
+	    -e 's/\.ini\.h:/.ini:/g'		\
+	    -i ${lingua}.po
+
 done
 cd - 1>/dev/null
+
+mv po/${GETTEXT_DOMAIN}.pot~ po/${GETTEXT_DOMAIN}.pot
