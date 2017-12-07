@@ -92,7 +92,7 @@ public class ArcticaGreeter
 
         var state_dir = Path.build_filename (Environment.get_user_cache_dir (), "arctica-greeter");
         DirUtils.create_with_parents (state_dir, 0775);
-        
+
         var xdg_seat = GLib.Environment.get_variable("XDG_SEAT");
         var state_file_name = xdg_seat != null && xdg_seat != "seat0" ? xdg_seat + "-state" : "state";
 

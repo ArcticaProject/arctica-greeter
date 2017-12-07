@@ -237,7 +237,7 @@ public class UserList : GreeterList
     {
         return remote_server_list_name.split ("*")[2];
     }
-    
+
     private string username_from_remote_loding_server_list_name (string remote_server_list_name)
     {
         return remote_server_list_name.split ("*")[3];
@@ -474,7 +474,7 @@ public class UserList : GreeterList
                     else if (password_field.text == "duplicate")
                     {
                         test_fill_remote_login_servers_duplicate_entries (out server_list);
-                        login_success = true;                        
+                        login_success = true;
                     }
                 }
                 else
@@ -668,7 +668,7 @@ public class UserList : GreeterList
         current_remote_fields = new HashTable<string, Gtk.Widget> (str_hash, str_equal);
         var url = url_from_remote_loding_server_list_name (selected_entry.id);
         var username = username_from_remote_loding_server_list_name (selected_entry.id);
-        
+
         foreach (var remote_server in server_list)
         {
             var remote_username = username_from_remote_server_fields (remote_server);
@@ -1233,10 +1233,10 @@ public class UserList : GreeterList
                 RemoteServerField field2 = RemoteServerField ();
                 field2.type = "password";
                 remote_server.fields = {field1, field2};
-                
+
                 test_server_list += remote_server;
                 set_remote_directory_servers (test_server_list);
-                
+
                 return false;
             });
 
@@ -1422,7 +1422,7 @@ public class UserList : GreeterList
         server_list[0] = remote_server2;
         server_list[1] = remote_server5;
     }
-    
+
     private bool test_key_press_cb (Gdk.EventKey event)
     {
         if ((event.state & Gdk.ModifierType.CONTROL_MASK) == 0)

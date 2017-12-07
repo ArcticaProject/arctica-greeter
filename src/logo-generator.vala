@@ -6,7 +6,7 @@ public class Main : Object
     private static string? result = null;
     private static int width = 245;
     private static int height = 44;
-    private const OptionEntry[] options = { 
+    private const OptionEntry[] options = {
 	{"logo", 0, 0, OptionArg.FILENAME, ref file, "Path to logo", "LOGO"},
 	{"text", 0, 0, OptionArg.STRING, ref text, "Sublogo text", "TEXT"},
 	{"width", 0, 0, OptionArg.INT, ref width, "Logo width", "WIDTH"},
@@ -21,7 +21,7 @@ public class Main : Object
 	    opt_context.set_help_enabled (true);
 	    opt_context.add_main_entries (options, null);
 	    opt_context.parse (ref args);
-	} catch (OptionError e) {    
+	} catch (OptionError e) {
 	    stdout.printf ("error: %s\n", e.message);
 	    stdout.printf ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
 	    return 0;

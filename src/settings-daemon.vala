@@ -97,7 +97,7 @@ public class SettingsDaemon : Object
                            {
                                debug ("Acquired org.gnome.ScreenSaver");
                                start_settings_daemon ();
-                           },                          
+                           },
                            () => debug ("Failed to acquire name org.gnome.ScreenSaver"));
 
         /* The media-keys plugin inhibits the power key, but we don't want
@@ -207,7 +207,7 @@ public class ScreenSaverInterface : Object
     public ScreenSaverInterface ()
     {
         idle_monitor = new IdleMonitor ();
-        _set_active (false);       
+        _set_active (false);
     }
 
     private void _set_active (bool value)
@@ -244,7 +244,7 @@ public class ScreenSaverInterface : Object
     {
         return _active;
     }
-    
+
     public uint32 get_active_time () { return 0; }
     public void lock () {}
     public void show_message (string summary, string body, string icon) {}

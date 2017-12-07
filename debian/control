@@ -1,7 +1,7 @@
 Source: arctica-greeter
 Section: x11
 Priority: optional
-Maintainer: Mike Gabriel <mike.gabriel@das-netzwerkteam.de> 
+Maintainer: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 Standards-Version: 4.1.1
 Build-Depends: at-spi2-core,
                dbus-x11,

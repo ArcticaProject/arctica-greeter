@@ -555,20 +555,20 @@ public class Test
         email.text = "a@canonical.com";
         pwd.text = "duplicate";
         list.selected_entry.respond ({});
-        GLib.assert (!list.selected_entry.has_errors);        
-        GLib.assert (list.selected_entry.id == "*remote_login*http://rdpdefaultusername.com*alowl2");        
-        
+        GLib.assert (!list.selected_entry.has_errors);
+        GLib.assert (list.selected_entry.id == "*remote_login*http://rdpdefaultusername.com*alowl2");
+
         var username = remote_login_entry_username_field(list);
         var domain = remote_login_entry_domain_field(list);
-        var password = remote_login_entry_password_field(list);		
+        var password = remote_login_entry_password_field(list);
         GLib.assert (username.text == "alowl2" && domain.text == "PRINTERS" && password.text == "duplicate2");
-                        
+
         do_scroll (list, GreeterList.ScrollTarget.DOWN);
         GLib.assert (list.selected_entry.id == "*remote_login*http://rdpdefaultusername.com*alowl1");
         username = remote_login_entry_username_field(list);
         domain = remote_login_entry_domain_field(list);
         password = remote_login_entry_password_field(list);
-        GLib.assert (username.text == "alowl1" && domain.text == "SCANNERS" && password.text == "duplicate1");	
+        GLib.assert (username.text == "alowl1" && domain.text == "SCANNERS" && password.text == "duplicate1");
         wait_for_scrolling_end (list);
         mw.hide ();
     }
