@@ -74,7 +74,7 @@ Architecture: all
 Depends: ${misc:Depends},
          arctica-greeter-guest-session,
          remote-logon-service,
-Recommends: lightdm-remote-session-freerdp,
+Recommends: lightdm-remote-session-freerdp2,
             lightdm-remote-session-x2go,
 Description: LightDM Arctica Greeter - Remote Login Support
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
