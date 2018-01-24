@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-03-08 23:43+0000\n"
-"Last-Translator: Sigurpáll Sigurðsson <Icekhaos@hotmail.com>\n"
-"Language-Team: Icelandic <is@li.org>\n"
+"PO-Revision-Date: 2018-01-25 09:37+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/is/>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n % 10 != 1 || n % 100 == 11;\n"
+"X-Generator: Weblate 2.19-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -30,15 +32,15 @@ msgstr "Lykilorð:"
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
 msgid "Username:"
-msgstr "Notendanafn:"
+msgstr "Notandanafn:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "Ógilt lykilorð, vinsamlegast reyndu aftur"
+msgstr "Ógilt lykilorð, reyndu aftur"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr "Tókst ekki að auðkennast"
+msgstr "Auðkenning mistókst"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -46,11 +48,11 @@ msgstr "Mistókst að hefja setu"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Innskráning..."
+msgstr "Innskráning…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
-msgstr "Innskráning"
+msgstr "Innskráningargluggi"
 
 #: ../src/main-window.vala:115
 msgid "Back"
@@ -70,15 +72,15 @@ msgstr "Skjálesari"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr "Valmöguleikar setu"
+msgstr "Valkostir setu"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr "Veldu skáborðs umhverfi"
+msgstr "Veldu skjáborðsumhverfi"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Bless. Viltu kannski..."
+msgstr "Bless. Viltu kannski…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -93,7 +95,7 @@ msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
-"Aðrir notendur eru skráðir inn á þessa tölvu, ef slökkt er á henni verður "
+"Aðrir notendur eru skráðir inn á þessa tölvu; ef slökkt er á henni verður "
 "þeim setum einnig lokað."
 
 #: ../src/shutdown-dialog.vala:155
@@ -112,12 +114,12 @@ msgstr "Endurræsa"
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr "%s (Sjálfgefið)"
+msgstr "%s (sjálfgefið)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:630
 msgid "Show release version"
-msgstr "Sýna útgáfunúmer"
+msgstr "Birta útgáfunúmer"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:633
@@ -127,14 +129,15 @@ msgstr "Keyra í prufuham"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:639
 msgid "- Arctica Greeter"
-msgstr "- Arctica Heilsari"
+msgstr "- Arctica upphafsskjárinn"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:650
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Keyrðu '%s --help' til að sjá lista yfir stillingar fyrir þessa skipun."
+"Keyrðu '%s --help' til að sjá lista yfir allar tiltækar stillingar fyrir "
+"þessa skipun."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -142,7 +145,7 @@ msgstr "Gestaaðgangur"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
-msgstr "Vinsamlegast skráðu heilt netfang"
+msgstr "Settu inn fullt tölvupóstfang"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
@@ -171,47 +174,44 @@ msgstr "Hætta við"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Set Upp..."
+msgstr "Uppsetning…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Þú þarft Ubuntu Fjarskráningar reiking til að nota þessa þjónustu. Vilt þú "
+"Þú þarft fjarskráningarreikning Ubuntu til að nota þessa þjónustu. Vilt þú "
 "setja upp reikning núna?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
-msgstr "Samþykkt"
+msgstr "Í lagi"
 
 #: ../src/user-list.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Þú þarft Ubuntu Fjarskáningar reikning til að nota þessa þjónustu. Farðu á "
-"uccs.canonical.com til að setja upp reikning."
+"Þú þarft fjarskáningarreikning Ubuntu til að nota þessa þjónustu. Farðu á "
+"https://%s til að setja upp reikning."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
 msgstr "Gerð þjóns ekki studd."
 
 #: ../src/user-list.vala:709
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gestaaðgangur"
+msgstr "X2Go-seta:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "Lén:"
 
 #: ../src/user-list.vala:790
-#, fuzzy
 msgid "Email:"
-msgstr "Netfang:"
+msgstr "Tölvupóstfang:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -234,12 +234,12 @@ msgstr "Reyna aftur sem %s"
 
 #: ../src/user-list.vala:879
 msgid "Login"
-msgstr "Innskrá"
+msgstr "Innskráning"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gestaaðgangur"
+msgstr "Tímabundinn gestaaðgangur"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -256,11 +256,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Annar möguleiki er að vista skrár í\n"
+"/var/guest-data möppunni."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Heilsari"
+msgstr "Arctica upphafsskjár"
 
 #~ msgid "Enter username"
 #~ msgstr "Sláðu inn notendanafn"
