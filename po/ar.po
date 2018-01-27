@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-01-27 08:50+0000\n"
+"PO-Revision-Date: 2018-01-28 09:34+0000\n"
 "Last-Translator: Mutaz Tayyeb AbuSaad <wahshy1414@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/ar/>\n"
@@ -49,7 +49,7 @@ msgstr "فشل بدء الجلسة"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "يجري الولوج للحساب..."
+msgstr "جاري تسجيل الدخول…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -57,7 +57,7 @@ msgstr "نافذة تسجيل الدخول"
 
 #: ../src/main-window.vala:115
 msgid "Back"
-msgstr "عودة"
+msgstr "رجوع"
 
 #: ../src/menubar.vala:222
 msgid "Onscreen keyboard"
@@ -81,7 +81,7 @@ msgstr "اختر بيئة سطح المكتب"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "إلى اللقاء. هل ترغب في..."
+msgstr "إلى اللقاء. هل ترغب في …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -173,7 +173,7 @@ msgstr "ألغِ"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "إعداد..."
+msgstr "يتم الإعداد …"
 
 #: ../src/user-list.vala:559
 msgid ""
@@ -193,8 +193,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"تحتاج لحساب أبونتو للوصول عن بُعد لاستخدام هذه الخدمة. قم بزيارة "
-"uccs.canonical.com لإعداد حساب."
+"تحتاج لحساب أبونتو للوصول عن بُعد لاستخدام هذه الخدمة. قم بزيارة http://%s "
+"لإعداد حساب."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
@@ -210,7 +210,7 @@ msgstr "النطاق:"
 
 #: ../src/user-list.vala:790
 msgid "Email:"
-msgstr "عنوان البريد الإلكتروني:"
+msgstr "البريد الإلكتروني:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -260,7 +260,7 @@ msgid ""
 "/var/guest-data folder."
 msgstr ""
 "يمكن أيضًا تخزين الملفات في هذا المجلد\n"
-"/.var/guest-data"
+"/var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
