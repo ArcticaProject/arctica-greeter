@@ -8,103 +8,113 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Telugu <te@li.org>\n"
+"PO-Revision-Date: 2018-01-30 06:41+0000\n"
+"Last-Translator: Joel Vinay Kumar <lavotivinay@gmail.com>\n"
+"Language-Team: Telugu <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/te/>\n"
 "Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.19-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
-#, c-format
+#, c-format, fuzzy
 msgid "Enter password for %s"
-msgstr ""
+msgstr "పాస్ వర్డ్(గుర్తింపు పదము) వ్రాయండి"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:703
+#, fuzzy
 msgid "Password:"
-msgstr ""
+msgstr "పాస్ వర్డ్(గుర్తింపు పదము):"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
+#, fuzzy
 msgid "Username:"
-msgstr ""
+msgstr "వాడుక పేరు:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "గుర్తింపు పదము తప్పు, మళ్ళీ ప్రయత్నించండి"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "దీనిని ధ్రువీకరించలేము"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "సమావేశం మొదలు పెట్టటం విఫలమైంది"
 
 #: ../src/greeter-list.vala:949
+#, fuzzy
 msgid "Logging in…"
-msgstr ""
+msgstr "లాగిన్ చేయబడుతుంది"
 
 #: ../src/main-window.vala:51
+#, fuzzy
 msgid "Login Screen"
-msgstr ""
+msgstr "లాగిన్ తెర"
 
 #: ../src/main-window.vala:115
 msgid "Back"
-msgstr ""
+msgstr "వెనుకకి"
 
 #: ../src/menubar.vala:222
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "తెర పైన కీబోర్డ్"
 
 #: ../src/menubar.vala:227
 msgid "High Contrast"
-msgstr ""
+msgstr "అధిక కాంట్రాస్ట్"
 
 #: ../src/menubar.vala:233
 msgid "Screen Reader"
-msgstr ""
+msgstr "తెర పైన చదువరి"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "సమావేశ ఎంపికలు"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr ""
+msgstr "డెస్క్టాప్ వాతావరణాన్ని ఎంచుకో"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "సెలవు. మీరు…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr ""
+msgstr "మూసివేయి"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "మీరు ఖచ్చితంగా మూసివేయాలని కోరుతున్నారా?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"వేరే వాడుకదారి ప్రస్తుతం లాగిన్ చేసి ఉన్నారు. ఇప్పుడు మూసివేస్తే వారి "
+"సమావేశాలు కూడా మూసివేయబడతాయి."
 
 #: ../src/shutdown-dialog.vala:155
+#, fuzzy
 msgid "Suspend"
-msgstr ""
+msgstr "తాత్కాలికంగా మూసివేయి"
 
 #: ../src/shutdown-dialog.vala:172
+#, fuzzy
 msgid "Hibernate"
-msgstr ""
+msgstr "సోమరి"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "మరల ప్రారంభించు"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
@@ -115,17 +125,18 @@ msgstr ""
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:630
 msgid "Show release version"
-msgstr ""
+msgstr "విడుదల వెర్షన్ను చూపించు"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:633
+#, fuzzy
 msgid "Run in test mode"
-msgstr ""
+msgstr "శోధన స్థితిలో నడిపించు"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:639
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- అర్క్టికా గ్రీటర్"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:650
@@ -134,16 +145,18 @@ msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 
 #: ../src/user-list.vala:47
+#, fuzzy
 msgid "Guest Session"
-msgstr ""
+msgstr "అతిధి సమావేశం"
 
 #: ../src/user-list.vala:440
+#, fuzzy
 msgid "Please enter a complete e-mail address"
-msgstr ""
+msgstr "దయచేసి పూర్తి ఈమెయిల్ అడ్డ్రెస్ రాయండి"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
-msgstr ""
+msgstr "ఇమెయిల్ అడ్రస్ లేదా పాస్వర్డ్(గుర్తింపు పదం) తప్పు"
 
 #: ../src/user-list.vala:551
 msgid ""
@@ -160,21 +173,23 @@ msgstr ""
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr ""
+msgstr "రద్దుచేయి"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr ""
+msgstr "సెట్ అప్…"
 
 #: ../src/user-list.vala:559
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
+"ఈ సేవను పొందటానికి మీకు రిమోట్ లాగాన్ ఖాతాకావాలి. ఇప్పుడు ఒక ఖాతా ని సెటప్ "
+"చేయాలని కోరుతున్నారా?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
-msgstr ""
+msgstr "సరే"
 
 #: ../src/user-list.vala:564
 #, c-format
@@ -185,19 +200,20 @@ msgstr ""
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
-msgstr ""
+msgstr "సర్వర్ రకానికి మద్దతు లేదు"
 
 #: ../src/user-list.vala:709
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go సమావేశం"
 
 #: ../src/user-list.vala:729
+#, fuzzy
 msgid "Domain:"
-msgstr ""
+msgstr "డొమైన్"
 
 #: ../src/user-list.vala:790
 msgid "Email:"
-msgstr ""
+msgstr "ఇమెయిల్:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -207,7 +223,7 @@ msgstr "ప్రవేశించండి"
 #: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "వలె ప్రవేశించండి"
 
 #: ../src/user-list.vala:839
 msgid "Retry"
@@ -216,16 +232,16 @@ msgstr "మరలా ప్రయత్నించు"
 #: ../src/user-list.vala:840
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "%s వలె మళ్ళీ ప్రయత్నించు"
 
 #: ../src/user-list.vala:879
 msgid "Login"
-msgstr ""
+msgstr "లాగిన్"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, sh-format
+#, fuzzy, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "తాత్కాలిక అతిధి సమావేశం"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -244,8 +260,9 @@ msgid ""
 msgstr ""
 
 #: ../data/arctica-greeter.desktop.in.h:1
+#, fuzzy
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "అర్క్టికా గ్రీటర్"
 
 #~ msgid "_Back"
 #~ msgstr "వెనుకకు (_B)"
