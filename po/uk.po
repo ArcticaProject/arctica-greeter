@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-01-24 12:34+0000\n"
+"PO-Revision-Date: 2018-01-30 21:05+0000\n"
 "Last-Translator: Марс Ямбар <mjambarmeta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/uk/>\n"
@@ -265,9 +265,8 @@ msgstr ""
 "/var/guest-data папці."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Вітальне вікно Arctica"
+msgstr "Вітальне вікно Arctica"
 
 #~ msgid "Guest"
 #~ msgstr "Гість"
