@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-01-30 06:41+0000\n"
-"Last-Translator: Joel Vinay Kumar <lavotivinay@gmail.com>\n"
+"PO-Revision-Date: 2018-02-05 15:41+0000\n"
+"Last-Translator: Michal Čihař <michal@cihar.com>\n"
 "Language-Team: Telugu <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/te/>\n"
 "Language: te\n"
@@ -223,7 +223,7 @@ msgstr "ప్రవేశించండి"
 #: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
-msgstr "వలె ప్రవేశించండి"
+msgstr "వలె ప్రవేశించండి %s"
 
 #: ../src/user-list.vala:839
 msgid "Retry"
