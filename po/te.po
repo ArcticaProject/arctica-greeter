@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-02-05 15:41+0000\n"
-"Last-Translator: Michal Čihař <michal@cihar.com>\n"
+"PO-Revision-Date: 2018-02-10 19:40+0000\n"
+"Last-Translator: Joel Vinay Kumar <lavotivinay@gmail.com>\n"
 "Language-Team: Telugu <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/te/>\n"
 "Language: te\n"
@@ -21,14 +21,13 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
-#, c-format, fuzzy
+#, c-format
 msgid "Enter password for %s"
-msgstr "పాస్ వర్డ్(గుర్తింపు పదము) వ్రాయండి"
+msgstr "%s కొరకు పాస్ వర్డ్ వ్రాయండి"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:703
-#, fuzzy
 msgid "Password:"
-msgstr "పాస్ వర్డ్(గుర్తింపు పదము):"
+msgstr "పాస్ వర్డ్:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
@@ -49,9 +48,8 @@ msgid "Failed to start session"
 msgstr "సమావేశం మొదలు పెట్టటం విఫలమైంది"
 
 #: ../src/greeter-list.vala:949
-#, fuzzy
 msgid "Logging in…"
-msgstr "లాగిన్ చేయబడుతుంది"
+msgstr "లాగిన్ చేయబడుతుంది…"
 
 #: ../src/main-window.vala:51
 #, fuzzy
@@ -103,12 +101,10 @@ msgstr ""
 "సమావేశాలు కూడా మూసివేయబడతాయి."
 
 #: ../src/shutdown-dialog.vala:155
-#, fuzzy
 msgid "Suspend"
 msgstr "తాత్కాలికంగా మూసివేయి"
 
 #: ../src/shutdown-dialog.vala:172
-#, fuzzy
 msgid "Hibernate"
 msgstr "సోమరి"
 
@@ -120,7 +116,7 @@ msgstr "మరల ప్రారంభించు"
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr ""
+msgstr "%s (డిఫాల్ట్)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:630
@@ -129,7 +125,6 @@ msgstr "విడుదల వెర్షన్ను చూపించు"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:633
-#, fuzzy
 msgid "Run in test mode"
 msgstr "శోధన స్థితిలో నడిపించు"
 
@@ -142,27 +137,27 @@ msgstr "- అర్క్టికా గ్రీటర్"
 #: ../src/arctica-greeter.vala:650
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "పూర్తి కమాండ్ లైన్ విషయసూచిక కొరకు '%s' ను నడపండి."
 
 #: ../src/user-list.vala:47
-#, fuzzy
 msgid "Guest Session"
 msgstr "అతిధి సమావేశం"
 
 #: ../src/user-list.vala:440
-#, fuzzy
 msgid "Please enter a complete e-mail address"
 msgstr "దయచేసి పూర్తి ఈమెయిల్ అడ్డ్రెస్ రాయండి"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
-msgstr "ఇమెయిల్ అడ్రస్ లేదా పాస్వర్డ్(గుర్తింపు పదం) తప్పు"
+msgstr "ఇమెయిల్ అడ్రస్ లేదా పాస్ వర్డ్ తప్పు"
 
 #: ../src/user-list.vala:551
 msgid ""
 "If you have an account on an RDP or Citrix server, Remote Login lets you run "
 "applications from that server."
 msgstr ""
+"మీకు అర్డిపి లేదా క్రిటిక్స్ సర్వర్లో ఖాతా ఉంటే, రిమోట్ లాగిన్ మిమ్మల్ని "
+"అప్లికేషనులు ఆ సర్వర్ ద్వారా నడపగలగనిన్స్తుంది."
 
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
