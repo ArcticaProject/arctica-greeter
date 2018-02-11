@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-02-11 00:54+0000\n"
+"PO-Revision-Date: 2018-02-12 01:39+0000\n"
 "Last-Translator: Rafael Henrique Mendes de Oliv <rafaelfifa1988@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects"
 "/arctica-framework/greeter/pt_BR/>\n"
@@ -80,7 +80,7 @@ msgstr "Selecionar ambiente da área de trabalho"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Adeus. Você gostaria de..."
+msgstr "Adeus. Você gostaria de…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
