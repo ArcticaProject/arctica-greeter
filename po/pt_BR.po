@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-07-05 01:39+0000\n"
-"Last-Translator: Hriostat <Unknown>\n"
-"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"PO-Revision-Date: 2018-02-11 00:54+0000\n"
+"Last-Translator: Rafael Henrique Mendes de Oliv <rafaelfifa1988@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects"
+"/arctica-framework/greeter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.19-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -34,7 +36,7 @@ msgstr "Nome de usuário:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "Senha inválida, por favor tente novamente."
+msgstr "Senha inválida, por favor tente novamente"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -46,7 +48,7 @@ msgstr "Falha ao iniciar a sessão"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Inicializando..."
+msgstr "Inicializando…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -172,47 +174,44 @@ msgstr "Cancelar"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Você precisa de uma conta de Acesso Remoto do Ubuntu para usar esse serviço. "
-"Gostaria de configurar uma agora?"
+"Você precisa de uma conta de Acesso para usar esse serviço. Gostaria de "
+"configurar uma agora?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"Você precisa de uma conta de Acesso Remoto do Ubuntu para usar esse serviço. "
-"Visite uccs.canonical.com para configurar uma conta."
+"Você precisa de uma conta de acesso para usar esse serviço. Visite https://%"
+"s para configurar uma conta."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
 msgstr "Tipo de servidor não suportado."
 
 #: ../src/user-list.vala:709
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Sessão convidado"
+msgstr "X2Go sessão:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "Domínio:"
 
 #: ../src/user-list.vala:790
-#, fuzzy
 msgid "Email:"
-msgstr "Endereço de e-mail:"
+msgstr "E-mail:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -238,9 +237,9 @@ msgid "Login"
 msgstr "Iniciar sessão"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Sessão convidado"
+msgstr "Sessão de convidado temporário"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -250,6 +249,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Todo dado criado durante essa sessão de convidado será deletada\n"
+"quando você deslogar, e as configurações serão resetadas.\n"
+"Por favor salve os arquivos em dispositivo externo, para um\n"
+"USB, se você quiser acessar os dados depois."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -257,11 +260,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Outra alternativa para salvar os arquivos na\n"
+"pasta /var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Tela de boas-vindas do Arctica"
+msgstr "Bem vindo ao Arctica"
 
 #~ msgid "Logging in..."
 #~ msgstr "Iniciando a sessão..."
