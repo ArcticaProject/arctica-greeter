@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2014-01-10 10:37+0000\n"
-"Last-Translator: Atanas Kovachki <Unknown>\n"
-"Language-Team: Bulgarian <bg@li.org>\n"
+"PO-Revision-Date: 2018-02-20 11:36+0000\n"
+"Last-Translator: Veselin Georgiev <vvgeorgievv@gmail.com>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.19.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -46,7 +48,7 @@ msgstr "Неуспешно стартиране на сесията"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Влизане..."
+msgstr "Вход в системата…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -78,7 +80,7 @@ msgstr "Изберете десктоп среда"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Довиждане. Бихте ли искали да.."
+msgstr "Довиждане.Бихте ли искали да…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -171,47 +173,44 @@ msgstr "Отмени"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Настройка..."
+msgstr "Настройки…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"За да ползвате тази услуга, трябва да имате Убунту профил за отдалечен "
-"достъп. Искате ли сега да създаде профила?"
+"За да ползвате тази услуга, трябва да имате потребителски профил за "
+"отдалечен достъп. Искате ли сега да бъде създаден такъв?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "Да"
 
 #: ../src/user-list.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"За да ползвате тази услуга, трябва да имате Убунту профил за отдалечен "
-"достъп. За да настройте профила си, посетите сайта uccs.canonical.com"
+"Необходим ви е профил за отдалечен вход. Посетете https://%s за създаването "
+"на такъв."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
 msgstr "Този вид сървър не се поддържа."
 
 #: ../src/user-list.vala:709
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Сесия за гости"
+msgstr "X2Go Сесия:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "Домейн:"
 
 #: ../src/user-list.vala:790
-#, fuzzy
 msgid "Email:"
-msgstr "Имейл адрес:"
+msgstr "Адрес на е-поща:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -221,7 +220,7 @@ msgstr "Вход"
 #: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
-msgstr "Влез от името на %s"
+msgstr "Вход от името на %s"
 
 #: ../src/user-list.vala:839
 msgid "Retry"
@@ -234,12 +233,12 @@ msgstr "Повторен опит като %s"
 
 #: ../src/user-list.vala:879
 msgid "Login"
-msgstr "Влез"
+msgstr "Вход"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Сесия за гости"
+msgstr "Временна сесия за гости"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -249,6 +248,12 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Цялата информация създадена през времето на тази сесия за гости ще бъде "
+"заличена\n"
+"когато бъде затворена, както и всички настройки ще бъдат върнати по "
+"подразбиране.\n"
+"Моля записвайте файлове на някакво външно устройство, например\n"
+"USB стик, ако желаете да разполагате с тях по-късно."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -256,11 +261,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Другата алтернатива в да запишете файловете в\n"
+"папката /var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Екран за поздрав на Юнити"
+msgstr "Приветстващ екран на Арктика"
 
 #~ msgid "Logging in..."
 #~ msgstr "Влизане..."
