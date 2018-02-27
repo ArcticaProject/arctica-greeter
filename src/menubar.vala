@@ -47,7 +47,7 @@ private class IndicatorMenuItem : Gtk.MenuItem
         if (entry.accessible_desc != null)
             get_accessible ().set_name (entry.accessible_desc);
         if (entry.menu != null)
-            set_submenu (entry.menu as Gtk.Widget);
+            set_submenu (entry.menu);
 
         if (has_visible_child ())
             show ();
@@ -218,7 +218,7 @@ public class MenuBar : Gtk.MenuBar
         image.show ();
         hbox.add (image);
         a11y_item.show ();
-        a11y_item.set_submenu (new Gtk.Menu () as Gtk.Widget);
+        a11y_item.set_submenu (new Gtk.Menu ());
         onscreen_keyboard_item = new Gtk.CheckMenuItem.with_label (_("Onscreen keyboard"));
         onscreen_keyboard_item.toggled.connect (keyboard_toggled_cb);
         onscreen_keyboard_item.show ();
