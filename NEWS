@@ -1,3 +1,10 @@
+Overview of changes in arctica-greeter 0.99.0.3
+
+    - Fix FTBFS against Vala 0.39. Thanks to
+      Linux Mint Developers and Jeremy Bicha.
+    - Translations update. Thanks to translators
+      on hosted.weblate.org.
+
 Overview of changes in arctica-greeter 0.99.0.2
 
     - Allow configuring default numlock status.

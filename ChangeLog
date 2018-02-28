@@ -1,6 +1,96 @@
-2017-11-28 18:22:53 +0100 Mike Gabriel (ccbcc71)
+2018-02-28 10:14:24 +0100 Mike Gabriel (bc2d8b6)
 
-	* release 0.99.0.2 (HEAD -> master)
+	* release 0.99.0.3 (HEAD -> master)
+
+2018-02-20 11:36:29 +0000 Veselin Georgiev (3c8b7e5)
+
+	* Translated using Weblate (Bulgarian) (origin/master)
+
+2018-02-15 10:03:26 +0000 Ko Phyo (94ff0d8)
+
+	* Translated using Weblate (Burmese)
+
+2018-02-11 00:55:34 +0000 Rafael Henrique Mendes de Oliv (3dfb9d7)
+
+	* Translated using Weblate (Portuguese (Brazil))
+
+2018-02-11 00:54:45 +0000 Rafael Henrique Mendes de Oliv (8f85b15)
+
+	* Translated using Weblate (Portuguese (Brazil))
+
+2018-02-09 19:31:11 +0000 Joel Vinay Kumar (965ac26)
+
+	* Translated using Weblate (Telugu)
+
+2018-02-04 15:04:33 +0000 Michal Čihař (b94becf)
+
+	* Translated using Weblate (Telugu)
+
+2018-02-03 17:32:50 +0000 scootergrisen (2d86552)
+
+	* Translated using Weblate (Danish)
+
+2018-01-30 21:05:43 +0000 Марс Ямбар (b30f69a)
+
+	* Translated using Weblate (Ukrainian)
+
+2018-01-29 05:49:46 +0000 Joel Vinay Kumar (d4ece44)
+
+	* Translated using Weblate (Telugu)
+
+2018-01-27 08:57:44 +0000 Mutaz Tayyeb AbuSaad (5131b49)
+
+	* Translated using Weblate (Arabic)
+
+2018-01-27 08:50:59 +0000 Mutaz Tayyeb AbuSaad (0e921da)
+
+	* Translated using Weblate (Arabic)
+
+2018-01-24 09:16:22 +0000 Sveinn í Felli (3073113)
+
+	* Translated using Weblate (Icelandic)
+
+2018-01-22 20:21:35 +0000 Марс Ямбар (c50983a)
+
+	* Translated using Weblate (Ukrainian)
+
+2018-01-04 20:22:29 +0000 Sebastian Rasmussen (7473640)
+
+	* Translated using Weblate (Swedish)
+
+2018-01-04 15:32:06 +0000 Tamir Azaz (1e72c52)
+
+	* Translated using Weblate (Slovenian)
+
+2018-02-27 19:26:26 +0100 Mike Gabriel (e13e0d9)
+
+	* Merge branch 'jbicha-vala39'
+
+2018-02-27 09:06:23 -0500 Jeremy Bicha (3b79b4b)
+
+	* Fix build with vala 0.39 (jbicha-vala39)
+
+2017-12-07 11:24:13 +0100 Mike Gabriel (a1266d6)
+
+	* debian/control: Let's recommend the new FreeRDPv2 version of
+          lightdm-remote-session-freerdp(2).
+
+2017-12-07 08:53:43 +0100 Mike Gabriel (f22b7af)
+
+	* White-space cleanup. Removing superfluous EOL white-spaces.
+
+2017-11-29 18:22:14 +0000 Juan Picca (c855090)
+
+	* Translated using Weblate (Spanish)
+
+2017-11-29 13:38:11 +0100 Mike Gabriel (174191b)
+
+	* update-po(t).sh: Handle .xml and .ini files gracefully.
+
+2017-11-28 18:22:53 +0100 Mike Gabriel (a313875)
+
+	* release 0.99.0.2 (tag: 0.99.0.2, origin/release-builds,
+          release-builds)
 
 2017-11-28 18:22:07 +0100 Mike Gabriel (3537ac6)
 
@@ -19,7 +109,6 @@
 2017-11-28 17:17:21 +0100 Mike Gabriel (1a2635a)
 
 	* More places to fix for the guest session script renaming.
-          (origin/master)
 
 2017-11-28 17:09:57 +0100 Mike Gabriel (33f57b4)
 
@@ -121,8 +210,7 @@
 
 2017-10-23 23:33:58 +0200 Mike Gabriel (32ffe2d)
 
-	* release 0.99.0.1 (tag: 0.99.0.1, origin/release-builds,
-          release-builds)
+	* release 0.99.0.1 (tag: 0.99.0.1)
 
 2017-10-23 23:18:06 +0200 Mike Gabriel (5ad6cbc)
 
