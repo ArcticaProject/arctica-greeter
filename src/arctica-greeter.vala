@@ -582,6 +582,12 @@ public class ArcticaGreeter
 
     private static void set_keyboard_layout ()
     {
+
+        /* Avoid expensive Python execution where possible */
+        if (!FileUtils.test("/etc/default/keyboard", FileTest.EXISTS)) {
+            return;
+        }
+
         try {
             Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-set-keyboard-layout"), null, null, null);
         }
