@@ -110,6 +110,7 @@ public class SessionList : GreeterList
             return "budgie_badge.png";
         case "ubuntu":
         case "ubuntu-2d":
+        case "unity":
             return "ubuntu_badge.png";
         case "gnome-classic":
         case "gnome-flashback-compiz":
