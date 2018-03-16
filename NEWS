@@ -1,3 +1,15 @@
+Overview of changes in arctica-greeter 0.99.0.4
+
+    - Add HiDPI support (thanks to the Linux Mint
+      developers for inspiration).
+    - Trigger UPower activation on greeter start.
+      (Fixes missing power indicator on first login
+      after system reboot).
+    - Fix flawed debug message causing the test-mode
+      to segfault.
+    - Clear the AT_SPI_BUS property on the root window
+      on exit.
+
 Overview of changes in arctica-greeter 0.99.0.3
 
     - Fix FTBFS against Vala 0.39. Thanks to

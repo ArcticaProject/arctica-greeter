@@ -1,10 +1,57 @@
-2018-02-28 10:14:24 +0100 Mike Gabriel (bc2d8b6)
+2018-03-16 14:44:32 +0100 Mike Gabriel (8276467)
 
-	* release 0.99.0.3 (HEAD -> master)
+	* release 0.99.0.4 (HEAD -> master)
+
+2018-03-16 14:17:05 +0100 Mike Gabriel (8aba383)
+
+	* src/arctica-greeter.vala: Trigger UPower activation when greeter
+          starts.
+
+2018-03-16 14:16:14 +0100 Mike Gabriel (76f2e65)
+
+	* HiDPI: Do not enable it in test-mode.
+
+2018-03-16 13:52:28 +0100 Mike Gabriel (9e025f2)
+
+	* debian/*.install: Correctly install the guest session script man
+          page into the guest session bin:pkg. (origin/master)
+
+2018-03-16 12:37:45 +0100 Mike Gabriel (7ddfa06)
+
+	* Port HiDPI support from slick-greeter.
+
+2018-03-16 12:00:30 +0100 Mike Gabriel (48db8ca)
+
+	* src/{user-list.vala,user-prompt-box.vala}: Fix segfault in newly
+          introduced debug message.
+
+2018-03-15 07:59:17 +0100 Robert Ancell (1e59b6a)
+
+	* Use Ubuntu logo for Unity session (has no since no longer Ubuntu
+          default)
+
+2018-03-12 21:10:45 +0100 Michael Webster (5c611a8)
+
+	* src/arctica-greeter.vala: Clear the AT_SPI_BUS property on the root
+          window on exit, so the user session components won't fail
+          to connect.
+
+2018-03-12 21:07:48 +0100 Ikey Doherty (bda58f0)
+
+	* greeter: Avoid expensive Python calls when it isn't needed.
+
+2018-02-28 10:59:19 +0100 Mike Gabriel (177dab0)
+
+	* post-release update of debian/changelog (origin/release-builds,
+          release-builds)
+
+2018-02-28 10:14:24 +0100 Mike Gabriel (6777383)
+
+	* release 0.99.0.3 (tag: 0.99.0.3)
 
 2018-02-20 11:36:29 +0000 Veselin Georgiev (3c8b7e5)
 
-	* Translated using Weblate (Bulgarian) (origin/master)
+	* Translated using Weblate (Bulgarian)
 
 2018-02-15 10:03:26 +0000 Ko Phyo (94ff0d8)
 
@@ -89,8 +136,7 @@
 
 2017-11-28 18:22:53 +0100 Mike Gabriel (a313875)
 
-	* release 0.99.0.2 (tag: 0.99.0.2, origin/release-builds,
-          release-builds)
+	* release 0.99.0.2 (tag: 0.99.0.2)
 
 2017-11-28 18:22:07 +0100 Mike Gabriel (3537ac6)
 
