@@ -606,6 +606,17 @@ public class ArcticaGreeter
         }
     }
 
+    private static void activate_upower ()
+    {
+        /* hacky approach, but does what's needed: activate the upower service over DBus */
+        try {
+            Process.spawn_command_line_sync("/usr/bin/upower --version", null, null, null);
+        }
+        catch (Error e){
+            warning ("Error while triggering UPower activation: %s", e.message);
+        }
+    }
+
     private static void check_hidpi ()
     {
         try {
@@ -799,6 +810,8 @@ public class ArcticaGreeter
 
         if (!do_test_mode)
         {
+
+            activate_upower();
 
             greeter.greeter_ready.connect (() => {
                 debug ("Showing greeter");
