@@ -648,17 +648,9 @@ public class ArcticaGreeter
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
 
-        var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
-        debug ("HiDPI support: %s", hidpi);
-        if (hidpi == "auto") {
-            check_hidpi ();
-        }
-        else if (hidpi == "on") {
-            GLib.Environment.set_variable ("GDK_SCALE", "2", true);
-        }
-
         bool do_show_version = false;
         bool do_test_mode = false;
+
         OptionEntry versionOption = { "version", 'v', 0, OptionArg.NONE, ref do_show_version,
                 /* Help string for command line --version flag */
                 N_("Show release version"), null };
@@ -667,6 +659,18 @@ public class ArcticaGreeter
                 N_("Run in test mode"), null };
         OptionEntry nullOption = { null };
         OptionEntry[] options = { versionOption, testOption, nullOption };
+
+        if (!do_test_mode)
+        {
+            var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
+            debug ("HiDPI support: %s", hidpi);
+            if (hidpi == "auto") {
+                check_hidpi ();
+            }
+            else if (hidpi == "on") {
+                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
+            }
+        }
 
         debug ("Loading command line options");
         var c = new OptionContext (/* Arguments and description for --help text */
