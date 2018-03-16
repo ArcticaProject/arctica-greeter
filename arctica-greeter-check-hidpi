@@ -1,0 +1,67 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# Copyright (C) 2017 Clement Lefebvre <clement.lefebvre@linuxmint.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Authors: Clement Lefebvre <clement.lefebvre@linuxmint.com>
+
+import gi
+gi.require_version('Gdk', '3.0')
+from gi.repository import Gdk
+import sys
+import os
+
+HIDPI_LIMIT = 192
+
+def get_window_scale():
+    window_scale = 1
+    try:
+        display = Gdk.Display.get_default()
+        screen = display.get_default_screen()
+        primary = screen.get_primary_monitor()
+
+        rect = screen.get_monitor_geometry(primary)
+        width_mm = screen.get_monitor_width_mm(primary)
+        height_mm = screen.get_monitor_height_mm(primary)
+        monitor_scale = screen.get_monitor_scale_factor(primary)
+
+        # Return 1 if the screen size isn't available (some TVs report their aspect ratio instead ... 16/9 or 16/10)
+        if ((width_mm == 160 and height_mm == 90) \
+            or (width_mm == 160 and height_mm == 100) \
+            or (width_mm == 16 and height_mm == 9) \
+            or (width_mm == 16 and height_mm == 10)):
+            return 1
+
+        if rect.height < 1500:
+            return 1
+
+        if width_mm > 0 and height_mm > 0:
+            witdh_inch = width_mm / 25.4
+            height_inch = height_mm / 25.4
+            dpi_x = rect.width * monitor_scale / witdh_inch
+            dpi_y = rect.height * monitor_scale / height_inch
+            if dpi_x > HIDPI_LIMIT and dpi_y > HIDPI_LIMIT:
+                window_scale = 2
+
+    except Exception as detail:
+        syslog.syslog("Error while detecting hidpi mode: %s" % detail)
+
+    return window_scale
+
+if __name__ == '__main__':
+    window_scale = get_window_scale();
+    print ("{script}: Window scale is {value}".format(script=os.path.basename(sys.argv[0]), value=window_scale), file=sys.stderr)
+    print (window_scale, file=sys.stdout)
+    sys.exit(0)

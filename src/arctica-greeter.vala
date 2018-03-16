@@ -606,6 +606,22 @@ public class ArcticaGreeter
         }
     }
 
+    private static void check_hidpi ()
+    {
+        try {
+            string output;
+            Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-check-hidpi"), out output, null, null);
+            output = output.strip();
+            if (output == "2") {
+                debug ("Activating HiDPI (2x scale ratio)");
+                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
+            }
+        }
+        catch (Error e){
+            warning ("Error while setting HiDPI support: %s", e.message);
+        }
+    }
+
     public static int main (string[] args)
     {
         /* Protect memory from being paged to disk, as we deal with passwords */
@@ -628,6 +644,18 @@ public class ArcticaGreeter
            Without GDK_CORE_DEVICE_EVENTS set, the DE is unable to apply its own cursor theme and size.
         */
         GLib.Environment.set_variable ("GDK_CORE_DEVICE_EVENTS", "1", true);
+
+        log_timer = new Timer ();
+        Log.set_default_handler (log_cb);
+
+        var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
+        debug ("HiDPI support: %s", hidpi);
+        if (hidpi == "auto") {
+            check_hidpi ();
+        }
+        else if (hidpi == "on") {
+            GLib.Environment.set_variable ("GDK_SCALE", "2", true);
+        }
 
         bool do_show_version = false;
         bool do_test_mode = false;
@@ -709,9 +737,6 @@ public class ArcticaGreeter
 
         Gtk.init (ref args);
         Ido.init ();
-
-        log_timer = new Timer ();
-        Log.set_default_handler (log_cb);
 
         debug ("Starting arctica-greeter %s UID=%d LANG=%s", Config.VERSION, (int) Posix.getuid (), Environment.get_variable ("LANG"));
 

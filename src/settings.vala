@@ -47,6 +47,7 @@ public class AGSettings
     public const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
     public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
     public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
+    public const string KEY_ENABLE_HIDPI = "enable-hidpi";
 
     public static bool get_boolean (string key)
     {

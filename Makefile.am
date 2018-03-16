@@ -10,6 +10,7 @@ sbin_SCRIPTS = arctica-greeter-guest-account-script
 pkglibexec_SCRIPTS = lightdm-arctica-greeter-session \
 	arctica-greeter-guest-session-auto.sh \
 	arctica-greeter-guest-session-setup.sh \
+	arctica-greeter-check-hidpi \
 	arctica-greeter-set-keyboard-layout
 
 EXTRA_DIST = \
