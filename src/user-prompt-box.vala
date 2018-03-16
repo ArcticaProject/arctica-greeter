@@ -22,13 +22,13 @@
 public class UserPromptBox : PromptBox
 {
     /* Background for this user */
-    public string background;
+    public string background = "";
 
     /* Default session for this user */
-    public string session;
+    public string session = "";
 
     /* True if should be marked as active */
-    public bool is_active;
+    public bool is_active = false;
 
     public UserPromptBox (string name)
     {
