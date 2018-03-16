@@ -6,7 +6,7 @@ usr/share/backgrounds/
 usr/share/glib-2.0/
 usr/share/lightdm/lightdm.conf.d/50-arctica-greeter.conf
 usr/share/locale/
-usr/share/man/
+usr/share/man/man1/
 usr/share/sounds/
 usr/share/xgreeters/
 usr/lib/*/arctica-greeter/lightdm-arctica-greeter-session
