@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-04-27 22:44+0000\n"
+"PO-Revision-Date: 2018-04-28 23:39+0000\n"
 "Last-Translator: antuketot76 <antuketot76@protonmail.com>\n"
 "Language-Team: Malay <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ms/>\n"
@@ -48,7 +48,7 @@ msgstr "Gagal mulakan sesi"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Mendaftar masuk..."
+msgstr "Mendaftar masuk…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -80,7 +80,7 @@ msgstr "Pilih persekitaran desktop"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Selamat Tinggal. Apakah yang anda mahu..."
+msgstr "Bye. Adakah anda mahu…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -174,7 +174,7 @@ msgstr "Batal"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Persediaan..."
+msgstr "Persediaan…"
 
 #: ../src/user-list.vala:559
 msgid ""
@@ -207,7 +207,7 @@ msgstr "Sesi X2Go:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
-msgstr "Domain:"
+msgstr "Domin:"
 
 #: ../src/user-list.vala:790
 msgid "Email:"
