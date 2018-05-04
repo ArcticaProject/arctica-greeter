@@ -7,6 +7,7 @@ arctica_greeter_SOURCES = \
 	config.vapi \
 	fixes.vapi \
 	indicator.vapi \
+	pam_freerdp2.vapi \
 	pam_x2go.vapi \
 	xsync.vapi \
 	animate-timer.vala \

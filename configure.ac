@@ -80,7 +80,8 @@ dnl ##########################################################################
 dnl Remote Logon Dependencies
 dnl ##########################################################################
 
-AC_CHECK_HEADERS([security/pam-x2go.h])
+AC_CHECK_HEADERS([security/pam-x2go.h],[],AC_MSG_ERROR([Could not find security/pam-x2go.h]))
+AC_CHECK_HEADERS([security/pam-freerdp2.h],[],AC_MSG_ERROR([Could not find security/pam-freerdp2.h]))
 
 dnl ###########################################################################
 dnl Files to generate
