@@ -22,7 +22,7 @@
 
 int remote_server_field_sort_function (RemoteServerField? item1, RemoteServerField? item2)
 {
-    string[] sorted_fields = { "domain", "x2gosession" , "username", "email", "password"};
+    string[] sorted_fields = { "domain", "command" , "username", "email", "password"};
     foreach (var field in sorted_fields)
     {
         if (item1.type == field)
@@ -704,7 +704,7 @@ public class UserList : GreeterList
                         entry.text = default_value;
                         widget = entry;
                     }
-                    else if (field.type == "x2gosession")
+                    else if (field.type == "command")
                     {
                         var prompt = add_prompt (_("X2Go Session:"));
                         prompt.text = default_value;
@@ -1118,7 +1118,7 @@ public class UserList : GreeterList
                 var answer = field != null ? field.text : "";
                 ArcticaGreeter.singleton.respond (answer);
             }
-            else if (text == "x2gosession:")
+            else if (text == "remote command:")
             {
                 Gtk.Entry field = current_remote_fields.get ("x2gosession") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
