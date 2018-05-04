@@ -1095,19 +1095,19 @@ public class UserList : GreeterList
     {
         if (selected_entry.id.has_prefix ("*remote_login"))
         {
-            if (text == "remote login:")
+            if ((text == pam_x2go.PROMPT_USER) || (text == "remote login:"))
             {
                 Gtk.Entry field = current_remote_fields.get ("username") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 ArcticaGreeter.singleton.respond (answer);
             }
-            else if (text == "password:")
+            else if ((text == pam_x2go.PROMPT_PASSWORD) || (text == "password:"))
             {
                 Gtk.Entry field = current_remote_fields.get ("password") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 ArcticaGreeter.singleton.respond (answer);
             }
-            else if (text == "remote host:")
+            else if ((text == pam_x2go.PROMPT_HOST) || (text == "remote host:"))
             {
                 var answer = url_from_remote_loding_server_list_name (selected_entry.id);
                 ArcticaGreeter.singleton.respond (answer);
@@ -1118,7 +1118,7 @@ public class UserList : GreeterList
                 var answer = field != null ? field.text : "";
                 ArcticaGreeter.singleton.respond (answer);
             }
-            else if (text == "remote command:")
+            else if (text == pam_x2go.PROMPT_COMMAND)
             {
                 Gtk.Entry field = current_remote_fields.get ("command") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
