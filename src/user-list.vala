@@ -1120,7 +1120,7 @@ public class UserList : GreeterList
             }
             else if (text == "remote command:")
             {
-                Gtk.Entry field = current_remote_fields.get ("x2gosession") as Gtk.Entry;
+                Gtk.Entry field = current_remote_fields.get ("command") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 ArcticaGreeter.singleton.respond (answer);
             }
