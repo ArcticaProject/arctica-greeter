@@ -1099,29 +1099,34 @@ public class UserList : GreeterList
             {
                 Gtk.Entry field = current_remote_fields.get ("username") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
+                debug ("remote_login prompt parsing: username -> %s", answer);
                 ArcticaGreeter.singleton.respond (answer);
             }
             else if ((text == pam_x2go.PROMPT_PASSWORD) || (text == pam_freerdp2.PROMPT_PASSWORD))
             {
                 Gtk.Entry field = current_remote_fields.get ("password") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
+                debug ("remote_login prompt parsing: password -> <hidden>");
                 ArcticaGreeter.singleton.respond (answer);
             }
             else if ((text == pam_x2go.PROMPT_HOST) || (text == pam_freerdp2.PROMPT_HOST))
             {
                 var answer = url_from_remote_loding_server_list_name (selected_entry.id);
+                debug ("remote_login prompt parsing: host -> %s", answer);
                 ArcticaGreeter.singleton.respond (answer);
             }
             else if (text == pam_freerdp2.PROMPT_DOMAIN)
             {
                 Gtk.Entry field = current_remote_fields.get ("domain") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
+                debug ("remote_login prompt parsing: domain -> %s", answer);
                 ArcticaGreeter.singleton.respond (answer);
             }
             else if (text == pam_x2go.PROMPT_COMMAND)
             {
                 Gtk.Entry field = current_remote_fields.get ("command") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
+                debug ("remote_login prompt parsing: command -> %s", answer);
                 ArcticaGreeter.singleton.respond (answer);
             }
         }
