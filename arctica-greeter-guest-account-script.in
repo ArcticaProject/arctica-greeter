@@ -112,8 +112,8 @@ add_account ()
         }
       # If none of them is available, fall back to copy over
       else
-        cp -rT ${site_gs}/skel/ ${GUEST_HOME}
         cp -rT ${dist_gs}/skel/ ${GUEST_HOME}
+        cp -rT ${site_gs}/skel/ ${GUEST_HOME}
         chown -R ${GUEST_USER}:${GUEST_USER} ${GUEST_HOME}
         bindfs_mount=false
       fi
