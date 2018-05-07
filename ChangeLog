@@ -1,6 +1,49 @@
-2018-03-16 14:44:32 +0100 Mike Gabriel (8276467)
+2018-05-07 15:45:15 +0200 Mike Gabriel (c3043a2)
 
-	* release 0.99.0.4 (HEAD -> master)
+	* release 0.99.1.0 (HEAD -> master, tag: 0.99.1.0)
+
+2018-05-07 11:35:47 +0200 Mike Gabriel (da0cd95)
+
+	* arctica-greeter-guest-account-script.in: Copy site guest session
+          skel over dist guest session skel, so that the site admin
+          is in fact able to override some settings in the dist
+          skeleton that we provide.
+
+2018-05-06 01:39:57 +0200 Mike Gabriel (3cd3dd0)
+
+	* src/user-list.vala: Add debugging to remote_login PAM prompt
+          responding.
+
+2018-05-04 22:14:00 +0200 Mike Gabriel (879b9e6)
+
+	* src/user-list.vala: Obtain PAM_FREERDP2 prompts from public API in
+          security/pam-freerdp2.h.
+
+2018-05-04 15:25:46 +0200 Mike Gabriel (eed9d64)
+
+	* src/user-list.vala: Obtain PAM_X2GO prompts from public API in
+          security/pam.x2go.h.
+
+2018-05-04 14:02:18 +0200 Mike Gabriel (9ff8e09)
+
+	* src/user-list.vala: Follow-up fix for previous commit.
+
+2018-05-04 13:02:19 +0200 Mike Gabriel (91b8cbd)
+
+	* Use RLS/pam_x2go.so API v5. The PAM prompt now queries "remote
+          command:", not "x2gosession:".
+
+2018-04-16 16:29:55 +0200 Mike Gabriel (df4800a)
+
+	* debian/control: Drop from B-D: libgnome-desktop-3-dev. Not needed.
+
+2018-03-15 02:31:35 +0100 Björn Esser (897df0e)
+
+	* main-window: Calculate the really needed screen size properly
+
+2018-03-16 14:44:32 +0100 Mike Gabriel (cfec4f6)
+
+	* release 0.99.0.4 (tag: 0.99.0.4)
 
 2018-03-16 14:17:05 +0100 Mike Gabriel (8aba383)
 
@@ -14,7 +57,7 @@
 2018-03-16 13:52:28 +0100 Mike Gabriel (9e025f2)
 
 	* debian/*.install: Correctly install the guest session script man
-          page into the guest session bin:pkg. (origin/master)
+          page into the guest session bin:pkg.
 
 2018-03-16 12:37:45 +0100 Mike Gabriel (7ddfa06)
 
@@ -42,8 +85,7 @@
 
 2018-02-28 10:59:19 +0100 Mike Gabriel (177dab0)
 
-	* post-release update of debian/changelog (origin/release-builds,
-          release-builds)
+	* post-release update of debian/changelog
 
 2018-02-28 10:14:24 +0100 Mike Gabriel (6777383)
 
@@ -115,7 +157,7 @@
 
 2018-02-27 09:06:23 -0500 Jeremy Bicha (3b79b4b)
 
-	* Fix build with vala 0.39 (jbicha-vala39)
+	* Fix build with vala 0.39
 
 2017-12-07 11:24:13 +0100 Mike Gabriel (a1266d6)
 
@@ -1318,5 +1360,5 @@
 
 2014-11-02 20:40:40 +0100 Mike Gabriel (8e2d33d)
 
-	* Imported Upstream version 14.04.10 (upstream)
+	* Imported Upstream version 14.04.10
 
