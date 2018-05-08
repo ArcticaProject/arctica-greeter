@@ -787,7 +787,7 @@ public class UserList : GreeterList
                             debug ("Calling get_cached_domains_for_server in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                         }
 
-                        var entry = add_prompt (_("Email:") + " / " + _("Username:"));
+                        var entry = add_prompt (_("Account ID");
                         entry.text = default_value;
                         widget = entry;
                         if (email_domains.length > 0)
