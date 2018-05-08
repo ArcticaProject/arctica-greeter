@@ -548,9 +548,9 @@ public class UserList : GreeterList
     {
         var dialog = new Gtk.MessageDialog (null, 0, Gtk.MessageType.OTHER, Gtk.ButtonsType.NONE, "");
         dialog.set_position (Gtk.WindowPosition.CENTER_ALWAYS);
-        dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
+        //dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
         // For 12.10 we still don't support Citrix
-        dialog.secondary_text = _("If you have an account on an RDP server, Remote Login lets you run applications from that server.");
+        dialog.secondary_text = _("If you have an account on an RDP server or X2Go server, Remote Login lets you run applications from that server.");
         if (offer_guest)
         {
             dialog.add_button (_("Cancel"), 0);
