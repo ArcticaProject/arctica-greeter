@@ -551,7 +551,7 @@ public class UserList : GreeterList
         //dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
         // For 12.10 we still don't support Citrix
         dialog.secondary_text = _("If you have an account on an RDP server or X2Go server, Remote Login lets you run applications from that server.");
-        if ((offer_guest) && (is_supported_remote_session ("uccsconfigure"))
+        if ((offer_guest) && (is_supported_remote_session ("uccsconfigure")))
         {
             dialog.add_button (_("Cancel"), 0);
             var b = dialog.add_button (_("Set Up…"), 1);
@@ -787,7 +787,7 @@ public class UserList : GreeterList
                             debug ("Calling get_cached_domains_for_server in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
                         }
 
-                        var entry = add_prompt (_("Account ID");
+                        var entry = add_prompt (_("Account ID"));
                         entry.text = default_value;
                         widget = entry;
                         if (email_domains.length > 0)
