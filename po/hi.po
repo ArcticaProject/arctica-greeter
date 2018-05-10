@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2013-08-25 14:25+0000\n"
-"Last-Translator: Siddhanathan Shanmugam <Unknown>\n"
-"Language-Team: Hindi <hi@li.org>\n"
+"PO-Revision-Date: 2018-05-11 14:48+0000\n"
+"Last-Translator: Gayathri Das <gaya3das@live.unc.edu>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.0-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -34,7 +36,7 @@ msgstr "उपयोक्ता नाम:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "गलत पासवर्ड. कृपया पुनः प्रयास करें."
+msgstr "गलत पासवर्ड, कृपया एक ओर बार कोशिस करो ।"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
