@@ -551,7 +551,7 @@ public class UserList : GreeterList
         //dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
         // For 12.10 we still don't support Citrix
         dialog.secondary_text = _("If you have an account on an RDP server or X2Go server, Remote Login lets you run applications from that server.");
-        if ((offer_guest) && (is_supported_remote_session ("uccsconfigure")))
+        if ((offer_guest) && (is_supported_remote_session ("remoteconfigure")))
         {
             dialog.add_button (_("Cancel"), 0);
             var b = dialog.add_button (_("Set Up…"), 1);
@@ -569,7 +569,7 @@ public class UserList : GreeterList
         {
             if (id == 1)
             {
-                var config_session = "uccsconfigure";
+                var config_session = "remoteconfigure";
                 if (is_supported_remote_session (config_session))
                 {
                     greeter_authenticating_user = selected_entry.id;
