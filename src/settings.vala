@@ -44,7 +44,7 @@ public class AGSettings
     public const string KEY_GROUP_FILTER = "group-filter";
     public const string KEY_IDLE_TIMEOUT = "idle-timeout";
     public const string KEY_ACTIVATE_NUMLOCK = "activate-numlock";
-    public const string KEY_REMOTE_SERVICE_FQDN = "remote-service-fqdn";
+    public const string KEY_REMOTE_SERVICE_CONFIGURE_URI = "remote-service-configure-uri";
     public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
     public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";

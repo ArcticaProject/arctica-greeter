@@ -115,8 +115,8 @@
       <default>'auto'</default>
       <summary>Whether to enable HiDPI support</summary>
     </key>
-    <key name="remote-service-fqdn" type="s">
-      <default>'service.arctica-project.org'</default>
+    <key name="remote-service-configure-uri" type="s">
+      <default>''</default>
       <summary>Default FQDN for host offering Remote Logon Service</summary>
     </key>
     <key name="activate-numlock" type="b">

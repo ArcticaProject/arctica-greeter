@@ -561,7 +561,10 @@ public class UserList : GreeterList
         else
         {
             dialog.add_button (_("OK"), 0);
-            dialog.text = _("You need a Remote Logon account to use this service. Visit https://%s to set up an account.").printf(AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_FQDN));
+            if ("" != AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_CONFIGURE_URI))
+                dialog.text = _("You need a Remote Logon account to use this service. Visit %s to request an account.").printf(AGSettings.get_string (AGSettings.KEY_REMOTE_SERVICE_CONFIGURE_URI));
+            else
+                dialog.text = _("You need a Remote Logon account to use this service. Please ask your site administrator for details.");
         }
 
         dialog.show_all ();
