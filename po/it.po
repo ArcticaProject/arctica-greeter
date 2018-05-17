@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-05-17 21:51+0000\n"
+"PO-Revision-Date: 2018-05-18 22:38+0000\n"
 "Last-Translator: Nicola Lombardi <nicolaandroid23@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/it/>\n"
@@ -48,7 +48,7 @@ msgstr "Avvio della sessione non riuscito"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Accesso..."
+msgstr "Accesso in corso…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -80,7 +80,7 @@ msgstr "Seleziona l'ambiente grafico"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Arrivederci. Selezionare un'opzione..."
+msgstr "Arrivederci. Vorresti…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -174,7 +174,7 @@ msgstr "Annulla"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Imposta..."
+msgstr "Imposta…"
 
 #: ../src/user-list.vala:559
 msgid ""
