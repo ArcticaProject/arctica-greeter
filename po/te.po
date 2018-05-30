@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-05-30 19:43+0000\n"
+"PO-Revision-Date: 2018-05-31 20:46+0000\n"
 "Last-Translator: Aashish Chenna <aashish.chenna@outlook.com>\n"
 "Language-Team: Telugu <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/te/>\n"
@@ -205,7 +205,7 @@ msgstr "X2Go సమావేశం:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
-msgstr "డొమైన్/అధికార పరిధి"
+msgstr "డొమైన్/అధికార పరిధి:"
 
 #: ../src/user-list.vala:790
 msgid "Email:"
