@@ -8,24 +8,26 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-11-05 02:27+0000\n"
-"Last-Translator: Gheyret T.Kenji <Unknown>\n"
-"Language-Team: Uyghur <ug@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-06-07 01:17+0000\n"
+"Last-Translator: Nureli <nureliosman@gmail.com>\n"
+"Language-Team: Uyghur <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/ug/>\n"
+"Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "%s نىڭ ئىمنى كىرگۈزۈڭ"
+msgstr "%s نىڭ شىفىرىنى كىرگۈزۈڭ"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:703
 msgid "Password:"
-msgstr "ئىم:"
+msgstr "شىفىر:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
@@ -34,7 +36,7 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "ئىم خاتا، قايتا سىناڭ"
+msgstr "شىفىر خاتا، قايتا سىناڭ"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -42,7 +44,7 @@ msgstr "كىملىك دەلىللەش مەغلۇپ بولدى"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr "ئەڭگىمەنى باشلاش مەغلۇپ بولدى"
+msgstr "باسقۇچنى باشلاش مەغلۇپ بولدى"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -175,7 +177,6 @@ msgid "Set Up…"
 msgstr "ھېساب قۇرۇش…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -188,31 +189,29 @@ msgid "OK"
 msgstr "تامام"
 
 #: ../src/user-list.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
 "مەزكۇر مۇلازىمەتنى ئىشلىتىش ئۈچۈن چوقۇم ئۇبۇنتۇ يىراقتىن كىرىش ھېساباتى "
-"زۆرۈردۇر. ھېساب قۇرۇش ئۈچۈن uccs.canonical.com نى زىيارەت قىلىڭ."
+"زۆرۈردۇر. ھېساب قۇرۇش ئۈچۈن  https://%s نى زىيارەت قىلىڭ."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
 msgstr "مۇلازىمېتىر تىپىنى ئىشلەتكىلى بولمايدۇ."
 
 #: ../src/user-list.vala:709
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "مېھمان"
+msgstr "X2Go باسقۇچى:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "دائىرە:"
 
 #: ../src/user-list.vala:790
-#, fuzzy
 msgid "Email:"
-msgstr "ئېلخەت مەنزىل:"
+msgstr "ئېلخەت:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -238,9 +237,9 @@ msgid "Login"
 msgstr "كىر"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "مېھمان"
+msgstr "ۋاقىتلىق مېھمان باسقۇچى"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -250,18 +249,21 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"سىز تىزىمدىن چىققاندا مىھمان باسقۇچىدا قۇرۇلغان بارلىق سانلىق مەلۇماتلار "
+"ئۆچۈرۈلىدۇ،ۋە خاسلىقلار سۈكۈت ھالىتىگە قايتۇرىلىدۇ. سىرتقى ئۈسكۈنىگە "
+"ھۆججەتلەرنى ساقلىۋېلىڭ،مەسىلەن بارماق دىسكا دېگەندەك، بۇنداق بولغاندا كېيىن "
+"خالىغىنىڭىزدا ئۇ ھۆججەتلەرنى زىيارەت قىلالايسىز."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
 msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
-msgstr ""
+msgstr "يەنە بىر ئۇسۇل بولسا ھۆججەتلەرنى var/guest-data/ قىسقۇچىغا ساقلاش."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica كۈتۈۋالغۇچىسى"
+msgstr "ئاركتىكا كۈتۈۋالغۇچىسى"
 
 #~ msgid "Logging in..."
 #~ msgstr "كىرىۋاتىدۇ…"
