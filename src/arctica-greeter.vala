@@ -954,7 +954,7 @@ public class ArcticaGreeter
 
             if (nmapplet_pid != 0)
             {
-                Posix.kill (nmapplet_pid, Posix.SIGTERM);
+                Posix.kill (nmapplet_pid, Posix.Signal.TERM);
                 int status;
                 Posix.waitpid (nmapplet_pid, out status, 0);
                 if (Process.if_exited (status))
@@ -966,7 +966,7 @@ public class ArcticaGreeter
 
             if (atspi_pid != 0)
             {
-                Posix.kill (atspi_pid, Posix.SIGKILL);
+                Posix.kill (atspi_pid, Posix.Signal.KILL);
                 int status;
                 Posix.waitpid (atspi_pid, out status, 0);
                 if (Process.if_exited (status))
@@ -978,7 +978,7 @@ public class ArcticaGreeter
 
             if (marco_pid != 0)
             {
-                Posix.kill (marco_pid, Posix.SIGTERM);
+                Posix.kill (marco_pid, Posix.Signal.TERM);
                 int status;
                 Posix.waitpid (marco_pid, out status, 0);
                 if (Process.if_exited (status))
