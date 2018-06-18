@@ -8,37 +8,39 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: 2018-06-18 07:50+0000\n"
+"Last-Translator: Doma Gergő <domag02@gmail.com>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "Írja be %s jelszavát"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:703
 msgid "Password:"
-msgstr ""
+msgstr "Jelszó:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
 msgid "Username:"
-msgstr ""
+msgstr "Felhasználónév:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Érvénytelen jelszó, kérjük, próbálja újra"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Hitelesítés sikertelen"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -50,7 +52,7 @@ msgstr "Bejelentkezés…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
-msgstr ""
+msgstr "Bejelentkezési képernyő"
 
 #: ../src/main-window.vala:115
 msgid "Back"
@@ -58,19 +60,19 @@ msgstr "Vissza"
 
 #: ../src/menubar.vala:222
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "Képernyő-billentyűzet"
 
 #: ../src/menubar.vala:227
 msgid "High Contrast"
-msgstr ""
+msgstr "Nagy kontrasztú"
 
 #: ../src/menubar.vala:233
 msgid "Screen Reader"
-msgstr ""
+msgstr "Képernyőolvasó"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "Munkamenet-beállítások"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -117,27 +119,29 @@ msgstr "%s (Alapértelmezett)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:630
 msgid "Show release version"
-msgstr ""
+msgstr "Kiadási változat megjelenítése"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:633
 msgid "Run in test mode"
-msgstr ""
+msgstr "Futtatás tesztelési módban"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:639
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- Arctica Üdvözlőképernyő"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:650
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Futtassa a '%s --help' parancsot az elérhető parancssori kapcsolók "
+"listájáért."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "Vendég munkamenet"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -173,26 +177,25 @@ msgid "Set Up…"
 msgstr "Beállítás…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"A szolgáltatás használatához Ubuntu távoli bejelentkezési fiók szükséges. "
-"Szeretne most létrehozni egy fiókot?"
+"A szolgáltatás használatához távoli bejelentkezési fiók szükséges. Szeretne "
+"most létrehozni egy fiókot?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:564
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit https://%s to set "
 "up an account."
 msgstr ""
-"A szolgáltatás használatához Ubuntu távoli bejelentkezési fiók szükséges. "
-"Fiók létrehozásához keresse fel az uccs.canonical.com weboldalt."
+"A szolgáltatás használatához távoli bejelentkezési fiók szükséges. Fiók "
+"létrehozásához keresse fel a https://%s weboldalt."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
@@ -200,26 +203,25 @@ msgstr "A megadott kiszolgálótípus nem támogatott."
 
 #: ../src/user-list.vala:709
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go munkafolyamat:"
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
 msgstr "Tartomány:"
 
 #: ../src/user-list.vala:790
-#, fuzzy
 msgid "Email:"
 msgstr "E-mail cím:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
 msgid "Log In"
-msgstr ""
+msgstr "Bejelentkezés"
 
 #: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Bejelentkezés mint %s"
 
 #: ../src/user-list.vala:839
 msgid "Retry"
@@ -232,12 +234,12 @@ msgstr "Ismét, mint %s"
 
 #: ../src/user-list.vala:879
 msgid "Login"
-msgstr ""
+msgstr "Bejelentkezés"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Átmeneti vendég munkafolyamat"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -247,6 +249,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Minden adat amit létrehozol ebben a vendég\n"
+"munkafolyamatban ki lesz törölve amint kilépsz és a\n"
+"beállítások is visszaállnak az alapértelmezettekre.\n"
+"Kérlek mentsd el az adataidat egy külső adathordozóra,\n"
+"pl. egy USB Pendrive-ra, ha később is el szeretnéd érni."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -254,10 +261,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Másik alternatíva az, hogy mentsd el\n"
+"a fájlokat a /var/guest-data mappába."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Üdvözlőképernyő"
 
 #~ msgid "_Back"
 #~ msgstr "_Vissza"
