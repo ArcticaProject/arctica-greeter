@@ -182,7 +182,11 @@ public class SettingsDaemon : Object
     {
         if (sd_pid != 0)
         {
+#if VALA_0_40
             Posix.kill (sd_pid, Posix.Signal.KILL);
+#else
+            Posix.kill (sd_pid, Posix.SIGKILL);
+#endif
             int status;
             Posix.waitpid (sd_pid, out status, 0);
             if (Process.if_exited (status))

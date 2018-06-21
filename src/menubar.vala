@@ -162,7 +162,11 @@ public class MenuBar : Gtk.MenuBar
     {
         if (pid > 0)
         {
+#if VALA_0_40
             Posix.kill (pid, Posix.Signal.TERM);
+#else
+            Posix.kill (pid, Posix.SIGTERM);
+#endif
             int status;
             Posix.waitpid (pid, out status, 0);
             pid = 0;
