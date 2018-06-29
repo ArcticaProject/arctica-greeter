@@ -8,33 +8,35 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Thai <th@li.org>\n"
+"PO-Revision-Date: 2018-06-30 08:43+0000\n"
+"Last-Translator: kong <ph.kp111@gmail.com>\n"
+"Language-Team: Thai <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "ใส่รหัสผ่านสำหรับ %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:703
 msgid "Password:"
-msgstr ""
+msgstr "รหัสผ่าน"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:697
 #: ../src/user-list.vala:790
 msgid "Username:"
-msgstr ""
+msgstr "ชื่อผู้ใช้งาน:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "รหัสผ่านไม่ถูกต้อง, กรุณาลองอีกครั้ง"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -42,7 +44,7 @@ msgstr "ยืนยันตัวบุคคลไม่สำเร็จ"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "เริ่มต้นเซสชั่นไม่สำเร็จ"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -50,7 +52,7 @@ msgstr "กำลังเข้าสู่ระบบ"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
-msgstr ""
+msgstr "หน้าจอเข้าสู่ระบบ"
 
 #: ../src/main-window.vala:115
 msgid "Back"
@@ -58,11 +60,11 @@ msgstr "ย้อนกลับ"
 
 #: ../src/menubar.vala:222
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "แป้นพิมพ์บนจอภาพ"
 
 #: ../src/menubar.vala:227
 msgid "High Contrast"
-msgstr ""
+msgstr "ความเปรียบต่างสูง"
 
 #: ../src/menubar.vala:233
 msgid "Screen Reader"
@@ -78,7 +80,7 @@ msgstr "เลือกสภาพแวดล้อมพื้นโต๊ะ
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "ลาก่อน คุณต้องการที่จะ ..."
+msgstr "ลาก่อน คุณต้องการที่จะ …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -120,7 +122,7 @@ msgstr "แสดงเลขรุ่น"
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:633
 msgid "Run in test mode"
-msgstr ""
+msgstr "โหมดดำเนินงานทดสอบ"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:639
@@ -135,7 +137,7 @@ msgstr "เรียก '%s --help' เพื่อดูตัวเลือ�
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "บุคคลทั่วไป"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -162,11 +164,11 @@ msgstr "ถ้าคุณมีบัญชีเซิร์ฟเวอร์
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr ""
+msgstr "ยกเลิก"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr ""
+msgstr "ติดตั้ง…"
 
 #: ../src/user-list.vala:559
 msgid ""
@@ -176,7 +178,7 @@ msgstr ""
 
 #: ../src/user-list.vala:563
 msgid "OK"
-msgstr ""
+msgstr "ตกลง"
 
 #: ../src/user-list.vala:564
 #, c-format
@@ -187,7 +189,7 @@ msgstr ""
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
-msgstr ""
+msgstr "ประเภทของเซิร์ฟเวอร์ไม่สนับสนุน"
 
 #: ../src/user-list.vala:709
 msgid "X2Go Session:"
@@ -195,11 +197,11 @@ msgstr ""
 
 #: ../src/user-list.vala:729
 msgid "Domain:"
-msgstr ""
+msgstr "โดเมน:"
 
 #: ../src/user-list.vala:790
 msgid "Email:"
-msgstr ""
+msgstr "อีเมล:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:834
@@ -209,7 +211,7 @@ msgstr "เข้าระบบ"
 #: ../src/user-list.vala:835
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "เข้าสู่ระบบด้วย %s"
 
 #: ../src/user-list.vala:839
 msgid "Retry"
@@ -218,11 +220,11 @@ msgstr "ลองอีกครั้ง"
 #: ../src/user-list.vala:840
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "ลองอีกครั้งเมื่อ %s"
 
 #: ../src/user-list.vala:879
 msgid "Login"
-msgstr ""
+msgstr "เข้่าสู่ระบบ"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
