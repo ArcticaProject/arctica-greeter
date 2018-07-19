@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2018-07-19 13:46+0000\n"
+"PO-Revision-Date: 2018-07-20 14:41+0000\n"
 "Last-Translator: Dovydas Jakas <jakas1214@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/lt/>\n"
@@ -50,7 +50,7 @@ msgstr "Nepavyko pradėti sesijos"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Prisijungiama..."
+msgstr "Prisijungiama…"
 
 #: ../src/main-window.vala:51
 msgid "Login Screen"
@@ -82,7 +82,7 @@ msgstr "Pasirinkite darbastalio aplinką"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Viso gero. Ar norėtumėte..."
+msgstr "Viso gero. Ar norėtumėte…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -175,7 +175,7 @@ msgstr "Atsisakyti"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Nustatyti..."
+msgstr "Nustatyti…"
 
 #: ../src/user-list.vala:559
 msgid ""
@@ -196,7 +196,7 @@ msgid ""
 "up an account."
 msgstr ""
 "Norint naudoti šią paslaugą reikia Ubuntu nuotolinio prisijungimo paskyros. "
-"Aplankykite uccs.canonical.com paskyrai nustatyti."
+"Aplankykite https://%s1 paskyrai nustatyti."
 
 #: ../src/user-list.vala:681
 msgid "Server type not supported."
@@ -262,8 +262,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"Kita alternatyva yra išsaugoti failus\n"
-"/ var / guest-data aplanke :"
+"Kita alternatyva yra išsaugoti failus direktorijoje\n"
+"/ var / guest-data aplanke."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
