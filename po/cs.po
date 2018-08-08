@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 17:09+0100\n"
-"PO-Revision-Date: 2013-12-16 20:04+0000\n"
-"Last-Translator: Vojtěch Trefný <vojtech.trefny@gmail.com>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"PO-Revision-Date: 2018-08-09 20:36+0000\n"
+"Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -42,7 +44,7 @@ msgstr "Ověření selhalo"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "Nepodařilo se spustit relaci"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -256,7 +258,7 @@ msgstr ""
 msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
-msgstr ""
+msgstr "Další možností je uložit soubory ve složce / var / guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 #, fuzzy
