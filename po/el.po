@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 17:09+0100\n"
+"POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2013-10-09 16:12+0000\n"
 "Last-Translator: Michael Kotsarinis <mk73628@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -23,12 +23,11 @@ msgstr ""
 msgid "Enter password for %s"
 msgstr "Εισάγετε κωδικό για %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:703
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
 msgstr "Κωδικός:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:697
-#: ../src/user-list.vala:790
+#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
 msgstr "Όνομα χρήστη:"
 
@@ -48,23 +47,23 @@ msgstr "Αποτυχία εκκίνησης της συνεδρίας"
 msgid "Logging in…"
 msgstr "Γίνεται σύνδεση..."
 
-#: ../src/main-window.vala:51
+#: ../src/main-window.vala:55
 msgid "Login Screen"
 msgstr "Οθόνη εισόδου"
 
-#: ../src/main-window.vala:115
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr "Πίσω"
 
-#: ../src/menubar.vala:222
+#: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
 msgstr "Πληκτρολόγιο οθόνης"
 
-#: ../src/menubar.vala:227
+#: ../src/menubar.vala:231
 msgid "High Contrast"
 msgstr "Υψηλή αντίθεση"
 
-#: ../src/menubar.vala:233
+#: ../src/menubar.vala:237
 msgid "Screen Reader"
 msgstr "Εφαρμογή ανάγνωσης οθόνης"
 
@@ -115,22 +114,22 @@ msgid "%s (Default)"
 msgstr "%s (Προεπιλογή)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:630
+#: ../src/arctica-greeter.vala:669
 msgid "Show release version"
 msgstr "Εμφάνιση έκδοσης κυκλοφορίας"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:633
+#: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
 msgstr "Εκτέλεση σε λειτουργία δοκιμής"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:639
+#: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
 msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:650
+#: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -149,19 +148,13 @@ msgstr "Παρακαλώ εισάγετε μια πλήρη διεύθυνση e
 msgid "Incorrect e-mail address or password"
 msgstr "Λανθασμένo e-mail ή κωδικός πρόσβασης"
 
-#: ../src/user-list.vala:551
-msgid ""
-"If you have an account on an RDP or Citrix server, Remote Login lets you run "
-"applications from that server."
-msgstr ""
-"Αν διαθέτετε λογαριασμό σε RDP ή Citrix  διακομιστή, με την Απομακρυσμένη "
-"σύνδεση μπορείτε να εκτελείτε εφαρμογές από αυτόν τον εξυπηρετητή."
-
+#. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
+#, fuzzy
 msgid ""
-"If you have an account on an RDP server, Remote Login lets you run "
-"applications from that server."
+"If you have an account on an RDP server or X2Go server, Remote Login lets "
+"you run applications from that server."
 msgstr ""
 "Αν έχετε λογαριασμό σε έναν εξυπηρετητή RDP, τότε η Απομακρυσμένη σύνδεση "
 "επιτρέπει να εκτελέσετε εφαρμογές από αυτόν τον εξυπηρετητή."
@@ -187,54 +180,62 @@ msgstr ""
 msgid "OK"
 msgstr "OK"
 
-#: ../src/user-list.vala:564
+#: ../src/user-list.vala:565
 #, fuzzy, c-format
 msgid ""
-"You need a Remote Logon account to use this service. Visit https://%s to set "
-"up an account."
+"You need a Remote Logon account to use this service. Visit %s to request an "
+"account."
 msgstr ""
 "Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης στο Ubuntu για να "
 "χρησιμοποιήσετε αυτή την υπηρεσία. Επισκεφτείτε τον ιστότοπο uccs.canonical."
 "com για να δημιουργήσετε λογαριασμό."
 
-#: ../src/user-list.vala:681
+#: ../src/user-list.vala:567
+#, fuzzy
+msgid ""
+"You need a Remote Logon account to use this service. Please ask your site "
+"administrator for details."
+msgstr ""
+"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης στο Ubuntu για να "
+"χρησιμοποιήσετε αυτή την υπηρεσία. Θέλετε να δημιουργήσετε λογαριασμό τώρα;"
+
+#: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Αυτός ο τύπος διακομιστή δεν υποστηρίζεται."
 
-#: ../src/user-list.vala:709
+#: ../src/user-list.vala:712
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Συνεδρία επισκέπτη"
 
-#: ../src/user-list.vala:729
+#: ../src/user-list.vala:732
 msgid "Domain:"
 msgstr "Τομέας:"
 
-#: ../src/user-list.vala:790
-#, fuzzy
-msgid "Email:"
-msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου:"
+#: ../src/user-list.vala:793
+msgid "Account ID"
+msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:834
+#: ../src/user-list.vala:837
 msgid "Log In"
 msgstr "Σύνδεση"
 
-#: ../src/user-list.vala:835
+#: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
 msgstr "Σύνδεση ως %s"
 
-#: ../src/user-list.vala:839
+#: ../src/user-list.vala:842
 msgid "Retry"
 msgstr "Επανάληψη"
 
-#: ../src/user-list.vala:840
+#: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
 msgstr "Επανάληψη ως %s."
 
-#: ../src/user-list.vala:879
+#: ../src/user-list.vala:882
 msgid "Login"
 msgstr "Σύνδεση"
 
@@ -263,6 +264,17 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Arctica Greeter"
+
+#~ msgid ""
+#~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
+#~ "run applications from that server."
+#~ msgstr ""
+#~ "Αν διαθέτετε λογαριασμό σε RDP ή Citrix  διακομιστή, με την Απομακρυσμένη "
+#~ "σύνδεση μπορείτε να εκτελείτε εφαρμογές από αυτόν τον εξυπηρετητή."
+
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "Διεύθυνση ηλεκτρονικού ταχυδρομείου:"
 
 #~ msgid "_Back"
 #~ msgstr "_Πίσω"

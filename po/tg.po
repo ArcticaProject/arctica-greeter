@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 17:09+0100\n"
+"POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2013-04-15 09:13+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Tajik <tg@li.org>\n"
@@ -23,12 +23,11 @@ msgstr ""
 msgid "Enter password for %s"
 msgstr "Паролро барои %s ворид кунед"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:703
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
 msgstr "Парол:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:697
-#: ../src/user-list.vala:790
+#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
 msgstr "Номи корбар:"
 
@@ -48,23 +47,23 @@ msgstr "Оғози ҷаласа қатъ шуд"
 msgid "Logging in…"
 msgstr "Ворид шуда истодааст..."
 
-#: ../src/main-window.vala:51
+#: ../src/main-window.vala:55
 msgid "Login Screen"
 msgstr "Экрани воридшавӣ"
 
-#: ../src/main-window.vala:115
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr "Қафо"
 
-#: ../src/menubar.vala:222
+#: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
 msgstr "Клавиатураи экранӣ"
 
-#: ../src/menubar.vala:227
+#: ../src/menubar.vala:231
 msgid "High Contrast"
 msgstr "Контрасти баланд"
 
-#: ../src/menubar.vala:233
+#: ../src/menubar.vala:237
 msgid "Screen Reader"
 msgstr "Хонандаи экран"
 
@@ -115,22 +114,22 @@ msgid "%s (Default)"
 msgstr "%s (Пешфарз)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:630
+#: ../src/arctica-greeter.vala:669
 msgid "Show release version"
 msgstr "Намоиш додани ҷаласаи релиз"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:633
+#: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
 msgstr "Иҷро кардан дар ҳолати санҷишӣ"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:639
+#: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
 msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:650
+#: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -149,19 +148,13 @@ msgstr "Лутфан, суроғаи пурраи почтаи электрон�
 msgid "Incorrect e-mail address or password"
 msgstr "Суроғаи почтаи электронӣ ё пароли нодуруст"
 
-#: ../src/user-list.vala:551
-msgid ""
-"If you have an account on an RDP or Citrix server, Remote Login lets you run "
-"applications from that server."
-msgstr ""
-"Агар шумо дар сервери RDP ё Citrix ҳисоб дошта бошед, Воридшавии дурдаст ба "
-"шумо имконият медиҳад, ки барномаҳоро аз он сервер иҷро кунед."
-
+#. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
+#, fuzzy
 msgid ""
-"If you have an account on an RDP server, Remote Login lets you run "
-"applications from that server."
+"If you have an account on an RDP server or X2Go server, Remote Login lets "
+"you run applications from that server."
 msgstr ""
 "Агар шумо дар сервери RDP ҳисоб дошта бошед, Воридшавии дурдаст ба шумо "
 "имконият медиҳад, ки барномаҳоро аз он сервер иҷро кунед."
@@ -187,53 +180,61 @@ msgstr ""
 msgid "OK"
 msgstr "OK"
 
-#: ../src/user-list.vala:564
+#: ../src/user-list.vala:565
 #, fuzzy, c-format
 msgid ""
-"You need a Remote Logon account to use this service. Visit https://%s to set "
-"up an account."
+"You need a Remote Logon account to use this service. Visit %s to request an "
+"account."
 msgstr ""
 "Барои истифодаи ин хидмат ба шумо ҳисоби Воридшавии дурдасти Ubuntu лозим "
 "аст. Барои танзим кардани ҳисоб, ба uccs.canonical.com ташриф оред."
 
-#: ../src/user-list.vala:681
+#: ../src/user-list.vala:567
+#, fuzzy
+msgid ""
+"You need a Remote Logon account to use this service. Please ask your site "
+"administrator for details."
+msgstr ""
+"Барои истифодаи ин хидмат ба шумо ҳисоби Воридшавии дурдасти Ubuntu лозим "
+"аст. Шумо мехоҳед, ки ҳисобро ҳозир танзим кунед?"
+
+#: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Намуди сервер дастгирӣ намешавад."
 
-#: ../src/user-list.vala:709
+#: ../src/user-list.vala:712
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Ҷаласаи меҳмон"
 
-#: ../src/user-list.vala:729
+#: ../src/user-list.vala:732
 msgid "Domain:"
 msgstr "Домен:"
 
-#: ../src/user-list.vala:790
-#, fuzzy
-msgid "Email:"
-msgstr "Суроғаи почтаи электронӣ:"
+#: ../src/user-list.vala:793
+msgid "Account ID"
+msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:834
+#: ../src/user-list.vala:837
 msgid "Log In"
 msgstr "Ворид шудан"
 
-#: ../src/user-list.vala:835
+#: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
 msgstr "Ворид шудан ҳамчун %s"
 
-#: ../src/user-list.vala:839
+#: ../src/user-list.vala:842
 msgid "Retry"
 msgstr "Такрор кардан"
 
-#: ../src/user-list.vala:840
+#: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
 msgstr "Такрор кардан ҳамчун %s"
 
-#: ../src/user-list.vala:879
+#: ../src/user-list.vala:882
 msgid "Login"
 msgstr "Ворид шудан"
 
@@ -262,6 +263,17 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Arctica Greeter"
+
+#~ msgid ""
+#~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
+#~ "run applications from that server."
+#~ msgstr ""
+#~ "Агар шумо дар сервери RDP ё Citrix ҳисоб дошта бошед, Воридшавии дурдаст "
+#~ "ба шумо имконият медиҳад, ки барномаҳоро аз он сервер иҷро кунед."
+
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "Суроғаи почтаи электронӣ:"
 
 #~ msgid "Logging in..."
 #~ msgstr "Воридшавӣ рафта истодааст..."

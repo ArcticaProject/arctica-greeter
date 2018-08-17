@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 17:09+0100\n"
+"POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2014-02-08 15:27+0000\n"
 "Last-Translator: Roy Chan <roy.chan@linux.org.hk>\n"
 "Language-Team: Chinese (Hong Kong) <zh_HK@li.org>\n"
@@ -23,12 +23,11 @@ msgstr ""
 msgid "Enter password for %s"
 msgstr "為 %s 輸入密碼"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:703
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
 msgstr "密碼:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:697
-#: ../src/user-list.vala:790
+#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
 msgstr "使用者名稱:"
 
@@ -48,23 +47,23 @@ msgstr "無法啟動作業階段"
 msgid "Logging in…"
 msgstr "正在登入…"
 
-#: ../src/main-window.vala:51
+#: ../src/main-window.vala:55
 msgid "Login Screen"
 msgstr "登入畫面"
 
-#: ../src/main-window.vala:115
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr "返回"
 
-#: ../src/menubar.vala:222
+#: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
 msgstr "螢幕鍵盤"
 
-#: ../src/menubar.vala:227
+#: ../src/menubar.vala:231
 msgid "High Contrast"
 msgstr "高對比"
 
-#: ../src/menubar.vala:233
+#: ../src/menubar.vala:237
 msgid "Screen Reader"
 msgstr "螢幕閱讀器"
 
@@ -113,22 +112,22 @@ msgid "%s (Default)"
 msgstr "%s (預設)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:630
+#: ../src/arctica-greeter.vala:669
 msgid "Show release version"
 msgstr "顯示發行版本"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:633
+#: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
 msgstr "以測試模式執行"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:639
+#: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
 msgstr "- Arctica 歡迎程式"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:650
+#: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "執行「%s --help」來查看所有命令列可用選項的完整清單。"
@@ -145,18 +144,13 @@ msgstr "請輸入完整的電子郵件地址"
 msgid "Incorrect e-mail address or password"
 msgstr "電子郵件地址或密碼不正確"
 
-#: ../src/user-list.vala:551
-msgid ""
-"If you have an account on an RDP or Citrix server, Remote Login lets you run "
-"applications from that server."
-msgstr ""
-"若你有 RDP 或 Citrix 伺服器的帳號，「遠端登入」讓你可自該伺服器執行應用程式。"
-
+#. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
+#, fuzzy
 msgid ""
-"If you have an account on an RDP server, Remote Login lets you run "
-"applications from that server."
+"If you have an account on an RDP server or X2Go server, Remote Login lets "
+"you run applications from that server."
 msgstr "若你有 RDP 伺服器的帳號，「遠端登入」可讓你自該伺服器執行應用程式。"
 
 #: ../src/user-list.vala:556
@@ -178,53 +172,59 @@ msgstr "你要有 Ubuntu 遠端登入帳號才能使用此服務。想要馬上�
 msgid "OK"
 msgstr "確定"
 
-#: ../src/user-list.vala:564
+#: ../src/user-list.vala:565
 #, fuzzy, c-format
 msgid ""
-"You need a Remote Logon account to use this service. Visit https://%s to set "
-"up an account."
+"You need a Remote Logon account to use this service. Visit %s to request an "
+"account."
 msgstr ""
 "你要有 Ubuntu 遠端登入帳號才能使用此服務。請造訪 uccs.canonical.com 來設置帳"
 "號。"
 
-#: ../src/user-list.vala:681
+#: ../src/user-list.vala:567
+#, fuzzy
+msgid ""
+"You need a Remote Logon account to use this service. Please ask your site "
+"administrator for details."
+msgstr "你要有 Ubuntu 遠端登入帳號才能使用此服務。想要馬上設置帳號嗎？"
+
+#: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "伺服器類型尚未支援。"
 
-#: ../src/user-list.vala:709
+#: ../src/user-list.vala:712
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "訪客作業階段"
 
-#: ../src/user-list.vala:729
+#: ../src/user-list.vala:732
 msgid "Domain:"
 msgstr "網域："
 
-#: ../src/user-list.vala:790
-#, fuzzy
-msgid "Email:"
-msgstr "電子郵件地址："
+#: ../src/user-list.vala:793
+msgid "Account ID"
+msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:834
+#: ../src/user-list.vala:837
 msgid "Log In"
 msgstr "登入"
 
-#: ../src/user-list.vala:835
+#: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
 msgstr "以 %s 身份登入"
 
-#: ../src/user-list.vala:839
+#: ../src/user-list.vala:842
 msgid "Retry"
 msgstr "重試"
 
-#: ../src/user-list.vala:840
+#: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
 msgstr "以 %s 身份重試"
 
-#: ../src/user-list.vala:879
+#: ../src/user-list.vala:882
 msgid "Login"
 msgstr "登入"
 
@@ -253,6 +253,17 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Arctica 歡迎程式"
+
+#~ msgid ""
+#~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
+#~ "run applications from that server."
+#~ msgstr ""
+#~ "若你有 RDP 或 Citrix 伺服器的帳號，「遠端登入」讓你可自該伺服器執行應用程"
+#~ "式。"
+
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "電子郵件地址："
 
 #~ msgid "_Back"
 #~ msgstr "返回(_B)"

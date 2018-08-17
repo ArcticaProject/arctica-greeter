@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 17:09+0100\n"
+"POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2012-01-24 16:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Catalan <ca@li.org>\n"
@@ -23,12 +23,11 @@ msgstr ""
 msgid "Enter password for %s"
 msgstr ""
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:703
+#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
 msgstr ""
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:697
-#: ../src/user-list.vala:790
+#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
 msgstr ""
 
@@ -48,23 +47,23 @@ msgstr "Ha fallat l'inici de la sessió"
 msgid "Logging in…"
 msgstr "S'està entrant a la sessió..."
 
-#: ../src/main-window.vala:51
+#: ../src/main-window.vala:55
 msgid "Login Screen"
 msgstr ""
 
-#: ../src/main-window.vala:115
+#: ../src/main-window.vala:119
 msgid "Back"
 msgstr "Enrere"
 
-#: ../src/menubar.vala:222
+#: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
 msgstr ""
 
-#: ../src/menubar.vala:227
+#: ../src/menubar.vala:231
 msgid "High Contrast"
 msgstr ""
 
-#: ../src/menubar.vala:233
+#: ../src/menubar.vala:237
 msgid "Screen Reader"
 msgstr ""
 
@@ -115,22 +114,22 @@ msgid "%s (Default)"
 msgstr "%s (per defecte)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:630
+#: ../src/arctica-greeter.vala:669
 msgid "Show release version"
 msgstr "Mostra la versió"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:633
+#: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
 msgstr "Executa en mode de prova"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:639
+#: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
 msgstr ""
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:650
+#: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -147,19 +146,13 @@ msgstr "Introduïu una adreça electrònica completa"
 msgid "Incorrect e-mail address or password"
 msgstr "L'adreça electrònica o la contrasenya són incorrectes"
 
-#: ../src/user-list.vala:551
-msgid ""
-"If you have an account on an RDP or Citrix server, Remote Login lets you run "
-"applications from that server."
-msgstr ""
-"Si teniu un compte en un servidor RDP o Citrix, l'entrada remota us permet "
-"executar aplicacions des del servidor."
-
+#. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
+#, fuzzy
 msgid ""
-"If you have an account on an RDP server, Remote Login lets you run "
-"applications from that server."
+"If you have an account on an RDP server or X2Go server, Remote Login lets "
+"you run applications from that server."
 msgstr ""
 "Si teniu un compte en un servidor RDP, l'entrada remota us permet executar "
 "aplicacions des del servidor."
@@ -185,52 +178,60 @@ msgstr ""
 msgid "OK"
 msgstr "D'acord"
 
-#: ../src/user-list.vala:564
+#: ../src/user-list.vala:565
 #, fuzzy, c-format
 msgid ""
-"You need a Remote Logon account to use this service. Visit https://%s to set "
-"up an account."
+"You need a Remote Logon account to use this service. Visit %s to request an "
+"account."
 msgstr ""
 "Cal un compte d'entrada remota de l'Ubuntu per utilitzar aquest servei. "
 "Visiteu uccs.canonical.com per configurar un compte."
 
-#: ../src/user-list.vala:681
+#: ../src/user-list.vala:567
+#, fuzzy
+msgid ""
+"You need a Remote Logon account to use this service. Please ask your site "
+"administrator for details."
+msgstr ""
+"Cal un compte d'entrada remota de l'Ubuntu per utilitzar aquest servei. "
+"Voleu configurar un compte?"
+
+#: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "El tipus de servidor no és compatible."
 
-#: ../src/user-list.vala:709
+#: ../src/user-list.vala:712
 msgid "X2Go Session:"
 msgstr ""
 
-#: ../src/user-list.vala:729
+#: ../src/user-list.vala:732
 msgid "Domain:"
 msgstr "Domini:"
 
-#: ../src/user-list.vala:790
-#, fuzzy
-msgid "Email:"
-msgstr "Adreça electrònica:"
+#: ../src/user-list.vala:793
+msgid "Account ID"
+msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:834
+#: ../src/user-list.vala:837
 msgid "Log In"
 msgstr ""
 
-#: ../src/user-list.vala:835
+#: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
 msgstr ""
 
-#: ../src/user-list.vala:839
+#: ../src/user-list.vala:842
 msgid "Retry"
 msgstr "Torna-ho a provar"
 
-#: ../src/user-list.vala:840
+#: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
 msgstr "Torna-ho a provar com a %s"
 
-#: ../src/user-list.vala:879
+#: ../src/user-list.vala:882
 msgid "Login"
 msgstr ""
 
@@ -258,6 +259,17 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr ""
+
+#~ msgid ""
+#~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
+#~ "run applications from that server."
+#~ msgstr ""
+#~ "Si teniu un compte en un servidor RDP o Citrix, l'entrada remota us "
+#~ "permet executar aplicacions des del servidor."
+
+#, fuzzy
+#~ msgid "Email:"
+#~ msgstr "Adreça electrònica:"
 
 #~ msgid "_Back"
 #~ msgstr "_Enrere"
