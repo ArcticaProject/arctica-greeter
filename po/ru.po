@@ -8,15 +8,18 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-05-25 11:41+0000\n"
-"Last-Translator: Eugene Marshal <Unknown>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2018-08-18 09:21+0000\n"
+"Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -45,7 +48,7 @@ msgstr "Не удалось запустить сеанс"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Выполняется вход..."
+msgstr "Выполняется вход…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -77,7 +80,7 @@ msgstr "Выберите окружение"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "До свидания. Вы хотите ..."
+msgstr "До свидания. Вы хотите…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -151,13 +154,12 @@ msgstr "Неправильный адрес электронной почты и
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Если у вас есть учётная запись на сервере RDP, удаленный вход позволит "
-"запустить приложения, расположенные на сервере."
+"Если у вас есть учётная запись на сервере RDP или X2Go, удаленный вход "
+"позволит запустить приложения, расположенные на том сервере."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -165,47 +167,44 @@ msgstr "Отменить"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Настройка..."
+msgstr "Настройка…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись Ubuntu Remote Login. "
-"Вы хотите настроить её?"
+"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
+"систему. Вы хотите настроить её?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись Ubuntu Remote Login. "
-"Чтобы настроить её, посетите сайт uccs.canonical.com"
+"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
+"систему. Чтобы настроить её, посетите сайт %s."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись Ubuntu Remote Login. "
-"Вы хотите настроить её?"
+"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
+"систему. Подробности можно уточнить у вашего администратора."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Этот тип сервера не поддерживается."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Гостевой сеанс"
+msgstr "Сеанс X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +212,7 @@ msgstr "Домен:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID учетной записи"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -239,9 +238,9 @@ msgid "Login"
 msgstr "Войти"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Гостевой сеанс"
+msgstr "Временный гостевой сеанс"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -251,6 +250,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Все данные, созданные в данном сеансе, будут утеряны\n"
+"после выхода, а настройки сброшены. Сохраняйте файлы\n"
+"на внешние устройства, например USB-накопители,\n"
+"чтобы использовать их в дальнейшем."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -258,11 +261,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Также файлы можно сохранить в каталоге\n"
+"/var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "— Экран приветствия Arctica"
+msgstr "Экран приветствия Arctica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
