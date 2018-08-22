@@ -445,7 +445,14 @@ public class Background : Gtk.Fixed
 
     private string _current_background;
     public string? current_background {
-        get { return _current_background; }
+        get {
+            if (_current_background)
+            {
+                return _current_background;
+            } else {
+                return fallback_bgcolor;
+            }
+        }
 
         set {
             if (value == null || value == "")
@@ -458,8 +465,6 @@ public class Background : Gtk.Fixed
 
             reload ();
         }
-
-        default = fallback_bgcolor;
     }
 
     public bool draw_grid { get; set; default = true; }
