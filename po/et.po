@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2017-10-07 20:19+0000\n"
+"PO-Revision-Date: 2018-08-22 04:25+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
-"Language-Team: Estonian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/et/>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -151,13 +151,12 @@ msgstr "Vale e-posti aadress või parool"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Kui teil on RDP serveri konto, saate selle serveri rakendusi käivitada "
-"kasutades kaugsisselogimist."
+"Kui teil on RDP või X2Go serveri konto, saate selle serveri rakendusi "
+"käivitada kasutades kaugsisselogimist."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -180,22 +179,21 @@ msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Selle teenuse kasutamiseks peab sul olema Ubuntu kaugsisselogimise konto "
-"(remote login account). Konto saad luua aadressil https://%s."
+"Selle teenuse kasutamiseks peab sul olema Ubuntu kaugsisselogimise konto ("
+"remote login account). Konto saad luua aadressil %s."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Selle teenuse kasutamiseks peab sul olema Ubuntu kaugsisselogimise konto "
-"(remote login account).  Kas soovid selle konto luua?"
+"Selle teenuse kasutamiseks peab sul olema kaugsisselogimise konto (remote "
+"login account). Täpsema informatsiooni saad oma saidi administraatorilt."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -211,7 +209,7 @@ msgstr "Domeen:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Konto ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
