@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2017-08-13 17:48+0000\n"
+"PO-Revision-Date: 2018-08-23 20:56+0000\n"
 "Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
-"Language-Team: Belarusian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/be/>\n"
+"Language-Team: Belarusian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.16\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -154,13 +154,12 @@ msgstr "Няслушны адрас электроннай пошты ці па�
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Калі вы маеце рахунка на сэрверы RDP, Remote Login дазволіць вам запускаць "
-"праграмы з гэтага сервера."
+"Калі вы маеце конт на RDP- ці X2Go-серверы, Remote Login дазволіць вам "
+"запускаць праграмы з гэтага сервера."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -183,22 +182,21 @@ msgid "OK"
 msgstr "Добра"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Каб скарыстаць гэты сервіс, вам патрэбны рахунак Ubuntu Remote Login. "
-"Наведайце https://%s, каб наладзіць яго."
+"Каб скарыстаць гэты сервіс, вам патрэбны конт «Ubuntu Remote Login». "
+"Наведайце %s, каб наладзіць яго."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Каб скарыстаць гэты сервіс, вам патрэбны рахунак Ubuntu Remote Login. Ці вы "
-"жадаеце наладзіць яго цяпер?"
+"Каб скарыстаць гэты сервіс, вам патрэбны конт «Ubuntu Remote Login». Калі "
+"ласка, звярніцеся да адміністратара сайта для дэталяў."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -214,7 +212,7 @@ msgstr "Дамэн:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Ідэнтыфікатар конту"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
