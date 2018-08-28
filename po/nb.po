@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2017-11-17 23:25+0000\n"
+"PO-Revision-Date: 2018-08-28 16:28+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -152,13 +152,12 @@ msgstr "Feil e-postadresse eller passord"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Hvis du har en konto på en RDP-tjener, kan du kjøre programmer fra denne med "
-"«Remote Login»."
+"Hvis du har en konto på en RDP- eller X2Go-tjener, kan du kjøre programmer "
+"derfra med «Remote Login»."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -181,22 +180,21 @@ msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Besøk "
-"https://%s for å lage en konto."
+"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Besøk %s "
+"for å forespørre konto."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Vil du lage "
-"en konto nå?"
+"Du trenger en fjerninnloggingskonto for å bruke denne tjenesten. Spør "
+"administratoren for siden om detaljer."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -212,7 +210,7 @@ msgstr "Domene:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Konto-ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
