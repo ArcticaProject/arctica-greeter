@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-04-28 23:39+0000\n"
-"Last-Translator: antuketot76 <antuketot76@protonmail.com>\n"
+"PO-Revision-Date: 2018-09-06 04:20+0000\n"
+"Last-Translator: mohamad farid <mfarid.ahamid@gmail.com>\n"
 "Language-Team: Malay <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ms/>\n"
 "Language: ms\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -153,13 +153,12 @@ msgstr "Alamat e-mel atau kata laluan tidak betul"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Jika anda mempunyai akaun pada pelayan RDP, Daftar Masuk Jauh membenarkan "
-"anda jalani aplikasi melalui pelayan tersebut."
+"Jika anda mempunyai akaun pada pelayan RDP atau pelayan X2Go, Daftar Masuk "
+"Jauh membenarkan anda jalani aplikasi melalui pelayan tersebut."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -182,22 +181,21 @@ msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Anda perlu akaun Remot Login untuk guna perkhidmatan ini. Layari https://%s "
-"untuk buka akaun."
+"Anda perlu akaun Remot Login untuk guna perkhidmatan ini. Layari %s untuk "
+"buka akaun."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Anda perlu akaun Remot Login untuk guna perkhidmatan ini. Anda ingin buka "
-"akaun sekarang?"
+"Anda perlu akaun Remot Login untuk guna perkhidmatan ini. Sila hubungi "
+"pentadbir laman untuk maklumat lanjut."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -213,7 +211,7 @@ msgstr "Domin:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID akaun"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
