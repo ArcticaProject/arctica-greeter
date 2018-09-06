@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-07-25 21:37+0000\n"
-"Last-Translator: Danial Behzadi <dani.behzi@gmail.com>\n"
-"Language-Team: Persian <fa@li.org>\n"
+"PO-Revision-Date: 2018-09-07 20:22+0000\n"
+"Last-Translator: mohsen sorny <aragornsy@gmail.com>\n"
+"Language-Team: Persian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -149,13 +151,12 @@ msgstr "نشانی ای‌میل یا گذرواژه‌ی نادرست"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"اگر حساب کاربری‌ای روی یک سرویس‌دهنده‌ی RDP دارید، ورود از راه دور به شما اجازه "
-"می‌دهد برنامه‌های کاربری را از آن سرویس‌دهنده اجرا کنید."
+"اگر حساب کاربری‌ روی یک سرویس‌دهنده‌ی RDP دارید، ورود از راه دور به شما "
+"اجازه می‌دهد برنامه‌های کاربری را از آن سرویس‌دهنده اجرا کنید."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
