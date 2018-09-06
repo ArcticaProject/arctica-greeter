@@ -446,7 +446,7 @@ public class Background : Gtk.Fixed
     private string _current_background;
     public string? current_background {
         get {
-            if (_current_background)
+            if (_current_background != "")
             {
                 return _current_background;
             } else {
