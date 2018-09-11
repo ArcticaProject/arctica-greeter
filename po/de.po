@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-08-17 08:08+0000\n"
+"PO-Revision-Date: 2018-09-11 18:26+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/de/>\n"
@@ -118,7 +118,7 @@ msgstr "%s (Standard)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr "Veröffentlichungsversion anzeigen"
+msgstr "Versionsnummer anzeigen"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
