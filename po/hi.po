@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-05-11 14:48+0000\n"
-"Last-Translator: Gayathri Das <gaya3das@live.unc.edu>\n"
+"PO-Revision-Date: 2018-09-24 20:29+0000\n"
+"Last-Translator: Himanshu Awasthi <johim9493@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/hi/>\n"
 "Language: hi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -43,7 +43,7 @@ msgstr "प्रमाणित करने में असफलता"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "सत्र शुरू करने में विफल"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -55,7 +55,7 @@ msgstr "लॉगिन स्क्रीन"
 
 #: ../src/main-window.vala:119
 msgid "Back"
-msgstr ""
+msgstr "वापस"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
@@ -78,26 +78,29 @@ msgid "Select desktop environment"
 msgstr "डेस्कटॉप वातावरण का चयन करें"
 
 #: ../src/shutdown-dialog.vala:103
+#, fuzzy
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "अलविदा। क्या आप चाहेंगे…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr ""
+msgstr "बंद करना"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "क्या आप वाकई कंप्यूटर बंद करना चाहते हैं?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"अन्य उपयोगकर्ता इस कंप्यूटर में वर्तमान में लॉग इन हैं, अब बंद करने से इन अन्"
+"य सत्रों को भी बंद कर दिया जाएगा।"
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr ""
+msgstr "निलंबित करें"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
@@ -105,7 +108,7 @@ msgstr ""
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "पुनः आरंभ करें"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
@@ -136,7 +139,7 @@ msgstr ""
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "अतिथि सत्र"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -166,13 +169,12 @@ msgid "Set Up…"
 msgstr "स्थापित करें ......"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"इस सेवा को चलाने के लिए आपको उबन्टु दूरस्थ लॉगिन खाते की आवश्यकता पड़ेगी । क्या आप उबन्टु "
-"दूरस्थ लॉगिन खाता बनाना चाहैंगे ।"
+"इस सेवा का उपयोग करने के लिए आपको एक दूरस्थ लॉगऑन खाते की आवश्यकता है। क्या "
+"आप अभी एक खाता खोलना चाहते हैं?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
@@ -188,13 +190,12 @@ msgstr ""
 "canonical.com पर जा कर उबन्टु दूरस्थ लॉगिन खाता बनाएं ।"
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"इस सेवा को चलाने के लिए आपको उबन्टु दूरस्थ लॉगिन खाते की आवश्यकता पड़ेगी । क्या आप उबन्टु "
-"दूरस्थ लॉगिन खाता बनाना चाहैंगे ।"
+"इस सेवा का उपयोग करने के लिए आपको एक दूरस्थ लॉगऑन खाते की आवश्यकता है। विवरण "
+"के लिए कृपया अपने साइट व्यवस्थापक से पूछें।"
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -210,7 +211,7 @@ msgstr "डोमेन:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "खाता पहचान"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -233,12 +234,12 @@ msgstr "%s के रूप में पुन: प्रयास करें
 
 #: ../src/user-list.vala:882
 msgid "Login"
-msgstr ""
+msgstr "लॉग इन करें"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "अस्थायी अतिथि सत्र"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -258,7 +259,7 @@ msgstr ""
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "आर्कटिका ग्रीटर"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
