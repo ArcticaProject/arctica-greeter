@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-05-26 14:37+0000\n"
-"Last-Translator: Jacky Blois <jacky.blois@laposte.net>\n"
+"PO-Revision-Date: 2018-09-26 21:26+0000\n"
+"Last-Translator: A BOUZINAC <alexisbouzinac@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -206,7 +206,7 @@ msgstr "Type de serveur non pris en charge."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "Session X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -214,7 +214,7 @@ msgstr "Domaine :"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "N° de compte:"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -268,8 +268,9 @@ msgstr ""
 "les fichiers dans le répertoire /var/guest."
 
 #: ../data/arctica-greeter.desktop.in.h:1
+#, fuzzy
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
