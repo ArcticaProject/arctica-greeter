@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-01-24 12:31+0000\n"
-"Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
-"Language-Team: Swedish <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/sv/>\n"
+"PO-Revision-Date: 2018-10-02 01:36+0000\n"
+"Last-Translator: Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>"
+"\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -152,13 +153,12 @@ msgstr "Felaktig e-postadress eller lösenord"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Om du har ett konto på en RDP-server kan fjärrinloggning låta dig köra "
-"program därifrån."
+"Om du har ett konto på en RDP-server eller X2Go-server så kan "
+"fjärrinloggning tillåta dig att köra applikationer från den servern."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -212,7 +212,7 @@ msgstr "Domän:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Konto-ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
