@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-02-20 11:36+0000\n"
-"Last-Translator: Veselin Georgiev <vvgeorgievv@gmail.com>\n"
-"Language-Team: Bulgarian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/bg/>\n"
+"PO-Revision-Date: 2018-11-04 17:23+0000\n"
+"Last-Translator: Kamen <kamenpetrov81@gmail.com>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1-dev\n"
+"X-Generator: Weblate 3.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -152,12 +152,11 @@ msgstr "Невалиден имейл адрес или парола"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Ако имате профил на RDP сървър, отдалеченият достъп ще ви позволи да "
+"Ако имате профил на RDP сървър, отдалеченият достъп ще Ви позволи да "
 "стартирате приложения от този сървър."
 
 #: ../src/user-list.vala:556
@@ -181,22 +180,21 @@ msgid "OK"
 msgstr "Да"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Необходим ви е профил за отдалечен вход. Посетете https://%s за създаването "
-"на такъв."
+"За да използвате тази услуга, ви е необходим профил за отдалечено влизане. "
+"Посетете %s1, за да поискате профил."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
 "За да ползвате тази услуга, трябва да имате потребителски профил за "
-"отдалечен достъп. Искате ли сега да бъде създаден такъв?"
+"отдалечен достъп. Моля, попитайте администратора на сайта си за подробности."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -212,7 +210,7 @@ msgstr "Домейн:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Идентификационен номер на профила"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
