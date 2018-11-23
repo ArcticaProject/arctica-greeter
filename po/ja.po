@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-11-14 12:06+0000\n"
+"PO-Revision-Date: 2018-11-24 13:07+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/ja/>\n"
@@ -27,11 +27,11 @@ msgstr "%sのパスワードを入力してください"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr "パスワード:"
+msgstr "パスワード："
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr "ユーザー名:"
+msgstr "ユーザー名："
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
@@ -79,7 +79,7 @@ msgstr "デスクトップ環境を選択してください"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "さようなら。どれを行いますか…"
+msgstr "さようなら。どの操作を行いますか…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -193,15 +193,15 @@ msgstr "サーバータイプがサポートされていません。"
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "X2Go セッション:"
+msgstr "X2Go セッション："
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
-msgstr "ドメイン:"
+msgstr "ドメイン："
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr "アカウント ID"
+msgstr "アカウントID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -220,7 +220,7 @@ msgstr "再試行"
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr "%s として再試行"
+msgstr "%sとして再試行"
 
 #: ../src/user-list.vala:882
 msgid "Login"
