@@ -95,8 +95,25 @@ Architecture: all
 Depends: ${misc:Depends},
          arctica-greeter,
          libglib2.0-bin,
+         desktop-base,
+Breaks: arctica-greeter-theme-ubuntumate,
+Replaces: arctica-greeter-theme-ubuntumate,
 Description: LightDM Arctica Greeter - Debian Theme
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
  local display manager as well as thin client login manager.
  .
  This package themes Arctica Greeter with a Debian look'n'feel.
+
+Package: arctica-greeter-theme-ubuntumate
+Architecture: all
+Depends: ${misc:Depends},
+         arctica-greeter,
+         libglib2.0-bin,
+         ubuntu-mate-wallpapers-common,
+Breaks: arctica-greeter-theme-debian,
+Replaces: arctica-greeter-theme-debian,
+Description: LightDM Arctica Greeter - Ubuntu MATE Theme
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ This package themes Arctica Greeter with a Ubuntu MATE look'n'feel.
