@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-11-24 13:07+0000\n"
+"PO-Revision-Date: 2018-12-03 08:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/ja/>\n"
@@ -17,25 +17,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.3-dev\n"
+"X-Generator: Weblate 3.3\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "%sのパスワードを入力してください"
+msgstr "%s のパスワードを入力してください"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr "パスワード："
+msgstr "パスワード:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr "ユーザー名："
+msgstr "ユーザー名:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "パスワードが違います。もう一度試してください。"
+msgstr "パスワードが違います。もう一度お試しください。"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -134,7 +134,7 @@ msgstr "- Arctica Greeter"
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr "利用可能なコマンドラインオプションの完全なリストを見るには'%s --help'を実行してください。"
+msgstr "利用可能なコマンドラインオプションの完全なリストを見るには '%s --help' を実行してください。"
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -154,7 +154,7 @@ msgstr "メールアドレスまたはパスワードが間違っています"
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
-msgstr "RDPサーバーまたはX2Goサーバーのアカウントをお持ちの場合は、リモートログインでそのサーバーからアプリケーションを実行できます。"
+msgstr "RDP サーバーまたは X2Go サーバーのアカウントをお持ちの場合は、リモートログインでそのサーバーからアプリケーションを実行できます。"
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -179,7 +179,7 @@ msgstr "OK"
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
-msgstr "このサービスを利用するためには、リモートログオンアカウントが必要です。アカウントを作成するには、%sを参照してください。"
+msgstr "このサービスを利用するためには、リモートログオンアカウントが必要です。アカウントを作成するには、%s を参照してください。"
 
 #: ../src/user-list.vala:567
 msgid ""
@@ -193,15 +193,15 @@ msgstr "サーバータイプがサポートされていません。"
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "X2Go セッション："
+msgstr "X2Go セッション:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
-msgstr "ドメイン："
+msgstr "ドメイン:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr "アカウントID"
+msgstr "アカウント ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -211,7 +211,7 @@ msgstr "ログイン"
 #: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
-msgstr "%sとしてログイン中"
+msgstr "%s としてログイン中"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
@@ -220,7 +220,7 @@ msgstr "再試行"
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr "%sとして再試行"
+msgstr "%s として再試行"
 
 #: ../src/user-list.vala:882
 msgid "Login"
@@ -242,7 +242,7 @@ msgstr ""
 "このゲストセッション中に作成されたすべてのデータは\n"
 "ログアウトする際に削除され、設定はデフォルトに\n"
 "リセットされます。後でファイルに再度アクセスしたい\n"
-"場合は、USBメモリーなどの外部デバイスに保存してください。"
+"場合は、USB メモリーなどの外部デバイスに保存してください。"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -250,7 +250,7 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"/var/guest-dataフォルダー内にファイルを\n"
+"/var/guest-data フォルダー内にファイルを\n"
 "保存するという別の選択肢もあります。"
 
 #: ../data/arctica-greeter.desktop.in.h:1
