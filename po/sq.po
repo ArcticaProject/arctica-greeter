@@ -8,48 +8,50 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Albanian <sq@li.org>\n"
+"PO-Revision-Date: 2018-12-13 04:07+0000\n"
+"Last-Translator: xhesikab <xhesikabua@gmail.com>\n"
+"Language-Team: Albanian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/sq/>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "futni fjalëkalimin per %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr ""
+msgstr "fjalëkalim:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr ""
+msgstr "Emri i përdoruesit:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Fjalëkalim i pavlefshëm"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "dështoi të vërtetonte"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr "Dështova në nisjen e seksionit"
+msgstr "dështoi të fillonte seancën"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Duke hyrë..."
+msgstr "lidhje…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "Ekrani për tu identifikuar"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -57,19 +59,19 @@ msgstr "Mbrapsht"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "tastierë në ekran"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr ""
+msgstr "kontrast të lartë"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr ""
+msgstr "lexues ekran"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "opsionet e sesionit"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -77,7 +79,7 @@ msgstr "Zgjidh ambientin e desktopit"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Mirupafshim. A do të donit..."
+msgstr "Mirupafshim. A do të donit…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -97,11 +99,11 @@ msgstr ""
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr "Pezullo"
+msgstr "Ndërpres"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr "Hiberno"
+msgstr "Prehem"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
