@@ -8,32 +8,36 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Tamil <ta@li.org>\n"
+"PO-Revision-Date: 2018-12-26 08:08+0000\n"
+"Last-Translator: Yadhesh Assassin <yadheshwarran@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
-#, c-format
+#, c-format, fuzzy
 msgid "Enter password for %s"
-msgstr ""
+msgstr "கடவு சொல்லை"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr ""
+msgstr "கடவு சொல்"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#, fuzzy
 msgid "Username:"
-msgstr ""
+msgstr "பயனாளர் பெயர்"
 
 #: ../src/greeter-list.vala:877
+#, fuzzy
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "தவறான கடவு சொல், மீண்டும் முயற்சிக்கவும்."
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -49,15 +53,16 @@ msgstr "உள்நுழைகிறது..."
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "உள்நுழைவு திரை"
 
 #: ../src/main-window.vala:119
 msgid "Back"
 msgstr "பின்செல்"
 
 #: ../src/menubar.vala:226
+#, fuzzy
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "திரை தட்டச்சு பலகை"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
