@@ -1,0 +1,2 @@
+debian/30_arctica-greeter-theme-debian-futureprototype.gschema.override usr/share/glib-2.0/schemas/
+debian/theme-debian-logo-v10.png usr/share/arctica-greeter/

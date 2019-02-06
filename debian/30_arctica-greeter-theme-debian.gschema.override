@@ -1,5 +1,5 @@
 [org.ArcticaProject.arctica-greeter]
-background='/usr/share/images/desktop-base/desktop-background'
-background-color='#274d63'
-togglebox-button-bgcolor='#274d63'
-logo='/usr/share/arctica-greeter/theme-debian-logo.png'
+background='/usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg'
+background-color='#404040'
+togglebox-button-bgcolor='#404040'
+logo=''
