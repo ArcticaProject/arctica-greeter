@@ -121,11 +121,25 @@ Breaks: arctica-greeter-theme-ubuntumate,
 Replaces: arctica-greeter-theme-ubuntumate,
  arctica-greeter-theme-debian,
  arctica-greeter-theme-debian-futureprototype,
-Description: LightDM Arctica Greeter - Debian Theme (softwaves, Debian 9)
+Description: LightDM Arctica Greeter - Debian Theme (softwaves)
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
  local display manager as well as thin client login manager.
  .
- This package themes Arctica Greeter with a Debian 9 (stretch) look'n'feel.
+ This package themes Arctica Greeter with the softwaves theme.
+
+Package: arctica-greeter-theme-debian-stretch
+Architecture: all
+Depends: ${misc:Depends},
+         arctica-greeter-theme-debian-softwaves,
+         libglib2.0-bin,
+         desktop-base (>= 9~),
+Breaks: arctica-greeter-theme-debian-buster,
+Replaces: arctica-greeter-theme-debian-buster,
+Description: LightDM Arctica Greeter - Debian 9 (stretch) Theme
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ This package themes Arctica Greeter with Debian 9 (aka stretch) look'n'feel.
 
 Package: arctica-greeter-theme-debian-futureprototype
 Architecture: all
@@ -139,11 +153,25 @@ Breaks: arctica-greeter-theme-ubuntumate,
 Replaces: arctica-greeter-theme-ubuntumate,
  arctica-greeter-theme-debian,
  arctica-greeter-theme-debian-softwaves,
-Description: LightDM Arctica Greeter - Debian Theme (futurePrototype, Debian 10)
+Description: LightDM Arctica Greeter - Debian Theme (futurePrototype)
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
  local display manager as well as thin client login manager.
  .
- This package themes Arctica Greeter with a Debian 10 (buster) look'n'feel.
+ This package themes Arctica Greeter with the furturePrototype theme.
+
+Package: arctica-greeter-theme-debian-buster
+Architecture: all
+Depends: ${misc:Depends},
+         arctica-greeter-theme-debian-futureprototype,
+         libglib2.0-bin,
+         desktop-base (>= 9~),
+Breaks: arctica-greeter-theme-debian-stretch,
+Replaces: arctica-greeter-theme-debian-stretch,
+Description: LightDM Arctica Greeter - Debian 10 (buster) Theme
+ A greeter shell for the LightDM login manager. Arctica Greeter can be used as
+ local display manager as well as thin client login manager.
+ .
+ This package themes Arctica Greeter with Debian 10 (aka buster) look'n'feel.
 
 Package: arctica-greeter-theme-ubuntumate
 Architecture: all
