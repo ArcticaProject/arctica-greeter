@@ -3,7 +3,7 @@
 LDFLAGS+=-Wl,--as-needed
 
 %:
-	dh $@ --with autoreconf --fail-missing
+	dh $@ --with autoreconf
 
 override_dh_autoreconf:
 	if [ ! -e po/arctica-greeter.pot.bak ]; then \
@@ -13,6 +13,9 @@ override_dh_autoreconf:
 
 override_dh_auto_build:
 	dh_auto_build
+
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_auto_install:
 	dh_auto_install
