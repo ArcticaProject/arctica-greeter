@@ -1,3 +1,16 @@
+Overview of changes in arctica-greeter 0.99.1.1
+
+    - Add support for remoteconfigure as a Remote
+      Logon session type.
+    - Use MATE's WM "marco" as window manager. Allows to
+      properly interact with window objects launched by
+      indicator icons.
+    - Fix HiDPI auto-detection.
+    - Add option to show GUI on a specific monitor.
+    - Fix build against vala 0.42.
+    - Fix background if image file is not readable.
+    - Translation updates
+
 Overview of changes in arctica-greeter 0.99.1.0
 
     - Make guest session configurable by the host admin.

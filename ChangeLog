@@ -1,6 +1,330 @@
-2018-05-07 15:45:15 +0200 Mike Gabriel (c3043a2)
+2019-02-06 11:08:45 +0100 Mike Gabriel (4b0bec6)
 
-	* release 0.99.1.0 (HEAD -> master, tag: 0.99.1.0)
+	* release 0.99.1.1 (HEAD -> master, tag: 0.99.1.1)
+
+2019-02-06 11:02:38 +0100 Mike Gabriel (900dcfb)
+
+	* update NEWS for 0.99.1.0 (we obviously forgot that...)
+
+2019-01-26 08:36:00 +0000 ssantos (97fc865)
+
+	* Translated using Weblate (Portuguese)
+
+2019-01-11 16:13:31 +0000 Louies (7b8f0f2)
+
+	* Translated using Weblate (Chinese (Traditional))
+
+2018-12-25 07:39:29 +0000 Yadhesh Assassin (9bdd327)
+
+	* Translated using Weblate (Tamil)
+
+2018-12-11 04:24:14 +0000 xhesikab (cc33c95)
+
+	* Translated using Weblate (Albanian)
+
+2018-12-02 07:34:26 +0000 Ryo Nakano (bdf931c)
+
+	* Translated using Weblate (Japanese)
+
+2018-11-22 20:15:41 +0000 ssantos (5f9e664)
+
+	* Translated using Weblate (Portuguese)
+
+2018-11-23 12:20:36 +0000 Ryo Nakano (54ad9db)
+
+	* Translated using Weblate (Japanese)
+
+2018-11-15 12:26:51 +0000 Oto Zars (3e378ad)
+
+	* Translated using Weblate (Latvian)
+
+2018-11-13 11:00:00 +0000 Ryo Nakano (6cff804)
+
+	* Translated using Weblate (Japanese)
+
+2018-11-12 12:44:18 +0000 rt (fbf6bd5)
+
+	* Translated using Weblate (Japanese)
+
+2018-11-03 17:02:04 +0000 Kamen (c27ca56)
+
+	* Translated using Weblate (Bulgarian)
+
+2018-10-03 11:57:05 +0000 scootergrisen (2aa6dc4)
+
+	* Translated using Weblate (Danish)
+
+2018-10-01 00:58:23 +0000 Kristoffer Grundström (8bc3cb7)
+
+	* Translated using Weblate (Swedish)
+
+2018-09-27 12:58:20 +0000 Володимир Бриняк (e6a07d4)
+
+	* Translated using Weblate (Ukrainian)
+
+2018-09-25 20:47:09 +0000 A BOUZINAC (2d271a7)
+
+	* Translated using Weblate (French)
+
+2018-09-23 20:04:47 +0000 Himanshu Awasthi (d25e979)
+
+	* Translated using Weblate (Hindi)
+
+2019-02-06 10:50:43 +0100 Mike Gabriel (d2339d9)
+
+	* Debian artwork: Move Debian logos into separate bin:pkgs.
+
+2019-02-06 10:22:23 +0100 Mike Gabriel (a6bc3d4)
+
+	* debian/arctica-greeter-theme-debian.install: Drop logo file. No
+          more logo when the generic active theme from Debian gets
+          used.
+
+2019-02-06 10:20:45 +0100 Mike Gabriel (30a05b6)
+
+	* debian/rules: Switch to dh_missing override for --fail-missing
+          post-install check.
+
+2019-02-06 10:16:38 +0100 Mike Gabriel (b22daed)
+
+	* Debian artwork: Provide two new bin:pkgs: Debian 9 Themes
+          (softwaves) and Debian 10 Themes (futurePrototype). The
+          default Debian theme will use the Debian system's active
+          theme.
+
+2019-01-23 12:20:42 +0100 Mike Gabriel (cbe181c)
+
+	* GSchema: Prepend a two-digit number to the override name of
+          arctica-greeter-theme-ubuntumate.
+
+2019-01-23 12:19:10 +0100 Mike Gabriel (b917f0f)
+
+	* GSchema: Prepend a two-digit number to the override name of
+          arctica-greeter-theme-debian.
+
+2018-11-26 13:37:46 +0100 Cobinja (96fc2ca)
+
+	* Fix background if image file is not readable.
+
+2018-11-26 13:33:06 +0100 Mike Gabriel (ad14c13)
+
+	* arctica-greeter-theme-ubuntumate: Add theme for Ubuntu MATE (cave:
+          not installable on Debian).
+
+2018-11-19 12:47:02 +0100 Mike Gabriel (909a90a)
+
+	* debian/control: Update B-R libayatana-ido3-0.4-dev ->
+          libayatana-ido3-dev.
+
+2018-09-11 18:26:32 +0000 Mike Gabriel (0771250)
+
+	* Translated using Weblate (German)
+
+2018-09-06 20:18:47 +0000 mohsen sorny (bbb6f88)
+
+	* Translated using Weblate (Persian)
+
+2018-09-05 04:13:03 +0000 mohamad farid (b4284cc)
+
+	* Translated using Weblate (Malay)
+
+2018-08-31 12:12:28 +0000 Yaron Shahrabani (e2095b3)
+
+	* Translated using Weblate (Hebrew)
+
+2018-08-29 21:29:40 +0000 WaldiS (135b12d)
+
+	* Translated using Weblate (Polish)
+
+2018-08-28 13:33:12 +0000 Allan Nordhøy (ad4e62d)
+
+	* Translated using Weblate (Norwegian Bokmål)
+
+2018-08-23 20:53:53 +0000 Viktar Vauchkevich (ef04927)
+
+	* Translated using Weblate (Belarusian)
+
+2018-08-22 04:23:05 +0000 Kristjan Räts (da364e3)
+
+	* Translated using Weblate (Estonian)
+
+2018-08-18 08:48:26 +0000 OIS (fdb8c84)
+
+	* Translated using Weblate (Occidental)
+
+2018-08-18 09:12:50 +0000 OIS (bcf54c8)
+
+	* Translated using Weblate (Russian)
+
+2018-09-06 08:00:46 +0200 Mike Gabriel (4d0870b)
+
+	* src/background.vala: Fix for previous commit. Vala needs a bool
+          expression in if-clauses.
+
+2018-08-22 12:40:41 +0200 Mike Gabriel (db7f409)
+
+	* src/background.vala: Fix FTBFS against Vala 0.42. This introduces a
+          slight behaviour change compared to the previous version,
+          but actually in a direction we want it to be.
+
+2018-08-17 08:05:31 +0000 Mike Gabriel (be4ea18)
+
+	* Translated using Weblate (German)
+
+2018-08-17 09:59:49 +0200 Mike Gabriel (27e46fc)
+
+	* translations: Update translation files.
+
+2018-08-17 09:58:13 +0200 Mike Gabriel (7446652)
+
+	* translations: Add Occidental (ie) language as requested by OIS on
+          Weblate.
+
+2018-08-09 04:48:21 +0000 deebeepea (58d308e)
+
+	* Translated using Weblate (Filipino)
+
+2018-08-08 19:42:59 +0000 Filip Hron (c0ad68e)
+
+	* Translated using Weblate (Czech)
+
+2018-08-08 16:38:31 +0000 Dharmendra (1988c9c)
+
+	* Translated using Weblate (Gujarati)
+
+2018-07-19 13:47:03 +0000 Dovydas Jakas (2431ea1)
+
+	* Translated using Weblate (Lithuanian)
+
+2018-07-19 13:42:46 +0000 Dovydas Jakas (2c1e18e)
+
+	* Translated using Weblate (Lithuanian)
+
+2018-07-10 15:26:26 +0000 Srichon Buntarigwong (fecfed1)
+
+	* Translated using Weblate (Thai)
+
+2018-06-29 07:50:57 +0000 kong (fc915fa)
+
+	* Translated using Weblate (Thai)
+
+2018-06-17 22:40:46 +0000 Calin Sopterean (c780d95)
+
+	* Translated using Weblate (Romanian)
+
+2018-06-18 06:23:34 +0000 Doma Gergő (5a3edd5)
+
+	* Translated using Weblate (Magyar)
+
+2018-06-12 13:20:26 +0000 whr (d4d1c40)
+
+	* Translated using Weblate (Chinese (Simplified))
+
+2018-06-11 16:43:04 +0000 Ilyas Bakirov (f83eba6)
+
+	* Translated using Weblate (Kyrgyz)
+
+2018-06-07 01:17:52 +0000 ۋولقان (ea6df0e)
+
+	* Translated using Weblate (Uyghur)
+
+2018-06-07 00:51:43 +0000 Nureli (41bbe5d)
+
+	* Translated using Weblate (Uyghur)
+
+2018-05-30 19:43:41 +0000 Aashish Chenna (93be2e3)
+
+	* Translated using Weblate (Telugu)
+
+2018-05-29 17:20:07 +0000 Aashish Chenna (22f02b3)
+
+	* Translated using Weblate (Telugu)
+
+2018-05-25 14:12:13 +0000 Jacky Blois (7ab88fa)
+
+	* Translated using Weblate (French)
+
+2018-05-17 21:52:13 +0000 Nicola Lombardi (b96ea76)
+
+	* Translated using Weblate (Italian)
+
+2018-05-17 21:44:58 +0000 Nicola Lombardi (50f94e1)
+
+	* Translated using Weblate (Italian)
+
+2018-05-10 21:54:34 +0000 Gayathri Das (30c8dd6)
+
+	* Translated using Weblate (Hindi)
+
+2018-04-27 22:45:21 +0000 antuketot76 (c85bde6)
+
+	* Translated using Weblate (Malay)
+
+2018-04-27 22:27:39 +0000 antuketot76 (192a56c)
+
+	* Translated using Weblate (Malay)
+
+2018-06-21 13:34:50 +0000 Mike Gabriel (b64aabd)
+
+	* Posix.Signal.<SIG>: Provide old-style Posix.SIG<SIG> API calls if
+          built with Vala API version << 0.40. (Fixes FTBFS on
+          Debian 9).
+
+2018-06-16 23:35:22 +0200 Mike Gabriel (b12c6d9)
+
+	* Use Posix.Signal.* rather than Posix.SIG*. (Vala 0.40
+          deprecations).
+
+2018-06-16 22:36:15 +0200 Cobinja (d1caee5)
+
+	* Add option to show GUI on a specific monitor
+
+2018-06-16 22:25:26 +0200 Victor Kareh (85ec476)
+
+	* arctica-greeter-check-hidpi: Fix HiDPI auto-detection.
+
+2018-06-16 22:24:39 +0200 Mike Gabriel (cc72215)
+
+	* debian/control: Add D: marco.
+
+2018-06-16 20:22:13 +0200 Mike Gabriel (9b3526d)
+
+	* src/arctica-greeter.vala: Have MATE's marco WM as window manager
+          for Arctica Greeter. Makes handling windows opened via
+          some of the indicators much more organic.
+
+2018-05-11 20:43:15 +0200 Mike Gabriel (606273e)
+
+	* src/user-list.vala: Rename gsettings key remote-service-fqdn to
+          remote-service-configure-uri. Support an empty string as
+          value and show a more intelligent message if it's empty.
+
+2018-05-11 16:48:38 +0200 Mike Gabriel (b54ac1c)
+
+	* Remote Logon configuration support: session name is now
+          "remoteconfigure".
+
+2018-05-08 23:38:30 +0200 Mike Gabriel (f9c678d)
+
+	* user-list.vala: fix missing parentheses from previous commits
+
+2018-05-08 09:21:55 +0200 Mike Gabriel (411bbb6)
+
+	* src/user-list.vala: Rephrase username field text to "Account ID"
+          (can be email or user name).
+
+2018-05-08 09:15:31 +0200 Mike Gabriel (a27d1f0)
+
+	* src/user-list.vala: Hide "Set up..." button, if uccsconfigure is a
+          non-supported remote login session.
+
+2018-05-08 09:09:29 +0200 Mike Gabriel (6ad8446)
+
+	* src/user-list.vala: Mention X2Go in remote logon help / setup hint.
+
+2018-05-07 15:45:15 +0200 Mike Gabriel (97e48ff)
+
+	* release 0.99.1.0 (tag: 0.99.1.0)
 
 2018-05-07 11:35:47 +0200 Mike Gabriel (da0cd95)
 
