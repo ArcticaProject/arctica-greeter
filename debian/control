@@ -157,7 +157,7 @@ Description: LightDM Arctica Greeter - Debian Theme (futurePrototype)
  A greeter shell for the LightDM login manager. Arctica Greeter can be used as
  local display manager as well as thin client login manager.
  .
- This package themes Arctica Greeter with the furturePrototype theme.
+ This package themes Arctica Greeter with the futurePrototype theme.
 
 Package: arctica-greeter-theme-debian-buster
 Architecture: all
