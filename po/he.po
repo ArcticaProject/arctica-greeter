@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-09-01 13:18+0000\n"
+"PO-Revision-Date: 2019-02-25 09:17+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/he/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 3.2-dev\n"
+"X-Generator: Weblate 3.5-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -244,6 +244,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"כל הנתונים שנוצרו במהלך הפעלת אורח זו בעת היציאה\n"
+"וההגדרות יאופסו לבררות המחדל. נא לשמור קבצים על\n"
+"התקן חיצוני, למשל על כונן USB, אם ברצונך לגשת אליהם\n"
+"בהמשך."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
