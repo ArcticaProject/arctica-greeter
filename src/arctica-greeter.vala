@@ -301,7 +301,7 @@ public class ArcticaGreeter
     {
         debug ("Showing main window");
         if (!test_mode)
-            main_window.fullscreen ();
+            main_window.set_decorated (false);
         main_window.show ();
         main_window.get_window ().focus (Gdk.CURRENT_TIME);
         main_window.set_keyboard_state ();
