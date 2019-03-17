@@ -1,3 +1,15 @@
+Overview of changes in arctica-greeter 0.99.1.2
+
+    - Fix login box following the mouse pointer
+      on multi-head displays.
+    - Fix crashes due to mlockall() calls when
+      systemd (>= 240) is used.
+    - Fix typo in path of the futureprototype
+      gschema override.
+    - Use login/background.svg from desktop-base
+      (works on stretch and buster alike).
+    - Fix FTBFS with vala 0.44.
+
 Overview of changes in arctica-greeter 0.99.1.1
 
     - Add support for remoteconfigure as a Remote
