@@ -1,6 +1,46 @@
-2019-02-06 11:08:45 +0100 Mike Gabriel (4b0bec6)
+2019-03-17 21:06:05 +0100 Mike Gabriel (50c0f50)
 
-	* release 0.99.1.1 (HEAD -> master, tag: 0.99.1.1)
+	* release 0.99.1.2 (HEAD -> master, tag: 0.99.1.2)
+
+2019-03-17 19:09:09 +0100 Mike Gabriel (fbced2e)
+
+	* src/arctica-greeter.vala: Use set_decorated(false) on main_window,
+          rather than fullscreen(). With fullscreen() Arctica
+          Greeter's main window gets only shown on the primary
+          monitor and one cannot let the login box follow the
+          pointing device to the active monitor anymore.
+
+2019-03-17 18:19:09 +0100 Mike Gabriel (3319cd2)
+
+	*
+          debian/30_arctica-greeter-theme-debian-futureprototype.gschema.override:
+          Fix typo in SVG background image path.
+
+2019-03-17 17:25:37 +0100 Mike Gabriel (7aab296)
+
+	* Remove mlockall.
+
+2019-03-17 17:16:28 +0100 Mike Gabriel (2a09380)
+
+	* Merge branch 'jbicha-vala44'
+
+2019-03-06 13:41:20 -0500 Rico Tzschichholz (88f6c01)
+
+	* Fix build with vala 0.44
+
+2019-02-14 16:47:16 +0100 Mike Gabriel (88df37b)
+
+	* debian/*.gschema.override: Use <desktop-theme>/login/background.svg
+          as background image. Works on stretch and buster alike.
+
+2019-02-12 23:19:53 +0100 Mike Gabriel (50ee97a)
+
+	* debian/control: Typo fix in LONG_DESCRIPTION. Spotted by Thomas
+          Vincent.
+
+2019-02-06 11:08:45 +0100 Mike Gabriel (37571f3)
+
+	* release 0.99.1.1
 
 2019-02-06 11:02:38 +0100 Mike Gabriel (900dcfb)
 
