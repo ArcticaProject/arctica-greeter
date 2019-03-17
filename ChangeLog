@@ -1,6 +1,30 @@
-2019-03-17 21:06:05 +0100 Mike Gabriel (50c0f50)
+2019-03-17 21:23:02 +0100 Mike Gabriel (22a0e1d)
 
-	* release 0.99.1.2 (HEAD -> master, tag: 0.99.1.2)
+	* release 0.99.1.3 (HEAD -> master, tag: 0.99.1.3)
+
+2019-03-04 00:56:26 +0000 Pierluigi Ghinello (b25b6f2)
+
+	* Translated using Weblate (Italian)
+
+2019-02-24 08:52:01 +0000 Yaron Shahrabani (5ba0434)
+
+	* Translated using Weblate (Hebrew)
+
+2019-02-23 07:09:04 +0000 Doma Gergő (8341e2d)
+
+	* Translated using Weblate (Hungarian)
+
+2019-02-19 22:30:41 +0000 Sandra M (9e3d9a7)
+
+	* Translated using Weblate (Valencian)
+
+2019-03-17 21:15:49 +0100 Mike Gabriel (687a823)
+
+	* update NEWS for 0.99.1.2 (we obviously forgot that...)
+
+2019-03-17 21:06:05 +0100 Mike Gabriel (2d9cdd0)
+
+	* release 0.99.1.2 (tag: 0.99.1.2)
 
 2019-03-17 19:09:09 +0100 Mike Gabriel (fbced2e)
 
@@ -40,7 +64,7 @@
 
 2019-02-06 11:08:45 +0100 Mike Gabriel (37571f3)
 
-	* release 0.99.1.1
+	* release 0.99.1.1 (tag: 0.99.1.1)
 
 2019-02-06 11:02:38 +0100 Mike Gabriel (900dcfb)
 
