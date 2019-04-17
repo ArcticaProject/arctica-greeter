@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2014-01-05 15:15+0000\n"
-"Last-Translator: Melroy vd Berg <info@openlaptop.nl>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"PO-Revision-Date: 2019-04-18 22:03+0000\n"
+"Last-Translator: Jos Wolfkamp <jos@ossolutions.nl>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -149,12 +151,11 @@ msgstr "Onjuist e-mailadres of wachtwoord"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Als u een account heeft op een RDP-server kunt u met Remote Login "
+"Als u een account heeft op een RDP of X2Go server kunt u met Remote Login "
 "toepassingen vanaf die server draaien."
 
 #: ../src/user-list.vala:556
@@ -166,44 +167,41 @@ msgid "Set Up…"
 msgstr "Instellen…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"U heeft een Ubuntu Remote Login-account nodig om van deze dienst gebruik te "
-"maken. Wilt u nu een account instellen?"
+"U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
+"Wilt u nu een account instellen?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "Ok"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"U heeft een Ubuntu Remote Login-account nodig om van deze dienst gebruik te "
-"maken. Bezoek uccs.canonical.com om een account in te stellen."
+"U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
+"Bezoek %s om een account aan te maken."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"U heeft een Ubuntu Remote Login-account nodig om van deze dienst gebruik te "
-"maken. Wilt u nu een account instellen?"
+"U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
+"Informeer bij uw beheerder voor meer details."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Servertype wordt niet ondersteund."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gastsessie"
+msgstr "X2Go sessie:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -211,7 +209,7 @@ msgstr "Domein:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Account ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -237,9 +235,9 @@ msgid "Login"
 msgstr "Aanmelden"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gastsessie"
+msgstr "Tijdelijke gast sessie"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -249,6 +247,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Alle data van deze gast sessie zal worden verwijderd\n"
+"wanneer u uitlogt, instellingen worden teruggezet naar standaard.\n"
+"Aub bestanden opslaan op een externe harde schijf, bijvoorbeeld\n"
+"een USB stick, als u deze later opnieuw wilt benaderen."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -256,11 +258,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Een ander alternatief is om bestanden op te slaan in\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica-aanmeldscherm (greeter)"
+msgstr "Arctica-aanmeldscherm"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
