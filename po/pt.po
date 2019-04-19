@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-01-27 09:04+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2019-04-20 21:32+0000\n"
+"Last-Translator: Rui Mendes <xz9@protonmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/pt/>\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.5-dev\n"
+"X-Generator: Weblate 3.6\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -113,7 +113,7 @@ msgstr "Reiniciar"
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr "%s (Predefinido)"
+msgstr "%s (predefinido)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
@@ -157,8 +157,8 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Se tem uma conta num servidor RDP, o login remoto permite-lhe executar "
-"aplicações desse servidor."
+"Se tem uma conta num servidor RDP ou um servidor X2Go, a autenticação remota "
+"permite-lhe executar aplicações desse servidor."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -173,8 +173,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Você precisa de uma conta de Acesso para usar esse serviço. Gostaria de "
-"configurar uma agora?"
+"Precisa de uma conta de acesso remoto para usar este serviço. Gostaria de "
+"configurar uma conta agora?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
@@ -186,16 +186,16 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Você precisa de uma conta de logon remoto para usar este serviço. Visite %s "
-"para solicitar uma conta."
+"Precisa de uma conta de acesso remoto para usar este serviço. Visite %s para "
+"solicitar uma conta."
 
 #: ../src/user-list.vala:567
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Você precisa de uma conta de logon remoto para usar este serviço. Por favor, "
-"pergunte ao administrador do site para obter detalhes."
+"Precisa de uma conta de acesso remoto para usar este serviço. Por favor "
+"pergunte ao administrador do site para obter mais detalhes."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -203,7 +203,7 @@ msgstr "Tipo de servidor não suportado."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "X2Go sessão:"
+msgstr "Sessão X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -249,10 +249,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
-"Todo dado criado durante essa sessão de convidado será deletada\n"
-"quando você deslogar, e as configurações serão resetadas.\n"
-"Por favor salve os arquivos em dispositivo externo, para um\n"
-"USB, se você quiser acessar os dados depois."
+"Todos os dados criados durante esta sessão de convidado\n"
+"serão eliminados quando sair da conta e serão repostas as\n"
+"configurações originais. Por favor guarde os ficheiros num\n"
+"dispositivo externo, por exemplo uma pen USB, se quiser\n"
+"aceder a esses dados mais tarde."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -260,12 +261,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"Outra alternativa para salvar os arquivos na\n"
-"pasta /var/guest-data."
+"Como alternativa, pode guardar os ficheiros na pasta\n"
+"/var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr "Bem vindo ao Arctica"
+msgstr "Bem-vindo ao Arctica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
