@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-02-12 01:39+0000\n"
-"Last-Translator: Rafael Henrique Mendes de Oliv <rafaelfifa1988@gmail.com>\n"
+"PO-Revision-Date: 2019-04-20 21:32+0000\n"
+"Last-Translator: Rui Mendes <xz9@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.6\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -113,7 +113,7 @@ msgstr "Reiniciar"
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr "%s (Padrão)"
+msgstr "%s (padrão)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
@@ -153,13 +153,12 @@ msgstr "Senha ou endereço de e-mail incorreto"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Se você tem uma conta em um servidor RDP, o login remoto lhe permite "
-"executar aplicativos nesse servidor."
+"Se você tem uma conta em um servidor RDP ou um servidor X2Go, o login remoto "
+"lhe permite executar aplicativos nesse servidor."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -174,30 +173,29 @@ msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Você precisa de uma conta de Acesso para usar esse serviço. Gostaria de "
-"configurar uma agora?"
+"Você precisa de uma conta de login remoto para usar esse serviço. Gostaria "
+"de configurar uma agora?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Você precisa de uma conta de acesso para usar esse serviço. Visite https://"
-"%s para configurar uma conta."
+"Você precisa de uma conta de login remoto para usar esse serviço. Visite %s "
+"para solicitar uma conta."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Você precisa de uma conta de Acesso para usar esse serviço. Gostaria de "
-"configurar uma agora?"
+"Você precisa de uma conta de login remoto para usar esse serviço. Pergunte "
+"ao administrador do site para mais detalhes."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -205,7 +203,7 @@ msgstr "Tipo de servidor não suportado."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "X2Go sessão:"
+msgstr "Sessão X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +211,7 @@ msgstr "Domínio:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID da conta"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -262,12 +260,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"Outra alternativa para salvar os arquivos na\n"
-"pasta /var/guest-data."
+"Como alternativa, pode salvar os arquivos na pasta\n"
+"/var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr "Bem vindo ao Arctica"
+msgstr "Bem-vindo ao Arctica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
