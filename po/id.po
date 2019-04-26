@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2017-10-04 10:46+0000\n"
-"Last-Translator: developerchan1 <developerchan1@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/id/>\n"
+"PO-Revision-Date: 2019-04-27 07:47+0000\n"
+"Last-Translator: Syahmin Sukhairi <syahmin@gmail.com>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -35,11 +35,11 @@ msgstr "Nama pengguna:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Kata kunci salah, coba lagi"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Tidak dapat mengautentifikasi"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -51,7 +51,7 @@ msgstr "Masuk..."
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "Layar Masuk"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -63,15 +63,15 @@ msgstr "Papan ketik pada layar"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr ""
+msgstr "Kontras Tinggi"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr ""
+msgstr "Pembaca Layar"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "Pilihan Sesi"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -118,12 +118,12 @@ msgstr "%s (Baku)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "Tampilkan versi rilis"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr ""
+msgstr "Jalankan dalam mode percobaan"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
@@ -134,11 +134,11 @@ msgstr ""
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "Jalankan '%s --help' untuk melihat pilihan perintah yang tersedia."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "Sesi Tamu"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -151,12 +151,11 @@ msgstr "Alamat surel atau sandinya salah"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Apabila Anda memiliki akun pada server RDP, Log Masuk Jarak Jauh "
+"Apabila Anda memiliki akun pada server RDP atau X2Go, Masuk Jarak Jauh "
 "memungkinkan Anda untuk menjalankan aplikasi dari server itu."
 
 #: ../src/user-list.vala:556
@@ -181,13 +180,13 @@ msgid "OK"
 msgstr "Oke"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Anda memerlukan akun Log Masuk Jarak Jauh Ubuntu untuk menggunakan layanan "
-"ini. Kunjungilah uccs.canonical.com untuk membuat akun."
+"Anda memerlukan akun Masuk Jarak Jauh Ubuntu untuk menggunakan layanan ini. "
+"Kunjungilah %s untuk membuat akun."
 
 #: ../src/user-list.vala:567
 #, fuzzy
@@ -204,7 +203,7 @@ msgstr "Jenis server tidak didukung."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "Sesi X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -212,7 +211,7 @@ msgstr "Domain:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Akun ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -235,12 +234,12 @@ msgstr "Coba sebagai %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
-msgstr ""
+msgstr "Masuk"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Sesi Tamu Sementara"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -250,6 +249,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Semua data yang dibuat selama sesi tamu ini akan dihapus\n"
+"ketika anda keluar, dan pengaturan akan diatur kembali ke awal.\n"
+"Silakan simpan berkas pada penyimpanan eksternal, misalnya\n"
+"sebuah USB flash disk, jika anda ingin menggunakannya lagi."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -257,10 +260,13 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Alternatif lainnya untuk menyimpan data adalah pada\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
+#, fuzzy
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
