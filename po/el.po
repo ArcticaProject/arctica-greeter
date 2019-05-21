@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2013-10-09 16:12+0000\n"
-"Last-Translator: Michael Kotsarinis <mk73628@gmail.com>\n"
-"Language-Team: Greek <el@li.org>\n"
+"PO-Revision-Date: 2019-05-21 12:43+0000\n"
+"Last-Translator: THANOS SIOURDAKIS <siourdakisthanos@gmail.com>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.7-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -45,7 +47,7 @@ msgstr "Αποτυχία εκκίνησης της συνεδρίας"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Γίνεται σύνδεση..."
+msgstr "Γίνεται σύνδεση…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -77,7 +79,7 @@ msgstr "Επιλέξτε περιβάλλον εργασίας"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Αντίο. Θα θέλατε να..."
+msgstr "Αντίο. Θα θέλατε να…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -85,7 +87,7 @@ msgstr "Τερματισμός"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Θέλετε σίγουρα να τερματίσετε τη λειτουργία του υπολογιστή;"
+msgstr "Είστε βέβαιοι ότι θέλετε να τερματίσετε τη διάρκεια του υπολογιστή;"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -151,13 +153,13 @@ msgstr "Λανθασμένo e-mail ή κωδικός πρόσβασης"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Αν έχετε λογαριασμό σε έναν εξυπηρετητή RDP, τότε η Απομακρυσμένη σύνδεση "
-"επιτρέπει να εκτελέσετε εφαρμογές από αυτόν τον εξυπηρετητή."
+"Αν έχετε λογαριασμό σε έναν διακομιστή RDP ή διακομιστή X2Go, τότε η "
+"Απομακρυσμένη σύνδεση επιτρέπει να εκτελέσετε εφαρμογές από αυτόν τον "
+"διακομιστή."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -165,48 +167,45 @@ msgstr "Ακύρωση"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Ρύθμιση..."
+msgstr "Ρύθμιση…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης στο Ubuntu για να "
-"χρησιμοποιήσετε αυτή την υπηρεσία. Θέλετε να δημιουργήσετε λογαριασμό τώρα;"
+"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης  για να χρησιμοποιήσετε "
+"αυτή την υπηρεσία. Θα θέλατε να δημιουργήσετε ένα λογαριασμό τώρα;"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης στο Ubuntu για να "
-"χρησιμοποιήσετε αυτή την υπηρεσία. Επισκεφτείτε τον ιστότοπο uccs.canonical."
-"com για να δημιουργήσετε λογαριασμό."
+"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης για να χρησιμοποιήσετε "
+"αυτή την υπηρεσία. Επισκεφτείτε το %s για να δημιουργήσετε ένα λογαριασμό."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης στο Ubuntu για να "
-"χρησιμοποιήσετε αυτή την υπηρεσία. Θέλετε να δημιουργήσετε λογαριασμό τώρα;"
+"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης για να χρησιμοποιήσετε "
+"αυτήν την υπηρεσία. Ρωτήστε το διαχειριστή της τοποθεσίας σας για "
+"λεπτομέρειες."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Αυτός ο τύπος διακομιστή δεν υποστηρίζεται."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Συνεδρία επισκέπτη"
+msgstr "Συνεδρία X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -214,7 +213,7 @@ msgstr "Τομέας:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Αναγνωριστικό λογαριασμού"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -233,16 +232,16 @@ msgstr "Επανάληψη"
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr "Επανάληψη ως %s."
+msgstr "Επανάληψη ως %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
 msgstr "Σύνδεση"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Συνεδρία επισκέπτη"
+msgstr "Προσωρινή Συνεδρία Επισκέπτη"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -252,6 +251,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Όλα τα δεδομένα που δημιουργήθηκαν κατά τη διάρκεια αυτής της συνεδρίας θα "
+"διαγραφούν\n"
+"όταν αποσυνδεθείτε και οι ρυθμίσεις θα επανέλθουν στις προεπιλογές.\n"
+"Παρακαλώ αποθηκεύστε τα αρχεία σε κάποια εξωτερική συσκευή, για παράδειγμα\n"
+"USB stick, αν θα θέλατε να έχετε πρόσβαση ξανά αργότερα."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -259,11 +263,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Μία εναλλακτική λύση είναι να αποθηκεύσετε τα αρχεία στον φάκελο /var/guest-"
+"data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Greeter"
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
