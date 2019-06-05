@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-01-25 09:37+0000\n"
+"PO-Revision-Date: 2019-06-18 19:04+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/is/>\n"
+"Language-Team: Icelandic <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/is/>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n % 10 != 1 || n % 100 == 11;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.7\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -153,13 +153,12 @@ msgstr "Rangt netfang eða lykilorð"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Ef þú ert með reikning á RDP þjóni.  gefur Fjartenging þér kleift að keyra "
-"forrit frá þeim þjóni."
+"Ef þú ert með reikning á RDP- eða X2Go-þjóni.  gefur Fjartenging þér kleift "
+"að keyra forrit frá þeim þjóni."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -182,13 +181,13 @@ msgid "OK"
 msgstr "Í lagi"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Þú þarft fjarskáningarreikning Ubuntu til að nota þessa þjónustu. Farðu á "
-"https://%s til að setja upp reikning."
+"Þú þarft fjarskáningarreikning Ubuntu til að nota þessa þjónustu. Farðu á %s "
+"til að setja upp reikning."
 
 #: ../src/user-list.vala:567
 #, fuzzy
@@ -213,7 +212,7 @@ msgstr "Lén:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Auðkenni aðgangs"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
