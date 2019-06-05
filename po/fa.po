@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-09-07 20:22+0000\n"
-"Last-Translator: mohsen sorny <aragornsy@gmail.com>\n"
+"PO-Revision-Date: 2019-06-18 19:04+0000\n"
+"Last-Translator: Nader Jafari <naderpaskari@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/fa/>\n"
 "Language: fa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.2-dev\n"
+"X-Generator: Weblate 3.7\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -167,26 +167,25 @@ msgid "Set Up…"
 msgstr "برپا سازی…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"برای استفاده از این خدمت به یک جساب کاربری ورود از راه دور اوبونتو نیاز "
-"دارید. آیا می‌خواهید الآن یک حساب کاربری برپا کنید؟"
+"شما برای استفاده از این سرویس به یک حساب \"ورود از راه‌دور\" نیاز دارید. آیا "
+"میخواهید یک حساب ایجاد کنید؟"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "تأیید"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"برای استفاده از این خدمت به یک جساب کاربری ورود از راه دور اوبونتو نیاز "
-"دارید. برای برپایی یک حساب کاربری از uccs.canonical.com دیدن کنید."
+"شما برای استفاده از این سرویس به یک حساب \"ورود از راه‌دور\" نیاز دارید. "
+"برای درخواست یک حساب از %s بازدید فرمایید."
 
 #: ../src/user-list.vala:567
 #, fuzzy
@@ -238,9 +237,9 @@ msgid "Login"
 msgstr "ورود"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "نشست میهمان"
+msgstr "نشست مهمان موقت"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
