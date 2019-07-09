@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-05-23 09:54+0000\n"
-"Last-Translator: Hasan Yılmaz <iletisim@hasanyilmaz.net>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2019-07-10 14:01+0000\n"
+"Last-Translator: Ali Avcı <ali.avci.35@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -45,7 +47,7 @@ msgstr "Oturum başlatılamadı"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Oturum açılıyor..."
+msgstr "Oturum açılıyor…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -77,7 +79,7 @@ msgstr "Masaüstü ortamını seçin"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Görüşmek Üzere. Eğer isterseniz..."
+msgstr "Görüşmek Üzere. Eğer isterseniz…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -151,13 +153,12 @@ msgstr "E-posta ya da parola  yanlış"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Eğer bir RDP sunucusunda bir hesabınız varsa, Uzaktan Erişim uygulamaları bu "
-"sunucudan çalıştırmanıza izin verir."
+"Eğer bir RDP veya X2Go sunucusunda  bir hesabınız varsa, Uzaktan Erişim "
+"yöntemi ile uygulamaların ilgili sunucuda çalışmasına olanak tanınır."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -165,47 +166,44 @@ msgstr "Vazgeç"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Kurulum..."
+msgstr "Kurulum…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Bu hizmeti kullanmak için Ubuntu Uzaktan Giriş hesabınız olması gerekir. "
-"Şimdi bir hesap kurmak ister miydiniz?"
+"Bu hizmeti kullanmak için Uzaktan Giriş hesabınız olması gerekir. Şimdi bir "
+"hesap açmak ister miydiniz?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "Tamam"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Bu hizmeti kullanmak için Ubuntu Uzaktan Giriş hesabınız olması gerekir. Bir "
-"hesap kurmak için uccs.canonical.com adresini ziyaret edin."
+"Bu hizmeti kullanmak için Uzaktan Giriş hesabınız olması gerekir. Bir hesap "
+"kurmak için %s adresini ziyaret edin."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Bu hizmeti kullanmak için Ubuntu Uzaktan Giriş hesabınız olması gerekir. "
-"Şimdi bir hesap kurmak ister miydiniz?"
+"Bu hizmeti kullanmak için Uzaktan Giriş hesabınız olması gerekir. Detaylar "
+"için web sitesi yöneticisi ile iletişime geçiniz."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Sunucu türü desteklenmiyor."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Konuk Oturumu"
+msgstr "X2Go Oturumu:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +211,7 @@ msgstr "Alan adı:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Hesap Kodu"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -239,9 +237,9 @@ msgid "Login"
 msgstr "Oturum aç"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Konuk Oturumu"
+msgstr "Geçici Konuk Oturumu"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -251,6 +249,9 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Deneme kullanımı sırasında oluşturduğunuz tüm dosyalar \n"
+"ve ayarlar kaybolacaktır. İleride kullanmak isteyeceğiniz dosya\n"
+"varsa harici bir cihaza kaydedin. Örneğin Flash Bellek gibi."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -258,11 +259,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Alternetif olarak dosyalarınızı\n"
+"/var/guest-data dizininde saklayabilirsiniz."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Karşılayıcısı"
+msgstr "Arctica Selamlayıcısı"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
