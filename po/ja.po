@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-12-03 08:13+0000\n"
+"PO-Revision-Date: 2019-07-15 14:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.3\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -35,7 +35,7 @@ msgstr "ユーザー名:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "パスワードが違います。もう一度お試しください。"
+msgstr "パスワードが違います。もう一度お試しください"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
