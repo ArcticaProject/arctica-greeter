@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-07-22 17:07+0000\n"
+"PO-Revision-Date: 2019-08-01 05:12+0000\n"
 "Last-Translator: Pierre Soubourou <pierre.soubourou@gmail.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/eo/>\n"
@@ -31,7 +31,7 @@ msgstr "Pasvorto:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr "Uzantnomo:"
+msgstr "Uzantonomo:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
@@ -43,7 +43,7 @@ msgstr "Aŭtentigado fiaskis"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr "Malsukcese startigis seanco"
+msgstr "Malsukcese startis la seanco"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -103,7 +103,7 @@ msgstr "Paŭzi"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr "Dormi"
+msgstr "Letargiigi"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
@@ -123,20 +123,19 @@ msgstr "Montri eldonversion"
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr "Ruli per testa reĝimo."
+msgstr "Ruli per testa reĝimo"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr "- bonvenigo de Unitio"
+msgstr "- Bonvenigo de Arctica"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Rulu '%s --help' por vidi plenan liston da disponeblaj opcioj por "
-"komandlinio."
+"Rulu '%s --help' por vidi plenan liston da disponeblaj komandliniaj opcioj."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -162,18 +161,18 @@ msgstr ""
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr "Nuligi"
+msgstr "Rezigni"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Agordi..."
+msgstr "Agordi…"
 
 #: ../src/user-list.vala:559
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Necesas konto kun fora ensaluto por uzi ĉi tiun servon. Ĉu vi deziras krei "
+"Necesas konto defore ensalutebla por uzi ĉi tiun servon. Ĉu vi deziras krei "
 "konton nun?"
 
 #: ../src/user-list.vala:563
@@ -186,7 +185,7 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Necesas konto kun fora ensaluto por uzi ĉi tiun servon. Vizitu %s por krei "
+"Necesas konto defore ensalutebla por uzi ĉi tiun servon. Vizitu %s por krei "
 "konton."
 
 #: ../src/user-list.vala:567
@@ -194,7 +193,7 @@ msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Necesas konto kun fora ensaluto por uzi ĉi tiun servon. Bonvolu peti vian "
+"Necesas konto defore ensalutebla por uzi ĉi tiun servon. Bonvolu peti vian "
 "retejan administranton pri detaloj."
 
 #: ../src/user-list.vala:684
@@ -202,9 +201,8 @@ msgid "Server type not supported."
 msgstr "Nesubtenata speco de servilo."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Gastoseanco"
+msgstr "X2Go-seanco:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -212,7 +210,7 @@ msgstr "Domajno:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Konta numero"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -238,9 +236,9 @@ msgid "Login"
 msgstr "Ensaluti"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Gastoseanco"
+msgstr "Portempa gastoseanco"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -250,6 +248,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Ĉiu datumo kreita dum la gastoseanco foriĝos\n"
+"ĉe elsaluto, kaj agordoj revenos al aprioraj valoroj.\n"
+"Bonvole savkopiu dosierojn ĉe ekstera memorujo, \n"
+"ekzemple USB-memoro, por povi atingi ilin pli poste."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -257,11 +259,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Alternativo por savkopii dosierojn ĉe\n"
+"la dosierujo /var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- bonvenigo de Unitio"
+msgstr "Bonvenigo de Arctica"
 
 #, fuzzy
 #~ msgid "Email:"
