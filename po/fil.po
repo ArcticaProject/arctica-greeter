@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-05-15 18:47+0000\n"
-"Last-Translator: John Rey Basilio <hanzogenji83@gmail.com>\n"
+"PO-Revision-Date: 2019-08-01 05:12+0000\n"
+"Last-Translator: Alba Kaydus <sareli1951@gmail.com>\n"
 "Language-Team: Filipino <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/fil/>\n"
 "Language: fil\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 "
 "|| n % 10 == 6 || n % 10 == 9);\n"
-"X-Generator: Weblate 3.7-dev\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -80,64 +80,68 @@ msgstr "Mamili ng desktop environment"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "Paalam. Gusto mo bang…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr ""
+msgstr "Patayin"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "Sigurado ka bang nais mong patayin ang computer?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"Ang iba pang mga gumagamit ay kasalukuyang naka-log in sa computer na ito, "
+"ang pag-shut down ngayon ay isasara rin ang iba pang mga sesyon."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr ""
+msgstr "Suspendido"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr ""
+msgstr "matulog sa panahon ng taglamig"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "I-restart"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr ""
+msgstr "%s (hindi pagharap)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "Ipakita ang bersyon ng release"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr ""
+msgstr "Patakbuhin sa mode ng pagsubok"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- Arctica tagahanga"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"tumakbo '%s --tulungan' upang makita ang isang buong listahan ng mga "
+"magagamit na mga pagpipilian sa command line."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr "Guest Session"
+msgstr "hulaan session"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -145,7 +149,7 @@ msgstr "Pakilagay ang kumpletong e-mail address"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
-msgstr ""
+msgstr "Maling e-mail address o password"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
@@ -154,6 +158,9 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
+"Kung mayroon kang isang account sa server ng RDP o X2Go server, hinahayaan "
+"ka ng Remote Login na patakbuhin mo ang mga application mula sa server na "
+"iyon."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -161,13 +168,15 @@ msgstr "Huwag ituloy"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr ""
+msgstr "I-set Up …"
 
 #: ../src/user-list.vala:559
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
+"Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
+"Gusto mo bang mag-set up ng account ngayon?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
@@ -179,29 +188,32 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
+"Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
+"Bisitahin %s upang humiling ng isang account."
 
 #: ../src/user-list.vala:567
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
+"Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
+"Mangyaring tanungin ang administrator ng iyong site para sa mga detalye."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
-msgstr ""
+msgstr "Hindi sinusuportahan ang uri ng server."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Guest Session"
+msgstr "X2pumunta session:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
-msgstr ""
+msgstr "dominyo:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "account ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -220,16 +232,16 @@ msgstr "Subukan Muli"
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "Retry bilang %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
 msgstr "Login"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Guest Session"
+msgstr "pansamantalang sesyon ng bisita"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -239,6 +251,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Tatanggalin ang lahat ng data na nilikha sa oras ng session ng guest na ito\n"
+"kapag nag-log out ka, at mai-reset ang mga setting sa mga default.\n"
+"Mangyaring i-save ang mga file sa ilang mga panlabas na aparato, halimbawa "
+"a\n"
+"USB stick, kung gusto mong i-access ang mga ito muli sa ibang pagkakataon."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -246,10 +263,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Ang isa pang alternatibo ay ang pag-save ng mga file sa\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Artica tagahanga"
 
 #~ msgid "Other..."
 #~ msgstr "Iba pa..."
