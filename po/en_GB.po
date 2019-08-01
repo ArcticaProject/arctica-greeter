@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-01 05:12+0000\n"
-"Last-Translator: Alba Kaydus <sareli1951@gmail.com>\n"
+"PO-Revision-Date: 2019-08-02 15:11+0000\n"
+"Last-Translator: saeid porhosein <saeidporhosen17@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/en_GB/>\n"
 "Language: en_GB\n"
@@ -215,7 +215,7 @@ msgstr ""
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
 msgid "Log In"
-msgstr "Log In"
+msgstr "Log In ورود"
 
 #: ../src/user-list.vala:838
 #, c-format
