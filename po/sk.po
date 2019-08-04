@@ -8,36 +8,38 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Slovak <sk@li.org>\n"
+"PO-Revision-Date: 2019-08-05 12:23+0000\n"
+"Last-Translator: Matúš Baňas <banas.mato@gmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "Zadajte heslo pre %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr ""
+msgstr "Heslo:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr ""
+msgstr "Používateľské meno:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Nesprávne heslo, skúste to znova prosím"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Overovanie zlyhalo"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -49,7 +51,7 @@ msgstr "Prihlasuje sa…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "Prihlasovacia obrazovka"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -57,19 +59,19 @@ msgstr "Späť"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "Klávesnica na obrazovke"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr ""
+msgstr "Vysoký kontrast"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr ""
+msgstr "Čítačka obrazovky"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "Možnosti relácie"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -77,7 +79,7 @@ msgstr "Vyberte pracovné prostredie"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Dovidenia. Chceli by ste..."
+msgstr "Dovidenia. Chceli by ste…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -116,27 +118,29 @@ msgstr "%s (Predvolené)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "Zobraziť verziu vydania"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr ""
+msgstr "Spustiť v skúšobnom režime"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- uvítacia obrazovka Arctica"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Spustite „%s --help“ pre zobrazenie úplného zoznamu dostupných možností "
+"príkazového riadka."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "Relácia pre hosťa"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -149,13 +153,12 @@ msgstr "Nesprávna emailová adresa alebo heslo"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Ak máte účet na RDP serveri, Vzdialené prihlásenie vám umožní spúšťať "
-"aplikácie z tohto serveru."
+"Ak máte účet na RDP serveri alebo X2Go serveri, vzdialené prihlásenie vám "
+"umožní spúšťať aplikácie z tohto serveru."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -163,38 +166,36 @@ msgstr "Zrušiť"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Nastaviť..."
+msgstr "Nastaviť…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"K používaniu tejto služby potrebujete účet Ubuntu Vzdialené prihlásenie. "
-"Chcete nastaviť účet teraz?"
+"Na používanie tejto služby potrebujete konto vzdialeného prihlásenia. Chcete "
+"nastaviť účet teraz?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "Ok"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"K používaniu tejto služby potrebujete účet Ubuntu Vzdialené prihlásenie. K "
-"vytvoreniu účtu navštívte uccs.canonical.com."
+"Na používanie tejto služby potrebujete konto vzdialeného prihlásenia. Ak "
+"chcete požiadať o účet, navštívte lokalitu %s."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"K používaniu tejto služby potrebujete účet Ubuntu Vzdialené prihlásenie. "
-"Chcete nastaviť účet teraz?"
+"Na používanie tejto služby potrebujete konto vzdialeného prihlásenia. "
+"Podrobnosti si vyžiadajte u správcu lokality."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -202,7 +203,7 @@ msgstr "Typ servera nie je podporovaný."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go relácia:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -210,17 +211,17 @@ msgstr "Doména:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID účtu"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
 msgid "Log In"
-msgstr ""
+msgstr "Prihlásiť sa"
 
 #: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Prihlásiť sa ako %s"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
@@ -233,12 +234,12 @@ msgstr "Skúsiť znova ako %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
-msgstr ""
+msgstr "Prihlásiť sa"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Dočasná relácia pre hosťa"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -248,6 +249,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Všetky údaje vytvorené počas tejto relácie pre hosťa sa odstránia\n"
+"keď sa odhláste, a nastavenia sa obnovia na predvolené hodnoty.\n"
+"Prosíme, uložte si súbory na niektoré externé zariadenia, napríklad\n"
+"USB kľúč, ak by ste ich chceli znova získať neskôr."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -255,10 +260,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Ďalšia možnosť je uložiť súbory v zložke\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
