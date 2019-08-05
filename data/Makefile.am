@@ -50,6 +50,7 @@ dist_pkgdata_DATA = \
 	badges/recovery_console_badge.png \
 	badges/sugar_badge.png \
 	badges/surf_badge.png \
+	badges/sway_badge.svg \
 	badges/twm_badge.png \
 	badges/ubuntu_badge.png \
 	badges/unknown_badge.png \

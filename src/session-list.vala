@@ -131,6 +131,8 @@ public class SessionList : GreeterList
         case "i3":
         case "i3-with-shmlog":
             return "i3_badge.png";
+        case "sway":
+            return "sway_badge.svg";
         case "lightdm-xsession":
             return "xsession_badge.png";
         case "lxde":
