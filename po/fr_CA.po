@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-03-28 19:22+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: French (Canada) <fr_CA@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-08-24 06:24+0000\n"
+"Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
+"Language-Team: French (Canada) <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/fr_CA/>\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -45,7 +47,7 @@ msgstr "Échec du démarrage de la session"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Connexion..."
+msgstr "Connexion…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -85,7 +87,7 @@ msgstr "Éteindre"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Êtes-vous sûr de vouloir éteindre l'ordinateur?"
+msgstr "Êtes-vous sûr·e de vouloir éteindre l'ordinateur?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -151,13 +153,13 @@ msgstr "Adresse de courriel ou mot de passe incorrect"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Si vous possédez un compte sur un serveur RDP, la  connexion à distance vous "
-"laisse exécuter des applications depuis ce serveur."
+"Si vous possédez un compte sur un serveur RDP ou un serveur X2Go, la  "
+"connexion à distance vous permet d'exécuter des applications depuis ce "
+"serveur."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -168,7 +170,6 @@ msgid "Set Up…"
 msgstr "Configuration…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -181,31 +182,29 @@ msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
 "Vous avez besoin d'un compte de connexion à distance Ubuntu pour utiliser ce "
-"service. Visitez uccs.canonical.com pour en créer."
+"service. Visitez %s pour demander un compte."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
 "Vous avez besoin d'un compte de connexion à distance Ubuntu pour utiliser ce "
-"service. Voudriez-vous en créer un maintenant?"
+"service. Veuillez demander plus de détails à l'administrateur de votre site."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Type de serveur non pris en charge."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Session d'Invité"
+msgstr "Session X2Go :"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +212,7 @@ msgstr "Domaine :"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Identifiant"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -239,9 +238,9 @@ msgid "Login"
 msgstr "Connexion"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Session d'Invité"
+msgstr "Session d'invité temporaire"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -251,6 +250,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Toutes les données créées durant cette session invité seront supprimées "
+"quanf vous vous déconnecterez et les paramètres par défaut seront restaurés."
+"\n"
+"Veuillez sauvegarder vos fichiers sur un support externe, par exemple une "
+"clé USB, si vous voulez y accéder plus tard."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -258,11 +262,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Une autre possibilité est de sauvegarder les fichiers dans le dossier /var/"
+"guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Écran d'accueil d'Arctica"
+msgstr "Accueil d'Arctica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
