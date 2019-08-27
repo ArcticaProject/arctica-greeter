@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-08-30 08:45+0000\n"
-"Last-Translator: Rustam Akbarov <ak_roostum@yahoo.com>\n"
-"Language-Team: Uzbek <uz@li.org>\n"
+"PO-Revision-Date: 2019-08-28 11:24+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
+"Language-Team: Uzbek <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/uz/>\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -77,7 +79,7 @@ msgstr "Иш столи муҳитини танланг"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Хайр. Нима қилмоқчисиз?"
+msgstr "Хайр. Нима қилмоқчисиз…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
