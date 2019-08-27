@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-24 06:24+0000\n"
+"PO-Revision-Date: 2019-08-28 11:24+0000\n"
 "Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/fr/>\n"
@@ -87,7 +87,7 @@ msgstr "Éteindre"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Êtes-vous sûr de vouloir éteindre l'ordinateur ?"
+msgstr "Êtes-vous sûr·e de vouloir éteindre l'ordinateur ?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
