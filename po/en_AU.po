@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-01-27 00:41+0000\n"
-"Last-Translator: Joel Pickett <jlkpcktt@gmail.com>\n"
-"Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-08-28 11:24+0000\n"
+"Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
+"Language-Team: English (Australia) <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/en_AU/>\n"
+"Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -149,13 +151,12 @@ msgstr "Incorrect e-mail address or password"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"If you have an account on an RDP server, Remote Login lets you run "
-"applications from that server."
+"If you have an account on an RDP server or X2Go server, Remote Login lets "
+"you run applications from that server."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -166,44 +167,41 @@ msgid "Set Up…"
 msgstr "Set Up…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"You need an Ubuntu Remote Login account to use this service. Would you like "
-"to set up an account now?"
+"You need a Remote Logon account to use this service. Would you like to set "
+"up an account now?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"You need an Ubuntu Remote Login account to use this service. Visit uccs."
-"canonical.com to set up an account."
+"You need a Remote Logon account to use this service. Visit %s to request an "
+"account."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"You need an Ubuntu Remote Login account to use this service. Would you like "
-"to set up an account now?"
+"You need a Remote Logon account to use this service. Please ask your site "
+"administrator for details."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Server type not supported."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Guest Session"
+msgstr "X2Go Session:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -211,7 +209,7 @@ msgstr "Domain:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Account ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -237,9 +235,9 @@ msgid "Login"
 msgstr "Login"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Guest Session"
+msgstr "Temporary Guest Session"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -249,6 +247,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"All data created during this guest session will be deleted\n"
+"when you log out, and settings will be reset to defaults.\n"
+"Please save files on some external device, for instance a\n"
+"USB stick, if you would like to access them again later."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -256,11 +258,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Another alternative is to save files in the\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Greeter"
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
