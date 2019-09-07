@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-01-28 09:34+0000\n"
-"Last-Translator: Mutaz Tayyeb AbuSaad <wahshy1414@gmail.com>\n"
+"PO-Revision-Date: 2019-09-08 22:24+0000\n"
+"Last-Translator: thami simo <simo.azad@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ar/>\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -152,13 +152,12 @@ msgstr "عنوان بريد إلكتروني خاطئ أو كلمة سر خاط�
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"إذا كان لديك حساب على خادوم RDP، فإن الولوج عن بعد يتيح لك تشغيل التطبيقات "
-"من ذلك الخادوم."
+"إذا كان لديك حساب على خادم RDP أو خادم X2Go، بعد دخول يتيح لك تشغيل "
+"التطبيقات من ذلك الملقم."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -181,26 +180,25 @@ msgid "OK"
 msgstr "موافق"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"تحتاج لحساب أبونتو للوصول عن بُعد لاستخدام هذه الخدمة. قم بزيارة http://%s "
-"لإعداد حساب."
+"انت في حاجة الى حساب تسجيل الدخول عن بعد لاستخدام هذه الخدمة. تفضل بزيارة %s "
+"لطلب حساب."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"تحتاج لحساب أبونتو (Remote) للوصول عن بُعد لاستخدام هذا الجهاز. هل ترغب في "
-"إعداد حساب جديد الآن؟"
+"انت في حاجة الى حساب تسجيل الدخول عن بعد لاستخدام هذه الخدمة. يرجى سؤال "
+"مسؤول الموقع عن التفاصيل."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
-msgstr "نوع الخادوم غير مدعوم."
+msgstr "نوع الخادم غير مدعوم."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
@@ -212,7 +210,7 @@ msgstr "النطاق:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "معرف الحساب"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
