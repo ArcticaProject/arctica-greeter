@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-17 16:23+0000\n"
-"Last-Translator: Elizabeth Sherrock <lizzyd710@gmail.com>\n"
+"PO-Revision-Date: 2019-09-29 12:55+0000\n"
+"Last-Translator: yzqzss <2361769788@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "为 %s账号输入密码"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
@@ -39,7 +39,7 @@ msgstr "密码不可用，请重试"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "认证失败"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -51,7 +51,7 @@ msgstr "正在登录..."
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "登陆界面"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -63,15 +63,15 @@ msgstr "屏幕小键盘"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr "高对比"
+msgstr "高对比度"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr "萤幕阅读器"
+msgstr "屏幕阅读器"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "会话选项"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -116,7 +116,7 @@ msgstr "%s (默认)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "显示已发布的版本"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
@@ -130,9 +130,9 @@ msgstr ""
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
-#, c-format
+#, c-format, fuzzy
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "当提供未知的命令行参数时打印出文本"
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
