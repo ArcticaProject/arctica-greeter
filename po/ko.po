@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-10-02 03:56+0000\n"
-"Last-Translator: 김상남 <ksn7491@naver.com>\n"
+"PO-Revision-Date: 2019-10-05 02:56+0000\n"
+"Last-Translator: JaewonLee0217 <jcircle67@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ko/>\n"
 "Language: ko\n"
@@ -52,7 +52,7 @@ msgstr "로그인 중..."
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "로그인 화면"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -60,7 +60,7 @@ msgstr "뒤로"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "화상 키보드"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
