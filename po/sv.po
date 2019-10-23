@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-10-02 01:36+0000\n"
-"Last-Translator: Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>"
-"\n"
+"PO-Revision-Date: 2019-10-24 14:53+0000\n"
+"Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/sv/>\n"
 "Language: sv\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.2-dev\n"
+"X-Generator: Weblate 3.9.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -181,22 +180,21 @@ msgid "OK"
 msgstr "Ok"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
 "Du behöver ett fjärrinloggningskonto för att använda den här tjänsten. Besök "
-"https://%s för att skapa ett konto."
+"%s för att skapa ett konto."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Du behöver ett fjärrinloggningskonto för att använda den här tjänsten. Vill "
-"du skapa ett konto nu?"
+"Du behöver ett fjärrinloggningskonto för att använda den här tjänsten. Fråga "
+"din webbplatsadministratör för mer information."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
