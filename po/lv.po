@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-11-16 13:06+0000\n"
+"PO-Revision-Date: 2019-11-14 12:04+0000\n"
 "Last-Translator: Oto Zars <otozars@yahoo.com>\n"
 "Language-Team: Latvian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/lv/>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= "
 "19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
-"X-Generator: Weblate 3.3-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "Ievadi paroli %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
@@ -40,7 +40,7 @@ msgstr "Nepareiza parole, mēģini vēlreiz"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Neizdevās autentificēties"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
