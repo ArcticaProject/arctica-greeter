@@ -8,80 +8,83 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-09-26 15:43+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Nepali <ne@li.org>\n"
+"PO-Revision-Date: 2019-11-29 06:05+0000\n"
+"Last-Translator: Saroj Dhakal <lotusnagarkot@gmail.com>\n"
+"Language-Team: Nepali <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/ne/>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "%s को लागि पासवर्ड प्रविष्ट गर्नुहोस्"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr ""
+msgstr "पासवर्ड:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr ""
+msgstr "प्रयोगकर्तानाम:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "अवैध पासवर्ड, कृपया फेरि प्रयास गर्नुहोस्"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "प्रमाणीकरण गर्न असफल भयो"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "सत्र सुरू गर्न असफल भयो"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr ""
+msgstr "लग इन गर्दै …"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "लग इन स्क्रिन"
 
 #: ../src/main-window.vala:119
 msgid "Back"
-msgstr ""
+msgstr "पछाडि"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "अनस्क्रिन किबोर्ड"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr ""
+msgstr "उच्च कन्ट्रास्ट"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr ""
+msgstr "स्क्रिन रिडर"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "सत्र विकल्पहरू"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr ""
+msgstr "डेस्कटप वातावरण चयन गर्नुहोस्"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "फेरिभेटौँला,  के तपाईँ …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#, fuzzy
 msgid "Shut Down"
-msgstr ""
+msgstr "बन्द गर्नुहोस्"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
