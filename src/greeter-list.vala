@@ -160,7 +160,7 @@ public abstract class GreeterList : FadableBox
         }
     }
 
-    public GreeterList (Background bg, MenuBar mb)
+    internal GreeterList (Background bg, MenuBar mb)
     {
         Object (background: bg, menubar: mb);
     }
