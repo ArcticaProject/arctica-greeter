@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-26 13:23+0000\n"
-"Last-Translator: leela <53352@protonmail.com>\n"
+"PO-Revision-Date: 2019-12-22 15:21+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/mr/>\n"
 "Language: mr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 3.10\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -39,27 +39,27 @@ msgstr "अवैध गुप्तशब्द, कृपया पुनः �
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "प्रमाणीकरण करण्यात अयशस्वी"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "सत्र प्रारंभ करण्यात अयशस्वी"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr ""
+msgstr "लॉग इन करीत आहे…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "लॉगिन स्क्रीन"
 
 #: ../src/main-window.vala:119
 msgid "Back"
-msgstr ""
+msgstr "मागे"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "ऑनस्क्रीन कीबोर्ड"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
@@ -75,15 +75,15 @@ msgstr "सत्रासाठी पर्याय"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr ""
+msgstr "डेस्कटॉप वातावरण निवडा"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "निरोप आपल्याला हे आवडेल …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr ""
+msgstr "पूर्णपणे बंद करा"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
