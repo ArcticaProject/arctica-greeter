@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-12-22 15:21+0000\n"
+"PO-Revision-Date: 2019-12-27 17:05+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/mr/>\n"
@@ -87,7 +87,7 @@ msgstr "पूर्णपणे बंद करा"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "आपल्याला खात्री आहे की आपण संगणक बंद करू इच्छिता?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
