@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-12-27 17:05+0000\n"
+"PO-Revision-Date: 2019-12-27 18:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/mr/>\n"
@@ -94,29 +94,31 @@ msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"अन्य वापरकर्ते सध्या या संगणकावर लॉग इन आहेत, आता बंद केल्याने ही इतर सत्रे "
+"बंद होतील."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr ""
+msgstr "निलंबित करा"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr ""
+msgstr "निष्क्रिय करा"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "पुन्हा सुरू करा"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr ""
+msgstr "%s (डीफॉल्ट)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "प्रकाशन आवृत्ती दर्शवा"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
@@ -126,7 +128,7 @@ msgstr "चाचणी अवस्थेत चालवा"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- आर्कटिका ग्रीटर"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
