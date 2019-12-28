@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-12-27 18:22+0000\n"
+"PO-Revision-Date: 2019-12-29 11:39+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/mr/>\n"
@@ -134,19 +134,19 @@ msgstr "- आर्कटिका ग्रीटर"
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "उपलब्ध कमांड लाइन पर्यायांची पूर्ण यादी पाहण्यासाठी '%s --help' चालवा."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "अतिथी सत्र"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
-msgstr ""
+msgstr "कृपया एक पूर्ण ई-मेल पत्ता प्रविष्ट करा"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
-msgstr ""
+msgstr "चुकीचा ई-मेल पत्ता किंवा संकेतशब्द"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
@@ -158,11 +158,11 @@ msgstr ""
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करा"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr ""
+msgstr "सेट अप करा…"
 
 #: ../src/user-list.vala:559
 #, fuzzy
