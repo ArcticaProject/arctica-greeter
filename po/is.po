@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-06-18 19:04+0000\n"
+"PO-Revision-Date: 2020-01-01 14:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/is/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n % 10 != 1 || n % 100 == 11;\n"
-"X-Generator: Weblate 3.7\n"
+"X-Generator: Weblate 3.10\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -190,13 +190,12 @@ msgstr ""
 "til að setja upp reikning."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Þú þarft fjarskráningarreikning Ubuntu til að nota þessa þjónustu. Vilt þú "
-"setja upp reikning núna?"
+"Þú þarft fjarskráningarreikning (Remote Logon) til að nota þessa þjónustu. "
+"Spurðu vefstjórann þinn ef þú vilt fá nánari upplýsingar."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
