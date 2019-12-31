@@ -8,20 +8,23 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2015-03-04 22:03+0000\n"
-"Last-Translator: Saša Teković <Unknown>\n"
-"Language-Team: Croatian <hr@li.org>\n"
+"PO-Revision-Date: 2020-01-01 14:21+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "Upišite lozinku za %s"
+msgstr "Upiši lozinku za %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
@@ -33,7 +36,7 @@ msgstr "Korisničko ime:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "Neispravna lozinka, pokušajte ponovno"
+msgstr "Neispravna lozinka, pokušaj ponovo"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -45,11 +48,11 @@ msgstr "Neuspjelo pokretanje sesije"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Prijavljivanje…"
+msgstr "Prijavljivanje …"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr "Zaslon prijave"
+msgstr "Ekran prijave"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -57,7 +60,7 @@ msgstr "Natrag"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr "Zaslonska tipkovnica"
+msgstr "Ekranska tipkovnica"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
@@ -65,11 +68,11 @@ msgstr "Visok kontrast"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr "Čitač zaslona"
+msgstr "Čitač ekrana"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr "Mogućnosti prijave"
+msgstr "Opcije za sesiju"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -77,46 +80,46 @@ msgstr "Odaberi okruženje radne površine"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Doviđenja. Želite li..."
+msgstr "Doviđenja. Želiš li …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr "Isključiti"
+msgstr "Isključi"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Sigurno želite isključiti računalo?"
+msgstr "Zaista želiš isključiti računalo?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
-"Drugi korisnici su trenutno prijavljeni na ovo računalo, trenutno "
-"isključivanje će isto tako odjaviti te druge sesije."
+"Na ovom su računalu trenutačno prijavljeni drugi korisnici. Isključivanjem "
+"će se zatvoriti i te druge sesije."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr "Suspendirati"
+msgstr "Odgodi"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr "Hibernirati"
+msgstr "Zamrzni"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr "Ponovno pokrenuti"
+msgstr "Ponovo pokreni"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
 #, c-format
 msgid "%s (Default)"
-msgstr "%s (Zadano)"
+msgstr "%s (standardno)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr "Prikaži inačicu izdanja"
+msgstr "Prikaži verziju izdanja"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
@@ -126,36 +129,37 @@ msgstr "Pokreni u probnom načinu rada"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- Arctica dobrodošlica"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Pokreni „%s --help” za prikaz potpunog popisa dostupnih opcija za naredbeni "
+"redak."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "Sesija gosta"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
-msgstr "Molim, unesite ispravnu adresu e-pošte"
+msgstr "Upiši potpunu e-adresu"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
-msgstr "Neispravna adresa e-pošte ili lozinka"
+msgstr "Neispravna e-adresa ili lozinka"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Ako imate račun na RDP poslužitelju, Udaljena prijava dopušta vam pokretanje "
-"aplikacije s tog poslužitelja."
+"Ako imaš račun na RDP ili X2Go poslužitelju, udaljena prijava dopušta "
+"pokretanje programa s tih poslužitelja."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -163,38 +167,36 @@ msgstr "Odustani"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Postavljanje…"
+msgstr "Postavi …"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Potreban vam je račun Ubuntu udaljene prijave za korištenje ove usluge. "
-"Želite li postaviti račun odmah?"
+"Za korištenje ove usluge trebaš račun za udaljenu prijavu. Želiš li sada "
+"postaviti račun?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "U redu"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Potreban vam je račun Ubuntu udaljene prijave za korištenje ove usluge. "
-"Posjetite uccs.canonical.com za postavljanje računa."
+"Za korištenje ove usluge trebaš račun za udaljenu prijavu. Zatraži račun pri "
+"%s."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Potreban vam je račun Ubuntu udaljene prijave za korištenje ove usluge. "
-"Želite li postaviti račun odmah?"
+"Za korištenje ove usluge trebaš račun za udaljenu prijavu. Obrati se "
+"administratoru tvog web mjesta za detalje."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -202,7 +204,7 @@ msgstr "Vrsta poslužitelja nije podržana."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go sesija:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -210,7 +212,7 @@ msgstr "Domena:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID računa"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -224,12 +226,12 @@ msgstr "Prijavi se kao %s"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
-msgstr "Pokušaj ponovno"
+msgstr "Pokušaj ponovo"
 
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr "Pokušaj kao %s"
+msgstr "Pokušaj ponovo kao %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
@@ -238,7 +240,7 @@ msgstr "Prijava"
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Privremena sesija gosta"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -248,6 +250,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Svi podaci stvoreni tijekom ove sesije gosta bit će izbrisani\n"
+"kad se odjaviš, a postavke će se vratiti na standardne.\n"
+"vrijednosti. Spremi datoteke na neki vanjski uređaj,\n"
+"na primjer USB stick, ako ih kasnije želiš ponovo koristiti."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -255,10 +261,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Druga mogućnost je spremiti datoteke u\n"
+"/var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica dobrodošlica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
