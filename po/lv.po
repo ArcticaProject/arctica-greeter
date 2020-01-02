@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-11-14 12:04+0000\n"
-"Last-Translator: Oto Zars <otozars@yahoo.com>\n"
+"PO-Revision-Date: 2020-01-03 01:21+0000\n"
+"Last-Translator: Mareks Dunkurs <robis121212@gmail.com>\n"
 "Language-Team: Latvian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/lv/>\n"
 "Language: lv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= "
 "19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.10\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -48,7 +48,7 @@ msgstr "Neizdevās startēt sesiju"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Pierakstās..."
+msgstr "Ienāk sistēmā…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
