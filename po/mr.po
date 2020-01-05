@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-12-29 11:39+0000\n"
+"PO-Revision-Date: 2020-01-06 19:21+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/mr/>\n"
@@ -155,6 +155,8 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
+"आपल्याकडे आरडीपी सर्व्हर किंवा एक्स 2 गो सर्व्हरवर खाते असल्यास, रिमोट लॉगिन "
+"आपल्याला त्या सर्व्हरवरून अनुप्रयोग चालवू देते."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -165,56 +167,54 @@ msgid "Set Up…"
 msgstr "सेट अप करा…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"या सेवेचा लाभ घेण्याकरिता तुम्हाला उबुंतू दूरस्थ खाते वापरणे आवश्यक आहे. तुम्हाला आता खाते "
-"काढणे आवडेल का ?"
+"या सेवेचा लाभ घेण्याकरिता तुम्हाला उबुंतू दूरस्थ खाते वापरणे आवश्यक आहे. "
+"तुम्हाला आता खाते काढणे आवडेल का ?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "ठीक"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"या सेवेचा लाभ घेण्याकरिता तुम्हाला उबुंतू दूरस्थ खाते वापरणे आवश्यक आहे. खाते काढण्यासाठी "
-"'uccs.canonical.com' ला भेट द्या."
+"आपल्याला ही सेवा वापरण्यासाठी रिमोट लॉगऑन खाते आवश्यक आहे. खात्याची विनंती "
+"करण्यासाठी %s ला भेट द्या."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"या सेवेचा लाभ घेण्याकरिता तुम्हाला उबुंतू दूरस्थ खाते वापरणे आवश्यक आहे. तुम्हाला आता खाते "
-"काढणे आवडेल का ?"
+"आपल्याला ही सेवा वापरण्यासाठी रिमोट लॉगऑन खाते आवश्यक आहे. कृपया तपशीलांसाठी "
+"आपल्या साइट प्रशासकाला विचारा."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
-msgstr ""
+msgstr "सर्व्हर प्रकार समर्थित नाही."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go सत्र:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
-msgstr ""
+msgstr "डोमेन:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "खाते आयडी"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
 msgid "Log In"
-msgstr ""
+msgstr "लॉग इन करा"
 
 #: ../src/user-list.vala:838
 #, c-format
@@ -223,21 +223,21 @@ msgstr "%s म्हणून प्रवेश करा"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
-msgstr ""
+msgstr "पुन्हा प्रयत्न करा"
 
 #: ../src/user-list.vala:843
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "%s म्हणून पुन्हा प्रयत्न करा"
 
 #: ../src/user-list.vala:882
 msgid "Login"
-msgstr ""
+msgstr "लॉगिन"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "तात्पुरते अतिथी सत्र"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -247,6 +247,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"या अतिथी सत्रादरम्यान तयार केलेला सर्व डेटा हटविला जाईल\n"
+"आपण लॉग आउट करता तेव्हा सेटिंग्ज डीफॉल्टवर रीसेट केल्या जातील.\n"
+"आपण नंतर पुन्हा फायलीत प्रवेश करू इच्छित असल्यास\n"
+"कृपया काही बाह्य डिव्हाइसवर जतन करा, उदाहरणार्थ यूएसबी स्टिक."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -254,7 +258,9 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"मधील दुसरा पर्याय म्हणजे फायली सेव्ह करणे\n"
+"/var/guest-data फोल्डर मध्ये."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "आर्कटिका ग्रीटर"
