@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-01-11 18:21+0000\n"
-"Last-Translator: ihaveapiece <ihaveapiecemail@gmail.com>\n"
+"PO-Revision-Date: 2020-01-20 09:21+0000\n"
+"Last-Translator: آراز <arazmnsr@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/fa/>\n"
 "Language: fa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10.1\n"
+"X-Generator: Weblate 3.11-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -83,7 +83,7 @@ msgstr "بدرود. ایا می‌خواهید…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr "خاموش کنید"
+msgstr "خاموش"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
@@ -107,7 +107,7 @@ msgstr "به خواب زمستانی ببرید"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr "مجدّداً آغاز کنید"
+msgstr "شروع مجدد"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
@@ -142,7 +142,7 @@ msgstr "نشست میهمان"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
-msgstr "لطفاً یک نشانی ای‌میل کامل وارد نمایید"
+msgstr "لطفاً یک نشانی ایمیل وارد نمایید"
 
 #: ../src/user-list.vala:520
 msgid "Incorrect e-mail address or password"
@@ -192,7 +192,7 @@ msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"برای استفاده از این خدمت به یک جساب کاربری ورود از راه دور اوبونتو نیاز "
+"برای استفاده از این خدمت به یک حساب کاربری ورود از راه دور اوبونتو نیاز "
 "دارید. آیا می‌خواهید الآن یک حساب کاربری برپا کنید."
 
 #: ../src/user-list.vala:684
@@ -201,7 +201,7 @@ msgstr "نوع سرویس‌دهنده پشتیبانی نمی‌شود."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "‬نشست میهمان"
+msgstr "‬نشست X2Go"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -209,7 +209,7 @@ msgstr "دامنه:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "شناسه حساب"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -247,6 +247,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"تمام داده های به وجود آمده در طول یک نشست مهمان کاملا از بین می روند\n"
+"هنگامیکه شما از حساب کاربری خود خارج می شوید تنظیمات به مقادیر پیش فرض "
+"بازنشانی می گردد\n"
+"لطفاً فایل های خود را بر روی یک دستگاه بیرونی ذخیره کنید مثلاً\n"
+"یک حافظه یو اس بی ، جهت دسترسی مجدد به این فایل ها ضروری است"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -254,11 +259,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"پیشنهاد بعدی ذخیره فایل ها در پوشه زیر است\n"
+"/var/guest-data"
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- خوش‌آمدگوی یونیتی"
+msgstr "- خوش‌آمدگوی آرکتیکا"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
