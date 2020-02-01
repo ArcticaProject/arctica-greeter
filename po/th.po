@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-10-15 16:52+0000\n"
-"Last-Translator: ศักดิ์นรินทร์ ชาติทอง <saknarin.sim@gmail.com>\n"
+"PO-Revision-Date: 2020-02-02 15:50+0000\n"
+"Last-Translator: Guntitat Sawadwuthikul <guntitat_sawadwuthikul@hotmail.com>"
+"\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/th/>\n"
 "Language: th\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9\n"
+"X-Generator: Weblate 3.11-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -101,7 +102,7 @@ msgstr "พักเครื่อง"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr "จำศีลเครื่อง"
+msgstr "พักเครื่อง"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
