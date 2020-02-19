@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-02-04 23:50+0000\n"
-"Last-Translator: Garreciq <adamzygiel@gmail.com>\n"
+"PO-Revision-Date: 2020-02-20 12:33+0000\n"
+"Last-Translator: Michal Biesiada <blade-14@o2.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/pl/>\n"
 "Language: pl\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 3.11.1\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "Proszę wprowadzić hasło użytkownika %s"
+msgstr "Wprowadź hasło dla %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
@@ -36,7 +36,7 @@ msgstr "Nazwa użytkownika:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "Nieprawidłowe hasło. Proszę spróbować ponownie."
+msgstr "Nieprawidłowe hasło, proszę spróbować ponownie"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
@@ -48,7 +48,7 @@ msgstr "Nie udało się uruchomić sesji"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "Logowanie..."
+msgstr "Logowanie…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -80,15 +80,15 @@ msgstr "Proszę wybrać środowisko graficzne"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "Do zobaczenia. Czy chcesz..."
+msgstr "Do zobaczenia. Czy chcesz…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr "Wyłącz komputer"
+msgstr "Wyłącz"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Czy na pewno wyłączyć komputer?"
+msgstr "Czy na pewno chcesz wyłączyć komputer?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -119,12 +119,12 @@ msgstr "%s (Domyślne)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr "Wypisuje inforamacje o wersji"
+msgstr "Pokaż informacje o wersji"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr "Uruchamia w trybie testowym"
+msgstr "Uruchom w trybie testowym"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
@@ -135,7 +135,8 @@ msgstr "- Ekran logowania Arctica"
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr "Proszę wprowadzić „%s --help”, aby wypisać komunikat pomocy."
+msgstr ""
+"Proszę wprowadzić '%s --help', aby zobaczyć pełną listę dostępnych opcji."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -152,13 +153,12 @@ msgstr "Nieprawidłowy adres e-mail lub hasło"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Zdalne logowanie umożliwia uruchamianie programów zainstalowanych na "
-"serwerze RDP."
+"Jeśli masz konto na serwerze RDP lub X2Go, zdalne logowanie umożliwi Ci "
+"uruchamianie programów zainstalowanych na tym serwerze."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -166,7 +166,7 @@ msgstr "Anuluj"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Skonfiguruj..."
+msgstr "Ustaw…"
 
 #: ../src/user-list.vala:559
 msgid ""
