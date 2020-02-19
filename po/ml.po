@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Malayalam <ml@li.org>\n"
+"PO-Revision-Date: 2020-02-20 12:33+0000\n"
+"Last-Translator: Nirmal Manoj C <nimmumanoj@gmail.com>\n"
+"Language-Team: Malayalam <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ml/>\n"
 "Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.11.1\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -41,7 +43,7 @@ msgstr "ആധികാരികത തെളിയിക്കുന്നത�
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "സെഷൻ ആരംഭിക്കുന്നതിൽ പരാജയപ്പെട്ടു"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -57,7 +59,7 @@ msgstr "പിന്നോട്ട്"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr "സ്ക്രീനില്‍ ലഭ്യമാകുന്ന കീ-ബോര്‍ഡ്"
+msgstr "സ്‌ക്രീന്‍ കീ-ബോര്‍ഡ്"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
@@ -69,29 +71,31 @@ msgstr "യവനികാവായനോപാധി"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr "വേളയിലെ ഉപാധികൾ"
+msgstr "വേളയില്‍ തിരഞ്ഞെട‌ുക്കാവ‌ുന്നവ"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr "ഡെസ്ക്ടോപ്പ് പരിസ്ഥിതി തിരഞ്ഞെടുക്കുക"
+msgstr "ഡെസ്ക്ടോപ്പ് പരിസരം തിരഞ്ഞെടുക്കുക"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "വീണ്ടും കാണാം. താങ്കള്‍ ഉദ്ദേശിക്കുന്നുണ്ടോ..."
+msgstr "വീണ്ടും കാണാം. താങ്കള്‍ ആഗ്രഹിക്ക‌ുന്ന‌ുവോ…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr "അടച്ചു പൂട്ടുക"
+msgstr "പ്രവര്‍ത്തനം നിര്‍ത്ത‌ുക"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "താങ്കള്‍ ഈ കമ്പ്യൂട്ടര്‍ അടച്ചു പൂട്ടാന്‍ ഉദ്ദേശിക്കുന്നുണ്ടോ?"
+msgstr "താങ്കള്‍ ഈ കമ്പ്യൂട്ടര്‍ നിര്‍ത്ത‌ുവാന്‍ ഉദ്ദേശിക്കുന്നുണ്ടോ?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"മറ്റ് ഉപയോക്താക്കൾ നിലവിൽ ഈ കമ്പ്യൂട്ടറിലേക്ക് പ്രവേശിച്ചു, ഇപ്പോൾ ഷട്ട്ഡൺ "
+"മറ്റ് സെഷനുകളും അടയ്‌ക്ക‌ും"
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
