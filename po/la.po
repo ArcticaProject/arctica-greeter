@@ -8,26 +8,24 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-02-08 10:50+0000\n"
-"Last-Translator: bughuntermert <dasmert1921@gmail.com>\n"
-"Language-Team: Latin <https://hosted.weblate.org/projects/arctica-framework/"
-"greeter/la/>\n"
+"PO-Revision-Date: 2012-07-28 14:22+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Latin <la@li.org>\n"
 "Language: la\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
+"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
-#, c-format, fuzzy
+#, c-format
 msgid "Enter password for %s"
-msgstr "<script>alert(1)</script>"
+msgstr ""
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr "Fenerbahce_1907!"
+msgstr ""
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
