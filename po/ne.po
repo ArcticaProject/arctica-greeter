@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-11-29 06:05+0000\n"
-"Last-Translator: Saroj Dhakal <lotusnagarkot@gmail.com>\n"
+"PO-Revision-Date: 2020-03-14 10:32+0000\n"
+"Last-Translator: Hemanta Sharma <sharmahemanta.212@gmail.com>\n"
 "Language-Team: Nepali <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ne/>\n"
 "Language: ne\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -82,7 +82,6 @@ msgid "Goodbye. Would you like to…"
 msgstr "फेरिभेटौँला,  के तपाईँ …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
-#, fuzzy
 msgid "Shut Down"
 msgstr "बन्द गर्नुहोस्"
 
