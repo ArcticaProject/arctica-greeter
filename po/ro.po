@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-02-26 15:33+0000\n"
-"Last-Translator: f0roots <f0rootss@gmail.com>\n"
+"PO-Revision-Date: 2020-03-24 12:46+0000\n"
+"Last-Translator: Buescu Bogdan <bbuescu@pentalog.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/ro/>\n"
 "Language: ro\n"
@@ -36,11 +36,11 @@ msgstr "Nume de utilizator:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Parola invalidă, încearcă din nou"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Autentificare esuata"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -52,7 +52,7 @@ msgstr "Autentificare în curs…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr ""
+msgstr "Autentificare"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -60,11 +60,11 @@ msgstr "Înapoi"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
-msgstr ""
+msgstr "Tastatura virtuala"
 
 #: ../src/menubar.vala:231
 msgid "High Contrast"
-msgstr ""
+msgstr "Contrast mare"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr ""
+msgstr "Optiuni sesiune"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -119,12 +119,12 @@ msgstr "%s (Implicit)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr ""
+msgstr "Arata versiune"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr ""
+msgstr "Ruleaza in mod test"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
@@ -136,10 +136,12 @@ msgstr ""
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Rulează '%s --help' pentru a vedea lista completa de opțiuni disponibile "
+"pentru comanda."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr ""
+msgstr "Sesiune neautentificata"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -152,13 +154,12 @@ msgstr "Adresă de e-mail sau parolă incorectă"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Dacă aveți un cont pe un server RDP, Autentificare la Distanță vă permite să "
-"rulați aplicații de pe serverul respectiv."
+"Dacă aveți un cont pe un server RDP sau X2Go, Autentificare la Distanță vă "
+"permite să rulați aplicații de pe serverul respectiv."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -190,13 +191,12 @@ msgstr ""
 "Distanță.  Pentru a crea un cont vizitați %s."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
 "Pentru a utiliza acest serviciu aveți nevoie de un cont de Conectare la "
-"Distanta. Doriți să creați un cont acum?"
+"Distanță. Va rugam sa cereți detalii de la administratorul site-ului."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
@@ -204,7 +204,7 @@ msgstr "Tipul de server nu este suportat."
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr ""
+msgstr "Sesiune X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -212,17 +212,17 @@ msgstr "Domeniu:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ID utilizator"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
 msgid "Log In"
-msgstr ""
+msgstr "Autentificare"
 
 #: ../src/user-list.vala:838
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Autentificare ca %s"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
@@ -235,12 +235,12 @@ msgstr "Reîncearcă ca %s"
 
 #: ../src/user-list.vala:882
 msgid "Login"
-msgstr ""
+msgstr "Autentificare"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Sesiune temporara vizitator"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
