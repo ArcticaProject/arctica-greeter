@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-03-14 10:32+0000\n"
-"Last-Translator: Hemanta Sharma <sharmahemanta.212@gmail.com>\n"
+"PO-Revision-Date: 2020-04-03 18:31+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Nepali <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ne/>\n"
 "Language: ne\n"
@@ -79,7 +79,7 @@ msgstr "डेस्कटप वातावरण चयन गर्नुह
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "फेरिभेटौँला,  के तपाईँ …"
+msgstr "फेरिभेटौँला, के तपाईँ …"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
