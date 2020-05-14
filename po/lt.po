@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-07-20 14:41+0000\n"
-"Last-Translator: Dovydas Jakas <jakas1214@gmail.com>\n"
-"Language-Team: Lithuanian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/lt/>\n"
+"PO-Revision-Date: 2020-05-14 23:49+0000\n"
+"Last-Translator: Andrius Majauskas <komitetas@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
 "19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
 "1 : 2);\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -154,13 +154,12 @@ msgstr "Neteisingas el. pašto adresas ar slaptažodis"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Jei turite paskyrą RDP serveryje, nutolęs prisijungimas leis jums vykdyti "
-"programas iš to serverio."
+"Jei turite paskyrą RDP serveryje ar X2Go serveryje, Nutolęs Prisijungimas "
+"leis jums vykdyti programas iš to serverio."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -183,22 +182,21 @@ msgid "OK"
 msgstr "Gerai"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
 "Norint naudoti šią paslaugą reikia Ubuntu nuotolinio prisijungimo paskyros. "
-"Aplankykite https://%s1 paskyrai nustatyti."
+"Aplankykite %s paskyrai gauti."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
 "Norint naudoti šią paslaugą reikia Ubuntu nuotolinio prisijungimo paskyros. "
-"Ar norėtumėte nustatyti paskyrą dabar?"
+"Susisiekite su savo administratoriumi dėl detalesnės informacijos."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
