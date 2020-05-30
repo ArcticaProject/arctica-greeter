@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-03-03 17:33+0000\n"
-"Last-Translator: พัชรพล ผาริวงศ์ <phariwngs197@gmail.com>\n"
+"PO-Revision-Date: 2020-05-31 09:41+0000\n"
+"Last-Translator: Pratchaya Chatuphian <pratchaya.note@gmail.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/th/>\n"
 "Language: th\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -125,10 +125,8 @@ msgstr "โหมดดำเนินงานทดสอบ"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
-#, fuzzy
 msgid "- Arctica Greeter"
-msgstr ""
-"Bangkok Bank plublic Thailand.Srichon Buntarigwong accountNo.0377135199"
+msgstr "พนักงานต้อนรับ"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
@@ -155,8 +153,8 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"หากคุณมีบัญชีบน RDP หรือ X2Go "
-"การเข้าสู่ระบบระยะไกลช่วยให้คุณสามารถเรียกดูแอพพลิเคชั่นจากนั้น"
+"ถ้าคุณมีบัญชีเซิร์ฟเวอร์ RDP "
+"การเข้าระบบระยะไกลจะทำให้คุณใช้แอปพลิเคชั่นจากเซิร์ฟเวอร์ได้"
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
