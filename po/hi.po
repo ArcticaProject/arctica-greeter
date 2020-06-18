@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-05-16 01:41+0000\n"
-"Last-Translator: RIZWAN AHMAD <rizwan.178208@knit.ac.in>\n"
+"PO-Revision-Date: 2020-06-19 04:41+0000\n"
+"Last-Translator: Gaurav Kumar <gk74533@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/hi/>\n"
 "Language: hi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.1.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -129,13 +129,13 @@ msgstr "जाँच मोड में चलाएँ"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "-आर्कटिका स्वागतकर्ता"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "सभी उपलब्ध कमांड लाइन विकल्प देखने के लिए '%s --help' चलाएं |"
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -219,9 +219,9 @@ msgid "Log In"
 msgstr "सत्रारंभ"
 
 #: ../src/user-list.vala:838
-#, c-format, fuzzy
+#, c-format
 msgid "Login as %s"
-msgstr "लॉग इन करें  %s"
+msgstr "इससे लॉगिन करें %s"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
@@ -249,6 +249,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"जब आप लॉग आउट करते हैं, तो इस अतिथि सत्र के दौरान बनाए गए सभी डेटा \n"
+"हटा दिए जाएंगे और सेटिंग्स को डिफ़ॉल्ट पर रीसेट कर दिया जाएगा |\n"
+"उदाहरण के लिए, कृपया कुछ बाहरी डिवाइस पर फ़ाइलें सहेजें\n"
+"यदि आप बाद में उन्हें फिर से एक्सेस करना चाहते हैं।"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -256,6 +260,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"फ़ाइलों को बचाने के लिए एक और विकल्प है\n"
+"/var/guest-data folder |"
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
