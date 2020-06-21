@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-05-31 09:41+0000\n"
-"Last-Translator: Pratchaya Chatuphian <pratchaya.note@gmail.com>\n"
+"PO-Revision-Date: 2020-06-22 18:41+0000\n"
+"Last-Translator: CHAIWIT PHONKHEN <5911110222@mutacth.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/th/>\n"
 "Language: th\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -27,7 +27,7 @@ msgstr "ใส่รหัสผ่านสำหรับ %s"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr "รหัสผ่าน"
+msgstr "รหัสผ่าน:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
@@ -47,7 +47,7 @@ msgstr "เริ่มต้นเซสชั่นไม่สำเร็จ
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "กำลังเข้าสู่ระบบ"
+msgstr "กำลังเข้าสู่ระบบ…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -126,7 +126,7 @@ msgstr "โหมดดำเนินงานทดสอบ"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr "พนักงานต้อนรับ"
+msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
