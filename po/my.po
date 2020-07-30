@@ -8,51 +8,50 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2018-02-16 10:45+0000\n"
-"Last-Translator: Ko Phyo <kophyo976444@gmail.com>\n"
-"Language-Team: Burmese <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/my/>\n"
+"PO-Revision-Date: 2020-07-31 04:41+0000\n"
+"Last-Translator: Sithu Aung <sithu.aung015@gmail.com>\n"
+"Language-Team: Burmese <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/my/>\n"
 "Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.19\n"
+"X-Generator: Weblate 4.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "%s အတွက် စကားဝှက် ဖြည့်စွက်ပေးပါ။"
+msgstr "%s အတွက် စကားဝှက် ရိုက်ထည့်ပါ"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
-msgstr "စကားဝှက် −"
+msgstr "စကားဝှက်:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr "အသုံးပြုသူအမည် −"
+msgstr "အသုံးပြုသူအမည်:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
-msgstr "စကားဝှက် မှားနေပါသည်။ ကျေးဇူးပြု၍ ထပ်မံကြိုးစားပါ။"
+msgstr "စကားဝှက် မှားနေပါသည် ကျေးဇူးပြု၍ ထပ်မံကြိုးစားပါ။"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
 msgstr "ခွင့်ပြုချက် ရယူနိုင်ခြင်းမရှိပါ။"
 
 #: ../src/greeter-list.vala:934
-#, fuzzy
 msgid "Failed to start session"
-msgstr "Myanmar"
+msgstr "ဆက်ရှင် စတင်ခြင်း မအောင်မြင်ပါ"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr ""
+msgstr "အလုပ် လုပ်နေသည်…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr "စနစ်တွင်းဝင်ရန် မျက်နှာစာ"
+msgstr "ဝင်ရန် မျက်နှာပြင်"
 
 #: ../src/main-window.vala:119
 msgid "Back"
