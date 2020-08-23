@@ -30,7 +30,7 @@ Vcs-Git: git://cgit.arctica-project.org/arctica-greeter.git
 Vcs-Browser: https://cgit.arctica-project.org/arctica-greeter.git/
 
 Package: arctica-greeter
-Architecture: any
+Architecture: linux-any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
          adwaita-icon-theme,
