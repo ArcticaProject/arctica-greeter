@@ -1,2 +1,0 @@
-debian/30_arctica-greeter-theme-debian-stretch.gschema.override usr/share/glib-2.0/schemas/
-debian/theme-debian-logo-v09.png usr/share/arctica-greeter/

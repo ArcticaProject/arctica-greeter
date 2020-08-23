@@ -36,6 +36,5 @@ override_dh_auto_clean:
 	rm -f tests/arctica_greeter_test_vala.stamp
 	rm -f src/*.c
 	rm -f tests/*.c
-	rm -f debian/theme-debian-logo.png
 
 override_dh_auto_test:

@@ -34,15 +34,15 @@
       <summary>Logo file to use</summary>
     </key>
     <key name="theme-name" type="s">
-      <default>'Numix'</default>
+      <default>'Blue-Submarine'</default>
       <summary>GTK+ theme to use</summary>
     </key>
     <key name="icon-theme-name" type="s">
-      <default>'Numix'</default>
+      <default>'Adwaita'</default>
       <summary>Icon theme to use</summary>
     </key>
     <key name="font-name" type="s">
-      <default>'Cabin 11'</default>
+      <default>'Sans 11'</default>
       <summary>Font to use</summary>
     </key>
     <key name="xft-antialias" type="b">
