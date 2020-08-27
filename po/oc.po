@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2013-10-15 16:38+0000\n"
-"Last-Translator: Cédric VALMARY (Tot en òc) <cvalmary@yahoo.fr>\n"
-"Language-Team: Occitan (post 1500) <oc@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-08-30 21:36+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/oc/>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.2.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -45,7 +47,7 @@ msgstr "La sesilha a pas pogut s'aviar"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "En cors de connexion..."
+msgstr "En cors de connexion…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -93,7 +95,7 @@ msgid ""
 "also close these other sessions."
 msgstr ""
 "D'autres utilizaires son actualament connectats a aqueste ordenador, atudar "
-"ara tamparà tanben las autras sesilhas."
+"ara tamparà tanben las autras sessions."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
@@ -105,7 +107,7 @@ msgstr "Ivernar"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr "Tornar amodar"
+msgstr "Tornar aviar"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
@@ -133,8 +135,8 @@ msgstr "- Ecran de benvenguda d'Arctica"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Aviatz « %s --help » per veire la lista completa de opcions disponiblas en "
-"linha de comanda"
+"Executatz « %s --help » per veire la lista completa d’opcions disponiblas en "
+"linha de comanda."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -151,13 +153,12 @@ msgstr "Adreça de corrièr electronic o senhal invalid"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"S'avètz un compte sus un servidor RDP, la « Connexion distanta » vos permet "
-"d'aviar d'aplicacions dempuèi aqueste servidor."
+"S’avètz un compte sus un servidor RDP o X2Go, la « Connexion distanta » vos "
+"permet d’aviar d’aplicacions a partir d’aqueste servidor."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -165,47 +166,44 @@ msgstr "Abandonar"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "Configuracion..."
+msgstr "Configuracion…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Avètz besonh d'un compte d'accès a distància Ubuntu per utilizar aqueste "
-"servici. Volètz crear un compte ara ?"
+"Avètz besonh d’un compte d’accès a distància Ubuntu per utilizar aqueste "
+"servici. Volètz crear un compte ara ?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "D'acòrdi"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Avètz besonh d'un compte d'accès a distància Ubuntu per utilizar aqueste "
-"servici. Anatz sus uccs.canonical.com per crear un compte."
+"Avètz besonh d’un compte d’accès a distància Ubuntu per utilizar aqueste "
+"servici. Consultatz %s per demandar un compte."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Avètz besonh d'un compte d'accès a distància Ubuntu per utilizar aqueste "
-"servici. Volètz crear un compte ara ?"
+"Avètz besonh d’un compte d’accès a distància Ubuntu per utilizar aqueste "
+"servici. Contactatz l’administrator del site per mai de detalhs."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Tipe de servidor pas pres en carga."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Sesilha convidat"
+msgstr "Session X2Go :"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +211,7 @@ msgstr "Domeni :"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Id del compte"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -239,9 +237,9 @@ msgid "Login"
 msgstr "Identificant"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Sesilha convidat"
+msgstr "Session temporària convidat"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -251,6 +249,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Totas las donadas creadas pendent aquesta session convida seràn escafadas\n"
+"quand vos desconnectaretz e los paramètres restablits.\n"
+"Enregistratz los fichièrs sus un periferic extèrn, per exemple\n"
+"una clau USB, se volètz i accedir mai tard."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -258,11 +260,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Una autra alternativa es d’enregistrar los fichièrs sul\n"
+"dossièr /var/guest-data folder."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Ecran de benvenguda d'Arctica"
+msgstr "Aculhença d’Artica"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
