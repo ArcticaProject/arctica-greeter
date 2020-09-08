@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-02-20 12:33+0000\n"
-"Last-Translator: Nirmal Manoj C <nimmumanoj@gmail.com>\n"
+"PO-Revision-Date: 2020-09-09 07:36+0000\n"
+"Last-Translator: Suraj <thekkethilsuraj@gmail.com>\n"
 "Language-Team: Malayalam <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/ml/>\n"
 "Language: ml\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.1\n"
+"X-Generator: Weblate 4.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -151,13 +151,12 @@ msgstr "ഇ-മെയില്‍ ഐടിയിലോ അടയാളവാക
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"നിങ്ങള്‍ക്ക് RDP-ഇല്‍ അക്കൌണ്ട് ഉണ്ട് എങ്കില്‍, ആ സര്‍വ്വറില്‍ നിന്ന് തന്നെ റിമോട്ട് ലോഗിനിലൂടെ "
-"ആപ്ലിക്കേഷനുകള്‍ പ്രവര്‍ത്തിപ്പിക്കാനാകും"
+"നിങ്ങള്‍ക്ക് RDP-യിലോ, X2Go-യിലോ അക്കൌണ്ട് ഉണ്ടെങ്കിൽ, ആ സര്‍വ്വറില്‍ നിന്ന് "
+"തന്നെ റിമോട്ട് ലോഗിനിലൂടെ ആപ്ലിക്കേഷനുകള്‍ പ്രവര്‍ത്തിപ്പിക്കാനാകും"
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -168,44 +167,42 @@ msgid "Set Up…"
 msgstr "തയ്യാറാക്കുക"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"നിങ്ങള്ക്ക്  ഈ സര്‍വീസ്  ഉപയോഗിക്കണമെങ്കില്‍ ഉബുണ്ടു റിമോട്ട് ലോഗിന്‍ അക്കൗണ്ട്‌ അത്യാവശ്യമാണ് . "
-"നിങ്ങള്‍ ഒരു അക്കൗണ്ട്‌ തുടങ്ങാന്‍ താല്പര്യപ്പെടുന്നുണ്ടോ??"
+"നിങ്ങള്ക്ക്  ഈ സര്‍വീസ്  ഉപയോഗിക്കണമെങ്കില്‍ ഉബുണ്ടു റിമോട്ട് ലോഗിന്‍ "
+"അക്കൗണ്ട്‌ അത്യാവശ്യമാണ് . നിങ്ങള്‍ ഒരു അക്കൗണ്ട്‌ തുടങ്ങാന്‍ "
+"താല്പര്യപ്പെടുന്നുണ്ടോ??"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "ശെരി"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"നിങ്ങള്‍ക്ക് ഈ സേവനം ഉപയോഗിക്കാന്‍ 'ഉബുണ്ടു റിമോട്ട് ലോഗിന്‍' അക്കൌണ്ട് അത്യാവശ്യമാണ്. അക്കൌണ്ട് "
-"തുടങ്ങാന്‍ താല്‍പര്യമുണ്ടെങ്കില്‍ 'uccs.canonical.com' സന്ദര്‍ശിക്കുക"
+"ഈ സേവനം ഉപയോഗിക്കാൻ ഉബുണ്ടു റിമോട്ട് ലോഗിൻ അക്കൗണ്ട് ആവശ്യമാണ്. പുതിയ "
+"അക്കൗണ്ട് തുടങ്ങാൻ %s സന്ദർശിക്കുക."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"നിങ്ങള്ക്ക്  ഈ സര്‍വീസ്  ഉപയോഗിക്കണമെങ്കില്‍ ഉബുണ്ടു റിമോട്ട് ലോഗിന്‍ അക്കൗണ്ട്‌ അത്യാവശ്യമാണ് . "
-"നിങ്ങള്‍ ഒരു അക്കൗണ്ട്‌ തുടങ്ങാന്‍ താല്പര്യപ്പെടുന്നുണ്ടോ??"
+"ഈ സേവനം ഉപയോഗിക്കാൻ റിമോട്ട് ലോഗിൻ അക്കൗണ്ട് ആവശ്യമാണ്. കൂടുതൽ വിവരങ്ങൾക്ക് "
+"അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "ഈ തരം സര്‍വ്വര്‍ പിന്‍താങ്ങപ്പെടുന്നതല്ല"
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "'അതിഥി' വേള"
+msgstr "X2Go വേള"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -213,7 +210,7 @@ msgstr "ഡൊമെയിന്‍:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "അക്കൗണ്ട് ഐഡി"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -227,7 +224,7 @@ msgstr "%s- ആയി പ്രവേശിക്കുക"
 
 #: ../src/user-list.vala:842
 msgid "Retry"
-msgstr "വീണ്ടും ശ്രമിയ്ക്കുക"
+msgstr "വീണ്ടും ശ്രമിക്കുക"
 
 #: ../src/user-list.vala:843
 #, c-format
@@ -239,7 +236,7 @@ msgid "Login"
 msgstr "പ്രവേശിക്കുക"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
 msgstr "'അതിഥി' വേള"
 
