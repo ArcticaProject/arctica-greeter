@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-28 11:24+0000\n"
-"Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
+"PO-Revision-Date: 2020-09-14 17:36+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -157,7 +157,7 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Si vous possédez un compte sur un serveur RDP, la  connexion à distance vous "
+"Si vous possédez un compte sur un serveur RDP, la connexion à distance vous "
 "permet d'exécuter des applications depuis ce serveur."
 
 #: ../src/user-list.vala:556
@@ -211,7 +211,7 @@ msgstr "Domaine :"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr "N° de compte:"
+msgstr "N° de compte :"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
