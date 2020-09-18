@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-08-21 10:36+0000\n"
+"PO-Revision-Date: 2020-09-19 13:36+0000\n"
 "Last-Translator: Satnam S Virdi <pika10singh@gmail.com>\n"
 "Language-Team: Punjabi <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/pa/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2.1-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -39,15 +39,15 @@ msgstr "ਪਾਸਵਰਡ ਗਲਤ ਹੈ, ਦੁਬਾਰਾ ਕੋਸ਼ਿ�
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr "ਪਰਮਾਣਿਤ ਹੋਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
+msgstr "ਪੁਸ਼ਟੀ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr "ਸੈਸ਼ਨ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਫ਼ੇਲ੍ਹ ਹੋਇਆ"
+msgstr "ਸੈਸ਼ਨ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਹੇ"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr "ਲਾਗਇਨ ਕਰ ਰਿਹਾ..."
+msgstr "ਲਾਗਇਨ ਕਰ ਰਿਹਾ ਹੈ…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -55,7 +55,7 @@ msgstr "ਲਾਗਇਨ ਸਕਰੀਨ"
 
 #: ../src/main-window.vala:119
 msgid "Back"
-msgstr "ਪਿੱਛੇ"
+msgstr "ਪਿੱਛੇ ਜਾਓ"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
@@ -67,19 +67,19 @@ msgstr "ਵੱਧ ਕਨਟਰਾਸਟ"
 
 #: ../src/menubar.vala:237
 msgid "Screen Reader"
-msgstr "ਸਕਰੀਨ ਰੀਡਰ"
+msgstr "ਸਕਰੀਨ ਪਾਠਕ"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr "ਸ਼ੈਸ਼ਨ ਚੋਣਾਂ"
+msgstr "ਸ਼ੈਸ਼ਨ ਦੀਆਂ ਚੋਣਾਂ"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr "ਡੈਸਕਟਾਪ ਵਾਤਾਵਰਨ"
+msgstr "ਡੈਸਕਟਾਪ ਦਾ ਮਹੌਲ ਚੁਣੋ"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr "ਰੱਬ ਰਾਖਾ, ਕਿ ਤੁਸੀਂ ਪਸੰਦ ਕਰੋਗੇ..."
+msgstr "ਅਲਵਿਦਾ। ਕੀ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਕਿ…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
@@ -87,7 +87,7 @@ msgstr "ਬੰਦ ਕਰੋ"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "ਕੀ ਤੁਸੀਂ ਕੰਪਿਊਟਰ ਨੂੰ ਬੰਦ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?"
+msgstr "ਕੀ ਤੁਸੀਂ ਪੱਕਾ ਕੰਪਿਊਟਰ ਨੂੰ ਬੰਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -213,7 +213,7 @@ msgstr "ਡੋਮੇਨ:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "ਖਾਤੇ ਦੀ ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
