@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-11-10 08:04+0000\n"
-"Last-Translator: Tuomas Lähteenmäki <lahtis@gmail.com>\n"
+"PO-Revision-Date: 2020-09-25 08:40+0000\n"
+"Last-Translator: Lauri Virtanen <lauri.virtanen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/fi/>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -179,31 +179,29 @@ msgid "OK"
 msgstr "OK"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Tarvitset Ubuntu-etäkirjautumistilin käyttääksesi tätä palvelua. Luo tili "
-"osoitteessa uccs.canonical.com."
+"Tarvitset etäkirjautumistilin käyttääksesi tätä palvelua. Käy osoitteessa %s "
+"luodaksesi tilin."
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Tarvitset Ubuntu-etäkirjautumistilin käyttääksesi tätä palvelua. Haluatko "
-"luoda tilin nyt?"
+"Tarvitset etäkirjautumistilin käyttääksesi tätä palvelua. Kysy verkkosivusi "
+"ylläpitäjältä lisätietoja."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "Palvelimen tyyppi ei ole tuettu."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Vieras"
+msgstr "X2Go-istunto:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -211,7 +209,7 @@ msgstr "Toimialue:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Tilin ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -237,9 +235,9 @@ msgid "Login"
 msgstr "Kirjaudu"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Vieras"
+msgstr "Väliaikainen vierailuistunto"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -249,6 +247,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Kaikki tämän vierasistunnon aikana luodut tiedot poistetaan\n"
+"kun kirjaudut ulos, ja asetukset palautetaan oletusarvoihin.\n"
+"Tallenna tiedostot johonkin ulkoiseen laitteeseen, esimerkiksi\n"
+"USB-tikulle, jos haluat käyttää niitä myöhemmin uudelleen."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -256,11 +258,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Toinen vaihtoehto on tallentaa tiedostot\n"
+"/var/guest-data -hakemistoon."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica Greeter"
+msgstr "Arctica Greeter"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
