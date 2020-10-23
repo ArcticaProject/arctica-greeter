@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2019-08-21 13:24+0000\n"
+"PO-Revision-Date: 2020-10-24 22:26+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 4.3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -87,7 +87,7 @@ msgstr "Apagar"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "¿Está seguro de que quiere apagar el equipo?"
+msgstr "¿Confirma que quiere apagar el equipo?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -172,8 +172,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Necesita una cuenta de inicio de sesión remota para utilizar éste servicio. "
-"¿Quiere configurar una cuenta ahora?"
+"Necesita una cuenta de acceso remoto para utilizar este servicio. ¿Quiere "
+"configurar una cuenta ahora?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
