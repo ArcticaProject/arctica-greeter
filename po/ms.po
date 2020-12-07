@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-09-05 07:36+0000\n"
-"Last-Translator: antuketot76 <antuketot76@protonmail.com>\n"
+"PO-Revision-Date: 2020-12-08 13:29+0000\n"
+"Last-Translator: Jacque Fresco <aidter@use.startmail.com>\n"
 "Language-Team: Malay <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ms/>\n"
 "Language: ms\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
-#, c-format, fuzzy
+#, c-format
 msgid "Enter password for %s"
 msgstr "Masuk kata laluan untuk %s"
 
@@ -38,12 +38,10 @@ msgid "Invalid password, please try again"
 msgstr "Kata laluan tidak sah, sila cuba lagi"
 
 #: ../src/greeter-list.vala:888
-#, fuzzy
 msgid "Failed to authenticate"
 msgstr "Gagal disahkan"
 
 #: ../src/greeter-list.vala:934
-#, fuzzy
 msgid "Failed to start session"
 msgstr "Gagal memulakan sesi"
 
@@ -64,7 +62,6 @@ msgid "Onscreen keyboard"
 msgstr "Papan kekunci atas skrin"
 
 #: ../src/menubar.vala:231
-#, fuzzy
 msgid "High Contrast"
 msgstr "Kontras Tinggi"
 
