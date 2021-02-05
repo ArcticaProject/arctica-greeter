@@ -1,3 +1,10 @@
+Overview of changes in arctica-greeter 0.99.1.5
+
+    - Drop all distro-theming packages and dependencies and default to
+      Blue-Submarine GTK theme, Adwaita Icon theme and 'Sans' font.
+    - Massive translation update. Thanks to all contributors
+      on hosted.weblate.org.
+
 Overview of changes in arctica-greeter 0.99.1.4
 
     - Translation update. Thanks to all contributors

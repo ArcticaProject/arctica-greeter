@@ -1,6 +1,233 @@
-2019-12-02 22:14:06 +0100 Mike Gabriel
+2021-02-05 09:16:32 +0100 Mike Gabriel
 
-	* release 0.99.1.4 (HEAD -> master, tag: 0.99.1.4)
+	* release 0.99.1.5 (HEAD -> master, tag: 0.99.1.5)
+
+2020-12-07 13:16:13 +0000 Jacque Fresco (7ac42ab)
+
+	* Translated using Weblate (Malay)
+
+2020-11-24 06:40:01 +0000 Jakub Fabijan (cec6722)
+
+	* Translated using Weblate (Polish)
+
+2020-11-11 18:34:43 +0000 Habib Rohman (b1a0662)
+
+	* Translated using Weblate (Indonesian)
+
+2020-10-23 21:41:13 +0000 Adolfo Jayme Barrientos (7469254)
+
+	* Translated using Weblate (Spanish)
+
+2020-10-23 21:37:51 +0000 Adolfo Jayme Barrientos (b128ea4)
+
+	* Translated using Weblate (Catalan)
+
+2020-09-24 08:22:16 +0000 Lauri Virtanen (a33cee4)
+
+	* Translated using Weblate (Finnish)
+
+2020-09-21 03:12:45 +0000 Kornelijus Tvarijanavičius (d40b6ae)
+
+	* Translated using Weblate (Lithuanian)
+
+2020-09-18 13:07:06 +0000 Satnam S Virdi (e6af2c9)
+
+	* Translated using Weblate (Punjabi)
+
+2020-09-14 23:35:51 +0000 Doma Gergő (4479c15)
+
+	* Translated using Weblate (Hungarian)
+
+2020-09-12 21:09:13 +0000 ssantos (db07aca)
+
+	* Translated using Weblate (Portuguese)
+
+2020-09-13 17:13:03 +0000 Nathan (34d16a4)
+
+	* Translated using Weblate (French)
+
+2020-09-08 06:55:46 +0000 Suraj (ad92403)
+
+	* Translated using Weblate (Malayalam)
+
+2020-09-04 06:47:09 +0000 antuketot76 (a4e4c5f)
+
+	* Translated using Weblate (Malay)
+
+2020-08-27 19:47:13 +0000 Quentin PAGÈS (aecd5be)
+
+	* Translated using Weblate (Occitan)
+
+2020-08-29 20:54:21 +0000 oo nth (4bb43cf)
+
+	* Translated using Weblate (Hindi)
+
+2020-08-23 16:07:04 +0200 Mike Gabriel (e64eafd)
+
+	* debian/control: The bin:pkg is a linux-any package (as we require
+          systemd at runtime).
+
+2020-08-23 16:00:16 +0200 Mike Gabriel (36d9d07)
+
+	* Drop all distro-theming packages and dependencies and default to
+          Blue-Submarine GTK theme, Adwaita Icon theme and 'Sans'
+          font.
+
+2020-08-20 10:06:57 +0000 Satnam S Virdi (b95bf57)
+
+	* Translated using Weblate (Punjabi)
+
+2020-08-07 19:18:18 +0000 Oğuz Ersen (bd791c2)
+
+	* Translated using Weblate (Turkish)
+
+2020-07-30 03:52:53 +0000 Sithu Aung (a6fb951)
+
+	* Translated using Weblate (Burmese)
+
+2020-07-28 08:11:11 +0000 Kristjan Räts (e3f879f)
+
+	* Translated using Weblate (Estonian)
+
+2020-07-23 10:34:30 +0000 lingcas (9bd4d4b)
+
+	* Translated using Weblate (Chinese (Traditional, Hong Kong))
+
+2020-07-19 14:41:46 +0000 ssantos (d6a91f6)
+
+	* Translated using Weblate (Portuguese)
+
+2020-07-14 15:01:52 +0000 TA (46d63a5)
+
+	* Translated using Weblate (Indonesian)
+
+2020-07-08 12:17:25 +0000 Abdul Khan (7a35bbd)
+
+	* Translated using Weblate (Hindi)
+
+2020-06-21 17:32:08 +0000 CHAIWIT PHONKHEN (c5db576)
+
+	* Translated using Weblate (Thai)
+
+2020-06-18 04:00:28 +0000 Gaurav Kumar (d967b3f)
+
+	* Translated using Weblate (Hindi)
+
+2020-05-30 09:01:21 +0000 Pratchaya Chatuphian (d4cf42c)
+
+	* Translated using Weblate (Thai)
+
+2020-05-15 01:07:19 +0000 RIZWAN AHMAD (ca2c104)
+
+	* Translated using Weblate (Hindi)
+
+2020-05-14 22:31:01 +0000 Andrius Majauskas (4377379)
+
+	* Translated using Weblate (Lithuanian)
+
+2020-05-08 03:44:26 +0000 Abdusalam (27f32db)
+
+	* Translated using Weblate (Uyghur)
+
+2020-04-03 17:25:53 +0000 Allan Nordhøy (d5ad59b)
+
+	* Translated using Weblate (Nepali)
+
+2020-03-23 11:44:16 +0000 Buescu Bogdan (0683b69)
+
+	* Translated using Weblate (Romanian)
+
+2020-03-17 16:18:58 +0000 Satnam S Virdi (5d8e67c)
+
+	* Translated using Weblate (Punjabi)
+
+2020-03-13 09:49:10 +0000 Hemanta Sharma (a91297d)
+
+	* Translated using Weblate (Nepali)
+
+2020-03-02 17:13:50 +0000 พัชรพล ผาริวงศ์ (a87b542)
+
+	* Translated using Weblate (Thai)
+
+2020-02-25 14:38:43 +0000 f0roots (b070191)
+
+	* Translated using Weblate (Romanian)
+
+2020-02-19 17:15:47 +0000 Michal Biesiada (957d2d1)
+
+	* Translated using Weblate (Polish)
+
+2020-02-19 04:18:01 +0000 Nirmal Manoj C (375f0e8)
+
+	* Translated using Weblate (Malayalam)
+
+2020-02-20 13:32:33 +0100 Mike Gabriel (69708cd)
+
+	* Revert "Translated using Weblate (Latin)"
+
+2020-02-07 09:55:56 +0000 bughuntermert (f55dfd6)
+
+	* Translated using Weblate (Latin)
+
+2020-02-03 23:11:47 +0000 Garreciq (d23a7a4)
+
+	* Translated using Weblate (Polish)
+
+2020-02-01 15:10:10 +0000 Guntitat Sawadwuthikul (73a1190)
+
+	* Translated using Weblate (Thai)
+
+2020-01-19 08:53:01 +0000 آراز (5b9c13b)
+
+	* Translated using Weblate (Persian)
+
+2020-01-10 18:01:18 +0000 ihaveapiece (f88d2e9)
+
+	* Translated using Weblate (Persian)
+
+2020-01-08 14:52:51 +0000 Manuela Silva (9de9396)
+
+	* Translated using Weblate (Portuguese)
+
+2020-01-07 10:10:50 +0000 Jun Hyung Shin (cf82da9)
+
+	* Translated using Weblate (Korean)
+
+2020-01-05 18:24:21 +0000 Prachi Joshi (764e1ca)
+
+	* Translated using Weblate (Marathi)
+
+2020-01-02 01:20:13 +0000 Mareks Dunkurs (c4c61a3)
+
+	* Translated using Weblate (Latvian)
+
+2019-12-31 13:29:08 +0000 Milo Ivir (938542f)
+
+	* Translated using Weblate (Croatian)
+
+2019-12-30 22:35:22 +0000 Sveinn í Felli (05829ca)
+
+	* Translated using Weblate (Icelandic)
+
+2019-12-28 17:44:14 +0000 Prachi Joshi (32755b8)
+
+	* Translated using Weblate (Marathi)
+
+2019-12-27 18:11:33 +0000 Prachi Joshi (46b6800)
+
+	* Translated using Weblate (Marathi)
+
+2019-12-27 17:00:36 +0000 Prachi Joshi (ff023ca)
+
+	* Translated using Weblate (Marathi)
+
+2019-12-21 15:00:49 +0000 Prachi Joshi (112e213)
+
+	* Translated using Weblate (Marathi)
+
+2019-12-02 22:14:06 +0100 Mike Gabriel (8b23c20)
+
+	* release 0.99.1.4 (tag: 0.99.1.4)
 
 2019-12-02 20:02:38 +0100 Mike Gabriel (28202f9)
 
