@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2021-02-08 12:50+0000\n"
+"PO-Revision-Date: 2021-02-09 16:50+0000\n"
 "Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/el/>\n"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Άκυρο"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
