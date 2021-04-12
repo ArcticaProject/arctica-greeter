@@ -11,6 +11,9 @@ override_dh_autoreconf:
 	fi
 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
 
+override_dh_auto_configure:
+	dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session
+
 override_dh_auto_build:
 	dh_auto_build
 
