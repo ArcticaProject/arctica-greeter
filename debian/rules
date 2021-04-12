@@ -2,6 +2,11 @@
 
 LDFLAGS+=-Wl,--as-needed
 
+# possible guest wrapper binary locations
+GUEST_WRAPPER_BINARY_LIBEXEC="/usr/libexec/lightdm/lightdm-guest-session"
+GUEST_WRAPPER_BINARY_M_LIB="/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session"
+GUEST_WRAPPER_BINARY_LIB="/usr/lib/lightdm/lightdm-guest-session"
+
 %:
 	dh $@ --with autoreconf
 
@@ -12,7 +17,16 @@ override_dh_autoreconf:
 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
 
 override_dh_auto_configure:
-	dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session
+	set -x; if [ -x "$(GUEST_WRAPPER_BINARY_LIBEXEC)" ]; then \
+	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/libexec/lightdm/lightdm-guest-session; \
+	elif [ -x "${GUEST_WRAPPER_BINARY_M_LIB}" ]; then \
+	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session; \
+	elif [ -x "${GUEST_WRAPPER_BINARY_LIB}" ]; then \
+	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/lightdm/lightdm-guest-session; \
+	else \
+	    echo "Error: GUEST_WRAPPER_BINARY (lightdm-guest-session executable from LightDM) not found!"; \
+	    exit 1; \
+	fi
 
 override_dh_auto_build:
 	dh_auto_build
