@@ -4,7 +4,7 @@
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
 
 50-arctica-greeter-guest-wrapper.conf: 50-arctica-greeter-guest-wrapper.conf.in
-	$(AM_V_GEN) sed -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
+	$(AM_V_GEN) sed -e "s|\@GUEST_WRAPPER_BINARY\@|$(GUEST_WRAPPER_BINARY)|" $< > $@
 
 lightdm_confdir = $(datadir)/lightdm/lightdm.conf.d
 lightdm_conf_DATA = \

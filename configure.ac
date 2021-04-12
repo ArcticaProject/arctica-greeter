@@ -54,6 +54,21 @@ else
     AC_DEFINE_UNQUOTED([SD_BINARY], ["$SD_BINARY"], [Path to g-s-d])
 fi
 
+dnl customize path/name to/of lightdm-guest-session wrapper binary
+
+#AC_ARG_VAR([GUEST_WRAPPER_BINARY],
+#           [AC_HELP_STRING([GUEST_WRAPPER_BINARY=@<:@path-to-lightdm-guest-session@:>@],
+#                           [Explicitly set full path to LightDM's lightdm-guest-session wrapper executable @<:@default=${libexecdir}/lightdm/lightdm-guest-session@:>@])]
+
+AC_ARG_VAR([GUEST_WRAPPER_BINARY],
+           [Explicitly set full path to LightDM's lightdm-guest-session wrapper executable @<:@default=${libexecdir}/lightdm/lightdm-guest-session@:>@]
+)
+if test -z "${GUEST_WRAPPER_BINARY}"; then
+    GUEST_WRAPPER_BINARY="${libexecdir}/lightdm/lightdm-guest-session"
+fi
+AC_MSG_NOTICE([Using guest wrapper executable: ${GUEST_WRAPPER_BINARY}])
+AC_SUBST(GUEST_WRAPPER_BINARY)
+
 AC_CHECK_PROG(VALGRIND, valgrind, valgrind --trace-children=yes --num-callers=256)
 AC_SUBST(VALGRIND)
 
