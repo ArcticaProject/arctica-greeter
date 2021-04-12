@@ -208,7 +208,7 @@ public class MainWindow : Gtk.Window
 
     public void before_session_start()
     {
-        debug ("Cleaning up menu bar related processes (i.e. orca, onboard");
+        debug ("Cleaning up menu bar related processes (i.e. orca, onboard, etc.)");
         menubar.cleanup();
     }
 
