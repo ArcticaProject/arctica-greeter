@@ -1,0 +1,180 @@
+#########################################################
+# THE FOLLOWING LINES IS USED BY docker-build
+##########################################################
+requires:
+  archlinux:
+    # Useful URL: https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=librda
+    - clang
+    - gcc
+    - git
+    - make
+    - startup-notification
+    - which
+    # FIXME: add missing build-dependencies
+
+  debian:
+    # Useful URL: https://salsa.debian.org/debian-remote-team/librda
+    - autopoint
+    - clang
+    - clang-tools
+    - g++
+    - cppcheck
+    - git
+    - cmake
+    - cmake-extras
+    - fonts-droid-fallback
+    - gobject-introspection
+    - mate-common
+    - mate-settings-daemon-dev
+#    - libayatana-ido3-dev
+#    - libayatana-indicator3-dev
+    - libcanberra-dev
+    - libgirepository1.0-dev
+    - libgtk-3-dev
+    - liblightdm-gobject-dev
+    - lightdm
+    - lightdm-vala
+    - freerdp2-dev
+    - libgtest-dev
+    - libpam0g-dev
+#    - libpam-freerdp2-dev
+    - libssh-dev
+#    - libpam-x2go-dev
+    - libpixman-1-dev
+    - mate-themes
+    - valac
+    - xvfb
+    - xauth
+
+  ubuntu:
+    - autopoint
+    - clang
+    - clang-tools
+    - g++
+    - git
+    - cmake
+    - cmake-extras
+    - fonts-droid-fallback
+    - gobject-introspection
+    - mate-common
+    - mate-settings-daemon-dev
+#    - libayatana-ido3-dev
+#    - libayatana-indicator3-dev
+    - libcanberra-dev
+    - libgirepository1.0-dev
+    - libgtk-3-dev
+    - liblightdm-gobject-1-dev
+    - lightdm
+    - freerdp2-dev
+    - libgtest-dev
+    - libpam0g-dev
+#    - libpam-freerdp2-dev
+    - libssh-dev
+#    - libpam-x2go-dev
+    - libpixman-1-dev
+    - mate-themes
+    - valac
+    - xvfb
+    - xauth
+
+variables:
+  - 'CHECKERS="
+    -enable-checker deadcode.DeadStores
+    -enable-checker alpha.deadcode.UnreachableCode
+    -enable-checker alpha.core.CastSize
+    -enable-checker alpha.core.CastToStruct
+    -enable-checker alpha.core.IdenticalExpr
+    -enable-checker alpha.core.SizeofPtr
+    -enable-checker alpha.security.ArrayBoundV2
+    -enable-checker alpha.security.MallocOverflow
+    -enable-checker alpha.security.ReturnPtrRange
+    -enable-checker alpha.unix.SimpleStream
+    -enable-checker alpha.unix.cstring.BufferOverlap
+    -enable-checker alpha.unix.cstring.NotNullTerminated
+    -enable-checker alpha.unix.cstring.OutOfBounds
+    -enable-checker alpha.core.FixedAddr
+    -enable-checker security.insecureAPI.strcpy"'
+
+before_scripts:
+  - cd ${START_DIR}
+  - if [ ! -d ayatana-ido-build ]; then
+  -     git clone --depth 1  https://github.com/AyatanaIndicators/ayatana-ido.git ayatana-ido-build
+  - fi
+  - cd ayatana-ido-build
+  - cmake . -DCMAKE_INSTALL_PREFIX=/usr
+  - make
+  - make install
+  -
+  - cd ${START_DIR}
+  - if [ ! -d libayatana-indicator-build ]; then
+  -     git clone --depth 1  https://github.com/AyatanaIndicators/libayatana-indicator.git libayatana-indicator-build
+  - fi
+  - cd libayatana-indicator-build
+  - cmake . -DCMAKE_INSTALL_PREFIX=/usr
+  - make
+  - make install
+  -
+  - cd ${START_DIR}
+  - if [ ! -d libpam-freerdp2-build ]; then
+  -     git clone --depth 1  https://github.com/ArcticaProject/libpam-freerdp2.git libpam-freerdp2-build
+  - fi
+  - cd libpam-freerdp2-build
+  - autoreconf -vfi
+  - ./configure --prefix=/usr
+  - make
+  - make install
+  -
+  - cd ${START_DIR}
+  - if [ ! -d libpam-x2go-build ]; then
+  -     git clone --depth 1  https://github.com/ArcticaProject/libpam-x2go.git libpam-x2go-build
+  - fi
+  - cd libpam-x2go-build
+  - autoreconf -vfi
+  - ./configure --prefix=/usr
+  - make
+  - make install
+
+build_scripts:
+  - if [ ${DISTRO_NAME} == "debian" ];then
+  -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
+  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
+  - fi
+  -
+  - if [ -e ./autogen.sh ]; then
+  -     NOCONFIGURE=1 ./autogen.sh
+  -     scan-build $CHECKERS ./configure --prefix=/usr --enable-gtk-doc --enable-compile-warnings=maximum
+  - elif [ -e ./CMakeLists.txt ]; then
+  -     if [ ${DISTRO_NAME} == "debian" ];then
+  -         scan-build $CHECKERS cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DENABLE_TESTS=ON
+  -     else
+  -         scan-build $CHECKERS cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON
+  -     fi
+  - else
+  -     exit 1
+  - fi
+  -
+  - if [ $CPU_COUNT -gt 1 ]; then
+  -     if [ ${DISTRO_NAME} == "debian" ];then
+  -         scan-build $CHECKERS --keep-cc --use-cc=clang --use-c++=clang++ -o html-report make -j $CPU_COUNT
+  -         make clean
+  -     fi
+  -     scan-build $CHECKERS --keep-cc -o html-report make -j $CPU_COUNT
+  - else
+  -     if [ ${DISTRO_NAME} == "debian" ];then
+  -         scan-build $CHECKERS --keep-cc --use-cc=clang --use-c++=clang++ -o html-report make
+  -         make clean
+  -     fi
+  -     scan-build $CHECKERS --keep-cc -o html-report make
+  - fi
+
+after_scripts:
+  - if [ ${BUILD_TYPE} == "scripts" ];then
+  -     XVFB_RUN="$(which xvfb-run || true)"
+  -     if [ ${DISTRO_NAME} == "debian" ];then
+  -         if [ -e ./autogen.sh ]; then
+  -             ${XVFB_RUN} make check
+  -         elif [ -e ./CMakeLists.txt ]; then
+  -             ${XVFB_RUN} env CTEST_OUTPUT_ON_FAILURE=1 make test
+  -         fi
+  -     fi
+  - fi

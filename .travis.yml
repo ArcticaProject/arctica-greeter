@@ -1,0 +1,43 @@
+# vim: set ts=2 sts=2 sw=2 expandtab :
+dist: bionic
+language: shell
+os: linux
+
+arch:
+  - amd64
+  - ppc64le
+
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - python3-pip
+      - python3-setuptools
+
+before_install:
+  # let's use the Ayatana Indicators project's docker build script...
+  - curl -Ls -o docker-build https://github.com/AyatanaIndicators/ayatana-dev-scripts/raw/master/travis/docker-build
+  - chmod +x docker-build
+
+install:
+  - pip3 install wheel
+  - pip3 install PyGithub
+  - ./docker-build --name ${DISTRO} --config .build.yml --install
+
+script:
+  - ./docker-build --name ${DISTRO} --verbose --config .build.yml --build scripts
+
+env:
+# temp disable of archlinux builds, see https://gitlab.archlinux.org/archlinux/archlinux-docker/-/issues/56
+#  - DISTRO="archlinux:latest"
+  - DISTRO="debian:testing"
+  - DISTRO="debian:stable"
+#  - DISTRO="ubuntu:rolling"
+  - DISTRO="ubuntu:focal"
+
+jobs:
+  exclude:
+    - env: DISTRO="archlinux:latest"
+      arch: ppc64le
