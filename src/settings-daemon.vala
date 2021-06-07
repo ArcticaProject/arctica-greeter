@@ -77,7 +77,7 @@ public class SettingsDaemon : Object
         /* The power plugin does the screen saver screen blanking and disables
          * the builtin X screen saver. It relies on mate-screensaver to generate
          * the event to trigger this (which actually comes from mate-session).
-         * We implement the mate-screensaver inteface and start the settings
+         * We implement the mate-screensaver interface and start the settings
          * daemon once it is registered on the bus so mate-screensaver is not
          * started when it accesses this interface */
         screen_saver = new ScreenSaverInterface ();

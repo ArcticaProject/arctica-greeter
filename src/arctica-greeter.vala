@@ -646,7 +646,7 @@ public class ArcticaGreeter
            out to relieve memory pressure."
 
            With systemd version 239 the ulimit for RLIMIT_MEMLOCK was set to 16 MiB
-           and therefore the mlockall call would fail. This is lucky becasue the subsequent mmap would not fail.
+           and therefore the mlockall call would fail. This is lucky because the subsequent mmap would not fail.
 
            With systemd version 240 the RLIMIT_MEMLOCK is now set to 64 MiB
            and now the mlockall no longer fails. However, it not possible to mmap in all
