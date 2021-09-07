@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-08-30 21:36+0000\n"
+"PO-Revision-Date: 2021-09-08 18:33+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/oc/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2.1-dev\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -43,7 +43,7 @@ msgstr "Fracàs de l'autentificacion"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr "La sesilha a pas pogut s'aviar"
+msgstr "La session a pas pogut s'aviar"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
@@ -71,7 +71,7 @@ msgstr "Lector d'ecran"
 
 #: ../src/prompt-box.vala:238
 msgid "Session Options"
-msgstr "Opcions de la sesilha"
+msgstr "Opcions de la session"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
@@ -87,7 +87,7 @@ msgstr "Atudar"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Sètz segur que volètz arrestar l'ordenador ?"
+msgstr "Volètz vertadièrament arrestar l'ordenador ?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
@@ -118,7 +118,7 @@ msgstr "%s (Per defaut)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:669
 msgid "Show release version"
-msgstr "Aficha la version del logicial"
+msgstr "Afichar la version del logicial"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
@@ -140,7 +140,7 @@ msgstr ""
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
-msgstr "Sesilha convidat"
+msgstr "Session convidat"
 
 #: ../src/user-list.vala:440
 msgid "Please enter a complete e-mail address"
@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
-msgstr "Abandonar"
+msgstr "Anullar"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
@@ -211,7 +211,7 @@ msgstr "Domeni :"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr "Id del compte"
+msgstr "ID del compte"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
