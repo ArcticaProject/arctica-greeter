@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2013-02-27 22:16+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Sardinian <sc@li.org>\n"
+"PO-Revision-Date: 2021-09-26 22:34+0000\n"
+"Last-Translator: Ivano Peddis <ivanopeddis@gmail.com>\n"
+"Language-Team: Sardinian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/sc/>\n"
 "Language: sc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:298
 #, c-format
@@ -29,7 +31,7 @@ msgstr "Crae:"
 
 #: ../src/greeter-list.vala:822 ../src/user-list.vala:700
 msgid "Username:"
-msgstr "Nùmene"
+msgstr "Nòmine de usuàriu:"
 
 #: ../src/greeter-list.vala:877
 msgid "Invalid password, please try again"
@@ -41,11 +43,11 @@ msgstr "Errore a s'ora de s'autenticare"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
-msgstr ""
+msgstr "Inghitzu de sessione no arrenèschidu"
 
 #: ../src/greeter-list.vala:949
 msgid "Logging in…"
-msgstr ""
+msgstr "Atzedende…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
@@ -53,7 +55,7 @@ msgstr "Ischermu de atzessu"
 
 #: ../src/main-window.vala:119
 msgid "Back"
-msgstr ""
+msgstr "In segus"
 
 #: ../src/menubar.vala:226
 msgid "Onscreen keyboard"
@@ -77,33 +79,35 @@ msgstr "Seletziona s'ambiente de su desktop"
 
 #: ../src/shutdown-dialog.vala:103
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "A si bìere. Dias bòlere…"
 
 #: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
 msgid "Shut Down"
-msgstr ""
+msgstr "Istuda"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "Boles istudare s'ordinadore? Seguru ses?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"Àteros usuàrios sunt connessos a s'ordinadore a su presente, chi ddu istudas "
+"immoe fintzas is àteras sessiones ant a èssere serradas."
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
-msgstr ""
+msgstr "Suspende"
 
 #: ../src/shutdown-dialog.vala:172
 msgid "Hibernate"
-msgstr ""
+msgstr "Cungela"
 
 #: ../src/shutdown-dialog.vala:190
 msgid "Restart"
-msgstr ""
+msgstr "Torra a aviare"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:129
@@ -119,7 +123,7 @@ msgstr "Mustra sa versione"
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:672
 msgid "Run in test mode"
-msgstr ""
+msgstr "Esecuta in modalidade de proa"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
@@ -131,6 +135,8 @@ msgstr "Ritzevidore de Arctica"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
+"Esecutade '%s --help' pro bìere sa lista cumprida de is optziones "
+"disponìbiles a lìnia de cumandu."
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
@@ -147,13 +153,12 @@ msgstr "Indiritzu email o password incurretos"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Si tenes unu contu in su Server RDP o Citrix, s'atzessu remotu ti permit de "
-"eseguire aplicatzione dae su server."
+"Si tenes unu contu in su Server RDP o Citrix, s'Atzessu Dae Tesu ti permitit "
+"de esecutare aplicatziones dae cussu serbidore."
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -161,13 +166,15 @@ msgstr "Cantzella"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "configura"
+msgstr "Cunfigura…"
 
 #: ../src/user-list.vala:559
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
+"Ti serbit unu contu de atzessu dae tesu pro impreare custu servìtziu. Dias "
+"bòlere a cunfigurare unu contu immoe?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
@@ -179,29 +186,32 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
+"Ti serbit unu contu de atzessu dae tesu pro impreare custu servìtziu. "
+"Visitade %s pro rechèrrere unu contu."
 
 #: ../src/user-list.vala:567
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
+"Ti serbit unu contu de atzessu dae tesu pro impreare custu servìtziu. Pro "
+"informatziones in prus, preguntade a s'amministradore de su giassu."
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
-msgstr ""
+msgstr "Genia de serbidore non suportada."
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Sessione de Istràngiu"
+msgstr "Sessione X2Go:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
-msgstr "Domìniu"
+msgstr "Domìniu:"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "Id. de su contu"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -227,9 +237,9 @@ msgid "Login"
 msgstr "Intra"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Sessione de Istràngiu"
+msgstr "Sessione de Istràngiu Temporànea"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -239,6 +249,11 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Totu is datos creados in custa sessione de istràngiu s'ant a cantzellare\n"
+"cando serras sa sessione, e is cunfiguratziones ant a torrare a is "
+"predefinidas.\n"
+"Sarvade is documentos in carchi dispositivu esternu, che una memòria USB,\n"
+"chi nche boles torrare a atzèdere in su benidore."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -246,9 +261,10 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Un'àtera alternativa est sarvare is documentos in sa\n"
+"cartella /var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
 msgstr "Ritzevidore de Arctica"
 
