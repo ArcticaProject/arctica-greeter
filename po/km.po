@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2017-09-09 10:44+0000\n"
+"PO-Revision-Date: 2021-09-28 10:35+0000\n"
 "Last-Translator: ប៉ុកណូ រ៉ូយ៉ាល់ <royalpokno68@gmail.com>\n"
-"Language-Team: Central Khmer <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/km/>\n"
+"Language-Team: Khmer (Central) <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/km/>\n"
 "Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.17-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -151,12 +151,12 @@ msgstr "ពាក្យ​សម្ងាត់ ឬ​​អាសយដ្ឋ�
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"ប្រសិនបើ​អ្នក​មាន​គណនី​នៅ​លើ​ម៉ាស៊ីន​មេ RDP  ចូល​ពី​ចម្ងាយ​អ្នក​អាច​ចូល​ដំណើរការ​កម្មវិធី​ពី​ម៉ាស៊ីន​មេ​នោះ​បាន។"
+"ប្រសិនបើ​អ្នក​មាន​គណនី​នៅ​លើ​ម៉ាស៊ីន​មេ RDP ឬម៉ាស៊ីនមេ X2Go "
+"ការចូលបញ្ជា​ពី​ចម្ងាយ អាចឲ្យ​អ្នក​​​ដំណើរការ​កម្មវិធី​ពី​ម៉ាស៊ីន​មេ​នោះ​បាន។"
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -170,33 +170,38 @@ msgstr "រៀបចំ…"
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
-msgstr "អ្នក​ត្រូវ​ចូល​គណនី​​ពី​ចម្ងាយ​ដើម្បី​ប្រើ​​ម៉ាស៊ីន​មេ​នេះ។ តើ​អ្នក​ចង់​រៀបចំ​គណនី​ឥឡូវ​នេះ​ឬ?"
+msgstr ""
+"អ្នក​ត្រូវការ​​គណនីចូលបញ្ជា​​ពី​ចម្ងាយ ​ដើម្បី​ប្រើសេវាកម្ម​នេះ។ "
+"តើអ្នកចង់បង្កើតគណនីឥឡូវនេះទេ?"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "យល់ព្រម"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
-msgstr "អ្នក​ត្រូវ​ចូល​គណនី​ពី​ចម្ងាយ​ដើម្បី​ប្រើ​ម៉ាស៊ីន​មេ​​នេះ។ មើល https://%s ដើម្បី​រៀបចំ​គណនី។"
+msgstr ""
+"អ្នក​ត្រូវ​ការ​គណនីចូលបញ្ជា​ពី​ចម្ងាយ​ ដើម្បី​ប្រើ​​សេវាកម្មនេះ។ សូមមើល %s "
+"ដើម្បីស្នើសុំគណនី។"
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
-msgstr "អ្នក​ត្រូវ​ចូល​គណនី​​ពី​ចម្ងាយ​ដើម្បី​ប្រើ​​ម៉ាស៊ីន​មេ​នេះ។ តើ​អ្នក​ចង់​រៀបចំ​គណនី​ឥឡូវ​នេះ​ឬ?"
+msgstr ""
+"អ្នក​ត្រូវការគណនីចូលបញ្ជា​​ពី​ចម្ងាយ​ ដើម្បីប្រើសេវាកម្មនេះ។ "
+"សូមអ្នកសួរអ្នកគ្រប់គ្រងគេហទំព័ររបស់អ្នកសម្រាប់ព័ត៌មានលម្អិត។"
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
-msgstr "ប្រភេទ​ម៉ាស៊ីន​មេ​មិន​ត្រូវ​បាន​គាំទ្រ។"
+msgstr "ប្រភេទ​ម៉ាស៊ីន​មេ ​មិន​ត្រូវ​បាន​គាំទ្រ។"
 
 #: ../src/user-list.vala:712
 msgid "X2Go Session:"
-msgstr "សម័យ ​X2Go:"
+msgstr "សម័យ ​X2Go៖"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -204,7 +209,7 @@ msgstr "ដែន ៖"
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "គណនី ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -242,6 +247,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"រាល់ទិន្នន័យទាំងអស់ ដែលបានបង្កើតឡើងកំឡុងពេលជាភ្ញៀវនិងត្រូវបានលុប\n"
+"នៅពេលអ្នកចាកចេញ ហើយការកំណត់នានានឹងត្រូវកំណត់ទៅលំនាំដើម។\n"
+"សូមរក្សាទុកឯកសារ លើឧបករណ៍ខាងក្រៅ\n"
+"ឧទាហរណ៍ដូចជា យូអេសប៊ី ប្រសិនបើអ្នកចង់ប្រើវាម្ដងទៀតនៅពេលក្រោយ។"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
