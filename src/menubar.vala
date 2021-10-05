@@ -472,7 +472,7 @@ public class MenuBar : Gtk.MenuBar
                                      SpawnFlags.SEARCH_PATH,
                                      null,
                                      out reader_pid);
-                // This is a workaroud for bug https://launchpad.net/bugs/944159
+                // This is a workaround for bug https://launchpad.net/bugs/944159
                 // The problem is that orca seems to not notice that it's in a
                 // password field on startup.  We just need to kick orca in the
                 // pants.  We do this two ways:  a racy way and a non-racy way.

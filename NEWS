@@ -45,7 +45,7 @@ Overview of changes in arctica-greeter 0.99.1.0
 
     - Make guest session configurable by the host admin.
     - Start using Remote Logon APIv5.
-    - Screen size calulation fix.
+    - Screen size calculation fix.
 
 Overview of changes in arctica-greeter 0.99.0.4
 

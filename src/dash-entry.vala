@@ -298,7 +298,7 @@ public class DashEntry : Gtk.Entry, Fadable
 
     public override bool key_press_event (Gdk.EventKey event)
     {
-        // This is a workaroud for bug https://launchpad.net/bugs/944159
+        // This is a workaround for bug https://launchpad.net/bugs/944159
         // The problem is that orca seems to not notice that it's in a password
         // field on startup.  We just need to kick orca in the pants.
         if (ArcticaGreeter.singleton.orca_needs_kick)
