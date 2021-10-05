@@ -1282,7 +1282,7 @@
 
 2017-06-20 14:32:18 +0200 Mike Gabriel (196464c)
 
-	* Fix at-spi-bus-launcher path in Fedora (ported and modifed from
+	* Fix at-spi-bus-launcher path in Fedora (ported and modified from
           slick-greeter).
 
 2017-06-20 14:19:53 +0200 Mike Gabriel (70a6deb)
@@ -1478,7 +1478,7 @@
 2017-06-07 16:19:47 +0200 Mike Gabriel (49f36af)
 
 	* src/settings-daemon.vala: Flaw when switching to m-s-d. The
-          media-keys plugin is to be diabled.
+          media-keys plugin is to be disabled.
 
 2017-06-07 16:12:20 +0200 Mike Gabriel (0109864)
 

@@ -38,7 +38,7 @@ public class Test
         }
     }
 
-    // BEGIN This group of functions asume email/password for remote directory servers
+    // BEGIN This group of functions assume email/password for remote directory servers
     private static DashEntry remote_directory_entry_email_field (TestList list)
     {
         var fixed = list.selected_entry.get_child() as Gtk.Fixed;
@@ -52,9 +52,9 @@ public class Test
         var grid = fixed.get_children().nth_data(1) as Gtk.Grid;
         return grid.get_child_at(1, 2) as DashEntry;
     }
-    // END This group of functions asume email/password for remote directory servers
+    // END This group of functions assume email/password for remote directory servers
 
-    // BEGIN This group of functions asume domain/username/password for remote login servers
+    // BEGIN This group of functions assume domain/username/password for remote login servers
     private static DashEntry remote_login_entry_domain_field (TestList list)
     {
         var fixed = list.selected_entry.get_child() as Gtk.Fixed;
@@ -75,7 +75,7 @@ public class Test
         var grid = fixed.get_children().nth_data(1) as Gtk.Grid;
         return grid.get_child_at(1, 3) as DashEntry;
     }
-    // BEGIN This group of functions asume domain/username/password for remote login servers
+    // BEGIN This group of functions assume domain/username/password for remote login servers
 
     private static void do_scroll (TestList list, GreeterList.ScrollTarget direction)
     {
@@ -703,7 +703,7 @@ public class Test
         MainWindow mw = setup ();
         TestList list = mw.stack.top () as TestList;
 
-	/* don't go too fast, otherwise the lastest gdk3 will lose control... */
+	/* don't go too fast, otherwise the latest gdk3 will lose control... */
 	Posix.sleep(1);
 
 	/* Wait for Remote Login to appear */
