@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2022-01-08 06:53+0000\n"
-"Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
+"PO-Revision-Date: 2022-01-25 05:56+0000\n"
+"Last-Translator: yzqzss <yzqzss@othing.xyz>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -51,7 +51,7 @@ msgstr "正在登录…"
 
 #: ../src/main-window.vala:55
 msgid "Login Screen"
-msgstr "登陆界面"
+msgstr "登录界面"
 
 #: ../src/main-window.vala:119
 msgid "Back"
@@ -179,7 +179,7 @@ msgstr "确定"
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
-msgstr "您需要使用 Ubuntu 远程登陆帐号以使用该项服务。访问 %s 请求帐号。"
+msgstr "您需要使用 Ubuntu 远程登录帐号以使用该项服务。访问 %s 请求帐号。"
 
 #: ../src/user-list.vala:567
 msgid ""
