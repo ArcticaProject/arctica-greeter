@@ -1028,7 +1028,6 @@ public class ArcticaGreeter : Object
         string systemd_stderr;
         int systemd_exitcode = 0;
 
-        Pid marco_pid = 0;
         Pid nmapplet_pid = 0;
 
         var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
@@ -1052,24 +1051,6 @@ public class ArcticaGreeter : Object
         {
 
             activate_upower();
-
-            try
-            {
-                string[] argv;
-
-                Shell.parse_argv ("marco", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out marco_pid);
-                debug ("Launched marco WM. PID: %d", marco_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting the Marco Window Manager: %s", e.message);
-            }
 
             greeter.greeter_ready.connect (() => {
                 debug ("Showing greeter");
@@ -1219,22 +1200,6 @@ public class ArcticaGreeter : Object
                 else
                     debug ("AT-SPI terminated with signal %d", Process.term_sig (status));
                 atspi_pid = 0;
-            }
-
-            if (marco_pid != 0)
-            {
-#if VALA_0_40
-                Posix.kill (marco_pid, Posix.Signal.TERM);
-#else
-                Posix.kill (marco_pid, Posix.SIGTERM);
-#endif
-                int status;
-                Posix.waitpid (marco_pid, out status, 0);
-                if (Process.if_exited (status))
-                    debug ("Marco Window Manager exited with return value %d", Process.exit_status (status));
-                else
-                    debug ("Marco Window Manager terminated with signal %d", Process.term_sig (status));
-                marco_pid = 0;
             }
         }
 
