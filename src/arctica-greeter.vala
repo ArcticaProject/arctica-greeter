@@ -842,7 +842,7 @@ public class ArcticaGreeter
             {
                 string[] argv;
 
-                Shell.parse_argv ("marco", out argv);
+                Shell.parse_argv ("marco --no-keybindings", out argv);
                 Process.spawn_async (null,
                                      argv,
                                      null,
