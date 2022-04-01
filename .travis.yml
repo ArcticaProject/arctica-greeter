@@ -18,7 +18,7 @@ addons:
 
 before_install:
   # let's use the Ayatana Indicators project's docker build script...
-  - curl -Ls -o docker-build https://github.com/AyatanaIndicators/ayatana-dev-scripts/raw/master/travis/docker-build
+  - curl -Ls -o docker-build https://github.com/AyatanaIndicators/ayatana-dev-scripts/raw/main/travis/docker-build
   - chmod +x docker-build
 
 install:
