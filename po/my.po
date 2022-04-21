@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-07-31 04:41+0000\n"
-"Last-Translator: Sithu Aung <sithu.aung015@gmail.com>\n"
+"PO-Revision-Date: 2022-04-22 17:10+0000\n"
+"Last-Translator: Michael Kha <michaelkha69@gmail.com>\n"
 "Language-Team: Burmese <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/my/>\n"
 "Language: my\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.12.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -87,13 +87,15 @@ msgstr "လုံးဝ ပိတ်မည်"
 
 #: ../src/shutdown-dialog.vala:113
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "ကွန်ပျူတာကို စက်ပိတ်ချချင်တာ သေချာရဲ့လား?"
 
 #: ../src/shutdown-dialog.vala:138
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"ဤကွန်ပျူတာကို အခြား အကောင့်တွေကလည်း လော့အင်ဝင်ထားပါတယ်။ စက်ကို "
+"ပိတ်ချလိုက်မယ်ဆိုရင် သူတို့ဝင်ထားတဲ့ ဆက်ရှင်တွေပါ ပိတ်သွားမှာ ဖြစ်ပါတယ်။"
 
 #: ../src/shutdown-dialog.vala:155
 msgid "Suspend"
