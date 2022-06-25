@@ -110,3 +110,31 @@ src/Makefile
 tests/Makefile
 ])
 AC_OUTPUT
+
+echo "
+
+        arctica-greeter $VERSION
+        =======================
+
+        prefix:                     ${prefix}
+        exec_prefix:                ${exec_prefix}
+        libdir:                     ${libdir}
+        libexecdir:                 ${libexecdir}
+        bindir:                     ${bindir}
+        sbindir:                    ${sbindir}
+        datadir:                    ${datadir}
+        sysconfdir:                 ${sysconfdir}
+        localstatedir:              ${localstatedir}
+
+        compiler:                   ${CC}
+        cflags:                     ${CFLAGS}
+        cppflags:                   ${CPPFLAGS}
+
+        GETTEXT_PACKAGE:            ${GETTEXT_PACKAGE}
+
+        INDICATOR_FILE_DIR:         ${prefix}/share/ayatana/indicators
+        INDICATORDIR:               ${INDICATORDIR}
+
+        GUEST_WRAPPER_BINARY:       ${GUEST_WRAPPER_BINARY}
+
+"
