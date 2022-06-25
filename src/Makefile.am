@@ -45,11 +45,11 @@ arctica_greeter_CFLAGS = \
 	$(ARCTICA_GREETER_CFLAGS) \
 	-w \
 	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
-	-DLOCALEDIR=\""$(localedir)"\" \
+	-DLOCALEDIR=\"$(localedir)\" \
 	-DVERSION=\"$(VERSION)\" \
-	-DPKGDATADIR=\""$(pkgdatadir)"\" \
-	-DPKGLIBEXECDIR=\""$(pkglibexecdir)"\" \
-	-DINDICATORDIR=\""$(INDICATORDIR)"\"
+	-DPKGDATADIR=\"$(pkgdatadir)\" \
+	-DPKGLIBEXECDIR=\"$(pkglibexecdir)\" \
+	-DINDICATORDIR=\"$(INDICATORDIR)\"
 
 logo_generator_CFLAGS = $(arctica_greeter_CFLAGS)
 
