@@ -28,9 +28,8 @@ public class PromptBox : FadableBox
     public signal void name_clicked ();
 
     public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
-    public static string font_family = font.split_set(" ")[0];
-    public static int font_size = int.parse(font.split_set(" ")[1]);
-
+    public static string font_family = "sans";
+    public static int font_size = 11;
     public bool has_errors { get; set; default = false; }
     public string id { get; construct; }
 
@@ -175,6 +174,16 @@ public class PromptBox : FadableBox
 
         fixed.add (small_box_widget);
         fixed.add (box_grid);
+
+        /* Split font family and size via regular expression. */
+        Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        MatchInfo font_info;
+        if (font_regexp.match(font, 0, out font_info)) {
+            font_family = font_info.fetch_named("font_family");
+            font_size = int.parse(font_info.fetch_named("font_size"));
+        }
+        debug ("Using font family '%s'.", font_family);
+        debug ("Using font size base '%d'.", font_size);
     }
 
     protected virtual Gtk.Grid create_name_grid ()
