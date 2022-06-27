@@ -26,13 +26,23 @@ public class ToggleBox : Gtk.Box
     public string selected_key {get; protected set;}
 
     public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
-    public static string font_family = font.split_set(" ")[0];
-    public static int font_size = int.parse(font.split_set(" ")[1]);
+    public static string font_family = "sans";
+    public static int font_size = 11;
 
     public ToggleBox (string? default_key, string? starting_key)
     {
         Object (default_key: default_key, starting_key: starting_key,
                 selected_key: starting_key);
+
+        /* Split font family and size via regular expression. */
+        Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        MatchInfo font_info;
+        if (font_regexp.match(font, 0, out font_info)) {
+            font_family = font_info.fetch_named("font_family");
+            font_size = int.parse(font_info.fetch_named("font_size"));
+        }
+        debug ("Using font family '%s'.", font_family);
+        debug ("Using font size base '%d'.", font_size);
     }
 
     public void add_item (string key, string label, Gdk.Pixbuf? icon)
