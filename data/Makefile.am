@@ -40,6 +40,7 @@ dist_pkgdata_DATA = \
 	badges/gnome_badge.png \
 	badges/gnustep_badge.png \
 	badges/i3_badge.png \
+	badges/icewm_badge.png \
 	badges/kde_badge.png \
 	badges/lxde_badge.png \
 	badges/matchbox_badge.png \

@@ -153,6 +153,8 @@ public class SessionList : GreeterList
             return "recovery_console_badge.png";
         case "xmonad":
             return "xmonad_badge.png";
+        case "icewm-session":
+            return "icewm_badge.png";
         case "remote-login":
             return "remote_login_help.png";
         default:
