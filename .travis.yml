@@ -35,6 +35,7 @@ env:
   - DISTRO="debian:testing"
   - DISTRO="debian:stable"
 #  - DISTRO="ubuntu:rolling"
+  - DISTRO="ubuntu:jammy"
   - DISTRO="ubuntu:focal"
 
 jobs:
