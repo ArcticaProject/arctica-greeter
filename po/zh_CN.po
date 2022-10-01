@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2022-10-01 02:47+0000\n"
-"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
+"Last-Translator: yinaroh@all-mail.net <yinaroh@all-mail.net>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -39,7 +39,7 @@ msgstr "密码不可用，请重试"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr "认证失败"
+msgstr "shou quan shi bai"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
@@ -236,14 +236,15 @@ msgid ""
 "when you log out, and settings will be reset to defaults.\n"
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
-msgstr ""
+msgstr "当你退出登录的时候，所有客户会话数据将会丢失；如果你想下次再用，请将（数据）"
+"文件保存在优盘或其它外部存储设备里面"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
 msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
-msgstr ""
+msgstr "还有一个办法就是保存在/var/guest-data这个文件夹下"
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
