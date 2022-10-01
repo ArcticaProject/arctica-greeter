@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2022-10-01 02:41+0000\n"
-"Last-Translator: yinaroh@all-mail.net <yinaroh@all-mail.net>\n"
+"PO-Revision-Date: 2022-10-01 02:47+0000\n"
+"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: ../src/greeter-list.vala:298
 #, c-format
 msgid "Enter password for %s"
-msgstr "为 %s账号输入密码"
+msgstr "为 %s 输入密码"
 
 #: ../src/greeter-list.vala:820 ../src/user-list.vala:706
 msgid "Password:"
@@ -247,7 +247,7 @@ msgstr ""
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica 欢迎页"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
