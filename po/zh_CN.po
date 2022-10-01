@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
 "PO-Revision-Date: 2022-10-01 02:49+0000\n"
-"Last-Translator: Kocic W <kocic@fast-coin.com>\n"
+"Last-Translator: yinaroh@all-mail.net <yinaroh@all-mail.net>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -132,7 +132,7 @@ msgstr "-来自百冰洋的问候"
 #: ../src/arctica-greeter.vala:701
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr "运行“%s--help”查看可用命令行选项的完整列表。"
+msgstr "运行 '%s --help' 可看到完整的命令选项"
 
 #: ../src/user-list.vala:47
 msgid "Guest Session"
