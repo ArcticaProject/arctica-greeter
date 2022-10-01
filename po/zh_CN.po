@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2022-10-01 02:49+0000\n"
-"Last-Translator: yinaroh@all-mail.net <yinaroh@all-mail.net>\n"
+"PO-Revision-Date: 2022-10-02 10:19+0000\n"
+"Last-Translator: yangyangdaji <1504305527@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -126,7 +126,7 @@ msgstr "在测试模式下运行"
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:690
 msgid "- Arctica Greeter"
-msgstr "-来自百冰洋的问候"
+msgstr "- Arctica 欢迎页"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:701
