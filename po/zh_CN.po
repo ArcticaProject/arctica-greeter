@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2022-10-01 02:47+0000\n"
-"Last-Translator: yinaroh@all-mail.net <yinaroh@all-mail.net>\n"
+"PO-Revision-Date: 2022-10-01 02:49+0000\n"
+"Last-Translator: Kocic W <kocic@fast-coin.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -39,7 +39,7 @@ msgstr "密码不可用，请重试"
 
 #: ../src/greeter-list.vala:888
 msgid "Failed to authenticate"
-msgstr "shou quan shi bai"
+msgstr "验证失败"
 
 #: ../src/greeter-list.vala:934
 msgid "Failed to start session"
