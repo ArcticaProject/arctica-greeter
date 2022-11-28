@@ -38,6 +38,7 @@ public class SettingsDaemon : Object
                               "org.mate.SettingsDaemon.plugins.media-keys",
                               "org.mate.SettingsDaemon.plugins.mouse",
                               "org.mate.SettingsDaemon.plugins.mpris",
+                              "org.mate.SettingsDaemon.plugins.rfkill",
                               "org.mate.SettingsDaemon.plugins.smartcard",
                               "org.mate.SettingsDaemon.plugins.sound",
                               "org.mate.SettingsDaemon.plugins.typing-break",
