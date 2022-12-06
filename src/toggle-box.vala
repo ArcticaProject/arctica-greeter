@@ -65,12 +65,12 @@ public class ToggleBox : Gtk.Box
             /* Tighten padding on buttons to not be so large, default color scheme for buttons */
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {padding: 8px;}\n"+
-                                  "GtkButton {\n"+
+                                  "GtkButton, button {\n"+
                                   "   background-color: %s;\n".printf("rgba(0,0,0,0)")+
                                   "   background-image: none;"+
                                   "}\n"+
-                                  ".button:hover,\n"+
-                                  ".button:hover:active {\n"+
+                                  "button:hover,\n"+
+                                  "button:hover:active {\n"+
                                   "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
                                   "}\n", -1);
             button.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
