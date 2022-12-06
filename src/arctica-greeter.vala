@@ -21,16 +21,15 @@
 
 public const int grid_size = 40;
 
-public class ArcticaGreeter
+[SingleInstance]
+public class ArcticaGreeter : Object
 {
-    public static ArcticaGreeter singleton;
-
     public signal void show_message (string text, LightDM.MessageType type);
     public signal void show_prompt (string text, LightDM.PromptType type);
     public signal void authentication_complete ();
     public signal void starting_session ();
 
-    public bool test_mode = false;
+    public bool test_mode { get; construct; default = false; }
 
     private string state_file;
     private KeyFile state;
@@ -53,11 +52,8 @@ public class ArcticaGreeter
     public signal void xsettings_ready ();
     public signal void greeter_ready ();
 
-    private ArcticaGreeter (bool test_mode_)
+    construct
     {
-        singleton = this;
-        test_mode = test_mode_;
-
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
         greeter.show_prompt.connect ((text, type) => { show_prompt (text, type); });
@@ -138,6 +134,22 @@ public class ArcticaGreeter
         }
         else
             xsettings_ready_cb ();
+    }
+
+    /*
+     * Note that we need a way to specify a parameter for the initial instance
+     * creation of the singleton, but also a constructor that takes no
+     * parameters for later usage.
+     *
+     * Making the parameter optional is a good compromise.
+     *
+     * This this parameter is construct-only, initializing it by passing it to
+     * the GObject constructor is both the correct way to do it, and it will
+     * additionally avoid changing it in later calls of our constructor.
+     */
+    public ArcticaGreeter (bool test_mode_ = false)
+    {
+        Object (test_mode: test_mode_);
     }
 
     public string? get_state (string key)
@@ -340,7 +352,7 @@ public class ArcticaGreeter
     {
         try
         {
-            ArcticaGreeter.singleton.greeter.authenticate_remote (session, userid);
+            greeter.authenticate_remote (session, userid);
         }
         catch (Error e)
         {

@@ -108,7 +108,8 @@ public class MenuBar : Gtk.MenuBar
      */
     public void set_keyboard_state ()
     {
-        if (!ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode)
             onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
     }
 
@@ -155,7 +156,8 @@ public class MenuBar : Gtk.MenuBar
 
         setup_indicators ();
 
-        ArcticaGreeter.singleton.starting_session.connect (cleanup);
+        var greeter = new ArcticaGreeter ();
+        greeter.starting_session.connect (cleanup);
     }
 
     private void close_pid (ref Pid pid)
@@ -293,7 +295,8 @@ public class MenuBar : Gtk.MenuBar
 
     private void load_indicator (string indicator_name)
     {
-        if (!ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode)
         {
             if (indicator_name == "ug-accessibility")
             {
@@ -484,7 +487,8 @@ public class MenuBar : Gtk.MenuBar
                 // this is not racy with orca startup, it is racy with whether
                 // orca will read the first character or not out loud.  Hence
                 // why we do both.  Ideally this would be fixed in orca itself.
-                ArcticaGreeter.singleton.orca_needs_kick = true;
+                var greeter = new ArcticaGreeter ();
+                greeter.orca_needs_kick = true;
                 Timeout.add_seconds (1, () => {
                     Signal.emit_by_name ((get_toplevel () as Gtk.Window).get_focus ().get_accessible (), "focus-event", true);
                     return false;

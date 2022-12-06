@@ -137,6 +137,21 @@ public class Test
         }
     }
 
+    public static void greeter_test_mode ()
+    {
+        var greeter = new ArcticaGreeter ();
+
+        /*
+         * Test that fetching the greeter singleton worked, even though we use
+         * the default value for test mode (false).
+         */
+        GLib.assert (true == greeter.test_mode);
+
+        // And explicitly try to override it, too.
+        greeter = new ArcticaGreeter (false);
+        GLib.assert (true == greeter.test_mode);
+    }
+
     public static void simple_navigation ()
     {
         MainWindow mw = setup ();
@@ -486,11 +501,12 @@ public class Test
         GLib.assert (list.selected_entry.id == "*remote_login*http://rdpdefaultusername2.com*lwola");
         wait_for_scrolling_end (list);
 
-        ArcticaGreeter.singleton.session_started = false;
+        var greeter = new ArcticaGreeter ();
+        greeter.session_started = false;
         pwd = remote_login_entry_password_field (list);
         pwd.text = "password";
         list.selected_entry.respond ({});
-        GLib.assert (ArcticaGreeter.singleton.session_started);
+        GLib.assert (greeter.session_started);
 
         mw.hide ();
     }
@@ -516,7 +532,8 @@ public class Test
         GLib.assert (list.selected_entry.id == "*remote_login*http://rdpdefaultusername2.com*lwola");
         wait_for_scrolling_end (list);
 
-        ArcticaGreeter.singleton.session_started = false;
+        var greeter = new ArcticaGreeter ();
+        greeter.session_started = false;
         pwd = remote_login_entry_password_field (list);
         pwd.text = "delay";
         pwd.activate ();
@@ -650,14 +667,15 @@ public class Test
         username.text = "bar";
         pwd.text = "foobar";
 
-        ArcticaGreeter.singleton.show_prompt("remote login:", LightDM.PromptType.QUESTION);
-        GLib.assert (ArcticaGreeter.singleton.last_respond_response == username.text);
-        ArcticaGreeter.singleton.show_prompt("remote host:", LightDM.PromptType.QUESTION);
-        GLib.assert (ArcticaGreeter.singleton.last_respond_response == "http://coolrdpserver.com");
-        ArcticaGreeter.singleton.show_prompt("domain:", LightDM.PromptType.QUESTION);
-        GLib.assert (ArcticaGreeter.singleton.last_respond_response == domain.text);
-        ArcticaGreeter.singleton.show_prompt("password:", LightDM.PromptType.SECRET);
-        GLib.assert (ArcticaGreeter.singleton.last_respond_response == pwd.text);
+        var greeter = new ArcticaGreeter ();
+        greeter.show_prompt("remote login:", LightDM.PromptType.QUESTION);
+        GLib.assert (greeter.last_respond_response == username.text);
+        greeter.show_prompt("remote host:", LightDM.PromptType.QUESTION);
+        GLib.assert (greeter.last_respond_response == "http://coolrdpserver.com");
+        greeter.show_prompt("domain:", LightDM.PromptType.QUESTION);
+        GLib.assert (greeter.last_respond_response == domain.text);
+        greeter.show_prompt("password:", LightDM.PromptType.SECRET);
+        GLib.assert (greeter.last_respond_response == pwd.text);
 
         mw.hide ();
     }
@@ -690,15 +708,16 @@ public class Test
 
     public static void remote_login_only ()
     {
-        ArcticaGreeter.singleton.test_mode = true;
-        ArcticaGreeter.singleton.session_started = false;
+        var greeter = new ArcticaGreeter ();
+        greeter.test_mode = true;
+        greeter.session_started = false;
 
 	/* this configuration should result in the list containing only the remote login entry,
 	   without any fallback manual entry */
-        ArcticaGreeter.singleton._hide_users_hint = true;
-        ArcticaGreeter.singleton._show_remote_login_hint = true;
-        ArcticaGreeter.singleton._has_guest_account_hint = false;
-        ArcticaGreeter.singleton._show_manual_login_hint = false;
+        greeter._hide_users_hint = true;
+        greeter._show_remote_login_hint = true;
+        greeter._has_guest_account_hint = false;
+        greeter._show_manual_login_hint = false;
 
         MainWindow mw = setup ();
         TestList list = mw.stack.top () as TestList;
@@ -725,14 +744,15 @@ public class Test
 
    public static void manual_login_fallback ()
    {
-        ArcticaGreeter.singleton.test_mode = true;
-        ArcticaGreeter.singleton.session_started = false;
+        var greeter = new ArcticaGreeter ();
+        greeter.test_mode = true;
+        greeter.session_started = false;
 
 	/* this configuration should result in the list containing at least a manual entry */
-        ArcticaGreeter.singleton._hide_users_hint = true;
-        ArcticaGreeter.singleton._show_remote_login_hint = false;
-        ArcticaGreeter.singleton._has_guest_account_hint = false;
-        ArcticaGreeter.singleton._show_manual_login_hint = true;
+        greeter._hide_users_hint = true;
+        greeter._show_remote_login_hint = false;
+        greeter._has_guest_account_hint = false;
+        greeter._show_manual_login_hint = true;
 
         MainWindow mw = setup ();
         TestList list = mw.stack.top () as TestList;
@@ -782,9 +802,9 @@ public class Test
 
         setup_gsettings ();
 
-        ArcticaGreeter.singleton = new ArcticaGreeter();
-        ArcticaGreeter.singleton.test_mode = true;
+        var greeter = new ArcticaGreeter (true);
 
+        GLib.Test.add_func ("/Greeter Test Mode", greeter_test_mode);
         GLib.Test.add_func ("/Simple Navigation", simple_navigation);
         GLib.Test.add_func ("/Remote Login", remote_login);
         GLib.Test.add_func ("/Remote Login duplicate entries", remote_login_duplicate_entries);

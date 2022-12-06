@@ -54,7 +54,8 @@ public class DashBox : Gtk.Box
     /* Does not actually add w to this widget, as doing so would potentially mess with w's placement. */
     public void set_base (Gtk.Widget? w)
     {
-        if (!ArcticaGreeter.singleton.test_mode) {
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode) {
             return_if_fail (pushed == null);
             return_if_fail (mode == Mode.NORMAL);
         }

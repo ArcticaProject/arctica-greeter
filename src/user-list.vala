@@ -73,7 +73,8 @@ public class UserList : GreeterList
         {
             show_hidden_users_ = value;
 
-            if (ArcticaGreeter.singleton.test_mode)
+            var greeter = new ArcticaGreeter ();
+            if (greeter.test_mode)
             {
                 if (value)
                     add_user ("hidden", "Hidden User", null, false, false, null);
@@ -166,8 +167,9 @@ public class UserList : GreeterList
 
         connect_to_lightdm ();
 
-        if (!ArcticaGreeter.singleton.test_mode &&
-            ArcticaGreeter.singleton.show_remote_login_hint ())
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode &&
+            greeter.show_remote_login_hint ())
             remote_logon_service_watch = Bus.watch_name (BusType.SESSION,
                                             "org.ArcticaProject.RemoteLogon",
                                             BusNameWatcherFlags.AUTO_START,
@@ -390,7 +392,8 @@ public class UserList : GreeterList
         remote_logon_service = null;
 
         /* provide a fallback manual login option */
-        if (ArcticaGreeter.singleton.hide_users_hint ()) {
+        var greeter = new ArcticaGreeter ();
+        if (greeter.hide_users_hint ()) {
             add_manual_entry();
             set_active_entry ("*other");
         }
@@ -443,10 +446,11 @@ public class UserList : GreeterList
         else
         {
             var login_success = false;
+            var greeter = new ArcticaGreeter ();
             try
             {
                 var url = url_from_remote_loding_server_list_name (selected_entry.id);
-                if (ArcticaGreeter.singleton.test_mode)
+                if (greeter.test_mode)
                 {
                     if (password_field.text == "password")
                     {
@@ -528,7 +532,8 @@ public class UserList : GreeterList
         sensitive = false;
         will_clear = true;
         greeter_authenticating_user = selected_entry.id;
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
         {
             Gtk.Entry field = current_remote_fields.get ("password") as Gtk.Entry;
             test_is_authenticated = field.text == "password";
@@ -539,7 +544,7 @@ public class UserList : GreeterList
         }
         else
         {
-            ArcticaGreeter.singleton.authenticate_remote (get_lightdm_session (), null);
+            greeter.authenticate_remote (get_lightdm_session (), null);
             remote_logon_service.set_last_used_server.begin (currently_browsing_server_url, url_from_remote_loding_server_list_name (selected_entry.id));
         }
     }
@@ -576,7 +581,8 @@ public class UserList : GreeterList
                 if (is_supported_remote_session (config_session))
                 {
                     greeter_authenticating_user = selected_entry.id;
-                    ArcticaGreeter.singleton.authenticate_remote (config_session, null);
+                    var greeter = new ArcticaGreeter ();
+                    greeter.authenticate_remote (config_session, null);
                 }
             }
             dialog.destroy ();
@@ -635,7 +641,8 @@ public class UserList : GreeterList
 
     private void entry_selected_cb (string? username)
     {
-        ArcticaGreeter.singleton.set_state ("last-user", username);
+        var greeter = new ArcticaGreeter ();
+        greeter.set_state ("last-user", username);
         if (selected_entry is UserPromptBox)
             session = (selected_entry as UserPromptBox).session;
         else
@@ -777,9 +784,10 @@ public class UserList : GreeterList
                     else if (field.type == "email")
                     {
                         string[] email_domains;
+                        var greeter = new ArcticaGreeter ();
                         try
                         {
-                            if (ArcticaGreeter.singleton.test_mode)
+                            if (greeter.test_mode)
                                 email_domains = { "canonical.com", "ubuntu.org", "candy.com", "urban.net" };
                             else
                                 yield remote_logon_service.get_cached_domains_for_server (url, out email_domains);
@@ -889,12 +897,13 @@ public class UserList : GreeterList
         will_clear = true;
         unacknowledged_messages = false;
 
+        var greeter = new ArcticaGreeter ();
         foreach (var response in responses)
         {
-            if (ArcticaGreeter.singleton.test_mode)
+            if (greeter.test_mode)
                 test_respond (response);
             else
-                ArcticaGreeter.singleton.respond (response);
+                greeter.respond (response);
         }
     }
 
@@ -904,10 +913,11 @@ public class UserList : GreeterList
 
         unacknowledged_messages = false;
         var is_authenticated = false;
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
             is_authenticated = test_is_authenticated;
         else
-            is_authenticated = ArcticaGreeter.singleton.is_authenticated();
+            is_authenticated = greeter.is_authenticated();
 
         /* Finish authentication (again) or restart it */
         if (is_authenticated)
@@ -923,18 +933,21 @@ public class UserList : GreeterList
     {
         var session_chooser = new SessionList (background, menubar, session, default_session);
         session_chooser.session_clicked.connect (session_clicked_cb);
-        ArcticaGreeter.singleton.push_list (session_chooser);
+        var greeter = new ArcticaGreeter ();
+        greeter.push_list (session_chooser);
     }
 
     private void session_clicked_cb (string session)
     {
         this.session = session;
-        ArcticaGreeter.singleton.pop_list ();
+        var greeter = new ArcticaGreeter ();
+        greeter.pop_list ();
     }
 
     private bool should_show_session_badge ()
     {
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
             return get_selected_id () != "no-badge";
         else
             return LightDM.get_sessions ().length () > 1;
@@ -962,7 +975,8 @@ public class UserList : GreeterList
 
     private bool is_supported_remote_session (string session_internal_name)
     {
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
             return session_internal_name == "rdp";
 
         var found = false;
@@ -1004,13 +1018,14 @@ public class UserList : GreeterList
 
     private void fill_list ()
     {
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
             test_fill_list ();
         else
         {
-            default_session = ArcticaGreeter.singleton.default_session_hint ();
-            always_show_manual = ArcticaGreeter.singleton.show_manual_login_hint ();
-            if (!ArcticaGreeter.singleton.hide_users_hint ())
+            default_session = greeter.default_session_hint ();
+            always_show_manual = greeter.show_manual_login_hint ();
+            if (!greeter.hide_users_hint ())
             {
                 var users = LightDM.UserList.get_instance ();
                 users.user_added.connect (user_added_cb);
@@ -1020,7 +1035,7 @@ public class UserList : GreeterList
                     user_added_cb (user);
             }
 
-            if (ArcticaGreeter.singleton.has_guest_account_hint ())
+            if (greeter.has_guest_account_hint ())
             {
                 debug ("Adding guest account entry");
                 offer_guest = true;
@@ -1030,9 +1045,9 @@ public class UserList : GreeterList
             if (!have_entries ())
                 add_manual_entry ();
 
-            var last_user = ArcticaGreeter.singleton.get_state ("last-user");
-            if (ArcticaGreeter.singleton.select_user_hint () != null)
-                set_active_entry (ArcticaGreeter.singleton.select_user_hint ());
+            var last_user = greeter.get_state ("last-user");
+            if (greeter.select_user_hint () != null)
+                set_active_entry (greeter.select_user_hint ());
             else if (last_user != null)
                 set_active_entry (last_user);
         }
@@ -1098,39 +1113,40 @@ public class UserList : GreeterList
     {
         if (selected_entry.id.has_prefix ("*remote_login"))
         {
+            var greeter = new ArcticaGreeter ();
             if ((text == pam_x2go.PROMPT_USER) || (text == pam_freerdp2.PROMPT_USER))
             {
                 Gtk.Entry field = current_remote_fields.get ("username") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 debug ("remote_login prompt parsing: username -> %s", answer);
-                ArcticaGreeter.singleton.respond (answer);
+                greeter.respond (answer);
             }
             else if ((text == pam_x2go.PROMPT_PASSWORD) || (text == pam_freerdp2.PROMPT_PASSWORD))
             {
                 Gtk.Entry field = current_remote_fields.get ("password") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 debug ("remote_login prompt parsing: password -> <hidden>");
-                ArcticaGreeter.singleton.respond (answer);
+                greeter.respond (answer);
             }
             else if ((text == pam_x2go.PROMPT_HOST) || (text == pam_freerdp2.PROMPT_HOST))
             {
                 var answer = url_from_remote_loding_server_list_name (selected_entry.id);
                 debug ("remote_login prompt parsing: host -> %s", answer);
-                ArcticaGreeter.singleton.respond (answer);
+                greeter.respond (answer);
             }
             else if (text == pam_freerdp2.PROMPT_DOMAIN)
             {
                 Gtk.Entry field = current_remote_fields.get ("domain") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 debug ("remote_login prompt parsing: domain -> %s", answer);
-                ArcticaGreeter.singleton.respond (answer);
+                greeter.respond (answer);
             }
             else if (text == pam_x2go.PROMPT_COMMAND)
             {
                 Gtk.Entry field = current_remote_fields.get ("command") as Gtk.Entry;
                 var answer = field != null ? field.text : "";
                 debug ("remote_login prompt parsing: command -> %s", answer);
-                ArcticaGreeter.singleton.respond (answer);
+                greeter.respond (answer);
             }
         }
         else
@@ -1210,7 +1226,8 @@ public class UserList : GreeterList
         {
         }
 
-        if (!ArcticaGreeter.singleton.hide_users_hint())
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.hide_users_hint())
             while (add_test_entry ());
 
         /* add a manual entry if the list of entries is empty initially */
@@ -1221,12 +1238,12 @@ public class UserList : GreeterList
             n_test_entries++;
         }
 
-        offer_guest = ArcticaGreeter.singleton.has_guest_account_hint();
-        always_show_manual = ArcticaGreeter.singleton.show_manual_login_hint();
+        offer_guest = greeter.has_guest_account_hint();
+        always_show_manual = greeter.show_manual_login_hint();
 
         key_press_event.connect (test_key_press_cb);
 
-        if (ArcticaGreeter.singleton.show_remote_login_hint())
+        if (greeter.show_remote_login_hint())
             Timeout.add (1000, () =>
             {
                 RemoteServer[] test_server_list = {};
@@ -1248,7 +1265,7 @@ public class UserList : GreeterList
                 return false;
             });
 
-        var last_user = ArcticaGreeter.singleton.get_state ("last-user");
+        var last_user = greeter.get_state ("last-user");
         if (last_user != null)
             set_active_entry (last_user);
 
