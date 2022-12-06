@@ -31,6 +31,7 @@ public class AGSettings : Object
     public const string KEY_SHOW_HOSTNAME = "show-hostname";
     public const string KEY_LOGO = "logo";
     public const string KEY_THEME_NAME = "theme-name";
+    public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
     public const string KEY_FONT_NAME = "font-name";
     public const string KEY_XFT_ANTIALIAS = "xft-antialias";
@@ -39,6 +40,7 @@ public class AGSettings : Object
     public const string KEY_XFT_RGBA = "xft-rgba";
     public const string KEY_ONSCREEN_KEYBOARD = "onscreen-keyboard";
     public const string KEY_HIGH_CONTRAST = "high-contrast";
+    public const string KEY_BIG_FONT = "big-font";
     public const string KEY_SCREEN_READER = "screen-reader";
     public const string KEY_PLAY_READY_SOUND = "play-ready-sound";
     public const string KEY_INDICATORS = "indicators";
@@ -51,6 +53,8 @@ public class AGSettings : Object
     public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
     public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";
+    public const string KEY_MENUBAR_ALPHA = "menubar-alpha";
+
 
     public static bool get_boolean (string key)
     {
@@ -112,7 +116,63 @@ public class AGSettings : Object
     }
 
     construct {
+        Gtk.Settings.get_default ().get ("gtk-theme-name", out this.default_theme_name_);
+        /*
+        debug ("Fetched default theme name in construct: %s", this.default_theme_name_);
+        */
+    }
+
+    public bool high_contrast {
+        get {
+            return this.high_contrast_;
+        }
+
+        set {
+            debug ("Called high contrast setter with value %s", value.to_string ());
+            this.high_contrast_ = value;
+
+            /* Also sync back to dconf, so that this state is persistent. */
+            set_boolean (AGSettings.KEY_HIGH_CONTRAST, value);
+
+            var greeter = new ArcticaGreeter ();
+            greeter.switch_contrast (value);
+
+            var settings = Gtk.Settings.get_default ();
+            if (value)
+            {
+                /*
+                debug ("Switching GTK Theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
+                */
+                settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
+            }
+            else
+            {
+                /*
+                debug ("Switching GTK Theme to default theme \"%s\"", this.default_theme_name_);
+                */
+                settings.set ("gtk-theme-name", this.default_theme_name_);
+            }
+        }
+    }
+
+    public bool big_font {
+        get {
+            return this.big_font_;
+        }
+
+        set {
+            this.big_font_ = value;
+
+            /* Also sync back to dconf, so that this state is persistent. */
+            set_boolean (AGSettings.KEY_BIG_FONT, value);
+
+            var greeter = new ArcticaGreeter ();
+            greeter.switch_font (value);
+        }
     }
 
     private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
+    private bool high_contrast_ = AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST);
+    private bool big_font_ = AGSettings.get_boolean (AGSettings.KEY_BIG_FONT);
+    private string default_theme_name_;
 }

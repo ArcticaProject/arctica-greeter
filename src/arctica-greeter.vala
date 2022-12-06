@@ -306,6 +306,47 @@ public class ArcticaGreeter : Object
                                    Canberra.PROP_EVENT_ID,
                                    "system-ready");
 
+        /* Synchronize properties in AGSettings once. */
+        var agsettings = new AGSettings ();
+        agsettings.high_contrast = !(!(agsettings.high_contrast));
+        agsettings.big_font = !(!(agsettings.big_font));
+
+        /*
+         * Add timeouts to process the full node hierarchy to handle a11y
+         * changes.
+         *
+         * That's the easiest way to handle a changing node hierarchy.
+         *
+         * Alternatives would involve connecting a function for every a11y
+         * change to the GtkWidget::parent-set event to *every widget* we
+         * create, but that would make the code incredibly messy.
+         *
+         * The value has been determined by a fair dice roll and should make
+         * sure that changes are visible almost instantaneously to users.
+         */
+        Timeout.add_full (GLib.Priority.HIGH_IDLE, 302, () => {
+            var agsettings_intimer = new AGSettings ();
+            /*
+            if (0 == GLib.Random.int_range (0, 10)) {
+                debug ("Syncing up high contrast value via timer: %s", agsettings_intimer.high_contrast.to_string ());
+            }
+            */
+            switch_contrast (agsettings_intimer.high_contrast);
+
+            return true;
+        });
+        Timeout.add_full (GLib.Priority.HIGH_IDLE, 302, () => {
+            var agsettings_intimer = new AGSettings ();
+            /*
+            if (0 == GLib.Random.int_range (0, 10)) {
+                debug ("Syncing up big font value via timer: %s", agsettings_intimer.big_font.to_string ());
+            }
+            */
+            switch_font (agsettings_intimer.big_font);
+
+            return true;
+        });
+
         return false;
     }
 
@@ -417,6 +458,75 @@ public class ArcticaGreeter : Object
     public bool has_guest_account_hint ()
     {
         return greeter.has_guest_account_hint;
+    }
+
+    private delegate void SwitchClassType (Gtk.Widget widget, string classname, bool enable);
+
+    private delegate void IterateChildrenType (Gtk.Widget widget);
+
+    private void switch_generic (Gtk.Widget widget, string classname, bool enable)
+    {
+        var style_ctx = widget.get_style_context ();
+        if (enable)
+        {
+            style_ctx.add_class (classname);
+        }
+        else
+        {
+            style_ctx.remove_class (classname);
+        }
+    }
+
+    private void iterate_children_generic (Gtk.Widget widget, SwitchClassType switch_func, string classname, bool enable)
+    {
+        /*
+         * GTK 4 changed its API quite dramatically, got rid of GtkContainer
+         * and made each GtkWidget accept children, while also defining a new
+         * way to access those.
+         */
+        IterateChildrenType rec_func = null;
+        rec_func = (widget) => {
+#if HAVE_GTK_4_0
+            Gtk.Widget child = widget.get_first_child ();
+            while (null != child)
+            {
+                rec_func (child);
+                child = child.get_next_sibling ();
+            }
+#else
+            if (gtk_is_container (widget))
+            {
+                ((Gtk.Container)(widget)).@foreach (rec_func);
+            }
+#endif
+
+            /* Common code to add or remove the CSS class. */
+            switch_func (widget, classname, enable);
+        };
+
+        /*
+         * Actually recursively iterate through this item and all of its
+         * children.
+         */
+        rec_func (widget);
+    }
+
+    public void switch_contrast (bool high)
+    {
+        var time_pre = GLib.get_monotonic_time ();
+        iterate_children_generic (main_window, switch_generic, "high_contrast", high);
+        var time_post = GLib.get_monotonic_time ();
+        var time_diff = time_post - time_pre;
+        assert (0 <= time_diff);
+        var time_diff_sec = time_diff / 1000000;
+        var time_diff_msec = time_diff / 1000;
+        var time_diff_usec = time_diff % 1000000;
+        // debug ("Time passed: %" + int64.FORMAT + " s, %" + int64.FORMAT + " ms, %" + int64.FORMAT + " us", time_diff_sec, time_diff_msec, time_diff_usec);
+    }
+
+    public void switch_font (bool big)
+    {
+        iterate_children_generic (main_window, switch_generic, "big_font", big);
     }
 
     private Gdk.FilterReturn focus_upon_map (Gdk.XEvent gxevent, Gdk.Event event)

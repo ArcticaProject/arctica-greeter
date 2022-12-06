@@ -148,7 +148,8 @@ public class UserList : GreeterList
 
     construct
     {
-        menubar.notify["high-contrast"].connect (() => { change_background (); });
+        var agsettings = new AGSettings ();
+        agsettings.notify["high-contrast"].connect (() => { change_background (); });
         entry_displayed_start.connect (() => { change_background (); });
         entry_displayed_done.connect (() => { change_background (); });
 
@@ -593,7 +594,8 @@ public class UserList : GreeterList
     private bool change_background_timeout_cb ()
     {
         string? new_background_file = null;
-        if (menubar.high_contrast || !AGSettings.get_boolean (AGSettings.KEY_DRAW_USER_BACKGROUNDS))
+        var agsettings = new AGSettings ();
+        if (agsettings.high_contrast || !AGSettings.get_boolean (AGSettings.KEY_DRAW_USER_BACKGROUNDS))
             new_background_file = null;
         else if (selected_entry is UserPromptBox)
             new_background_file = (selected_entry as UserPromptBox).background;

@@ -208,7 +208,21 @@ public class PromptBox : FadableBox
             debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size+2, e.message);
         }
 
-        name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+        var agsettings = new AGSettings ();
+        try
+        {
+            var color_provider = new Gtk.CssProvider ();
+            var css = "* { color: rgba(255, 255, 255, 1.0); }\n" +
+                      ".high_contrast { color: rgba (0, 0, 0, 1.0); }";
+            color_provider.load_from_data (css, -1);
+            style_ctx.add_provider (color_provider,
+                                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error setting color on name label: %s", e.message);
+        }
+
         name_label.valign = Gtk.Align.START;
         name_label.vexpand = true;
         name_label.yalign = 0.5f;
@@ -236,7 +250,40 @@ public class PromptBox : FadableBox
         name_grid.attach (align, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
 
         option_button = new FlatButton ();
-        option_button.get_style_context ().add_class ("option-button");
+        var option_button_ctx = option_button.get_style_context ();
+        option_button_ctx.add_class ("option-button");
+
+        try {
+            /*
+             * Override background for both high-contrast and normal modes.
+             * Note that we have to use CSS selectors here, since this code
+             * is only executed once.
+             */
+            var background_style = new Gtk.CssProvider ();
+            background_style.load_from_data ("button.flat.option-button.high_contrast {\n" +
+                                             "   background-color: %s;\n".printf("rgba(0,0,0,1.0)") +
+                                             "   background-image: none;\n" +
+                                             "}\n" +
+                                             "button.flat.option-button:hover:not(.high_contrast), " +
+                                             "button.flat.option-button:active:not(.high_contrast), " +
+                                             "button.flat.option-button:hover:active:not(.high_contrast) {\n"+
+                                             "   background-color: %s;\n".printf("rgba(255,255,255,0.5)")+
+                                             "   background-image: none;"+
+                                             "}\n" +
+                                             "button.flat.option-button:hover.high_contrast," +
+                                             "button.flat.option-button:active.high_contrast," +
+                                             "button.flat.option-button:hover:active.high_contrast {\n" +
+                                             "   background-color:%s;\n".printf("rgba(70, 70, 70, 1.0)") +
+                                             "   background-image: none;" +
+                                             "}\n", -1);
+            option_button_ctx.add_provider (background_style,
+                                            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading option button background style: %s", e.message);
+        }
+
         option_button.hexpand = true;
         option_button.halign = Gtk.Align.END;
         option_button.valign = Gtk.Align.START;
@@ -388,6 +435,7 @@ public class PromptBox : FadableBox
     public void clear ()
     {
         prompt_visibility = PromptVisibility.HIDDEN;
+        active_indicator.expanded = false;
 
         /* Hold a ref while removing the prompt widgets -
          * if we just do w.destroy() we get this warning:
@@ -452,6 +500,7 @@ public class PromptBox : FadableBox
         {
         case PromptVisibility.HIDDEN:
             w.hide ();
+            active_indicator.expanded = false;
             break;
         case PromptVisibility.FADING:
             var f = w as Fadable;
@@ -460,10 +509,12 @@ public class PromptBox : FadableBox
                 f.fade_in ();
             else
                 w.show ();
+            active_indicator.expanded = true;
             break;
         case PromptVisibility.SHOWN:
             w.show ();
             w.sensitive = true;
+            active_indicator.expanded = true;
             break;
         }
     }
@@ -473,6 +524,7 @@ public class PromptBox : FadableBox
         prompt_visibility = PromptVisibility.FADING;
         show ();
         foreach_prompt_widget ((w) => { update_prompt_visibility (w); });
+        active_indicator.expanded = true;
     }
 
     public void show_prompts ()
@@ -480,6 +532,7 @@ public class PromptBox : FadableBox
         prompt_visibility = PromptVisibility.SHOWN;
         show ();
         foreach_prompt_widget ((w) => { update_prompt_visibility (w); });
+        active_indicator.expanded = true;
     }
 
     protected void attach_item (Gtk.Widget w, bool add_style_class = true)
@@ -713,6 +766,7 @@ public class PromptBox : FadableBox
 private class ActiveIndicator : Gtk.Image
 {
     public bool active { get; set; }
+    public bool expanded { get; set; }
     public const int WIDTH = 8;
     public const int HEIGHT = 7;
 
@@ -722,12 +776,16 @@ private class ActiveIndicator : Gtk.Image
         try
         {
             pixbuf = new Gdk.Pixbuf.from_file (filename);
+            pixbuf_changed_helper ();
         }
         catch (Error e)
         {
             debug ("Could not load active image: %s", e.message);
         }
         notify["active"].connect (() => { queue_draw (); });
+        notify["expanded"].connect (() => { notify_expanded (); });
+        notify["pixbuf"].connect ((s, p) => { notify_pixbuf_changed (s, p); });
+        this.style_updated.connect ((w) => { handle_style_updated (w); });
         xalign = 0.0f;
     }
 
@@ -747,6 +805,132 @@ private class ActiveIndicator : Gtk.Image
     {
         if (!active)
             return false;
+
         return base.draw (c);
     }
+
+    private void notify_pixbuf_changed (Object src, ParamSpec prop) {
+        assert ("pixbuf" == prop.name);
+
+        if (!(this.swapping_)) {
+            pixbuf_changed_helper ();
+        }
+    }
+
+    private void pixbuf_changed_helper () {
+        /* Copy the new pixbuf. */
+        this.pixbuf_orig_ = this.pixbuf.copy ();
+        this.pixbuf.copy_options (this.pixbuf_orig_);
+        this.pixbuf_inverted_ = this.pixbuf.copy ();
+        this.pixbuf.copy_options (this.pixbuf_inverted_);
+
+        /* Invert the new pixbuf. */
+        invert_pixbuf ();
+
+        if (this.inverted_) {
+            this.swapping_ = true;
+            this.pixbuf = this.pixbuf_inverted_;
+            this.swapping_ = false;
+        }
+    }
+
+    private void handle_style_updated (Gtk.Widget widget) {
+        var style_ctx = this.get_style_context ();
+        if (style_ctx.has_class ("high_contrast")) {
+            if ((!(this.inverted_)) && (this.expanded)) {
+                this.swapping_ = true;
+                this.pixbuf = this.pixbuf_inverted_;
+                this.inverted_ = true;
+                this.swapping_ = false;
+            }
+        }
+        else {
+            if (this.inverted_) {
+                this.swapping_ = true;
+                this.pixbuf = this.pixbuf_orig_;
+                this.inverted_ = false;
+                this.swapping_ = false;
+            }
+        }
+    }
+
+    private void invert_pixbuf () {
+        assert (Gdk.Colorspace.RGB == this.pixbuf_inverted_.get_colorspace ());
+        var sample_size = this.pixbuf_inverted_.get_bits_per_sample ();
+        var alpha = this.pixbuf_inverted_.get_has_alpha ();
+        var channels = this.pixbuf_inverted_.get_n_channels ();
+
+        assert (((4 == channels) && (alpha)) ||
+                (3 == channels));
+
+        /*
+         * Fun fact: we don't need to decompose the actual colors. Since
+         * the inversion is just a simple XOR operation, we can just
+         * invert all the bits minus the alpha value.
+         */
+        assert (1 <= sample_size);
+
+        var rowstride = this.pixbuf_inverted_.get_rowstride ();
+        var col_bytes = (((channels * sample_size) + 7) / 8);
+        var row_bytes = (this.pixbuf_inverted_.width * col_bytes);
+        unowned var pixels = this.pixbuf_inverted_.get_pixels ();
+        assert (pixels != null);
+        size_t color_bits = channels;
+        if (alpha) {
+            --color_bits;
+        }
+        color_bits *= sample_size;
+        for (size_t i = 0; i < this.pixbuf_inverted_.height; (++i)) {
+            for (size_t y = 0; y < this.pixbuf_inverted_.width; (++y)) {
+                /* Invert full bytes first. */
+                for (size_t x = 0; x < (color_bits / 8); (++(x))) {
+                    pixels[(i * rowstride) + (y * col_bytes) + (x)] ^= (~(0));
+                }
+
+                /*
+                 * And now, invert the last actual color bits minus alpha
+                 * and padding.
+                 */
+                uint8 rest = (uint8) (color_bits % 8);
+                if (0 < rest) {
+                    uint8 mask = (~(0));
+                    mask <<= (8 - rest);
+                    pixels[(i * rowstride) + (y * col_bytes) + (color_bits / 8)] ^= mask;
+                }
+            }
+        }
+    }
+
+    private void notify_expanded () {
+        if (!(this.expanded)) {
+            /*
+             * In non-expanded form, we always want to have the original
+             * look.
+             */
+            if (this.inverted_) {
+                this.swapping_ = true;
+                this.pixbuf = this.pixbuf_orig_;
+                this.inverted_ = false;
+                this.swapping_ = false;
+            }
+        }
+        else {
+            /*
+             * In expanded form, we want to restore the inverted form iff the
+             * high contrast mode is enabled.
+             */
+            var agsettings = new AGSettings ();
+            if ((!(this.inverted_)) && (agsettings.high_contrast)) {
+                this.swapping_ = true;
+                this.pixbuf = this.pixbuf_inverted_;
+                this.inverted_ = true;
+                this.swapping_ = false;
+            }
+        }
+    }
+
+    private bool inverted_ = false;
+    private bool swapping_ = false;
+    private Gdk.Pixbuf? pixbuf_orig_ = null;
+    private Gdk.Pixbuf? pixbuf_inverted_ = null;
 }

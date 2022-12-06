@@ -40,7 +40,7 @@ public class MainWindow : Gtk.Window
     public ListStack stack;
 
     // Menubar is smaller, but with shadow, we reserve more space
-    public const int MENUBAR_HEIGHT = 32;
+    public const int MENUBAR_HEIGHT = 40;
 
     construct
     {
@@ -75,6 +75,8 @@ public class MainWindow : Gtk.Window
             shadow_style = "background-image: url('%s');
                             background-repeat: repeat;".printf(shadow_path);
         }
+        /* Disable the shadow image, we will use CSS instead. */
+        /*
         try
         {
             var style = new Gtk.CssProvider ();
@@ -89,6 +91,7 @@ public class MainWindow : Gtk.Window
         {
             debug ("Internal error loading menubox style: %s", e.message);
         }
+        */
         menubox.set_size_request (-1, MENUBAR_HEIGHT);
         menubox.show ();
         menualign.show ();

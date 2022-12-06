@@ -68,7 +68,6 @@ private class IndicatorMenuItem : Gtk.MenuItem
 public class MenuBar : Gtk.MenuBar
 {
     public Background? background { get; construct; default = null; }
-    public bool high_contrast { get; private set; default = false; }
     public Gtk.Window? keyboard_window { get; private set; default = null; }
     public Gtk.AccelGroup? accel_group { get; construct; }
 
@@ -83,16 +82,57 @@ public class MenuBar : Gtk.MenuBar
     {
         if (background != null)
         {
+            /* Disable background drawing to see how it changes the visuals. */
+            /*
             int x, y;
             background.translate_coordinates (this, 0, 0, out x, out y);
             c.save ();
             c.translate (x, y);
             background.draw_full (c, Background.DrawFlags.NONE);
             c.restore ();
+            */
         }
 
-        c.set_source_rgb (0.1, 0.1, 0.1);
-        c.paint_with_alpha (0.4);
+        /* Get the style and dimensions. */
+        var style_ctx = this.get_style_context ();
+
+        var w = this.get_allocated_width ();
+        var h = this.get_allocated_height ();
+
+        /* Add a group. */
+        c.push_group ();
+
+        /* Draw the background normally. */
+        style_ctx.render_background (c, 0, 0, w, h);
+
+        /* Draw the frame normally. */
+        style_ctx.render_frame (c, 0, 0, w, h);
+
+        /* Go back to the original widget. */
+        c.pop_group_to_source ();
+
+        var agsettings = new AGSettings ();
+        if (agsettings.high_contrast) {
+            /*
+             * In case the high contrast mode is enabled, do not add any
+             * transparency. While the GTK theme might define one (even though
+             * it better should not, given that we are also switching to a
+             * high contrast theme), we certainly do not want to make the look
+             * fuzzy.
+             */
+             c.paint ();
+        }
+        else {
+            /*
+             * And finally repaint it with additional transparency.
+             * Note that most GTK styles already define a transparency for OSD
+             * menus. We want to have something more transparent, but also
+             * make sure that it is not too transparent, so do not choose a
+             * value that is too low here - certainly not your desired final
+             * alpha value.
+             */
+            c.paint_with_alpha (AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA));
+        }
 
         foreach (var child in get_children ())
         {
@@ -100,6 +140,16 @@ public class MenuBar : Gtk.MenuBar
         }
 
         return false;
+    }
+
+    public static void add_style_class (Gtk.Widget widget)
+    {
+        /*
+         * Add style context class osd, which makes the widget respect the GTK
+         * style definitions for this type of elements.
+         */
+        var ctx = widget.get_style_context ();
+        ctx.add_class ("osd");
     }
 
     /* Due to LP #973922 the keyboard has to be loaded after the main window
@@ -113,33 +163,110 @@ public class MenuBar : Gtk.MenuBar
             onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
     }
 
-    private string default_theme_name;
     private List<Indicator.Object> indicator_objects;
     private Gtk.CheckMenuItem high_contrast_item;
+    private Gtk.CheckMenuItem big_font_item;
     private Pid keyboard_pid = 0;
     private Pid reader_pid = 0;
     private Gtk.CheckMenuItem onscreen_keyboard_item;
 
     construct
     {
-        Gtk.Settings.get_default ().get ("gtk-theme-name", out default_theme_name);
+        add_style_class (this);
+
+        /* Add shadow. */
+        var shadow_style = new Gtk.CssProvider ();
+        shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px #000000; }", -1);
+        this.get_style_context ().add_provider (shadow_style,
+                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         pack_direction = Gtk.PackDirection.RTL;
 
         if (AGSettings.get_boolean (AGSettings.KEY_SHOW_HOSTNAME))
         {
-            var label = new Gtk.Label (Posix.utsname ().nodename);
-            label.show ();
-            var hostname_item = new Gtk.MenuItem ();
-            hostname_item.add (label);
-            hostname_item.sensitive = false;
-            hostname_item.right_justified = true;
-            hostname_item.show ();
+            var hostname_item = new Gtk.MenuItem.with_label (Posix.utsname ().nodename);
             append (hostname_item);
+            hostname_item.show ();
 
-            /* Hack to get a label showing on the menubar */
-            var fg = label.get_style_context ().get_color (Gtk.StateFlags.NORMAL);
-            label.override_color (Gtk.StateFlags.INSENSITIVE, fg);
+            /*
+             * Even though this (menu) item is insensitive, we want its label
+             * text to have the sensitive color as to not look out of place
+             * and difficult to read.
+             *
+             * There's a really weird bug that leads to always fetch the
+             * sensitive color after the widget (menuitem in this case) has
+             * been set to insensitive once - at least in this constructor.
+             *
+             * I haven't found a way to fix that, or, for that matter, what is
+             * actually causing the issue. Even waiting on the main event loop
+             * until all events are processed didn't help.
+             *
+             * We'll work around this issue by fetching the color before
+             * setting the widget to insensitive and call it proper.
+             */
+            var insensitive_override_style = new Gtk.CssProvider ();
+
+            /*
+             * First, fetch the associated GtkStyleContext and save the state,
+             * we'll override the state later on.
+             */
+            var hostname_item_ctx = hostname_item.get_style_context ();
+            hostname_item_ctx.save ();
+
+            try {
+                /* Get the actual color. */
+                var sensitive_color = hostname_item_ctx.get_color (Gtk.StateFlags.NORMAL);
+                debug ("Directly fetched sensitive color: %s", sensitive_color.to_string ());
+
+                insensitive_override_style.load_from_data ("*:disabled { color: %s; }".printf(sensitive_color.to_string ()), -1);
+            }
+            catch (Error e)
+            {
+                debug ("Internal error loading hostname menu item text color: %s", e.message);
+            }
+            finally {
+                /*
+                 * Restore the context, which we might have changed through the
+                 * previous get_color () call.
+                 */
+                hostname_item_ctx.restore ();
+            }
+
+            try {
+                /* And finally override the insensitive color. */
+                hostname_item_ctx.add_provider (insensitive_override_style,
+                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                /*
+                 * Just overriding the color for the Gtk.MenuItem widget
+                 * doesn't help, we'll also apply it to the children.
+                 *
+                 * In theory, we could just use the get_child () method to
+                 * fetch the only child we should ever have on that widget,
+                 * namely a GtkAccelLabel, but that isn't future-proof enough,
+                 * especially if that is ever extended into having a submenu.
+                 *
+                 * Thus, iterate over all children and override the style for
+                 * all of them.
+                 */
+                if (gtk_is_container (hostname_item)) {
+                    var children = hostname_item.get_children ();
+                    foreach (Gtk.Widget element in children) {
+                        var child_ctx = element.get_style_context ();
+                        debug ("Adding override style provider to child widget %s", element.name);
+                        child_ctx.add_provider (insensitive_override_style,
+                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    }
+                }
+            }
+            catch (Error e)
+            {
+                debug ("Internal error overriding hostname menu item text color: %s", e.message);
+            }
+
+            hostname_item.set_sensitive (false);
+
+            hostname_item.set_right_justified (true);
         }
 
         /* Prevent dragging the window by the menubar */
@@ -235,7 +362,15 @@ public class MenuBar : Gtk.MenuBar
         high_contrast_item.add_accelerator ("activate", accel_group, Gdk.Key.h, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
         high_contrast_item.show ();
         submenu.append (high_contrast_item);
-        high_contrast_item.set_active (AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST));
+        var agsettings = new AGSettings ();
+        debug ("Initializing high contrast menu item to state %s", agsettings.high_contrast.to_string ());
+        high_contrast_item.set_active (agsettings.high_contrast);
+        big_font_item = new Gtk.CheckMenuItem.with_label (_("Big Font"));
+        big_font_item.toggled.connect (big_font_toggled_cb);
+        big_font_item.add_accelerator ("activate", accel_group, Gdk.Key.b, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
+        big_font_item.show ();
+        submenu.append (big_font_item);
+        big_font_item.set_active (agsettings.big_font);
         var item = new Gtk.CheckMenuItem.with_label (_("Screen Reader"));
         item.toggled.connect (screen_reader_toggled_cb);
         item.add_accelerator ("activate", accel_group, Gdk.Key.s, Gdk.ModifierType.SUPER_MASK | Gdk.ModifierType.MOD1_MASK, Gtk.AccelFlags.VISIBLE);
@@ -443,13 +578,14 @@ public class MenuBar : Gtk.MenuBar
 
     private void high_contrast_toggled_cb (Gtk.CheckMenuItem item)
     {
-        var settings = Gtk.Settings.get_default ();
-        if (item.active)
-            settings.set ("gtk-theme-name", "HighContrastInverse");
-        else
-            settings.set ("gtk-theme-name", default_theme_name);
-        high_contrast = item.active;
-        AGSettings.set_boolean (AGSettings.KEY_HIGH_CONTRAST, high_contrast);
+        var agsettings = new AGSettings ();
+        agsettings.high_contrast = item.active;
+    }
+
+    private void big_font_toggled_cb (Gtk.CheckMenuItem item)
+    {
+        var agsettings = new AGSettings ();
+        agsettings.big_font = item.active;
     }
 
     private void screen_reader_toggled_cb (Gtk.CheckMenuItem item)

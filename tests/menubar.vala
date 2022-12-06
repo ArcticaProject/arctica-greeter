@@ -19,7 +19,6 @@
 public class MenuBar : Gtk.MenuBar
 {
     public const int HEIGHT = 32;
-    public bool high_contrast { get; private set; default = false; }
 
     public MenuBar (Background bg, Gtk.AccelGroup ag)
     {
