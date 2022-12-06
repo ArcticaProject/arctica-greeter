@@ -807,6 +807,16 @@ public class ArcticaGreeter
         if (value != "")
             settings.set ("gtk-xft-rgba", value, null);
 
+        /*
+         * Keep a reference to an AGSettings instance for the whole program
+         * run, so that the SingleInstance property is working the way we'd
+         * like it to work.
+         *
+         * We want to do this before creating the actual greeter, since the
+         * latter is using AGSettings quite extensively.
+         */
+        var agsettings = new AGSettings ();
+
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
 

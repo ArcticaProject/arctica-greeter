@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2022 Mihai Moldovan <ionic@ionic.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -20,7 +21,8 @@
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  */
 
-public class AGSettings
+[SingleInstance]
+public class AGSettings : Object
 {
     public const string KEY_BACKGROUND = "background";
     public const string KEY_BACKGROUND_COLOR = "background-color";
@@ -103,6 +105,13 @@ public class AGSettings
     {
         var gsettings = new Settings (SCHEMA);
         return gsettings.set_strv (key, value);
+    }
+
+    public AGSettings ()
+    {
+    }
+
+    construct {
     }
 
     private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
