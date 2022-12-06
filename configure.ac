@@ -91,6 +91,16 @@ if test x$gtk_check_pass = xyes ; then
   AC_SUBST([AM_VALAFLAGS])
 fi
 
+dnl ###########################################################################
+dnl Check for GTK version - 4.0
+dnl ###########################################################################
+
+PKG_CHECK_MODULES(GTK_4_0, gtk4 >= 4.0.0 , gtk4_check_pass=yes, gtk4_check_pass=no)
+if test x$gtk4_check_pass = xyes ; then
+  AM_VALAFLAGS="$AM_VALAFLAGS -D HAVE_GTK_4_0"
+  AC_SUBST([AM_VALAFLAGS])
+fi
+
 dnl ##########################################################################
 dnl Remote Logon Dependencies
 dnl ##########################################################################
