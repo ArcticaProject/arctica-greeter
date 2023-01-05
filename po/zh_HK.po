@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-17 09:58+0200\n"
-"PO-Revision-Date: 2020-07-24 10:41+0000\n"
-"Last-Translator: lingcas <lingcas822@gmail.com>\n"
+"PO-Revision-Date: 2023-01-06 20:48+0000\n"
+"Last-Translator: Jack Tam <pong1217@gmail.com>\n"
 "Language-Team: Chinese (Traditional, Hong Kong) <https://hosted.weblate.org/"
 "projects/arctica-framework/greeter/zh_Hant_HK/>\n"
 "Language: zh_HK\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:298
@@ -149,11 +149,10 @@ msgstr "電子郵件地址或密碼不正確"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:553
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
-msgstr "若你有 RDP 伺服器的帳號，「遠端登入」可讓你自該伺服器執行應用程式。"
+msgstr "若你有 RDP 或 X2Go 伺服器的帳號，「遠端登入」可讓你自該伺服器執行應用程式。"
 
 #: ../src/user-list.vala:556
 msgid "Cancel"
@@ -161,43 +160,38 @@ msgstr "取消"
 
 #: ../src/user-list.vala:557
 msgid "Set Up…"
-msgstr "設置..."
+msgstr "設置…"
 
 #: ../src/user-list.vala:559
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
-msgstr "你要有 Ubuntu 遠端登入帳號才能使用此服務。想要馬上設置帳號嗎？"
+msgstr "你需要有遠端登入帳號才能使用此服務。想要馬上設置帳號嗎？"
 
 #: ../src/user-list.vala:563
 msgid "OK"
 msgstr "確定"
 
 #: ../src/user-list.vala:565
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
-msgstr ""
-"你要有 Ubuntu 遠端登入帳號才能使用此服務。請造訪 uccs.canonical.com 來設置帳"
-"號。"
+msgstr "你需要有遠端登入帳號才能使用此服務。請造訪 %s 來請求設置帳號。"
 
 #: ../src/user-list.vala:567
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
-msgstr "你要有 Ubuntu 遠端登入帳號才能使用此服務。想要馬上設置帳號嗎？"
+msgstr "你需要有遠端登入帳號才能使用此服務。請向你的系統管理員查詢。"
 
 #: ../src/user-list.vala:684
 msgid "Server type not supported."
 msgstr "伺服器類型尚未支援。"
 
 #: ../src/user-list.vala:712
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "訪客作業階段"
+msgstr "X2Go作業階段:"
 
 #: ../src/user-list.vala:732
 msgid "Domain:"
@@ -205,7 +199,7 @@ msgstr "網域："
 
 #: ../src/user-list.vala:793
 msgid "Account ID"
-msgstr ""
+msgstr "帳號"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:837
@@ -231,7 +225,7 @@ msgid "Login"
 msgstr "登入"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
 msgstr "訪客作業階段"
 
@@ -243,6 +237,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"當你登出時，所有在此作業階段所產生\n"
+"的數據將會被刪除，及回復初始設定。\n"
+"如你仍需這些文件，請保存在\n"
+"外置的裝置（例如：USB手指）。"
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -250,11 +248,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"另一種選擇是將文件保存在\n"
+"/var/guest-data文件夾。"
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Arctica 歡迎程式"
+msgstr "Arctica 歡迎程式"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
