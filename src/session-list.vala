@@ -138,6 +138,9 @@ public class SessionList : GreeterList
         case "lxde":
         case "LXDE":
             return "lxde_badge.png";
+        case "lxqt":
+        case "LXQt":
+            return "lxqt_badge.png";
         case "matchbox":
             return "matchbox_badge.png";
         case "mate":

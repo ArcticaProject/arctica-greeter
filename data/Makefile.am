@@ -44,6 +44,7 @@ dist_pkgdata_DATA = \
 	badges/fynedesk_badge.svg \
 	badges/kde_badge.png \
 	badges/lxde_badge.png \
+	badges/lxqt_badge.png \
 	badges/matchbox_badge.png \
 	badges/mate_badge.png \
 	badges/openbox_badge.png \
