@@ -121,8 +121,15 @@ public class UserList : GreeterList
         set
         {
             _default_session = value;
-            if (selected_entry != null)
-                selected_entry.set_options_image (get_badge ());
+            if (selected_entry != null) {
+                selected_entry.set_options_image (get_badge (), value);
+                foreach (var session in LightDM.get_sessions ()) {
+                    if (session.key == value) {
+                        selected_entry.set_options_image (get_badge (), session.name);
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -136,8 +143,18 @@ public class UserList : GreeterList
         set
         {
             _session = value;
-            if (selected_entry != null)
-                selected_entry.set_options_image (get_badge ());
+            if (selected_entry != null) {
+                selected_entry.set_options_image (get_badge (), value);
+                if (selected_entry != null) {
+                    selected_entry.set_options_image (get_badge (), value);
+                    foreach (var session in LightDM.get_sessions ()) {
+                        if (session.key == value) {
+                            selected_entry.set_options_image (get_badge (), session.name);
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 
