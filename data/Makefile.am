@@ -47,6 +47,7 @@ dist_pkgdata_DATA = \
 	badges/matchbox_badge.png \
 	badges/mate_badge.png \
 	badges/openbox_badge.png \
+	badges/pademelon_badge.png \
 	badges/remote_login_help.png \
 	badges/recovery_console_badge.png \
 	badges/sugar_badge.png \

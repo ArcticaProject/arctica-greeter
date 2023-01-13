@@ -144,6 +144,8 @@ public class SessionList : GreeterList
             return "mate_badge.png";
         case "openbox":
             return "openbox_badge.png";
+        case "pademelon":
+            return "pademelon_badge.png";
         case "sugar":
             return "sugar_badge.png";
         case "surf-display":
