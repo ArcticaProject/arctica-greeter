@@ -33,12 +33,15 @@ public class AGSettings : Object
     public const string KEY_THEME_NAME = "theme-name";
     public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
+    public const string KEY_CURSOR_THEME_NAME = "cursor-theme-name";
+    public const string KEY_CURSOR_THEME_SIZE = "cursor-theme-size";
     public const string KEY_FONT_NAME = "font-name";
     public const string KEY_XFT_ANTIALIAS = "xft-antialias";
     public const string KEY_XFT_DPI = "xft-dpi";
     public const string KEY_XFT_HINTSTYLE = "xft-hintstyle";
     public const string KEY_XFT_RGBA = "xft-rgba";
     public const string KEY_ONSCREEN_KEYBOARD = "onscreen-keyboard";
+    public const string KEY_ONSCREEN_KEYBOARD_LAYOUT = "onscreen-keyboard-layout";
     public const string KEY_HIGH_CONTRAST = "high-contrast";
     public const string KEY_BIG_FONT = "big-font";
     public const string KEY_SCREEN_READER = "screen-reader";

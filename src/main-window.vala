@@ -363,19 +363,26 @@ public class MainWindow : Gtk.Window
         if (stack.top () is UserList)
         {
             var user_list = stack.top () as UserList;
-            if (!user_list.show_hidden_users)
+            var shift_mask = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.MOD1_MASK;
+            var control_mask = Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK;
+            var alt_mask = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK;
+            if (((event.keyval == Gdk.Key.Shift_L || event.keyval == Gdk.Key.Shift_R) && (event.state & shift_mask) == shift_mask) ||
+                ((event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) && (event.state & control_mask) == control_mask) ||
+                ((event.keyval == Gdk.Key.Alt_L || event.keyval == Gdk.Key.Alt_R) && (event.state & alt_mask) == alt_mask))
             {
-                var shift_mask = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.MOD1_MASK;
-                var control_mask = Gdk.ModifierType.SHIFT_MASK | Gdk.ModifierType.MOD1_MASK;
-                var alt_mask = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK;
-                if (((event.keyval == Gdk.Key.Shift_L || event.keyval == Gdk.Key.Shift_R) && (event.state & shift_mask) == shift_mask) ||
-                    ((event.keyval == Gdk.Key.Control_L || event.keyval == Gdk.Key.Control_R) && (event.state & control_mask) == control_mask) ||
-                    ((event.keyval == Gdk.Key.Alt_L || event.keyval == Gdk.Key.Alt_R) && (event.state & alt_mask) == alt_mask))
-                {
-                    debug ("Hidden user key combination detected");
-                    user_list.show_hidden_users = true;
+                debug ("Hidden user key combination detected");
+                user_list.show_hidden_users = ! user_list.show_hidden_users;
+                return true;
+            }
+        }
+        else if (stack.top () is SessionList) {
+            // Session list is open
+            switch (event.keyval) {
+                case Gdk.Key.Escape:
+                case Gdk.Key.Left:
+                case Gdk.Key.KP_Left:
+                    pop_list();
                     return true;
-                }
             }
         }
 
@@ -407,16 +414,6 @@ public class MainWindow : Gtk.Window
         case Gdk.Key.KP_Down:
             if (login_box.sensitive)
                 top.scroll (GreeterList.ScrollTarget.DOWN);
-            return true;
-        case Gdk.Key.Left:
-        case Gdk.Key.KP_Left:
-            if (shutdown_dialog != null)
-                shutdown_dialog.focus_prev ();
-            return true;
-        case Gdk.Key.Right:
-        case Gdk.Key.KP_Right:
-            if (shutdown_dialog != null)
-                shutdown_dialog.focus_next ();
             return true;
         case Gdk.Key.F10:
             if (login_box.sensitive)

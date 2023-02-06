@@ -41,15 +41,19 @@ dist_pkgdata_DATA = \
 	badges/gnustep_badge.png \
 	badges/i3_badge.png \
 	badges/icewm_badge.png \
+	badges/fynedesk_badge.svg \
 	badges/kde_badge.png \
 	badges/lxde_badge.png \
+	badges/lxqt_badge.png \
 	badges/matchbox_badge.png \
 	badges/mate_badge.png \
 	badges/openbox_badge.png \
+	badges/pademelon_badge.png \
 	badges/remote_login_help.png \
 	badges/recovery_console_badge.png \
 	badges/sugar_badge.png \
 	badges/surf_badge.png \
+	badges/sway_badge.svg \
 	badges/twm_badge.png \
 	badges/ubuntu_badge.png \
 	badges/unknown_badge.png \

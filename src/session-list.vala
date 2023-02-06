@@ -131,17 +131,24 @@ public class SessionList : GreeterList
         case "i3":
         case "i3-with-shmlog":
             return "i3_badge.png";
+        case "sway":
+            return "sway_badge.svg";
         case "lightdm-xsession":
             return "xsession_badge.png";
         case "lxde":
         case "LXDE":
             return "lxde_badge.png";
+        case "lxqt":
+        case "LXQt":
+            return "lxqt_badge.png";
         case "matchbox":
             return "matchbox_badge.png";
         case "mate":
             return "mate_badge.png";
         case "openbox":
             return "openbox_badge.png";
+        case "pademelon":
+            return "pademelon_badge.png";
         case "sugar":
             return "sugar_badge.png";
         case "surf-display":
@@ -156,6 +163,8 @@ public class SessionList : GreeterList
             return "xmonad_badge.png";
         case "icewm-session":
             return "icewm_badge.png";
+        case "fynedesk":
+            return "fynedesk_badge.svg";
         case "remote-login":
             return "remote_login_help.png";
         default:

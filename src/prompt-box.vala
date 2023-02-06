@@ -385,12 +385,17 @@ public class PromptBox : FadableBox
         queue_draw ();
     }
 
-    public void set_options_image (Gdk.Pixbuf? image)
+    public void set_options_image (Gdk.Pixbuf? image, string? tooltip)
     {
         if (option_button == null)
             return;
 
         option_image.pixbuf = image;
+
+        if (tooltip == null)
+            option_image.set_tooltip_text("");
+        else
+            option_image.set_tooltip_text(tooltip);
 
         if (image == null)
             option_button.hide ();
@@ -624,6 +629,30 @@ public class PromptBox : FadableBox
         {
             entry.visibility = false;
             entry.caps_lock_warning = true;
+            entry.button_release_event.connect ((widget, event) => {
+                if (event.button == 1)
+                    show_toggle_visibility_icon (entry);
+                return false;
+            });
+            entry.key_press_event.connect ((widget, event) => {
+                switch (event.keyval) {
+                    case Gdk.Key.Left:
+                    case Gdk.Key.KP_Left:
+                    case Gdk.Key.Right:
+                    case Gdk.Key.KP_Right:
+                        show_toggle_visibility_icon (entry);
+                        return false;
+                    case Gdk.Key.F8:
+                        if (Gdk.ModifierType.MOD1_MASK in event.state) {
+                            entry.set_visibility (!entry.get_visibility ());
+                            show_toggle_visibility_icon (entry);
+                            return true;
+                        }
+                        break;
+                }
+                return base.key_press_event (event);
+            });
+            entry.icon_press.connect(entry_icon_press_cb);
         }
 
         entry.respond.connect (entry_activate_cb);
@@ -631,6 +660,22 @@ public class PromptBox : FadableBox
         attach_item (entry);
 
         return entry;
+    }
+
+    public void show_toggle_visibility_icon (Gtk.Entry entry)
+    {
+        if (entry.get_visibility ()) {
+            entry.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "view-conceal-symbolic");
+        }
+        else {
+            entry.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, "view-reveal-symbolic");
+        }
+    }
+
+    public void entry_icon_press_cb (Gtk.Entry entry, Gtk.EntryIconPosition position, Gdk.Event event)
+    {
+        entry.set_visibility (!entry.get_visibility ());
+        show_toggle_visibility_icon (entry);
     }
 
     public Gtk.ComboBox add_combo (GenericArray<string> texts, bool read_only)

@@ -720,6 +720,16 @@ public class ArcticaGreeter : Object
         }
     }
 
+    private static void enable_tap_to_click ()
+    {
+        try {
+            Process.spawn_command_line_sync("/usr/bin/arctica-greeter-enable-tap-to-click", null, null, null);
+        }
+        catch (Error e){
+            warning ("Error while enabling tap-to-click: %s", e.message);
+        }
+    }
+
     private static void activate_numlock ()
     {
         try {
@@ -897,6 +907,9 @@ public class ArcticaGreeter : Object
             }
         }
 
+        /* Enable touchpad tap-to-click */
+        enable_tap_to_click ();
+
         Gtk.init (ref args);
         Ido.init ();
 
@@ -910,14 +923,29 @@ public class ArcticaGreeter : Object
         debug ("Setting GTK+ settings");
         var settings = Gtk.Settings.get_default ();
         var value = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
-        if (value != "")
+        if (value != ""){
+            debug ("Setting GTK theme: %s", value);
             settings.set ("gtk-theme-name", value, null);
+        }
         value = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
-        if (value != "")
+        if (value != ""){
+            debug ("Setting icon theme: %s", value);
             settings.set ("gtk-icon-theme-name", value, null);
+        }
+        value = AGSettings.get_string (AGSettings.KEY_CURSOR_THEME_NAME);
+        if (value != "") {
+            debug ("Setting cursor theme: %s", value);
+            settings.set ("gtk-cursor-theme-name", value, null);
+        }
+        var int_value = AGSettings.get_integer (AGSettings.KEY_CURSOR_THEME_SIZE);
+        if (int_value != 0) {
+            debug ("Settings cursor theme size: %d", int_value);
+            settings.set ("gtk-cursor-theme-size", int_value, null);
+        }
         value = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
-        if (value != "")
+        if (value != ""){
             settings.set ("gtk-font-name", value, null);
+        }
         var double_value = AGSettings.get_double (AGSettings.KEY_XFT_DPI);
         if (double_value != 0.0)
             settings.set ("gtk-xft-dpi", (int) (1024 * double_value), null);

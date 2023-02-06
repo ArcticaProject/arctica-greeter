@@ -155,7 +155,7 @@ public abstract class GreeterList : FadableBox
             /* When we swap out a scrolling entry, make sure to hide its
              * image button, else it will appear in the tab chain. */
             if (_scrolling_entry != null)
-                _scrolling_entry.set_options_image (null);
+                _scrolling_entry.set_options_image (null, null);
             _scrolling_entry = value;
         }
     }
@@ -295,8 +295,12 @@ public abstract class GreeterList : FadableBox
         }
 
         string accessible_text = null;
-        if (selected_entry != null && selected_entry.label != null)
-            accessible_text = _("Enter password for %s").printf (selected_entry.label);
+        if (selected_entry != null && selected_entry.label != null) {
+            if (secret)
+                accessible_text = _("Enter password for %s").printf (selected_entry.label);
+            else
+                accessible_text = _("Enter your username");
+        }
         var prompt = selected_entry.add_prompt (text, accessible_text, secret);
 
         if (mode != Mode.SCROLLING)
