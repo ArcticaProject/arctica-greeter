@@ -723,7 +723,7 @@ public class ArcticaGreeter : Object
     private static void enable_tap_to_click ()
     {
         try {
-            Process.spawn_command_line_sync("/usr/bin/arctica-greeter-enable-tap-to-click", null, null, null);
+            Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-enable-tap-to-click"), null, null, null);
         }
         catch (Error e){
             warning ("Error while enabling tap-to-click: %s", e.message);
