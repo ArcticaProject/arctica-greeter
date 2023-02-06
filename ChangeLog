@@ -1,1892 +1,2208 @@
-2023-02-06 Mike Gabriel
+2021-02-05 09:16:32 +0100 Mike Gabriel
 
-        * release 0.99.2.0 (HEAD -> master)
-        * po/ie.po: Drop version number from header. (029d033)
-        * po/: Update translation file. (f79ad2b)
-        * src/arctica-greeter.vala: Fix path of helper executable
-          arctica-greeter-enable-tap-to-click. (2568a06)
-        * Merge branch 'sunweaver-pr/ports-from-slick-greeter' (0941cb7)
-        * .patches-to-be-ported-from-slick-greeter/: ToDo: check whether to
-          port this Slick Greeter patches to Arctica Greeter.
-          (5ffd6d9)
+	* release 0.99.1.5 (HEAD -> master, tag: 0.99.1.5)
 
-2021-01-10 Joshua Peisach
+2020-12-07 13:16:13 +0000 Jacque Fresco (7ac42ab)
 
-        * shutdown-dialog: margin left/right -> margin_start_end. (ea99495)
+	* Translated using Weblate (Malay)
 
-2023-02-06 Mike Gabriel
+2020-11-24 06:40:01 +0000 Jakub Fabijan (cec6722)
 
-        * Enable touchpad tap-to-click. (d30af2b)
+	* Translated using Weblate (Polish)
 
-2023-01-17 Clement Lefebvre
+2020-11-11 18:34:43 +0000 Habib Rohman (b1a0662)
 
-        * user-list: Allow hidden user visibility to be toggled. (c5f16ea)
+	* Translated using Weblate (Indonesian)
 
-2023-02-06 Mike Gabriel
+2020-10-23 21:41:13 +0000 Adolfo Jayme Barrientos (7469254)
 
-        * README.md: Provide README.md file, using Slick Greeter's README.md
-          as inspiration. (2a13e84)
+	* Translated using Weblate (Spanish)
 
-2023-01-17 Clement Lefebvre
+2020-10-23 21:37:51 +0000 Adolfo Jayme Barrientos (b128ea4)
 
-        * arctica-greeter-check-hidpi: Fix deprecations. (ed942f5)
-        * entry: Support the ability to reveal the password. (f746108)
+	* Translated using Weblate (Catalan)
 
-2023-02-06 Mike Gabriel
+2020-09-24 08:22:16 +0000 Lauri Virtanen (a33cee4)
 
-        * a11y: Make the onboard layout configurable. (3d288d3)
+	* Translated using Weblate (Finnish)
 
-2023-01-17 Clement Lefebvre
+2020-09-21 03:12:45 +0000 Kornelijus Tvarijanavičius (d40b6ae)
 
-        * keyboard navigation: Don't prevent left/right movement in
-          Gtk.Entry. (395b2ca)
+	* Translated using Weblate (Lithuanian)
 
-2023-02-06 Clement Lefebvre
+2020-09-18 13:07:06 +0000 Satnam S Virdi (e6af2c9)
 
-        * sessions: Close dialog on Escape. (74ad7ac)
+	* Translated using Weblate (Punjabi)
 
-2023-01-13 Clement Lefebvre
+2020-09-14 23:35:51 +0000 Doma Gergő (4479c15)
 
-        * sessions: Add a tooltip on the session badge. (2577b8a)
-        * badges: Add lxqt. (f026668)
-        * badges: Add pademelon. (d07a49f)
+	* Translated using Weblate (Hungarian)
 
-2023-02-06 Clement Lefebvre
+2020-09-12 21:09:13 +0000 ssantos (db07aca)
 
-        * sessions: Make the list scrollable. (6101635)
+	* Translated using Weblate (Portuguese)
 
-2023-01-13 Clement Lefebvre
+2020-09-13 17:13:03 +0000 Nathan (34d16a4)
 
-        * orca: Fix wrong a11y text for username prompt. (499274f)
+	* Translated using Weblate (French)
 
-2023-02-06 Michael Webster
+2020-09-08 06:55:46 +0000 Suraj (ad92403)
 
-        * cursor size: Use 24 as a default size instead of 0. (52aa64b)
-        * Set our own cursor theme and size internally via GtkSettings.
-          (4807300)
+	* Translated using Weblate (Malayalam)
 
-2021-01-02 Jacob
+2020-09-04 06:47:09 +0000 antuketot76 (a4e4c5f)
 
-        * Add badge for fynedesk. (d1371ed)
+	* Translated using Weblate (Malay)
 
-2019-08-05 Louis des Landes
+2020-08-27 19:47:13 +0000 Quentin PAGÈS (aecd5be)
 
-        * Add sway badge. (d7cfd53)
+	* Translated using Weblate (Occitan)
 
-2019-07-01 mwileczka
+2020-08-29 20:54:21 +0000 oo nth (4bb43cf)
 
-        * Fixed default session for manual user entry. (828cae8)
+	* Translated using Weblate (Hindi)
 
-2023-02-06 Mike Gabriel
+2020-08-23 16:07:04 +0200 Mike Gabriel (e64eafd)
 
-        * src/arctica-greeter.vala: Apply HiDPI settings after command line
-          has been parsed (so we know if we are in test-mode or
-          not). (e79bf3a)
-        * Merge remote-tracking branch
-          'gh-Ionic/feature/high-contrast-big-font' (642cbe7)
-        * src/menubar.vala: Hide the bigfont feature until it's really
-          available. (bf00dad)
+	* debian/control: The bin:pkg is a linux-any package (as we require
+          systemd at runtime).
 
-2022-12-06 Mihai Moldovan
+2020-08-23 16:00:16 +0200 Mike Gabriel (36d9d07)
 
-        * misc src/: completely rework high contrast mode, add stub for big
-          font mode. (33d2f8d)
-        * src/: add util.vala, wrapping a GTK 3 function for use within vala.
-          (131bcb9)
-        * src/toggle-box.vala: fix CSS style. (41bd371)
-        * misc src/: make ArcticaGreeter a proper vala SingleInstance class.
-          (32d28d7)
-        * src/settings.vala: make SingleInstance class. (600fbb6)
-
-2023-01-19 Dan
-
-        * Translated using Weblate (Ukrainian) (b2fac08)
-
-2023-01-18 tygyh
-
-        * Translated using Weblate (Swedish) (510c9cc)
-
-2023-01-05 Jack Tam
-
-        * Translated using Weblate (Chinese (Traditional, Hong Kong))
-          (72b0f06)
-
-2022-11-28 Mike Gabriel
-
-        * src/settings-daemon.vala: Also set rfill MSD plugin to disabled in
-          greeter. (e09a615)
-        * src/settings-daemon.vala: Use correct MSD schema names. (0199f9a)
-
-2022-10-01 Eric
-
-        * Translated using Weblate (Chinese (Simplified)) (34f82d1)
-
-2022-10-01 yangyangdaji
-
-        * Translated using Weblate (Chinese (Simplified)) (152796c)
-
-2022-10-01 yinaroh@all-mail.net
-
-        * Translated using Weblate (Chinese (Simplified)) (9c94d84)
-
-2022-10-01 Kocic W
-
-        * Translated using Weblate (Chinese (Simplified)) (55a274c)
-
-2022-10-01 yinaroh@all-mail.net
-
-        * Translated using Weblate (Chinese (Simplified)) (8549204)
-
-2022-10-01 yangyangdaji
-
-        * Translated using Weblate (Chinese (Simplified)) (e3acb1d)
-
-2022-10-01 yinaroh@all-mail.net
-
-        * Translated using Weblate (Chinese (Simplified)) (54f9134)
-
-2022-10-01 yangyangdaji
-
-        * Translated using Weblate (Chinese (Simplified)) (3a253af)
-
-2022-10-01 yinaroh@all-mail.net
-
-        * Translated using Weblate (Chinese (Simplified)) (07801a2)
-
-2022-06-27 Mike Gabriel
-
-        * src/toggle-box.vala: Port font-family-with-blanks-fix from
-          prompt-box to toggle-box. (01dc463)
-        * session-list: Add badge for IceWM. (f87d2df)
-        * src/prompt-box.vala: Use regular expression to split KEY_FONT_NAME
-          into font_family and font_size. (b49b1c1)
-        * .travis.yml: Add CI builds for Ubuntu 22.04. (aa7bb9a)
-        * .build.yml: Skip CI tests on ppc64el for now. Something seems to be
-          broken over at Travis CI regarding ppc64el. (e8aeeed)
-
-2022-06-27 Elyes HAOUAS
-
-        * po/fr_CA.po: typo fix. (bc611c2)
-
-2021-10-05 Elyes HAOUAS
-
-        * Fix some typos (727cfb9)
-
-2022-06-26 Mike Gabriel
-
-        * src/Makefile.am: Avoid duplicate double-quotes. (2a52fce)
-        * configure.ac: Show summary of build parameters at end of configure.
-          (9d12924)
-
-2022-04-21 Michael Kha
-
-        * Translated using Weblate (Burmese) (b3b79ca)
-
-2022-04-01 Mike Gabriel
-
-        * .travis.yml: Use Ubuntu focal base image for CI builds. (9bf6a77)
-        * .travis.yml: Fix docker-build script URL (default branch has been
-          renamed to 'main'). (c61117a)
-
-2022-01-24 yzqzss
-
-        * Translated using Weblate (Chinese (Simplified)) (0335568)
-
-2022-01-07 Eric
-
-        * Translated using Weblate (Chinese (Simplified)) (4c4d19d)
-
-2021-09-29 Civil 056DB
-
-        * Translated using Weblate (Urdu) (45d3e95)
-
-2021-09-27 ប៉ុកណូ រ៉ូយ៉ាល់
-
-        * Translated using Weblate (Khmer (Central)) (3999c85)
-
-2021-09-25 Ivano Peddis
-
-        * Translated using Weblate (Sardinian) (9d193f7)
-
-2021-09-07 Quentin PAGÈS
-
-        * Translated using Weblate (Occitan) (47b32de)
-
-2021-09-07 Sanaf
-
-        * Translated using Weblate (Bengali) (c61bdc3)
-
-2021-09-06 Urszula
-
-        * Translated using Weblate (Polish) (52c0d9b)
-
-2021-06-07 Mike Gabriel
-
-        * Merge branch 'ElyesH-master' (d8c5ec9)
-
-2021-04-22 Elyes HAOUAS
-
-        * Fix some typos (bf8d2e1)
-
-2021-06-07 Mike Gabriel
-
-        * .build.yml: Disable unit tests for now. They are badly maintained.
-          (a8d77c4)
-        * Travis CI: Initial CI build configuration. (8b60e3e)
-
-2021-05-27 Oymate
-
-        * Translated using Weblate (Bengali) (32dff28)
-
-2021-05-12 Mike Gabriel
-
-        * debian/control: Add B-D: lightdm (for detecting where
-          lightdm-guest-session resides). (f1aa1f3)
-
-2021-04-12 Mike Gabriel
-
-        * debian/rules: At least at build time, try to find the
-          lightdm-guest-session executable. On purpose, we have kept
-          this outside of the upstream code. (1ea38a1)
-        * data/50-arctica-greeter.conf.in: Drop long ago commented out
-          greeter-wrapper option for [Seat:*]. (7b6860d)
-        * debian/rules: Explicitly set GUEST_WRAPPER_BINARY during
-          auto_configure. (801bc4e)
-        * guest-session: Make path to lightdm-guest-session executable
-          adaptable to the lightdm package this greeter is
-          co-installed with. (000f603)
-        * debian/9<X>-arctica-greeter*.conf: Section [SeatDefaults] is now
-          [Seat:*]. (6420bcc)
-        * src/main-window.vala: Fix missing parenthesis-close in debug
-          message. (9906e2f)
-
-2021-03-16 Tummas Jóhan Sigvardsen
-
-        * Translated using Weblate (Faroese) (3bf2dd7)
-
-2021-02-22 ShahinF27
-
-        * Translated using Weblate (Azerbaijani) (e434fd8)
-
-2021-02-18 Reza Almanda
-
-        * Translated using Weblate (Indonesian) (d647efe)
-
-2021-02-08 Michalis
-
-        * Translated using Weblate (Greek) (5a58c8d)
-
-2021-02-07 Michalis
-
-        * Translated using Weblate (Greek) (de9139d)
-
-2021-02-04 Michalis
-
-        * Translated using Weblate (Greek) (8a6536c)
-
-2021-02-05 Mike Gabriel
-
-        * release 0.99.1.5 (8741776) (tag: 0.99.1.5)
-
-2020-12-07 Jacque Fresco
-
-        * Translated using Weblate (Malay) (7ac42ab)
-
-2020-11-24 Jakub Fabijan
-
-        * Translated using Weblate (Polish) (cec6722)
-
-2020-11-11 Habib Rohman
-
-        * Translated using Weblate (Indonesian) (b1a0662)
-
-2020-10-23 Adolfo Jayme Barrientos
-
-        * Translated using Weblate (Spanish) (7469254)
-        * Translated using Weblate (Catalan) (b128ea4)
-
-2020-09-24 Lauri Virtanen
-
-        * Translated using Weblate (Finnish) (a33cee4)
-
-2020-09-21 Kornelijus Tvarijanavičius
-
-        * Translated using Weblate (Lithuanian) (d40b6ae)
-
-2020-09-18 Satnam S Virdi
-
-        * Translated using Weblate (Punjabi) (e6af2c9)
-
-2020-09-14 Doma Gergő
-
-        * Translated using Weblate (Hungarian) (4479c15)
-
-2020-09-12 ssantos
-
-        * Translated using Weblate (Portuguese) (db07aca)
-
-2020-09-13 Nathan
-
-        * Translated using Weblate (French) (34d16a4)
-
-2020-09-08 Suraj
-
-        * Translated using Weblate (Malayalam) (ad92403)
-
-2020-09-04 antuketot76
-
-        * Translated using Weblate (Malay) (a4e4c5f)
-
-2020-08-27 Quentin PAGÈS
-
-        * Translated using Weblate (Occitan) (aecd5be)
-
-2020-08-29 oo nth
-
-        * Translated using Weblate (Hindi) (4bb43cf)
-
-2020-08-23 Mike Gabriel
-
-        * debian/control: The bin:pkg is a linux-any package (as we require
-          systemd at runtime). (e64eafd)
-        * Drop all distro-theming packages and dependencies and default to
+	* Drop all distro-theming packages and dependencies and default to
           Blue-Submarine GTK theme, Adwaita Icon theme and 'Sans'
-          font. (36d9d07)
+          font.
 
-2020-08-20 Satnam S Virdi
+2020-08-20 10:06:57 +0000 Satnam S Virdi (b95bf57)
 
-        * Translated using Weblate (Punjabi) (b95bf57)
+	* Translated using Weblate (Punjabi)
 
-2020-08-07 Oğuz Ersen
+2020-08-07 19:18:18 +0000 Oğuz Ersen (bd791c2)
 
-        * Translated using Weblate (Turkish) (bd791c2)
+	* Translated using Weblate (Turkish)
 
-2020-07-30 Sithu Aung
+2020-07-30 03:52:53 +0000 Sithu Aung (a6fb951)
 
-        * Translated using Weblate (Burmese) (a6fb951)
+	* Translated using Weblate (Burmese)
 
-2020-07-28 Kristjan Räts
+2020-07-28 08:11:11 +0000 Kristjan Räts (e3f879f)
 
-        * Translated using Weblate (Estonian) (e3f879f)
+	* Translated using Weblate (Estonian)
 
-2020-07-23 lingcas
+2020-07-23 10:34:30 +0000 lingcas (9bd4d4b)
 
-        * Translated using Weblate (Chinese (Traditional, Hong Kong))
-          (9bd4d4b)
+	* Translated using Weblate (Chinese (Traditional, Hong Kong))
 
-2020-07-19 ssantos
+2020-07-19 14:41:46 +0000 ssantos (d6a91f6)
 
-        * Translated using Weblate (Portuguese) (d6a91f6)
+	* Translated using Weblate (Portuguese)
 
-2020-07-14 TA
+2020-07-14 15:01:52 +0000 TA (46d63a5)
 
-        * Translated using Weblate (Indonesian) (46d63a5)
+	* Translated using Weblate (Indonesian)
 
-2020-07-08 Abdul Khan
+2020-07-08 12:17:25 +0000 Abdul Khan (7a35bbd)
 
-        * Translated using Weblate (Hindi) (7a35bbd)
+	* Translated using Weblate (Hindi)
 
-2020-06-21 CHAIWIT PHONKHEN
+2020-06-21 17:32:08 +0000 CHAIWIT PHONKHEN (c5db576)
 
-        * Translated using Weblate (Thai) (c5db576)
+	* Translated using Weblate (Thai)
 
-2020-06-18 Gaurav Kumar
+2020-06-18 04:00:28 +0000 Gaurav Kumar (d967b3f)
 
-        * Translated using Weblate (Hindi) (d967b3f)
+	* Translated using Weblate (Hindi)
 
-2020-05-30 Pratchaya Chatuphian
+2020-05-30 09:01:21 +0000 Pratchaya Chatuphian (d4cf42c)
 
-        * Translated using Weblate (Thai) (d4cf42c)
+	* Translated using Weblate (Thai)
 
-2020-05-15 RIZWAN AHMAD
+2020-05-15 01:07:19 +0000 RIZWAN AHMAD (ca2c104)
 
-        * Translated using Weblate (Hindi) (ca2c104)
+	* Translated using Weblate (Hindi)
 
-2020-05-14 Andrius Majauskas
+2020-05-14 22:31:01 +0000 Andrius Majauskas (4377379)
 
-        * Translated using Weblate (Lithuanian) (4377379)
+	* Translated using Weblate (Lithuanian)
 
-2020-05-08 Abdusalam
+2020-05-08 03:44:26 +0000 Abdusalam (27f32db)
 
-        * Translated using Weblate (Uyghur) (27f32db)
+	* Translated using Weblate (Uyghur)
 
-2020-04-03 Allan Nordhøy
+2020-04-03 17:25:53 +0000 Allan Nordhøy (d5ad59b)
 
-        * Translated using Weblate (Nepali) (d5ad59b)
+	* Translated using Weblate (Nepali)
 
-2020-03-23 Buescu Bogdan
+2020-03-23 11:44:16 +0000 Buescu Bogdan (0683b69)
 
-        * Translated using Weblate (Romanian) (0683b69)
+	* Translated using Weblate (Romanian)
 
-2020-03-17 Satnam S Virdi
+2020-03-17 16:18:58 +0000 Satnam S Virdi (5d8e67c)
 
-        * Translated using Weblate (Punjabi) (5d8e67c)
+	* Translated using Weblate (Punjabi)
 
-2020-03-13 Hemanta Sharma
+2020-03-13 09:49:10 +0000 Hemanta Sharma (a91297d)
 
-        * Translated using Weblate (Nepali) (a91297d)
+	* Translated using Weblate (Nepali)
 
-2020-03-02 พัชรพล ผาริวงศ์
+2020-03-02 17:13:50 +0000 พัชรพล ผาริวงศ์ (a87b542)
 
-        * Translated using Weblate (Thai) (a87b542)
+	* Translated using Weblate (Thai)
 
-2020-02-25 f0roots
+2020-02-25 14:38:43 +0000 f0roots (b070191)
 
-        * Translated using Weblate (Romanian) (b070191)
+	* Translated using Weblate (Romanian)
 
-2020-02-19 Michal Biesiada
+2020-02-19 17:15:47 +0000 Michal Biesiada (957d2d1)
 
-        * Translated using Weblate (Polish) (957d2d1)
+	* Translated using Weblate (Polish)
 
-2020-02-19 Nirmal Manoj C
+2020-02-19 04:18:01 +0000 Nirmal Manoj C (375f0e8)
 
-        * Translated using Weblate (Malayalam) (375f0e8)
+	* Translated using Weblate (Malayalam)
 
-2020-02-20 Mike Gabriel
+2020-02-20 13:32:33 +0100 Mike Gabriel (69708cd)
 
-        * Revert "Translated using Weblate (Latin)" (69708cd)
+	* Revert "Translated using Weblate (Latin)"
 
-2020-02-07 bughuntermert
+2020-02-07 09:55:56 +0000 bughuntermert (f55dfd6)
 
-        * Translated using Weblate (Latin) (f55dfd6)
+	* Translated using Weblate (Latin)
 
-2020-02-03 Garreciq
+2020-02-03 23:11:47 +0000 Garreciq (d23a7a4)
 
-        * Translated using Weblate (Polish) (d23a7a4)
+	* Translated using Weblate (Polish)
 
-2020-02-01 Guntitat Sawadwuthikul
+2020-02-01 15:10:10 +0000 Guntitat Sawadwuthikul (73a1190)
 
-        * Translated using Weblate (Thai) (73a1190)
+	* Translated using Weblate (Thai)
 
-2020-01-19 آراز
+2020-01-19 08:53:01 +0000 آراز (5b9c13b)
 
-        * Translated using Weblate (Persian) (5b9c13b)
+	* Translated using Weblate (Persian)
 
-2020-01-10 ihaveapiece
+2020-01-10 18:01:18 +0000 ihaveapiece (f88d2e9)
 
-        * Translated using Weblate (Persian) (f88d2e9)
+	* Translated using Weblate (Persian)
 
-2020-01-08 Manuela Silva
+2020-01-08 14:52:51 +0000 Manuela Silva (9de9396)
 
-        * Translated using Weblate (Portuguese) (9de9396)
+	* Translated using Weblate (Portuguese)
 
-2020-01-07 Jun Hyung Shin
+2020-01-07 10:10:50 +0000 Jun Hyung Shin (cf82da9)
 
-        * Translated using Weblate (Korean) (cf82da9)
+	* Translated using Weblate (Korean)
 
-2020-01-05 Prachi Joshi
+2020-01-05 18:24:21 +0000 Prachi Joshi (764e1ca)
 
-        * Translated using Weblate (Marathi) (764e1ca)
+	* Translated using Weblate (Marathi)
 
-2020-01-02 Mareks Dunkurs
+2020-01-02 01:20:13 +0000 Mareks Dunkurs (c4c61a3)
 
-        * Translated using Weblate (Latvian) (c4c61a3)
+	* Translated using Weblate (Latvian)
 
-2019-12-31 Milo Ivir
+2019-12-31 13:29:08 +0000 Milo Ivir (938542f)
 
-        * Translated using Weblate (Croatian) (938542f)
+	* Translated using Weblate (Croatian)
 
-2019-12-30 Sveinn í Felli
+2019-12-30 22:35:22 +0000 Sveinn í Felli (05829ca)
 
-        * Translated using Weblate (Icelandic) (05829ca)
+	* Translated using Weblate (Icelandic)
 
-2019-12-28 Prachi Joshi
+2019-12-28 17:44:14 +0000 Prachi Joshi (32755b8)
 
-        * Translated using Weblate (Marathi) (32755b8)
+	* Translated using Weblate (Marathi)
 
-2019-12-27 Prachi Joshi
+2019-12-27 18:11:33 +0000 Prachi Joshi (46b6800)
 
-        * Translated using Weblate (Marathi) (46b6800)
-        * Translated using Weblate (Marathi) (ff023ca)
+	* Translated using Weblate (Marathi)
 
-2019-12-21 Prachi Joshi
+2019-12-27 17:00:36 +0000 Prachi Joshi (ff023ca)
 
-        * Translated using Weblate (Marathi) (112e213)
+	* Translated using Weblate (Marathi)
 
-2019-12-02 Mike Gabriel
+2019-12-21 15:00:49 +0000 Prachi Joshi (112e213)
 
-        * release 0.99.1.4 (8b23c20) (tag: 0.99.1.4)
-        *  Fix 'Creation method of abstract class cannot be public.' in
-          GreeterList class. (28202f9)
+	* Translated using Weblate (Marathi)
 
-2019-11-28 Saroj Dhakal
+2019-12-02 22:14:06 +0100 Mike Gabriel (8b23c20)
 
-        * Translated using Weblate (Nepali) (fb7bace)
+	* release 0.99.1.4 (tag: 0.99.1.4)
 
-2019-11-13 Oto Zars
+2019-12-02 20:02:38 +0100 Mike Gabriel (28202f9)
 
-        * Translated using Weblate (Latvian) (7f09744)
+	*  Fix 'Creation method of abstract class cannot be public.' in
+          GreeterList class.
 
-2019-11-09 Tuomas Lähteenmäki
+2019-11-28 05:32:54 +0000 Saroj Dhakal (fb7bace)
 
-        * Translated using Weblate (Finnish) (57ddfd4)
+	* Translated using Weblate (Nepali)
 
-2019-11-02 Allan Nordhøy
+2019-11-13 11:23:01 +0000 Oto Zars (7f09744)
 
-        * Translated using Weblate (Albanian) (629d44f)
+	* Translated using Weblate (Latvian)
 
-2019-10-29 Arsen Shehi
+2019-11-09 07:09:28 +0000 Tuomas Lähteenmäki (57ddfd4)
 
-        * Translated using Weblate (Albanian) (7bdd512)
+	* Translated using Weblate (Finnish)
 
-2019-10-23 Mattias Münster
+2019-11-02 14:18:17 +0000 Allan Nordhøy (629d44f)
 
-        * Translated using Weblate (Swedish) (3a31d29)
+	* Translated using Weblate (Albanian)
 
-2019-10-14 ศักดิ์นรินทร์ ชาติทอง
+2019-10-29 13:40:10 +0000 Arsen Shehi (7bdd512)
 
-        * Translated using Weblate (Thai) (6147e0a)
+	* Translated using Weblate (Albanian)
 
-2019-10-10 Jennifer
+2019-10-23 14:38:15 +0000 Mattias Münster (3a31d29)
 
-        * Translated using Weblate (Dutch) (15feb99)
+	* Translated using Weblate (Swedish)
 
-2019-10-07 BennyBeat
+2019-10-14 16:40:53 +0000 ศักดิ์นรินทร์ ชาติทอง (6147e0a)
 
-        * Translated using Weblate (Catalan) (2a05006)
+	* Translated using Weblate (Thai)
 
-2019-10-04 JaewonLee0217
+2019-10-10 12:01:18 +0000 Jennifer (15feb99)
 
-        * Translated using Weblate (Korean) (1cd7183)
+	* Translated using Weblate (Dutch)
 
-2019-10-01 김상남
+2019-10-07 22:38:37 +0000 BennyBeat (2a05006)
 
-        * Translated using Weblate (Korean) (ebe04fa)
+	* Translated using Weblate (Catalan)
 
-2019-09-28 yzqzss
+2019-10-04 02:05:24 +0000 JaewonLee0217 (1cd7183)
 
-        * Translated using Weblate (Chinese (Simplified)) (a998ad4)
+	* Translated using Weblate (Korean)
 
-2019-09-28 Juri Grabowski
+2019-10-01 03:38:47 +0000 김상남 (ebe04fa)
 
-        * Translated using Weblate (Russian) (c509ed0)
+	* Translated using Weblate (Korean)
 
-2019-09-07 thami simo
+2019-09-28 08:11:25 +0000 yzqzss (a998ad4)
 
-        * Translated using Weblate (Arabic) (f7e37f4)
+	* Translated using Weblate (Chinese (Simplified))
 
-2019-08-27 Swann Martinet
+2019-09-28 11:58:20 +0000 Juri Grabowski (c509ed0)
 
-        * Translated using Weblate (English (Canada)) (e792847)
-        * Translated using Weblate (English (Australia)) (b974ee0)
+	* Translated using Weblate (Russian)
 
-2019-08-27 leela
+2019-09-07 22:13:14 +0000 thami simo (f7e37f4)
 
-        * Translated using Weblate (Uzbek) (f592d18)
+	* Translated using Weblate (Arabic)
 
-2019-08-27 Swann Martinet
+2019-08-27 02:45:20 +0000 Swann Martinet (e792847)
 
-        * Translated using Weblate (French) (d4a1d9d)
-        * Translated using Weblate (Italian) (a4f3f4e)
+	* Translated using Weblate (English (Canada))
 
-2019-08-27 leela
+2019-08-27 02:50:37 +0000 Swann Martinet (b974ee0)
 
-        * Translated using Weblate (Catalan) (692424b)
-        * Translated using Weblate (Bosnian) (362738b)
-        * Translated using Weblate (Basque) (bfd6d93)
+	* Translated using Weblate (English (Australia))
 
-2019-08-27 Swann Martinet
+2019-08-27 11:04:02 +0000 leela (f592d18)
 
-        * Translated using Weblate (German) (6cebf1f)
+	* Translated using Weblate (Uzbek)
 
-2019-08-27 leela
+2019-08-27 02:41:03 +0000 Swann Martinet (d4a1d9d)
 
-        * Translated using Weblate (Thai) (7c4ea33)
-        * Translated using Weblate (Gaelic) (536dab5)
-        * Translated using Weblate (Valencian) (af77119)
+	* Translated using Weblate (French)
 
-2019-08-25 leela
+2019-08-27 02:55:36 +0000 Swann Martinet (a4f3f4e)
 
-        * Translated using Weblate (Marathi) (6f51cf1)
+	* Translated using Weblate (Italian)
 
-2019-08-22 Swann Martinet
+2019-08-27 11:05:19 +0000 leela (692424b)
 
-        * Translated using Weblate (French (Canada)) (a38ff99)
-        * Translated using Weblate (French) (5baea11)
+	* Translated using Weblate (Catalan)
 
-2019-08-23 leela
+2019-08-27 11:01:55 +0000 leela (362738b)
 
-        * Translated using Weblate (Hindi) (5d3d996)
+	* Translated using Weblate (Bosnian)
 
-2019-08-22 Swann Martinet
+2019-08-27 11:03:25 +0000 leela (bfd6d93)
 
-        * Translated using Weblate (English (United Kingdom)) (ee12a93)
+	* Translated using Weblate (Basque)
 
-2019-08-20 Adolfo Jayme Barrientos
+2019-08-27 02:44:11 +0000 Swann Martinet (6cebf1f)
 
-        * Translated using Weblate (Spanish) (0cb5ebf)
+	* Translated using Weblate (German)
 
-2019-08-16 Elizabeth Sherrock
+2019-08-27 11:01:05 +0000 leela (7c4ea33)
 
-        * Translated using Weblate (Chinese (Simplified)) (974d88e)
+	* Translated using Weblate (Thai)
 
-2019-08-10 Sourav Jha
+2019-08-27 11:02:34 +0000 leela (536dab5)
 
-        * Translated using Weblate (Hindi) (fdb4e05)
+	* Translated using Weblate (Gaelic)
 
-2019-08-04 Matúš Baňas
+2019-08-27 11:04:40 +0000 leela (af77119)
 
-        * Translated using Weblate (Slovak) (88b01eb)
+	* Translated using Weblate (Valencian)
 
-2019-08-01 saeid porhosein
+2019-08-25 12:23:59 +0000 leela (6f51cf1)
 
-        * Translated using Weblate (Persian) (d649d26)
-        * Translated using Weblate (English (United Kingdom)) (ed86167)
+	* Translated using Weblate (Marathi)
 
-2019-07-26 yinaroh@all-mail.net
+2019-08-22 23:00:31 +0000 Swann Martinet (a38ff99)
 
-        * Translated using Weblate (Chinese (Simplified)) (ef267a7)
+	* Translated using Weblate (French (Canada))
 
-2019-07-25 Alba Kaydus
+2019-08-22 22:54:09 +0000 Swann Martinet (5baea11)
 
-        * Translated using Weblate (English (United Kingdom)) (cde6f47)
+	* Translated using Weblate (French)
 
-2019-07-22 Pierre Soubourou
+2019-08-23 01:46:32 +0000 leela (5d3d996)
 
-        * Translated using Weblate (Esperanto) (5f9b0fa)
+	* Translated using Weblate (Hindi)
 
-2019-07-25 Alba Kaydus
+2019-08-22 23:20:11 +0000 Swann Martinet (ee12a93)
 
-        * Translated using Weblate (Filipino) (983f6b7)
+	* Translated using Weblate (English (United Kingdom))
 
-2019-07-21 Pierre Soubourou
+2019-08-20 12:51:00 +0000 Adolfo Jayme Barrientos (0cb5ebf)
 
-        * Translated using Weblate (Esperanto) (61ea955)
+	* Translated using Weblate (Spanish)
 
-2019-07-14 Ryo Nakano
+2019-08-16 15:37:44 +0000 Elizabeth Sherrock (974d88e)
 
-        * Translated using Weblate (Japanese) (80d67d4)
+	* Translated using Weblate (Chinese (Simplified))
 
-2019-07-09 Ali Avcı
+2019-08-10 06:56:21 +0000 Sourav Jha (fdb4e05)
 
-        * Translated using Weblate (Turkish) (17d7e9f)
+	* Translated using Weblate (Hindi)
 
-2019-07-01 Elizabeth Sherrock
+2019-08-04 11:28:10 +0000 Matúš Baňas (88b01eb)
 
-        * Translated using Weblate (Chinese (Simplified)) (63042b4)
+	* Translated using Weblate (Slovak)
 
-2019-06-05 Nader Jafari
+2019-08-01 14:55:51 +0000 saeid porhosein (d649d26)
 
-        * Translated using Weblate (Persian) (84a1d45)
+	* Translated using Weblate (Persian)
 
-2019-06-11 Lucas Ayala
+2019-08-01 15:00:28 +0000 saeid porhosein (ed86167)
 
-        * Translated using Weblate (Spanish) (797d81f)
+	* Translated using Weblate (English (United Kingdom))
 
-2019-06-05 Sveinn í Felli
+2019-07-26 15:12:42 +0000 yinaroh@all-mail.net (ef267a7)
 
-        * Translated using Weblate (Icelandic) (77b8ed1)
+	* Translated using Weblate (Chinese (Simplified))
 
-2019-05-21 THANOS SIOURDAKIS
+2019-07-25 19:57:17 +0000 Alba Kaydus (cde6f47)
 
-        * Translated using Weblate (Greek) (ad0e7fa)
+	* Translated using Weblate (English (United Kingdom))
 
-2019-05-14 John Rey Basilio
+2019-07-22 21:21:07 +0000 Pierre Soubourou (5f9b0fa)
 
-        * Translated using Weblate (Filipino) (35532bf)
+	* Translated using Weblate (Esperanto)
 
-2019-04-28 gvlfm78
+2019-07-25 19:27:12 +0000 Alba Kaydus (983f6b7)
 
-        * Translated using Weblate (Italian) (0e872f2)
+	* Translated using Weblate (Filipino)
 
-2019-04-26 Syahmin Sukhairi
+2019-07-21 16:34:14 +0000 Pierre Soubourou (61ea955)
 
-        * Translated using Weblate (Indonesian) (cad5644)
+	* Translated using Weblate (Esperanto)
 
-2019-04-19 Rui Mendes
+2019-07-14 13:54:26 +0000 Ryo Nakano (80d67d4)
 
-        * Translated using Weblate (Portuguese (Brazil)) (86d2d37)
-        * Translated using Weblate (Portuguese) (0e228e3)
+	* Translated using Weblate (Japanese)
 
-2019-04-17 Jos Wolfkamp
+2019-07-09 13:46:37 +0000 Ali Avcı (17d7e9f)
 
-        * Translated using Weblate (Dutch) (540f8a2)
+	* Translated using Weblate (Turkish)
 
-2019-03-17 Mike Gabriel
+2019-07-01 19:15:18 +0000 Elizabeth Sherrock (63042b4)
 
-        * release 0.99.1.3 (fb57bc0) (tag: 0.99.1.3)
+	* Translated using Weblate (Chinese (Simplified))
 
-2019-03-04 Pierluigi Ghinello
+2019-06-05 07:43:13 +0000 Nader Jafari (84a1d45)
 
-        * Translated using Weblate (Italian) (b25b6f2)
+	* Translated using Weblate (Persian)
 
-2019-02-24 Yaron Shahrabani
+2019-06-11 20:28:28 +0000 Lucas Ayala (797d81f)
 
-        * Translated using Weblate (Hebrew) (5ba0434)
+	* Translated using Weblate (Spanish)
 
-2019-02-23 Doma Gergő
+2019-06-05 18:41:11 +0000 Sveinn í Felli (77b8ed1)
 
-        * Translated using Weblate (Hungarian) (8341e2d)
+	* Translated using Weblate (Icelandic)
 
-2019-02-19 Sandra M
+2019-05-21 11:52:51 +0000 THANOS SIOURDAKIS (ad0e7fa)
 
-        * Translated using Weblate (Valencian) (9e3d9a7)
+	* Translated using Weblate (Greek)
 
-2019-03-17 Mike Gabriel
+2019-05-14 17:50:21 +0000 John Rey Basilio (35532bf)
 
-        * update NEWS for 0.99.1.2 (we obviously forgot that...) (687a823)
-        * release 0.99.1.2 (2d9cdd0) (tag: 0.99.1.2)
-        * src/arctica-greeter.vala: Use set_decorated(false) on main_window,
+	* Translated using Weblate (Filipino)
+
+2019-04-28 12:30:35 +0000 gvlfm78 (0e872f2)
+
+	* Translated using Weblate (Italian)
+
+2019-04-26 07:17:37 +0000 Syahmin Sukhairi (cad5644)
+
+	* Translated using Weblate (Indonesian)
+
+2019-04-19 20:56:16 +0000 Rui Mendes (86d2d37)
+
+	* Translated using Weblate (Portuguese (Brazil))
+
+2019-04-19 20:53:25 +0000 Rui Mendes (0e228e3)
+
+	* Translated using Weblate (Portuguese)
+
+2019-04-17 21:26:15 +0000 Jos Wolfkamp (540f8a2)
+
+	* Translated using Weblate (Dutch)
+
+2019-03-17 21:23:02 +0100 Mike Gabriel (fb57bc0)
+
+	* release 0.99.1.3 (tag: 0.99.1.3)
+
+2019-03-04 00:56:26 +0000 Pierluigi Ghinello (b25b6f2)
+
+	* Translated using Weblate (Italian)
+
+2019-02-24 08:52:01 +0000 Yaron Shahrabani (5ba0434)
+
+	* Translated using Weblate (Hebrew)
+
+2019-02-23 07:09:04 +0000 Doma Gergő (8341e2d)
+
+	* Translated using Weblate (Hungarian)
+
+2019-02-19 22:30:41 +0000 Sandra M (9e3d9a7)
+
+	* Translated using Weblate (Valencian)
+
+2019-03-17 21:15:49 +0100 Mike Gabriel (687a823)
+
+	* update NEWS for 0.99.1.2 (we obviously forgot that...)
+
+2019-03-17 21:06:05 +0100 Mike Gabriel (2d9cdd0)
+
+	* release 0.99.1.2 (tag: 0.99.1.2)
+
+2019-03-17 19:09:09 +0100 Mike Gabriel (fbced2e)
+
+	* src/arctica-greeter.vala: Use set_decorated(false) on main_window,
           rather than fullscreen(). With fullscreen() Arctica
           Greeter's main window gets only shown on the primary
           monitor and one cannot let the login box follow the
-          pointing device to the active monitor anymore. (fbced2e)
-        *
+          pointing device to the active monitor anymore.
+
+2019-03-17 18:19:09 +0100 Mike Gabriel (3319cd2)
+
+	*
           debian/30_arctica-greeter-theme-debian-futureprototype.gschema.override:
-          Fix typo in SVG background image path. (3319cd2)
-        * Remove mlockall. (7aab296)
-        * Merge branch 'jbicha-vala44' (2a09380)
+          Fix typo in SVG background image path.
 
-2019-03-06 Rico Tzschichholz
+2019-03-17 17:25:37 +0100 Mike Gabriel (7aab296)
 
-        * Fix build with vala 0.44 (88f6c01)
+	* Remove mlockall.
 
-2019-02-14 Mike Gabriel
+2019-03-17 17:16:28 +0100 Mike Gabriel (2a09380)
 
-        * debian/*.gschema.override: Use <desktop-theme>/login/background.svg
+	* Merge branch 'jbicha-vala44'
+
+2019-03-06 13:41:20 -0500 Rico Tzschichholz (88f6c01)
+
+	* Fix build with vala 0.44
+
+2019-02-14 16:47:16 +0100 Mike Gabriel (88df37b)
+
+	* debian/*.gschema.override: Use <desktop-theme>/login/background.svg
           as background image. Works on stretch and buster alike.
-          (88df37b)
 
-2019-02-12 Mike Gabriel
+2019-02-12 23:19:53 +0100 Mike Gabriel (50ee97a)
 
-        * debian/control: Typo fix in LONG_DESCRIPTION. Spotted by Thomas
-          Vincent. (50ee97a)
+	* debian/control: Typo fix in LONG_DESCRIPTION. Spotted by Thomas
+          Vincent.
 
-2019-02-06 Mike Gabriel
+2019-02-06 11:08:45 +0100 Mike Gabriel (37571f3)
 
-        * release 0.99.1.1 (37571f3) (tag: 0.99.1.1)
-        * update NEWS for 0.99.1.0 (we obviously forgot that...) (900dcfb)
+	* release 0.99.1.1 (tag: 0.99.1.1)
 
-2019-01-26 ssantos
+2019-02-06 11:02:38 +0100 Mike Gabriel (900dcfb)
 
-        * Translated using Weblate (Portuguese) (97fc865)
+	* update NEWS for 0.99.1.0 (we obviously forgot that...)
 
-2019-01-11 Louies
+2019-01-26 08:36:00 +0000 ssantos (97fc865)
 
-        * Translated using Weblate (Chinese (Traditional)) (7b8f0f2)
+	* Translated using Weblate (Portuguese)
 
-2018-12-25 Yadhesh Assassin
+2019-01-11 16:13:31 +0000 Louies (7b8f0f2)
 
-        * Translated using Weblate (Tamil) (9bdd327)
+	* Translated using Weblate (Chinese (Traditional))
 
-2018-12-11 xhesikab
+2018-12-25 07:39:29 +0000 Yadhesh Assassin (9bdd327)
 
-        * Translated using Weblate (Albanian) (cc33c95)
+	* Translated using Weblate (Tamil)
 
-2018-12-02 Ryo Nakano
+2018-12-11 04:24:14 +0000 xhesikab (cc33c95)
 
-        * Translated using Weblate (Japanese) (bdf931c)
+	* Translated using Weblate (Albanian)
 
-2018-11-22 ssantos
+2018-12-02 07:34:26 +0000 Ryo Nakano (bdf931c)
 
-        * Translated using Weblate (Portuguese) (5f9e664)
+	* Translated using Weblate (Japanese)
 
-2018-11-23 Ryo Nakano
+2018-11-22 20:15:41 +0000 ssantos (5f9e664)
 
-        * Translated using Weblate (Japanese) (54ad9db)
+	* Translated using Weblate (Portuguese)
 
-2018-11-15 Oto Zars
+2018-11-23 12:20:36 +0000 Ryo Nakano (54ad9db)
 
-        * Translated using Weblate (Latvian) (3e378ad)
+	* Translated using Weblate (Japanese)
 
-2018-11-13 Ryo Nakano
+2018-11-15 12:26:51 +0000 Oto Zars (3e378ad)
 
-        * Translated using Weblate (Japanese) (6cff804)
+	* Translated using Weblate (Latvian)
 
-2018-11-12 rt
+2018-11-13 11:00:00 +0000 Ryo Nakano (6cff804)
 
-        * Translated using Weblate (Japanese) (fbf6bd5)
+	* Translated using Weblate (Japanese)
 
-2018-11-03 Kamen
+2018-11-12 12:44:18 +0000 rt (fbf6bd5)
 
-        * Translated using Weblate (Bulgarian) (c27ca56)
+	* Translated using Weblate (Japanese)
 
-2018-10-03 scootergrisen
+2018-11-03 17:02:04 +0000 Kamen (c27ca56)
 
-        * Translated using Weblate (Danish) (2aa6dc4)
+	* Translated using Weblate (Bulgarian)
 
-2018-10-01 Kristoffer Grundström
+2018-10-03 11:57:05 +0000 scootergrisen (2aa6dc4)
 
-        * Translated using Weblate (Swedish) (8bc3cb7)
+	* Translated using Weblate (Danish)
 
-2018-09-27 Володимир Бриняк
+2018-10-01 00:58:23 +0000 Kristoffer Grundström (8bc3cb7)
 
-        * Translated using Weblate (Ukrainian) (e6a07d4)
+	* Translated using Weblate (Swedish)
 
-2018-09-25 A BOUZINAC
+2018-09-27 12:58:20 +0000 Володимир Бриняк (e6a07d4)
 
-        * Translated using Weblate (French) (2d271a7)
+	* Translated using Weblate (Ukrainian)
 
-2018-09-23 Himanshu Awasthi
+2018-09-25 20:47:09 +0000 A BOUZINAC (2d271a7)
 
-        * Translated using Weblate (Hindi) (d25e979)
+	* Translated using Weblate (French)
 
-2019-02-06 Mike Gabriel
+2018-09-23 20:04:47 +0000 Himanshu Awasthi (d25e979)
 
-        * Debian artwork: Move Debian logos into separate bin:pkgs. (d2339d9)
-        * debian/arctica-greeter-theme-debian.install: Drop logo file. No
+	* Translated using Weblate (Hindi)
+
+2019-02-06 10:50:43 +0100 Mike Gabriel (d2339d9)
+
+	* Debian artwork: Move Debian logos into separate bin:pkgs.
+
+2019-02-06 10:22:23 +0100 Mike Gabriel (a6bc3d4)
+
+	* debian/arctica-greeter-theme-debian.install: Drop logo file. No
           more logo when the generic active theme from Debian gets
-          used. (a6bc3d4)
-        * debian/rules: Switch to dh_missing override for --fail-missing
-          post-install check. (30a05b6)
-        * Debian artwork: Provide two new bin:pkgs: Debian 9 Themes
+          used.
+
+2019-02-06 10:20:45 +0100 Mike Gabriel (30a05b6)
+
+	* debian/rules: Switch to dh_missing override for --fail-missing
+          post-install check.
+
+2019-02-06 10:16:38 +0100 Mike Gabriel (b22daed)
+
+	* Debian artwork: Provide two new bin:pkgs: Debian 9 Themes
           (softwaves) and Debian 10 Themes (futurePrototype). The
           default Debian theme will use the Debian system's active
-          theme. (b22daed)
+          theme.
 
-2019-01-23 Mike Gabriel
+2019-01-23 12:20:42 +0100 Mike Gabriel (cbe181c)
 
-        * GSchema: Prepend a two-digit number to the override name of
-          arctica-greeter-theme-ubuntumate. (cbe181c)
-        * GSchema: Prepend a two-digit number to the override name of
-          arctica-greeter-theme-debian. (b917f0f)
+	* GSchema: Prepend a two-digit number to the override name of
+          arctica-greeter-theme-ubuntumate.
 
-2018-11-26 Cobinja
+2019-01-23 12:19:10 +0100 Mike Gabriel (b917f0f)
 
-        * Fix background if image file is not readable. (96fc2ca)
+	* GSchema: Prepend a two-digit number to the override name of
+          arctica-greeter-theme-debian.
 
-2018-11-26 Mike Gabriel
+2018-11-26 13:37:46 +0100 Cobinja (96fc2ca)
 
-        * arctica-greeter-theme-ubuntumate: Add theme for Ubuntu MATE (cave:
-          not installable on Debian). (ad14c13)
+	* Fix background if image file is not readable.
 
-2018-11-19 Mike Gabriel
+2018-11-26 13:33:06 +0100 Mike Gabriel (ad14c13)
 
-        * debian/control: Update B-R libayatana-ido3-0.4-dev ->
-          libayatana-ido3-dev. (909a90a)
+	* arctica-greeter-theme-ubuntumate: Add theme for Ubuntu MATE (cave:
+          not installable on Debian).
 
-2018-09-11 Mike Gabriel
+2018-11-19 12:47:02 +0100 Mike Gabriel (909a90a)
 
-        * Translated using Weblate (German) (0771250)
+	* debian/control: Update B-R libayatana-ido3-0.4-dev ->
+          libayatana-ido3-dev.
 
-2018-09-06 mohsen sorny
+2018-09-11 18:26:32 +0000 Mike Gabriel (0771250)
 
-        * Translated using Weblate (Persian) (bbb6f88)
+	* Translated using Weblate (German)
 
-2018-09-05 mohamad farid
+2018-09-06 20:18:47 +0000 mohsen sorny (bbb6f88)
 
-        * Translated using Weblate (Malay) (b4284cc)
+	* Translated using Weblate (Persian)
 
-2018-08-31 Yaron Shahrabani
+2018-09-05 04:13:03 +0000 mohamad farid (b4284cc)
 
-        * Translated using Weblate (Hebrew) (e2095b3)
+	* Translated using Weblate (Malay)
 
-2018-08-29 WaldiS
+2018-08-31 12:12:28 +0000 Yaron Shahrabani (e2095b3)
 
-        * Translated using Weblate (Polish) (135b12d)
+	* Translated using Weblate (Hebrew)
 
-2018-08-28 Allan Nordhøy
+2018-08-29 21:29:40 +0000 WaldiS (135b12d)
 
-        * Translated using Weblate (Norwegian Bokmål) (ad4e62d)
+	* Translated using Weblate (Polish)
 
-2018-08-23 Viktar Vauchkevich
+2018-08-28 13:33:12 +0000 Allan Nordhøy (ad4e62d)
 
-        * Translated using Weblate (Belarusian) (ef04927)
+	* Translated using Weblate (Norwegian Bokmål)
 
-2018-08-22 Kristjan Räts
+2018-08-23 20:53:53 +0000 Viktar Vauchkevich (ef04927)
 
-        * Translated using Weblate (Estonian) (da364e3)
+	* Translated using Weblate (Belarusian)
 
-2018-08-18 OIS
+2018-08-22 04:23:05 +0000 Kristjan Räts (da364e3)
 
-        * Translated using Weblate (Occidental) (fdb8c84)
-        * Translated using Weblate (Russian) (bcf54c8)
+	* Translated using Weblate (Estonian)
 
-2018-09-06 Mike Gabriel
+2018-08-18 08:48:26 +0000 OIS (fdb8c84)
 
-        * src/background.vala: Fix for previous commit. Vala needs a bool
-          expression in if-clauses. (4d0870b)
+	* Translated using Weblate (Occidental)
 
-2018-08-22 Mike Gabriel
+2018-08-18 09:12:50 +0000 OIS (bcf54c8)
 
-        * src/background.vala: Fix FTBFS against Vala 0.42. This introduces a
+	* Translated using Weblate (Russian)
+
+2018-09-06 08:00:46 +0200 Mike Gabriel (4d0870b)
+
+	* src/background.vala: Fix for previous commit. Vala needs a bool
+          expression in if-clauses.
+
+2018-08-22 12:40:41 +0200 Mike Gabriel (db7f409)
+
+	* src/background.vala: Fix FTBFS against Vala 0.42. This introduces a
           slight behaviour change compared to the previous version,
-          but actually in a direction we want it to be. (db7f409)
+          but actually in a direction we want it to be.
 
-2018-08-17 Mike Gabriel
+2018-08-17 08:05:31 +0000 Mike Gabriel (be4ea18)
 
-        * Translated using Weblate (German) (be4ea18)
-        * translations: Update translation files. (27e46fc)
-        * translations: Add Occidental (ie) language as requested by OIS on
-          Weblate. (7446652)
+	* Translated using Weblate (German)
 
-2018-08-09 deebeepea
+2018-08-17 09:59:49 +0200 Mike Gabriel (27e46fc)
 
-        * Translated using Weblate (Filipino) (58d308e)
+	* translations: Update translation files.
 
-2018-08-08 Filip Hron
+2018-08-17 09:58:13 +0200 Mike Gabriel (7446652)
 
-        * Translated using Weblate (Czech) (c0ad68e)
+	* translations: Add Occidental (ie) language as requested by OIS on
+          Weblate.
 
-2018-08-08 Dharmendra
+2018-08-09 04:48:21 +0000 deebeepea (58d308e)
 
-        * Translated using Weblate (Gujarati) (1988c9c)
+	* Translated using Weblate (Filipino)
 
-2018-07-19 Dovydas Jakas
+2018-08-08 19:42:59 +0000 Filip Hron (c0ad68e)
 
-        * Translated using Weblate (Lithuanian) (2431ea1)
-        * Translated using Weblate (Lithuanian) (2c1e18e)
+	* Translated using Weblate (Czech)
 
-2018-07-10 Srichon Buntarigwong
+2018-08-08 16:38:31 +0000 Dharmendra (1988c9c)
 
-        * Translated using Weblate (Thai) (fecfed1)
+	* Translated using Weblate (Gujarati)
 
-2018-06-29 kong
+2018-07-19 13:47:03 +0000 Dovydas Jakas (2431ea1)
 
-        * Translated using Weblate (Thai) (fc915fa)
+	* Translated using Weblate (Lithuanian)
 
-2018-06-17 Calin Sopterean
+2018-07-19 13:42:46 +0000 Dovydas Jakas (2c1e18e)
 
-        * Translated using Weblate (Romanian) (c780d95)
+	* Translated using Weblate (Lithuanian)
 
-2018-06-18 Doma Gergő
+2018-07-10 15:26:26 +0000 Srichon Buntarigwong (fecfed1)
 
-        * Translated using Weblate (Magyar) (5a3edd5)
+	* Translated using Weblate (Thai)
 
-2018-06-12 whr
+2018-06-29 07:50:57 +0000 kong (fc915fa)
 
-        * Translated using Weblate (Chinese (Simplified)) (d4d1c40)
+	* Translated using Weblate (Thai)
 
-2018-06-11 Ilyas Bakirov
+2018-06-17 22:40:46 +0000 Calin Sopterean (c780d95)
 
-        * Translated using Weblate (Kyrgyz) (f83eba6)
+	* Translated using Weblate (Romanian)
 
-2018-06-07 ۋولقان
+2018-06-18 06:23:34 +0000 Doma Gergő (5a3edd5)
 
-        * Translated using Weblate (Uyghur) (ea6df0e)
+	* Translated using Weblate (Magyar)
 
-2018-06-07 Nureli
+2018-06-12 13:20:26 +0000 whr (d4d1c40)
 
-        * Translated using Weblate (Uyghur) (41bbe5d)
+	* Translated using Weblate (Chinese (Simplified))
 
-2018-05-30 Aashish Chenna
+2018-06-11 16:43:04 +0000 Ilyas Bakirov (f83eba6)
 
-        * Translated using Weblate (Telugu) (93be2e3)
+	* Translated using Weblate (Kyrgyz)
 
-2018-05-29 Aashish Chenna
+2018-06-07 01:17:52 +0000 ۋولقان (ea6df0e)
 
-        * Translated using Weblate (Telugu) (22f02b3)
+	* Translated using Weblate (Uyghur)
 
-2018-05-25 Jacky Blois
+2018-06-07 00:51:43 +0000 Nureli (41bbe5d)
 
-        * Translated using Weblate (French) (7ab88fa)
+	* Translated using Weblate (Uyghur)
 
-2018-05-17 Nicola Lombardi
+2018-05-30 19:43:41 +0000 Aashish Chenna (93be2e3)
 
-        * Translated using Weblate (Italian) (b96ea76)
-        * Translated using Weblate (Italian) (50f94e1)
+	* Translated using Weblate (Telugu)
 
-2018-05-10 Gayathri Das
+2018-05-29 17:20:07 +0000 Aashish Chenna (22f02b3)
 
-        * Translated using Weblate (Hindi) (30c8dd6)
+	* Translated using Weblate (Telugu)
 
-2018-04-27 antuketot76
+2018-05-25 14:12:13 +0000 Jacky Blois (7ab88fa)
 
-        * Translated using Weblate (Malay) (c85bde6)
-        * Translated using Weblate (Malay) (192a56c)
+	* Translated using Weblate (French)
 
-2018-06-21 Mike Gabriel
+2018-05-17 21:52:13 +0000 Nicola Lombardi (b96ea76)
 
-        * Posix.Signal.<SIG>: Provide old-style Posix.SIG<SIG> API calls if
+	* Translated using Weblate (Italian)
+
+2018-05-17 21:44:58 +0000 Nicola Lombardi (50f94e1)
+
+	* Translated using Weblate (Italian)
+
+2018-05-10 21:54:34 +0000 Gayathri Das (30c8dd6)
+
+	* Translated using Weblate (Hindi)
+
+2018-04-27 22:45:21 +0000 antuketot76 (c85bde6)
+
+	* Translated using Weblate (Malay)
+
+2018-04-27 22:27:39 +0000 antuketot76 (192a56c)
+
+	* Translated using Weblate (Malay)
+
+2018-06-21 13:34:50 +0000 Mike Gabriel (b64aabd)
+
+	* Posix.Signal.<SIG>: Provide old-style Posix.SIG<SIG> API calls if
           built with Vala API version << 0.40. (Fixes FTBFS on
-          Debian 9). (b64aabd)
+          Debian 9).
 
-2018-06-16 Mike Gabriel
+2018-06-16 23:35:22 +0200 Mike Gabriel (b12c6d9)
 
-        * Use Posix.Signal.* rather than Posix.SIG*. (Vala 0.40
-          deprecations). (b12c6d9)
+	* Use Posix.Signal.* rather than Posix.SIG*. (Vala 0.40
+          deprecations).
 
-2018-06-16 Cobinja
+2018-06-16 22:36:15 +0200 Cobinja (d1caee5)
 
-        * Add option to show GUI on a specific monitor (d1caee5)
+	* Add option to show GUI on a specific monitor
 
-2018-06-16 Victor Kareh
+2018-06-16 22:25:26 +0200 Victor Kareh (85ec476)
 
-        * arctica-greeter-check-hidpi: Fix HiDPI auto-detection. (85ec476)
+	* arctica-greeter-check-hidpi: Fix HiDPI auto-detection.
 
-2018-06-16 Mike Gabriel
+2018-06-16 22:24:39 +0200 Mike Gabriel (cc72215)
 
-        * debian/control: Add D: marco. (cc72215)
-        * src/arctica-greeter.vala: Have MATE's marco WM as window manager
+	* debian/control: Add D: marco.
+
+2018-06-16 20:22:13 +0200 Mike Gabriel (9b3526d)
+
+	* src/arctica-greeter.vala: Have MATE's marco WM as window manager
           for Arctica Greeter. Makes handling windows opened via
-          some of the indicators much more organic. (9b3526d)
+          some of the indicators much more organic.
 
-2018-05-11 Mike Gabriel
+2018-05-11 20:43:15 +0200 Mike Gabriel (606273e)
 
-        * src/user-list.vala: Rename gsettings key remote-service-fqdn to
+	* src/user-list.vala: Rename gsettings key remote-service-fqdn to
           remote-service-configure-uri. Support an empty string as
           value and show a more intelligent message if it's empty.
-          (606273e)
-        * Remote Logon configuration support: session name is now
-          "remoteconfigure". (b54ac1c)
 
-2018-05-08 Mike Gabriel
+2018-05-11 16:48:38 +0200 Mike Gabriel (b54ac1c)
 
-        * user-list.vala: fix missing parentheses from previous commits
-          (f9c678d)
-        * src/user-list.vala: Rephrase username field text to "Account ID"
-          (can be email or user name). (411bbb6)
-        * src/user-list.vala: Hide "Set up..." button, if uccsconfigure is a
-          non-supported remote login session. (a27d1f0)
-        * src/user-list.vala: Mention X2Go in remote logon help / setup hint.
-          (6ad8446)
+	* Remote Logon configuration support: session name is now
+          "remoteconfigure".
 
-2018-05-07 Mike Gabriel
+2018-05-08 23:38:30 +0200 Mike Gabriel (f9c678d)
 
-        * release 0.99.1.0 (97e48ff) (tag: 0.99.1.0)
-        * arctica-greeter-guest-account-script.in: Copy site guest session
+	* user-list.vala: fix missing parentheses from previous commits
+
+2018-05-08 09:21:55 +0200 Mike Gabriel (411bbb6)
+
+	* src/user-list.vala: Rephrase username field text to "Account ID"
+          (can be email or user name).
+
+2018-05-08 09:15:31 +0200 Mike Gabriel (a27d1f0)
+
+	* src/user-list.vala: Hide "Set up..." button, if uccsconfigure is a
+          non-supported remote login session.
+
+2018-05-08 09:09:29 +0200 Mike Gabriel (6ad8446)
+
+	* src/user-list.vala: Mention X2Go in remote logon help / setup hint.
+
+2018-05-07 15:45:15 +0200 Mike Gabriel (97e48ff)
+
+	* release 0.99.1.0 (tag: 0.99.1.0)
+
+2018-05-07 11:35:47 +0200 Mike Gabriel (da0cd95)
+
+	* arctica-greeter-guest-account-script.in: Copy site guest session
           skel over dist guest session skel, so that the site admin
           is in fact able to override some settings in the dist
-          skeleton that we provide. (da0cd95)
+          skeleton that we provide.
 
-2018-05-06 Mike Gabriel
+2018-05-06 01:39:57 +0200 Mike Gabriel (3cd3dd0)
 
-        * src/user-list.vala: Add debugging to remote_login PAM prompt
-          responding. (3cd3dd0)
+	* src/user-list.vala: Add debugging to remote_login PAM prompt
+          responding.
 
-2018-05-04 Mike Gabriel
+2018-05-04 22:14:00 +0200 Mike Gabriel (879b9e6)
 
-        * src/user-list.vala: Obtain PAM_FREERDP2 prompts from public API in
-          security/pam-freerdp2.h. (879b9e6)
-        * src/user-list.vala: Obtain PAM_X2GO prompts from public API in
-          security/pam.x2go.h. (eed9d64)
-        * src/user-list.vala: Follow-up fix for previous commit. (9ff8e09)
-        * Use RLS/pam_x2go.so API v5. The PAM prompt now queries "remote
-          command:", not "x2gosession:". (91b8cbd)
+	* src/user-list.vala: Obtain PAM_FREERDP2 prompts from public API in
+          security/pam-freerdp2.h.
 
-2018-04-16 Mike Gabriel
+2018-05-04 15:25:46 +0200 Mike Gabriel (eed9d64)
 
-        * debian/control: Drop from B-D: libgnome-desktop-3-dev. Not needed.
-          (df4800a)
+	* src/user-list.vala: Obtain PAM_X2GO prompts from public API in
+          security/pam.x2go.h.
 
-2018-03-15 Björn Esser
+2018-05-04 14:02:18 +0200 Mike Gabriel (9ff8e09)
 
-        * main-window: Calculate the really needed screen size properly
-          (897df0e)
+	* src/user-list.vala: Follow-up fix for previous commit.
 
-2018-03-16 Mike Gabriel
+2018-05-04 13:02:19 +0200 Mike Gabriel (91b8cbd)
 
-        * release 0.99.0.4 (cfec4f6) (tag: 0.99.0.4)
-        * src/arctica-greeter.vala: Trigger UPower activation when greeter
-          starts. (8aba383)
-        * HiDPI: Do not enable it in test-mode. (76f2e65)
-        * debian/*.install: Correctly install the guest session script man
-          page into the guest session bin:pkg. (9e025f2)
-        * Port HiDPI support from slick-greeter. (7ddfa06)
-        * src/{user-list.vala,user-prompt-box.vala}: Fix segfault in newly
-          introduced debug message. (48db8ca)
+	* Use RLS/pam_x2go.so API v5. The PAM prompt now queries "remote
+          command:", not "x2gosession:".
 
-2018-03-15 Robert Ancell
+2018-04-16 16:29:55 +0200 Mike Gabriel (df4800a)
 
-        * Use Ubuntu logo for Unity session (has no since no longer Ubuntu
-          default) (1e59b6a)
+	* debian/control: Drop from B-D: libgnome-desktop-3-dev. Not needed.
 
-2018-03-12 Michael Webster
+2018-03-15 02:31:35 +0100 Björn Esser (897df0e)
 
-        * src/arctica-greeter.vala: Clear the AT_SPI_BUS property on the root
+	* main-window: Calculate the really needed screen size properly
+
+2018-03-16 14:44:32 +0100 Mike Gabriel (cfec4f6)
+
+	* release 0.99.0.4 (tag: 0.99.0.4)
+
+2018-03-16 14:17:05 +0100 Mike Gabriel (8aba383)
+
+	* src/arctica-greeter.vala: Trigger UPower activation when greeter
+          starts.
+
+2018-03-16 14:16:14 +0100 Mike Gabriel (76f2e65)
+
+	* HiDPI: Do not enable it in test-mode.
+
+2018-03-16 13:52:28 +0100 Mike Gabriel (9e025f2)
+
+	* debian/*.install: Correctly install the guest session script man
+          page into the guest session bin:pkg.
+
+2018-03-16 12:37:45 +0100 Mike Gabriel (7ddfa06)
+
+	* Port HiDPI support from slick-greeter.
+
+2018-03-16 12:00:30 +0100 Mike Gabriel (48db8ca)
+
+	* src/{user-list.vala,user-prompt-box.vala}: Fix segfault in newly
+          introduced debug message.
+
+2018-03-15 07:59:17 +0100 Robert Ancell (1e59b6a)
+
+	* Use Ubuntu logo for Unity session (has no since no longer Ubuntu
+          default)
+
+2018-03-12 21:10:45 +0100 Michael Webster (5c611a8)
+
+	* src/arctica-greeter.vala: Clear the AT_SPI_BUS property on the root
           window on exit, so the user session components won't fail
-          to connect. (5c611a8)
+          to connect.
 
-2018-03-12 Ikey Doherty
+2018-03-12 21:07:48 +0100 Ikey Doherty (bda58f0)
 
-        * greeter: Avoid expensive Python calls when it isn't needed.
-          (bda58f0)
+	* greeter: Avoid expensive Python calls when it isn't needed.
 
-2018-02-28 Mike Gabriel
+2018-02-28 10:59:19 +0100 Mike Gabriel (177dab0)
 
-        * post-release update of debian/changelog (177dab0)
-        * release 0.99.0.3 (6777383) (tag: 0.99.0.3)
+	* post-release update of debian/changelog
 
-2018-02-20 Veselin Georgiev
+2018-02-28 10:14:24 +0100 Mike Gabriel (6777383)
 
-        * Translated using Weblate (Bulgarian) (3c8b7e5)
+	* release 0.99.0.3 (tag: 0.99.0.3)
 
-2018-02-15 Ko Phyo
+2018-02-20 11:36:29 +0000 Veselin Georgiev (3c8b7e5)
 
-        * Translated using Weblate (Burmese) (94ff0d8)
+	* Translated using Weblate (Bulgarian)
 
-2018-02-11 Rafael Henrique Mendes de Oliv
+2018-02-15 10:03:26 +0000 Ko Phyo (94ff0d8)
 
-        * Translated using Weblate (Portuguese (Brazil)) (3dfb9d7)
-        * Translated using Weblate (Portuguese (Brazil)) (8f85b15)
+	* Translated using Weblate (Burmese)
 
-2018-02-09 Joel Vinay Kumar
+2018-02-11 00:55:34 +0000 Rafael Henrique Mendes de Oliv (3dfb9d7)
 
-        * Translated using Weblate (Telugu) (965ac26)
+	* Translated using Weblate (Portuguese (Brazil))
 
-2018-02-04 Michal Čihař
+2018-02-11 00:54:45 +0000 Rafael Henrique Mendes de Oliv (8f85b15)
 
-        * Translated using Weblate (Telugu) (b94becf)
+	* Translated using Weblate (Portuguese (Brazil))
 
-2018-02-03 scootergrisen
+2018-02-09 19:31:11 +0000 Joel Vinay Kumar (965ac26)
 
-        * Translated using Weblate (Danish) (2d86552)
+	* Translated using Weblate (Telugu)
 
-2018-01-30 Марс Ямбар
+2018-02-04 15:04:33 +0000 Michal Čihař (b94becf)
 
-        * Translated using Weblate (Ukrainian) (b30f69a)
+	* Translated using Weblate (Telugu)
 
-2018-01-29 Joel Vinay Kumar
+2018-02-03 17:32:50 +0000 scootergrisen (2d86552)
 
-        * Translated using Weblate (Telugu) (d4ece44)
+	* Translated using Weblate (Danish)
 
-2018-01-27 Mutaz Tayyeb AbuSaad
+2018-01-30 21:05:43 +0000 Марс Ямбар (b30f69a)
 
-        * Translated using Weblate (Arabic) (5131b49)
-        * Translated using Weblate (Arabic) (0e921da)
+	* Translated using Weblate (Ukrainian)
 
-2018-01-24 Sveinn í Felli
+2018-01-29 05:49:46 +0000 Joel Vinay Kumar (d4ece44)
 
-        * Translated using Weblate (Icelandic) (3073113)
+	* Translated using Weblate (Telugu)
 
-2018-01-22 Марс Ямбар
+2018-01-27 08:57:44 +0000 Mutaz Tayyeb AbuSaad (5131b49)
 
-        * Translated using Weblate (Ukrainian) (c50983a)
+	* Translated using Weblate (Arabic)
 
-2018-01-04 Sebastian Rasmussen
+2018-01-27 08:50:59 +0000 Mutaz Tayyeb AbuSaad (0e921da)
 
-        * Translated using Weblate (Swedish) (7473640)
+	* Translated using Weblate (Arabic)
 
-2018-01-04 Tamir Azaz
+2018-01-24 09:16:22 +0000 Sveinn í Felli (3073113)
 
-        * Translated using Weblate (Slovenian) (1e72c52)
+	* Translated using Weblate (Icelandic)
 
-2018-02-27 Mike Gabriel
+2018-01-22 20:21:35 +0000 Марс Ямбар (c50983a)
 
-        * Merge branch 'jbicha-vala39' (e13e0d9)
+	* Translated using Weblate (Ukrainian)
 
-2018-02-27 Jeremy Bicha
+2018-01-04 20:22:29 +0000 Sebastian Rasmussen (7473640)
 
-        * Fix build with vala 0.39 (3b79b4b)
+	* Translated using Weblate (Swedish)
 
-2017-12-07 Mike Gabriel
+2018-01-04 15:32:06 +0000 Tamir Azaz (1e72c52)
 
-        * debian/control: Let's recommend the new FreeRDPv2 version of
-          lightdm-remote-session-freerdp(2). (a1266d6)
-        * White-space cleanup. Removing superfluous EOL white-spaces.
-          (f22b7af)
+	* Translated using Weblate (Slovenian)
 
-2017-11-29 Juan Picca
+2018-02-27 19:26:26 +0100 Mike Gabriel (e13e0d9)
 
-        * Translated using Weblate (Spanish) (c855090)
+	* Merge branch 'jbicha-vala39'
 
-2017-11-29 Mike Gabriel
+2018-02-27 09:06:23 -0500 Jeremy Bicha (3b79b4b)
 
-        * update-po(t).sh: Handle .xml and .ini files gracefully. (174191b)
+	* Fix build with vala 0.39
 
-2017-11-28 Mike Gabriel
+2017-12-07 11:24:13 +0100 Mike Gabriel (a1266d6)
 
-        * release 0.99.0.2 (a313875) (tag: 0.99.0.2)
-        * debian/copyright: Update copyright attributions for new man page.
-          (3537ac6)
-        * data/arctica-greeter.1: Improve (not much, but a little) the
-          arctica-greeter man page. (96b5cac)
-        * arctica-greeter-guest-account-script: Add brief man page for the
-          guest account creation script. (9ef87a0)
-        * More places to fix for the guest session script renaming. (1a2635a)
-        * Update translation files. (33f57b4)
+	* debian/control: Let's recommend the new FreeRDPv2 version of
+          lightdm-remote-session-freerdp(2).
 
-2017-11-17 Allan Nordhøy
+2017-12-07 08:53:43 +0100 Mike Gabriel (f22b7af)
 
-        * Translated using Weblate (Norwegian Bokmål) (27c02f4)
+	* White-space cleanup. Removing superfluous EOL white-spaces.
 
-2017-11-28 Mike Gabriel
+2017-11-29 18:22:14 +0000 Juan Picca (c855090)
 
-        * Rename various scripts, so that they have 'arctica-greeter' in
-          their file name (and not just 'arctica'). (acd892c)
-        * debian/control: Bump Standards-Version: to 4.1.1. No changes
-          needed. (4fe6467)
-        * debian/copyright: Add machine-generated copyright.in file.
-          (a1f2ee0)
-        * debian/copyright: Update copyright attributions. Appropriate for
-          official Debian package. (dec42ab)
-        * data/badges/COPYING.badges: Add attributiong for desktop session
-          badges. (55f0154)
-        * Update files update-po(t).sh, includes added license headers.
-          (82e9fb7)
-        * no Transifex anymore, we have moved to Weblate... (5a19212)
+	* Translated using Weblate (Spanish)
 
-2017-10-30 Mike Gabriel
+2017-11-29 13:38:11 +0100 Mike Gabriel (174191b)
 
-        * Revert "a11y: Use HighContrast rather than HighContrastInverse."
-          (6f8134a)
-        * debian/control: Typo fix in D of arctica-greeter (comma vs. dot).
-          (ce53a04)
+	* update-po(t).sh: Handle .xml and .ini files gracefully.
 
-2017-10-26 Mike Gabriel
+2017-11-28 18:22:53 +0100 Mike Gabriel (a313875)
 
-        * debian/control: Add to D (arctica-greeter): x11-xkb-utils (for
-          setxkbmap). (a7472c9)
-        * arctica-greeter-set-keyboard-layout: Add encoding tag to the
-          header. (64719ae)
-        * arctica-greeter-set-keyboard-layout: Add license header and
+	* release 0.99.0.2 (tag: 0.99.0.2)
+
+2017-11-28 18:22:07 +0100 Mike Gabriel (3537ac6)
+
+	* debian/copyright: Update copyright attributions for new man page.
+
+2017-11-28 18:02:56 +0100 Mike Gabriel (96b5cac)
+
+	* data/arctica-greeter.1: Improve (not much, but a little) the
+          arctica-greeter man page.
+
+2017-11-28 18:02:25 +0100 Mike Gabriel (9ef87a0)
+
+	* arctica-greeter-guest-account-script: Add brief man page for the
+          guest account creation script.
+
+2017-11-28 17:17:21 +0100 Mike Gabriel (1a2635a)
+
+	* More places to fix for the guest session script renaming.
+
+2017-11-28 17:09:57 +0100 Mike Gabriel (33f57b4)
+
+	* Update translation files.
+
+2017-11-17 23:24:26 +0000 Allan Nordhøy (27c02f4)
+
+	* Translated using Weblate (Norwegian Bokmål)
+
+2017-11-28 16:46:35 +0100 Mike Gabriel (acd892c)
+
+	* Rename various scripts, so that they have 'arctica-greeter' in
+          their file name (and not just 'arctica').
+
+2017-11-28 16:34:39 +0100 Mike Gabriel (4fe6467)
+
+	* debian/control: Bump Standards-Version: to 4.1.1. No changes
+          needed.
+
+2017-11-28 16:10:47 +0100 Mike Gabriel (a1f2ee0)
+
+	* debian/copyright: Add machine-generated copyright.in file.
+
+2017-11-28 16:10:16 +0100 Mike Gabriel (dec42ab)
+
+	* debian/copyright: Update copyright attributions. Appropriate for
+          official Debian package.
+
+2017-11-28 15:09:15 +0100 Mike Gabriel (55f0154)
+
+	* data/badges/COPYING.badges: Add attributiong for desktop session
+          badges.
+
+2017-11-28 14:52:54 +0100 Mike Gabriel (82e9fb7)
+
+	* Update files update-po(t).sh, includes added license headers.
+
+2017-11-28 14:51:58 +0100 Mike Gabriel (5a19212)
+
+	* no Transifex anymore, we have moved to Weblate...
+
+2017-10-30 09:40:21 +0100 Mike Gabriel (6f8134a)
+
+	* Revert "a11y: Use HighContrast rather than HighContrastInverse."
+
+2017-10-30 09:19:49 +0100 Mike Gabriel (ce53a04)
+
+	* debian/control: Typo fix in D of arctica-greeter (comma vs. dot).
+
+2017-10-26 15:11:55 +0200 Mike Gabriel (a7472c9)
+
+	* debian/control: Add to D (arctica-greeter): x11-xkb-utils (for
+          setxkbmap).
+
+2017-10-26 15:10:56 +0200 Mike Gabriel (64719ae)
+
+	* arctica-greeter-set-keyboard-layout: Add encoding tag to the
+          header.
+
+2017-10-26 15:06:40 +0200 Mike Gabriel (5791c16)
+
+	* arctica-greeter-set-keyboard-layout: Add license header and
           copyright holder. Assume same license as in COPYING file.
-          (5791c16)
 
-2017-10-26 Clement Lefebvre
+2017-10-26 14:51:25 +0200 Clement Lefebvre (6d087e7)
 
-        * a11y: Use HighContrast rather than HighContrastInverse. (6d087e7)
+	* a11y: Use HighContrast rather than HighContrastInverse.
 
-2017-10-26 Mike Gabriel
+2017-10-26 14:43:24 +0200 Mike Gabriel (818a6c0)
 
-        * debian/control: Switch to Arch: any for bin:pkg
-          arctica-greeter-guest-session. (818a6c0)
-        * Explicitly set the keyboard layout (164a06e)
+	* debian/control: Switch to Arch: any for bin:pkg
+          arctica-greeter-guest-session.
 
-2017-10-26 Clement Lefebvre
+2017-10-26 14:30:54 +0200 Mike Gabriel (164a06e)
 
-        * Add support for numlockx. (f192e26)
+	* Explicitly set the keyboard layout
 
-2017-10-26 Mike Gabriel
+2017-10-26 14:17:27 +0200 Clement Lefebvre (f192e26)
 
-        * src/settings.vala: White-space cleanup. (0f7e41f)
-        * copyright holdership: Add myself as copyright holder and author to
-          file headers of files I have worked on. (b78391b)
-        * src/arctica-greeter.vala: Fix debug message, we use MSD, not USD.
-          (afdb9fc)
+	* Add support for numlockx.
 
-2017-10-25 Mike Gabriel
+2017-10-26 14:14:40 +0200 Mike Gabriel (0f7e41f)
 
-        * src/user-list.vala: Add debug message providing info about added
-          users / labels. (b6e1341)
+	* src/settings.vala: White-space cleanup.
 
-2017-10-23 Mike Gabriel
+2017-10-26 14:05:59 +0200 Mike Gabriel (b78391b)
 
-        * release 0.99.0.1 (32ffe2d) (tag: 0.99.0.1)
-        * src/user-list.vala: Use directory enumerator for getting a random
+	* copyright holdership: Add myself as copyright holder and author to
+          file headers of files I have worked on.
+
+2017-10-26 13:47:01 +0200 Mike Gabriel (afdb9fc)
+
+	* src/arctica-greeter.vala: Fix debug message, we use MSD, not USD.
+
+2017-10-25 19:43:48 +0200 Mike Gabriel (b6e1341)
+
+	* src/user-list.vala: Add debug message providing info about added
+          users / labels.
+
+2017-10-23 23:33:58 +0200 Mike Gabriel (32ffe2d)
+
+	* release 0.99.0.1 (tag: 0.99.0.1)
+
+2017-10-23 23:18:06 +0200 Mike Gabriel (5ad6cbc)
+
+	* src/user-list.vala: Use directory enumerator for getting a random
           number of background image. Check if the returned
           directory entry is not a sub-directory. If so, then skip
-          it. (5ad6cbc)
+          it.
 
-2017-10-23 Michael Webster
+2017-10-23 23:13:02 +0200 Michael Webster (0003057)
 
-        * background: Don't realize() this immediately - only start the image
-          gathering thread during initialization. (0003057)
+	* background: Don't realize() this immediately - only start the image
+          gathering thread during initialization.
 
-2017-10-23 Mike Gabriel
+2017-10-23 22:55:17 +0200 Mike Gabriel (3bc7cc6)
 
-        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Fix schema
-          path. (3bc7cc6)
+	* data/org.ArcticaProject.arctica-greeter.gschema.xml: Fix schema
+          path.
 
-2017-10-16 Michal Čihař
+2017-10-16 08:19:32 +0000 Michal Čihař (af13ba7)
 
-        * Translated using Weblate (German) (af13ba7)
+	* Translated using Weblate (German)
 
-2017-10-07 Kristjan Räts
+2017-10-07 20:16:59 +0000 Kristjan Räts (5575cbe)
 
-        * Translated using Weblate (Estonian) (5575cbe)
+	* Translated using Weblate (Estonian)
 
-2017-10-03 developerchan1
+2017-10-03 09:48:15 +0000 developerchan1 (55cbf1c)
 
-        * Translated using Weblate (Indonesian) (55cbf1c)
+	* Translated using Weblate (Indonesian)
 
-2017-10-02 Marc Schöni
+2017-10-02 05:17:32 +0000 Marc Schöni (0459355)
 
-        * Translated using Weblate (German) (0459355)
-        * Translated using Weblate (German) (78f28e2)
+	* Translated using Weblate (German)
 
-2017-09-29 Anders Jonsson
+2017-10-02 05:16:01 +0000 Marc Schöni (78f28e2)
 
-        * Translated using Weblate (Swedish) (c41f749)
+	* Translated using Weblate (German)
 
-2017-09-16 Allan Nordhøy
+2017-09-29 18:04:44 +0000 Anders Jonsson (c41f749)
 
-        * Translated using Weblate (Norwegian Bokmål) (f41055e)
+	* Translated using Weblate (Swedish)
 
-2017-09-08 ប៉ុកណូ រ៉ូយ៉ាល់
+2017-09-16 03:14:46 +0000 Allan Nordhøy (f41055e)
 
-        * Translated using Weblate (Central Khmer) (4256251)
+	* Translated using Weblate (Norwegian Bokmål)
 
-2017-08-29 Jan Poulsen
+2017-09-08 09:51:50 +0000 ប៉ុកណូ រ៉ូយ៉ាល់ (4256251)
 
-        * Translated using Weblate (Danish) (ceb047d)
+	* Translated using Weblate (Central Khmer)
 
-2017-08-29 Kjetil Fleten
+2017-08-29 10:02:10 +0000 Jan Poulsen (ceb047d)
 
-        * Translated using Weblate (Danish) (c58bb1d)
+	* Translated using Weblate (Danish)
 
-2017-08-21 Володимир Бриняк
+2017-08-29 09:11:07 +0000 Kjetil Fleten (c58bb1d)
 
-        * Translated using Weblate (Ukrainian) (2a3ab44)
+	* Translated using Weblate (Danish)
 
-2017-08-13 Viktar Vauchkevich
+2017-08-21 15:12:30 +0000 Володимир Бриняк (2a3ab44)
 
-        * Translated using Weblate (Belarusian) (d6fe6df)
+	* Translated using Weblate (Ukrainian)
 
-2017-07-21 Mike Gabriel
+2017-08-13 17:47:50 +0000 Viktar Vauchkevich (d6fe6df)
 
-        * po/: Update po/.po files from newly generated arctica-greeter.pot
-          file. (2183709)
-        * update-po.sh: Add simple script to update po/*.po files. (c14bc0a)
-        * po/: Update arctica-greeter.pot file. (9d50a7d)
+	* Translated using Weblate (Belarusian)
 
-2017-06-20 Mike Gabriel
+2017-07-21 16:24:25 +0200 Mike Gabriel (2183709)
 
-        * src/arctica-greeter.vala: Don't load any external application when
-          launched in test mode. (a55e300)
-        * src/menubar.vala: Disable all indicators in test mode. (123a23f)
-        * src/settings_daemon.vala: sd_pid is a private property. (d297788)
-        * src/greeter-list.vala: Move get_active_entry() functionality from
-          ListDBusInterface to the GreeterList class. (dded5f2)
+	* po/: Update po/.po files from newly generated arctica-greeter.pot
+          file.
 
-2017-06-20 Clement Lefebvre
+2017-07-21 16:24:05 +0200 Mike Gabriel (c14bc0a)
 
-        * Fix Arctica Greeter preventing DE from applying cursor theme/size.
-          (4216b5d)
-        * Don't draw the background before starting the session. (31ce82f)
+	* update-po.sh: Add simple script to update po/*.po files.
 
-2017-06-20 Mike Gabriel
+2017-07-21 16:23:02 +0200 Mike Gabriel (9d50a7d)
 
-        * rebase debug PID (d14e5d8)
-        * src/menubar.vala: Silence build warning due to usage call to
-          deprecated ensure_style() method. (dcf9702)
+	* po/: Update arctica-greeter.pot file.
 
-2017-06-20 Clement Lefebvre
+2017-06-20 23:48:39 +0200 Mike Gabriel (a55e300)
 
-        * src/background.vala: No runtime warning on empty background image
-          filename. Ported from slick-greeter. (89876fc)
+	* src/arctica-greeter.vala: Don't load any external application when
+          launched in test mode.
 
-2017-06-20 leigh123linux
+2017-06-20 23:48:12 +0200 Mike Gabriel (123a23f)
 
-        * Add basic screenshot capability. Ported from slick-greeter.
-          (b37ceae)
+	* src/menubar.vala: Disable all indicators in test mode.
 
-2017-06-20 Mike Gabriel
+2017-06-20 23:17:44 +0200 Mike Gabriel (d297788)
 
-        * debugging: Print out process PIDs for launched subprocesses.
-          (54ff85c)
+	* src/settings_daemon.vala: sd_pid is a private property.
 
-2017-06-20 Clement Lefebvre
+2017-06-20 21:43:56 +0200 Mike Gabriel (dded5f2)
 
-        * Add support for validating session names (and proper fallback for
+	* src/greeter-list.vala: Move get_active_entry() functionality from
+          ListDBusInterface to the GreeterList class.
+
+2017-06-20 15:53:01 +0200 Clement Lefebvre (4216b5d)
+
+	* Fix Arctica Greeter preventing DE from applying cursor theme/size.
+
+2017-06-20 15:42:34 +0200 Clement Lefebvre (31ce82f)
+
+	* Don't draw the background before starting the session.
+
+2017-06-20 15:37:30 +0200 Mike Gabriel (d14e5d8)
+
+	* rebase debug PID
+
+2017-06-20 15:36:56 +0200 Mike Gabriel (dcf9702)
+
+	* src/menubar.vala: Silence build warning due to usage call to
+          deprecated ensure_style() method.
+
+2017-06-20 15:36:01 +0200 Clement Lefebvre (89876fc)
+
+	* src/background.vala: No runtime warning on empty background image
+          filename. Ported from slick-greeter.
+
+2017-06-20 15:33:20 +0200 leigh123linux (b37ceae)
+
+	* Add basic screenshot capability. Ported from slick-greeter.
+
+2017-06-20 15:31:58 +0200 Mike Gabriel (54ff85c)
+
+	* debugging: Print out process PIDs for launched subprocesses.
+
+2017-06-20 15:20:08 +0200 Clement Lefebvre (ba46af1)
+
+	* Add support for validating session names (and proper fallback for
           uninstalled sessions). Ported from slick-greeter.
-          (ba46af1)
 
-2017-06-20 leigh123linux
+2017-06-20 14:20:23 +0200 leigh123linux (2fa9791)
 
-        * Work around GTK 3.20's new allocation logic. Ported from
-          slick-greeter. (2fa9791)
+	* Work around GTK 3.20's new allocation logic. Ported from
+          slick-greeter.
 
-2017-06-20 Mike Gabriel
+2017-06-20 14:32:18 +0200 Mike Gabriel (196464c)
 
-        * Fix at-spi-bus-launcher path in Fedora (ported and modifed from
-          slick-greeter). (196464c)
-        * white-space fix (70a6deb)
-        * debian/rules: Remove duplicate override_dh_install target.
-          (c66157e)
-        * src/background.vala: Drop logo background. (399b52b)
+	* Fix at-spi-bus-launcher path in Fedora (ported and modifed from
+          slick-greeter).
 
-2017-06-20 Michael Webster
+2017-06-20 14:19:53 +0200 Mike Gabriel (70a6deb)
 
-        * src/arctica-greeter.vala: Disconnect the event filter when the main
-          window is destroyed. (ae38752)
-        * src/prompt-box.vala: Avoid 'pango_layout_get_cursor_pos: assertion
+	* white-space fix
+
+2017-06-20 13:32:10 +0200 Mike Gabriel (c66157e)
+
+	* debian/rules: Remove duplicate override_dh_install target.
+
+2017-06-20 13:19:56 +0200 Mike Gabriel (399b52b)
+
+	* src/background.vala: Drop logo background.
+
+2017-06-20 12:17:49 +0200 Michael Webster (ae38752)
+
+	* src/arctica-greeter.vala: Disconnect the event filter when the main
+          window is destroyed.
+
+2017-06-20 11:28:09 +0200 Michael Webster (d68171e)
+
+	* src/prompt-box.vala: Avoid 'pango_layout_get_cursor_pos: assertion
           'index >= 0 && index <= layout->length' failed' error.
-          (d68171e)
-        * src/prompt-box.vala: get_preferred_height() ovrride only needed
-          with GTK3 >= 3.20. (29eb6f8)
-        * Fix prompt display in gtk3 > 3.20 (ported from slick-greeter)
-          (552dd36)
 
-2017-06-20 Mike Gabriel
+2017-06-20 11:27:44 +0200 Michael Webster (29eb6f8)
 
-        * Move data/*_badge.png to data/badges/ subfolder. (434484b)
+	* src/prompt-box.vala: get_preferred_height() ovrride only needed
+          with GTK3 >= 3.20.
 
-2017-06-20 leigh123linux
+2017-06-20 11:20:35 +0200 Michael Webster (552dd36)
 
-        * menubar clean-up before session start: i.e. kill onboard and orca
-          on session startup (ported from slick-greeter). (6dea496)
+	* Fix prompt display in gtk3 > 3.20 (ported from slick-greeter)
 
-2017-06-17 Mike Gabriel
+2017-06-20 10:49:30 +0200 Mike Gabriel (434484b)
 
-        * Debian Theme: use Debian 9 logo including the version number as is
-          for now. (d58721a)
+	* Move data/*_badge.png to data/badges/ subfolder.
 
-2017-06-16 Mike Gabriel
+2017-06-20 10:42:38 +0200 leigh123linux (6dea496)
 
-        * New theming bin:package: arctica-greeter-theme-debian. (b8d4893)
-        * New theming bin:package: arctica-greeter-theme-debian. (4181e30)
-        * src/logo-generator.vala: Make logo-generator more flexible. Allow
+	* menubar clean-up before session start: i.e. kill onboard and orca
+          on session startup (ported from slick-greeter).
+
+2017-06-17 10:03:26 +0200 Mike Gabriel (d58721a)
+
+	* Debian Theme: use Debian 9 logo including the version number as is
+          for now.
+
+2017-06-16 16:59:46 +0200 Mike Gabriel (b8d4893)
+
+	* New theming bin:package: arctica-greeter-theme-debian.
+
+2017-06-16 16:59:46 +0200 Mike Gabriel (4181e30)
+
+	* New theming bin:package: arctica-greeter-theme-debian.
+
+2017-06-16 16:58:51 +0200 Mike Gabriel (cc5dcc0)
+
+	* src/logo-generator.vala: Make logo-generator more flexible. Allow
           passing-in of output logo's width and height. Fix placing
-          of version string. (cc5dcc0)
-        * configure.ac: Stop automake from whining, set subdir-objects flag.
-          (a78a48f)
-        * src/session-list.vala: Regression fix for failing session logins
+          of version string.
+
+2017-06-16 14:24:19 +0200 Mike Gabriel (a78a48f)
+
+	* configure.ac: Stop automake from whining, set subdir-objects flag.
+
+2017-06-16 14:18:39 +0200 Mike Gabriel (2bf440e)
+
+	* src/session-list.vala: Regression fix for failing session logins
           caused by eece8599b774b4b30eeb31a39bc7c3c36d24b011.
-          (2bf440e)
-        * data/arctica-guest-session-startup.desktop.in: Remove double slash
-          in Exec= field. (de6ec89)
-        * arctica-guest-session-auto.sh: Don't rely on .profile to be loaded,
-          define a default for DIALOG_SLEEP. (cb831b9)
-        * Update .po files. (c88e2b1)
-        * po/arctica-greeter.pot: Update translation template, now with
-          translatable text from our guest shell scripts. (ea07b73)
-        * Make arctica-desktop.desktop xgreeters file translatable. (90c9d12)
-        * debian/arctica-greeter-guest-session.install: Let's have EOL and
-          EOF. (987fb8c)
-        * Make intltool more happy with our guest shell scripts (i.e. adding
-          .sh suffix). (afd9836)
-        * src/session-list.vala: Present list of available sessions in
-          case-insensitive order. (94b4313)
 
-2017-06-14 Mike Gabriel
+2017-06-16 13:41:43 +0200 Mike Gabriel (de6ec89)
 
-        * Artwork: Add icon badge for Sugar Desktop. (0d5437a)
-        * Artwork: Add icon badge for surf-display. (56392e6)
-        * Artwork: Add icon badge for Xmonad. (8818fd6)
-        * Artwork: Add icon badge for the Window Maker. (b1175d8)
+	* data/arctica-guest-session-startup.desktop.in: Remove double slash
+          in Exec= field.
 
-2017-06-13 Mike Gabriel
+2017-06-16 13:38:09 +0200 Mike Gabriel (cb831b9)
 
-        * Artwork: Add icon badge for the Budgie Desktop. (a7bb797)
-        * Artwork: Add icon badge for awesome. (095b1df)
-        * Artwork: Add icon badge for the matchbox wm. (213f805)
-        * Artwork: Add icon badge for i3 wm. (b3e44b2)
-        * data/lxde_badge.png: Recreate from .xcf file, removes gray
-          outlines. (d1debd1)
+	* arctica-guest-session-auto.sh: Don't rely on .profile to be loaded,
+          define a default for DIALOG_SLEEP.
 
-2017-06-12 Mike Gabriel
+2017-06-16 13:10:44 +0200 Mike Gabriel (c88e2b1)
 
-        * override_font() deprecation warning: replace by GtkCssProvider
+	* Update .po files.
+
+2017-06-16 13:10:24 +0200 Mike Gabriel (ea07b73)
+
+	* po/arctica-greeter.pot: Update translation template, now with
+          translatable text from our guest shell scripts.
+
+2017-06-16 13:07:20 +0200 Mike Gabriel (90c9d12)
+
+	* Make arctica-desktop.desktop xgreeters file translatable.
+
+2017-06-16 13:05:37 +0200 Mike Gabriel (987fb8c)
+
+	* debian/arctica-greeter-guest-session.install: Let's have EOL and
+          EOF.
+
+2017-06-16 13:04:42 +0200 Mike Gabriel (afd9836)
+
+	* Make intltool more happy with our guest shell scripts (i.e. adding
+          .sh suffix).
+
+2017-06-16 10:16:11 +0200 Mike Gabriel (94b4313)
+
+	* src/session-list.vala: Present list of available sessions in
+          case-insensitive order.
+
+2017-06-14 13:17:54 +0200 Mike Gabriel (0d5437a)
+
+	* Artwork: Add icon badge for Sugar Desktop.
+
+2017-06-14 13:13:31 +0200 Mike Gabriel (56392e6)
+
+	* Artwork: Add icon badge for surf-display.
+
+2017-06-14 12:49:32 +0200 Mike Gabriel (8818fd6)
+
+	* Artwork: Add icon badge for Xmonad.
+
+2017-06-14 12:48:22 +0200 Mike Gabriel (b1175d8)
+
+	* Artwork: Add icon badge for the Window Maker.
+
+2017-06-13 23:44:30 +0200 Mike Gabriel (a7bb797)
+
+	* Artwork: Add icon badge for the Budgie Desktop.
+
+2017-06-13 22:16:27 +0200 Mike Gabriel (095b1df)
+
+	* Artwork: Add icon badge for awesome.
+
+2017-06-13 22:06:55 +0200 Mike Gabriel (213f805)
+
+	* Artwork: Add icon badge for the matchbox wm.
+
+2017-06-13 22:04:43 +0200 Mike Gabriel (b3e44b2)
+
+	* Artwork: Add icon badge for i3 wm.
+
+2017-06-13 21:38:54 +0200 Mike Gabriel (d1debd1)
+
+	* data/lxde_badge.png: Recreate from .xcf file, removes gray
+          outlines.
+
+2017-06-12 15:12:22 +0200 Mike Gabriel (63394a6)
+
+	* override_font() deprecation warning: replace by GtkCssProvider
           blocks. Additionally, don't hard-code Cabin font anymore,
-          use font_name gsettings property instead. (63394a6)
-        * FIXME: Disable the greeter wrapper so far, as systemctl --user
+          use font_name gsettings property instead.
+
+2017-06-12 13:36:11 +0200 Mike Gabriel (99d2c26)
+
+	* FIXME: Disable the greeter wrapper so far, as systemctl --user
           calls will fail with the wrapper enabled. (This brings
           back the Ayatana Indicators to the greeter login screen).
-          (99d2c26)
-        * src/arctica-greeter.vala: Fix copy+paste flaw blocking atspid to be
-          destroyed at greeter exit. (c76e0b1)
-        * Makefile.am: Add 'compile' to list of DISTCLEANFILES. (a3d58d0)
-        * Make guest account support functional. Port various items from
-          Ubuntu's LightDM package. (e3b4202)
-        * debian/control: Drop mate-settings-daemon from Recommends: field.
-          Already in Depends: field. (ccba9e5)
-        * Split up packaging: outsource arctica-greeter-remote-logon and
+
+2017-06-12 13:30:44 +0200 Mike Gabriel (c76e0b1)
+
+	* src/arctica-greeter.vala: Fix copy+paste flaw blocking atspid to be
+          destroyed at greeter exit.
+
+2017-06-12 11:06:27 +0200 Mike Gabriel (a3d58d0)
+
+	* Makefile.am: Add 'compile' to list of DISTCLEANFILES.
+
+2017-06-12 10:44:00 +0200 Mike Gabriel (e3b4202)
+
+	* Make guest account support functional. Port various items from
+          Ubuntu's LightDM package.
+
+2017-06-12 01:20:07 +0200 Mike Gabriel (ccba9e5)
+
+	* debian/control: Drop mate-settings-daemon from Recommends: field.
+          Already in Depends: field.
+
+2017-06-12 01:17:59 +0200 Mike Gabriel (8a7f97e)
+
+	* Split up packaging: outsource arctica-greeter-remote-logon and
           arctica-greeter-guest-session. Allow the admin to
           selectively add those features or remove them, if needed.
-          (8a7f97e)
-        * guest-account: Blindly copy Ubuntu's guest-account script from
-          bin:package lightdm into this project. (1fa6100)
 
-2017-06-08 Mike Gabriel
+2017-06-12 00:57:46 +0200 Mike Gabriel (1fa6100)
 
-        * src/settings-daemon.vala: Make sure the SettingsDaemon subprocess
-          gets killed when greeter exits. (2e747f6)
+	* guest-account: Blindly copy Ubuntu's guest-account script from
+          bin:package lightdm into this project.
 
-2017-06-07 Mike Gabriel
+2017-06-08 21:25:39 +0200 Mike Gabriel (2e747f6)
 
-        * src/settings-daemon.vala: Flaw when switching to m-s-d. The
-          media-keys plugin is to be diabled. (49f36af)
-        * src/settings-daemon.vala: Avoid race condition that could launch
-          the settings daemon twice. (0109864)
+	* src/settings-daemon.vala: Make sure the SettingsDaemon subprocess
+          gets killed when greeter exits.
 
-2017-06-04 Mike Gabriel
+2017-06-07 16:19:47 +0200 Mike Gabriel (49f36af)
 
-        * Rename owned greeter bus to a generical, product-independent name:
-          org.ayatana.Greeter. (c1fcb12)
+	* src/settings-daemon.vala: Flaw when switching to m-s-d. The
+          media-keys plugin is to be diabled.
 
-2017-05-31 Mike Gabriel
+2017-06-07 16:12:20 +0200 Mike Gabriel (0109864)
 
-        * Play system-ready sound when arctica-greeter is ready for loggin
+	* src/settings-daemon.vala: Avoid race condition that could launch
+          the settings daemon twice.
+
+2017-06-04 23:52:50 +0200 Mike Gabriel (c1fcb12)
+
+	* Rename owned greeter bus to a generical, product-independent name:
+          org.ayatana.Greeter.
+
+2017-05-31 16:24:39 +0200 Mike Gabriel (4017149)
+
+	* Play system-ready sound when arctica-greeter is ready for loggin
           the user in. Ship system-ready sound with our own sound
           theme as ubuntu-sounds is not available on all distros.
-          (4017149)
-        * fix-patch-whitespace: Help tool from X.org to have white-space
-          clean changeset commits. (9e97d28)
 
-2017-05-30 Mike Gabriel
+2017-05-31 16:14:21 +0200 Mike Gabriel (9e97d28)
 
-        * Use ShutdownDialogType.SHUTDOWN on incoming shutdown requests. This
+	* fix-patch-whitespace: Help tool from X.org to have white-space
+          clean changeset commits.
+
+2017-05-30 12:01:17 +0200 Mike Gabriel (25606b6)
+
+	* Use ShutdownDialogType.SHUTDOWN on incoming shutdown requests. This
           enables Hibernate and Suspend buttons, which is nice.
-          (25606b6)
-        * src/shutdown-dialog.vala: Grab Reboot button focus when user
-          requests a reboot. (087e04c)
 
-2017-05-28 Mike Gabriel
+2017-05-30 12:00:48 +0200 Mike Gabriel (087e04c)
 
-        * Return "greeter" as session_name rather than "ubuntu" in
-          SessionManager DBus interface. (0e4fbb4)
-        * nm-applet startup: Fix typo in cmd line option. (8e50dfa)
+	* src/shutdown-dialog.vala: Grab Reboot button focus when user
+          requests a reboot.
 
-2017-05-26 Mike Gabriel
+2017-05-28 02:36:30 +0200 Mike Gabriel (0e4fbb4)
 
-        * comment change: MATE and GNOME share the same session manager
-          namespace (ebf839b)
+	* Return "greeter" as session_name rather than "ubuntu" in
+          SessionManager DBus interface.
 
-2017-05-23 Mike Gabriel
+2017-05-28 02:32:53 +0200 Mike Gabriel (8e50dfa)
 
-        * DBus own_name: Clear up mess. Arctica Greeter owns two buses:
+	* nm-applet startup: Fix typo in cmd line option.
+
+2017-05-26 01:59:28 +0200 Mike Gabriel (ebf839b)
+
+	* comment change: MATE and GNOME share the same session manager
+          namespace
+
+2017-05-23 12:02:34 +0200 Mike Gabriel (930c41a)
+
+	* DBus own_name: Clear up mess. Arctica Greeter owns two buses:
           org.ArcticaProject.ArcticaGreeter (formerly:
           com.canonical.UnityGreeter) and org.ayatana.Desktop
-          (formerly: com.canonical.Unity). (930c41a)
-        * src/arctica-greeter.vala: Enable nm-applet again, launch with
+          (formerly: com.canonical.Unity).
+
+2017-05-23 10:57:36 +0200 Mike Gabriel (794b686)
+
+	* src/arctica-greeter.vala: Enable nm-applet again, launch with
           --indicators option and let's hope the system has
-          nm-applet with indicators support compiled-in. (794b686)
+          nm-applet with indicators support compiled-in.
 
-2017-05-18 Mike Gabriel
+2017-05-18 23:29:59 +0200 Mike Gabriel (63d9a2f)
 
-        * Acquire DBus session bus 'com.canonical.Unity' for now. Same bus
+	* Acquire DBus session bus 'com.canonical.Unity' for now. Same bus
           name is used in ayatana-indicator-session and maybe
-          elsewhere. (63d9a2f)
-        * session list's back button: Make background transparent. (5d54b6a)
-        * src/menubar.vala: Give the indicator icons a bit more space (i.e.
-          height := 32). (cd2de8b)
-        * Theming: Use Numix GTK/icon theme. (2a524d3)
+          elsewhere.
 
-2017-05-17 Mike Gabriel
+2017-05-18 23:27:51 +0200 Mike Gabriel (5d54b6a)
 
-        * Gdk.cairo_create() has been deprecated in GTK 3.22. Use
-          Gdk.Window.begin_draw_frame() instead. (f238d62)
-        * Disable nm-applet while we are not able to pipe it into
-          ayatana-indicator-application. (aa15b94)
-        * Silence GTK 3.22 warnings relating to deprecation in Gdk.Screen.
-          (8dd317d)
-        * src/arctica-greeter.vala: Cleanly exit nm-applet when switching to
-          the user context. (c9f0793)
-        * indicator service launching: Check AGSettings for what indicator to
+	* session list's back button: Make background transparent.
+
+2017-05-18 23:05:43 +0200 Mike Gabriel (cd2de8b)
+
+	* src/menubar.vala: Give the indicator icons a bit more space (i.e.
+          height := 32).
+
+2017-05-18 23:02:29 +0200 Mike Gabriel (2a524d3)
+
+	* Theming: Use Numix GTK/icon theme.
+
+2017-05-17 16:46:38 +0200 Mike Gabriel (f238d62)
+
+	* Gdk.cairo_create() has been deprecated in GTK 3.22. Use
+          Gdk.Window.begin_draw_frame() instead.
+
+2017-05-17 16:45:44 +0200 Mike Gabriel (aa15b94)
+
+	* Disable nm-applet while we are not able to pipe it into
+          ayatana-indicator-application.
+
+2017-05-17 16:04:18 +0200 Mike Gabriel (8dd317d)
+
+	* Silence GTK 3.22 warnings relating to deprecation in Gdk.Screen.
+
+2017-05-17 14:25:55 +0200 Mike Gabriel (c9f0793)
+
+	* src/arctica-greeter.vala: Cleanly exit nm-applet when switching to
+          the user context.
+
+2017-05-17 14:20:15 +0200 Mike Gabriel (0916a5f)
+
+	* indicator service launching: Check AGSettings for what indicator to
           load and remember loaded indicators to clean up properly
-          when switching to the user context. (0916a5f)
-        * indicator support: Launch ayatana-indicator-session service via
-          Arctica Greeter. (0cddbb4)
+          when switching to the user context.
 
-2017-05-16 Mike Gabriel
+2017-05-17 10:20:59 +0200 Mike Gabriel (0cddbb4)
 
-        * indicator services: Launch inicator power service via systemd
-          before showing the greeter. (237d630)
+	* indicator support: Launch ayatana-indicator-session service via
+          Arctica Greeter.
 
-2017-05-15 Mike Gabriel
+2017-05-16 14:27:06 +0200 Mike Gabriel (237d630)
 
-        * src/arctica-greeter.vala: Fix systemd launch of
-          ayatana-indicator-application service. (5ad2a0e)
-        * Fix indicator name for ayatana-application. (0ee3892)
-        * arctica-greeter.vala: Fix .service file name for starting up
-          Ayatana Indicators Application as a service. (8a8362a)
-        * Use systemd to launch the Ayatana Indicators Application Service.
-          (9649a93)
-        * debian/rules: Let's skip tests for now, until we got them fixed.
-          (1347098)
-        * debian/control: Fix Recommends: field. Let's use
-          ayatana-indicator-* packages rather. (54d2745)
+	* indicator services: Launch inicator power service via systemd
+          before showing the greeter.
 
-2017-04-30 Mike Gabriel
+2017-05-15 16:49:07 +0200 Mike Gabriel (5ad2a0e)
 
-        * rebase m-s-d (e0afbd7)
+	* src/arctica-greeter.vala: Fix systemd launch of
+          ayatana-indicator-application service.
 
-2017-04-29 Mike Gabriel
+2017-05-15 16:48:26 +0200 Mike Gabriel (0ee3892)
 
-        * Switch to using MATE's Settings Daemon. (a4ab356)
+	* Fix indicator name for ayatana-application.
 
-2017-04-18 Robert Ancell
+2017-05-15 13:44:52 +0200 Mike Gabriel (8a8362a)
 
-        * Handle errors from liblightdm. (d70a693)
-        * Show error when failing to connect to LightDM daemon. (e36ceb6)
-        * Use GenericSet instead of HashTable. (4d8cb25)
-        * Compile with Vala debugging information (9d87509)
-        * Fix test mode by skipping xsettings checks. (b7ffb48)
-        * Use valgrind to make build logs bigger help in triaging FTBFS
-          problems. (a3cf506)
+	* arctica-greeter.vala: Fix .service file name for starting up
+          Ayatana Indicators Application as a service.
 
-2017-04-15 Mike Gabriel
+2017-05-15 13:41:21 +0200 Mike Gabriel (9649a93)
 
-        * vala: Replace all 'static const' declaration by 'const'. (24d9086)
-        * debian/rules: Preserve upstream's po/arctica-greeter.pot (it gets
-          recreated during build). (5274b88)
-        * unit tests: GLX extension not required in our Xvfb test runs.
-          (77ee958)
+	* Use systemd to launch the Ayatana Indicators Application Service.
 
-2016-09-15 Mike Gabriel
+2017-05-15 13:31:16 +0200 Mike Gabriel (1347098)
 
-        * Don't use deprecated -GtkWidget-focus-line-width style property
-          anymore, replace by outline-width property. (b206777)
-        * Don't use deprecated GtkButton-child-displacement-{x|y} style
-          properties anymore. (47ff24f)
-        * po/co.po: Add co language to Transifex and update (empty .po file).
-          (b262c5e)
-        * update po/arctica-greeter.pot (faf1999)
+	* debian/rules: Let's skip tests for now, until we got them fixed.
 
-2016-09-15 Robert Ancell
+2017-05-15 13:30:45 +0200 Mike Gabriel (54d2745)
 
-        * Explicitly set scale and geometry for Cairo.XlibSurface. (65cc346)
-        * Limit prompt fields to 200 characters in case a key is being held
-          down (e.g. by a cat). (440a813)
+	* debian/control: Fix Recommends: field. Let's use
+          ayatana-indicator-* packages rather.
 
-2016-09-15 Mike Gabriel
+2017-04-30 23:35:30 +0200 Mike Gabriel (e0afbd7)
 
-        * Wait for gnome-settings-daemon xsettings plugin is ready to avoid
-          HiDPI resolution changing. (df985b3)
+	* rebase m-s-d
 
-2016-09-15 Robert Ancell
+2017-04-29 21:30:15 +0000 Mike Gabriel (a4ab356)
 
-        * Update LINUGAS. (8b9cf7f)
-        * Work around Vala trying to use a new GTK 3.20 function. (fabfbff)
+	* Switch to using MATE's Settings Daemon.
 
-2016-09-15 Iain Lane
+2017-04-18 08:23:00 +0000 Robert Ancell (d70a693)
 
-        * Apply the Gtk.ResizeMode.QUEUE fix to another place, so that the
-          shutdown dialog is positioned correctly again. (b20beff)
+	* Handle errors from liblightdm.
 
-2016-02-26 Mike Gabriel
+2017-04-18 08:16:30 +0000 Robert Ancell (e36ceb6)
 
-        * Rename RemoteLoginService interface to RemoteLogonService.
-          (1190fb9)
-        * Find nasty typo in our project name. Thanks to Jeppe Simonson for
-          helping with getting that tracked. (27a7262)
+	* Show error when failing to connect to LightDM daemon.
 
-2016-02-23 Mike Gabriel
+2017-04-18 08:15:20 +0000 Robert Ancell (4d8cb25)
 
-        * debian/control: Alternative Ds fonts-droid-fallback | fonts-droid.
-          Fix FTBFS on Debian stretch/unstable. (305e0c5)
-        * debian/control: Add D (arctica-greeter): gnome-settings-daemon.
-          (c6b9d72)
-        * Transifex: Add .tx/config configuration file. (0d47a28)
+	* Use GenericSet instead of HashTable.
 
-2016-02-22 Mike Gabriel
+2017-04-18 08:13:45 +0000 Robert Ancell (9d87509)
 
-        * po: Add helper script update-pot.sh. (7b3849b)
-        * po: Add arctica-greeter.pot PO translation template file. (585f614)
+	* Compile with Vala debugging information
 
-2015-11-10 Mike Gabriel
+2017-04-18 08:12:26 +0000 Robert Ancell (b7ffb48)
 
-        * debian/control: Fix build-dependency issue for nightly builds.
-          (16012a3)
+	* Fix test mode by skipping xsettings checks.
 
-2015-11-07 Mike Gabriel
+2017-04-18 07:56:29 +0000 Robert Ancell (a3cf506)
 
-        * Build against Ayatana Indicators instead of Ubuntu Inidicators.
-          (37f53f3)
+	* Use valgrind to make build logs bigger help in triaging FTBFS
+          problems.
 
-2015-11-05 Mike Gabriel
+2017-04-15 14:50:33 +0000 Mike Gabriel (24d9086)
 
-        * Use org.ayatana namespace for Ayatana indicators. (9f47961)
-        * NEWS.Canonical: Fix copy+paste error. (0cf0756)
+	* vala: Replace all 'static const' declaration by 'const'.
 
-2015-10-28 Mike Gabriel
+2017-04-15 14:45:33 +0000 Mike Gabriel (5274b88)
 
-        * Set a session name in our own namespace. (25ad920)
-        * toggle-box.vala: Catch Glib.Error where it occurs when setting
-          normal button style. (252faeb)
-        * Re-do session badges with proper color to alpha algorithm.
-          (fac2a33)
-        * Make our new icons transparent in the logo area, not black.
-          (80488bf)
+	* debian/rules: Preserve upstream's po/arctica-greeter.pot (it gets
+          recreated during build).
 
-2015-10-27 Mike Gabriel
+2017-04-15 14:43:11 +0000 Mike Gabriel (77ee958)
 
-        * Make session list in toggle box configurable concerning font color
-          and button bg color. (69a43a8)
-        * Set default background color (before image is loaded) to a color
-          similar to our default image. (d1d9cb3)
-        * add forgotten xsession_badge.{png,xcf} (7a09c56)
-        * Add badge (.png) for default Xsession. (e03befb)
-        * Add badge (.png) for Openbox window manager. Also make greeter
-          aware of openbox-kde and openbox-gnome. (41cd118)
-        * Add badge (.png) for TWM window manager. (cf52b7d)
-        * fix for last commit (7001ab9)
-        * Darken badges for MATE and LXDE. (5fff773)
-        * data/Makefile.am: Drop
+	* unit tests: GLX extension not required in our Xvfb test runs.
+
+2016-09-15 10:18:55 +0000 Mike Gabriel (b206777)
+
+	* Don't use deprecated -GtkWidget-focus-line-width style property
+          anymore, replace by outline-width property.
+
+2016-09-15 10:02:52 +0000 Mike Gabriel (47ff24f)
+
+	* Don't use deprecated GtkButton-child-displacement-{x|y} style
+          properties anymore.
+
+2016-09-15 11:27:53 +0200 Mike Gabriel (b262c5e)
+
+	* po/co.po: Add co language to Transifex and update (empty .po file).
+
+2016-09-15 09:22:06 +0000 Mike Gabriel (faf1999)
+
+	* update po/arctica-greeter.pot
+
+2016-09-15 09:13:38 +0000 Robert Ancell (65cc346)
+
+	* Explicitly set scale and geometry for Cairo.XlibSurface.
+
+2016-09-15 09:11:49 +0000 Robert Ancell (440a813)
+
+	* Limit prompt fields to 200 characters in case a key is being held
+          down (e.g. by a cat).
+
+2016-09-15 09:07:39 +0000 Mike Gabriel (df985b3)
+
+	* Wait for gnome-settings-daemon xsettings plugin is ready to avoid
+          HiDPI resolution changing.
+
+2016-09-15 08:54:00 +0000 Robert Ancell (8b9cf7f)
+
+	* Update LINUGAS.
+
+2016-09-15 08:53:16 +0000 Robert Ancell (fabfbff)
+
+	* Work around Vala trying to use a new GTK 3.20 function.
+
+2016-09-15 08:49:20 +0000 Iain Lane (b20beff)
+
+	* Apply the Gtk.ResizeMode.QUEUE fix to another place, so that the
+          shutdown dialog is positioned correctly again.
+
+2016-02-26 11:34:08 +0100 Mike Gabriel (1190fb9)
+
+	* Rename RemoteLoginService interface to RemoteLogonService.
+
+2016-02-26 11:33:30 +0100 Mike Gabriel (27a7262)
+
+	* Find nasty typo in our project name. Thanks to Jeppe Simonson for
+          helping with getting that tracked.
+
+2016-02-23 15:05:01 +0100 Mike Gabriel (305e0c5)
+
+	* debian/control: Alternative Ds fonts-droid-fallback | fonts-droid.
+          Fix FTBFS on Debian stretch/unstable.
+
+2016-02-23 08:37:15 +0100 Mike Gabriel (c6b9d72)
+
+	* debian/control: Add D (arctica-greeter): gnome-settings-daemon.
+
+2016-02-23 07:25:25 +0100 Mike Gabriel (0d47a28)
+
+	* Transifex: Add .tx/config configuration file.
+
+2016-02-22 23:06:56 +0100 Mike Gabriel (7b3849b)
+
+	* po: Add helper script update-pot.sh.
+
+2016-02-22 22:39:15 +0100 Mike Gabriel (585f614)
+
+	* po: Add arctica-greeter.pot PO translation template file.
+
+2015-11-10 23:30:04 +0100 Mike Gabriel (16012a3)
+
+	* debian/control: Fix build-dependency issue for nightly builds.
+
+2015-11-07 06:08:26 +0000 Mike Gabriel (37f53f3)
+
+	* Build against Ayatana Indicators instead of Ubuntu Inidicators.
+
+2015-11-05 13:52:17 +0100 Mike Gabriel (9f47961)
+
+	* Use org.ayatana namespace for Ayatana indicators.
+
+2015-11-05 13:51:52 +0100 Mike Gabriel (0cf0756)
+
+	* NEWS.Canonical: Fix copy+paste error.
+
+2015-10-28 23:35:33 +0100 Mike Gabriel (25ad920)
+
+	* Set a session name in our own namespace.
+
+2015-10-28 15:34:16 +0100 Mike Gabriel (252faeb)
+
+	* toggle-box.vala: Catch Glib.Error where it occurs when setting
+          normal button style.
+
+2015-10-28 05:10:09 +0100 Mike Gabriel (fac2a33)
+
+	* Re-do session badges with proper color to alpha algorithm.
+
+2015-10-28 04:46:11 +0100 Mike Gabriel (80488bf)
+
+	* Make our new icons transparent in the logo area, not black.
+
+2015-10-27 22:41:27 +0100 Mike Gabriel (69a43a8)
+
+	* Make session list in toggle box configurable concerning font color
+          and button bg color.
+
+2015-10-27 21:54:27 +0100 Mike Gabriel (d1d9cb3)
+
+	* Set default background color (before image is loaded) to a color
+          similar to our default image.
+
+2015-10-27 21:45:04 +0100 Mike Gabriel (7a09c56)
+
+	* add forgotten xsession_badge.{png,xcf}
+
+2015-10-27 21:43:14 +0100 Mike Gabriel (e03befb)
+
+	* Add badge (.png) for default Xsession.
+
+2015-10-27 21:29:30 +0100 Mike Gabriel (41cd118)
+
+	* Add badge (.png) for Openbox window manager. Also make greeter
+          aware of openbox-kde and openbox-gnome.
+
+2015-10-27 21:14:36 +0100 Mike Gabriel (cf52b7d)
+
+	* Add badge (.png) for TWM window manager.
+
+2015-10-27 20:43:24 +0100 Mike Gabriel (7001ab9)
+
+	* fix for last commit
+
+2015-10-27 20:39:12 +0100 Mike Gabriel (5fff773)
+
+	* Darken badges for MATE and LXDE.
+
+2015-10-27 20:27:57 +0100 Mike Gabriel (3dcfdaf)
+
+	* data/Makefile.am: Drop
           org.ArcticaProject.ArcticaGreeterSession.gschema.xml from
-          target. (3dcfdaf)
-        * data/Makefile.am: Install new badges. (e50ccde)
-        * Attempt to fake a session with org.gnome.SessionManager. (ba8900a)
-        * Add badge (.png) for XFCE desktop session. (8ad0245)
-        * Add badge (.png) for MATE desktop session. (48dd06f)
-        * Add badge (.png) for LXDE desktop session. (891105e)
-        * fix for a18ab60: UGSettings class has been renamed to AGSettings.
-          (2ef3a81)
+          target.
 
-2015-10-27 Robert Ancell
+2015-10-27 19:54:46 +0100 Mike Gabriel (e50ccde)
 
-        * Use non-deprecated Gdk.Cursor methods (e80a7fc)
+	* data/Makefile.am: Install new badges.
 
-2015-09-16 Robert Ancell
+2015-10-27 19:49:12 +0100 Mike Gabriel (ba8900a)
 
-        * Add an option to only show users in a list of specified groups
-          (a18ab60)
-        * Remove obsolete CONFIG_FILE define (a9369a5)
+	* Attempt to fake a session with org.gnome.SessionManager.
 
-2015-02-19 Alberts Muktupāvels
+2015-10-27 19:29:32 +0100 Mike Gabriel (8ad0245)
 
-        * Add class name for toggle button (bedfb6d)
-        * Add class name for option button (4bfa70a)
+	* Add badge (.png) for XFCE desktop session.
 
-2015-01-27 Lars Uebernickel
+2015-10-27 19:23:47 +0100 Mike Gabriel (48dd06f)
 
-        * DashEntry: remove .spinner class (a7e3214)
+	* Add badge (.png) for MATE desktop session.
 
-2015-01-16 Albert Astals Cid
+2015-10-27 19:18:43 +0100 Mike Gabriel (891105e)
 
-        * Support the session name for Plasma 5 (c1a0b36)
+	* Add badge (.png) for LXDE desktop session.
 
-2014-12-17 Alberts Muktupāvels
+2015-10-27 18:18:04 +0100 Mike Gabriel (2ef3a81)
 
-        * Fix prompt-box height. (adb9b2e)
+	* fix for a18ab60: UGSettings class has been renamed to AGSettings.
 
-2014-11-29 Alberts Muktupavels
+2015-10-27 11:42:32 +1300 Robert Ancell (e80a7fc)
 
-        * Restore event type for button-release-event. (eb9d205)
-        * Change event type when calling button press event in release event.
-          (4a5a14d)
+	* Use non-deprecated Gdk.Cursor methods
 
-2014-11-19 Dmitry Shachnev
+2015-09-16 08:58:28 -0400 Robert Ancell (a18ab60)
 
-        * Update for new gnome-flashback sessions names (c8331a0)
+	* Add an option to only show users in a list of specified groups
 
-2014-11-04 Robert Ancell
+2015-09-16 08:42:44 -0400 Robert Ancell (a9369a5)
 
-        * Don't copy delegates. Apparently not allowed (a937ee8)
-        * Don't use deprecated Gtk.Widget API (138bf14)
-        * Don't use deprecated liblightdm API (c1726b3)
-        * Don't use deprecated Gdk X11 API (269ff16)
+	* Remove obsolete CONFIG_FILE define
 
-2015-10-27 Mike Gabriel
+2015-02-19 14:57:35 +0200 Alberts Muktupāvels (bedfb6d)
 
-        * Set gettext-domain from unity to arctica-greeter. (aa5077f)
-        * Logo: Reduce spacing between logo text and version, shrink version
-          string. (9767eeb)
-        * Logo: Rework TheArcticaGreeter logo. (2399e71)
-        * Don't own session com.canonical.Unity, own
+	* Add class name for toggle button
+
+2015-02-19 14:33:16 +0200 Alberts Muktupāvels (4bfa70a)
+
+	* Add class name for option button
+
+2015-01-27 20:34:20 +0000 Lars Uebernickel (a7e3214)
+
+	* DashEntry: remove .spinner class
+
+2015-01-16 21:57:29 +0100 Albert Astals Cid (c1a0b36)
+
+	* Support the session name for Plasma 5
+
+2014-12-17 09:12:01 +0200 Alberts Muktupāvels (adb9b2e)
+
+	* Fix prompt-box height.
+
+2014-11-29 14:14:09 +0200 Alberts Muktupavels (eb9d205)
+
+	* Restore event type for button-release-event.
+
+2014-11-29 13:56:19 +0200 Alberts Muktupavels (4a5a14d)
+
+	* Change event type when calling button press event in release event.
+
+2014-11-19 15:11:44 +0300 Dmitry Shachnev (c8331a0)
+
+	* Update for new gnome-flashback sessions names
+
+2014-11-04 15:56:26 +1300 Robert Ancell (a937ee8)
+
+	* Don't copy delegates. Apparently not allowed
+
+2014-11-04 15:54:24 +1300 Robert Ancell (138bf14)
+
+	* Don't use deprecated Gtk.Widget API
+
+2014-11-04 15:49:30 +1300 Robert Ancell (c1726b3)
+
+	* Don't use deprecated liblightdm API
+
+2014-11-04 15:49:06 +1300 Robert Ancell (269ff16)
+
+	* Don't use deprecated Gdk X11 API
+
+2015-10-27 10:07:58 +0100 Mike Gabriel (aa5077f)
+
+	* Set gettext-domain from unity to arctica-greeter.
+
+2015-10-27 09:55:12 +0100 Mike Gabriel (9767eeb)
+
+	* Logo: Reduce spacing between logo text and version, shrink version
+          string.
+
+2015-10-27 09:51:46 +0100 Mike Gabriel (2399e71)
+
+	* Logo: Rework TheArcticaGreeter logo.
+
+2015-10-27 01:03:40 +0100 Mike Gabriel (7b9bd55)
+
+	* Don't own session com.canonical.Unity, own
           org.ArcticaProject.ArcticaProjectGreeter instead.
-          (7b9bd55)
 
-2015-10-26 Mike Gabriel
+2015-10-26 23:13:23 +0000 Mike Gabriel (47036c2)
 
-        * Comment out never used upstart_pid variable. (47036c2)
+	* Comment out never used upstart_pid variable.
 
-2015-10-27 Mike Gabriel
+2015-10-27 00:07:43 +0100 Mike Gabriel (28b3e3f)
 
-        * debian/rules: Remove build-cruft (.c files) after build. (28b3e3f)
+	* debian/rules: Remove build-cruft (.c files) after build.
 
-2015-10-26 Mike Gabriel
+2015-10-26 22:46:02 +0000 Mike Gabriel (5aea9e6)
 
-        * logo-generator: Reduce separator between logo text and version
-          number. (5aea9e6)
-        * Provide TheArcticaGreeter logo, drop Ubuntu logo. Adapt
-          logo-generator. (8e72820)
-        * debian/rules: Fix bogus. (c7dbb58)
-        * debian/rules: No need to remove logo.png after package build.
-          (ce3b008)
-        * debian/rules: Clean .stamp files after package build. (cf78e2f)
-        * Revert "Remove *.stamp files on distclean." (175a4c1)
-        * Remove *.stamp files on distclean. (8c82d89)
-        * Add source files (gimp graphics) for background images. (c72e594)
-        * Background image: use a more blue'ish background image. (f086aa0)
-        * Disable code depending on upstart. (b86e64e)
-        * Fix parentheses in dialog message. (4ce2ca5)
-        * debian/control: Don't use package name as SYNOPSIS. (abc1d35)
-        * Fix dialog message. (b48f5ff)
-        * Use Cantarell font to build versioned logo. Requires
-          fonts-cantarell to be available at build time. (0a03c98)
-        * Drop hard-reference to uccs.canonica.com. Make default Remote Logon
-          Service server configurable through gsettings. (5811d62)
-        * Drop Ubuntu background. Use some temporary swirly gradient
-          background. (1cfbd06)
-        * debian/rules: No need to extra-copy logo.png at
-          override_dh_auto_install. (c301096)
-        * Drop optionally using unity-settings-daemon with Arctica Greeter.
-          (e1573ab)
-        * font work: Use Cabin and Cantatell fonts instead of Ubuntu and
-          Ubuntu Light. (51bf806)
-        * debian/control: Recommend ubuntu-settings-daemon |
+	* logo-generator: Reduce separator between logo text and version
+          number.
+
+2015-10-26 22:09:25 +0000 Mike Gabriel (8e72820)
+
+	* Provide TheArcticaGreeter logo, drop Ubuntu logo. Adapt
+          logo-generator.
+
+2015-10-26 20:45:14 +0100 Mike Gabriel (c7dbb58)
+
+	* debian/rules: Fix bogus.
+
+2015-10-26 20:35:17 +0100 Mike Gabriel (ce3b008)
+
+	* debian/rules: No need to remove logo.png after package build.
+
+2015-10-26 20:33:54 +0100 Mike Gabriel (cf78e2f)
+
+	* debian/rules: Clean .stamp files after package build.
+
+2015-10-26 20:31:04 +0100 Mike Gabriel (175a4c1)
+
+	* Revert "Remove *.stamp files on distclean."
+
+2015-10-26 20:14:31 +0100 Mike Gabriel (8c82d89)
+
+	* Remove *.stamp files on distclean.
+
+2015-10-26 20:11:45 +0100 Mike Gabriel (c72e594)
+
+	* Add source files (gimp graphics) for background images.
+
+2015-10-26 20:10:39 +0100 Mike Gabriel (f086aa0)
+
+	* Background image: use a more blue'ish background image.
+
+2015-10-26 18:31:57 +0100 Mike Gabriel (b86e64e)
+
+	* Disable code depending on upstart.
+
+2015-10-26 17:26:23 +0100 Mike Gabriel (4ce2ca5)
+
+	* Fix parentheses in dialog message.
+
+2015-10-26 17:13:48 +0100 Mike Gabriel (abc1d35)
+
+	* debian/control: Don't use package name as SYNOPSIS.
+
+2015-10-26 17:13:21 +0100 Mike Gabriel (b48f5ff)
+
+	* Fix dialog message.
+
+2015-10-26 15:59:16 +0100 Mike Gabriel (0a03c98)
+
+	* Use Cantarell font to build versioned logo. Requires
+          fonts-cantarell to be available at build time.
+
+2015-10-26 15:55:14 +0100 Mike Gabriel (5811d62)
+
+	* Drop hard-reference to uccs.canonica.com. Make default Remote Logon
+          Service server configurable through gsettings.
+
+2015-10-26 15:52:42 +0100 Mike Gabriel (1cfbd06)
+
+	* Drop Ubuntu background. Use some temporary swirly gradient
+          background.
+
+2015-10-26 15:35:21 +0100 Mike Gabriel (c301096)
+
+	* debian/rules: No need to extra-copy logo.png at
+          override_dh_auto_install.
+
+2015-10-26 15:34:50 +0100 Mike Gabriel (e1573ab)
+
+	* Drop optionally using unity-settings-daemon with Arctica Greeter.
+
+2015-10-26 15:12:51 +0100 Mike Gabriel (51bf806)
+
+	* font work: Use Cabin and Cantatell fonts instead of Ubuntu and
+          Ubuntu Light.
+
+2015-10-26 15:09:50 +0100 Mike Gabriel (422c6d0)
+
+	* debian/control: Recommend ubuntu-settings-daemon |
           gnome-settings-daemon instead of mate-settings-daemon.
-          (422c6d0)
-        * Drop the idea of using mate-settings-daemon on non-Ubuntu systems,
-          use gnome-settings-daemon instead. (7b4efc8)
-        * Fix failing testsuite by enforce setting XDG_DATA_DIRS internally
-          if XDG_DATA_DIRS is not set in the environment. (c9220a0)
-        * Move logo-with-version creation into upstream code and away from
-          debian/rules. (a8365c6)
 
-2015-10-07 Mike Gabriel
+2015-10-26 13:34:39 +0000 Mike Gabriel (7b4efc8)
 
-        * Rename UGSettings to AGSettings. (da5a410)
+	* Drop the idea of using mate-settings-daemon on non-Ubuntu systems,
+          use gnome-settings-daemon instead.
 
-2015-09-22 Mike Gabriel
+2015-10-26 13:31:33 +0000 Mike Gabriel (c9220a0)
 
-        * Fix for last commit: Add forgotten translation files. (c96cf1a)
+	* Fix failing testsuite by enforce setting XDG_DATA_DIRS internally
+          if XDG_DATA_DIRS is not set in the environment.
 
-2015-09-21 Mike Gabriel
+2015-10-26 04:45:27 +0100 Mike Gabriel (a8365c6)
 
-        * Rebase against Unity Greeter in Ubuntu 15.10. (ab139b6)
-        * Rebase against Unity Greeter from Ubuntu 15.04 (bf0db8a)
-        * Rebase against unity from Ubuntu 15.04 (ec5e539)
-        * Support alt+super+s for enabling screen reader to match Unity shell
-          keybinding. (72ff799)
-        * Make arctica-greeter build on Debian and Ubuntu alike. (8852309)
+	* Move logo-with-version creation into upstream code and away from
+          debian/rules.
 
-2015-09-19 Mike Gabriel
+2015-10-07 08:28:21 +0000 Mike Gabriel (da5a410)
 
-        * Make arctica-greeter build against Debian unstable _and_ Ubuntu
-          (and probably break at runtime). (1896346)
-        * Makefile.am: Provide dist hooks for creating upstream ChangeLog and
-          AUTHORS file. (eac0956)
-        * Set upstream version to 0.99.0.1 (c5beb9c)
-        * Adapt to using ArcticaProject's remote-logon-service. (f2b9070)
-        * Provide our own background image arctica-greeter.png. (13e2fba)
-        * fork unity-greeter as arctica-greeter (f84be4f)
+	* Rename UGSettings to AGSettings.
 
-2014-12-06 Mike Gabriel
+2015-09-22 20:11:17 +0200 Mike Gabriel (c96cf1a)
 
-        * Fix failing test "remote_login_only" after we made Remote Login
-          only to appear properly on screen. (a2072d8)
-        * Improve selection code of new entry if an entry is removed.
-          (c3bbc8f)
+	* Fix for last commit: Add forgotten translation files.
 
-2014-12-02 Mike Gabriel
+2015-09-21 17:56:38 +0200 Mike Gabriel (ab139b6)
 
-        * Fix config parameter (show-remote-login ->
-          greeter-show-remote-login). (2bc8483)
+	* Rebase against Unity Greeter in Ubuntu 15.10.
 
-2014-12-01 Mike Gabriel
+2015-09-21 17:47:18 +0200 Mike Gabriel (bf0db8a)
 
-        * fix for commit 5328fc2 (e74028d)
-        * Add to D: network-manager. TODO: Without network-manager no Remote
-          Login. This needs to be addressed later. (15f085a)
-        * Show Remote Login box if no other boxes (usernames, other login,
-          guest login) are to be shown. (5328fc2)
+	* Rebase against Unity Greeter from Ubuntu 15.04
 
-2014-11-28 Mike Gabriel
+2015-09-21 17:42:30 +0200 Mike Gabriel (ec5e539)
 
-        * Remote Login Only sessions require show-remote-login to be true in
-          SeatDefaults. (5a726a4)
-        * 90-unity-greeter-x2go.conf: Override all known LightDM setups that
-          we know of in Ubuntu. (c0e5832)
-        * We also allow usernames for UCCS login. (2bddd36)
-        * If normal user sessions _and_ guest sessions are disabled, make
-          sure the remote login services gets activated. (c3ad1ba)
-        * fix changelog entries (834e272)
-        * Add to R (unity-greeter-x2go): xinput. (4d989d1)
-        * Make lightdm-xsession the default session to launch. (1c27048)
-        * Allow UCCS logins that are not email addresses (but usernames).
-          (0cd9dca)
-        * debian/control: Upgrade to D (unity-greeter): lightdm. Upgrade to R
+	* Rebase against unity from Ubuntu 15.04
+
+2015-09-21 17:33:33 +0200 Mike Gabriel (72ff799)
+
+	* Support alt+super+s for enabling screen reader to match Unity shell
+          keybinding.
+
+2015-09-21 17:24:51 +0200 Mike Gabriel (8852309)
+
+	* Make arctica-greeter build on Debian and Ubuntu alike.
+
+2015-09-19 16:53:38 +0200 Mike Gabriel (1896346)
+
+	* Make arctica-greeter build against Debian unstable _and_ Ubuntu
+          (and probably break at runtime).
+
+2015-09-19 12:56:08 +0000 Mike Gabriel (eac0956)
+
+	* Makefile.am: Provide dist hooks for creating upstream ChangeLog and
+          AUTHORS file.
+
+2015-09-19 14:53:43 +0200 Mike Gabriel (c5beb9c)
+
+	* Set upstream version to 0.99.0.1
+
+2015-09-19 14:42:19 +0200 Mike Gabriel (f2b9070)
+
+	* Adapt to using ArcticaProject's remote-logon-service.
+
+2015-09-19 14:09:33 +0200 Mike Gabriel (13e2fba)
+
+	* Provide our own background image arctica-greeter.png.
+
+2015-09-19 12:40:42 +0200 Mike Gabriel (f84be4f)
+
+	* fork unity-greeter as arctica-greeter
+
+2014-12-06 10:36:38 +0100 Mike Gabriel (a2072d8)
+
+	* Fix failing test "remote_login_only" after we made Remote Login
+          only to appear properly on screen.
+
+2014-12-06 10:35:38 +0100 Mike Gabriel (c3bbc8f)
+
+	* Improve selection code of new entry if an entry is removed.
+
+2014-12-02 14:10:45 +0100 Mike Gabriel (2bc8483)
+
+	* Fix config parameter (show-remote-login ->
+          greeter-show-remote-login).
+
+2014-12-01 12:25:39 +0000 Mike Gabriel (e74028d)
+
+	* fix for commit 5328fc2
+
+2014-12-01 13:00:30 +0100 Mike Gabriel (15f085a)
+
+	* Add to D: network-manager. TODO: Without network-manager no Remote
+          Login. This needs to be addressed later.
+
+2014-12-01 12:58:25 +0100 Mike Gabriel (5328fc2)
+
+	* Show Remote Login box if no other boxes (usernames, other login,
+          guest login) are to be shown.
+
+2014-11-28 16:51:55 +0100 Mike Gabriel (5a726a4)
+
+	* Remote Login Only sessions require show-remote-login to be true in
+          SeatDefaults.
+
+2014-11-28 16:44:45 +0100 Mike Gabriel (c0e5832)
+
+	* 90-unity-greeter-x2go.conf: Override all known LightDM setups that
+          we know of in Ubuntu.
+
+2014-11-28 16:23:40 +0100 Mike Gabriel (2bddd36)
+
+	* We also allow usernames for UCCS login.
+
+2014-11-28 16:07:15 +0100 Mike Gabriel (c3ad1ba)
+
+	* If normal user sessions _and_ guest sessions are disabled, make
+          sure the remote login services gets activated.
+
+2014-11-28 15:01:57 +0100 Mike Gabriel (834e272)
+
+	* fix changelog entries
+
+2014-11-28 15:01:36 +0100 Mike Gabriel (4d989d1)
+
+	* Add to R (unity-greeter-x2go): xinput.
+
+2014-11-28 10:55:47 +0100 Mike Gabriel (1c27048)
+
+	* Make lightdm-xsession the default session to launch.
+
+2014-11-28 10:50:59 +0100 Mike Gabriel (0cd9dca)
+
+	* Allow UCCS logins that are not email addresses (but usernames).
+
+2014-11-28 09:29:59 +0100 Mike Gabriel (7f45435)
+
+	* debian/control: Upgrade to D (unity-greeter): lightdm. Upgrade to R
           (unity-greeter): remote-login-service,
           lightdm-remote-login-x2go, lightdm-remote-login-freerdp.
-          (7f45435)
 
-2014-11-27 Mike Gabriel
+2014-11-27 13:54:56 +0100 Mike Gabriel (3f03110)
 
-        * fix for last commit (3f03110)
-        * debian/rules: Fix installation of logo.png into bin:package.
-          (20dc10f)
+	* fix for last commit
 
-2014-11-12 Mike Gabriel
+2014-11-27 13:54:28 +0100 Mike Gabriel (20dc10f)
 
-        * debian/watch: Drop file (i.e. reference to original unity-greeter
-          upstream download resource). (b4b0c4e)
-        * debian/copyright: Adapt file to forked context of
-          unity-greeter-x2go. (c681de9)
-        * Bump Standards: to 3.9.6. No changes needed. (31d6243)
-        * Put myself in Maintainer: field. (d46818b)
-        * debian/control: Rename (src:)package: unity-greeter ->
-          unity-greeter-x2go. (af4e9cc)
-        * debian/source/format: Switch to format 1.0. (d8f5e85)
-        * debian/control: Adapt Suggests: field to usage with X2Go. (0132755)
-        * mark as UNRELEASED (ef58047)
-        * Apply patch 01_x2go+rls.patch. Natively support X2Go Session.
-          (c356792)
+	* debian/rules: Fix installation of logo.png into bin:package.
 
-2014-11-02 Mike Gabriel
+2014-11-12 05:30:43 +0100 Mike Gabriel (b4b0c4e)
 
-        * upload to ppa:x2go/stable+ppa (ubuntu/14.04.10-0ubuntu1+x2go1)
-          (4ae9e07)
-        * Imported Upstream version 14.04.10 (8e2d33d)
+	* debian/watch: Drop file (i.e. reference to original unity-greeter
+          upstream download resource).
+
+2014-11-12 05:30:07 +0100 Mike Gabriel (c681de9)
+
+	* debian/copyright: Adapt file to forked context of
+          unity-greeter-x2go.
+
+2014-11-12 05:23:23 +0100 Mike Gabriel (31d6243)
+
+	* Bump Standards: to 3.9.6. No changes needed.
+
+2014-11-12 05:22:54 +0100 Mike Gabriel (d46818b)
+
+	* Put myself in Maintainer: field.
+
+2014-11-12 05:21:05 +0100 Mike Gabriel (af4e9cc)
+
+	* debian/control: Rename (src:)package: unity-greeter ->
+          unity-greeter-x2go.
+
+2014-11-12 05:20:08 +0100 Mike Gabriel (d8f5e85)
+
+	* debian/source/format: Switch to format 1.0.
+
+2014-11-12 05:15:31 +0100 Mike Gabriel (0132755)
+
+	* debian/control: Adapt Suggests: field to usage with X2Go.
+
+2014-11-12 05:13:27 +0100 Mike Gabriel (ef58047)
+
+	* mark as UNRELEASED
+
+2014-11-12 05:12:54 +0100 Mike Gabriel (c356792)
+
+	* Apply patch 01_x2go+rls.patch. Natively support X2Go Session.
+
+2014-11-02 20:41:17 +0100 Mike Gabriel (4ae9e07)
+
+	* upload to ppa:x2go/stable+ppa (ubuntu/14.04.10-0ubuntu1+x2go1)
+
+2014-11-02 20:40:40 +0100 Mike Gabriel (8e2d33d)
+
+	* Imported Upstream version 14.04.10
+
