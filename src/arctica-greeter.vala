@@ -720,6 +720,16 @@ public class ArcticaGreeter : Object
         }
     }
 
+    private static void enable_tap_to_click ()
+    {
+        try {
+            Process.spawn_command_line_sync("/usr/bin/arctica-greeter-enable-tap-to-click", null, null, null);
+        }
+        catch (Error e){
+            warning ("Error while enabling tap-to-click: %s", e.message);
+        }
+    }
+
     private static void activate_numlock ()
     {
         try {
@@ -896,6 +906,9 @@ public class ArcticaGreeter : Object
                 warning ("Error starting the at-spi registry: %s", e.message);
             }
         }
+
+        /* Enable touchpad tap-to-click */
+        enable_tap_to_click ();
 
         Gtk.init (ref args);
         Ido.init ();

@@ -11,5 +11,6 @@ usr/share/sounds/
 usr/share/xgreeters/
 usr/lib/*/arctica-greeter/lightdm-arctica-greeter-session
 usr/lib/*/arctica-greeter/arctica-greeter-check-hidpi
+usr/lib/*/arctica-greeter/arctica-greeter-enable-tap-to-click
 usr/lib/*/arctica-greeter/arctica-greeter-set-keyboard-layout
 var/lib/polkit-1/localauthority/10-vendor.d/arctica-greeter.pkla

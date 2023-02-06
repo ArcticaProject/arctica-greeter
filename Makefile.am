@@ -11,6 +11,7 @@ pkglibexec_SCRIPTS = lightdm-arctica-greeter-session \
 	arctica-greeter-guest-session-auto.sh \
 	arctica-greeter-guest-session-setup.sh \
 	arctica-greeter-check-hidpi \
+	arctica-greeter-enable-tap-to-click \
 	arctica-greeter-set-keyboard-layout
 
 EXTRA_DIST = \
