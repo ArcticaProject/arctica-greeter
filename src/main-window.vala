@@ -40,7 +40,7 @@ public class MainWindow : Gtk.Window
     public ListStack stack;
 
     // Menubar is smaller, but with shadow, we reserve more space
-    public const int MENUBAR_HEIGHT = 32;
+    public const int MENUBAR_HEIGHT = 40;
 
     construct
     {
@@ -75,6 +75,8 @@ public class MainWindow : Gtk.Window
             shadow_style = "background-image: url('%s');
                             background-repeat: repeat;".printf(shadow_path);
         }
+        /* Disable the shadow image, we will use CSS instead. */
+        /*
         try
         {
             var style = new Gtk.CssProvider ();
@@ -89,6 +91,7 @@ public class MainWindow : Gtk.Window
         {
             debug ("Internal error loading menubox style: %s", e.message);
         }
+        */
         menubox.set_size_request (-1, MENUBAR_HEIGHT);
         menubox.show ();
         menualign.show ();
@@ -159,7 +162,8 @@ public class MainWindow : Gtk.Window
         only_on_monitor = AGSettings.get_string(AGSettings.KEY_ONLY_ON_MONITOR);
         monitor_setting_ok = only_on_monitor == "auto";
 
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
         {
             /* Simulate an 800x600 monitor to the left of a 640x480 monitor */
             monitors = new List<Monitor> ();
@@ -375,6 +379,7 @@ public class MainWindow : Gtk.Window
             }
         }
 
+        var greeter = new ArcticaGreeter ();
         switch (event.keyval)
         {
         case Gdk.Key.Escape:
@@ -434,14 +439,14 @@ public class MainWindow : Gtk.Window
             }
             return true;
         case Gdk.Key.z:
-            if (ArcticaGreeter.singleton.test_mode && (event.state & Gdk.ModifierType.MOD1_MASK) != 0)
+            if (greeter.test_mode && (event.state & Gdk.ModifierType.MOD1_MASK) != 0)
             {
                 show_shutdown_dialog (ShutdownDialogType.SHUTDOWN);
                 return true;
             }
             break;
         case Gdk.Key.Z:
-            if (ArcticaGreeter.singleton.test_mode && (event.state & Gdk.ModifierType.MOD1_MASK) != 0)
+            if (greeter.test_mode && (event.state & Gdk.ModifierType.MOD1_MASK) != 0)
             {
                 show_shutdown_dialog (ShutdownDialogType.RESTART);
                 return true;

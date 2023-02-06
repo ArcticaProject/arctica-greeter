@@ -37,7 +37,8 @@ arctica_greeter_SOURCES = \
 	toggle-box.vala \
 	arctica-greeter.vala \
 	user-list.vala \
-	user-prompt-box.vala
+	user-prompt-box.vala \
+	util.vala
 
 logo_generator_SOURCES = logo-generator.vala
 

@@ -778,7 +778,8 @@ public class Background : Gtk.Fixed
     {
         notify_property ("average-color");
 
-        if (!ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode)
         {
             var rgba = current.average_color.to_string ();
             var root = get_screen ().get_root_window ();

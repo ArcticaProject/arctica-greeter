@@ -65,13 +65,26 @@ public class ToggleBox : Gtk.Box
             /* Tighten padding on buttons to not be so large, default color scheme for buttons */
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {padding: 8px;}\n"+
-                                  "GtkButton {\n"+
+                                  "GtkButton, button {\n"+
                                   "   background-color: %s;\n".printf("rgba(0,0,0,0)")+
                                   "   background-image: none;"+
                                   "}\n"+
-                                  ".button:hover,\n"+
-                                  ".button:hover:active {\n"+
+                                  "button:hover,\n"+
+                                  "button:active,\n" +
+                                  "button:hover:active,\n" +
+                                  "button.selected {\n"+
                                   "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
+                                  "}\n" +
+                                  "button.high_contrast {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(70, 70, 70, 1.0)") +
+                                  "   background-image: none;\n" +
+                                  "   border-color: %s\n;".printf ("rgba(0, 0, 0, 1.0)") +
+                                  "}\n" +
+                                  "button.high_contrast:hover,\n" +
+                                  "button.high_contrast:active,\n" +
+                                  "button.high_contrast:hover:active,\n" +
+                                  "button.high_contrast.selected {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(0, 0, 0, 1.0)") +
                                   "}\n", -1);
             button.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
@@ -113,9 +126,8 @@ public class ToggleBox : Gtk.Box
         selected_button = button;
         selected_key = selected_button.get_data<string> ("toggle-list-key");
 
-        var bg_color = Gdk.RGBA ();
-        bg_color.parse (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR));
-        selected_button.override_background_color(Gtk.StateFlags.NORMAL, bg_color);
+        /* Handle color via CSS. */
+        selected_button.get_style_context ().add_class ("selected");
     }
 
     private Gtk.Button make_button (string key, string name_in, Gdk.Pixbuf? icon)
@@ -140,7 +152,24 @@ public class ToggleBox : Gtk.Box
         }
 
         var label = new Gtk.Label (null);
-        label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size+2, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), name));
+        /* Font and other properties are being handled via CSS. */
+        label.set_text (name);
+        try {
+            var style = new Gtk.CssProvider ();
+            style.load_from_data ("label {\n" +
+                                  "   font-family: \"%s\", sans-serif;\n".printf (font_family) +
+                                  "   font-size: %d;\n".printf (font_size + 2) +
+                                  "   color: %s;\n".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR)) +
+                                  "}\n" +
+                                  "label.high_contrast {\n" +
+                                  "   color: %s;\n".printf ("rgba(255, 255, 255, 1.0)") +
+                                  "}\n", -1);
+            label.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading session chooser label style: %s", e.message);
+        }
         label.halign = Gtk.Align.START;
         hbox.pack_start (label, true, true, 0);
 

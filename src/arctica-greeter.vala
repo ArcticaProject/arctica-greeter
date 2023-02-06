@@ -21,16 +21,15 @@
 
 public const int grid_size = 40;
 
-public class ArcticaGreeter
+[SingleInstance]
+public class ArcticaGreeter : Object
 {
-    public static ArcticaGreeter singleton;
-
     public signal void show_message (string text, LightDM.MessageType type);
     public signal void show_prompt (string text, LightDM.PromptType type);
     public signal void authentication_complete ();
     public signal void starting_session ();
 
-    public bool test_mode = false;
+    public bool test_mode { get; construct; default = false; }
 
     private string state_file;
     private KeyFile state;
@@ -53,11 +52,8 @@ public class ArcticaGreeter
     public signal void xsettings_ready ();
     public signal void greeter_ready ();
 
-    private ArcticaGreeter (bool test_mode_)
+    construct
     {
-        singleton = this;
-        test_mode = test_mode_;
-
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
         greeter.show_prompt.connect ((text, type) => { show_prompt (text, type); });
@@ -138,6 +134,22 @@ public class ArcticaGreeter
         }
         else
             xsettings_ready_cb ();
+    }
+
+    /*
+     * Note that we need a way to specify a parameter for the initial instance
+     * creation of the singleton, but also a constructor that takes no
+     * parameters for later usage.
+     *
+     * Making the parameter optional is a good compromise.
+     *
+     * This this parameter is construct-only, initializing it by passing it to
+     * the GObject constructor is both the correct way to do it, and it will
+     * additionally avoid changing it in later calls of our constructor.
+     */
+    public ArcticaGreeter (bool test_mode_ = false)
+    {
+        Object (test_mode: test_mode_);
     }
 
     public string? get_state (string key)
@@ -294,6 +306,47 @@ public class ArcticaGreeter
                                    Canberra.PROP_EVENT_ID,
                                    "system-ready");
 
+        /* Synchronize properties in AGSettings once. */
+        var agsettings = new AGSettings ();
+        agsettings.high_contrast = !(!(agsettings.high_contrast));
+        agsettings.big_font = !(!(agsettings.big_font));
+
+        /*
+         * Add timeouts to process the full node hierarchy to handle a11y
+         * changes.
+         *
+         * That's the easiest way to handle a changing node hierarchy.
+         *
+         * Alternatives would involve connecting a function for every a11y
+         * change to the GtkWidget::parent-set event to *every widget* we
+         * create, but that would make the code incredibly messy.
+         *
+         * The value has been determined by a fair dice roll and should make
+         * sure that changes are visible almost instantaneously to users.
+         */
+        Timeout.add_full (GLib.Priority.HIGH_IDLE, 302, () => {
+            var agsettings_intimer = new AGSettings ();
+            /*
+            if (0 == GLib.Random.int_range (0, 10)) {
+                debug ("Syncing up high contrast value via timer: %s", agsettings_intimer.high_contrast.to_string ());
+            }
+            */
+            switch_contrast (agsettings_intimer.high_contrast);
+
+            return true;
+        });
+        Timeout.add_full (GLib.Priority.HIGH_IDLE, 302, () => {
+            var agsettings_intimer = new AGSettings ();
+            /*
+            if (0 == GLib.Random.int_range (0, 10)) {
+                debug ("Syncing up big font value via timer: %s", agsettings_intimer.big_font.to_string ());
+            }
+            */
+            switch_font (agsettings_intimer.big_font);
+
+            return true;
+        });
+
         return false;
     }
 
@@ -340,7 +393,7 @@ public class ArcticaGreeter
     {
         try
         {
-            ArcticaGreeter.singleton.greeter.authenticate_remote (session, userid);
+            greeter.authenticate_remote (session, userid);
         }
         catch (Error e)
         {
@@ -405,6 +458,75 @@ public class ArcticaGreeter
     public bool has_guest_account_hint ()
     {
         return greeter.has_guest_account_hint;
+    }
+
+    private delegate void SwitchClassType (Gtk.Widget widget, string classname, bool enable);
+
+    private delegate void IterateChildrenType (Gtk.Widget widget);
+
+    private void switch_generic (Gtk.Widget widget, string classname, bool enable)
+    {
+        var style_ctx = widget.get_style_context ();
+        if (enable)
+        {
+            style_ctx.add_class (classname);
+        }
+        else
+        {
+            style_ctx.remove_class (classname);
+        }
+    }
+
+    private void iterate_children_generic (Gtk.Widget widget, SwitchClassType switch_func, string classname, bool enable)
+    {
+        /*
+         * GTK 4 changed its API quite dramatically, got rid of GtkContainer
+         * and made each GtkWidget accept children, while also defining a new
+         * way to access those.
+         */
+        IterateChildrenType rec_func = null;
+        rec_func = (widget) => {
+#if HAVE_GTK_4_0
+            Gtk.Widget child = widget.get_first_child ();
+            while (null != child)
+            {
+                rec_func (child);
+                child = child.get_next_sibling ();
+            }
+#else
+            if (gtk_is_container (widget))
+            {
+                ((Gtk.Container)(widget)).@foreach (rec_func);
+            }
+#endif
+
+            /* Common code to add or remove the CSS class. */
+            switch_func (widget, classname, enable);
+        };
+
+        /*
+         * Actually recursively iterate through this item and all of its
+         * children.
+         */
+        rec_func (widget);
+    }
+
+    public void switch_contrast (bool high)
+    {
+        var time_pre = GLib.get_monotonic_time ();
+        iterate_children_generic (main_window, switch_generic, "high_contrast", high);
+        var time_post = GLib.get_monotonic_time ();
+        var time_diff = time_post - time_pre;
+        assert (0 <= time_diff);
+        var time_diff_sec = time_diff / 1000000;
+        var time_diff_msec = time_diff / 1000;
+        var time_diff_usec = time_diff % 1000000;
+        // debug ("Time passed: %" + int64.FORMAT + " s, %" + int64.FORMAT + " ms, %" + int64.FORMAT + " us", time_diff_sec, time_diff_msec, time_diff_usec);
+    }
+
+    public void switch_font (bool big)
+    {
+        iterate_children_generic (main_window, switch_generic, "big_font", big);
     }
 
     private Gdk.FilterReturn focus_upon_map (Gdk.XEvent gxevent, Gdk.Event event)
@@ -806,6 +928,16 @@ public class ArcticaGreeter
         value = AGSettings.get_string (AGSettings.KEY_XFT_RGBA);
         if (value != "")
             settings.set ("gtk-xft-rgba", value, null);
+
+        /*
+         * Keep a reference to an AGSettings instance for the whole program
+         * run, so that the SingleInstance property is working the way we'd
+         * like it to work.
+         *
+         * We want to do this before creating the actual greeter, since the
+         * latter is using AGSettings quite extensively.
+         */
+        var agsettings = new AGSettings ();
 
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);

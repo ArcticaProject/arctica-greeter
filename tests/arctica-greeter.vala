@@ -19,7 +19,8 @@
 
 public const int grid_size = 40;
 
-public class ArcticaGreeter
+[SingleInstance]
+public class ArcticaGreeter : Object
 {
     public static ArcticaGreeter singleton;
 
@@ -27,10 +28,15 @@ public class ArcticaGreeter
     public signal void show_prompt (string text, LightDM.PromptType type);
     public signal void authentication_complete ();
 
-    public bool test_mode = false;
+    public bool test_mode { get; construct; default = false; }
     public bool session_started = false;
     public string last_respond_response;
     public bool orca_needs_kick;
+
+    public ArcticaGreeter (bool test_mode_ = false)
+    {
+        Object (test_mode: test_mode_);
+    }
 
     public bool is_authenticated ()
     {

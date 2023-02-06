@@ -54,7 +54,8 @@ public class DashBox : Gtk.Box
     /* Does not actually add w to this widget, as doing so would potentially mess with w's placement. */
     public void set_base (Gtk.Widget? w)
     {
-        if (!ArcticaGreeter.singleton.test_mode) {
+        var greeter = new ArcticaGreeter ();
+        if (!greeter.test_mode) {
             return_if_fail (pushed == null);
             return_if_fail (mode == Mode.NORMAL);
         }
@@ -220,10 +221,25 @@ public class DashBox : Gtk.Box
 
         CairoUtils.rounded_rectangle (c, 0, box_y, box_w, box_h, box_r);
 
-        c.set_source_rgba (0.1, 0.1, 0.1, 0.4);
+        var agsettings = new AGSettings ();
+        if (agsettings.high_contrast)
+        {
+            c.set_source_rgba (1.0, 1.0, 1.0, 1.0);
+        }
+        else
+        {
+            c.set_source_rgba (0.1, 0.1, 0.1, 0.4);
+        }
         c.fill_preserve ();
 
-        c.set_source_rgba (0.4, 0.4, 0.4, 0.4);
+        if (agsettings.high_contrast)
+        {
+            c.set_source_rgba (0.0, 0.0, 0.0, 1.0);
+        }
+        else
+        {
+            c.set_source_rgba (0.4, 0.4, 0.4, 0.4);
+        }
         c.set_line_width (1);
         c.stroke ();
 

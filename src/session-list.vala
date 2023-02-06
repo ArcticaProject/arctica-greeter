@@ -44,7 +44,8 @@ public class SessionPrompt : PromptBox
 
         box = new ToggleBox (default_session, session);
 
-        if (ArcticaGreeter.singleton.test_mode)
+        var greeter = new ArcticaGreeter ();
+        if (greeter.test_mode)
         {
             box.add_item ("gnome", "GNOME", SessionList.get_badge ("gnome"));
             box.add_item ("kde", "KDE", SessionList.get_badge ("kde"));
