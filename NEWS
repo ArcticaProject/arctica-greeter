@@ -1,3 +1,32 @@
+Overview of changes in arctica-greeter 0.99.2.0
+
+    - Turn ArcticaGreeter class into single instance.
+    - shutdown-dialog: margin left/right -> margin_start_end.
+    - Enable touchpad tap-to-click.
+    - user-list: Allow hidden user visibility to be toggled.
+    - README.md: Provide README.md file.
+    - arctica-greeter-check-hidpi: Fix deprecations.
+    - entry: Support the ability to reveal the password.
+    - a11y: Make the onboard layout configurable.
+    - keyboard navigation: Don't prevent left/right movement in
+      Gtk.Entry.
+    - sessions: Close dialog on Escape.
+    - sessions: Add a tooltip on the session badge.
+    - new badges: LXQt, Pademelon, Sway, Fynedesk.
+    - sessions: Make the list scrollable.
+    - orca: Fix wrong a11y text for username prompt.
+    - Set our own cursor theme and size internally via
+      GtkSettings.
+    - Fixed default session for manual user entry.
+    - No HiDPI settings in test-mode.
+    - misc src/: completely rework high contrast mode, add stub for big
+      font mode.
+    - src/: add util.vala, wrapping a GTK 3 function for use within vala.
+    - src/toggle-box.vala: fix CSS style.
+    - misc src/: make ArcticaGreeter a proper vala SingleInstance class.
+    - src/settings.vala: make SingleInstance class.
+    - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.1.5
 
     - Drop all distro-theming packages and dependencies and default to
