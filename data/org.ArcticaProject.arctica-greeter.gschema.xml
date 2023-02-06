@@ -147,5 +147,9 @@
       <default>'auto'</default>
       <summary>Monitor on which to show the Login GUI</summary>
     </key>
+    <key name="onscreen-keyboard-layout" type="s">
+      <default>'Small'</default>
+      <summary>Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/ for available layout names).</summary>
+    </key>
   </schema>
 </schemalist>
