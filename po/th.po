@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 09:58+0200\n"
+"POT-Creation-Date: 2023-02-06 12:24+0100\n"
 "PO-Revision-Date: 2020-06-22 18:41+0000\n"
 "Last-Translator: CHAIWIT PHONKHEN <5911110222@mutacth.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/arctica-framework/"
@@ -20,32 +20,36 @@ msgstr ""
 "X-Generator: Weblate 4.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:298
+#: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "ใส่รหัสผ่านสำหรับ %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
+#: ../src/greeter-list.vala:302
+msgid "Enter your username"
+msgstr ""
+
+#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
 msgstr "รหัสผ่าน:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
 msgid "Username:"
 msgstr "ชื่อผู้ใช้งาน:"
 
-#: ../src/greeter-list.vala:877
+#: ../src/greeter-list.vala:886
 msgid "Invalid password, please try again"
 msgstr "รหัสผ่านไม่ถูกต้อง, กรุณาลองอีกครั้ง"
 
-#: ../src/greeter-list.vala:888
+#: ../src/greeter-list.vala:897
 msgid "Failed to authenticate"
 msgstr "ยืนยันตัวบุคคลไม่สำเร็จ"
 
-#: ../src/greeter-list.vala:934
+#: ../src/greeter-list.vala:945
 msgid "Failed to start session"
 msgstr "เริ่มต้นเซสชั่นไม่สำเร็จ"
 
-#: ../src/greeter-list.vala:949
+#: ../src/greeter-list.vala:960
 msgid "Logging in…"
 msgstr "กำลังเข้าสู่ระบบ…"
 
@@ -53,23 +57,23 @@ msgstr "กำลังเข้าสู่ระบบ…"
 msgid "Login Screen"
 msgstr "หน้าจอเข้าสู่ระบบ"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:122
 msgid "Back"
 msgstr "ย้อนกลับ"
 
-#: ../src/menubar.vala:226
+#: ../src/menubar.vala:355
 msgid "Onscreen keyboard"
 msgstr "แป้นพิมพ์บนจอภาพ"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:360
 msgid "High Contrast"
 msgstr "ความเปรียบต่างสูง"
 
-#: ../src/menubar.vala:237
+#: ../src/menubar.vala:378
 msgid "Screen Reader"
 msgstr "การอ่านหน้าจอ"
 
-#: ../src/prompt-box.vala:238
+#: ../src/prompt-box.vala:294
 msgid "Session Options"
 msgstr "ตัวเลือกวาระ"
 
@@ -108,28 +112,28 @@ msgid "Restart"
 msgstr "เริ่มเปิดเครื่องใหม่"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:129
+#: ../src/toggle-box.vala:162
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (ปริยาย)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:669
+#: ../src/arctica-greeter.vala:823
 msgid "Show release version"
 msgstr "แสดงเลขรุ่น"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:672
+#: ../src/arctica-greeter.vala:826
 msgid "Run in test mode"
 msgstr "โหมดดำเนินงานทดสอบ"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:690
+#: ../src/arctica-greeter.vala:832
 msgid "- Arctica Greeter"
 msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:701
+#: ../src/arctica-greeter.vala:843
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "เรียก '%s --help' เพื่อดูตัวเลือกทั้งหมดที่มีของบรรทัดคำสั่ง"
@@ -138,93 +142,89 @@ msgstr "เรียก '%s --help' เพื่อดูตัวเลือ�
 msgid "Guest Session"
 msgstr "บุคคลทั่วไป"
 
-#: ../src/user-list.vala:440
+#: ../src/user-list.vala:461
 msgid "Please enter a complete e-mail address"
 msgstr "โปรดป้อนอีเมล"
 
-#: ../src/user-list.vala:520
+#: ../src/user-list.vala:542
 msgid "Incorrect e-mail address or password"
 msgstr "อีเมลหรือรหัสผ่านไม่ถูกต้อง"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:553
+#: ../src/user-list.vala:576
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
-msgstr ""
-"ถ้าคุณมีบัญชีเซิร์ฟเวอร์ RDP "
-"การเข้าระบบระยะไกลจะทำให้คุณใช้แอปพลิเคชั่นจากเซิร์ฟเวอร์ได้"
+msgstr "ถ้าคุณมีบัญชีเซิร์ฟเวอร์ RDP การเข้าระบบระยะไกลจะทำให้คุณใช้แอปพลิเคชั่นจากเซิร์ฟเวอร์ได้"
 
-#: ../src/user-list.vala:556
+#: ../src/user-list.vala:579
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:580
 msgid "Set Up…"
 msgstr "ติดตั้ง…"
 
-#: ../src/user-list.vala:559
+#: ../src/user-list.vala:582
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
-msgstr ""
-"คุณต้องมีบัญชีเข้าสู่ระบบระยะไกลเพื่อใช้บริการนี้คุณต้องการตั้งค่าบัญชีตอนนี้"
-"หรือไม่?"
+msgstr "คุณต้องมีบัญชีเข้าสู่ระบบระยะไกลเพื่อใช้บริการนี้คุณต้องการตั้งค่าบัญชีตอนนี้หรือไม่?"
 
-#: ../src/user-list.vala:563
+#: ../src/user-list.vala:586
 msgid "OK"
 msgstr "ตกลง"
 
-#: ../src/user-list.vala:565
+#: ../src/user-list.vala:588
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
 
-#: ../src/user-list.vala:567
+#: ../src/user-list.vala:590
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
 
-#: ../src/user-list.vala:684
+#: ../src/user-list.vala:710
 msgid "Server type not supported."
 msgstr "ประเภทของเซิร์ฟเวอร์ไม่สนับสนุน"
 
-#: ../src/user-list.vala:712
+#: ../src/user-list.vala:738
 msgid "X2Go Session:"
 msgstr ""
 
-#: ../src/user-list.vala:732
+#: ../src/user-list.vala:758
 msgid "Domain:"
 msgstr "โดเมน:"
 
-#: ../src/user-list.vala:793
+#: ../src/user-list.vala:820
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:864
 msgid "Log In"
 msgstr "เข้าระบบ"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:865
 #, c-format
 msgid "Login as %s"
 msgstr "เข้าสู่ระบบด้วย %s"
 
-#: ../src/user-list.vala:842
+#: ../src/user-list.vala:869
 msgid "Retry"
 msgstr "ลองอีกครั้ง"
 
-#: ../src/user-list.vala:843
+#: ../src/user-list.vala:870
 #, c-format
 msgid "Retry as %s"
 msgstr "ลองอีกครั้งเมื่อ %s"
 
-#: ../src/user-list.vala:882
+#: ../src/user-list.vala:913
 msgid "Login"
 msgstr "เข้่าสู่ระบบ"
 

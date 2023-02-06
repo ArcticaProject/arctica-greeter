@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 09:58+0200\n"
+"POT-Creation-Date: 2023-02-06 12:24+0100\n"
 "PO-Revision-Date: 2018-10-04 12:24+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/arctica-framework/"
@@ -20,32 +20,37 @@ msgstr ""
 "X-Generator: Weblate 3.2-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:298
+#: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "Indtast adgangskode for %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
+#: ../src/greeter-list.vala:302
+#, fuzzy
+msgid "Enter your username"
+msgstr "Indtast brugernavn"
+
+#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
 msgstr "Adgangskode:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
 msgid "Username:"
 msgstr "Brugernavn:"
 
-#: ../src/greeter-list.vala:877
+#: ../src/greeter-list.vala:886
 msgid "Invalid password, please try again"
 msgstr "Forkert adgangskode, prøv venligst igen"
 
-#: ../src/greeter-list.vala:888
+#: ../src/greeter-list.vala:897
 msgid "Failed to authenticate"
 msgstr "Godkendelse mislykkedes"
 
-#: ../src/greeter-list.vala:934
+#: ../src/greeter-list.vala:945
 msgid "Failed to start session"
 msgstr "Opstart af session mislykkedes"
 
-#: ../src/greeter-list.vala:949
+#: ../src/greeter-list.vala:960
 msgid "Logging in…"
 msgstr "Logger ind…"
 
@@ -53,23 +58,23 @@ msgstr "Logger ind…"
 msgid "Login Screen"
 msgstr "Loginskærm"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:122
 msgid "Back"
 msgstr "Tilbage"
 
-#: ../src/menubar.vala:226
+#: ../src/menubar.vala:355
 msgid "Onscreen keyboard"
 msgstr "Skærmtastatur"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:360
 msgid "High Contrast"
 msgstr "Høj kontrast"
 
-#: ../src/menubar.vala:237
+#: ../src/menubar.vala:378
 msgid "Screen Reader"
 msgstr "Skærmlæser"
 
-#: ../src/prompt-box.vala:238
+#: ../src/prompt-box.vala:294
 msgid "Session Options"
 msgstr "Sessions egenskaber"
 
@@ -110,28 +115,28 @@ msgid "Restart"
 msgstr "Genstart"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:129
+#: ../src/toggle-box.vala:162
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Standard)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:669
+#: ../src/arctica-greeter.vala:823
 msgid "Show release version"
 msgstr "Vis udgivelses-version"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:672
+#: ../src/arctica-greeter.vala:826
 msgid "Run in test mode"
 msgstr "Kør i testtilstand"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:690
+#: ../src/arctica-greeter.vala:832
 msgid "- Arctica Greeter"
 msgstr "- Velkomstskærmen for Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:701
+#: ../src/arctica-greeter.vala:843
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -142,17 +147,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Gæstesession"
 
-#: ../src/user-list.vala:440
+#: ../src/user-list.vala:461
 msgid "Please enter a complete e-mail address"
 msgstr "Angiv venligst en komplet e-post-adresse"
 
-#: ../src/user-list.vala:520
+#: ../src/user-list.vala:542
 msgid "Incorrect e-mail address or password"
 msgstr "Forkert e-post-adresse eller adgangskode"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:553
+#: ../src/user-list.vala:576
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -160,15 +165,15 @@ msgstr ""
 "Hvis du har en konto på en RDP-server eller X2Go-server, vil fjernlogin lade "
 "dig køre programmer fra denne server."
 
-#: ../src/user-list.vala:556
+#: ../src/user-list.vala:579
 msgid "Cancel"
 msgstr "Annullér"
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:580
 msgid "Set Up…"
 msgstr "Opsætning…"
 
-#: ../src/user-list.vala:559
+#: ../src/user-list.vala:582
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -176,11 +181,11 @@ msgstr ""
 "Der kræves en konto til Ubuntu Fjern-login for at kunne anvende denne "
 "tjeneste. Vil du gerne opsætte en konto nu?"
 
-#: ../src/user-list.vala:563
+#: ../src/user-list.vala:586
 msgid "OK"
 msgstr "O.k"
 
-#: ../src/user-list.vala:565
+#: ../src/user-list.vala:588
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -189,7 +194,7 @@ msgstr ""
 "Der kræves en konto til fjernlogin for at kunne anvende denne tjeneste. "
 "Besøg %s for at anmode om en konto."
 
-#: ../src/user-list.vala:567
+#: ../src/user-list.vala:590
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -197,42 +202,42 @@ msgstr ""
 "Der kræves en konto til fjernlogin for at kunne anvende denne tjeneste. "
 "Spørg venligst din stedadministrator om detaljerne."
 
-#: ../src/user-list.vala:684
+#: ../src/user-list.vala:710
 msgid "Server type not supported."
 msgstr "Servertype understøttes ikke."
 
-#: ../src/user-list.vala:712
+#: ../src/user-list.vala:738
 msgid "X2Go Session:"
 msgstr "X2Go session:"
 
-#: ../src/user-list.vala:732
+#: ../src/user-list.vala:758
 msgid "Domain:"
 msgstr "Domæne:"
 
-#: ../src/user-list.vala:793
+#: ../src/user-list.vala:820
 msgid "Account ID"
 msgstr "Konto-id"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:864
 msgid "Log In"
 msgstr "Log ind"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:865
 #, c-format
 msgid "Login as %s"
 msgstr "Log ind som %s"
 
-#: ../src/user-list.vala:842
+#: ../src/user-list.vala:869
 msgid "Retry"
 msgstr "Prøv igen"
 
-#: ../src/user-list.vala:843
+#: ../src/user-list.vala:870
 #, c-format
 msgid "Retry as %s"
 msgstr "Forsøg igen som %s"
 
-#: ../src/user-list.vala:882
+#: ../src/user-list.vala:913
 msgid "Login"
 msgstr "Log ind"
 
@@ -285,9 +290,6 @@ msgstr "Arctica Greeter"
 
 #~ msgid "Other..."
 #~ msgstr "Anden..."
-
-#~ msgid "Enter username"
-#~ msgstr "Indtast brugernavn"
 
 #~ msgid "Enter password"
 #~ msgstr "Angiv adgangskode"

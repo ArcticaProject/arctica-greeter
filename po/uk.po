@@ -7,46 +7,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 09:58+0200\n"
+"POT-Creation-Date: 2023-02-06 12:24+0100\n"
 "PO-Revision-Date: 2023-01-20 22:50+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.15.1\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:298
+#: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "Введіть пароль для %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
+#: ../src/greeter-list.vala:302
+msgid "Enter your username"
+msgstr ""
+
+#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
 msgid "Username:"
 msgstr "Ім'я користувача:"
 
-#: ../src/greeter-list.vala:877
+#: ../src/greeter-list.vala:886
 msgid "Invalid password, please try again"
 msgstr "Некоректний пароль, повторіть спробу"
 
-#: ../src/greeter-list.vala:888
+#: ../src/greeter-list.vala:897
 msgid "Failed to authenticate"
 msgstr "Помилка автентифікації"
 
-#: ../src/greeter-list.vala:934
+#: ../src/greeter-list.vala:945
 msgid "Failed to start session"
 msgstr "Не вдалося розпочати сеанс"
 
-#: ../src/greeter-list.vala:949
+#: ../src/greeter-list.vala:960
 msgid "Logging in…"
 msgstr "Входимо…"
 
@@ -54,23 +58,23 @@ msgstr "Входимо…"
 msgid "Login Screen"
 msgstr "Вікно входу"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:122
 msgid "Back"
 msgstr "Назад"
 
-#: ../src/menubar.vala:226
+#: ../src/menubar.vala:355
 msgid "Onscreen keyboard"
 msgstr "Екранна клавіатура"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:360
 msgid "High Contrast"
 msgstr "Висока контрастність"
 
-#: ../src/menubar.vala:237
+#: ../src/menubar.vala:378
 msgid "Screen Reader"
 msgstr "Читання з екрана"
 
-#: ../src/prompt-box.vala:238
+#: ../src/prompt-box.vala:294
 msgid "Session Options"
 msgstr "Параметри сеансу"
 
@@ -111,28 +115,28 @@ msgid "Restart"
 msgstr "Перезавантажити комп’ютер"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:129
+#: ../src/toggle-box.vala:162
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (типове)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:669
+#: ../src/arctica-greeter.vala:823
 msgid "Show release version"
 msgstr "Показати версію випуску"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:672
+#: ../src/arctica-greeter.vala:826
 msgid "Run in test mode"
 msgstr "Запустити в тестовому режимі"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:690
+#: ../src/arctica-greeter.vala:832
 msgid "- Arctica Greeter"
 msgstr "- Вітальне вікно Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:701
+#: ../src/arctica-greeter.vala:843
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -143,17 +147,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Гостьовий сеанс"
 
-#: ../src/user-list.vala:440
+#: ../src/user-list.vala:461
 msgid "Please enter a complete e-mail address"
 msgstr "Вкажіть адресу електронної пошти повністю"
 
-#: ../src/user-list.vala:520
+#: ../src/user-list.vala:542
 msgid "Incorrect e-mail address or password"
 msgstr "Некоректна адреса електронної пошти або пароль"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:553
+#: ../src/user-list.vala:576
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -161,15 +165,15 @@ msgstr ""
 "Якщо у вас є обліковий запис на сервері RDP або сервері X2Go, віддалений "
 "вхід дозволяє запускати застосунки з цього сервера."
 
-#: ../src/user-list.vala:556
+#: ../src/user-list.vala:579
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:580
 msgid "Set Up…"
 msgstr "Налаштувати…"
 
-#: ../src/user-list.vala:559
+#: ../src/user-list.vala:582
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -177,11 +181,11 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Хочете створити обліковий запис зараз?"
 
-#: ../src/user-list.vala:563
+#: ../src/user-list.vala:586
 msgid "OK"
 msgstr "Гаразд"
 
-#: ../src/user-list.vala:565
+#: ../src/user-list.vala:588
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -190,7 +194,7 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Відвідайте %s, щоб замовити обліковий запис."
 
-#: ../src/user-list.vala:567
+#: ../src/user-list.vala:590
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -198,42 +202,42 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Будь ласка, запитайте адміністратора вашого сайту докладніше."
 
-#: ../src/user-list.vala:684
+#: ../src/user-list.vala:710
 msgid "Server type not supported."
 msgstr "Підтримки серверів цього типу не передбачено."
 
-#: ../src/user-list.vala:712
+#: ../src/user-list.vala:738
 msgid "X2Go Session:"
 msgstr "Сесія X2Go:"
 
-#: ../src/user-list.vala:732
+#: ../src/user-list.vala:758
 msgid "Domain:"
 msgstr "Домен:"
 
-#: ../src/user-list.vala:793
+#: ../src/user-list.vala:820
 msgid "Account ID"
 msgstr "ID облікового запису"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:864
 msgid "Log In"
 msgstr "Увійти"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:865
 #, c-format
 msgid "Login as %s"
 msgstr "Увійти від імені %s"
 
-#: ../src/user-list.vala:842
+#: ../src/user-list.vala:869
 msgid "Retry"
 msgstr "Повторити"
 
-#: ../src/user-list.vala:843
+#: ../src/user-list.vala:870
 #, c-format
 msgid "Retry as %s"
 msgstr "Повторити як %s"
 
-#: ../src/user-list.vala:882
+#: ../src/user-list.vala:913
 msgid "Login"
 msgstr "Увійти"
 

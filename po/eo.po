@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 09:58+0200\n"
+"POT-Creation-Date: 2023-02-06 12:24+0100\n"
 "PO-Revision-Date: 2019-08-01 05:12+0000\n"
 "Last-Translator: Pierre Soubourou <pierre.soubourou@gmail.com>\n"
-"Language-Team: Esperanto <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/eo/>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,32 +20,37 @@ msgstr ""
 "X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:298
+#: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "Entajpu la pasvorton de %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
+#: ../src/greeter-list.vala:302
+#, fuzzy
+msgid "Enter your username"
+msgstr "Entajpu la uzantnomon"
+
+#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
 msgstr "Pasvorto:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
 msgid "Username:"
 msgstr "Uzantonomo:"
 
-#: ../src/greeter-list.vala:877
+#: ../src/greeter-list.vala:886
 msgid "Invalid password, please try again"
 msgstr "Nevalida pasvorto. Bonvole provu denove"
 
-#: ../src/greeter-list.vala:888
+#: ../src/greeter-list.vala:897
 msgid "Failed to authenticate"
 msgstr "Aŭtentigado fiaskis"
 
-#: ../src/greeter-list.vala:934
+#: ../src/greeter-list.vala:945
 msgid "Failed to start session"
 msgstr "Malsukcese startis la seanco"
 
-#: ../src/greeter-list.vala:949
+#: ../src/greeter-list.vala:960
 msgid "Logging in…"
 msgstr "Ensalutanta…"
 
@@ -53,23 +58,23 @@ msgstr "Ensalutanta…"
 msgid "Login Screen"
 msgstr "Ensalutekrano"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:122
 msgid "Back"
 msgstr "Reen"
 
-#: ../src/menubar.vala:226
+#: ../src/menubar.vala:355
 msgid "Onscreen keyboard"
 msgstr "Surekrana klavaro"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:360
 msgid "High Contrast"
 msgstr "Alta kontrasto"
 
-#: ../src/menubar.vala:237
+#: ../src/menubar.vala:378
 msgid "Screen Reader"
 msgstr "Ekranlegilo"
 
-#: ../src/prompt-box.vala:238
+#: ../src/prompt-box.vala:294
 msgid "Session Options"
 msgstr "Agordoj de seanco"
 
@@ -110,28 +115,28 @@ msgid "Restart"
 msgstr "Restartigi"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:129
+#: ../src/toggle-box.vala:162
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (apriore)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:669
+#: ../src/arctica-greeter.vala:823
 msgid "Show release version"
 msgstr "Montri eldonversion"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:672
+#: ../src/arctica-greeter.vala:826
 msgid "Run in test mode"
 msgstr "Ruli per testa reĝimo"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:690
+#: ../src/arctica-greeter.vala:832
 msgid "- Arctica Greeter"
 msgstr "- Bonvenigo de Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:701
+#: ../src/arctica-greeter.vala:843
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -141,17 +146,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Gastoseanco"
 
-#: ../src/user-list.vala:440
+#: ../src/user-list.vala:461
 msgid "Please enter a complete e-mail address"
 msgstr "Bonvole enigu tutan retpoŝtadreson"
 
-#: ../src/user-list.vala:520
+#: ../src/user-list.vala:542
 msgid "Incorrect e-mail address or password"
 msgstr "Nekorekta retpoŝtadreso aŭ pasvorto"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:553
+#: ../src/user-list.vala:576
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -159,15 +164,15 @@ msgstr ""
 "Se vi havas konton ĉe RDP- aŭ X2Go-servilo, defora ensalutado permesas "
 "lanĉon de aplikaĵoj de tiuj serviloj."
 
-#: ../src/user-list.vala:556
+#: ../src/user-list.vala:579
 msgid "Cancel"
 msgstr "Rezigni"
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:580
 msgid "Set Up…"
 msgstr "Agordi…"
 
-#: ../src/user-list.vala:559
+#: ../src/user-list.vala:582
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -175,11 +180,11 @@ msgstr ""
 "Necesas konto defore ensalutebla por uzi ĉi tiun servon. Ĉu vi deziras krei "
 "konton nun?"
 
-#: ../src/user-list.vala:563
+#: ../src/user-list.vala:586
 msgid "OK"
 msgstr "Bone"
 
-#: ../src/user-list.vala:565
+#: ../src/user-list.vala:588
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -188,7 +193,7 @@ msgstr ""
 "Necesas konto defore ensalutebla por uzi ĉi tiun servon. Vizitu %s por krei "
 "konton."
 
-#: ../src/user-list.vala:567
+#: ../src/user-list.vala:590
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -196,42 +201,42 @@ msgstr ""
 "Necesas konto defore ensalutebla por uzi ĉi tiun servon. Bonvolu peti vian "
 "retejan administranton pri detaloj."
 
-#: ../src/user-list.vala:684
+#: ../src/user-list.vala:710
 msgid "Server type not supported."
 msgstr "Nesubtenata speco de servilo."
 
-#: ../src/user-list.vala:712
+#: ../src/user-list.vala:738
 msgid "X2Go Session:"
 msgstr "X2Go-seanco:"
 
-#: ../src/user-list.vala:732
+#: ../src/user-list.vala:758
 msgid "Domain:"
 msgstr "Domajno:"
 
-#: ../src/user-list.vala:793
+#: ../src/user-list.vala:820
 msgid "Account ID"
 msgstr "Konta numero"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:864
 msgid "Log In"
 msgstr "Ensaluti"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:865
 #, c-format
 msgid "Login as %s"
 msgstr "Ensaluti kiel %s"
 
-#: ../src/user-list.vala:842
+#: ../src/user-list.vala:869
 msgid "Retry"
 msgstr "Reprovi"
 
-#: ../src/user-list.vala:843
+#: ../src/user-list.vala:870
 #, c-format
 msgid "Retry as %s"
 msgstr "Reprovu kiel %s"
 
-#: ../src/user-list.vala:882
+#: ../src/user-list.vala:913
 msgid "Login"
 msgstr "Ensaluti"
 
@@ -269,9 +274,6 @@ msgstr "Bonvenigo de Arctica"
 #, fuzzy
 #~ msgid "Email:"
 #~ msgstr "Retpoŝtadreso:"
-
-#~ msgid "Enter username"
-#~ msgstr "Entajpu la uzantnomon"
 
 #~ msgid "Enter password"
 #~ msgstr "Entajpu la pasvorton"

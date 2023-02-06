@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-17 09:58+0200\n"
+"POT-Creation-Date: 2023-02-06 12:24+0100\n"
 "PO-Revision-Date: 2020-09-14 17:36+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
-"Language-Team: Portuguese <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/pt/>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,32 +20,36 @@ msgstr ""
 "X-Generator: Weblate 4.3-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:298
+#: ../src/greeter-list.vala:300
 #, c-format
 msgid "Enter password for %s"
 msgstr "Introduza a palavra-passe para %s"
 
-#: ../src/greeter-list.vala:820 ../src/user-list.vala:706
+#: ../src/greeter-list.vala:302
+msgid "Enter your username"
+msgstr ""
+
+#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
 msgstr "Palavra-passe:"
 
-#: ../src/greeter-list.vala:822 ../src/user-list.vala:700
+#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
 msgid "Username:"
 msgstr "Nome de utilizador:"
 
-#: ../src/greeter-list.vala:877
+#: ../src/greeter-list.vala:886
 msgid "Invalid password, please try again"
 msgstr "Palavra-passe inválida, tente novamente"
 
-#: ../src/greeter-list.vala:888
+#: ../src/greeter-list.vala:897
 msgid "Failed to authenticate"
 msgstr "A autenticação falhou"
 
-#: ../src/greeter-list.vala:934
+#: ../src/greeter-list.vala:945
 msgid "Failed to start session"
 msgstr "Falha ao iniciar a sessão"
 
-#: ../src/greeter-list.vala:949
+#: ../src/greeter-list.vala:960
 msgid "Logging in…"
 msgstr "A iniciar a sessão…"
 
@@ -53,23 +57,23 @@ msgstr "A iniciar a sessão…"
 msgid "Login Screen"
 msgstr "Ecrã de Início de Sessão"
 
-#: ../src/main-window.vala:119
+#: ../src/main-window.vala:122
 msgid "Back"
 msgstr "Retroceder"
 
-#: ../src/menubar.vala:226
+#: ../src/menubar.vala:355
 msgid "Onscreen keyboard"
 msgstr "Teclado no ecrã"
 
-#: ../src/menubar.vala:231
+#: ../src/menubar.vala:360
 msgid "High Contrast"
 msgstr "Alto contraste"
 
-#: ../src/menubar.vala:237
+#: ../src/menubar.vala:378
 msgid "Screen Reader"
 msgstr "Leitor de Ecrã"
 
-#: ../src/prompt-box.vala:238
+#: ../src/prompt-box.vala:294
 msgid "Session Options"
 msgstr "Opções de Sessão"
 
@@ -110,28 +114,28 @@ msgid "Restart"
 msgstr "Reiniciar"
 
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:129
+#: ../src/toggle-box.vala:162
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (predefinido)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:669
+#: ../src/arctica-greeter.vala:823
 msgid "Show release version"
 msgstr "Mostrar versão de lançamento"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:672
+#: ../src/arctica-greeter.vala:826
 msgid "Run in test mode"
 msgstr "Executar no modo de teste"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:690
+#: ../src/arctica-greeter.vala:832
 msgid "- Arctica Greeter"
 msgstr "- Bem-vindo ao Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:701
+#: ../src/arctica-greeter.vala:843
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -142,17 +146,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Sessão de Convidado"
 
-#: ../src/user-list.vala:440
+#: ../src/user-list.vala:461
 msgid "Please enter a complete e-mail address"
 msgstr "Por favor, insira um endereço de e-mail completo"
 
-#: ../src/user-list.vala:520
+#: ../src/user-list.vala:542
 msgid "Incorrect e-mail address or password"
 msgstr "Palavra-passe ou endereço de e-mail incorreto"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:553
+#: ../src/user-list.vala:576
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -160,15 +164,15 @@ msgstr ""
 "Se tem uma conta num servidor RDP ou num servidor X2Go, a 'Autenticação "
 "Remota' permite-lhe executar aplicações desse servidor."
 
-#: ../src/user-list.vala:556
+#: ../src/user-list.vala:579
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../src/user-list.vala:557
+#: ../src/user-list.vala:580
 msgid "Set Up…"
 msgstr "Configurar…"
 
-#: ../src/user-list.vala:559
+#: ../src/user-list.vala:582
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -176,20 +180,20 @@ msgstr ""
 "Precisa de uma conta de 'Acesso Remoto' para utilizar este serviço. Gostaria "
 "de configurar agora uma conta?"
 
-#: ../src/user-list.vala:563
+#: ../src/user-list.vala:586
 msgid "OK"
 msgstr "Aceitar"
 
-#: ../src/user-list.vala:565
+#: ../src/user-list.vala:588
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Precisa de uma conta de 'Acesso Remoto' para utilizar este serviço. Visite %"
-"s para solicitar uma conta."
+"Precisa de uma conta de 'Acesso Remoto' para utilizar este serviço. Visite "
+"%s para solicitar uma conta."
 
-#: ../src/user-list.vala:567
+#: ../src/user-list.vala:590
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -197,42 +201,42 @@ msgstr ""
 "Precisa de uma conta de 'Acesso Remoto'para utilizar este serviço. Por "
 "favor, peça detalhes ao administrador do seu site."
 
-#: ../src/user-list.vala:684
+#: ../src/user-list.vala:710
 msgid "Server type not supported."
 msgstr "Tipo de servidor não suportado."
 
-#: ../src/user-list.vala:712
+#: ../src/user-list.vala:738
 msgid "X2Go Session:"
 msgstr "Sessão X2Go:"
 
-#: ../src/user-list.vala:732
+#: ../src/user-list.vala:758
 msgid "Domain:"
 msgstr "Domínio:"
 
-#: ../src/user-list.vala:793
+#: ../src/user-list.vala:820
 msgid "Account ID"
 msgstr "Id. da Conta"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:837
+#: ../src/user-list.vala:864
 msgid "Log In"
 msgstr "Iniciar Sessão"
 
-#: ../src/user-list.vala:838
+#: ../src/user-list.vala:865
 #, c-format
 msgid "Login as %s"
 msgstr "Iniciar sessão como %s"
 
-#: ../src/user-list.vala:842
+#: ../src/user-list.vala:869
 msgid "Retry"
 msgstr "Repetir"
 
-#: ../src/user-list.vala:843
+#: ../src/user-list.vala:870
 #, c-format
 msgid "Retry as %s"
 msgstr "Repetir como %s"
 
-#: ../src/user-list.vala:882
+#: ../src/user-list.vala:913
 msgid "Login"
 msgstr "Iniciar sessão"
 
