@@ -24,6 +24,7 @@ public class ToggleBox : Gtk.Box
     public string default_key {get; construct;}
     public string starting_key {get; construct;}
     public string selected_key {get; protected set;}
+    protected Gtk.Box scrolled_box;
 
     public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
     public static string font_family = "sans";
@@ -33,6 +34,16 @@ public class ToggleBox : Gtk.Box
     {
         Object (default_key: default_key, starting_key: starting_key,
                 selected_key: starting_key);
+        Gtk.ScrolledWindow scrolled_window = new Gtk.ScrolledWindow (null, null);
+        scrolled_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 2);
+        add (scrolled_window);
+        scrolled_window.add (scrolled_box);
+        scrolled_window.show ();
+        scrolled_box.show ();
+        scrolled_window.set_max_content_height (210); // Show a max of 5 sessions
+        scrolled_window.set_propagate_natural_height (true);
+        scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+        scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
         /* Split font family and size via regular expression. */
         Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
@@ -55,7 +66,7 @@ public class ToggleBox : Gtk.Box
             select (item);
 
         item.show ();
-        add (item);
+        scrolled_box.add (item);
     }
 
     public void set_normal_button_style (Gtk.Button button)
