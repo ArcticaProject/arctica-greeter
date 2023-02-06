@@ -378,6 +378,16 @@ public class MainWindow : Gtk.Window
                 }
             }
         }
+        else if (stack.top () is SessionList) {
+            // Session list is open
+            switch (event.keyval) {
+                case Gdk.Key.Escape:
+                case Gdk.Key.Left:
+                case Gdk.Key.KP_Left:
+                    pop_list();
+                    return true;
+            }
+        }
 
         var greeter = new ArcticaGreeter ();
         switch (event.keyval)
