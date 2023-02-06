@@ -45,6 +45,14 @@
       <default>'Adwaita'</default>
       <summary>Icon theme to use</summary>
     </key>
+    <key name="cursor-theme-name" type="s">
+      <default>'default'</default>
+      <summary>Cursor theme to use</summary>
+    </key>
+    <key name="cursor-theme-size" type="i">
+      <default>0</default>
+      <summary>Size to use for cursors - 0 is default size</summary>
+    </key>
     <key name="font-name" type="s">
       <default>'Sans 11'</default>
       <summary>Font to use</summary>

@@ -33,6 +33,8 @@ public class AGSettings : Object
     public const string KEY_THEME_NAME = "theme-name";
     public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
+    public const string KEY_CURSOR_THEME_NAME = "cursor-theme-name";
+    public const string KEY_CURSOR_THEME_SIZE = "cursor-theme-size";
     public const string KEY_FONT_NAME = "font-name";
     public const string KEY_XFT_ANTIALIAS = "xft-antialias";
     public const string KEY_XFT_DPI = "xft-dpi";
