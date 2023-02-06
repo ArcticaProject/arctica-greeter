@@ -817,18 +817,6 @@ public class ArcticaGreeter : Object
         OptionEntry nullOption = { null };
         OptionEntry[] options = { versionOption, testOption, nullOption };
 
-        if (!do_test_mode)
-        {
-            var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
-            debug ("HiDPI support: %s", hidpi);
-            if (hidpi == "auto") {
-                check_hidpi ();
-            }
-            else if (hidpi == "on") {
-                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
-            }
-        }
-
         debug ("Loading command line options");
         var c = new OptionContext (/* Arguments and description for --help text */
                                    _("- Arctica Greeter"));
@@ -846,6 +834,19 @@ public class ArcticaGreeter : Object
             stderr.printf ("\n");
             return Posix.EXIT_FAILURE;
         }
+
+        if (!do_test_mode)
+        {
+            var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
+            debug ("HiDPI support: %s", hidpi);
+            if (hidpi == "auto") {
+                check_hidpi ();
+            }
+            else if (hidpi == "on") {
+                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
+            }
+        }
+
         if (do_show_version)
         {
             /* Note, not translated so can be easily parsed */
