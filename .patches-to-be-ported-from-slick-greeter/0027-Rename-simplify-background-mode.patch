@@ -1,0 +1,93 @@
+From 046bbee24412982cdf7c77224036d6e657193662 Mon Sep 17 00:00:00 2001
+From: Clement Lefebvre <clement.lefebvre@linuxmint.com>
+Date: Tue, 12 May 2020 11:04:08 +0100
+Subject: [PATCH 27/81] Rename/simplify background mode
+
+We only care whether the background is stretched across multiple monitors
+or not, let's be explicit and make it clear.
+
+Signed-off-by: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+---
+ README.md                           |  1 +
+ data/x.dm.slick-greeter.gschema.xml | 10 +++-------
+ src/background.vala                 |  3 +--
+ src/settings.vala                   |  4 ++--
+ 4 files changed, 7 insertions(+), 11 deletions(-)
+
+diff --git a/README.md b/README.md
+index a286568..844dacd 100644
+--- a/README.md
++++ b/README.md
+@@ -59,4 +59,5 @@ Configuration file format for /etc/lightdm/slick-greeter.conf
+     # group-filter=List of groups that users must be part of to be shown (empty list shows all users)
+     # enable-hidpi=Whether to enable HiDPI support (on/off/auto)
+     # only-on-monitor=Sets the monitor on which to show the login window, -1 means "follow the mouse"
++    # stretch-background-across-monitors=Whether to stretch the background across multiple monitors (false by default)
+     [Greeter]
+diff --git a/data/x.dm.slick-greeter.gschema.xml b/data/x.dm.slick-greeter.gschema.xml
+index 7ceba14..07065bc 100644
+--- a/data/x.dm.slick-greeter.gschema.xml
++++ b/data/x.dm.slick-greeter.gschema.xml
+@@ -9,13 +9,9 @@
+       <default>'#000000'</default>
+       <summary>Background color (e.g. #772953), set before wallpaper is seen</summary>
+     </key>
+-    <key name="background-mode" type="s">
+-      <choices>
+-        <choice value='zoom'/>
+-        <choice value='spanned'/>
+-      </choices>
+-      <default>'zoom'</default>
+-      <summary>Determines how the background image is rendered</summary>
++    <key name="stretch-background-across-monitors" type="b">
++      <default>false</default>
++      <summary>Whether to stretch the background across multiple monitors (or to replicate it on each monitor).</summary>
+     </key>
+     <key name="draw-user-backgrounds" type="b">
+       <default>true</default>
+diff --git a/src/background.vala b/src/background.vala
+index e258d84..f076b71 100644
+--- a/src/background.vala
++++ b/src/background.vala
+@@ -519,8 +519,7 @@ public class Background : Gtk.Fixed
+         if (UGSettings.get_boolean (UGSettings.KEY_DRAW_GRID))
+             flags |= DrawFlags.GRID;
+ 
+-        var mode = UGSettings.get_string (UGSettings.KEY_BACKGROUND_MODE);
+-        if (mode == "spanned")
++        if (UGSettings.get_boolean (UGSettings.KEY_BACKGROUND_STRETCH))
+             flags |= DrawFlags.SPAN;
+ 
+         show ();
+diff --git a/src/settings.vala b/src/settings.vala
+index 3822939..36aa88e 100644
+--- a/src/settings.vala
++++ b/src/settings.vala
+@@ -22,7 +22,7 @@ public class UGSettings
+ {
+     public const string KEY_BACKGROUND = "background";
+     public const string KEY_BACKGROUND_COLOR = "background-color";
+-    public const string KEY_BACKGROUND_MODE = "background-mode";
++    public const string KEY_BACKGROUND_STRETCH = "stretch-background-across-monitors";
+     public const string KEY_DRAW_USER_BACKGROUNDS = "draw-user-backgrounds";
+     public const string KEY_DRAW_GRID = "draw-grid";
+     public const string KEY_SHOW_HOSTNAME = "show-hostname";
+@@ -120,7 +120,6 @@ public class UGSettings
+             var string_keys = new List<string> ();
+             string_keys.append (KEY_BACKGROUND);
+             string_keys.append (KEY_BACKGROUND_COLOR);
+-            string_keys.append (KEY_BACKGROUND_MODE);
+             string_keys.append (KEY_LOGO);
+             string_keys.append (KEY_OTHER_MONITORS_LOGO);
+             string_keys.append (KEY_THEME_NAME);
+@@ -134,6 +133,7 @@ public class UGSettings
+ 
+             var bool_keys = new List<string> ();
+             bool_keys.append (KEY_DRAW_USER_BACKGROUNDS);
++            bool_keys.append (KEY_BACKGROUND_STRETCH);
+             bool_keys.append (KEY_DRAW_GRID);
+             bool_keys.append (KEY_SHOW_HOSTNAME);
+             bool_keys.append (KEY_SHOW_POWER);
+-- 
+2.30.2
+
