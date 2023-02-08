@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 12:24+0100\n"
-"PO-Revision-Date: 2020-01-01 14:21+0000\n"
+"PO-Revision-Date: 2023-02-10 22:38+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/hr/>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:300
@@ -28,7 +28,7 @@ msgstr "Upiši lozinku za %s"
 
 #: ../src/greeter-list.vala:302
 msgid "Enter your username"
-msgstr ""
+msgstr "Upiši tvoje korisničko ime"
 
 #: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
