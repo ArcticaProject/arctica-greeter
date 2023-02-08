@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 12:24+0100\n"
-"PO-Revision-Date: 2021-09-08 18:33+0000\n"
+"PO-Revision-Date: 2023-02-10 22:38+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
-"Language-Team: Occitan <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/oc/>\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/oc/>\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.8.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:300
@@ -27,7 +27,7 @@ msgstr "Picatz lo senhal per %s"
 
 #: ../src/greeter-list.vala:302
 msgid "Enter your username"
-msgstr ""
+msgstr "Picatz lo nom d’utilizaire"
 
 #: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
