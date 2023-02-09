@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-06 12:24+0100\n"
-"PO-Revision-Date: 2019-08-24 06:24+0000\n"
-"Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
+"PO-Revision-Date: 2023-02-10 22:38+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:300
@@ -26,9 +26,8 @@ msgid "Enter password for %s"
 msgstr "Enter password for %s"
 
 #: ../src/greeter-list.vala:302
-#, fuzzy
 msgid "Enter your username"
-msgstr "Enter username"
+msgstr "Enter your username"
 
 #: ../src/greeter-list.vala:828 ../src/user-list.vala:732
 msgid "Password:"
