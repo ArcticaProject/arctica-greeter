@@ -279,8 +279,8 @@ public class ArcticaGreeter : Object
 
         if (!session_is_valid (session))
         {
-            debug ("Session %s is not available, using system default %s instead", session, greeter.default_session_hint);
-            session = greeter.default_session_hint;
+            debug ("Session %s is not available, using system default %s instead", session, default_session_hint());
+            session = default_session_hint();
         }
 
         var result = false;
