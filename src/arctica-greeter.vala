@@ -266,6 +266,7 @@ public class ArcticaGreeter : Object
         var display = Gdk.Display.get_default();
         var monitor = display.get_primary_monitor();
         var scale = monitor.get_scale_factor ();
+        var _session = session;
         background_surface.set_device_scale (scale, scale);
 
         main_window.before_session_start();
@@ -277,16 +278,16 @@ public class ArcticaGreeter : Object
             return true;
         }
 
-        if (!session_is_valid (session))
+        if (!session_is_valid (_session))
         {
-            debug ("Session %s is not available, using system default %s instead", session, default_session_hint());
-            session = default_session_hint();
+            debug ("Session %s is not available, using system default %s instead", _session, default_session_hint());
+            _session = default_session_hint();
         }
 
         var result = false;
         try
         {
-            result = LightDM.greeter_start_session_sync (greeter, session);
+            result = LightDM.greeter_start_session_sync (greeter, _session);
         }
         catch (Error e)
         {
