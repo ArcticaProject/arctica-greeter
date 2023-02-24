@@ -106,6 +106,22 @@ public class ArcticaGreeter : Object
         }
     }
 
+    /*
+     * Note that we need a way to specify a parameter for the initial instance
+     * creation of the singleton, but also a constructor that takes no
+     * parameters for later usage.
+     *
+     * Making the parameter optional is a good compromise.
+     *
+     * This this parameter is construct-only, initializing it by passing it to
+     * the GObject constructor is both the correct way to do it, and it will
+     * additionally avoid changing it in later calls of our constructor.
+     */
+    public ArcticaGreeter (bool test_mode_ = false)
+    {
+        Object (test_mode: test_mode_);
+    }
+
     public void go ()
     {
         /* Render things after xsettings is ready */
@@ -143,22 +159,6 @@ public class ArcticaGreeter : Object
         {
             xsettings_ready ();
         }
-    }
-
-    /*
-     * Note that we need a way to specify a parameter for the initial instance
-     * creation of the singleton, but also a constructor that takes no
-     * parameters for later usage.
-     *
-     * Making the parameter optional is a good compromise.
-     *
-     * This this parameter is construct-only, initializing it by passing it to
-     * the GObject constructor is both the correct way to do it, and it will
-     * additionally avoid changing it in later calls of our constructor.
-     */
-    public ArcticaGreeter (bool test_mode_ = false)
-    {
-        Object (test_mode: test_mode_);
     }
 
     public string? get_state (string key)
