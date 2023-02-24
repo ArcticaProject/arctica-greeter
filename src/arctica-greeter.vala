@@ -233,8 +233,8 @@ public class ArcticaGreeter : Object
             }
         }
 
-        warning ("Could not find a default session.");
-        return null;
+        warning ("Could not find a default session. Falling back to LightDM's system default.");
+        return greeter.default_session_hint;
     }
 
     public string validate_session (string? session)
