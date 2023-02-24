@@ -216,6 +216,7 @@ public class ArcticaGreeter : Object
         sessions.append ("kde");
         sessions.append ("gnome");
         sessions.append ("cinnamon");
+        sessions.append ("lomiri");
 
         foreach (string session in sessions) {
             var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
