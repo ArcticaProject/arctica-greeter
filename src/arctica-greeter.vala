@@ -219,14 +219,14 @@ public class ArcticaGreeter : Object
         sessions.append ("lomiri");
 
         foreach (string session in sessions) {
-            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+            var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
             if (FileUtils.test (path, FileTest.EXISTS)) {
                 return session;
             }
         }
 
         foreach (string session in sessions) {
-            var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
+            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             if (FileUtils.test (path, FileTest.EXISTS)) {
                 return session;
             }
