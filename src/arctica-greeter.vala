@@ -104,7 +104,10 @@ public class ArcticaGreeter : Object
             if (!(e is FileError.NOENT))
                 warning ("Failed to load state from %s: %s\n", state_file, e.message);
         }
+    }
 
+    public void go ()
+    {
         /* Render things after xsettings is ready */
         xsettings_ready.connect ( xsettings_ready_cb );
 
@@ -121,7 +124,9 @@ public class ArcticaGreeter : Object
                                             {
                                                 if (name == "xsettings") {
                                                     debug ("xsettings is ready");
-                                                    continue_init = true;
+                                                    xsettings_ready ();
+                                                } else {
+                                                    debug ("settings-daemon plugin %s loaded", name);
                                                 }
                                             }
                                         );
@@ -129,43 +134,15 @@ public class ArcticaGreeter : Object
                                     catch (Error e)
                                     {
                                         debug ("Failed to get MSD proxy, proceed anyway");
-                                        continue_init = true;
+                                        xsettings_ready ();
                                     }
                                 },
                                 null);
         }
         else
         {
-            /*
-             * Since this is now a proper SingleInstance class, we have to
-             * make sure to finish constructing as early as possible.
-             *
-             * Calling xsettings_ready_cb () here is *not* possible, since the
-             * function calls a lot of other things that eventually need a
-             * reference to ArcticaGreeter, but since we're still constructing
-             * it, fetching a reference would just deadlock.
-             *
-             * Fixing this isn't really easy. We cannot use timeouts, since we
-             * don't have a main loop available at that point in time.
-             *
-             * Fortunately, GObject's initialization sequence is quite
-             * sophisticated and provides a way to run code after the
-             * constructor function (i.e., this one) has finished - the
-             * virtual constructed function.
-             */
-            continue_init = true;
-        }
-    }
-
-    public override void constructed ()
-    {
-        if (continue_init)
-        {
             xsettings_ready ();
         }
-
-        /* Chain up - actually necessary. */
-        base.constructed ();
     }
 
     /*
@@ -1002,6 +979,7 @@ public class ArcticaGreeter : Object
 
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode);
+        greeter.go();
 
         string systemd_stderr;
         int systemd_exitcode = 0;
