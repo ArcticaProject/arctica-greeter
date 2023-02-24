@@ -203,7 +203,7 @@ public class ArcticaGreeter : Object
         ctx.add_class ("lightdm");
     }
 
-    public static string? get_default_session ()
+    public string? get_default_session ()
     {
         var sessions = new List<string> ();
         sessions.append ("lightdm-xsession");
@@ -237,7 +237,7 @@ public class ArcticaGreeter : Object
         return null;
     }
 
-    public static string validate_session (string? session)
+    public string validate_session (string? session)
     {
         /* Make sure the given session actually exists. Return it if it does.
          * otherwise, return the default session.
@@ -252,7 +252,7 @@ public class ArcticaGreeter : Object
         }
 
         if (session == null) {
-            var default_session = ArcticaGreeter.get_default_session ();
+            var default_session = get_default_session ();
             debug ("Invalid session: '%s'. Using session '%s' instead.", session, default_session);
             return default_session;
         }

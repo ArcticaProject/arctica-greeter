@@ -118,7 +118,7 @@ public class UserList : GreeterList
         {
             if (_default_session == "") {
                 var greeter = new ArcticaGreeter ();
-                _default_session = ArcticaGreeter.get_default_session();
+                _default_session = greeter.get_default_session();
                 debug ("Setting UserList._default_session to '%s'.", _default_session);
             }
             return _default_session;
@@ -900,7 +900,8 @@ public class UserList : GreeterList
         {
             session = default_session;
         }
-        e.session = ArcticaGreeter.validate_session(session);
+        greeter = new ArcticaGreeter();
+        e.session = greeter.validate_session(session);
         e.label = label;
         e.set_show_message_icon (has_messages);
         e.set_is_active (is_active);

@@ -61,6 +61,7 @@ public abstract class GreeterList : FadableBox
     public bool start_scrolling { get; set; default = true; }
 
     protected string greeter_authenticating_user;
+    protected ArcticaGreeter greeter;
 
     protected bool _always_show_manual = false;
     public bool always_show_manual
@@ -964,7 +965,8 @@ public abstract class GreeterList : FadableBox
 
     protected virtual string get_lightdm_session ()
     {
-        return ArcticaGreeter.get_default_session ();
+        greeter = new ArcticaGreeter();
+        return greeter.get_default_session ();
     }
 
     /* Testing code below this */
