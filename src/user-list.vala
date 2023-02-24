@@ -111,11 +111,16 @@ public class UserList : GreeterList
         }
     }
 
-    private string _default_session = "lightdm-xsession";
+    private string _default_session = "";
     public string default_session
     {
         get
         {
+            if (_default_session == "") {
+                var greeter = new ArcticaGreeter ();
+                _default_session = ArcticaGreeter.get_default_session();
+                debug ("Setting UserList._default_session to '%s'.", _default_session);
+            }
             return _default_session;
         }
         set
@@ -911,7 +916,7 @@ public class UserList : GreeterList
         var text = manual_name;
         if (text == null)
             text = _("Login");
-        add_user ("*other", text);
+        add_user ("*other", text, null, false, false, default_session);
     }
 
     protected void prompt_box_respond_cb (string[] responses)
@@ -1046,7 +1051,6 @@ public class UserList : GreeterList
             test_fill_list ();
         else
         {
-            default_session = greeter.default_session_hint ();
             always_show_manual = greeter.show_manual_login_hint ();
             if (!greeter.hide_users_hint ())
             {

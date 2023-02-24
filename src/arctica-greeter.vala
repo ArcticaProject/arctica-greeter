@@ -220,6 +220,7 @@ public class ArcticaGreeter : Object
         foreach (string session in sessions) {
             var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
             if (FileUtils.test (path, FileTest.EXISTS)) {
+                debug ("Using %s as default (Wayland) session.", session);
                 return session;
             }
         }
@@ -227,6 +228,7 @@ public class ArcticaGreeter : Object
         foreach (string session in sessions) {
             var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             if (FileUtils.test (path, FileTest.EXISTS)) {
+                debug ("Using %s as default (X11) session.", session);
                 return session;
             }
         }
