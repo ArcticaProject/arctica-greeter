@@ -33,7 +33,6 @@ public class ArcticaGreeter : Object
 
     private string state_file;
     private KeyFile state;
-    private bool continue_init = false;
 
     private Cairo.XlibSurface background_surface;
 
