@@ -43,6 +43,7 @@ dist_pkgdata_DATA = \
 	badges/icewm_badge.png \
 	badges/fynedesk_badge.svg \
 	badges/kde_badge.png \
+	badges/lomiri_badge.png \
 	badges/lxde_badge.png \
 	badges/lxqt_badge.png \
 	badges/matchbox_badge.png \
