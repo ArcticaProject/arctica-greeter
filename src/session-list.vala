@@ -136,7 +136,7 @@ public class SessionList : GreeterList
         case "lightdm-xsession":
             return "xsession_badge.png";
         case "lomiri":
-            return "lomiri.png";
+            return "lomiri_badge.png";
         case "lxde":
         case "LXDE":
             return "lxde_badge.png";
