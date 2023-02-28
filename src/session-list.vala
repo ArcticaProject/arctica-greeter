@@ -147,6 +147,8 @@ public class SessionList : GreeterList
             return "matchbox_badge.png";
         case "mate":
             return "mate_badge.png";
+        case "mir-shell":
+            return "mirshell_badge.png";
         case "openbox":
             return "openbox_badge.png";
         case "pademelon":

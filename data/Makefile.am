@@ -48,6 +48,7 @@ dist_pkgdata_DATA = \
 	badges/lxqt_badge.png \
 	badges/matchbox_badge.png \
 	badges/mate_badge.png \
+	badges/mirshell_badge.png \
 	badges/openbox_badge.png \
 	badges/pademelon_badge.png \
 	badges/remote_login_help.png \
