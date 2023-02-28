@@ -24,7 +24,7 @@ dist_xgreeter_DATA = $(dist_xgreeter_in_files:.desktop.in=.desktop)
 
 backgroundsdir = $(datarootdir)/backgrounds
 dist_backgrounds_DATA = \
-	arctica-greeter.png
+	background/arctica-greeter.png
 
 soundsdir = $(datarootdir)/sounds/arctica-greeter
 dist_sounds_DATA = \
