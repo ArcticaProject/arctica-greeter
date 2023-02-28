@@ -704,7 +704,7 @@ public class ArcticaGreeter : Object
             main_window.show_shutdown_dialog (dialog_type);
         });
         dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
-        Bus.own_name (BusType.SESSION, "org.ayatana.Desktop", BusNameOwnerFlags.NONE,
+        Bus.own_name (BusType.SESSION, "com.lomiri.Shell", BusNameOwnerFlags.NONE,
                       (c) =>
                       {
                           try
@@ -717,7 +717,7 @@ public class ArcticaGreeter : Object
                           }
                       },
                       null,
-                      () => debug ("Failed to acquire name org.ayatana.Desktop"));
+                      () => debug ("Failed to acquire name com.lomiri.Shell"));
 
         start_fake_wm ();
         Gdk.threads_add_idle (ready_cb);
