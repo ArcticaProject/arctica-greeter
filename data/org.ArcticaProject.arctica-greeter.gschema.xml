@@ -6,16 +6,45 @@
       <summary>Background file to use, either an image path or a color (e.g. #772953)</summary>
     </key>
     <key name="background-color" type="s">
-      <default>'#2F70C6'</default>
+      <default>'#4B1635'</default>
       <summary>Background color (e.g. #772953), set before wallpaper is seen</summary>
     </key>
     <key name="togglebox-font-fgcolor" type="s">
+      <default>'#808080'</default>
+      <summary>Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-selected session names in the session list</summary>
+    </key>
+    <key name="togglebox-font-fgcolor-active" type="s">
       <default>'#A0A0A0'</default>
-      <summary>Font foreground color (e.g. #A0A0A0) for selected session names in session list</summary>
+      <summary>Font foreground color (e.g. #A0A0A0) for the active/hovered-above session name in the session list</summary>
+    </key>
+    <key name="togglebox-font-fgcolor-selected" type="s">
+      <default>'#F0F0F0'</default>
+      <summary>Font foreground color (e.g. #A0A0A0) for the selected session name in the session list</summary>
     </key>
     <key name="togglebox-button-bgcolor" type="s">
-      <default>'#2F70C6'</default>
-      <summary>Font foreground color (e.g. #202020) for selected session names in session list</summary>
+      <default>'#4B1635'</default>
+      <summary>Background color (e.g. #391C31) for non-active/-hovered and non-selected session names in the session list</summary>
+    </key>
+    <key name="togglebox-button-bgcolor-active" type="s">
+      <default>'#391C31'</default>
+      <summary>Background color (e.g. #391C31) for the active/hovered-above session name in the session list</summary>
+    </key>
+    <key name="togglebox-button-bgcolor-selected" type="s">
+      <default>'#391C31'</default>
+      <summary>Background color (e.g. #391C31) for the selected session name in the session list</summary>
+    </key>
+    <key name="togglebox-button-bordercolor" type="s">
+      <default>'#4B1635'</default>
+      <summary>Border color (e.g. #391C31) for non-active/-hovered and non-selected session names in the session list</summary>
+    </key>
+    <key name="togglebox-button-bordercolor-active" type="s">
+      <default>'#391C31'</default>
+      <summary>Border color (e.g. #391C31) for the active/hovered-above session name in the session list</summary>
+    </key>
+    <key name="togglebox-button-bordercolor-selected" type="s">
+      <default>'#391C31'</default>
+      <summary>Border color (e.g. #391C31) for the selected session name in the session list</summary>
+    </key>
     <key name="flatbutton-bgcolor" type="s">
       <default>'#4B1635'</default>
       <summary>Background color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)</summary>

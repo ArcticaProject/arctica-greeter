@@ -54,7 +54,14 @@ public class AGSettings : Object
     public const string KEY_ONLY_ON_MONITOR = "only-on-monitor";
     public const string KEY_REMOTE_SERVICE_CONFIGURE_URI = "remote-service-configure-uri";
     public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
+    public const string KEY_TOGGLEBOX_FONT_FGCOLOR_ACTIVE = "togglebox-font-fgcolor-active";
+    public const string KEY_TOGGLEBOX_FONT_FGCOLOR_SELECTED = "togglebox-font-fgcolor-selected";
     public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
+    public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR_ACTIVE = "togglebox-button-bgcolor-active";
+    public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR_SELECTED = "togglebox-button-bgcolor-selected";
+    public const string KEY_TOGGLEBOX_BUTTON_BORDERCOLOR = "togglebox-button-bordercolor";
+    public const string KEY_TOGGLEBOX_BUTTON_BORDERCOLOR_ACTIVE = "togglebox-button-bordercolor-active";
+    public const string KEY_TOGGLEBOX_BUTTON_BORDERCOLOR_SELECTED = "togglebox-button-bgcolor-selected";
     public const string KEY_FLATBUTTON_BGCOLOR = "flatbutton-bgcolor";
     public const string KEY_FLATBUTTON_BORDERCOLOR = "flatbutton-bordercolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";

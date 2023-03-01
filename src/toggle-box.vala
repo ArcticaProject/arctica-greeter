@@ -45,6 +45,32 @@ public class ToggleBox : Gtk.Box
         scrolled_window.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         scrolled_window.set_shadow_type (Gtk.ShadowType.NONE);
 
+        try
+        {
+            /* Tighten padding on buttons to not be so large, default color scheme for buttons */
+            var style = new Gtk.CssProvider ();
+            style.load_from_data ("* {\n"+
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
+                                  "   background-image: none;"+
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BORDERCOLOR))+
+                                  "}\n" +
+                                  "*.high_contrast {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(255, 255, 255, 1.0)") +
+                                  "   border-color: %s\n;".printf ("rgba(0, 0, 0, 1.0)") +
+                                  "}\n" +
+                                  "*.high_contrast:hover,\n" +
+                                  "*.high_contrast:active,\n" +
+                                  "*.high_contrast:hover:active,\n" +
+                                  "*.high_contrast.selected {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(0, 0, 0, 1.0)") +
+                                  "}\n", -1);
+            scrolled_box.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading session chooser style: %s", e.message);
+        }
+
         /* Split font family and size via regular expression. */
         Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
         MatchInfo font_info;
@@ -77,14 +103,22 @@ public class ToggleBox : Gtk.Box
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {padding: 8px;}\n"+
                                   "GtkButton, button {\n"+
-                                  "   background-color: %s;\n".printf("rgba(0,0,0,0)")+
+                                  "   color: %s;\n".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR)) +
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
                                   "   background-image: none;"+
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BORDERCOLOR))+
                                   "}\n"+
                                   "button:hover,\n"+
                                   "button:active,\n" +
-                                  "button:hover:active,\n" +
+                                  "button:hover:active {\n"+
+                                  "   color: %s;\n".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR_ACTIVE)) +
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR_ACTIVE))+
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BORDERCOLOR_ACTIVE))+
+                                  "}\n" +
                                   "button.selected {\n"+
-                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR))+
+                                  "   color: %s;\n".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR_SELECTED)) +
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BGCOLOR_SELECTED))+
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BORDERCOLOR_SELECTED))+
                                   "}\n" +
                                   "button.high_contrast {\n" +
                                   "   background-color: %s;\n".printf ("rgba(70, 70, 70, 1.0)") +
@@ -134,6 +168,17 @@ public class ToggleBox : Gtk.Box
         item.clicked.connect (button_clicked_cb);
 
         var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        try {
+            var style = new Gtk.CssProvider ();
+            style.load_from_data ("* {\n"+
+                                  "    outline-width: 0px;\n" +
+                                  "}\n", -1);
+            hbox.get_style_context().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error e)
+        {
+            debug ("Internal error loading session chooser hbox style: %s", e.message);
+        }
 
         if (icon != null)
         {
@@ -156,7 +201,6 @@ public class ToggleBox : Gtk.Box
             style.load_from_data ("label {\n" +
                                   "   font-family: \"%s\", sans-serif;\n".printf (font_family) +
                                   "   font-size: %d;\n".printf (font_size + 2) +
-                                  "   color: %s;\n".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR)) +
                                   "}\n" +
                                   "label.high_contrast {\n" +
                                   "   color: %s;\n".printf ("rgba(255, 255, 255, 1.0)") +
