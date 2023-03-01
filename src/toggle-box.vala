@@ -113,20 +113,6 @@ public class ToggleBox : Gtk.Box
         orientation = Gtk.Orientation.VERTICAL;
     }
 
-    public override bool draw (Cairo.Context c)
-    {
-        Gtk.Allocation allocation;
-        get_allocation (out allocation);
-
-        CairoUtils.rounded_rectangle (c, 0, 0, allocation.width,
-                                      allocation.height, 0.1 * grid_size);
-        c.set_source_rgba (0.5, 0.5, 0.5, 0.5);
-        c.set_line_width (1);
-        c.stroke ();
-
-        return base.draw (c);
-    }
-
     private void select (Gtk.Button button)
     {
         if (selected_button != null)
