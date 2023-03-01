@@ -78,7 +78,7 @@
       <summary>GTK+ theme to use in high contrast mode</summary>
     </key>
     <key name="icon-theme-name" type="s">
-      <default>'Adwaita'</default>
+      <default>'Numix'</default>
       <summary>Icon theme to use</summary>
     </key>
     <key name="cursor-theme-name" type="s">
