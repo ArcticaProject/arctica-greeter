@@ -30,7 +30,8 @@ public class ArcticaGreeter : Object
     public signal void starting_session ();
 
     public bool test_mode { get; construct; default = false; }
-
+    public bool test_highcontrast { get; construct; default = false; }
+    public bool test_bigfont { get; construct; default = false; }
     private string state_file;
     private KeyFile state;
 
@@ -116,9 +117,14 @@ public class ArcticaGreeter : Object
      * the GObject constructor is both the correct way to do it, and it will
      * additionally avoid changing it in later calls of our constructor.
      */
-    public ArcticaGreeter (bool test_mode_ = false)
+    public ArcticaGreeter (bool test_mode_ = false,
+                           bool test_highcontrast_ = false,
+                           bool test_bigfont_ = false)
     {
-        Object (test_mode: test_mode_);
+        Object (test_mode: test_mode_,
+                test_highcontrast: test_highcontrast_,
+                test_bigfont: test_bigfont_
+        );
     }
 
     public void go ()
@@ -328,8 +334,13 @@ public class ArcticaGreeter : Object
 
         /* Synchronize properties in AGSettings once. */
         var agsettings = new AGSettings ();
-        agsettings.high_contrast = !(!(agsettings.high_contrast));
-        agsettings.big_font = !(!(agsettings.big_font));
+        if (!test_mode) {
+            agsettings.high_contrast = !(!(agsettings.high_contrast));
+            agsettings.big_font = !(!(agsettings.big_font));
+        } else {
+            agsettings.high_contrast = test_highcontrast;
+            agsettings.big_font = test_bigfont;
+        }
 
         /*
          * Add timeouts to process the full node hierarchy to handle a11y
@@ -839,6 +850,8 @@ public class ArcticaGreeter : Object
 
         bool do_show_version = false;
         bool do_test_mode = false;
+        bool do_test_highcontrast = false;
+        bool do_test_bigfont = false;
 
         OptionEntry versionOption = { "version", 'v', 0, OptionArg.NONE, ref do_show_version,
                 /* Help string for command line --version flag */
@@ -846,8 +859,14 @@ public class ArcticaGreeter : Object
         OptionEntry testOption =  { "test-mode", 0, 0, OptionArg.NONE, ref do_test_mode,
                 /* Help string for command line --test-mode flag */
                 N_("Run in test mode"), null };
+        OptionEntry highcontrastOption =  { "test-highcontrast", 0, 0, OptionArg.NONE, ref do_test_highcontrast,
+                /* Help string for command line --test-highcontrast flag */
+                N_("Run in test mode with a11y highcontrast theme enabled"), null };
+        OptionEntry bigfontOption =  { "test-bigfont", 0, 0, OptionArg.NONE, ref do_test_bigfont,
+                /* Help string for command line --test-bigfont flag */
+                N_("Run in test mode with a11y big font feature enabled"), null };
         OptionEntry nullOption = { null };
-        OptionEntry[] options = { versionOption, testOption, nullOption };
+        OptionEntry[] options = { versionOption, testOption, highcontrastOption, bigfontOption, nullOption };
 
         debug ("Loading command line options");
         var c = new OptionContext (/* Arguments and description for --help text */
@@ -886,8 +905,15 @@ public class ArcticaGreeter : Object
             return Posix.EXIT_SUCCESS;
         }
 
-        if (do_test_mode)
+        if (do_test_mode) {
             debug ("Running in test mode");
+            if (do_test_highcontrast) {
+                debug ("Switching on highcontrast theme for test mode");
+            }
+            if (do_test_bigfont) {
+                debug ("Switching on big font feature for test mode");
+            }
+        }
 
         /* Set the keyboard layout */
         set_keyboard_layout ();
@@ -991,7 +1017,7 @@ public class ArcticaGreeter : Object
         var agsettings = new AGSettings ();
 
         debug ("Creating Arctica Greeter");
-        var greeter = new ArcticaGreeter (do_test_mode);
+        var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast, do_test_bigfont);
         greeter.go();
 
         string systemd_stderr;
