@@ -1,3 +1,19 @@
+Overview of changes in arctica-greeter 0.99.3.0
+
+    - Integrate with Lomiri Operating Environment and recent Lomiri-specific
+      changes in ayatana-indicator-session (>= 22.9.1).
+    - Add bagdes for Lomiri and Mir Shell.
+    - Make the session list box and the session button more adjustable
+      (color-wise) via GSettings.
+    - Drop marco as window manager. With downsides when sub-windows get opened
+      (e.g. via nm-applet). This resolves unwanted application/tool startups
+      via various hotkeys.
+    - New background image, using Numix GTK/Icon theme now by default.
+    - Add --test-highcontrast and --test-bigfont (no-op so far) cmdline
+      options to enhance test mode.
+    - Fix test mode.
+    - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.2.0
 
     - Turn ArcticaGreeter class into single instance.

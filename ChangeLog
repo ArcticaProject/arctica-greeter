@@ -1,6 +1,147 @@
+2023-03-01 Mike Gabriel
+
+        * release 0.99.3.0 (HEAD -> master, tag: 0.99.3.0)
+        * debian/control: Drop from D (arctica-greeter): marco. (1858744)
+
+2022-02-28 Bastian Kanbach
+
+        * Remove marco WM due to logon screen bypass (7a865a1)
+
+2023-03-01 Mike Gabriel
+
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Use Numix GTK
+          theme by default. (7603157)
+        * debian/control: Drop from D (arctica-greeter): mate-themes.
+          (4ecac1d)
+        * src/: Get rid of various vala interpreter warnings. (ea1692f)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Use Numix Icon
+          Theme by default. (03b4ed0)
+        * debian/control: Add to D (numix-icon-theme). (ad0fffb)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Use Noto Sans
+          by default. (7aba5e7)
+        * debian/control: Add to D (arctica-greeter): fonts-noto-core.
+          (cf23a57)
+        * src/toggle-box.vala: Allow for more fine-grained color-tweaking of
+          the toggle box (session selector box) via gsettings.
+          (15a2c21)
+        * src/flat-button.vala: Allow color-theming (etc.) of buttons created
+          via the FlatButton class. (a4537a4)
+        * src/shutdown-dialog.vala: Make shutdown/reboot dialog's font
+          configurable via gsettings (use same font as rest of the
+          greeter). (5c9019b)
+        * debian/rules: Fix build on Debian 11. Needs dpkg's architecture.mk
+          included at build time. (1d3040e)
+        * src/toggle-box.vala: Drop draw() method. Seems unused these days.
+          (a1fa58d)
+        * arctica-greeter's test mode: No keyboard tweaks in test mode.
+          (5a720b7)
+        * arctica-greeter's test mode: Add cmdline args
+          '--test-highconstrast' and '--test-bigfont' (soon to come
+          feature). (d758529)
+        * src/arctica-greeter.vala: Don't launch Lomiri-related DBus
+          listeners in test mode. Allows one to run arctica-greeter
+          in test-mode within a Lomiri session. (812b098)
+        * debian/arctica-greeter.install: Adjust to moved background image.
+          (4e6b30f)
+        * backgrounds: Move background image into namespaced datadir. Don't
+          mix with officially installed system-wide desktop
+          backgrounds. (7fc2230)
+        * src/{arctica-greeter,greeter-list}.vala: Mimick a Lomiri Greeter,
+          make ArcticaGreeter behave well, when interacting with
+          Lomiri Shell. (0019745)
+
+2023-02-28 Mike Gabriel
+
+        * Add badge for 'mir-shell' DESKTOP_SESSION. (4d51a21)
+        * Arctica Greeter background image: Replace background image by an
+          image take from lomiri-wallpapers. (d3d9efd)
+        * src/arctica-greeter.vala: Adjust to DBus renamings in Ayatana
+          Indicator Session. We use the com.lomiri.Shell interface
+          to communite between session indicator and Arctica
+          Greeter. (f0a3be9)
+
+2023-02-25 Mike Gabriel
+
+        * src/session-list.vala: Use correct file name 'lomiri_badge.png'.
+          (2ebd03b)
+        * data/Makefile.am: Add lomiri_badge.png. (98b200b)
+        * Fix file name of Lomiri badge. (a44f9fa)
+        * Add badge for Lomiri. (4d232db)
+        * src/arctica-greeter.vala: Don't assign new value to method
+          argument. (15bf6c9)
+
+2023-02-24 Mike Gabriel
+
+        * src/arctica-greeter.vala: Already fall back to LightDM's system
+          default for 'session' in ArcticaGreeter's
+          get_default_session(). (4c6c659)
+        * src/arctica-greeter.vala: Always use ArcticaGreeter's
+          default_session_hint(). No direct access to LightDM's
+          version of it. (6c9ecb6)
+        * src/arctica-greeter.vala: Turn get_default_session() and
+          validate_session() into non-static methods. (537442f)
+        * Use ArcticaGreeter's way of detecting the default session, only
+          fallback to LightDMs default if absolutely necessary.
+          (c99e78a)
+        * src/arctica-greeter.vala: Drop now unused continue_init variable.
+          (75f05d2)
+        * src/arctica-greeter.vala: Prefer wayland sessions over X11
+          sessions. (5782553)
+        * src/arctica-greeter.vala: Add Lomiri to list of potential default
+          sessions (if installed). (be96632)
+
+2023-02-24 Ivan Podogov
+
+        * Allow wayland sessions to pass validation. (f717060)
+
+2023-02-24 Mike Gabriel
+
+        * po/: Update .pot file (line number changes only). (25329ea)
+        * src/arctica-greeter.vala: Move ArcticaGreeter method further up
+          again, so it is located below the constructor() method.
+          (28440bc)
+        * src/arctica-greeter.vala: Move Glib.Bus.watch_name() call out of
+          ArcticaGreeter's contructor into separate
+          ArcticaGreeter.go() method. (2c2cc67)
+        * Merge branch 'Ionic-bugfix/test-mode' (b5f8395)
+
+2023-02-22 Mihai Moldovan
+
+        * src/arctica-greeter.vala: fix test mode. (30035fe)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/42
+
+2023-02-09 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (a008c6c)
+
+2023-02-09 Ajeje Brazorf
+
+        * Translated using Weblate (Sardinian) (9e29e7c)
+
+2023-02-08 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (3ae9ce6)
+
+2023-02-08 Milo Ivir
+
+        * Translated using Weblate (Croatian) (d43ce3b)
+
+2023-02-09 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (f6e1706)
+
+2023-02-06 gallegonovato
+
+        * Translated using Weblate (Spanish) (2e287b7)
+
+2023-02-07 Mike Gabriel
+
+        * Translated using Weblate (German) (74166c8)
+
 2023-02-06 Mike Gabriel
 
-        * release 0.99.2.0 (HEAD -> master, tag: 0.99.2.0)
+        * release 0.99.2.0 (bdaeb65) (tag: 0.99.2.0)
         * Revert "release 0.99.2.0" (9bf2ffc)
         * po/: Merge-in translation template into translation files.
           (086b62d)
