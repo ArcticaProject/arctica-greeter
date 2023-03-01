@@ -685,7 +685,7 @@ public class ArcticaGreeter : Object
             return false;
         });
 
-        Bus.own_name (BusType.SESSION, "org.ayatana.Greeter", BusNameOwnerFlags.NONE);
+        Bus.own_name (BusType.SESSION, "com.lomiri.LomiriGreeter", BusNameOwnerFlags.NONE);
 
         dbus_object = new DialogDBusInterface ();
         dbus_object.open_dialog.connect ((type) =>

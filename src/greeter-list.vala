@@ -28,7 +28,7 @@ private int get_grid_offset (int size)
     return (int) (size % grid_size) / 2;
 }
 
-[DBus (name="org.ayatana.Greeter.List")]
+[DBus (name="com.lomiri.LomiriGreeter.List")]
 public class ListDBusInterface : Object
 {
     private GreeterList list;
