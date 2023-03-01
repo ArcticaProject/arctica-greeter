@@ -16,6 +16,13 @@
     <key name="togglebox-button-bgcolor" type="s">
       <default>'#2F70C6'</default>
       <summary>Font foreground color (e.g. #202020) for selected session names in session list</summary>
+    <key name="flatbutton-bgcolor" type="s">
+      <default>'#4B1635'</default>
+      <summary>Background color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)</summary>
+    </key>
+    <key name="flatbutton-bordercolor" type="s">
+      <default>'#4B1635'</default>
+      <summary>Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)</summary>
     </key>
     <key name="draw-user-backgrounds" type="b">
       <default>true</default>

@@ -29,8 +29,30 @@ public class FlatButton : Gtk.Button
         try
         {
             var style = new Gtk.CssProvider ();
-            style.load_from_data ("* {outline-width: 1px;
-                                      }", -1);
+            style.load_from_data ("GtkButton, button {\n" +
+                                  "   border-width: 1px;\n" +
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_FLATBUTTON_BGCOLOR)) +
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_FLATBUTTON_BORDERCOLOR)) +
+                                  "}\n" +
+                                  "button:hover,\n" +
+                                  "button:active,\n" +
+                                  "button:hover:active,\n" +
+                                  "button.selected:hover,\n" +
+                                  "button.selected {\n" +
+                                  "   border-width: 1px;\n" +
+                                  "   background-color: %s;\n".printf(AGSettings.get_string (AGSettings.KEY_FLATBUTTON_BGCOLOR)) +
+                                  "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_FLATBUTTON_BORDERCOLOR)) +
+                                  "}\n" +
+                                  "button.high_contrast {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(70, 70, 70, 1.0)") +
+                                  "   border-color: %s\n;".printf ("rgba(0, 0, 0, 1.0)") +
+                                  "}\n" +
+                                  "button.high_contrast:hover,\n" +
+                                  "button.high_contrast:active,\n" +
+                                  "button.high_contrast:hover:active,\n" +
+                                  "button.high_contrast.selected {\n" +
+                                  "   background-color: %s;\n".printf ("rgba(0, 0, 0, 1.0)") +
+                                  "}\n", -1);
             get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
         catch (Error e)

@@ -55,6 +55,8 @@ public class AGSettings : Object
     public const string KEY_REMOTE_SERVICE_CONFIGURE_URI = "remote-service-configure-uri";
     public const string KEY_TOGGLEBOX_FONT_FGCOLOR = "togglebox-font-fgcolor";
     public const string KEY_TOGGLEBOX_BUTTON_BGCOLOR = "togglebox-button-bgcolor";
+    public const string KEY_FLATBUTTON_BGCOLOR = "flatbutton-bgcolor";
+    public const string KEY_FLATBUTTON_BORDERCOLOR = "flatbutton-bordercolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";
     public const string KEY_MENUBAR_ALPHA = "menubar-alpha";
 
