@@ -90,7 +90,7 @@
       <summary>Size to use for cursors</summary>
     </key>
     <key name="font-name" type="s">
-      <default>'Sans 11'</default>
+      <default>'Noto Sans 11'</default>
       <summary>Font to use</summary>
     </key>
     <key name="xft-antialias" type="b">
