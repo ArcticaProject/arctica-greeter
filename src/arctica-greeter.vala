@@ -549,9 +549,9 @@ public class ArcticaGreeter : Object
         var time_post = GLib.get_monotonic_time ();
         var time_diff = time_post - time_pre;
         assert (0 <= time_diff);
-        var time_diff_sec = time_diff / 1000000;
-        var time_diff_msec = time_diff / 1000;
-        var time_diff_usec = time_diff % 1000000;
+        // var time_diff_sec = time_diff / 1000000;
+        // var time_diff_msec = time_diff / 1000;
+        // var time_diff_usec = time_diff % 1000000;
         // debug ("Time passed: %" + int64.FORMAT + " s, %" + int64.FORMAT + " ms, %" + int64.FORMAT + " us", time_diff_sec, time_diff_msec, time_diff_usec);
     }
 
@@ -1015,6 +1015,9 @@ public class ArcticaGreeter : Object
          *
          * We want to do this before creating the actual greeter, since the
          * latter is using AGSettings quite extensively.
+         *
+         * This will throw a Vala warning: "local variable `agsettings' declared
+         * but never used". Which can be ignored.
          */
         var agsettings = new AGSettings ();
 

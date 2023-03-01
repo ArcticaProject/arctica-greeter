@@ -208,7 +208,6 @@ public class PromptBox : FadableBox
             debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size+2, e.message);
         }
 
-        var agsettings = new AGSettings ();
         try
         {
             var color_provider = new Gtk.CssProvider ();
@@ -917,7 +916,6 @@ private class ActiveIndicator : Gtk.Image
 
         var rowstride = this.pixbuf_inverted_.get_rowstride ();
         var col_bytes = (((channels * sample_size) + 7) / 8);
-        var row_bytes = (this.pixbuf_inverted_.width * col_bytes);
         unowned var pixels = this.pixbuf_inverted_.get_pixels ();
         assert (pixels != null);
         size_t color_bits = channels;
