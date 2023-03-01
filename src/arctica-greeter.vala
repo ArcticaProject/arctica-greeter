@@ -915,13 +915,15 @@ public class ArcticaGreeter : Object
             }
         }
 
-        /* Set the keyboard layout */
-        set_keyboard_layout ();
+        if (!do_test_mode) {
+            /* Set the keyboard layout */
+            set_keyboard_layout ();
 
-        /* Set the numlock state */
-        if (AGSettings.get_boolean (AGSettings.KEY_ACTIVATE_NUMLOCK)) {
-            debug ("Activating numlock");
-            activate_numlock ();
+            /* Set the numlock state */
+            if (AGSettings.get_boolean (AGSettings.KEY_ACTIVATE_NUMLOCK)) {
+                debug ("Activating numlock");
+                activate_numlock ();
+            }
         }
 
         Pid atspi_pid = 0;
