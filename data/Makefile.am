@@ -22,9 +22,9 @@ dist_xgreeter_in_files = arctica-greeter.desktop.in
 dist_xgreeter_DATA = $(dist_xgreeter_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-backgroundsdir = $(datarootdir)/backgrounds
+backgroundsdir = $(datarootdir)/arctica-greeter/backgrounds
 dist_backgrounds_DATA = \
-	background/arctica-greeter.png
+	backgrounds/arctica-greeter.png
 
 soundsdir = $(datarootdir)/sounds/arctica-greeter
 dist_sounds_DATA = \
