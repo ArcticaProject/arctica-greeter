@@ -59,6 +59,9 @@ public class ShutdownDialog : Gtk.Fixed
     private AnimateTimer animation;
     private bool closing = false;
 
+    public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
+    public static string font_family = "sans";
+    public static int font_size_base = 11;
 
     public ShutdownDialog (ShutdownDialogType type, Background bg)
     {
@@ -96,6 +99,16 @@ public class ShutdownDialog : Gtk.Fixed
         vbox_events.add (vbox);
         monitor_events.add (vbox_events);
 
+        /* Split font family and size via regular expression. */
+        Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        MatchInfo font_info;
+        if (font_regexp.match(font, 0, out font_info)) {
+            font_family = font_info.fetch_named("font_family");
+            font_size_base = int.parse(font_info.fetch_named("font_size"));
+        }
+        debug ("Using font family '%s'.", font_family);
+        debug ("Using font size base '%d'.", font_size_base);
+
         string text;
 
         if (type == ShutdownDialogType.SHUTDOWN)
@@ -106,7 +119,7 @@ public class ShutdownDialog : Gtk.Fixed
         {
             var title_label = new Gtk.Label (null);
             title_label.visible = true;
-            title_label.set_markup ("<span font=\"Cantarell 15\" fgcolor=\"%s\">%s</span>".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), _("Shut Down")));
+            title_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+4, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), _("Shut Down")));
             title_label.set_alignment (0.0f, 0.5f);
             vbox.pack_start (title_label, false, false, 0);
 
@@ -139,7 +152,7 @@ public class ShutdownDialog : Gtk.Fixed
 
         var label = new Gtk.Label (null);
         label.set_line_wrap (true);
-        label.set_markup ("<span font=\"Cantarell 12\" fgcolor=\"%s\">%s</span>".printf (AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
+        label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
         label.set_alignment (0.0f, 0.5f);
         label.visible = true;
         vbox.pack_start (label, false, false, 0);
@@ -526,7 +539,7 @@ public class ShutdownDialog : Gtk.Fixed
         button_box.pack_start (b, false, false, 0);
 
         var label = new Gtk.Label (text);
-        var button = new DialogButton (inactive_filename, active_filename, null, label);
+        var button = new DialogButton (inactive_filename, active_filename, null, label, font_family, font_size_base+1);
         button.visible = true;
 
         b.pack_start (button, false, false, 0);
@@ -544,7 +557,7 @@ private class DialogButton : Gtk.Button
     private Gtk.Image i;
     private Gtk.Label? l;
 
-    public DialogButton (string inactive_filename, string focused_filename, string? active_filename, Gtk.Label? label = null)
+    public DialogButton (string inactive_filename, string focused_filename, string? active_filename, Gtk.Label? label = null, string? font_family="sans", int? font_size=12)
     {
         this.inactive_filename = inactive_filename;
         this.focused_filename = focused_filename;
@@ -565,14 +578,14 @@ private class DialogButton : Gtk.Button
             try
             {
                 var font_provider = new Gtk.CssProvider ();
-                var css = "* {font-family: Cantarell; font-size: 12pt;}";
+                var css = "* {font-family: %s; font-size: %dpt;}".printf(font_family, font_size);
                 font_provider.load_from_data (css, -1);
                 style_ctx.add_provider (font_provider,
                                         Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
             catch (Error e)
             {
-                debug ("Internal error loading font style (Cantarell 12pt): %s", e.message);
+                debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size, e.message);
             }
 
             l.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 0.0f });
