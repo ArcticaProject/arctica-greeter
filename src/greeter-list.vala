@@ -184,13 +184,16 @@ public abstract class GreeterList : FadableBox
         scroll_timer = new AnimateTimer (AnimateTimer.ease_out_quint, AnimateTimer.FAST);
         scroll_timer.animate.connect (animate_scrolling);
 
-        try
-        {
-            Bus.get.begin (BusType.SESSION, null, on_bus_acquired);
-        }
-        catch (IOError e)
-        {
-            debug ("Error getting session bus: %s", e.message);
+        greeter = new ArcticaGreeter();
+        if (!greeter.test_mode) {
+            try
+            {
+                Bus.get.begin (BusType.SESSION, null, on_bus_acquired);
+            }
+            catch (IOError e)
+            {
+                debug ("Error getting session bus: %s", e.message);
+            }
         }
     }
 

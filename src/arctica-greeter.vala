@@ -685,39 +685,41 @@ public class ArcticaGreeter : Object
             return false;
         });
 
-        Bus.own_name (BusType.SESSION, "com.lomiri.LomiriGreeter", BusNameOwnerFlags.NONE);
+        if (!test_mode) {
+            Bus.own_name (BusType.SESSION, "com.lomiri.LomiriGreeter", BusNameOwnerFlags.NONE);
 
-        dbus_object = new DialogDBusInterface ();
-        dbus_object.open_dialog.connect ((type) =>
-        {
-            ShutdownDialogType dialog_type;
-            switch (type)
+            dbus_object = new DialogDBusInterface ();
+            dbus_object.open_dialog.connect ((type) =>
             {
-            default:
-            case 1:
-                dialog_type = ShutdownDialogType.SHUTDOWN;
-                break;
-            case 2:
-                dialog_type = ShutdownDialogType.RESTART;
-                break;
-            }
-            main_window.show_shutdown_dialog (dialog_type);
-        });
-        dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
-        Bus.own_name (BusType.SESSION, "com.lomiri.Shell", BusNameOwnerFlags.NONE,
-                      (c) =>
-                      {
-                          try
+                ShutdownDialogType dialog_type;
+                switch (type)
+                {
+                default:
+                case 1:
+                    dialog_type = ShutdownDialogType.SHUTDOWN;
+                    break;
+                case 2:
+                    dialog_type = ShutdownDialogType.RESTART;
+                    break;
+                }
+                main_window.show_shutdown_dialog (dialog_type);
+            });
+            dbus_object.close_dialog.connect ((type) => { main_window.close_shutdown_dialog (); });
+            Bus.own_name (BusType.SESSION, "com.lomiri.Shell", BusNameOwnerFlags.NONE,
+                          (c) =>
                           {
-                              c.register_object ("/org/gnome/SessionManager/EndSessionDialog", dbus_object);
-                          }
-                          catch (Error e)
-                          {
-                              warning ("Failed to register /org/gnome/SessionManager/EndSessionDialog: %s", e.message);
-                          }
-                      },
-                      null,
-                      () => debug ("Failed to acquire name com.lomiri.Shell"));
+                              try
+                              {
+                                  c.register_object ("/org/gnome/SessionManager/EndSessionDialog", dbus_object);
+                              }
+                              catch (Error e)
+                              {
+                                  warning ("Failed to register /org/gnome/SessionManager/EndSessionDialog: %s", e.message);
+                              }
+                          },
+                          null,
+                          () => debug ("Failed to acquire name com.lomiri.Shell"));
+        }
 
         start_fake_wm ();
         Gdk.threads_add_idle (ready_cb);
