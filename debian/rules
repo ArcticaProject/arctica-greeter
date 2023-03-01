@@ -2,6 +2,8 @@
 
 LDFLAGS+=-Wl,--as-needed
 
+include /usr/share/dpkg/architecture.mk
+
 # possible guest wrapper binary locations
 GUEST_WRAPPER_BINARY_LIBEXEC="/usr/libexec/lightdm/lightdm-guest-session"
 GUEST_WRAPPER_BINARY_M_LIB="/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session"
