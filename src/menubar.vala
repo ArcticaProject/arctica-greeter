@@ -538,14 +538,21 @@ public class MenuBar : Gtk.MenuBar
                 string[] argv;
                 string cmd;
                 int onboard_stdout_fd;
-                var layout = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_LAYOUT);
-                var file = File.new_for_path ("/usr/share/onboard/layouts/%s.onboard".printf (layout));
-                if (file.query_exists ()) {
-                    cmd = "onboard --xid --layout='/usr/share/onboard/layouts/%s.onboard'".printf (layout);
+                var arg_layout   = "";
+                var arg_theme    = "";
+                var layout       = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_LAYOUT);
+                var theme        = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_THEME);
+                var fname_layout = "/usr/share/onboard/layouts/%s.onboard".printf (layout);
+                var fname_theme  = "/usr/share/onboard/themes/%s.theme".printf (theme);
+                var file_layout  = File.new_for_path (fname_layout);
+                var file_theme   = File.new_for_path (fname_theme);
+                if (file_layout.query_exists ()) {
+                    arg_layout  = "--layout='%s'".printf (fname_layout);
                 }
-                else {
-                    cmd = "onboard --xid";
+                if (file_theme.query_exists ()) {
+                    arg_theme  = "--theme='%s'".printf (fname_theme);
                 }
+                cmd = "onboard --xid %s %s".printf (arg_layout, arg_theme);
                 Shell.parse_argv (cmd, out argv);
                 Process.spawn_async_with_pipes (null,
                                                 argv,

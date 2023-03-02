@@ -187,5 +187,9 @@
       <default>'Small'</default>
       <summary>Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*.onboard for available layout names).</summary>
     </key>
+    <key name="onscreen-keyboard-theme" type="s">
+      <default>'Nightshade'</default>
+      <summary>Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme for available theme names).</summary>
+    </key>
   </schema>
 </schemalist>
