@@ -185,7 +185,7 @@
     </key>
     <key name="onscreen-keyboard-layout" type="s">
       <default>'Small'</default>
-      <summary>Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/ for available layout names).</summary>
+      <summary>Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*.onboard for available layout names).</summary>
     </key>
   </schema>
 </schemalist>
