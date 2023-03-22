@@ -113,8 +113,8 @@ public class ArcticaGreeter : Object
      *
      * Making the parameter optional is a good compromise.
      *
-     * This this parameter is construct-only, initializing it by passing it to
-     * the GObject constructor is both the correct way to do it, and it will
+     * This parameter is construct-only, initializing it by passing it to the
+     * GObject constructor is both the correct way to do it, and it will
      * additionally avoid changing it in later calls of our constructor.
      */
     public ArcticaGreeter (bool test_mode_ = false,
