@@ -555,6 +555,7 @@ public class PromptBox : FadableBox
     public void add_message (string text, bool is_error)
     {
         var label = new FadingLabel (text);
+        label.set_line_wrap (true);
 
         var style_ctx = label.get_style_context();
 
