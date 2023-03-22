@@ -573,9 +573,20 @@ public class PromptBox : FadableBox
         }
 
         Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
-        if (is_error)
+        if (is_error) {
             color.parse ("#df382c");
+
+            /*
+             * Overriding the background color will look ugly, but at least
+             * always make the text readable, which is probably important for
+             * error messages.
+             * We probably want to find a better way of handling this.
+             */
+            Gdk.RGBA bg_color = { 1.0f, 1.0f, 1.0f, 1.0f };
+            label.override_background_color (Gtk.StateFlags.NORMAL, bg_color);
+        }
         label.override_color (Gtk.StateFlags.NORMAL, color);
+
 
         label.xalign = 0.0f;
         label.set_data<bool> ("prompt-box-is-error", is_error);
