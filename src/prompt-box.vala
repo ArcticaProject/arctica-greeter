@@ -574,7 +574,7 @@ public class PromptBox : FadableBox
 
         Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
         if (is_error) {
-            color.parse ("#df382c");
+            color.parse ("#820900");
 
             /*
              * Overriding the background color will look ugly, but at least
