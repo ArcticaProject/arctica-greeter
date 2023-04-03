@@ -53,6 +53,7 @@ dist_pkgdata_DATA = \
 	badges/pademelon_badge.png \
 	badges/remote_login_help.png \
 	badges/recovery_console_badge.png \
+	badges/sleclassic_badge.png \
 	badges/sugar_badge.png \
 	badges/surf_badge.png \
 	badges/sway_badge.svg \
