@@ -206,8 +206,9 @@ class BackgroundLoader : Object
         if (logo != null)
         {
             bc.save ();
+            var x = (int) grid_x_offset + 1.5 * grid_size;
             var y = (int) (image.height / grid_size - 2) * grid_size + grid_y_offset;
-            bc.translate (grid_x_offset, y);
+            bc.translate (x, y);
             bc.set_source_surface (logo, 0, 0);
             bc.paint_with_alpha (0.5);
             bc.restore ();

@@ -223,19 +223,23 @@ public class ArcticaGreeter : Object
         sessions.append ("cinnamon");
         sessions.append ("lomiri");
 
-        foreach (string session in sessions) {
-            var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
-            if (FileUtils.test (path, FileTest.EXISTS)) {
-                debug ("Using %s as default (Wayland) session.", session);
-                return session;
+        if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
+            foreach (string session in sessions) {
+                var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
+                if (FileUtils.test (path, FileTest.EXISTS)) {
+                    debug ("Using %s as default (Wayland) session.", session);
+                    return session;
+                }
             }
         }
 
-        foreach (string session in sessions) {
-            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
-            if (FileUtils.test (path, FileTest.EXISTS)) {
-                debug ("Using %s as default (X11) session.", session);
-                return session;
+        if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS)) {
+            foreach (string session in sessions) {
+                var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+                if (FileUtils.test (path, FileTest.EXISTS)) {
+                    debug ("Using %s as default (X11) session.", session);
+                    return session;
+                }
             }
         }
 
@@ -243,21 +247,34 @@ public class ArcticaGreeter : Object
         return greeter.default_session_hint;
     }
 
-    public string validate_session (string? session)
+    public string validate_session (string? session, bool? fallback = true)
     {
         /* Make sure the given session actually exists. Return it if it does.
          * otherwise, return the default session.
          */
         if (session != null) {
-            var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
-            var waypath = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
-            if (!FileUtils.test (path, FileTest.EXISTS) & !FileUtils.test (waypath, FileTest.EXISTS)) {
+            var xsessions_path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+            var wsessions_path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
+
+            if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &
+                FileUtils.test (wsessions_path, FileTest.EXISTS)) {
+                debug ("Wayland session hidden: '%s'", session);
+                session = null;
+            }
+            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS) &
+                FileUtils.test (xsessions_path, FileTest.EXISTS)) {
+                debug ("X11 session hidden: '%s'", session);
+                session = null;
+            }
+            else if (!FileUtils.test (xsessions_path, FileTest.EXISTS) &
+                     !FileUtils.test (wsessions_path, FileTest.EXISTS))
+            {
                 debug ("Invalid session: '%s'", session);
                 session = null;
             }
         }
 
-        if (session == null) {
+        if ((fallback == true) & (session == null)) {
             var default_session = get_default_session ();
             debug ("Invalid session: '%s'. Using session '%s' instead.", session, default_session);
             return default_session;

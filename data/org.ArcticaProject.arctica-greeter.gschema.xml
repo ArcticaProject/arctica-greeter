@@ -191,5 +191,13 @@
       <default>'Nightshade'</default>
       <summary>Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme for available theme names).</summary>
     </key>
+    <key name="hide-x11-sessions" type="b">
+      <default>false</default>
+      <summary>Whether to hide X11 sessions.</summary>
+    </key>
+    <key name="hide-wayland-sessions" type="b">
+      <default>false</default>
+      <summary>Whether to hide Wayland sessions.</summary>
+    </key>
   </schema>
 </schemalist>

@@ -67,7 +67,8 @@ public class AGSettings : Object
     public const string KEY_FLATBUTTON_BORDERCOLOR = "flatbutton-bordercolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";
     public const string KEY_MENUBAR_ALPHA = "menubar-alpha";
-
+    public const string KEY_HIDE_X11_SESSIONS = "hide-x11-sessions";
+    public const string KEY_HIDE_WAYLAND_SESSIONS = "hide-wayland-sessions";
 
     public static bool get_boolean (string key)
     {

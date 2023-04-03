@@ -55,8 +55,11 @@ public class SessionPrompt : PromptBox
         {
             foreach (var session in sessions_sorted_ci( LightDM.get_sessions() ) )
             {
-                debug ("Adding session %s (%s)", session.key, session.name);
-                box.add_item (session.key, session.name, SessionList.get_badge (session.key));
+                /* Apply hide x11/wayland filter */
+                if (greeter.validate_session(session.key, false) != null) {
+                    debug ("Adding session %s (%s)", session.key, session.name);
+                    box.add_item (session.key, session.name, SessionList.get_badge (session.key));
+                }
             }
         }
 
