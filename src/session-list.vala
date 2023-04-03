@@ -118,6 +118,7 @@ public class SessionList : GreeterList
         case "gnome-flashback-metacity":
         case "gnome-shell":
         case "gnome-wayland":
+        case "gnome-xorg":
         case "gnome":
         case "openbox-gnome":
             return "gnome_badge.png";
@@ -127,6 +128,7 @@ public class SessionList : GreeterList
         case "kde-plasma":
         case "openbox-kde":
         case "plasma":
+        case "plasma5":
             return "kde_badge.png";
         case "i3":
         case "i3-with-shmlog":
