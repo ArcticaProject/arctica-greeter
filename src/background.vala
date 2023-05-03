@@ -478,6 +478,7 @@ public class Background : Gtk.Fixed
     private Monitor? active_monitor = null;
 
     private AnimateTimer timer;
+    load_background (null);
 
     private BackgroundLoader current;
     private BackgroundLoader old;

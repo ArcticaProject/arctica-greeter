@@ -36,6 +36,7 @@ public class MainWindow : Gtk.Window
     private ShutdownDialog? shutdown_dialog = null;
     private int window_size_x;
     private int window_size_y;
+    private bool do_resize;
 
     public ListStack stack;
 
@@ -158,6 +159,7 @@ public class MainWindow : Gtk.Window
         window_size_x = 0;
         window_size_y = 0;
         primary_monitor = null;
+        do_resize = false;
 
         only_on_monitor = AGSettings.get_string(AGSettings.KEY_ONLY_ON_MONITOR);
         monitor_setting_ok = only_on_monitor == "auto";
@@ -214,6 +216,14 @@ public class MainWindow : Gtk.Window
     {
         debug ("Cleaning up menu bar related processes (i.e. orca, onboard, etc.)");
         menubar.cleanup();
+    }
+
+    /* Setup the size and position of the window */
+    public void setup_window ()
+    {
+        resize (window_size_x, window_size_y);
+        move (0, 0);
+        move_to_monitor (primary_monitor);
     }
 
     public override void realize ()
@@ -275,9 +285,15 @@ public class MainWindow : Gtk.Window
         debug ("MainWindow is %dx%d pixels", window_size_x, window_size_y);
 
         background.set_monitors (monitors);
-        resize (window_size_x, window_size_y);
-        move (0, 0);
-        move_to_monitor (primary_monitor);
+
+        if(do_resize)
+        {
+            setup_window ();
+        }
+        else
+        {
+            do_resize = true;
+        }
     }
 
     /* Check if a monitor has a unique position */
