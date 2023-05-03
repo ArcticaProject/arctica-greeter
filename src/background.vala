@@ -31,7 +31,6 @@ class BackgroundLoader : Object
     public Gdk.RGBA average_color;
 
     private Cairo.Surface target_surface;
-    private bool draw_grid;
     private Thread<void*> thread;
     private Gdk.Pixbuf[] images;
     private bool finished;
@@ -39,7 +38,7 @@ class BackgroundLoader : Object
 
     public signal void loaded ();
 
-    public BackgroundLoader (Cairo.Surface target_surface, string filename, int[] widths, int[] heights, bool draw_grid)
+    public BackgroundLoader (Cairo.Surface target_surface, string filename, int[] widths, int[] heights)
     {
         this.target_surface = target_surface;
         this.filename = filename;
@@ -47,7 +46,6 @@ class BackgroundLoader : Object
         this.heights = heights;
         patterns = new Cairo.Pattern[widths.length];
         images = new Gdk.Pixbuf[widths.length];
-        this.draw_grid = draw_grid;
     }
 
     public bool load ()
@@ -391,11 +389,14 @@ public class Monitor
 
 public class Background : Gtk.Fixed
 {
+    [Flags]
     public enum DrawFlags
     {
         NONE,
         GRID,
+        SPAN,
     }
+    private DrawFlags flags = DrawFlags.NONE;
 
     /* Fallback bgcolor - shown upon first startup, until an async background loader finishes,
      * or until a user background or default background is loaded.
@@ -468,7 +469,28 @@ public class Background : Gtk.Fixed
         }
     }
 
-    public bool draw_grid { get; set; default = true; }
+    /* Width - total pixel width of the entire background canvas. This total width
+     * should account for the relative geometry of all attached monitors.
+     */
+
+    private int _width = 0;
+    public int width {
+        get {
+            return _width;
+        }
+    }
+
+    /* Height - total pixel height of the entire background canvas. This total height
+     * should account for the relative geometry of all attached monitors.
+     */
+
+    private int _height = 0;
+    public int height {
+        get {
+            return _height;
+        }
+    }
+
     public double alpha { get; private set; default = 1.0; }
     public Gdk.RGBA average_color { get { return current.average_color; } }
 
@@ -478,7 +500,6 @@ public class Background : Gtk.Fixed
     private Monitor? active_monitor = null;
 
     private AnimateTimer timer;
-    load_background (null);
 
     private BackgroundLoader current;
     private BackgroundLoader old;
@@ -495,9 +516,14 @@ public class Background : Gtk.Fixed
         timer = null;
 
         resize_mode = Gtk.ResizeMode.QUEUE;
-        draw_grid = AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID);
-
         loaders = new HashTable<string?, BackgroundLoader> (str_hash, str_equal);
+
+        if (AGSettings.get_boolean (AGSettings.KEY_DRAW_GRID))
+            flags |= DrawFlags.GRID;
+
+        var mode = AGSettings.get_string (AGSettings.KEY_BACKGROUND_MODE);
+        if (mode == "spanned")
+            flags |= DrawFlags.SPAN;
 
         show ();
     }
@@ -508,6 +534,7 @@ public class Background : Gtk.Fixed
 
         timer = new AnimateTimer (AnimateTimer.ease_in_out, 700);
 
+        load_background (null);
         set_logo (AGSettings.get_string (AGSettings.KEY_LOGO));
         timer.animate.connect (animate_cb);
     }
@@ -545,7 +572,15 @@ public class Background : Gtk.Fixed
     {
         this.monitors = new List<Monitor> ();
         foreach (var m in monitors)
+        {
+            if (_width < m.x + m.width)
+                _width = m.x + m.width;
+
+            if (_height < m.y + m.height)
+                _height = m.y + m.height;
+
             this.monitors.append (m);
+        }
         queue_draw ();
     }
 
@@ -578,9 +613,6 @@ public class Background : Gtk.Fixed
 
     public override bool draw (Cairo.Context c)
     {
-        var flags = DrawFlags.NONE;
-        if (draw_grid)
-            flags |= DrawFlags.GRID;
         draw_full (c, flags);
         return base.draw (c);
     }
@@ -626,7 +658,7 @@ public class Background : Gtk.Fixed
 
         c.restore ();
 
-        if ((flags & DrawFlags.GRID) != 0)
+        if (DrawFlags.GRID in flags)
             overlay_grid (c);
     }
 
@@ -634,14 +666,22 @@ public class Background : Gtk.Fixed
     {
         foreach (var monitor in monitors)
         {
-            var pattern = background.get_pattern (monitor.width, monitor.height);
+            Cairo.Pattern? pattern;
+            var matrix = Cairo.Matrix.identity ();
+            if (DrawFlags.SPAN in flags)
+            {
+                pattern = background.get_pattern (_width, _height);
+            }
+            else
+            {
+                pattern = background.get_pattern (monitor.width, monitor.height);
+                matrix.translate (-monitor.x, -monitor.y);
+            }
+
             if (pattern == null)
                 continue;
 
             c.save ();
-            pattern = background.get_pattern (monitor.width, monitor.height);
-            var matrix = Cairo.Matrix.identity ();
-            matrix.translate (-monitor.x, -monitor.y);
             pattern.set_matrix (matrix);
             c.set_source (pattern);
             c.rectangle (monitor.x, monitor.y, monitor.width, monitor.height);
@@ -710,19 +750,28 @@ public class Background : Gtk.Fixed
             var widths = new int[monitors.length ()];
             var heights = new int[monitors.length ()];
             var n_sizes = 0;
-            foreach (var monitor in monitors)
+            if (DrawFlags.SPAN in flags)
             {
-                if (monitor_is_unique_size (monitor))
+                widths[n_sizes] = _width;
+                heights[n_sizes] = _height;
+                n_sizes++;
+            }
+            else
+            {
+                foreach (var monitor in monitors)
                 {
-                    widths[n_sizes] = monitor.width;
-                    heights[n_sizes] = monitor.height;
-                    n_sizes++;
+                    if (monitor_is_unique_size (monitor))
+                    {
+                        widths[n_sizes] = monitor.width;
+                        heights[n_sizes] = monitor.height;
+                        n_sizes++;
+                    }
                 }
             }
             widths.resize (n_sizes);
             heights.resize (n_sizes);
 
-            b = new BackgroundLoader (target_surface, filename, widths, heights, draw_grid);
+            b = new BackgroundLoader (target_surface, filename, widths, heights);
             b.logo = version_logo_surface;
             b.loaded.connect (() => { reload (); });
             b.load ();
