@@ -655,8 +655,11 @@ public class MenuBar : Gtk.MenuBar
                 // why we do both.  Ideally this would be fixed in orca itself.
                 var greeter = new ArcticaGreeter ();
                 greeter.orca_needs_kick = true;
-                Timeout.add_seconds (1, () => {
-                    Signal.emit_by_name ((get_toplevel () as Gtk.Window).get_focus ().get_accessible (), "focus-event", true);
+                Timeout.add_seconds (1, () =>
+                {
+                    Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+                    Signal.emit_by_name (pWindow.get_focus ().get_accessible (), "focus-event", true);
+
                     return false;
                 });
             }

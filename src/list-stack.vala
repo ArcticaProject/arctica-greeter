@@ -1,6 +1,7 @@
 /* -*- Mode: Vala; indent-tabs-mode: nil; tab-width: 4 -*-
  *
  * Copyright (C) 2011,2012 Canonical Ltd
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -16,6 +17,7 @@
  *
  * Authors: Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public class ListStack : Gtk.Fixed
@@ -75,7 +77,10 @@ public class ListStack : Gtk.Fixed
 
         unowned List<weak Gtk.Widget> prev = children.last ().prev;
         if (prev != null)
-            (prev.data as GreeterList).greeter_box.pop ();
+        {
+            GreeterList pList = (GreeterList) prev.data;
+            pList.greeter_box.pop ();
+        }
     }
 
     public override void size_allocate (Gtk.Allocation allocation)

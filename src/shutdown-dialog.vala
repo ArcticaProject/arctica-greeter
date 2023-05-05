@@ -363,19 +363,26 @@ public class ShutdownDialog : Gtk.Fixed
 
     public void focus_next ()
     {
-        (get_toplevel () as Gtk.Window).move_focus (Gtk.DirectionType.TAB_FORWARD);
+        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+        pWindow.move_focus (Gtk.DirectionType.TAB_FORWARD);
     }
 
     public void focus_prev ()
     {
-        (get_toplevel () as Gtk.Window).move_focus (Gtk.DirectionType.TAB_BACKWARD);
+        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+        pWindow.move_focus (Gtk.DirectionType.TAB_BACKWARD);
     }
 
     public void cancel ()
     {
-        var widget = (get_toplevel () as Gtk.Window).get_focus ();
+        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+        var widget = pWindow.get_focus ();
+
         if (widget is DialogButton)
-            (get_toplevel () as Gtk.Window).set_focus (null);
+        {
+            pWindow = (Gtk.Window) get_toplevel ();
+            pWindow.set_focus (null);
+        }
         else
             close ();
     }
@@ -628,7 +635,8 @@ private class DialogButton : Gtk.Button
 
     public override bool leave_notify_event (Gdk.EventCrossing event)
     {
-        (get_toplevel () as Gtk.Window).set_focus (null);
+        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+        pWindow.set_focus (null);
         return base.leave_notify_event (event);
     }
 

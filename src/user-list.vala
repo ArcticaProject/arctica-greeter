@@ -639,7 +639,7 @@ public class UserList : GreeterList
         if (agsettings.high_contrast || !AGSettings.get_boolean (AGSettings.KEY_DRAW_USER_BACKGROUNDS))
             new_background_file = null;
         else if (selected_entry is UserPromptBox)
-            new_background_file = (selected_entry as UserPromptBox).background;
+            new_background_file = ((UserPromptBox) selected_entry).background;
 
         background.current_background = new_background_file;
 
@@ -687,7 +687,7 @@ public class UserList : GreeterList
         var greeter = new ArcticaGreeter ();
         greeter.set_state ("last-user", username);
         if (selected_entry is UserPromptBox)
-            session = (selected_entry as UserPromptBox).session;
+            session = ((UserPromptBox) selected_entry).session;
         else
             session = null;
         selected_entry.clear ();
