@@ -612,11 +612,11 @@ public class MenuBar : Gtk.MenuBar
         agsettings.high_contrast = item.active;
     }
 
-    private void big_font_toggled_cb (Gtk.CheckMenuItem item)
+    /*private void big_font_toggled_cb (Gtk.CheckMenuItem item)
     {
         var agsettings = new AGSettings ();
         agsettings.big_font = item.active;
-    }
+    }*/
 
     private void screen_reader_toggled_cb (Gtk.CheckMenuItem item)
     {
