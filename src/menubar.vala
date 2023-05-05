@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 private class IndicatorMenuItem : Gtk.MenuItem
@@ -176,7 +178,16 @@ public class MenuBar : Gtk.MenuBar
 
         /* Add shadow. */
         var shadow_style = new Gtk.CssProvider ();
-        shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px #000000; }", -1);
+
+        try
+        {
+            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px #000000; }", -1);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Failed adding shadow: %s", pError.message);
+        }
+
         this.get_style_context ().add_provider (shadow_style,
                                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 

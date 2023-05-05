@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 int remote_server_field_sort_function (RemoteServerField? item1, RemoteServerField? item2)
@@ -223,7 +225,16 @@ public class UserList : GreeterList
         try
         {
             RemoteServer[] server_list;
-            yield remote_logon_service.get_servers (out server_list);
+
+            try
+            {
+                yield remote_logon_service.get_servers (out server_list);
+            }
+            catch (GLib.DBusError pError)
+            {
+                error ("Panic: Failed getting logon servers: %s", pError.message);
+            }
+
             set_remote_directory_servers (server_list);
         }
         catch (IOError e)
@@ -511,7 +522,15 @@ public class UserList : GreeterList
                     // If we had an error and are retrying the same user and server, do not use the cache on R-L-S
                     if (selected_entry.has_errors && currently_browsing_server_email == email && currently_browsing_server_url == url)
                         allowcache = false;
-                    yield remote_logon_service.get_servers_for_login (url, email, password_field.text, allowcache, out login_success, out data_type, out server_list);
+
+                    try
+                    {
+                        yield remote_logon_service.get_servers_for_login (url, email, password_field.text, allowcache, out login_success, out data_type, out server_list);
+                    }
+                    catch (GLib.DBusError pError)
+                    {
+                        error ("Panic: Failed getting login servers: %s", pError.message);
+                    }
                 }
                 currently_browsing_server_url = url;
                 currently_browsing_server_email = email;
@@ -703,140 +722,147 @@ public class UserList : GreeterList
         var url = url_from_remote_loding_server_list_name (selected_entry.id);
         var username = username_from_remote_loding_server_list_name (selected_entry.id);
 
-        foreach (var remote_server in server_list)
+        try
         {
-            var remote_username = username_from_remote_server_fields (remote_server);
-            if (remote_server.url == url && (username == null || username == remote_username))
+            foreach (var remote_server in server_list)
             {
-                if (selected_entry.id.has_prefix ("*remote_login"))
+                var remote_username = username_from_remote_server_fields (remote_server);
+                if (remote_server.url == url && (username == null || username == remote_username))
                 {
-                    if (!is_supported_remote_session (remote_server.type))
+                    if (selected_entry.id.has_prefix ("*remote_login"))
                     {
-                        show_message (_("Server type not supported."), true);
-                    }
-                }
-
-                var fields = new List<RemoteServerField?> ();
-                foreach (var field in remote_server.fields)
-                    fields.append (field);
-                fields.sort (remote_server_field_sort_function);
-                foreach (var field in fields)
-                {
-                    Gtk.Widget? widget = null;
-                    var default_value = "";
-                    if (field.default_value != null && field.default_value.is_of_type (VariantType.STRING))
-                        default_value = field.default_value.get_string ();
-                    if (field.type == "username")
-                    {
-                        var entry = add_prompt (_("Username:"));
-                        entry.text = default_value;
-                        widget = entry;
-                    }
-                    else if (field.type == "password")
-                    {
-                        var entry = add_prompt (_("Password:"), true);
-                        entry.text = default_value;
-                        widget = entry;
-                    }
-                    else if (field.type == "command")
-                    {
-                        var prompt = add_prompt (_("X2Go Session:"));
-                        prompt.text = default_value;
-                        prompt.sensitive = true;
-                        widget = prompt;
-                    }
-                    else if (field.type == "domain")
-                    {
-                        string[] domainsArray = {};
-                        if (field.properties != null && field.properties.contains ("domains") && field.properties.get ("domains").is_of_type (VariantType.ARRAY))
-                            domainsArray = field.properties.get ("domains").dup_strv ();
-                        var domains = new GenericArray<string> ();
-                        for (var i = 0; i < domainsArray.length; i++)
-                            domains.add (domainsArray[i]);
-
-                        var read_only = field.properties != null &&
-                                        field.properties.contains ("read-only") &&
-                                        field.properties.get ("read-only").is_of_type (VariantType.BOOLEAN) &&
-                                        field.properties.get ("read-only").get_boolean ();
-                        if (domains.length == 0 || (domains.length == 1 && (domains[0] == default_value || default_value.length == 0)))
+                        if (!is_supported_remote_session (remote_server.type))
                         {
-                            var prompt = add_prompt (_("Domain:"));
-                            prompt.text = domains.length == 1 ? domains[0] : default_value;
-                            prompt.sensitive = !read_only;
+                            show_message (_("Server type not supported."), true);
+                        }
+                    }
+
+                    var fields = new List<RemoteServerField?> ();
+                    foreach (var field in remote_server.fields)
+                        fields.append (field);
+                    fields.sort (remote_server_field_sort_function);
+                    foreach (var field in fields)
+                    {
+                        Gtk.Widget? widget = null;
+                        var default_value = "";
+                        if (field.default_value != null && field.default_value.is_of_type (VariantType.STRING))
+                            default_value = field.default_value.get_string ();
+                        if (field.type == "username")
+                        {
+                            var entry = add_prompt (_("Username:"));
+                            entry.text = default_value;
+                            widget = entry;
+                        }
+                        else if (field.type == "password")
+                        {
+                            var entry = add_prompt (_("Password:"), true);
+                            entry.text = default_value;
+                            widget = entry;
+                        }
+                        else if (field.type == "command")
+                        {
+                            var prompt = add_prompt (_("X2Go Session:"));
+                            prompt.text = default_value;
+                            prompt.sensitive = true;
                             widget = prompt;
+                        }
+                        else if (field.type == "domain")
+                        {
+                            string[] domainsArray = {};
+                            if (field.properties != null && field.properties.contains ("domains") && field.properties.get ("domains").is_of_type (VariantType.ARRAY))
+                                domainsArray = field.properties.get ("domains").dup_strv ();
+                            var domains = new GenericArray<string> ();
+                            for (var i = 0; i < domainsArray.length; i++)
+                                domains.add (domainsArray[i]);
+
+                            var read_only = field.properties != null &&
+                                            field.properties.contains ("read-only") &&
+                                            field.properties.get ("read-only").is_of_type (VariantType.BOOLEAN) &&
+                                            field.properties.get ("read-only").get_boolean ();
+                            if (domains.length == 0 || (domains.length == 1 && (domains[0] == default_value || default_value.length == 0)))
+                            {
+                                var prompt = add_prompt (_("Domain:"));
+                                prompt.text = domains.length == 1 ? domains[0] : default_value;
+                                prompt.sensitive = !read_only;
+                                widget = prompt;
+                            }
+                            else
+                            {
+                                if (default_value.length > 0)
+                                {
+                                    /* Make sure the domain list contains the default value */
+                                    var found = false;
+                                    for (var i = 0; !found && i < domains.length; i++)
+                                        found = default_value == domains[i];
+
+                                    if (!found)
+                                        domains.add (default_value);
+                                }
+
+                                /* Sort domains alphabetically */
+                                domains.sort (strcmp);
+                                var combo = add_combo (domains, read_only);
+
+                                if (default_value.length > 0)
+                                {
+                                    if (read_only)
+                                    {
+                                        for (var i = 0; i < domains.length; i++)
+                                        {
+                                            if (default_value == domains[i])
+                                            {
+                                                combo.active = i;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        var entry = combo.get_child () as Gtk.Entry;
+                                        entry.text = default_value;
+                                    }
+                                }
+
+                                widget = combo;
+                            }
+                        }
+                        else if (field.type == "email")
+                        {
+                            string[] email_domains;
+                            var greeter = new ArcticaGreeter ();
+                            try
+                            {
+                                if (greeter.test_mode)
+                                    email_domains = { "canonical.com", "ubuntu.org", "candy.com", "urban.net" };
+                                else
+                                    yield remote_logon_service.get_cached_domains_for_server (url, out email_domains);
+                            }
+                            catch (IOError e)
+                            {
+                                email_domains.resize (0);
+                                debug ("Calling get_cached_domains_for_server in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
+                            }
+
+                            var entry = add_prompt (_("Account ID"));
+                            entry.text = default_value;
+                            widget = entry;
+                            if (email_domains.length > 0)
+                                remote_server_email_field_autocompleter = new EmailAutocompleter (entry, email_domains);
                         }
                         else
                         {
-                            if (default_value.length > 0)
-                            {
-                                /* Make sure the domain list contains the default value */
-                                var found = false;
-                                for (var i = 0; !found && i < domains.length; i++)
-                                    found = default_value == domains[i];
-
-                                if (!found)
-                                    domains.add (default_value);
-                            }
-
-                            /* Sort domains alphabetically */
-                            domains.sort (strcmp);
-                            var combo = add_combo (domains, read_only);
-
-                            if (default_value.length > 0)
-                            {
-                                if (read_only)
-                                {
-                                    for (var i = 0; i < domains.length; i++)
-                                    {
-                                        if (default_value == domains[i])
-                                        {
-                                            combo.active = i;
-                                            break;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    var entry = combo.get_child () as Gtk.Entry;
-                                    entry.text = default_value;
-                                }
-                            }
-
-                            widget = combo;
+                            debug ("Found field of type %s, don't know what to do with it", field.type);
+                            continue;
                         }
+                        current_remote_fields.insert (field.type, widget);
                     }
-                    else if (field.type == "email")
-                    {
-                        string[] email_domains;
-                        var greeter = new ArcticaGreeter ();
-                        try
-                        {
-                            if (greeter.test_mode)
-                                email_domains = { "canonical.com", "ubuntu.org", "candy.com", "urban.net" };
-                            else
-                                yield remote_logon_service.get_cached_domains_for_server (url, out email_domains);
-                        }
-                        catch (IOError e)
-                        {
-                            email_domains.resize (0);
-                            debug ("Calling get_cached_domains_for_server in org.ArcticaProject.RemoteLogon dbus service failed. Error: %s", e.message);
-                        }
-
-                        var entry = add_prompt (_("Account ID"));
-                        entry.text = default_value;
-                        widget = entry;
-                        if (email_domains.length > 0)
-                            remote_server_email_field_autocompleter = new EmailAutocompleter (entry, email_domains);
-                    }
-                    else
-                    {
-                        debug ("Found field of type %s, don't know what to do with it", field.type);
-                        continue;
-                    }
-                    current_remote_fields.insert (field.type, widget);
+                    break;
                 }
-                break;
             }
+        }
+        catch (GLib.DBusError pError)
+        {
+            error ("Panic: Failed iterating through remote servers: %s", pError.message);
         }
     }
 

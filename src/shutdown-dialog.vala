@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2013 Canonical Ltd
  * Copyright (C) 2015,2016 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Marco Trevisan <marco.trevisan@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public enum ShutdownDialogType
@@ -100,7 +102,17 @@ public class ShutdownDialog : Gtk.Fixed
         monitor_events.add (vbox_events);
 
         /* Split font family and size via regular expression. */
-        Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        Regex font_regexp = null;
+
+        try
+        {
+            font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        }
+        catch (GLib.RegexError pError)
+        {
+            error ("Panic: Failed constructing RegEx: %s", pError.message);
+        }
+
         MatchInfo font_info;
         if (font_regexp.match(font, 0, out font_info)) {
             font_family = font_info.fetch_named("font_family");

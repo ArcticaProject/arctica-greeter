@@ -225,12 +225,36 @@ public class ScreenSaverInterface : Object
             idle_monitor.remove_watch (idle_watch);
         idle_watch = 0;
         if (value)
-            idle_monitor.add_user_active_watch (() => set_active (false));
+        {
+                idle_monitor.add_user_active_watch (() =>
+                {
+                    try
+                    {
+                        set_active (false);
+                    }
+                    catch (Error pError)
+                    {
+                        error ("Panic: Screensaver activation failed: %s", pError.message);
+                    }
+                });
+        }
         else
         {
             var timeout = AGSettings.get_integer (AGSettings.KEY_IDLE_TIMEOUT);
             if (timeout > 0)
-                idle_watch = idle_monitor.add_idle_watch (timeout * 1000, () => set_active (true));
+            {
+                idle_watch = idle_monitor.add_idle_watch (timeout * 1000, () =>
+                {
+                    try
+                    {
+                        set_active (true);
+                    }
+                    catch (Error pError)
+                    {
+                        error ("Panic: Screensaver activation failed: %s", pError.message);
+                    }
+                });
+            }
         }
     }
 
