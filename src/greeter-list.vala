@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -19,6 +20,7 @@
  *          Michael Terry <michael.terry@canonical.com>
  *          Scott Sweeny <scott.sweeny@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 private const int MAX_FIELD_SIZE = 200;
@@ -41,11 +43,11 @@ public class ListDBusInterface : Object
         });
     }
 
-    public string get_active_entry ()
+    public string get_active_entry () throws GLib.DBusError, GLib.IOError
     {
         return list.get_active_entry ();
     }
-    public void set_active_entry (string entry_name)
+    public void set_active_entry (string entry_name) throws GLib.DBusError, GLib.IOError
     {
         list.set_active_entry (entry_name);
     }

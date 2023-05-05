@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -17,6 +18,7 @@
  *
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public const int grid_size = 40;
@@ -1243,12 +1245,12 @@ public class DialogDBusInterface : Object
     public signal void open_dialog (uint32 type);
     public signal void close_dialog ();
 
-    public void open (uint32 type, uint32 timestamp, uint32 seconds_to_stay_open, ObjectPath[] inhibitor_object_paths)
+    public void open (uint32 type, uint32 timestamp, uint32 seconds_to_stay_open, ObjectPath[] inhibitor_object_paths) throws GLib.DBusError, GLib.IOError
     {
         open_dialog (type);
     }
 
-    public void close ()
+    public void close () throws GLib.DBusError, GLib.IOError
     {
         close_dialog ();
     }
