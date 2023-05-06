@@ -238,7 +238,7 @@ public class PromptBox : FadableBox
         name_label.vexpand = true;
         name_label.yalign = 0.5f;
         name_label.xalign = 0.0f;
-        name_label.margin_left = 2;
+        name_label.margin_start = 2;
         name_label.set_size_request (-1, grid_size);
         name_label.show ();
         name_grid.attach (name_label, COL_NAME_LABEL, ROW_NAME, 1, 1);
@@ -340,7 +340,7 @@ public class PromptBox : FadableBox
         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
-        small_name_label.margin_left = 2;
+        small_name_label.margin_start = 2;
         small_name_label.set_size_request (-1, grid_size);
         small_name_label.show ();
         small_name_grid.attach (small_name_label, 1, 0, 1, 1);
