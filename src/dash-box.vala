@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -17,6 +18,7 @@
  *
  * Authors: Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public class DashBox : Gtk.Box
@@ -141,6 +143,8 @@ public class DashBox : Gtk.Box
             queue_resize ();
             orig.grab_focus ();
             break;
+        default:
+            return;
         }
     }
 
