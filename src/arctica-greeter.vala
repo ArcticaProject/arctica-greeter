@@ -36,7 +36,7 @@ public class ArcticaGreeter : Object
     public bool test_bigfont { get; construct; default = false; }
     private string state_file;
     private KeyFile state;
-
+    private DBusServer pServer;
     private Cairo.XlibSurface background_surface;
 
     private SettingsDaemon settings_daemon;
@@ -57,9 +57,25 @@ public class ArcticaGreeter : Object
 
     construct
     {
+        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE, onBusAcquired);
+
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
-        greeter.show_prompt.connect ((text, type) => { show_prompt (text, type); });
+
+        greeter.show_prompt.connect ((text, type) =>
+        {
+            try
+            {
+                this.pServer.sendUserChange ();
+            }
+            catch (Error pError)
+            {
+                error ("Panic: %s", pError.message);
+            }
+
+            show_prompt (text, type);
+        });
+
         greeter.autologin_timer_expired.connect (() => {
             try
             {
@@ -127,6 +143,19 @@ public class ArcticaGreeter : Object
                 test_highcontrast: test_highcontrast_,
                 test_bigfont: test_bigfont_
         );
+    }
+
+    private void onBusAcquired (DBusConnection pConnection)
+    {
+        try
+        {
+            this.pServer = new DBusServer (pConnection, this.greeter);
+            pConnection.register_object ("/org/ArcticaProject/ArcticaGreeter", this.pServer);
+        }
+        catch (IOError pError)
+        {
+            error ("%s\n", pError.message);
+        }
     }
 
     public void go ()
@@ -1267,4 +1296,69 @@ private interface SettingsDaemonDBusInterface : Object
 {
     public signal void plugin_activated (string name);
     public signal void plugin_deactivated (string name);
+}
+
+[DBus (name = "org.ArcticaProject.ArcticaGreeter")]
+public class DBusServer : Object
+{
+    private DBusConnection pConnection;
+    private LightDM.Greeter pGreeter;
+
+    public DBusServer (DBusConnection pConnection, LightDM.Greeter pGreeter)
+    {
+        this.pConnection = pConnection;
+        this.pGreeter = pGreeter;
+    }
+
+    public void sendUserChange () throws GLib.DBusError, GLib.IOError
+    {
+        string sUser = this.pGreeter.get_authentication_user ();
+
+        if (sUser == null)
+        {
+            sUser = "GUEST";
+        }
+
+        Variant pUser = new Variant ("(s)", sUser);
+
+        try
+        {
+            this.pConnection.emit_signal (null, "/org/ArcticaProject/ArcticaGreeter", "org.ArcticaProject.ArcticaGreeter", "UserChanged", pUser);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Could not send user change signal: %s", pError.message);
+        }
+    }
+
+    public string GetUser () throws GLib.DBusError, GLib.IOError
+    {
+        string sUser = this.pGreeter.get_authentication_user ();
+
+        if (sUser == null)
+        {
+            sUser = "GUEST";
+        }
+
+        return sUser;
+    }
+
+    public void SetLayout (string sLanguage, string sVariant) throws GLib.DBusError, GLib.IOError
+    {
+        string sCommand = "setxkbmap -layout %s".printf (sLanguage);
+
+        if (sVariant != "")
+        {
+            sCommand = "%s -variant %s".printf (sCommand, sVariant);
+        }
+
+        try
+        {
+            Process.spawn_command_line_sync (sCommand, null, null, null);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Could not set keyboard layout: %s", pError.message);
+        }
+    }
 }
