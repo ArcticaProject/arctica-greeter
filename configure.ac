@@ -37,6 +37,7 @@ AC_DEFINE_UNQUOTED([INDICATOR_FILE_DIR], ["${prefix}/share/ayatana/indicators"],
 
 INDICATORDIR=`$PKG_CONFIG --variable=indicatordir ayatana-indicator3-0.4`
 AC_SUBST(INDICATORDIR)
+AC_DEFINE_UNQUOTED([INDICATORDIR], ["$INDICATORDIR"], [Indicator plugins files are loaded from this directory])
 
 if $PKG_CONFIG --exists mate-settings-daemon; then
     MSD_BINARY=`$PKG_CONFIG --variable=binary mate-settings-daemon`

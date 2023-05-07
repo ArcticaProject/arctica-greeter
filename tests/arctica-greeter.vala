@@ -22,8 +22,6 @@ public const int grid_size = 40;
 [SingleInstance]
 public class ArcticaGreeter : Object
 {
-    public static ArcticaGreeter singleton;
-
     public signal void show_message (string text, LightDM.MessageType type);
     public signal void show_prompt (string text, LightDM.PromptType type);
     public signal void authentication_complete ();
