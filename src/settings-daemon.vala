@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -17,6 +18,7 @@
  *
  * Authored by: Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public class SettingsDaemon : Object
@@ -223,16 +225,40 @@ public class ScreenSaverInterface : Object
             idle_monitor.remove_watch (idle_watch);
         idle_watch = 0;
         if (value)
-            idle_monitor.add_user_active_watch (() => set_active (false));
+        {
+                idle_monitor.add_user_active_watch (() =>
+                {
+                    try
+                    {
+                        set_active (false);
+                    }
+                    catch (Error pError)
+                    {
+                        error ("Panic: Screensaver activation failed: %s", pError.message);
+                    }
+                });
+        }
         else
         {
             var timeout = AGSettings.get_integer (AGSettings.KEY_IDLE_TIMEOUT);
             if (timeout > 0)
-                idle_watch = idle_monitor.add_idle_watch (timeout * 1000, () => set_active (true));
+            {
+                idle_watch = idle_monitor.add_idle_watch (timeout * 1000, () =>
+                {
+                    try
+                    {
+                        set_active (true);
+                    }
+                    catch (Error pError)
+                    {
+                        error ("Panic: Screensaver activation failed: %s", pError.message);
+                    }
+                });
+            }
         }
     }
 
-    public void set_active (bool value)
+    public void set_active (bool value) throws GLib.DBusError, GLib.IOError
     {
         if (_active == value)
             return;
@@ -246,15 +272,15 @@ public class ScreenSaverInterface : Object
         active_changed (value);
     }
 
-    public bool get_active ()
+    public bool get_active () throws GLib.DBusError, GLib.IOError
     {
         return _active;
     }
 
-    public uint32 get_active_time () { return 0; }
-    public void lock () {}
-    public void show_message (string summary, string body, string icon) {}
-    public void simulate_user_activity () {}
+    public uint32 get_active_time () throws GLib.DBusError, GLib.IOError { return 0; }
+    public void lock () throws GLib.DBusError, GLib.IOError {}
+    public void show_message (string summary, string body, string icon) throws GLib.DBusError, GLib.IOError {}
+    public void simulate_user_activity () throws GLib.DBusError, GLib.IOError {}
 }
 
 [DBus (name="org.gnome.SessionManager")]

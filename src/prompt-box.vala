@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public class PromptBox : FadableBox
@@ -176,7 +178,17 @@ public class PromptBox : FadableBox
         fixed.add (box_grid);
 
         /* Split font family and size via regular expression. */
-        Regex font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        Regex font_regexp = null;
+
+        try
+        {
+            font_regexp = new Regex ("^([[:blank:]]*)(?<font_family>[ a-zA-Z0-9]+) (?<font_size>[0-9]+)([[:blank:]]*)$");
+        }
+        catch (GLib.RegexError pError)
+        {
+            error ("Panic: Failed constructing RegEx: %s", pError.message);
+        }
+
         MatchInfo font_info;
         if (font_regexp.match(font, 0, out font_info)) {
             font_family = font_info.fetch_named("font_family");
@@ -226,7 +238,7 @@ public class PromptBox : FadableBox
         name_label.vexpand = true;
         name_label.yalign = 0.5f;
         name_label.xalign = 0.0f;
-        name_label.margin_left = 2;
+        name_label.margin_start = 2;
         name_label.set_size_request (-1, grid_size);
         name_label.show ();
         name_grid.attach (name_label, COL_NAME_LABEL, ROW_NAME, 1, 1);
@@ -310,7 +322,7 @@ public class PromptBox : FadableBox
 
         small_name_label = new FadingLabel ("");
 
-	var style_ctx = small_name_label.get_style_context();
+    var style_ctx = small_name_label.get_style_context();
 
         try
         {
@@ -328,7 +340,7 @@ public class PromptBox : FadableBox
         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
-        small_name_label.margin_left = 2;
+        small_name_label.margin_start = 2;
         small_name_label.set_size_request (-1, grid_size);
         small_name_label.show ();
         small_name_grid.attach (small_name_label, 1, 0, 1, 1);

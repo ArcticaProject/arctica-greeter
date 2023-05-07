@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -17,6 +18,7 @@
  *
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public const int grid_size = 40;
@@ -34,7 +36,7 @@ public class ArcticaGreeter : Object
     public bool test_bigfont { get; construct; default = false; }
     private string state_file;
     private KeyFile state;
-
+    private DBusServer pServer;
     private Cairo.XlibSurface background_surface;
 
     private SettingsDaemon settings_daemon;
@@ -55,9 +57,25 @@ public class ArcticaGreeter : Object
 
     construct
     {
+        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE, onBusAcquired);
+
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
-        greeter.show_prompt.connect ((text, type) => { show_prompt (text, type); });
+
+        greeter.show_prompt.connect ((text, type) =>
+        {
+            try
+            {
+                this.pServer.sendUserChange ();
+            }
+            catch (Error pError)
+            {
+                error ("Panic: %s", pError.message);
+            }
+
+            show_prompt (text, type);
+        });
+
         greeter.autologin_timer_expired.connect (() => {
             try
             {
@@ -125,6 +143,19 @@ public class ArcticaGreeter : Object
                 test_highcontrast: test_highcontrast_,
                 test_bigfont: test_bigfont_
         );
+    }
+
+    private void onBusAcquired (DBusConnection pConnection)
+    {
+        try
+        {
+            this.pServer = new DBusServer (pConnection, this.greeter);
+            pConnection.register_object ("/org/ArcticaProject/ArcticaGreeter", this.pServer);
+        }
+        catch (IOError pError)
+        {
+            error ("%s\n", pError.message);
+        }
     }
 
     public void go ()
@@ -590,7 +621,10 @@ public class ArcticaGreeter : Object
                 /* Check to see if this window is our onboard window, since we don't want to focus it. */
                 X.Window keyboard_xid = 0;
                 if (main_window.menubar.keyboard_window != null)
-                    keyboard_xid = (main_window.menubar.keyboard_window.get_window () as Gdk.X11.Window).get_xid ();
+                {
+                    Gdk.X11.Window pWindow = (Gdk.X11.Window) main_window.menubar.keyboard_window.get_window ();
+                    keyboard_xid = pWindow.get_xid ();
+                }
 
                 if (xwin != keyboard_xid && win.get_type_hint() != Gdk.WindowTypeHint.NOTIFICATION)
                 {
@@ -648,20 +682,22 @@ public class ArcticaGreeter : Object
     private static Cairo.XlibSurface? create_root_surface (Gdk.Screen screen)
     {
         var visual = screen.get_system_visual ();
-
-        unowned X.Display display = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
-        unowned X.Screen xscreen = (screen as Gdk.X11.Screen).get_xscreen ();
+        Gdk.X11.Display pDisplay = (Gdk.X11.Display) screen.get_display ();
+        unowned X.Display display = pDisplay.get_xdisplay ();
+        Gdk.X11.Screen pScreen = (Gdk.X11.Screen) screen;
+        unowned X.Screen xscreen = pScreen.get_xscreen ();
 
         var pixmap = X.CreatePixmap (display,
-                                     (screen.get_root_window () as Gdk.X11.Window).get_xid (),
+                                     ((Gdk.X11.Window) (screen.get_root_window ())).get_xid (),
                                      xscreen.width_of_screen (),
                                      xscreen.height_of_screen (),
                                      visual.get_depth ());
 
         /* Convert into a Cairo surface */
+        Gdk.X11.Visual pVisual = (Gdk.X11.Visual) visual;
         var surface = new Cairo.XlibSurface (display,
                                              pixmap,
-                                             (visual as Gdk.X11.Visual).get_xvisual (),
+                                             pVisual.get_xvisual (),
                                              xscreen.width_of_screen (), xscreen.height_of_screen ());
 
         return surface;
@@ -1221,7 +1257,8 @@ public class ArcticaGreeter : Object
         }
 
         var screen = Gdk.Screen.get_default ();
-        unowned X.Display xdisplay = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
+        Gdk.X11.Display pDisplay = (Gdk.X11.Display) screen.get_display ();
+        unowned X.Display xdisplay = pDisplay.get_xdisplay ();
 
         var window = xdisplay.default_root_window();
         var atom = xdisplay.intern_atom ("AT_SPI_BUS", true);
@@ -1243,12 +1280,12 @@ public class DialogDBusInterface : Object
     public signal void open_dialog (uint32 type);
     public signal void close_dialog ();
 
-    public void open (uint32 type, uint32 timestamp, uint32 seconds_to_stay_open, ObjectPath[] inhibitor_object_paths)
+    public void open (uint32 type, uint32 timestamp, uint32 seconds_to_stay_open, ObjectPath[] inhibitor_object_paths) throws GLib.DBusError, GLib.IOError
     {
         open_dialog (type);
     }
 
-    public void close ()
+    public void close () throws GLib.DBusError, GLib.IOError
     {
         close_dialog ();
     }
@@ -1259,4 +1296,69 @@ private interface SettingsDaemonDBusInterface : Object
 {
     public signal void plugin_activated (string name);
     public signal void plugin_deactivated (string name);
+}
+
+[DBus (name = "org.ArcticaProject.ArcticaGreeter")]
+public class DBusServer : Object
+{
+    private DBusConnection pConnection;
+    private LightDM.Greeter pGreeter;
+
+    public DBusServer (DBusConnection pConnection, LightDM.Greeter pGreeter)
+    {
+        this.pConnection = pConnection;
+        this.pGreeter = pGreeter;
+    }
+
+    public void sendUserChange () throws GLib.DBusError, GLib.IOError
+    {
+        string sUser = this.pGreeter.get_authentication_user ();
+
+        if (sUser == null)
+        {
+            sUser = "GUEST";
+        }
+
+        Variant pUser = new Variant ("(s)", sUser);
+
+        try
+        {
+            this.pConnection.emit_signal (null, "/org/ArcticaProject/ArcticaGreeter", "org.ArcticaProject.ArcticaGreeter", "UserChanged", pUser);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Could not send user change signal: %s", pError.message);
+        }
+    }
+
+    public string GetUser () throws GLib.DBusError, GLib.IOError
+    {
+        string sUser = this.pGreeter.get_authentication_user ();
+
+        if (sUser == null)
+        {
+            sUser = "GUEST";
+        }
+
+        return sUser;
+    }
+
+    public void SetLayout (string sLanguage, string sVariant) throws GLib.DBusError, GLib.IOError
+    {
+        string sCommand = "setxkbmap -layout %s".printf (sLanguage);
+
+        if (sVariant != "")
+        {
+            sCommand = "%s -variant %s".printf (sCommand, sVariant);
+        }
+
+        try
+        {
+            Process.spawn_command_line_sync (sCommand, null, null, null);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Could not set keyboard layout: %s", pError.message);
+        }
+    }
 }

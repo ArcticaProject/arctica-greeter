@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2014 Canonical Ltd
  * Copyright (C) 2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari <robert@tari.in>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -79,7 +80,11 @@ public class IdleMonitor
             warning ("Only support idle monitor under X");
             return;
         }
-        display = (d as Gdk.X11.Display).get_xdisplay ();
+
+        if (d is Gdk.X11.Display)
+        {
+            display = d.get_xdisplay ();
+        }
 
         int sync_error_base;
         var res = X.Sync.QueryExtension (display, out sync_event_base, out sync_error_base);

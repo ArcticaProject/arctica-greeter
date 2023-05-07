@@ -52,7 +52,6 @@ public class MainWindow : Gtk.Window
         bg_color.parse (AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR));
         override_background_color (Gtk.StateFlags.NORMAL, bg_color);
         get_accessible ().set_name (_("Login Screen"));
-        has_resize_grip = false;
         ArcticaGreeter.add_style_class (this);
 
         background = new Background ();
@@ -201,8 +200,8 @@ public class MainWindow : Gtk.Window
 
         if (hbox != null)
         {
-            hbox.margin_left = get_grid_offset (get_allocated_width ()) + grid_size;
-            hbox.margin_right = get_grid_offset (get_allocated_width ());
+            hbox.margin_start = get_grid_offset (get_allocated_width ()) + grid_size;
+            hbox.margin_end = get_grid_offset (get_allocated_width ());
             hbox.margin_top = get_grid_offset (get_allocated_height ());
             hbox.margin_bottom = get_grid_offset (get_allocated_height ());
         }
