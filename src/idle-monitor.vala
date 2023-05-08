@@ -83,7 +83,8 @@ public class IdleMonitor
 
         if (d is Gdk.X11.Display)
         {
-            display = d.get_xdisplay ();
+            Gdk.X11.Display pX11Display = (Gdk.X11.Display) d;
+            display = pX11Display.get_xdisplay ();
         }
 
         int sync_error_base;
