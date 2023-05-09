@@ -64,15 +64,6 @@ public class ArcticaGreeter : Object
 
         greeter.show_prompt.connect ((text, type) =>
         {
-            try
-            {
-                this.pServer.sendUserChange ();
-            }
-            catch (Error pError)
-            {
-                error ("Panic: %s", pError.message);
-            }
-
             show_prompt (text, type);
         });
 
@@ -149,7 +140,7 @@ public class ArcticaGreeter : Object
     {
         try
         {
-            this.pServer = new DBusServer (pConnection, this.greeter);
+            this.pServer = new DBusServer (pConnection, this);
             pConnection.register_object ("/org/ArcticaProject/ArcticaGreeter", this.pServer);
         }
         catch (IOError pError)
@@ -211,6 +202,18 @@ public class ArcticaGreeter : Object
 
     public void set_state (string key, string value)
     {
+        if (key == "last-user")
+        {
+            try
+            {
+                this.pServer.sendUserChange (value);
+            }
+            catch (Error pError)
+            {
+                error ("Panic: %s", pError.message);
+            }
+        }
+
         state.set_value ("greeter", key, value);
         var data = state.to_data ();
         try
@@ -1302,19 +1305,17 @@ private interface SettingsDaemonDBusInterface : Object
 public class DBusServer : Object
 {
     private DBusConnection pConnection;
-    private LightDM.Greeter pGreeter;
+    private ArcticaGreeter pGreeter;
 
-    public DBusServer (DBusConnection pConnection, LightDM.Greeter pGreeter)
+    public DBusServer (DBusConnection pConnection, ArcticaGreeter pGreeter)
     {
         this.pConnection = pConnection;
         this.pGreeter = pGreeter;
     }
 
-    public void sendUserChange () throws GLib.DBusError, GLib.IOError
+    public void sendUserChange (string sUser) throws GLib.DBusError, GLib.IOError
     {
-        string sUser = this.pGreeter.get_authentication_user ();
-
-        if (sUser == null)
+        if (sUser == "*guest")
         {
             sUser = "GUEST";
         }
@@ -1333,9 +1334,9 @@ public class DBusServer : Object
 
     public string GetUser () throws GLib.DBusError, GLib.IOError
     {
-        string sUser = this.pGreeter.get_authentication_user ();
+        string sUser = this.pGreeter.get_state ("last-user");
 
-        if (sUser == null)
+        if (sUser == "*guest")
         {
             sUser = "GUEST";
         }
