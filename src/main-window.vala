@@ -64,7 +64,6 @@ public class MainWindow : Gtk.Window
 
         /* Box for menubar shadow */
         var menubox = new Gtk.EventBox ();
-        var menualign = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 0.0f);
         var shadow_path = Path.build_filename (Config.PKGDATADIR,
                                                "shadow.png", null);
         var shadow_style = "";
@@ -92,16 +91,18 @@ public class MainWindow : Gtk.Window
         */
         menubox.set_size_request (-1, MENUBAR_HEIGHT);
         menubox.show ();
-        menualign.show ();
-        menubox.add (menualign);
         login_box.add (menubox);
-        ArcticaGreeter.add_style_class (menualign);
         ArcticaGreeter.add_style_class (menubox);
 
         menubar = new MenuBar (background, accel_group);
+        menubar.set_hexpand (true);
+        menubar.set_vexpand (false);
+        menubar.set_halign (Gtk.Align.FILL);
+        menubar.set_valign (Gtk.Align.START);
         menubar.show ();
-        menualign.add (menubar);
+        menubox.add (menubar);
         ArcticaGreeter.add_style_class (menubar);
+        ArcticaGreeter.add_style_class (menubox);
 
         hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         hbox.expand = true;
@@ -143,13 +144,13 @@ public class MainWindow : Gtk.Window
 
         align.add (back_button);
 
-        align = new Gtk.Alignment (0.0f, 0.5f, 0.0f, 1.0f);
-        align.show ();
-        hbox.add (align);
-
         stack = new ListStack ();
         stack.show ();
-        align.add (stack);
+        stack.set_hexpand (false);
+        stack.set_vexpand (true);
+        stack.set_halign (Gtk.Align.CENTER);
+        stack.set_valign (Gtk.Align.FILL);
+        hbox.add (stack);
 
         add_user_list ();
 

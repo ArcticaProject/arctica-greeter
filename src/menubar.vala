@@ -277,7 +277,10 @@ public class MenuBar : Gtk.MenuBar
 
             hostname_item.set_sensitive (false);
 
-            hostname_item.set_halign (Gtk.Align.END);
+            /* The below does not work, so for now we need to stick to "set_right_justified"
+            hostname_item.set_hexpand (true);
+            hostname_item.set_halign (Gtk.Align.END);*/
+            hostname_item.set_right_justified (true);
         }
 
         /* Prevent dragging the window by the menubar */
