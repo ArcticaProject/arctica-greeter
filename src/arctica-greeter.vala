@@ -1315,11 +1315,6 @@ public class DBusServer : Object
 
     public void sendUserChange (string sUser) throws GLib.DBusError, GLib.IOError
     {
-        if (sUser == "*guest")
-        {
-            sUser = "GUEST";
-        }
-
         Variant pUser = new Variant ("(s)", sUser);
 
         try
@@ -1335,11 +1330,6 @@ public class DBusServer : Object
     public string GetUser () throws GLib.DBusError, GLib.IOError
     {
         string sUser = this.pGreeter.get_state ("last-user");
-
-        if (sUser == "*guest")
-        {
-            sUser = "GUEST";
-        }
 
         return sUser;
     }
