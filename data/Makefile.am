@@ -112,7 +112,14 @@ logo.png: logo-bare.png
 gsettings_SCHEMAS = \
 	org.ArcticaProject.arctica-greeter.gschema.xml
 
-dist_man1_MANS = arctica-greeter.1
+dist_man1_MANS = \
+	arctica-greeter.1 \
+	arctica-greeter-check-hidpi.1 \
+	arctica-greeter-enable-tap-to-click.1 \
+	arctica-greeter-magnifier.1 \
+	arctica-greeter-set-keyboard-layout.1 \
+	$(NULL)
+
 dist_man8_MANS = arctica-greeter-guest-account-script.8
 
 EXTRA_DIST = \
