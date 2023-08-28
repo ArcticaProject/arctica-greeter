@@ -33,6 +33,7 @@ public class AGSettings : Object
     public const string KEY_DRAW_GRID = "draw-grid";
     public const string KEY_SHOW_HOSTNAME = "show-hostname";
     public const string KEY_LOGO = "logo";
+    public const string KEY_LOGO_ALPHA = "logo-alpha";
     public const string KEY_THEME_NAME = "theme-name";
     public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
