@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 12:24+0100\n"
+"POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2021-09-08 18:33+0000\n"
 "Last-Translator: Sanaf <abdullahsanaf@gmail.com>\n"
 "Language-Team: Bengali <https://hosted.weblate.org/projects/arctica-"
@@ -20,60 +20,60 @@ msgstr ""
 "X-Generator: Weblate 4.8.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
 msgstr "আপনার পাসওয়ার্ড দিন %s"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:308
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
 msgstr "শব্দচাবি:"
 
-#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
 msgid "Username:"
 msgstr "ব্যবহারকারীর নাম:"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
 msgstr "ভুল পাসওয়ার্ড, অনুগ্রও করে আবার চেষ্টা করুন"
 
-#: ../src/greeter-list.vala:897
+#: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
 msgstr "প্রমাণীকরণে ব্যর্থ"
 
-#: ../src/greeter-list.vala:945
+#: ../src/greeter-list.vala:951
 msgid "Failed to start session"
 msgstr "সেশন শুরু করতে ব্যর্থ"
 
-#: ../src/greeter-list.vala:960
+#: ../src/greeter-list.vala:965
 msgid "Logging in…"
 msgstr "লগ ইন…"
 
-#: ../src/main-window.vala:55
+#: ../src/main-window.vala:54
 msgid "Login Screen"
 msgstr "লগিন পর্দা"
 
-#: ../src/main-window.vala:122
+#: ../src/main-window.vala:121
 msgid "Back"
 msgstr "পেছনে"
 
-#: ../src/menubar.vala:355
+#: ../src/menubar.vala:369
 msgid "Onscreen keyboard"
 msgstr "অন স্ক্রিন কিবোর্ড"
 
-#: ../src/menubar.vala:360
+#: ../src/menubar.vala:374
 msgid "High Contrast"
 msgstr "উচ্চ বৈসাদৃশ্য"
 
-#: ../src/menubar.vala:378
+#: ../src/menubar.vala:392
 msgid "Screen Reader"
 msgstr "স্ক্রিন রিডার"
 
-#: ../src/prompt-box.vala:294
+#: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "সেশন বিকল্প"
 
@@ -81,19 +81,19 @@ msgstr "সেশন বিকল্প"
 msgid "Select desktop environment"
 msgstr "ডেস্কটপ পরিবেশ নির্বাচন করুন"
 
-#: ../src/shutdown-dialog.vala:103
+#: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
 msgstr "বিদায়। আপনি কি পছন্দ করবেন…"
 
-#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
 msgstr "বন্ধ করুন"
 
-#: ../src/shutdown-dialog.vala:113
+#: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
 msgstr "আপনি কি নিশ্চিত যে আপনি কম্পিউটার বন্ধ করতে চান?"
 
-#: ../src/shutdown-dialog.vala:138
+#: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -101,60 +101,82 @@ msgstr ""
 "অন্যান্য ব্যবহারকারীরা বর্তমানে এই কম্পিউটারে লগ ইন করছেন, এখন বন্ধ করলে এই অন্যান্য "
 "সেশনগুলিও বন্ধ হয়ে যাবে।"
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
 msgstr "স্থগিত"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
 msgstr "হাইবারনেট"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:233
 msgid "Restart"
 msgstr "আবার শুরু"
 
+#. Fun begins here, actually trigger option.
+#: ../src/shutdown-dialog.vala:295
+msgid "Selecting default action now."
+msgstr ""
+
+#: ../src/shutdown-dialog.vala:328
+#, c-format
+msgid "Selecting default action in one second …"
+msgid_plural "Selecting default action in %u seconds …"
+msgstr[0] ""
+msgstr[1] ""
+
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:162
+#: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
 msgstr "%s ডিফল্ট"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:823
+#: ../src/arctica-greeter.vala:916
 msgid "Show release version"
 msgstr "রিলিজ সংস্করণ প্রদর্শন"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:826
+#: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
 msgstr "পরীক্ষা মোডে চালান"
 
+#. Help string for command line --test-highcontrast flag
+#: ../src/arctica-greeter.vala:922
+msgid "Run in test mode with a11y highcontrast theme enabled"
+msgstr ""
+
+#. Help string for command line --test-bigfont flag
+#: ../src/arctica-greeter.vala:925
+msgid "Run in test mode with a11y big font feature enabled"
+msgstr ""
+
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:832
+#: ../src/arctica-greeter.vala:931
 msgid "- Arctica Greeter"
 msgstr "আর্কটিকা গ্রিটার"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:843
+#: ../src/arctica-greeter.vala:942
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "বিদ্যমান কমান্ড লাইন অপশনের পুরো তালিকা দেখতে '%s --help' চালান।"
 
-#: ../src/user-list.vala:47
+#: ../src/user-list.vala:49
 msgid "Guest Session"
 msgstr "অতিথি সেশন"
 
-#: ../src/user-list.vala:461
+#: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
 msgstr "একটি সম্পূর্ণ ইমেল ঠিকানা লিখুন"
 
-#: ../src/user-list.vala:542
+#: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
 msgstr "ই-মেইল এড্রেস অথবা পাসওয়ার্ড ভুল হয়েছে"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:576
+#: ../src/user-list.vala:600
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -162,15 +184,15 @@ msgstr ""
 "যদি আপনার আরডিপি অথবা সাইট্রিক্স সার্ভার এ কোন একাউন্ট থাকে, তাহলে আপনি রিমোট "
 "লগিন এর মাধ্যমে সেই সার্ভার থেকে আপনার এপ্লিকেশন গুলো ব্যাবহার করতে পারবেন।"
 
-#: ../src/user-list.vala:579
+#: ../src/user-list.vala:603
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: ../src/user-list.vala:580
+#: ../src/user-list.vala:604
 msgid "Set Up…"
 msgstr "বিন্যাস…"
 
-#: ../src/user-list.vala:582
+#: ../src/user-list.vala:606
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -178,11 +200,11 @@ msgstr ""
 "এই সার্ভিসটি ব্যাবহার করতে আপনার উবুন্টু রিমোট লগিন একাউন্ট থাকতে হবে। আপনি কি "
 "এখনই একটি একাউন্ট সেট আপ করতে চান ?"
 
-#: ../src/user-list.vala:586
+#: ../src/user-list.vala:610
 msgid "OK"
 msgstr "ঠিক আছে"
 
-#: ../src/user-list.vala:588
+#: ../src/user-list.vala:612
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -191,7 +213,7 @@ msgstr ""
 "এই সার্ভিসটি ব্যাবহার করতে আপনার উবুন্টু রিমোট লগিন একাউন্ট থাকতে হবে। একাউন্ট সেট "
 "আপ করতে uccs.canonical.com এ ভিজিট করুন ।"
 
-#: ../src/user-list.vala:590
+#: ../src/user-list.vala:614
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
@@ -200,43 +222,43 @@ msgstr ""
 "এই সার্ভিসটি ব্যাবহার করতে আপনার উবুন্টু রিমোট লগিন একাউন্ট থাকতে হবে। আপনি কি "
 "এখনই একটি একাউন্ট সেট আপ করতে চান?"
 
-#: ../src/user-list.vala:710
+#: ../src/user-list.vala:736
 msgid "Server type not supported."
 msgstr ""
 
-#: ../src/user-list.vala:738
+#: ../src/user-list.vala:764
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "অতিথি সেশন"
 
-#: ../src/user-list.vala:758
+#: ../src/user-list.vala:784
 msgid "Domain:"
 msgstr "ডোমেইন:"
 
-#: ../src/user-list.vala:820
+#: ../src/user-list.vala:846
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:864
+#: ../src/user-list.vala:895
 msgid "Log In"
 msgstr "লগইন"
 
-#: ../src/user-list.vala:865
+#: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
 msgstr ""
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:900
 msgid "Retry"
 msgstr "পুনরায় চেষ্টা করুন"
 
-#: ../src/user-list.vala:870
+#: ../src/user-list.vala:901
 #, c-format
 msgid "Retry as %s"
 msgstr ""
 
-#: ../src/user-list.vala:913
+#: ../src/user-list.vala:945
 msgid "Login"
 msgstr ""
 

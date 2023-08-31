@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 12:24+0100\n"
+"POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2020-01-08 10:21+0000\n"
 "Last-Translator: Jun Hyung Shin <shmishmi79@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/arctica-framework/"
@@ -20,60 +20,60 @@ msgstr ""
 "X-Generator: Weblate 3.10.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
 msgstr "%s의 암호를 입력하십시오"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:308
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
 msgstr "암호:"
 
-#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
 msgid "Username:"
 msgstr "사용자 이름:"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
 msgstr "암호가 올바르지 않습니다, 다시 입력해주십시오"
 
-#: ../src/greeter-list.vala:897
+#: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
 msgstr "인증에 실패했습니다"
 
-#: ../src/greeter-list.vala:945
+#: ../src/greeter-list.vala:951
 msgid "Failed to start session"
 msgstr "세션을 시작할 수 없습니다."
 
-#: ../src/greeter-list.vala:960
+#: ../src/greeter-list.vala:965
 msgid "Logging in…"
 msgstr "로그인 중…"
 
-#: ../src/main-window.vala:55
+#: ../src/main-window.vala:54
 msgid "Login Screen"
 msgstr "로그인 화면"
 
-#: ../src/main-window.vala:122
+#: ../src/main-window.vala:121
 msgid "Back"
 msgstr "뒤로"
 
-#: ../src/menubar.vala:355
+#: ../src/menubar.vala:369
 msgid "Onscreen keyboard"
 msgstr "화상 키보드"
 
-#: ../src/menubar.vala:360
+#: ../src/menubar.vala:374
 msgid "High Contrast"
 msgstr "고대비"
 
-#: ../src/menubar.vala:378
+#: ../src/menubar.vala:392
 msgid "Screen Reader"
 msgstr "화면 읽기 프로그램"
 
-#: ../src/prompt-box.vala:294
+#: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "세션 옵션"
 
@@ -81,19 +81,19 @@ msgstr "세션 옵션"
 msgid "Select desktop environment"
 msgstr "데스크톱 환경 선택"
 
-#: ../src/shutdown-dialog.vala:103
+#: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
 msgstr "안녕히 가세요. 수행할 작업은 무엇입니까.…"
 
-#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
 msgstr "컴퓨터 끄기"
 
-#: ../src/shutdown-dialog.vala:113
+#: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
 msgstr "정말 컴퓨터를 끄시겠습니까?"
 
-#: ../src/shutdown-dialog.vala:138
+#: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -101,60 +101,81 @@ msgstr ""
 "현재 이 컴퓨터에 다른 사용자가 로그인했습니다. 지금 컴퓨터를 끄면 다른 사용자"
 "의 세션 역시 닫습니다."
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
 msgstr "절전"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
 msgstr "최대 절전"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:233
 msgid "Restart"
 msgstr "다시 시작"
 
+#. Fun begins here, actually trigger option.
+#: ../src/shutdown-dialog.vala:295
+msgid "Selecting default action now."
+msgstr ""
+
+#: ../src/shutdown-dialog.vala:328
+#, c-format
+msgid "Selecting default action in one second …"
+msgid_plural "Selecting default action in %u seconds …"
+msgstr[0] ""
+
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:162
+#: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (기본값)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:823
+#: ../src/arctica-greeter.vala:916
 msgid "Show release version"
 msgstr "릴리스 버전을 표시합니다"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:826
+#: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
 msgstr "테스트 모드로 실행하기"
 
+#. Help string for command line --test-highcontrast flag
+#: ../src/arctica-greeter.vala:922
+msgid "Run in test mode with a11y highcontrast theme enabled"
+msgstr ""
+
+#. Help string for command line --test-bigfont flag
+#: ../src/arctica-greeter.vala:925
+msgid "Run in test mode with a11y big font feature enabled"
+msgstr ""
+
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:832
+#: ../src/arctica-greeter.vala:931
 msgid "- Arctica Greeter"
 msgstr "- 유니티 로그인 프로그램"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:843
+#: ../src/arctica-greeter.vala:942
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "사용 가능한 모든 옵션의 목록을 보려면 '%s --help' 명령을 실행하십시오."
 
-#: ../src/user-list.vala:47
+#: ../src/user-list.vala:49
 msgid "Guest Session"
 msgstr "게스트 세션"
 
-#: ../src/user-list.vala:461
+#: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
 msgstr "전체 전자메일 주소를 입력해주십시오"
 
-#: ../src/user-list.vala:542
+#: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
 msgstr "전자메일 주소나 암호가 올바르지 않습니다"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:576
+#: ../src/user-list.vala:600
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -162,15 +183,15 @@ msgstr ""
 "RDP 또는 X2Go 서버에 계정이 있는 경우, 원격 로그인을 통해 해당 서버에서 프로"
 "그램을 실행할 수 있습니다."
 
-#: ../src/user-list.vala:579
+#: ../src/user-list.vala:603
 msgid "Cancel"
 msgstr "취소"
 
-#: ../src/user-list.vala:580
+#: ../src/user-list.vala:604
 msgid "Set Up…"
 msgstr "설정…"
 
-#: ../src/user-list.vala:582
+#: ../src/user-list.vala:606
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -178,11 +199,11 @@ msgstr ""
 "이 서비스를 이용하기 위해선 원격 로그인 계정이 필요합니다. 계정을 지금 만드시"
 "겠습니까?"
 
-#: ../src/user-list.vala:586
+#: ../src/user-list.vala:610
 msgid "OK"
 msgstr "확인"
 
-#: ../src/user-list.vala:588
+#: ../src/user-list.vala:612
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -191,7 +212,7 @@ msgstr ""
 "이 서비스를 이용하려면 원격 로그인 계정이 필요합니다. %s 페이지를 방문해 계정"
 "을 설정하십시오."
 
-#: ../src/user-list.vala:590
+#: ../src/user-list.vala:614
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -199,42 +220,42 @@ msgstr ""
 "이 서비스를 이용하려면 원격 로그인 계정이 필요합니다. 사이트 관리자에게 문의"
 "해주시길 바랍니다."
 
-#: ../src/user-list.vala:710
+#: ../src/user-list.vala:736
 msgid "Server type not supported."
 msgstr "서버 형식을 지원하지 않습니다."
 
-#: ../src/user-list.vala:738
+#: ../src/user-list.vala:764
 msgid "X2Go Session:"
 msgstr "X2Go 세션:"
 
-#: ../src/user-list.vala:758
+#: ../src/user-list.vala:784
 msgid "Domain:"
 msgstr "도메인:"
 
-#: ../src/user-list.vala:820
+#: ../src/user-list.vala:846
 msgid "Account ID"
 msgstr "계정 ID"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:864
+#: ../src/user-list.vala:895
 msgid "Log In"
 msgstr "로그인"
 
-#: ../src/user-list.vala:865
+#: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
 msgstr "%s(으)로 로그인"
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:900
 msgid "Retry"
 msgstr "다시 시도"
 
-#: ../src/user-list.vala:870
+#: ../src/user-list.vala:901
 #, c-format
 msgid "Retry as %s"
 msgstr "%s(으)로 다시 시도"
 
-#: ../src/user-list.vala:913
+#: ../src/user-list.vala:945
 msgid "Login"
 msgstr "로그인"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 12:24+0100\n"
+"POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2014-04-30 19:02+0000\n"
 "Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
 "Language-Team: Welsh <cy@li.org>\n"
@@ -18,60 +18,60 @@ msgstr ""
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 "X-Generator: Launchpad (build 17656)\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
 msgstr "Rhowch y cyfrinair ar gyfer %s"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:308
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
 msgstr "Cyfinair:"
 
-#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
 msgid "Username:"
 msgstr "Enw defnyddiwr:"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
 msgstr "Cyfrinair anghywir, rhowch gynnig arall arni"
 
-#: ../src/greeter-list.vala:897
+#: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
 msgstr "Methwyd dilysu"
 
-#: ../src/greeter-list.vala:945
+#: ../src/greeter-list.vala:951
 msgid "Failed to start session"
 msgstr "Methwyd cychwyn sesiwn"
 
-#: ../src/greeter-list.vala:960
+#: ../src/greeter-list.vala:965
 msgid "Logging in…"
 msgstr "Wrthi'n mewngofnodi..."
 
-#: ../src/main-window.vala:55
+#: ../src/main-window.vala:54
 msgid "Login Screen"
 msgstr "Sgrîn Fewngofnodi"
 
-#: ../src/main-window.vala:122
+#: ../src/main-window.vala:121
 msgid "Back"
 msgstr "Yn ôl"
 
-#: ../src/menubar.vala:355
+#: ../src/menubar.vala:369
 msgid "Onscreen keyboard"
 msgstr "Bysellfwrdd sgrîn"
 
-#: ../src/menubar.vala:360
+#: ../src/menubar.vala:374
 msgid "High Contrast"
 msgstr "Cyferbyniad Uchel"
 
-#: ../src/menubar.vala:378
+#: ../src/menubar.vala:392
 msgid "Screen Reader"
 msgstr "Darllenydd Sgrin"
 
-#: ../src/prompt-box.vala:294
+#: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Dewisiadau'r Sesiwn"
 
@@ -79,19 +79,19 @@ msgstr "Dewisiadau'r Sesiwn"
 msgid "Select desktop environment"
 msgstr "Dewis amgylchedd penbwrdd"
 
-#: ../src/shutdown-dialog.vala:103
+#: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
 msgstr "Hwyl fawr. Hoffech chi..."
 
-#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
 msgstr "Diffodd"
 
-#: ../src/shutdown-dialog.vala:113
+#: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
 msgstr "Ydych chi'n siŵr eich bod am ddiffodd y cyfrifiadur?"
 
-#: ../src/shutdown-dialog.vala:138
+#: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -99,60 +99,82 @@ msgstr ""
 "Mae defnyddwyr eraill wedi mewngofnodi i'r cyfrifiadur hwn, bydd diffodd yn "
 "cau'r sesiynau eraill hefyd."
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
 msgstr "Seibio"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
 msgstr "Cysgu"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:233
 msgid "Restart"
 msgstr "Ailgychwyn"
 
+#. Fun begins here, actually trigger option.
+#: ../src/shutdown-dialog.vala:295
+msgid "Selecting default action now."
+msgstr ""
+
+#: ../src/shutdown-dialog.vala:328
+#, c-format
+msgid "Selecting default action in one second …"
+msgid_plural "Selecting default action in %u seconds …"
+msgstr[0] ""
+msgstr[1] ""
+
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:162
+#: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (Rhagosodedig)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:823
+#: ../src/arctica-greeter.vala:916
 msgid "Show release version"
 msgstr "Dangos fersiwn rhyddhau"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:826
+#: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
 msgstr "Rhedeg ym modd prawf"
 
+#. Help string for command line --test-highcontrast flag
+#: ../src/arctica-greeter.vala:922
+msgid "Run in test mode with a11y highcontrast theme enabled"
+msgstr ""
+
+#. Help string for command line --test-bigfont flag
+#: ../src/arctica-greeter.vala:925
+msgid "Run in test mode with a11y big font feature enabled"
+msgstr ""
+
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:832
+#: ../src/arctica-greeter.vala:931
 msgid "- Arctica Greeter"
 msgstr "- Cyfarchwr Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:843
+#: ../src/arctica-greeter.vala:942
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "Rhedwch '%s --help' i weld rhestr lawn o opsiynau llinell orchymyn."
 
-#: ../src/user-list.vala:47
+#: ../src/user-list.vala:49
 msgid "Guest Session"
 msgstr "Sesiwn Wadd"
 
-#: ../src/user-list.vala:461
+#: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
 msgstr "Rhowch gyfeiriad ebost llawn"
 
-#: ../src/user-list.vala:542
+#: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
 msgstr "Cyfeiriad ebost neu gyfrinair anghywir"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:576
+#: ../src/user-list.vala:600
 #, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
@@ -161,15 +183,15 @@ msgstr ""
 "Os oes gennych gyfrif ar weinydd RDP, mae Mewngofnodi Pell yn eich galluogi "
 "i redeg rhaglenni o'r gweinydd hwnnw."
 
-#: ../src/user-list.vala:579
+#: ../src/user-list.vala:603
 msgid "Cancel"
 msgstr "Diddymu"
 
-#: ../src/user-list.vala:580
+#: ../src/user-list.vala:604
 msgid "Set Up…"
 msgstr "Sefydlu..."
 
-#: ../src/user-list.vala:582
+#: ../src/user-list.vala:606
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
@@ -178,11 +200,11 @@ msgstr ""
 "Rhaid cael cyfrif Mewngofnodi Pell Ubuntu i ddefnyddio'r wasanaeth hon. "
 "Hoffech greu un nawr?"
 
-#: ../src/user-list.vala:586
+#: ../src/user-list.vala:610
 msgid "OK"
 msgstr "Iawn"
 
-#: ../src/user-list.vala:588
+#: ../src/user-list.vala:612
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -191,7 +213,7 @@ msgstr ""
 "Rhaid cael cyfrif Mewngofnodi Pell Ubuntu i ddefnyddio'r wasanaeth hon. "
 "Ymwelwch â uccs.canonical.com i greu cyfrif."
 
-#: ../src/user-list.vala:590
+#: ../src/user-list.vala:614
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
@@ -200,43 +222,43 @@ msgstr ""
 "Rhaid cael cyfrif Mewngofnodi Pell Ubuntu i ddefnyddio'r wasanaeth hon. "
 "Hoffech greu un nawr?"
 
-#: ../src/user-list.vala:710
+#: ../src/user-list.vala:736
 msgid "Server type not supported."
 msgstr "Ni chefnogir y math yna o weinydd"
 
-#: ../src/user-list.vala:738
+#: ../src/user-list.vala:764
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Sesiwn Wadd"
 
-#: ../src/user-list.vala:758
+#: ../src/user-list.vala:784
 msgid "Domain:"
 msgstr "Parth:"
 
-#: ../src/user-list.vala:820
+#: ../src/user-list.vala:846
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:864
+#: ../src/user-list.vala:895
 msgid "Log In"
 msgstr "Mewngofnodi"
 
-#: ../src/user-list.vala:865
+#: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
 msgstr "Mewngofnodi fel %s"
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:900
 msgid "Retry"
 msgstr "Ailgeisio"
 
-#: ../src/user-list.vala:870
+#: ../src/user-list.vala:901
 #, c-format
 msgid "Retry as %s"
 msgstr "Ceisio eto fel %s"
 
-#: ../src/user-list.vala:913
+#: ../src/user-list.vala:945
 msgid "Login"
 msgstr "Mewngofnodi"
 

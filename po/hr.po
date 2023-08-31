@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 12:24+0100\n"
+"POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2023-02-10 22:38+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/hr/>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,60 +21,60 @@ msgstr ""
 "X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
 msgstr "Upiši lozinku za %s"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:308
 msgid "Enter your username"
 msgstr "Upiši tvoje korisničko ime"
 
-#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
 msgid "Username:"
 msgstr "Korisničko ime:"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
 msgstr "Neispravna lozinka, pokušaj ponovo"
 
-#: ../src/greeter-list.vala:897
+#: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
 msgstr "Ovjera nije uspjela"
 
-#: ../src/greeter-list.vala:945
+#: ../src/greeter-list.vala:951
 msgid "Failed to start session"
 msgstr "Neuspjelo pokretanje sesije"
 
-#: ../src/greeter-list.vala:960
+#: ../src/greeter-list.vala:965
 msgid "Logging in…"
 msgstr "Prijavljivanje …"
 
-#: ../src/main-window.vala:55
+#: ../src/main-window.vala:54
 msgid "Login Screen"
 msgstr "Ekran prijave"
 
-#: ../src/main-window.vala:122
+#: ../src/main-window.vala:121
 msgid "Back"
 msgstr "Natrag"
 
-#: ../src/menubar.vala:355
+#: ../src/menubar.vala:369
 msgid "Onscreen keyboard"
 msgstr "Ekranska tipkovnica"
 
-#: ../src/menubar.vala:360
+#: ../src/menubar.vala:374
 msgid "High Contrast"
 msgstr "Visok kontrast"
 
-#: ../src/menubar.vala:378
+#: ../src/menubar.vala:392
 msgid "Screen Reader"
 msgstr "Čitač ekrana"
 
-#: ../src/prompt-box.vala:294
+#: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Opcije za sesiju"
 
@@ -82,19 +82,19 @@ msgstr "Opcije za sesiju"
 msgid "Select desktop environment"
 msgstr "Odaberi okruženje radne površine"
 
-#: ../src/shutdown-dialog.vala:103
+#: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
 msgstr "Doviđenja. Želiš li …"
 
-#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
 msgstr "Isključi"
 
-#: ../src/shutdown-dialog.vala:113
+#: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
 msgstr "Zaista želiš isključiti računalo?"
 
-#: ../src/shutdown-dialog.vala:138
+#: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -102,62 +102,85 @@ msgstr ""
 "Na ovom su računalu trenutačno prijavljeni drugi korisnici. Isključivanjem "
 "će se zatvoriti i te druge sesije."
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
 msgstr "Odgodi"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
 msgstr "Zamrzni"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:233
 msgid "Restart"
 msgstr "Ponovo pokreni"
 
+#. Fun begins here, actually trigger option.
+#: ../src/shutdown-dialog.vala:295
+msgid "Selecting default action now."
+msgstr ""
+
+#: ../src/shutdown-dialog.vala:328
+#, c-format
+msgid "Selecting default action in one second …"
+msgid_plural "Selecting default action in %u seconds …"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:162
+#: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (standardno)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:823
+#: ../src/arctica-greeter.vala:916
 msgid "Show release version"
 msgstr "Prikaži verziju izdanja"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:826
+#: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
 msgstr "Pokreni u probnom načinu rada"
 
+#. Help string for command line --test-highcontrast flag
+#: ../src/arctica-greeter.vala:922
+msgid "Run in test mode with a11y highcontrast theme enabled"
+msgstr ""
+
+#. Help string for command line --test-bigfont flag
+#: ../src/arctica-greeter.vala:925
+msgid "Run in test mode with a11y big font feature enabled"
+msgstr ""
+
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:832
+#: ../src/arctica-greeter.vala:931
 msgid "- Arctica Greeter"
 msgstr "- Arctica dobrodošlica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:843
+#: ../src/arctica-greeter.vala:942
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "Pokreni „%s --help” za prikaz potpunog popisa dostupnih opcija za naredbeni "
 "redak."
 
-#: ../src/user-list.vala:47
+#: ../src/user-list.vala:49
 msgid "Guest Session"
 msgstr "Sesija gosta"
 
-#: ../src/user-list.vala:461
+#: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
 msgstr "Upiši potpunu e-adresu"
 
-#: ../src/user-list.vala:542
+#: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
 msgstr "Neispravna e-adresa ili lozinka"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:576
+#: ../src/user-list.vala:600
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -165,15 +188,15 @@ msgstr ""
 "Ako imaš račun na RDP ili X2Go poslužitelju, udaljena prijava dopušta "
 "pokretanje programa s tih poslužitelja."
 
-#: ../src/user-list.vala:579
+#: ../src/user-list.vala:603
 msgid "Cancel"
 msgstr "Odustani"
 
-#: ../src/user-list.vala:580
+#: ../src/user-list.vala:604
 msgid "Set Up…"
 msgstr "Postavi …"
 
-#: ../src/user-list.vala:582
+#: ../src/user-list.vala:606
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -181,11 +204,11 @@ msgstr ""
 "Za korištenje ove usluge trebaš račun za udaljenu prijavu. Želiš li sada "
 "postaviti račun?"
 
-#: ../src/user-list.vala:586
+#: ../src/user-list.vala:610
 msgid "OK"
 msgstr "U redu"
 
-#: ../src/user-list.vala:588
+#: ../src/user-list.vala:612
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -194,7 +217,7 @@ msgstr ""
 "Za korištenje ove usluge trebaš račun za udaljenu prijavu. Zatraži račun pri "
 "%s."
 
-#: ../src/user-list.vala:590
+#: ../src/user-list.vala:614
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -202,42 +225,42 @@ msgstr ""
 "Za korištenje ove usluge trebaš račun za udaljenu prijavu. Obrati se "
 "administratoru tvog web mjesta za detalje."
 
-#: ../src/user-list.vala:710
+#: ../src/user-list.vala:736
 msgid "Server type not supported."
 msgstr "Vrsta poslužitelja nije podržana."
 
-#: ../src/user-list.vala:738
+#: ../src/user-list.vala:764
 msgid "X2Go Session:"
 msgstr "X2Go sesija:"
 
-#: ../src/user-list.vala:758
+#: ../src/user-list.vala:784
 msgid "Domain:"
 msgstr "Domena:"
 
-#: ../src/user-list.vala:820
+#: ../src/user-list.vala:846
 msgid "Account ID"
 msgstr "ID računa"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:864
+#: ../src/user-list.vala:895
 msgid "Log In"
 msgstr "Prijava"
 
-#: ../src/user-list.vala:865
+#: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
 msgstr "Prijavi se kao %s"
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:900
 msgid "Retry"
 msgstr "Pokušaj ponovo"
 
-#: ../src/user-list.vala:870
+#: ../src/user-list.vala:901
 #, c-format
 msgid "Retry as %s"
 msgstr "Pokušaj ponovo kao %s"
 
-#: ../src/user-list.vala:913
+#: ../src/user-list.vala:945
 msgid "Login"
 msgstr "Prijava"
 

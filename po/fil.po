@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-06 12:24+0100\n"
+"POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2019-08-01 05:12+0000\n"
 "Last-Translator: Alba Kaydus <sareli1951@gmail.com>\n"
 "Language-Team: Filipino <https://hosted.weblate.org/projects/arctica-"
@@ -21,61 +21,61 @@ msgstr ""
 "X-Generator: Weblate 3.8-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
-#: ../src/greeter-list.vala:300
+#: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
 msgstr "Ipasok ang password para sa %s"
 
-#: ../src/greeter-list.vala:302
+#: ../src/greeter-list.vala:308
 #, fuzzy
 msgid "Enter your username"
 msgstr "Ipasok ang username"
 
-#: ../src/greeter-list.vala:828 ../src/user-list.vala:732
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
 msgstr "Hudyat:"
 
-#: ../src/greeter-list.vala:830 ../src/user-list.vala:726
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
 msgid "Username:"
 msgstr "Palayaw:"
 
-#: ../src/greeter-list.vala:886
+#: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
 msgstr "Maling hudyat, subukan muli"
 
-#: ../src/greeter-list.vala:897
+#: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
 msgstr "Nabigong magpatotoo"
 
-#: ../src/greeter-list.vala:945
+#: ../src/greeter-list.vala:951
 msgid "Failed to start session"
 msgstr "Nabigong simulan ang sesyon"
 
-#: ../src/greeter-list.vala:960
+#: ../src/greeter-list.vala:965
 msgid "Logging in…"
 msgstr "Naglo-login…"
 
-#: ../src/main-window.vala:55
+#: ../src/main-window.vala:54
 msgid "Login Screen"
 msgstr "Screen ng paglo-login"
 
-#: ../src/main-window.vala:122
+#: ../src/main-window.vala:121
 msgid "Back"
 msgstr "Bumalik"
 
-#: ../src/menubar.vala:355
+#: ../src/menubar.vala:369
 msgid "Onscreen keyboard"
 msgstr "Keyboard sa screen"
 
-#: ../src/menubar.vala:360
+#: ../src/menubar.vala:374
 msgid "High Contrast"
 msgstr "Mataas na Contrast"
 
-#: ../src/menubar.vala:378
+#: ../src/menubar.vala:392
 msgid "Screen Reader"
 msgstr "Pambasa ng screen"
 
-#: ../src/prompt-box.vala:294
+#: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Mga Opsyon ng Sesyon"
 
@@ -83,19 +83,19 @@ msgstr "Mga Opsyon ng Sesyon"
 msgid "Select desktop environment"
 msgstr "Mamili ng desktop environment"
 
-#: ../src/shutdown-dialog.vala:103
+#: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
 msgstr "Paalam. Gusto mo bang…"
 
-#: ../src/shutdown-dialog.vala:109 ../src/shutdown-dialog.vala:209
+#: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
 msgstr "Patayin"
 
-#: ../src/shutdown-dialog.vala:113
+#: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
 msgstr "Sigurado ka bang nais mong patayin ang computer?"
 
-#: ../src/shutdown-dialog.vala:138
+#: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
@@ -103,62 +103,84 @@ msgstr ""
 "Ang iba pang mga gumagamit ay kasalukuyang naka-log in sa computer na ito, "
 "ang pag-shut down ngayon ay isasara rin ang iba pang mga sesyon."
 
-#: ../src/shutdown-dialog.vala:155
+#: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
 msgstr "Suspendido"
 
-#: ../src/shutdown-dialog.vala:172
+#: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
 msgstr "matulog sa panahon ng taglamig"
 
-#: ../src/shutdown-dialog.vala:190
+#: ../src/shutdown-dialog.vala:233
 msgid "Restart"
 msgstr "I-restart"
 
+#. Fun begins here, actually trigger option.
+#: ../src/shutdown-dialog.vala:295
+msgid "Selecting default action now."
+msgstr ""
+
+#: ../src/shutdown-dialog.vala:328
+#, c-format
+msgid "Selecting default action in one second …"
+msgid_plural "Selecting default action in %u seconds …"
+msgstr[0] ""
+msgstr[1] ""
+
 #. Translators: %s is a session name like KDE or Ubuntu
-#: ../src/toggle-box.vala:162
+#: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
 msgstr "%s (hindi pagharap)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:823
+#: ../src/arctica-greeter.vala:916
 msgid "Show release version"
 msgstr "Ipakita ang bersyon ng release"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:826
+#: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
 msgstr "Patakbuhin sa mode ng pagsubok"
 
+#. Help string for command line --test-highcontrast flag
+#: ../src/arctica-greeter.vala:922
+msgid "Run in test mode with a11y highcontrast theme enabled"
+msgstr ""
+
+#. Help string for command line --test-bigfont flag
+#: ../src/arctica-greeter.vala:925
+msgid "Run in test mode with a11y big font feature enabled"
+msgstr ""
+
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:832
+#: ../src/arctica-greeter.vala:931
 msgid "- Arctica Greeter"
 msgstr "- Arctica tagahanga"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:843
+#: ../src/arctica-greeter.vala:942
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
 "tumakbo '%s --tulungan' upang makita ang isang buong listahan ng mga "
 "magagamit na mga pagpipilian sa command line."
 
-#: ../src/user-list.vala:47
+#: ../src/user-list.vala:49
 msgid "Guest Session"
 msgstr "hulaan session"
 
-#: ../src/user-list.vala:461
+#: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
 msgstr "Pakilagay ang kumpletong e-mail address"
 
-#: ../src/user-list.vala:542
+#: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
 msgstr "Maling e-mail address o password"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:576
+#: ../src/user-list.vala:600
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -167,15 +189,15 @@ msgstr ""
 "ka ng Remote Login na patakbuhin mo ang mga application mula sa server na "
 "iyon."
 
-#: ../src/user-list.vala:579
+#: ../src/user-list.vala:603
 msgid "Cancel"
 msgstr "Huwag ituloy"
 
-#: ../src/user-list.vala:580
+#: ../src/user-list.vala:604
 msgid "Set Up…"
 msgstr "I-set Up …"
 
-#: ../src/user-list.vala:582
+#: ../src/user-list.vala:606
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -183,11 +205,11 @@ msgstr ""
 "Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
 "Gusto mo bang mag-set up ng account ngayon?"
 
-#: ../src/user-list.vala:586
+#: ../src/user-list.vala:610
 msgid "OK"
 msgstr "OK"
 
-#: ../src/user-list.vala:588
+#: ../src/user-list.vala:612
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -196,7 +218,7 @@ msgstr ""
 "Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
 "Bisitahin %s upang humiling ng isang account."
 
-#: ../src/user-list.vala:590
+#: ../src/user-list.vala:614
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -204,42 +226,42 @@ msgstr ""
 "Kailangan mo ng isang Remote Logon account upang magamit ang serbisyong ito. "
 "Mangyaring tanungin ang administrator ng iyong site para sa mga detalye."
 
-#: ../src/user-list.vala:710
+#: ../src/user-list.vala:736
 msgid "Server type not supported."
 msgstr "Hindi sinusuportahan ang uri ng server."
 
-#: ../src/user-list.vala:738
+#: ../src/user-list.vala:764
 msgid "X2Go Session:"
 msgstr "X2pumunta session:"
 
-#: ../src/user-list.vala:758
+#: ../src/user-list.vala:784
 msgid "Domain:"
 msgstr "dominyo:"
 
-#: ../src/user-list.vala:820
+#: ../src/user-list.vala:846
 msgid "Account ID"
 msgstr "account ID"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:864
+#: ../src/user-list.vala:895
 msgid "Log In"
 msgstr "Mag-log In"
 
-#: ../src/user-list.vala:865
+#: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
 msgstr "Mag-login bilang %s"
 
-#: ../src/user-list.vala:869
+#: ../src/user-list.vala:900
 msgid "Retry"
 msgstr "Subukan Muli"
 
-#: ../src/user-list.vala:870
+#: ../src/user-list.vala:901
 #, c-format
 msgid "Retry as %s"
 msgstr "Retry bilang %s"
 
-#: ../src/user-list.vala:913
+#: ../src/user-list.vala:945
 msgid "Login"
 msgstr "Login"
 
