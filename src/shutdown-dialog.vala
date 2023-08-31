@@ -47,6 +47,7 @@ public class ShutdownDialog : Gtk.Fixed
     private const int CLOSE_OFFSET = 3;
     private const int BUTTON_TEXT_SPACE = 9;
     private const int BLUR_RADIUS = 8;
+    private const uint DEFAULT_ACTION_SUPPLEMENTAL_TIME = 10;
 
     private Monitor monitor;
     private weak Background background;
@@ -55,10 +56,14 @@ public class ShutdownDialog : Gtk.Fixed
     private Gtk.Box vbox;
     private DialogButton close_button;
     private Gtk.Box button_box;
+    private Gtk.Label default_action_label;
     private Gtk.EventBox monitor_events;
     private Gtk.EventBox vbox_events;
 
     private AnimateTimer animation;
+    private uint default_action_timeout;
+    private uint default_action_time_remaining;
+    private uint default_action_time_supplemental;
     private bool closing = false;
 
     public static string font = AGSettings.get_string (AGSettings.KEY_FONT_NAME);
@@ -81,6 +86,11 @@ public class ShutdownDialog : Gtk.Fixed
             close ();
             return true;
         });
+        monitor_events.events |= Gdk.EventMask.KEY_PRESS_MASK;
+        monitor_events.key_press_event.connect (() => {
+            stop_default_action_timeout ();
+            return false;
+        });
         add (monitor_events);
 
         vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
@@ -97,7 +107,15 @@ public class ShutdownDialog : Gtk.Fixed
         vbox_events.visible = true;
         vbox_events.set_visible_window (false);
         vbox_events.events |= Gdk.EventMask.BUTTON_PRESS_MASK;
-        vbox_events.button_press_event.connect (() => { return true; });
+        vbox_events.button_press_event.connect (() => {
+            stop_default_action_timeout ();
+            return true;
+        });
+        vbox_events.events |= Gdk.EventMask.KEY_PRESS_MASK;
+        vbox_events.key_press_event.connect (() => {
+            stop_default_action_timeout ();
+            return false;
+        });
         vbox_events.add (vbox);
         monitor_events.add (vbox_events);
 
@@ -249,6 +267,12 @@ public class ShutdownDialog : Gtk.Fixed
                 show.connect(() => { button.grab_focus (); });
         }
 
+        default_action_label = new Gtk.Label (null);
+        default_action_label.set_line_wrap (true);
+        default_action_label.set_alignment (0.0f, 0.5f);
+        default_action_label.visible = false;
+        vbox.pack_start (default_action_label, false, false, 0);
+
         close_button = new DialogButton (Path.build_filename (Config.PKGDATADIR, "dialog_close.png"), Path.build_filename (Config.PKGDATADIR, "dialog_close_highlight.png"), Path.build_filename (Config.PKGDATADIR, "dialog_close_press.png"));
         close_button.can_focus = false;
         close_button.clicked.connect (() => { close (); });
@@ -258,10 +282,89 @@ public class ShutdownDialog : Gtk.Fixed
         animation = new AnimateTimer ((x) => { return x; }, AnimateTimer.INSTANT);
         animation.animate.connect (() => { queue_draw (); });
         show.connect (() => { animation.reset(); });
+        show.connect (() => { default_action_timeout_init (); });
+    }
+
+    private bool update_default_action_label ()
+    {
+        if (0 == default_action_time_remaining)
+        {
+            if (DEFAULT_ACTION_SUPPLEMENTAL_TIME == default_action_time_supplemental)
+            {
+                /* Fun begins here, actually trigger option. */
+                var text = _("Selecting default action now.");
+                default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
+
+                /*
+                 * Note that, if no button is focused, this will do
+                 * nothing.
+                 */
+                Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
+                var focused = pWindow.get_focus ();
+                if ((null != focused) && (focused is DialogButton))
+                {
+                    (focused as DialogButton).clicked ();
+                }
+
+                --default_action_time_supplemental;
+
+                return true;
+             }
+             else if (0 == default_action_time_supplemental)
+             {
+                stop_default_action_timeout ();
+
+                return false;
+             }
+             else
+             {
+                 --default_action_time_supplemental;
+
+                 return true;
+             }
+        }
+        else
+        {
+            var text = ngettext ("Selecting default action in one second …", "Selecting default action in %u seconds …", default_action_time_remaining).printf (default_action_time_remaining);
+            default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
+
+            --default_action_time_remaining;
+
+            return true;
+        }
+    }
+
+    private void stop_default_action_timeout ()
+    {
+        if (0 != default_action_timeout)
+        {
+            GLib.Source.remove (default_action_timeout);
+        }
+        default_action_timeout = 0;
+        default_action_time_remaining = AGSettings.get_integer (AGSettings.KEY_SHUTDOWN_DIALOG_TIMEOUT);
+        default_action_time_supplemental = DEFAULT_ACTION_SUPPLEMENTAL_TIME;
+
+        default_action_label.hide ();
+    }
+
+    private void default_action_timeout_init ()
+    {
+        /* Timer for forcefully selecting default option. */
+        default_action_time_remaining = AGSettings.get_integer (AGSettings.KEY_SHUTDOWN_DIALOG_TIMEOUT);
+        default_action_time_supplemental = DEFAULT_ACTION_SUPPLEMENTAL_TIME;
+
+        /* Zero means disabled, not instantaneous, honor that. */
+        if (default_action_time_remaining > 0)
+        {
+            default_action_timeout = GLib.Timeout.add_seconds (1, update_default_action_label);
+            default_action_label.visible = true;
+        }
     }
 
     public void close ()
     {
+        stop_default_action_timeout ();
+
         var start_value = 1.0f - animation.progress;
         animation = new AnimateTimer ((x) => { return start_value + x; }, AnimateTimer.INSTANT);
         animation.animate.connect ((p) =>
@@ -361,22 +464,13 @@ public class ShutdownDialog : Gtk.Fixed
         set_size_request (monitor.width, monitor.height);
     }
 
-    public void focus_next ()
-    {
-        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
-        pWindow.move_focus (Gtk.DirectionType.TAB_FORWARD);
-    }
-
-    public void focus_prev ()
-    {
-        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
-        pWindow.move_focus (Gtk.DirectionType.TAB_BACKWARD);
-    }
-
     public void cancel ()
     {
         Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
         var widget = pWindow.get_focus ();
+
+        /* No matter what, stop the default action timer. */
+        stop_default_action_timeout ();
 
         if (widget is DialogButton)
         {
