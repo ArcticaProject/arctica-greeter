@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2023-02-08 08:39+0000\n"
+"PO-Revision-Date: 2023-08-31 21:08+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -116,14 +116,14 @@ msgstr "Neustarten"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:295
 msgid "Selecting default action now."
-msgstr ""
+msgstr "Wähle Standardaktion jetzt."
 
 #: ../src/shutdown-dialog.vala:328
 #, c-format
 msgid "Selecting default action in one second …"
 msgid_plural "Selecting default action in %u seconds …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Wähle Standardaktion in einer Sekunde …"
+msgstr[1] "Wähle Standardaktion in %u Sekunden …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -144,12 +144,13 @@ msgstr "Im Testmodus starten"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:922
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Starte im Testmodus mit barrierefreiem Hochkontrast-Design aktiviert"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:925
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
+"Starte im Testmodus mit a11y-Funktionalität \"Große Schriftgröße\" aktiviert"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:931
