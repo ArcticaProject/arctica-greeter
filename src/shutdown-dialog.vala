@@ -361,18 +361,6 @@ public class ShutdownDialog : Gtk.Fixed
         set_size_request (monitor.width, monitor.height);
     }
 
-    public void focus_next ()
-    {
-        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
-        pWindow.move_focus (Gtk.DirectionType.TAB_FORWARD);
-    }
-
-    public void focus_prev ()
-    {
-        Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
-        pWindow.move_focus (Gtk.DirectionType.TAB_BACKWARD);
-    }
-
     public void cancel ()
     {
         Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
