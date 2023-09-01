@@ -1083,9 +1083,6 @@ public class ArcticaGreeter : Object
         var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast, do_test_bigfont);
         greeter.go();
 
-        string systemd_stderr;
-        int systemd_exitcode = 0;
-
         Pid nmapplet_pid = 0;
 
         var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
@@ -1103,7 +1100,7 @@ public class ArcticaGreeter : Object
         if (update_indicator_list)
             AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
 
-        var launched_indicator_services = new List<string>();
+        var launched_indicator_service_pids = new List<Pid>();
 
         if (!do_test_mode)
         {
@@ -1118,6 +1115,8 @@ public class ArcticaGreeter : Object
             var indicator_service = "";
             foreach (unowned string indicator in indicator_list)
             {
+                Pid indicator_service_pid = 0;
+
                 if ("ug-" in indicator && ! ("." in indicator))
                     continue;
 
@@ -1132,28 +1131,21 @@ public class ArcticaGreeter : Object
                     /* Start the indicator service */
                     string[] argv;
 
-                    Shell.parse_argv ("systemctl --user start %s".printf(indicator_service), out argv);
-                    Process.spawn_sync (null,
-                                        argv,
-                                        null,
-                                        SpawnFlags.SEARCH_PATH,
-                                        null,
-                                        null,
-                                        out systemd_stderr,
-                                        out systemd_exitcode);
-
-                    if (systemd_exitcode == 0)
-                    {
-                        launched_indicator_services.append(indicator_service);
-                        debug ("Successfully started Indicator Service '%s'", indicator_service);
-                    }
-                    else {
-                        warning ("Systemd failed to start Indicator Service '%s': %s", indicator_service, systemd_stderr);
-                    }
+                    Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
+                    Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out indicator_service_pid);
+                    launched_indicator_service_pids.append(indicator_service_pid);
+                    debug ("Successfully started Ayatana Indicator Service '%s' [%d]", indicator_service, indicator_service_pid);
                 }
-                catch (Error e) {
+                catch (Error e)
+                {
                     warning ("Error starting Indicator Service '%s': %s", indicator_service, e.message);
                 }
+
             }
 
             /* Make nm-applet hide items the user does not have permissions to interact with */
@@ -1196,33 +1188,23 @@ public class ArcticaGreeter : Object
         if (!do_test_mode)
         {
 
-            foreach (unowned string indicator_service in launched_indicator_services)
+            foreach (unowned Pid indicator_service_pid in launched_indicator_service_pids)
             {
+                if (indicator_service_pid != 0)
+                {
+#if VALA_0_40
+                    Posix.kill (indicator_service_pid, Posix.Signal.TERM);
+#else
+                    Posix.kill (indicator_service_pid, Posix.SIGTERM);
+#endif
 
-                try {
-                    /* Stop this indicator service */
-                    string[] argv;
-
-                    Shell.parse_argv ("systemctl --user stop %s".printf(indicator_service), out argv);
-                    Process.spawn_sync (null,
-                                        argv,
-                                        null,
-                                        SpawnFlags.SEARCH_PATH,
-                                        null,
-                                        null,
-                                        out systemd_stderr,
-                                        out systemd_exitcode);
-
-                    if (systemd_exitcode == 0)
-                    {
-                        debug ("Successfully stopped Indicator Service '%s' via systemd", indicator_service);
-                    }
-                    else {
-                        warning ("Systemd failed to stop Indicator Service '%s': %s", indicator_service, systemd_stderr);
-                    }
-                }
-                catch (Error e) {
-                    warning ("Error stopping Indicator Service '%s': %s", indicator_service, e.message);
+                    int status;
+                    Posix.waitpid (indicator_service_pid, out status, 0);
+                    if (Process.if_exited (status))
+                        debug ("Indicator Service process [%d] exited with return value %d", indicator_service_pid, Process.exit_status (status));
+                    else
+                        debug ("Indicator Service process [%d] terminated with signal %d", indicator_service_pid, Process.term_sig (status));
+                    indicator_service_pid = 0;
                 }
             }
 
