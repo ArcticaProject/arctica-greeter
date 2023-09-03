@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2019-09-29 12:55+0000\n"
-"Last-Translator: Juri Grabowski <hosted-weblate@jugra.de>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/ru/>\n"
+"PO-Revision-Date: 2023-09-04 20:55+0000\n"
+"Last-Translator: Serhii Horichenko <m@sgg.im>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -28,7 +28,7 @@ msgstr "Введите пароль для %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Введите своё имя пользователя"
 
 #: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
@@ -80,11 +80,11 @@ msgstr "Параметры сеанса"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr "Выберите окружение"
+msgstr "Выберите окружение рабочего стола"
 
 #: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
-msgstr "До свидания. Вы хотите…"
+msgstr "До свидания. Вы бы хотели…"
 
 #: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
@@ -108,7 +108,7 @@ msgstr "Перейти в режим ожидания"
 
 #: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
-msgstr "Перейти в спящий режим"
+msgstr "Перейти в спящий режим (Hibernation)"
 
 #: ../src/shutdown-dialog.vala:233
 msgid "Restart"
@@ -117,15 +117,15 @@ msgstr "Перезагрузить компьютер"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:295
 msgid "Selecting default action now."
-msgstr ""
+msgstr "Сейчас будет выбрано действие по умолчанию."
 
 #: ../src/shutdown-dialog.vala:328
 #, c-format
 msgid "Selecting default action in one second …"
 msgid_plural "Selecting default action in %u seconds …"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Действие по умолчанию будет выбрано через секунду …"
+msgstr[1] "Действие по умолчанию будет выбрано через %u секунды …"
+msgstr[2] "Действие по умолчанию будет выбрано через %u секунд …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -141,17 +141,17 @@ msgstr "Показать версию выпуска"
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
-msgstr "Запуск в режиме тестирования"
+msgstr "Запуск в тестовом режиме"
 
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:922
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Запуск в тестовом режиме с высококонтрастной темой"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:925
 msgid "Run in test mode with a11y big font feature enabled"
-msgstr ""
+msgstr "Запуск в тестовом режиме с активированным большим шрифтом"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:931
@@ -163,8 +163,8 @@ msgstr "— Экран приветствия Arctica"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Выполните «%s --help» для просмотра полного списка доступных параметров "
-"командной строки."
+"Для просмотра всех доступных параметров командной строки выполните \"%s --"
+"help\"."
 
 #: ../src/user-list.vala:49
 msgid "Guest Session"
@@ -185,7 +185,7 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Если у вас есть учётная запись на сервере RDP или X2Go, удаленный вход "
+"Если у Вас есть учётная запись на сервере RDP или X2Go, удаленный вход "
 "позволит запустить приложения, расположенные на том сервере."
 
 #: ../src/user-list.vala:603
@@ -201,8 +201,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
-"систему. Вы хотите настроить её?"
+"Для использования этого сервиса нужна учётная запись удалённого входа в "
+"систему. Хотите настроить её сейчас?"
 
 #: ../src/user-list.vala:610
 msgid "OK"
@@ -214,7 +214,7 @@ msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
+"Для использования этого сервиса нужна учётная запись удалённого входа в "
 "систему. Чтобы настроить её, посетите сайт %s."
 
 #: ../src/user-list.vala:614
@@ -222,8 +222,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Для пользования этим сервисом вам нужна учётная запись удалённого входа в "
-"систему. Подробности можно уточнить у вашего администратора."
+"Для использования этого сервиса нужна учётная запись удалённого входа в "
+"систему. Подробности можете уточнить у своего администратора."
 
 #: ../src/user-list.vala:736
 msgid "Server type not supported."
@@ -244,7 +244,7 @@ msgstr "ID учетной записи"
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:895
 msgid "Log In"
-msgstr "Войти"
+msgstr "Вход"
 
 #: ../src/user-list.vala:896
 #, c-format
@@ -253,7 +253,7 @@ msgstr "Войти от имени %s"
 
 #: ../src/user-list.vala:900
 msgid "Retry"
-msgstr "Повтор"
+msgstr "Повторить"
 
 #: ../src/user-list.vala:901
 #, c-format
@@ -277,7 +277,7 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
-"Все данные, созданные в данном сеансе, будут утеряны\n"
+"Все данные, созданные в гостевом сеансе, будут утеряны\n"
 "после выхода, а настройки сброшены. Сохраняйте файлы\n"
 "на внешние устройства, например USB-накопители,\n"
 "чтобы использовать их в дальнейшем."
