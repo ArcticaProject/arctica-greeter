@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2023-01-20 22:50+0000\n"
-"Last-Translator: Dan <denqwerta@gmail.com>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/uk/>\n"
+"PO-Revision-Date: 2023-09-04 20:55+0000\n"
+"Last-Translator: Serhii Horichenko <m@sgg.im>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -28,7 +28,7 @@ msgstr "Введіть пароль для %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Введіть своє ім'я користувача"
 
 #: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
@@ -40,7 +40,7 @@ msgstr "Ім'я користувача:"
 
 #: ../src/greeter-list.vala:892
 msgid "Invalid password, please try again"
-msgstr "Некоректний пароль, повторіть спробу"
+msgstr "Неправильний пароль, повторіть спробу"
 
 #: ../src/greeter-list.vala:903
 msgid "Failed to authenticate"
@@ -80,11 +80,11 @@ msgstr "Параметри сеансу"
 
 #: ../src/session-list.vala:42
 msgid "Select desktop environment"
-msgstr "Виберіть стільничне середовище"
+msgstr "Виберіть середовище робочого столу"
 
 #: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
-msgstr "До побачення. Хочете…"
+msgstr "До побачення. Ви б хотіли…"
 
 #: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
@@ -92,15 +92,15 @@ msgstr "Вимкнути комп’ютер"
 
 #: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
-msgstr "Ви справді хочете вимкнути комп’ютер?"
+msgstr "Ви дійсно хочете вимкнути комп’ютер?"
 
 #: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
-"Зараз у системі працюють інші користувачі. Вимикання комп’ютера призведе до "
-"завершення сеансів роботи цих користувачів."
+"Зараз у системі працюють інші користувачі. Вимикання комп’ютера завершить "
+"також їх сеанси."
 
 #: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
@@ -108,7 +108,7 @@ msgstr "Призупинити роботу"
 
 #: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
-msgstr "Приспати комп’ютер"
+msgstr "Приспати комп’ютер на диск"
 
 #: ../src/shutdown-dialog.vala:233
 msgid "Restart"
@@ -117,15 +117,15 @@ msgstr "Перезавантажити комп’ютер"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:295
 msgid "Selecting default action now."
-msgstr ""
+msgstr "Зараз буде обрано типову дію."
 
 #: ../src/shutdown-dialog.vala:328
 #, c-format
 msgid "Selecting default action in one second …"
 msgid_plural "Selecting default action in %u seconds …"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Типову дію буде обрано за секунду …"
+msgstr[1] "Типову дію буде обрано за %u секунди …"
+msgstr[2] "Типову дію буде обрано за %u секунд …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -141,17 +141,17 @@ msgstr "Показати версію випуску"
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:919
 msgid "Run in test mode"
-msgstr "Запустити в тестовому режимі"
+msgstr "Запуск в тестовому режимі"
 
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:922
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Запуск в тестовому режимі з увімкненою висококонтрастною темою"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:925
 msgid "Run in test mode with a11y big font feature enabled"
-msgstr ""
+msgstr "Запуск у тестовому режимі з увімкненим великим шрифтом"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:931
@@ -163,8 +163,8 @@ msgstr "- Вітальне вікно Arctica"
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
-"Виконайте « %s --help», щоб побачити повний перелік доступних параметрів "
-"командного рядка."
+"Для перегляду усіх доступних параметрів командного рядка виконайте \"%s --"
+"help\"."
 
 #: ../src/user-list.vala:49
 msgid "Guest Session"
@@ -172,11 +172,11 @@ msgstr "Гостьовий сеанс"
 
 #: ../src/user-list.vala:477
 msgid "Please enter a complete e-mail address"
-msgstr "Вкажіть адресу електронної пошти повністю"
+msgstr "Вкажіть повну адресу електронної пошти"
 
 #: ../src/user-list.vala:566
 msgid "Incorrect e-mail address or password"
-msgstr "Некоректна адреса електронної пошти або пароль"
+msgstr "Адресу електронної пошти або пароль вказано неправильно"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
@@ -185,8 +185,8 @@ msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Якщо у вас є обліковий запис на сервері RDP або сервері X2Go, віддалений "
-"вхід дозволяє запускати застосунки з цього сервера."
+"Якщо у Вас є обліковий запис на сервері RDP або на сервері X2Go, віддалений "
+"вхід дозволяє запускати програми з цього сервера."
 
 #: ../src/user-list.vala:603
 msgid "Cancel"
@@ -202,11 +202,11 @@ msgid ""
 "up an account now?"
 msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
-"Хочете створити обліковий запис зараз?"
+"Створити обліковий запис зараз?"
 
 #: ../src/user-list.vala:610
 msgid "OK"
-msgstr "Гаразд"
+msgstr "ОК"
 
 #: ../src/user-list.vala:612
 #, c-format
@@ -215,7 +215,7 @@ msgid ""
 "account."
 msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
-"Відвідайте %s, щоб замовити обліковий запис."
+"Запит на створення можна залишити на %s."
 
 #: ../src/user-list.vala:614
 msgid ""
@@ -223,15 +223,15 @@ msgid ""
 "administrator for details."
 msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
-"Будь ласка, запитайте адміністратора вашого сайту докладніше."
+"Щодо подробиць зверніться, будь ласка, до адміністратора сайту."
 
 #: ../src/user-list.vala:736
 msgid "Server type not supported."
-msgstr "Підтримки серверів цього типу не передбачено."
+msgstr "Цей тип серверів не підтримується."
 
 #: ../src/user-list.vala:764
 msgid "X2Go Session:"
-msgstr "Сесія X2Go:"
+msgstr "Сеанс X2Go:"
 
 #: ../src/user-list.vala:784
 msgid "Domain:"
@@ -249,7 +249,7 @@ msgstr "Увійти"
 #: ../src/user-list.vala:896
 #, c-format
 msgid "Login as %s"
-msgstr "Увійти від імені %s"
+msgstr "Увійти як %s"
 
 #: ../src/user-list.vala:900
 msgid "Retry"
@@ -267,7 +267,7 @@ msgstr "Увійти"
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr "Тимчасова гостьова сесія"
+msgstr "Тимчасовий гостьовий сеанс"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -277,10 +277,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
-"Усі дані, створені під час гостьового сеансу, будуть видалені\n"
-"коли ви виходите, налаштування буде скинуто до значень за замовчанням.\n"
-"Збережіть файли на деякому зовнішньому пристрої, наприклад\n"
-"USB-накопичувач, якщо ви хочете пізніше отримати доступ до них."
+"Усі дані, створені під час цього гостьового сеансу, будуть видалені\n"
+"під час його завершення, так само і налаштування будуть скинуті на типові.\n"
+"Якщо пізніше захочете мати доступ до файлів, збережіть їх на будь-якому\n"
+"зовнішньому пристрої, наприклад, на USB-накопичувачі."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -288,8 +288,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"Ще однією альтернативою є збереження файлів у\n"
-"/var/guest-data папці."
+"Як альтернатива, є можливість зберегти файли\n"
+"у теці /var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
