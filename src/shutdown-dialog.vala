@@ -292,7 +292,7 @@ public class ShutdownDialog : Gtk.Fixed
             if (DEFAULT_ACTION_SUPPLEMENTAL_TIME == default_action_time_supplemental)
             {
                 /* Fun begins here, actually trigger option. */
-                var text = _("Selecting default action now.");
+                var text = _("Executing selected action now.");
                 default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
 
                 /*
@@ -325,7 +325,7 @@ public class ShutdownDialog : Gtk.Fixed
         }
         else
         {
-            var text = ngettext ("Selecting default action in one second …", "Selecting default action in %u seconds …", default_action_time_remaining).printf (default_action_time_remaining);
+            var text = ngettext ("Waiting one more second before executing selected action …", "Waiting %u seconds before executing selected action …", default_action_time_remaining).printf (default_action_time_remaining);
             default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
 
             --default_action_time_remaining;
