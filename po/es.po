@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2023-09-03 11:52+0000\n"
+"PO-Revision-Date: 2023-09-09 07:55+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/es/>\n"
@@ -143,12 +143,13 @@ msgstr "Ejecutar en modo de prueba"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:922
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Ejecutar en modo de prueba con a11y el tema de alto contraste activado"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:925
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
+"Ejecutar en modo de prueba con la función de la fuente grande a11y habilitada"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:931
@@ -241,7 +242,7 @@ msgstr "Id. de cuenta"
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:895
 msgid "Log In"
-msgstr "Acceder"
+msgstr "Iniciar sesión"
 
 #: ../src/user-list.vala:896
 #, c-format
@@ -259,7 +260,7 @@ msgstr "Reintentar como %s"
 
 #: ../src/user-list.vala:945
 msgid "Login"
-msgstr "Acceder"
+msgstr "Conectarse"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
