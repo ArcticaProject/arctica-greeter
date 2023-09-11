@@ -56,7 +56,7 @@ public class ShutdownDialog : Gtk.Fixed
     private Gtk.Box vbox;
     private DialogButton close_button;
     private Gtk.Box button_box;
-    private Gtk.Label default_action_label;
+    private FakeHideLabel default_action_label;
     private Gtk.EventBox monitor_events;
     private Gtk.EventBox vbox_events;
 
@@ -267,10 +267,12 @@ public class ShutdownDialog : Gtk.Fixed
                 show.connect(() => { button.grab_focus (); });
         }
 
-        default_action_label = new Gtk.Label (null);
+        default_action_label = new FakeHideLabel (null);
         default_action_label.set_line_wrap (true);
         default_action_label.set_alignment (0.0f, 0.5f);
-        default_action_label.visible = false;
+        default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), "Dummy text - users should not see this"));
+        default_action_label.fake_hide = true;
+        default_action_label.show ();
         vbox.pack_start (default_action_label, false, false, 0);
 
         close_button = new DialogButton (Path.build_filename (Config.PKGDATADIR, "dialog_close.png"), Path.build_filename (Config.PKGDATADIR, "dialog_close_highlight.png"), Path.build_filename (Config.PKGDATADIR, "dialog_close_press.png"));
@@ -294,6 +296,7 @@ public class ShutdownDialog : Gtk.Fixed
                 /* Fun begins here, actually trigger option. */
                 var text = _("Executing selected action now.");
                 default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
+                default_action_label.fake_hide = false;
 
                 /*
                  * Note that, if no button is focused, this will do
@@ -327,6 +330,7 @@ public class ShutdownDialog : Gtk.Fixed
         {
             var text = ngettext ("Waiting one more second before executing selected action …", "Waiting %u seconds before executing selected action …", default_action_time_remaining).printf (default_action_time_remaining);
             default_action_label.set_markup ("<span font=\"%s %d\" fgcolor=\"%s\">%s</span>".printf (font_family, font_size_base+1, AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_FONT_FGCOLOR), text));
+            default_action_label.fake_hide = false;
 
             --default_action_time_remaining;
 
@@ -344,7 +348,7 @@ public class ShutdownDialog : Gtk.Fixed
         default_action_time_remaining = AGSettings.get_integer (AGSettings.KEY_SHUTDOWN_DIALOG_TIMEOUT);
         default_action_time_supplemental = DEFAULT_ACTION_SUPPLEMENTAL_TIME;
 
-        default_action_label.hide ();
+        default_action_label.fake_hide = true;
     }
 
     private void default_action_timeout_init ()
@@ -357,7 +361,7 @@ public class ShutdownDialog : Gtk.Fixed
         if (default_action_time_remaining > 0)
         {
             default_action_timeout = GLib.Timeout.add_seconds (1, update_default_action_label);
-            default_action_label.visible = true;
+            default_action_label.show ();
         }
     }
 
@@ -761,5 +765,46 @@ private class DialogButton : Gtk.Button
             l.set_state_flags (new_flags, true);
 
         base.state_flags_changed (previous_state);
+    }
+}
+
+private class FakeHideLabel : Gtk.Label
+{
+    public bool fake_hide_;
+    public bool fake_hide
+    {
+        get
+        {
+            return fake_hide_;
+        }
+        set
+        {
+            fake_hide_ = value;
+            queue_draw ();
+        }
+    }
+
+    public FakeHideLabel (string? text)
+    {
+        Object (label: text);
+        fake_hide = false;
+    }
+
+    public override bool draw (Cairo.Context c)
+    {
+        c.push_group ();
+        base.draw (c);
+        c.pop_group_to_source ();
+
+        if (fake_hide)
+        {
+            c.paint_with_alpha (0);
+        }
+        else
+        {
+            c.paint_with_alpha (1);
+        }
+
+        return false;
     }
 }
