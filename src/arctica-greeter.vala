@@ -1131,6 +1131,12 @@ public class ArcticaGreeter : Object
                     /* Start the indicator service */
                     string[] argv;
 
+                    /* FIXME: This path is rather hard-coded here.
+                     * If it pops up, we need to handle this in
+                     * some path detection fashion similar to
+                     * how we find at-spi-bus-launcher on the file
+                     * system.
+                     */
                     Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
                     Process.spawn_async (null,
                                      argv,
