@@ -28,9 +28,7 @@ cleanup()
     exit 0
 }
 
-eval `dbus-launch --sh-syntax`
-
-exec $@ &
+exec dbus-run-session $@ &
 CMD_PID=$!
 wait $CMD_PID
 CMD_PID=
