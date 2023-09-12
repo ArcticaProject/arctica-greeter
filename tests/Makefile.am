@@ -41,6 +41,7 @@ arctica_greeter_test_SOURCES = \
 
 arctica_greeter_test_CFLAGS = \
 	$(ARCTICA_GREETER_CFLAGS) \
+	$(GTK_CFLAGS) \
 	-w \
 	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
 	-DLOCALEDIR=\""$(localedir)"\" \
@@ -52,8 +53,21 @@ arctica_greeter_test_CFLAGS = \
 arctica_greeter_test_VALAFLAGS = \
 	--debug \
 	--pkg posix \
+	$(NULL)
+
+if HAVE_GTK4
+arctica_greeter_test_VALAFLAGS += \
+	--pkg gtk4 \
+	--pkg gtk4-x11 \
+	$(NULL)
+else
+arctica_greeter_test_VALAFLAGS += \
 	--pkg gtk+-3.0 \
 	--pkg gdk-x11-3.0 \
+	$(NULL)
+endif
+
+arctica_greeter_test_VALAFLAGS += \
 	--pkg gio-unix-2.0 \
 	--pkg x11 \
 	--pkg liblightdm-gobject-1 \
@@ -64,6 +78,7 @@ arctica_greeter_test_VALAFLAGS = \
 
 arctica_greeter_test_LDADD = \
 	$(ARCTICA_GREETER_LIBS) \
+	$(GTK_LIBS) \
 	-lm
 
 CLEANFILES = \
