@@ -246,7 +246,10 @@ public class ArcticaGreeter : Object
     public string? get_default_session ()
     {
         var sessions = new List<string> ();
-        sessions.append ("lightdm-xsession");
+        var hide_default_xsession = AGSettings.get_boolean (AGSettings.KEY_HIDE_DEFAULT_XSESSION);
+        if (!hide_default_xsession) {
+            sessions.append ("lightdm-xsession");
+        }
 
         var preferred_sessions = AGSettings.get_strv (AGSettings.KEY_PREFERRED_SESSIONS);
 
@@ -318,7 +321,12 @@ public class ArcticaGreeter : Object
             var xsessions_path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             var wsessions_path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
 
-            if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &
+            if ((session == "lightdm-xsession") &&
+                AGSettings.get_boolean (AGSettings.KEY_HIDE_DEFAULT_XSESSION)) {
+                debug ("default Xsession hidden: '%s'", session);
+                session = null;
+            }
+            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &
                 FileUtils.test (wsessions_path, FileTest.EXISTS)) {
                 debug ("Wayland session hidden: '%s'", session);
                 session = null;
