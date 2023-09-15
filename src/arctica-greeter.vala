@@ -308,31 +308,38 @@ public class ArcticaGreeter : Object
         var excluded_sessions = AGSettings.get_strv (AGSettings.KEY_EXCLUDED_SESSIONS);
         var includeonly_sessions = AGSettings.get_strv (AGSettings.KEY_INCLUDEONLY_SESSIONS);
 
-        if (includeonly_sessions.length > 0) {
-            if (!(session in includeonly_sessions)) {
+        if (includeonly_sessions.length > 0)
+        {
+            if (!(session in includeonly_sessions))
+            {
                 session = null;
             }
         }
-        else if (session in excluded_sessions) {
+        else if (session in excluded_sessions)
+        {
             session = null;
         }
 
-        if (session != null) {
+        if (session != null)
+        {
             var xsessions_path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             var wsessions_path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
 
             if ((session == "lightdm-xsession") &&
-                AGSettings.get_boolean (AGSettings.KEY_HIDE_DEFAULT_XSESSION)) {
+                AGSettings.get_boolean (AGSettings.KEY_HIDE_DEFAULT_XSESSION))
+            {
                 debug ("default Xsession hidden: '%s'", session);
                 session = null;
             }
             else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &&
-                FileUtils.test (wsessions_path, FileTest.EXISTS)) {
+                FileUtils.test (wsessions_path, FileTest.EXISTS))
+            {
                 debug ("Wayland session hidden: '%s'", session);
                 session = null;
             }
             else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS) &&
-                FileUtils.test (xsessions_path, FileTest.EXISTS)) {
+                FileUtils.test (xsessions_path, FileTest.EXISTS))
+            {
                 debug ("X11 session hidden: '%s'", session);
                 session = null;
             }
@@ -344,7 +351,8 @@ public class ArcticaGreeter : Object
             }
         }
 
-        if ((fallback == true) && (session == null)) {
+        if ((fallback == true) && (session == null))
+        {
             var default_session = get_default_session ();
             debug ("Invalid session: '%s'. Using session '%s' instead.", session, default_session);
             return default_session;
