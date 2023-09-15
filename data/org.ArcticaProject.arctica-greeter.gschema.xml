@@ -203,6 +203,10 @@
       <default>'Nightshade'</default>
       <summary>Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme for available theme names).</summary>
     </key>
+    <key name="hide-default-xsession" type="b">
+      <default>false</default>
+      <summary>Whether to hide the 'lightdm-xsession' default X11 session type.</summary>
+    </key>
     <key name="hide-x11-sessions" type="b">
       <default>false</default>
       <summary>Whether to hide X11 sessions.</summary>
