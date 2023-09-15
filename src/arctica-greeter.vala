@@ -326,17 +326,17 @@ public class ArcticaGreeter : Object
                 debug ("default Xsession hidden: '%s'", session);
                 session = null;
             }
-            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &
+            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS) &&
                 FileUtils.test (wsessions_path, FileTest.EXISTS)) {
                 debug ("Wayland session hidden: '%s'", session);
                 session = null;
             }
-            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS) &
+            else if (AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS) &&
                 FileUtils.test (xsessions_path, FileTest.EXISTS)) {
                 debug ("X11 session hidden: '%s'", session);
                 session = null;
             }
-            else if (!FileUtils.test (xsessions_path, FileTest.EXISTS) &
+            else if (!FileUtils.test (xsessions_path, FileTest.EXISTS) &&
                      !FileUtils.test (wsessions_path, FileTest.EXISTS))
             {
                 debug ("Invalid session: '%s'", session);
@@ -344,7 +344,7 @@ public class ArcticaGreeter : Object
             }
         }
 
-        if ((fallback == true) & (session == null)) {
+        if ((fallback == true) && (session == null)) {
             var default_session = get_default_session ();
             debug ("Invalid session: '%s'. Using session '%s' instead.", session, default_session);
             return default_session;
