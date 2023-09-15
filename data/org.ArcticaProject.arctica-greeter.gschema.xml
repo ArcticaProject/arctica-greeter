@@ -211,6 +211,10 @@
       <default>false</default>
       <summary>Whether to hide Wayland sessions.</summary>
     </key>
+    <key name="preferred-sessions" type="as">
+      <default>[]</default>
+      <summary>Ordered list of preferred desktop sessions (for detecting the default session type).</summary>
+    </key>
     <key name="shutdown-dialog-timeout" type="i">
       <default>60</default>
       <summary>Time in seconds until the shutdown dialog forcefully selects the default action. Set to 0 to disable.</summary>

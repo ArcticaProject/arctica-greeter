@@ -248,14 +248,11 @@ public class ArcticaGreeter : Object
         var sessions = new List<string> ();
         sessions.append ("lightdm-xsession");
 
-        // FIXME: this list should be obtained from AGSettings, ideally...
-        sessions.append ("mate");
-        sessions.append ("xfce");
-        sessions.append ("kde-plasma");
-        sessions.append ("kde");
-        sessions.append ("gnome");
-        sessions.append ("cinnamon");
-        sessions.append ("lomiri");
+        var preferred_sessions = AGSettings.get_strv (AGSettings.KEY_PREFERRED_SESSIONS);
+
+        foreach (var preferred_session in preferred_sessions) {
+            sessions.append (preferred_session);
+        }
 
         if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
             foreach (string session in sessions) {
