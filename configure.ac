@@ -32,42 +32,36 @@ PKG_CHECK_MODULES(ARCTICA_GREETER, [
 ])
 
 dnl GTK version selection.
-AC_MSG_CHECKING([whether to enable GTK 4 support])
+AC_MSG_CHECKING([whether to enable GTK-4 support])
 AC_ARG_ENABLE([gtk4],
-              [AS_HELP_STRING([--disable-gtk4],
-                              [disable support for GTK 4])],
+              [AS_HELP_STRING([--enable-gtk4],
+                              [Build against GTK-4 (experimental)])],
               [enable_gtk4=$enableval],
-              [enable_gtk4=auto])
+              [enable_gtk4=no])
 AC_MSG_RESULT([$enable_gtk4])
 with_gtk4=$enable_gtk4
 
 AS_IF([test "x$enable_gtk4" != 'xno'],
       [PKG_CHECK_MODULES([GTK],
-                         [gtk4
-                          gtk4-x11],
+                         [gtk4 gtk4-x11],
                          [gtk4_modules=yes],
                          [gtk4_modules=no])
-       AC_MSG_CHECKING([for GTK 4 libraries])
+       AC_MSG_CHECKING([for GTK-4 libraries])
        AC_MSG_RESULT([$gtk4_modules])
        AS_IF([test "x$gtk4_modules" = 'xno'],
-             [AS_IF([test "x$enable_gtk4" != 'xauto'],
-                    [AC_MSG_ERROR([requested GTK 4, but not found])],
-                    [with_gtk4=no])],
+             [AC_MSG_ERROR([requested GTK-4, but not found])],
              [with_gtk4=yes
               AM_VALAFLAGS="$AM_VALAFLAGS -D HAVE_GTK_4_0"
               AC_SUBST([AM_VALAFLAGS])])])
 AS_IF([test "x$with_gtk4" = 'xno'],
       [PKG_CHECK_MODULES([GTK],
-                         [gtk+-3.0
-                          gdk-x11-3.0],
+                         [gtk+-3.0 gdk-x11-3.0],
                          [gtk3_modules=yes],
                          [gtk3_modules=no])
        AC_MSG_CHECKING([for GTK+ 3 libraries])
        AC_MSG_RESULT([$gtk3_modules])
        AS_IF([test "x$gtk3_modules" = 'xno'],
-             [AS_IF([test "x$enable_gtk4" = 'xauto'],
-                    [AC_MSG_ERROR([fallback to GTK+ 3, but not found])],
-                    [AC_MSG_ERROR([requested GTK+ 3, but not found])])])])
+             [AC_MSG_ERROR([requested GTK+ 3, but not found])])])
 AC_SUBST([GTK_CFLAGS])
 AC_SUBST([GTK_LIBS])
 AM_CONDITIONAL([HAVE_GTK4], [test "x$with_gtk4" != 'xno'])
@@ -172,7 +166,7 @@ echo "
         cflags:                     ${CFLAGS}
         cppflags:                   ${CPPFLAGS}
 
-        GTK 4:                      ${with_gtk4}
+        GTK-4 (experimental):       ${with_gtk4}
 
         GETTEXT_PACKAGE:            ${GETTEXT_PACKAGE}
 
