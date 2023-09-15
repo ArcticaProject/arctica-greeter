@@ -257,8 +257,17 @@ public class ArcticaGreeter : Object
         sessions.append ("cinnamon");
         sessions.append ("lomiri");
 
+        var blacklisted_sessions = AGSettings.get_strv (AGSettings.KEY_BLACKLISTED_SESSIONS);
+        var whitelisted_sessions = AGSettings.get_strv (AGSettings.KEY_WHITELISTED_SESSIONS);
+
         if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
             foreach (string session in sessions) {
+                if ((whitelisted_sessions.length > 0) && (!(session in whitelisted_sessions))) {
+                    continue;
+                }
+                if ((session in blacklisted_sessions) && (!(session in whitelisted_sessions))) {
+                    continue;
+                }
                 var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
                 if (FileUtils.test (path, FileTest.EXISTS)) {
                     debug ("Using %s as default (Wayland) session.", session);
@@ -269,6 +278,12 @@ public class ArcticaGreeter : Object
 
         if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS)) {
             foreach (string session in sessions) {
+                if ((whitelisted_sessions.length > 0) && (!(session in whitelisted_sessions))) {
+                    continue;
+                }
+                if ((session in blacklisted_sessions) && (!(session in whitelisted_sessions))) {
+                    continue;
+                }
                 var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
                 if (FileUtils.test (path, FileTest.EXISTS)) {
                     debug ("Using %s as default (X11) session.", session);
@@ -286,6 +301,16 @@ public class ArcticaGreeter : Object
         /* Make sure the given session actually exists. Return it if it does.
          * otherwise, return the default session.
          */
+        var blacklisted_sessions = AGSettings.get_strv (AGSettings.KEY_BLACKLISTED_SESSIONS);
+        var whitelisted_sessions = AGSettings.get_strv (AGSettings.KEY_WHITELISTED_SESSIONS);
+
+        if ((whitelisted_sessions.length > 0) && (!(session in whitelisted_sessions))) {
+            session = null;
+        }
+        if ((session in blacklisted_sessions) && (!(session in whitelisted_sessions))) {
+            session = null;
+        }
+
         if (session != null) {
             var xsessions_path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             var wsessions_path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);

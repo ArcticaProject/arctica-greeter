@@ -215,5 +215,13 @@
       <default>60</default>
       <summary>Time in seconds until the shutdown dialog forcefully selects the default action. Set to 0 to disable.</summary>
     </key>
+    <key name="whitelisted-sessions" type="as">
+      <default>[]</default>
+      <summary>Unordered list of whitelisted desktop sessions (if non-empty, only explicitly listed sessions types will be offered by the greeter).</summary>
+    </key>
+    <key name="blacklisted-sessions" type="as">
+      <default>[]</default>
+      <summary>Unordered list of blacklisted desktop sessions (if non-empty, listed sessions types will not be offered by the greeter).</summary>
+    </key>
   </schema>
 </schemalist>
