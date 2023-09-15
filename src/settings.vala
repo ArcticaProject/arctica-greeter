@@ -73,6 +73,8 @@ public class AGSettings : Object
     public const string KEY_MENUBAR_ALPHA = "menubar-alpha";
     public const string KEY_HIDE_X11_SESSIONS = "hide-x11-sessions";
     public const string KEY_HIDE_WAYLAND_SESSIONS = "hide-wayland-sessions";
+    public const string KEY_INCLUDEONLY_SESSIONS = "includeonly-sessions";
+    public const string KEY_EXCLUDED_SESSIONS = "excluded-sessions";
     public const string KEY_SHUTDOWN_DIALOG_TIMEOUT = "shutdown-dialog-timeout";
     public const string KEY_PREFERRED_SESSIONS = "preferred-sessions";
 

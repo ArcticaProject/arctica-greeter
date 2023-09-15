@@ -254,8 +254,19 @@ public class ArcticaGreeter : Object
             sessions.append (preferred_session);
         }
 
+        var excluded_sessions = AGSettings.get_strv (AGSettings.KEY_EXCLUDED_SESSIONS);
+        var includeonly_sessions = AGSettings.get_strv (AGSettings.KEY_INCLUDEONLY_SESSIONS);
+
         if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
             foreach (string session in sessions) {
+                if (includeonly_sessions.length > 0) {
+                    if (!(session in includeonly_sessions)) {
+                        continue;
+                    }
+                }
+                else if (session in excluded_sessions) {
+                    continue;
+                }
                 var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
                 if (FileUtils.test (path, FileTest.EXISTS)) {
                     debug ("Using %s as default (Wayland) session.", session);
@@ -266,6 +277,14 @@ public class ArcticaGreeter : Object
 
         if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS)) {
             foreach (string session in sessions) {
+                if (includeonly_sessions.length > 0) {
+                    if (!(session in includeonly_sessions)) {
+                        continue;
+                    }
+                }
+                else if (session in excluded_sessions) {
+                    continue;
+                }
                 var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
                 if (FileUtils.test (path, FileTest.EXISTS)) {
                     debug ("Using %s as default (X11) session.", session);
@@ -283,6 +302,18 @@ public class ArcticaGreeter : Object
         /* Make sure the given session actually exists. Return it if it does.
          * otherwise, return the default session.
          */
+        var excluded_sessions = AGSettings.get_strv (AGSettings.KEY_EXCLUDED_SESSIONS);
+        var includeonly_sessions = AGSettings.get_strv (AGSettings.KEY_INCLUDEONLY_SESSIONS);
+
+        if (includeonly_sessions.length > 0) {
+            if (!(session in includeonly_sessions)) {
+                session = null;
+            }
+        }
+        else if (session in excluded_sessions) {
+            session = null;
+        }
+
         if (session != null) {
             var xsessions_path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
             var wsessions_path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
