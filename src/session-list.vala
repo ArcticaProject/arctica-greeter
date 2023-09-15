@@ -29,12 +29,6 @@ public class SessionPrompt : PromptBox
         Object (id: id, session: session, default_session: default_session);
     }
 
-    private unowned GLib.List<LightDM.Session> sessions_sorted_ci (GLib.List<LightDM.Session> sessions)
-    {
-        sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold(), b.name.casefold()));
-        return sessions;
-    }
-
     private ToggleBox box;
 
     construct
@@ -53,7 +47,9 @@ public class SessionPrompt : PromptBox
         }
         else
         {
-            foreach (var session in sessions_sorted_ci( LightDM.get_sessions() ) )
+            var sessions = LightDM.get_sessions().copy();
+            sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold().collate_key(), b.name.casefold().collate_key()));
+            foreach (var session in sessions)
             {
                 /* Apply hide x11/wayland filter */
                 if (greeter.validate_session(session.key, false) != null) {
