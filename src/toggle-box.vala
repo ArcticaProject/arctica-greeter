@@ -212,7 +212,7 @@ public class ToggleBox : Gtk.Box
             var style = new Gtk.CssProvider ();
             style.load_from_data ("label {\n" +
                                   "   font-family: \"%s\", sans-serif;\n".printf (font_family) +
-                                  "   font-size: %d;\n".printf (font_size + 2) +
+                                  "   font-size: %dpt;\n".printf (font_size - 1) +
                                   "}\n" +
                                   "label.high_contrast {\n" +
                                   "   color: %s;\n".printf ("rgba(255, 255, 255, 1.0)") +
