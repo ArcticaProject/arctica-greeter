@@ -38,6 +38,7 @@ public class AGSettings : Object
     public const string KEY_THEME_NAME = "theme-name";
     public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
+    public const string KEY_HIGH_CONTRAST_ICON_THEME_NAME = "high-contrast-icon-theme-name";
     public const string KEY_CURSOR_THEME_NAME = "cursor-theme-name";
     public const string KEY_CURSOR_THEME_SIZE = "cursor-theme-size";
     public const string KEY_FONT_NAME = "font-name";
@@ -164,17 +165,17 @@ public class AGSettings : Object
             var settings = Gtk.Settings.get_default ();
             if (value)
             {
-                /*
                 debug ("Switching GTK Theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
-                */
+                debug ("Switching icon theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME));
                 settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
+                settings.set ("gtk-icon-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME));
             }
             else
             {
-                /*
                 debug ("Switching GTK Theme to default theme \"%s\"", this.default_theme_name_);
-                */
+                debug ("Switching icon theme to default icon theme \"%s\"", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
                 settings.set ("gtk-theme-name", this.default_theme_name_);
+                settings.set ("gtk-icon-theme-name", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
             }
         }
     }
