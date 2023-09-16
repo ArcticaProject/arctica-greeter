@@ -90,7 +90,7 @@
       <summary>GTK+ theme to use</summary>
     </key>
     <key name="high-contrast-theme-name" type="s">
-      <default>'HighContrastInverse'</default>
+      <default>'HighContrast'</default>
       <summary>GTK+ theme to use in high contrast mode</summary>
     </key>
     <key name="icon-theme-name" type="s">
