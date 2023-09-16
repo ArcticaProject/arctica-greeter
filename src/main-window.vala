@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2023 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 public class MainWindow : Gtk.Window
@@ -206,12 +208,6 @@ public class MainWindow : Gtk.Window
             hbox.margin_top = get_grid_offset (get_allocated_height ());
             hbox.margin_bottom = get_grid_offset (get_allocated_height ());
         }
-    }
-
-    public void before_session_start()
-    {
-        debug ("Cleaning up menu bar related processes (i.e. orca, onboard, etc.)");
-        menubar.cleanup();
     }
 
     /* Setup the size and position of the window */
@@ -451,11 +447,6 @@ public class MainWindow : Gtk.Window
         }
 
         return base.key_press_event (event);
-    }
-
-    public void set_keyboard_state ()
-    {
-        menubar.set_keyboard_state ();
     }
 
     public void show_shutdown_dialog (ShutdownDialogType type)

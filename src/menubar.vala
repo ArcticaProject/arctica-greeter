@@ -154,23 +154,7 @@ public class MenuBar : Gtk.MenuBar
         ctx.add_class ("osd");
     }
 
-    /* Due to LP #973922 the keyboard has to be loaded after the main window
-     * is shown and given focus. Therefore we don't enable the active state
-     * until now.
-     */
-    public void set_keyboard_state ()
-    {
-        var greeter = new ArcticaGreeter ();
-        if (!greeter.test_mode)
-            onscreen_keyboard_item.set_active (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
-    }
-
     private List<Indicator.Object> indicator_objects;
-    private Gtk.CheckMenuItem high_contrast_item;
-    private Gtk.CheckMenuItem big_font_item;
-    private Pid keyboard_pid = 0;
-    private Pid reader_pid = 0;
-    private Gtk.CheckMenuItem onscreen_keyboard_item;
 
     construct
     {
@@ -296,30 +280,6 @@ public class MenuBar : Gtk.MenuBar
         }
 
         setup_indicators ();
-
-        var greeter = new ArcticaGreeter ();
-        greeter.starting_session.connect (cleanup);
-    }
-
-    private void close_pid (ref Pid pid)
-    {
-        if (pid > 0)
-        {
-#if VALA_0_40
-            Posix.kill (pid, Posix.Signal.TERM);
-#else
-            Posix.kill (pid, Posix.SIGTERM);
-#endif
-            int status;
-            Posix.waitpid (pid, out status, 0);
-            pid = 0;
-        }
-    }
-
-    public void cleanup ()
-    {
-        close_pid (ref keyboard_pid);
-        close_pid (ref reader_pid);
     }
 
     public override void get_preferred_height (out int min, out int nat)
@@ -355,52 +315,8 @@ public class MenuBar : Gtk.MenuBar
         }
     }
 
-    private Gtk.Widget make_a11y_indicator ()
-    {
-        var a11y_item = new Gtk.MenuItem ();
-        var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
-        hbox.show ();
-        a11y_item.add (hbox);
-        var image = new Gtk.Image.from_file (Path.build_filename (Config.PKGDATADIR, "a11y.svg"));
-        image.show ();
-        hbox.add (image);
-        a11y_item.show ();
-        a11y_item.set_submenu (new Gtk.Menu ());
-        onscreen_keyboard_item = new Gtk.CheckMenuItem.with_label (_("Onscreen keyboard"));
-        onscreen_keyboard_item.toggled.connect (keyboard_toggled_cb);
-        onscreen_keyboard_item.show ();
-        unowned Gtk.Menu submenu = a11y_item.submenu;
-        submenu.append (onscreen_keyboard_item);
-        high_contrast_item = new Gtk.CheckMenuItem.with_label (_("High Contrast"));
-        high_contrast_item.toggled.connect (high_contrast_toggled_cb);
-        high_contrast_item.add_accelerator ("activate", accel_group, Gdk.Key.h, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
-        high_contrast_item.show ();
-        submenu.append (high_contrast_item);
-        var agsettings = new AGSettings ();
-        debug ("Initializing high contrast menu item to state %s", agsettings.high_contrast.to_string ());
-        high_contrast_item.set_active (agsettings.high_contrast);
-
-/* Hide the Big Font feature until it's available.
-        big_font_item = new Gtk.CheckMenuItem.with_label (_("Big Font"));
-        big_font_item.toggled.connect (big_font_toggled_cb);
-        big_font_item.add_accelerator ("activate", accel_group, Gdk.Key.b, Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE);
-        big_font_item.show ();
-        submenu.append (big_font_item);
-*/
-
-        big_font_item.set_active (agsettings.big_font);
-        var item = new Gtk.CheckMenuItem.with_label (_("Screen Reader"));
-        item.toggled.connect (screen_reader_toggled_cb);
-        item.add_accelerator ("activate", accel_group, Gdk.Key.s, Gdk.ModifierType.SUPER_MASK | Gdk.ModifierType.MOD1_MASK, Gtk.AccelFlags.VISIBLE);
-        item.show ();
-        submenu.append (item);
-        item.set_active (AGSettings.get_boolean (AGSettings.KEY_SCREEN_READER));
-        return a11y_item;
-    }
-
     private Indicator.Object? load_indicator_file (string indicator_name)
     {
-
         string dir = Config.INDICATOR_FILE_DIR;
         string path;
         Indicator.Object io;
@@ -451,26 +367,18 @@ public class MenuBar : Gtk.MenuBar
         var greeter = new ArcticaGreeter ();
         if (!greeter.test_mode)
         {
-            if (indicator_name == "ug-accessibility")
-            {
-                var a11y_item = make_a11y_indicator ();
-                insert (a11y_item, (int) get_children ().length () - 1);
-            }
-            else
-            {
-                var io = load_indicator_file (indicator_name);
+            var io = load_indicator_file (indicator_name);
 
-                if (io == null)
-                    io = load_indicator_library (indicator_name);
+            if (io == null)
+                io = load_indicator_library (indicator_name);
 
-                if (io != null)
-                {
-                    indicator_objects.append (io);
-                    io.entry_added.connect (indicator_added_cb);
-                    io.entry_removed.connect (indicator_removed_cb);
-                    foreach (var entry in io.get_entries ())
-                        indicator_added_cb (io, entry);
-                }
+            if (io != null)
+            {
+                indicator_objects.append (io);
+                io.entry_added.connect (indicator_added_cb);
+                io.entry_removed.connect (indicator_removed_cb);
+                foreach (var entry in io.get_entries ())
+                    indicator_added_cb (io, entry);
             }
         }
     }
@@ -502,19 +410,6 @@ public class MenuBar : Gtk.MenuBar
 
         var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
 
-        var update_indicator_list = false;
-        for (var i = 0; i < indicator_list.length; i++)
-        {
-            if (indicator_list[i] == "ug-keyboard")
-            {
-                indicator_list[i] = "org.ayatana.indicator.keyboard";
-                update_indicator_list = true;
-            }
-        }
-
-        if (update_indicator_list)
-            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
-
         foreach (var indicator in indicator_list)
             load_indicator(indicator);
 
@@ -531,148 +426,6 @@ public class MenuBar : Gtk.MenuBar
         });
 
         debug ("LANG=%s LANGUAGE=%s", Environment.get_variable ("LANG"), Environment.get_variable ("LANGUAGE"));
-    }
-
-    private void keyboard_toggled_cb (Gtk.CheckMenuItem item)
-    {
-        /* FIXME: The below would be sufficient if gnome-session were running
-         * to notice and run a screen keyboard in /etc/xdg/autostart...  But
-         * since we're not running gnome-session, we hardcode onboard here. */
-        /* var settings = new Settings ("org.gnome.desktop.a11y.applications");*/
-        /*settings.set_boolean ("screen-keyboard-enabled", item.active);*/
-
-        AGSettings.set_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD, item.active);
-
-        if (keyboard_window == null)
-        {
-            int id = 0;
-
-            try
-            {
-                string[] argv;
-                string cmd;
-                int onboard_stdout_fd;
-                var arg_layout   = "";
-                var arg_theme    = "";
-                var layout       = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_LAYOUT);
-                var theme        = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_THEME);
-                var fname_layout = "/usr/share/onboard/layouts/%s.onboard".printf (layout);
-                var fname_theme  = "/usr/share/onboard/themes/%s.theme".printf (theme);
-                var file_layout  = File.new_for_path (fname_layout);
-                var file_theme   = File.new_for_path (fname_theme);
-                if (file_layout.query_exists ()) {
-                    arg_layout  = "--layout='%s'".printf (fname_layout);
-                }
-                if (file_theme.query_exists ()) {
-                    arg_theme  = "--theme='%s'".printf (fname_theme);
-                }
-                cmd = "onboard --xid %s %s".printf (arg_layout, arg_theme);
-                Shell.parse_argv (cmd, out argv);
-                Process.spawn_async_with_pipes (null,
-                                                argv,
-                                                null,
-                                                SpawnFlags.SEARCH_PATH,
-                                                null,
-                                                out keyboard_pid,
-                                                null,
-                                                out onboard_stdout_fd,
-                                                null);
-                var f = FileStream.fdopen (onboard_stdout_fd, "r");
-                var stdout_text = new char[1024];
-                if (f.gets (stdout_text) != null)
-                    id = int.parse ((string) stdout_text);
-
-            }
-            catch (Error e)
-            {
-                warning ("Error setting up keyboard: %s", e.message);
-                return;
-            }
-
-            var keyboard_socket = new Gtk.Socket ();
-            keyboard_socket.show ();
-            keyboard_window = new Gtk.Window ();
-            keyboard_window.accept_focus = false;
-            keyboard_window.focus_on_map = false;
-            keyboard_window.add (keyboard_socket);
-            keyboard_socket.add_id (id);
-
-            /* Put keyboard at the bottom of the screen */
-            var display = get_display ();
-            var monitor = display.get_monitor_at_window (get_window ());
-            Gdk.Rectangle geom;
-            geom = monitor.get_geometry ();
-            keyboard_window.move (geom.x, geom.y + geom.height - 200);
-            keyboard_window.resize (geom.width, 200);
-        }
-
-        keyboard_window.visible = item.active;
-    }
-
-    private void high_contrast_toggled_cb (Gtk.CheckMenuItem item)
-    {
-        var agsettings = new AGSettings ();
-        agsettings.high_contrast = item.active;
-    }
-
-    /*private void big_font_toggled_cb (Gtk.CheckMenuItem item)
-    {
-        var agsettings = new AGSettings ();
-        agsettings.big_font = item.active;
-    }*/
-
-    private void screen_reader_toggled_cb (Gtk.CheckMenuItem item)
-    {
-        /* FIXME: The below would be sufficient if gnome-session were running
-         * to notice and run a screen reader in /etc/xdg/autostart...  But
-         * since we're not running gnome-session, we hardcode orca here.
-        /*var settings = new Settings ("org.gnome.desktop.a11y.applications");*/
-        /*settings.set_boolean ("screen-reader-enabled", item.active);*/
-
-        AGSettings.set_boolean (AGSettings.KEY_SCREEN_READER, item.active);
-
-        /* Hardcoded orca: */
-        if (item.active)
-        {
-            try
-            {
-                string[] argv;
-                Shell.parse_argv ("orca --replace --no-setup --disable splash-window,", out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out reader_pid);
-                // This is a workaround for bug https://launchpad.net/bugs/944159
-                // The problem is that orca seems to not notice that it's in a
-                // password field on startup.  We just need to kick orca in the
-                // pants.  We do this two ways:  a racy way and a non-racy way.
-                // We kick it after a second which is ideal if we win the race,
-                // because the user gets to hear what widget they are in, and
-                // the first character will be masked.  Otherwise, if we lose
-                // that race, the first time the user types (see
-                // DashEntry.key_press_event), we will kick orca again.  While
-                // this is not racy with orca startup, it is racy with whether
-                // orca will read the first character or not out loud.  Hence
-                // why we do both.  Ideally this would be fixed in orca itself.
-                var greeter = new ArcticaGreeter ();
-                greeter.orca_needs_kick = true;
-                Timeout.add_seconds (1, () =>
-                {
-                    Gtk.Window pWindow = (Gtk.Window) get_toplevel ();
-                    Signal.emit_by_name (pWindow.get_focus ().get_accessible (), "focus-event", true);
-
-                    return false;
-                });
-            }
-            catch (Error e)
-            {
-                warning ("Failed to run Orca: %s", e.message);
-            }
-        }
-        else
-            close_pid (ref reader_pid);
     }
 
     private uint get_indicator_index (Indicator.Object object)

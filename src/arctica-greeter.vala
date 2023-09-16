@@ -30,7 +30,8 @@ public class ArcticaGreeter : Object
     public signal void show_prompt (string text, LightDM.PromptType type);
     public signal void authentication_complete ();
     public signal void starting_session ();
-
+    public MainWindow main_window { get; private set; default = null; }
+    public Gtk.Window? pKeyboardWindow { get; set; default = null; }
     public bool test_mode { get; construct; default = false; }
     public bool test_highcontrast { get; construct; default = false; }
     public bool test_bigfont { get; construct; default = false; }
@@ -42,7 +43,6 @@ public class ArcticaGreeter : Object
     private SettingsDaemon settings_daemon;
 
     public bool orca_needs_kick;
-    private MainWindow main_window;
 
     private LightDM.Greeter greeter;
 
@@ -370,8 +370,6 @@ public class ArcticaGreeter : Object
         var _session = session;
         background_surface.set_device_scale (scale, scale);
 
-        main_window.before_session_start();
-
         if (test_mode)
         {
             debug ("Successfully logged in! Quitting...");
@@ -485,7 +483,6 @@ public class ArcticaGreeter : Object
         main_window.setup_window ();
         main_window.show ();
         main_window.get_window ().focus (Gdk.CURRENT_TIME);
-        main_window.set_keyboard_state ();
     }
 
     public bool is_authenticated ()
@@ -669,9 +666,9 @@ public class ArcticaGreeter : Object
             {
                 /* Check to see if this window is our onboard window, since we don't want to focus it. */
                 X.Window keyboard_xid = 0;
-                if (main_window.menubar.keyboard_window != null)
+                if (this.pKeyboardWindow != null)
                 {
-                    Gdk.X11.Window pWindow = (Gdk.X11.Window) main_window.menubar.keyboard_window.get_window ();
+                    Gdk.X11.Window pWindow = (Gdk.X11.Window) this.pKeyboardWindow.get_window ();
                     keyboard_xid = pWindow.get_xid ();
                 }
 
@@ -680,8 +677,8 @@ public class ArcticaGreeter : Object
                     win.focus (Gdk.CURRENT_TIME);
 
                     /* Make sure to keep keyboard above */
-                    if (main_window.menubar.keyboard_window != null)
-                        main_window.menubar.keyboard_window.get_window ().raise ();
+                    if (this.pKeyboardWindow != null)
+                        this.pKeyboardWindow.get_window ().raise ();
                 }
             }
         }
@@ -704,8 +701,8 @@ public class ArcticaGreeter : Object
                 main_window.get_window ().focus (Gdk.CURRENT_TIME);
 
                 /* Make sure to keep keyboard above */
-                if (main_window.menubar.keyboard_window != null)
-                    main_window.menubar.keyboard_window.get_window ().raise ();
+                if (this.pKeyboardWindow != null)
+                    this.pKeyboardWindow.get_window ().raise ();
             }
         }
         return Gdk.FilterReturn.CONTINUE;
@@ -1340,11 +1337,31 @@ public class DBusServer : Object
 {
     private DBusConnection pConnection;
     private ArcticaGreeter pGreeter;
+    private Pid nOrca = 0;
+    private Pid nOnBoard = 0;
+
+    private void closePid (ref Pid nPid)
+    {
+        if (nPid > 0)
+        {
+            Posix.kill (nPid, Posix.Signal.TERM);
+            int nStatus;
+            Posix.waitpid (nPid, out nStatus, 0);
+            nPid = 0;
+        }
+    }
+
+    private void cleanup ()
+    {
+        closePid (ref nOnBoard);
+        closePid (ref nOrca);
+    }
 
     public DBusServer (DBusConnection pConnection, ArcticaGreeter pGreeter)
     {
         this.pConnection = pConnection;
         this.pGreeter = pGreeter;
+        this.pGreeter.starting_session.connect (cleanup);
     }
 
     public void sendUserChange (string sUser) throws GLib.DBusError, GLib.IOError
@@ -1385,5 +1402,128 @@ public class DBusServer : Object
         {
             error ("Panic: Could not set keyboard layout: %s", pError.message);
         }
+    }
+
+    public void ToggleOnBoard (bool bActive) throws GLib.DBusError, GLib.IOError
+    {
+        AGSettings.set_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD, bActive);
+
+        if (this.pGreeter.pKeyboardWindow == null)
+        {
+            int nId = 0;
+
+            try
+            {
+                var sLayout = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_LAYOUT);
+                var sLayoutPath = "/usr/share/onboard/layouts/%s.onboard".printf (sLayout);
+                var pLayoutFile = File.new_for_path (sLayoutPath);
+                var sTheme = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_THEME);
+                var sThemePath = "/usr/share/onboard/themes/%s.theme".printf (sTheme);
+                var pThemeFile = File.new_for_path (sThemePath);
+                var sLayoutArgs = "";
+
+                if (pLayoutFile.query_exists ())
+                {
+                    sLayoutArgs = "--layout='%s'".printf (sLayoutPath);
+                }
+
+                var sThemeArgs = "";
+
+                if (pThemeFile.query_exists ())
+                {
+                    sThemeArgs  = "--theme='%s'".printf (sThemePath);
+                }
+
+                string sCommand = "onboard --xid %s %s".printf (sLayoutArgs, sThemeArgs);
+                string[] lArgs;
+                Shell.parse_argv (sCommand, out lArgs);
+                int nOnboardFD;
+                Process.spawn_async_with_pipes (null, lArgs, null, SpawnFlags.SEARCH_PATH, null, out nOnBoard, null, out nOnboardFD, null);
+                var pFile = FileStream.fdopen (nOnboardFD, "r");
+                var sText = new char[1024];
+
+                if (pFile.gets (sText) != null)
+                {
+                    nId = int.parse ((string) sText);
+                }
+
+            }
+            catch (Error pError)
+            {
+                warning ("Error setting up keyboard: %s", pError.message);
+
+                return;
+            }
+
+            var pSocket = new Gtk.Socket ();
+            pSocket.show ();
+            this.pGreeter.pKeyboardWindow = new Gtk.Window ();
+            this.pGreeter.pKeyboardWindow.accept_focus = false;
+            this.pGreeter.pKeyboardWindow.focus_on_map = false;
+            this.pGreeter.pKeyboardWindow.add (pSocket);
+            pSocket.add_id (nId);
+
+            var pDisplay = this.pGreeter.main_window.get_display ();
+            var pMonitor = pDisplay.get_monitor_at_window (this.pGreeter.main_window.get_window ());
+            Gdk.Rectangle cRect = pMonitor.get_geometry ();
+            this.pGreeter.pKeyboardWindow.move (cRect.x, cRect.y + cRect.height - 200);
+            this.pGreeter.pKeyboardWindow.resize (cRect.width, 200);
+        }
+
+        this.pGreeter.pKeyboardWindow.visible = bActive;
+    }
+
+    public void ToggleOrca (bool bActive) throws GLib.DBusError, GLib.IOError
+    {
+        AGSettings.set_boolean (AGSettings.KEY_SCREEN_READER, bActive);
+
+        if (bActive)
+        {
+            try
+            {
+                string[] lArgs;
+                Shell.parse_argv ("orca --replace --no-setup --disable splash-window,", out lArgs);
+                Process.spawn_async (null, lArgs, null, SpawnFlags.SEARCH_PATH, null, out nOrca);
+
+                /*
+                This is a workaround for bug https://launchpad.net/bugs/944159
+                The problem is that orca seems to not notice that it's in a
+                password field on startup.  We just need to kick orca in the
+                pants.  We do this two ways:  a racy way and a non-racy way.
+                We kick it after a second which is ideal if we win the race,
+                because the user gets to hear what widget they are in, and
+                the first character will be masked.  Otherwise, if we lose
+                that race, the first time the user types (see
+                DashEntry.key_press_event), we will kick orca again.  While
+                this is not racy with orca startup, it is racy with whether
+                orca will read the first character or not out loud.  Hence
+                why we do both.  Ideally this would be fixed in orca itself.
+                */
+                var pGreeter = new ArcticaGreeter ();
+                pGreeter.orca_needs_kick = true;
+
+                Timeout.add_seconds (1, () =>
+                {
+                    Gtk.Window pWindow = (Gtk.Window) this.pGreeter.main_window.get_toplevel ();
+                    Signal.emit_by_name (pWindow.get_focus ().get_accessible (), "focus-event", true);
+
+                    return false;
+                });
+            }
+            catch (Error pError)
+            {
+                warning ("Failed to run Orca: %s", pError.message);
+            }
+        }
+        else
+        {
+            closePid (ref nOrca);
+        }
+    }
+
+    public void ToggleHighContrast (bool bActive) throws GLib.DBusError, GLib.IOError
+    {
+        var agsettings = new AGSettings ();
+        agsettings.high_contrast = bActive;
     }
 }
