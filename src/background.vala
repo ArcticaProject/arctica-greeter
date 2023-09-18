@@ -421,6 +421,25 @@ public class Background : Gtk.Fixed
         }
     }
 
+    private string _highcontrast_bgcolor = null;
+    public string highcontrast_bgcolor {
+        get {
+            if (_highcontrast_bgcolor == null)
+            {
+                var settings_bgcolor = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_BACKGROUND_COLOR);
+                var color = Gdk.RGBA ();
+
+                if (settings_bgcolor == "" || !color.parse (settings_bgcolor))
+                {
+                    settings_bgcolor = "#000000";
+                }
+
+                _highcontrast_bgcolor = settings_bgcolor;
+            }
+            return _highcontrast_bgcolor;
+        }
+    }
+
     private string _system_background;
     public string? system_background {
         get {
@@ -457,14 +476,19 @@ public class Background : Gtk.Fixed
         }
 
         set {
+            var pretty_value = "";
+
             if (value == null || value == "")
             {
                 _current_background = system_background;
+                pretty_value = "<system default bg image> ";
             } else
             {
                 _current_background = value;
             }
+            pretty_value += _current_background;
 
+            debug ("Background change requested, changing to: %s", pretty_value);
             reload ();
         }
     }
@@ -658,7 +682,8 @@ public class Background : Gtk.Fixed
 
         c.restore ();
 
-        if (DrawFlags.GRID in flags)
+        var agsettings = new AGSettings();
+        if ((DrawFlags.GRID in flags) && (!agsettings.high_contrast))
             overlay_grid (c);
     }
 
@@ -722,7 +747,12 @@ public class Background : Gtk.Fixed
 
     private BackgroundLoader load_background (string? filename)
     {
-        if (filename == null)
+        var agsettings = new AGSettings ();
+        if (agsettings.high_contrast)
+        {
+            filename = highcontrast_bgcolor;
+        }
+        else if (filename == null)
         {
             filename = fallback_bgcolor;
         } else
