@@ -173,7 +173,10 @@ public class UserList : GreeterList
     construct
     {
         var agsettings = new AGSettings ();
-        agsettings.notify["high-contrast"].connect (() => { change_background (); });
+        agsettings.notify[AGSettings.KEY_HIGH_CONTRAST].connect (() => {
+            change_background ();
+            debug ("High contrast switched toggled, new switch state is %b; adjusting background.", AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST));
+        });
         entry_displayed_start.connect (() => { change_background (); });
         entry_displayed_done.connect (() => { change_background (); });
 
