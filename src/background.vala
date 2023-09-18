@@ -476,14 +476,19 @@ public class Background : Gtk.Fixed
         }
 
         set {
+            var pretty_value = "";
+
             if (value == null || value == "")
             {
                 _current_background = system_background;
+                pretty_value = "<system default bg image> ";
             } else
             {
                 _current_background = value;
             }
+            pretty_value += _current_background;
 
+            debug ("Background change requested, changing to: %s", pretty_value);
             reload ();
         }
     }
