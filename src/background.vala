@@ -677,7 +677,8 @@ public class Background : Gtk.Fixed
 
         c.restore ();
 
-        if (DrawFlags.GRID in flags)
+        var agsettings = new AGSettings();
+        if ((DrawFlags.GRID in flags) && (!agsettings.high_contrast))
             overlay_grid (c);
     }
 
