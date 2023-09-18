@@ -172,20 +172,31 @@ public class AGSettings : Object
             greeter.switch_contrast (value);
 
             var settings = Gtk.Settings.get_default ();
+            var theme_name = "";
+            var icon_theme_name = "";
+
             if (value)
             {
-                debug ("Switching GTK Theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
-                debug ("Switching icon theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME));
-                settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
-                settings.set ("gtk-icon-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME));
+
+                /* FIXME: We need to check for wrong theme names here and handle such flaws gracefully */
+
+                theme_name = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME);
+                icon_theme_name = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME);
+                debug ("Switching GTK Theme to high contrast theme \"%s\"", theme_name);
+                debug ("Switching icon theme to high contrast theme \"%s\"", icon_theme_name);
             }
             else
             {
-                debug ("Switching GTK Theme to default theme \"%s\"", AGSettings.get_string (AGSettings.KEY_THEME_NAME));
-                debug ("Switching icon theme to default icon theme \"%s\"", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
-                settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_THEME_NAME));
-                settings.set ("gtk-icon-theme-name", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
+
+                /* FIXME: We need to check for wrong theme names here and handle such flaws gracefully */
+
+                theme_name = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
+                icon_theme_name = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
+                debug ("Switching GTK Theme to default theme \"%s\"", theme_name);
+                debug ("Switching icon theme to default icon theme \"%s\"", icon_theme_name);
             }
+            settings.set ("gtk-theme-name", theme_name);
+            settings.set ("gtk-icon-theme-name", icon_theme_name);
         }
     }
 
