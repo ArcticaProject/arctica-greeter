@@ -1071,12 +1071,37 @@ public class ArcticaGreeter : Object
         /* Set GTK+ settings */
         debug ("Setting GTK+ settings");
         var settings = Gtk.Settings.get_default ();
-        var value = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
+
+        /*
+         * Keep a reference to an AGSettings instance for the whole program
+         * run, so that the SingleInstance property is working the way we'd
+         * like it to work.
+         *
+         * We want to do this before creating the actual greeter, since the
+         * latter is using AGSettings quite extensively.
+         *
+         * This might throw a Vala warning: "local variable `agsettings'
+         * declared but never used" if we don't use the variable, but this can
+         * safely be ignored.
+         */
+        var agsettings = new AGSettings ();
+        string value = "";
+        if (agsettings.high_contrast)
+        {
+            value = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME);
+        } else {
+            value = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
+        }
         if (value != ""){
             debug ("Setting GTK theme: %s", value);
             settings.set ("gtk-theme-name", value, null);
         }
-        value = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
+        if (agsettings.high_contrast)
+        {
+            value = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME);
+        } else {
+            value = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
+        }
         if (value != ""){
             debug ("Setting icon theme: %s", value);
             settings.set ("gtk-icon-theme-name", value, null);
@@ -1106,19 +1131,6 @@ public class ArcticaGreeter : Object
         value = AGSettings.get_string (AGSettings.KEY_XFT_RGBA);
         if (value != "")
             settings.set ("gtk-xft-rgba", value, null);
-
-        /*
-         * Keep a reference to an AGSettings instance for the whole program
-         * run, so that the SingleInstance property is working the way we'd
-         * like it to work.
-         *
-         * We want to do this before creating the actual greeter, since the
-         * latter is using AGSettings quite extensively.
-         *
-         * This will throw a Vala warning: "local variable `agsettings' declared
-         * but never used". Which can be ignored.
-         */
-        var agsettings = new AGSettings ();
 
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast, do_test_bigfont);

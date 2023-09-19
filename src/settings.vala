@@ -38,6 +38,7 @@ public class AGSettings : Object
     public const string KEY_THEME_NAME = "theme-name";
     public const string KEY_HIGH_CONTRAST_THEME_NAME = "high-contrast-theme-name";
     public const string KEY_ICON_THEME_NAME = "icon-theme-name";
+    public const string KEY_HIGH_CONTRAST_ICON_THEME_NAME = "high-contrast-icon-theme-name";
     public const string KEY_CURSOR_THEME_NAME = "cursor-theme-name";
     public const string KEY_CURSOR_THEME_SIZE = "cursor-theme-size";
     public const string KEY_FONT_NAME = "font-name";
@@ -140,10 +141,19 @@ public class AGSettings : Object
     }
 
     construct {
-        Gtk.Settings.get_default ().get ("gtk-theme-name", out this.default_theme_name_);
         /*
-        debug ("Fetched default theme name in construct: %s", this.default_theme_name_);
-        */
+         * This function is currently empty, but we'll keep it around,
+         * including this comment, because it's important to know what to do
+         * with it if it's needed.
+         *
+         * Since AGSettings is a SingleInstance class, this function will only
+         * be called once, as long as we make sure to create an instance early
+         * in the program cycle and keep a reference to it for the rest of its
+         * execution.
+         *
+         * In case you need to execute code once, whenever the first AGSettings
+         * instance is created, do it here.
+         */
     }
 
     public bool high_contrast {
@@ -162,20 +172,31 @@ public class AGSettings : Object
             greeter.switch_contrast (value);
 
             var settings = Gtk.Settings.get_default ();
+            var theme_name = "";
+            var icon_theme_name = "";
+
             if (value)
             {
-                /*
-                debug ("Switching GTK Theme to high contrast theme \"%s\"", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
-                */
-                settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME));
+
+                /* FIXME: We need to check for wrong theme names here and handle such flaws gracefully */
+
+                theme_name = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_THEME_NAME);
+                icon_theme_name = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ICON_THEME_NAME);
+                debug ("Switching GTK Theme to high contrast theme \"%s\"", theme_name);
+                debug ("Switching icon theme to high contrast theme \"%s\"", icon_theme_name);
             }
             else
             {
-                /*
-                debug ("Switching GTK Theme to default theme \"%s\"", this.default_theme_name_);
-                */
-                settings.set ("gtk-theme-name", this.default_theme_name_);
+
+                /* FIXME: We need to check for wrong theme names here and handle such flaws gracefully */
+
+                theme_name = AGSettings.get_string (AGSettings.KEY_THEME_NAME);
+                icon_theme_name = AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME);
+                debug ("Switching GTK Theme to default theme \"%s\"", theme_name);
+                debug ("Switching icon theme to default icon theme \"%s\"", icon_theme_name);
             }
+            settings.set ("gtk-theme-name", theme_name);
+            settings.set ("gtk-icon-theme-name", icon_theme_name);
         }
     }
 
@@ -198,5 +219,4 @@ public class AGSettings : Object
     private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
     private bool high_contrast_ = AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST);
     private bool big_font_ = AGSettings.get_boolean (AGSettings.KEY_BIG_FONT);
-    private string default_theme_name_;
 }

@@ -90,12 +90,16 @@
       <summary>GTK+ theme to use</summary>
     </key>
     <key name="high-contrast-theme-name" type="s">
-      <default>'HighContrastInverse'</default>
+      <default>'HighContrast'</default>
       <summary>GTK+ theme to use in high contrast mode</summary>
     </key>
     <key name="icon-theme-name" type="s">
       <default>'Numix'</default>
       <summary>Icon theme to use</summary>
+    </key>
+    <key name="high-contrast-icon-theme-name" type="s">
+      <default>'HighContrast'</default>
+      <summary>Icon theme to use in high contrast mode</summary>
     </key>
     <key name="cursor-theme-name" type="s">
       <default>'default'</default>
