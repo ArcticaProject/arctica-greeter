@@ -141,10 +141,19 @@ public class AGSettings : Object
     }
 
     construct {
-        Gtk.Settings.get_default ().get ("gtk-theme-name", out this.default_theme_name_);
         /*
-        debug ("Fetched default theme name in construct: %s", this.default_theme_name_);
-        */
+         * This function is currently empty, but we'll keep it around,
+         * including this comment, because it's important to know what to do
+         * with it if it's needed.
+         *
+         * Since AGSettings is a SingleInstance class, this function will only
+         * be called once, as long as we make sure to create an instance early
+         * in the program cycle and keep a reference to it for the rest of its
+         * execution.
+         *
+         * In case you need to execute code once, whenever the first AGSettings
+         * instance is created, do it here.
+         */
     }
 
     public bool high_contrast {
@@ -172,9 +181,9 @@ public class AGSettings : Object
             }
             else
             {
-                debug ("Switching GTK Theme to default theme \"%s\"", this.default_theme_name_);
+                debug ("Switching GTK Theme to default theme \"%s\"", AGSettings.get_string (AGSettings.KEY_THEME_NAME));
                 debug ("Switching icon theme to default icon theme \"%s\"", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
-                settings.set ("gtk-theme-name", this.default_theme_name_);
+                settings.set ("gtk-theme-name", AGSettings.get_string (AGSettings.KEY_THEME_NAME));
                 settings.set ("gtk-icon-theme-name", AGSettings.get_string (AGSettings.KEY_ICON_THEME_NAME));
             }
         }
@@ -199,5 +208,4 @@ public class AGSettings : Object
     private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
     private bool high_contrast_ = AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST);
     private bool big_font_ = AGSettings.get_boolean (AGSettings.KEY_BIG_FONT);
-    private string default_theme_name_;
 }
