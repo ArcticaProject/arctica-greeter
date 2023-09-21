@@ -49,6 +49,7 @@ public class AGSettings : Object
     public const string KEY_ONSCREEN_KEYBOARD = "onscreen-keyboard";
     public const string KEY_ONSCREEN_KEYBOARD_LAYOUT = "onscreen-keyboard-layout";
     public const string KEY_ONSCREEN_KEYBOARD_THEME = "onscreen-keyboard-theme";
+    public const string KEY_HIGH_CONTRAST_ONSCREEN_KEYBOARD_THEME = "high-contrast-onscreen-keyboard-theme";
     public const string KEY_HIGH_CONTRAST = "high-contrast";
     public const string KEY_BIG_FONT = "big-font";
     public const string KEY_SCREEN_READER = "screen-reader";
