@@ -211,6 +211,10 @@
       <default>'Nightshade'</default>
       <summary>Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme for available theme names).</summary>
     </key>
+    <key name="high-contrast-onscreen-keyboard-theme" type="s">
+      <default>'HighContrast'</default>
+      <summary>Name of the onscreen keyboard theme when in high-contrast mode (see /usr/share/onboard/themes/*.theme for available theme names).</summary>
+    </key>
     <key name="hide-default-xsession" type="b">
       <default>false</default>
       <summary>Whether to hide the 'lightdm-xsession' default X11 session type.</summary>

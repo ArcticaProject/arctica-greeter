@@ -1351,14 +1351,24 @@ public class DBusServer : Object
     private ArcticaGreeter pGreeter;
     private Pid nOrca = 0;
     private Pid nOnBoard = 0;
+    private Gtk.Socket pSocket = null;
+    private bool high_contrast_osk = AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST);
 
     private void closePid (ref Pid nPid)
     {
         if (nPid > 0)
         {
-            Posix.kill (nPid, Posix.Signal.TERM);
+
+            /* Make sure we operate on the complete process group here
+             * (POSIX specs: prepend a '-' to the PID to affect the complete
+             * process group).
+             *
+             * Otherwise a follow-up onboard process (group) will refuse to start
+             * immediately after having killed the previous process (group).
+             */
+            Posix.kill (-nPid, Posix.Signal.TERM);
             int nStatus;
-            Posix.waitpid (nPid, out nStatus, 0);
+            Posix.waitpid (-nPid, out nStatus, 0);
             nPid = 0;
         }
     }
@@ -1418,18 +1428,62 @@ public class DBusServer : Object
 
     public void ToggleOnBoard (bool bActive) throws GLib.DBusError, GLib.IOError
     {
-        AGSettings.set_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD, bActive);
 
-        if (this.pGreeter.pKeyboardWindow == null)
+        int nId = 0;
+        var sTheme = "";
+
+        if (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD) != bActive)
         {
-            int nId = 0;
+            AGSettings.set_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD, bActive);
+        }
+
+        if (high_contrast_osk != AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST))
+        {
+            if (nOnBoard != 0)
+            {
+
+                /* Hide the OSK window while fiddling with it...
+                 */
+                this.pGreeter.pKeyboardWindow.visible = false;
+
+                /* calling closePid sets nOnBoard to 0 */
+                debug ("Closing previous keyboard with PID %d", nOnBoard);
+                closePid (ref nOnBoard);
+
+                /* Sending SIGTERM to the plug (i.e. the onboard process group)
+                 * will destroy pSocket, so NULLing it now.
+                 */
+                debug ("Tearing down OSK's Gtk.Socket");
+                this.pGreeter.pKeyboardWindow.remove (pSocket);
+                pSocket = null;
+
+                /* Start with fresh Gkt.Window object for OSK relaunch.
+                 */
+                debug ("Tearing down OSK's Gtk.Window");
+                this.pGreeter.pKeyboardWindow.close();
+                this.pGreeter.pKeyboardWindow = null;
+
+            }
+            high_contrast_osk = AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST);
+        }
+
+        if (nOnBoard == 0)
+        {
 
             try
             {
+
                 var sLayout = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_LAYOUT);
                 var sLayoutPath = "/usr/share/onboard/layouts/%s.onboard".printf (sLayout);
                 var pLayoutFile = File.new_for_path (sLayoutPath);
-                var sTheme = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_THEME);
+                if (high_contrast_osk)
+                {
+                    sTheme = AGSettings.get_string (AGSettings.KEY_HIGH_CONTRAST_ONSCREEN_KEYBOARD_THEME);
+                }
+                else
+                {
+                    sTheme = AGSettings.get_string (AGSettings.KEY_ONSCREEN_KEYBOARD_THEME);
+                }
                 var sThemePath = "/usr/share/onboard/themes/%s.theme".printf (sTheme);
                 var pThemeFile = File.new_for_path (sThemePath);
                 var sLayoutArgs = "";
@@ -1447,10 +1501,20 @@ public class DBusServer : Object
                 }
 
                 string sCommand = "onboard --xid %s %s".printf (sLayoutArgs, sThemeArgs);
+                debug ("Launching OSK: '%s'", sCommand);
+
                 string[] lArgs;
                 Shell.parse_argv (sCommand, out lArgs);
                 int nOnboardFD;
-                Process.spawn_async_with_pipes (null, lArgs, null, SpawnFlags.SEARCH_PATH, null, out nOnBoard, null, out nOnboardFD, null);
+                Process.spawn_async_with_pipes (null,
+                                                lArgs,
+                                                null,
+                                                SpawnFlags.SEARCH_PATH,
+                                                null,
+                                                out nOnBoard,
+                                                null,
+                                                out nOnboardFD,
+                                                null);
                 var pFile = FileStream.fdopen (nOnboardFD, "r");
                 var sText = new char[1024];
 
@@ -1466,15 +1530,35 @@ public class DBusServer : Object
 
                 return;
             }
+        }
 
-            var pSocket = new Gtk.Socket ();
+        if (pSocket == null)
+        {
+            debug ("Creating Gtk.Socket for OSK");
+            pSocket = new Gtk.Socket ();
             pSocket.show ();
+        }
+
+        if ((this.pGreeter.pKeyboardWindow == null) && (pSocket != null))
+        {
+            debug ("Creating Gtk.Window for OSK");
             this.pGreeter.pKeyboardWindow = new Gtk.Window ();
             this.pGreeter.pKeyboardWindow.accept_focus = false;
             this.pGreeter.pKeyboardWindow.focus_on_map = false;
+            this.pGreeter.pKeyboardWindow.set_title("OSK (theme: %s)".printf(sTheme));
+        }
+
+        if ((this.pGreeter.pKeyboardWindow != null) && (pSocket != null) && (nId != 0))
+        {
+            /* attach the GtkSocket, which will host the onboard keyboard, to pKeyboardWindow */
+            debug ("Adding OSK Gtk.Socket to OSK Gtk.Window");
             this.pGreeter.pKeyboardWindow.add (pSocket);
+
+            debug ("Attaching new onboard process to OSK Gtk.Socket (+ Gtk.Window)");
             pSocket.add_id (nId);
 
+            /* resize the keyboard window to cover the lower part of the screen */
+            debug ("Resizing OSK window.");
             var pDisplay = this.pGreeter.main_window.get_display ();
             var pMonitor = pDisplay.get_monitor_at_window (this.pGreeter.main_window.get_window ());
             Gdk.Rectangle cRect = pMonitor.get_geometry ();
@@ -1537,5 +1621,9 @@ public class DBusServer : Object
     {
         var agsettings = new AGSettings ();
         agsettings.high_contrast = bActive;
+
+        /* Trigger onboard restart with correct theme */
+        debug ("High-Contrast mode toggled (new state: %b), refreshing OSK, as well.", bActive);
+        ToggleOnBoard (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
     }
 }
