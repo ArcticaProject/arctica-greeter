@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2019-07-15 14:02+0000\n"
+"PO-Revision-Date: 2023-09-24 09:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -27,7 +27,7 @@ msgstr "%s のパスワードを入力してください"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "ユーザー名を入力してください"
 
 #: ../src/greeter-list.vala:834 ../src/user-list.vala:758
 msgid "Password:"
@@ -143,12 +143,12 @@ msgstr "テストモードで実行"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:922
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "アクセシビリティーハイコントラストテーマを有効にしてテストモードで実行"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:925
 msgid "Run in test mode with a11y big font feature enabled"
-msgstr ""
+msgstr "アクセシビリティー拡大フォント機能を有効にしてテストモードで実行"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:931
