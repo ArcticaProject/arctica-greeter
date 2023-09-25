@@ -819,6 +819,8 @@ public abstract class GreeterList : FadableBox
 
     protected virtual void show_prompt_cb (string text, LightDM.PromptType type)
     {
+        var show_label_if_configured = false;
+
         /* Notify the greeter on what user has been logged */
         if (get_selected_id () == "*other" && manual_name == null)
         {
@@ -831,9 +833,21 @@ public abstract class GreeterList : FadableBox
 
         prompted = true;
         if (text == "Password: ")
+        {
             text = _("Password:");
+            show_label_if_configured = true;
+        }
         if (text == "login:")
+        {
             text = _("Username:");
+            show_label_if_configured = true;
+        }
+
+        if ((AGSettings.get_boolean(AGSettings.KEY_SHOW_LOGIN_LABELS)) && (show_label_if_configured))
+        {
+            show_message(text);
+        }
+
         var entry = add_prompt (text, type == LightDM.PromptType.SECRET);
 
         /* Limit the number of characters in case a cat is sitting on the keyboard... */

@@ -77,6 +77,10 @@
       <default>true</default>
       <summary>Whether to show the hostname in the menubar</summary>
     </key>
+    <key name="show-login-labels" type="b">
+      <default>false</default>
+      <summary>Whether to show 'Username:' and 'Password:' labels in login box</summary>
+    </key>
     <key name="logo" type="s">
       <default>'/usr/share/arctica-greeter/logo.png'</default>
       <summary>Logo file to use</summary>
