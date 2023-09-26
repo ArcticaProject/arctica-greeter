@@ -142,6 +142,10 @@ public class ArcticaGreeter : Object
         {
             this.pServer = new DBusServer (pConnection, this);
             pConnection.register_object ("/org/ArcticaProject/ArcticaGreeter", this.pServer);
+
+            /* Initialize OSK and screen reader as configured in gsettings. */
+            this.pServer.ToggleOrca (AGSettings.get_boolean(AGSettings.KEY_SCREEN_READER));
+            this.pServer.ToggleOnBoard (AGSettings.get_boolean(AGSettings.KEY_ONSCREEN_KEYBOARD));
         }
         catch (IOError pError)
         {
