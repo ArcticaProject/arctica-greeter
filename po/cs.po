@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
 "PO-Revision-Date: 2023-09-27 20:02+0000\n"
-"Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
+"Last-Translator: Tomáš Marný <tomik.marny@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/cs/>\n"
 "Language: cs\n"
@@ -241,7 +241,7 @@ msgstr "Doména:"
 
 #: ../src/user-list.vala:846
 msgid "Account ID"
-msgstr ""
+msgstr "ID účtu"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:895
@@ -267,9 +267,9 @@ msgid "Login"
 msgstr "Přihlásit se"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Sezení hosta"
+msgstr "Dočasné sezení hosta"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -279,6 +279,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Veškerá data vytvořená v průběhu tohoto sezení pro hosta budou smazána,\n"
+"jakmile se odhlásíte. Nastavení budou převedena do výchozího stavu.\n"
+"Uložte si prosím soubory na externí zařízení, například na\n"
+"USB flash disk, jestliže s nimi budete chtít pracovat i později."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
