@@ -483,6 +483,17 @@ public class ArcticaGreeter : Object
         main_window.setup_window ();
         main_window.show ();
         main_window.get_window ().focus (Gdk.CURRENT_TIME);
+
+        try
+        {
+            /* Initialize OSK and screen reader as configured in gsettings. */
+            this.pServer.ToggleOrca (AGSettings.get_boolean(AGSettings.KEY_SCREEN_READER));
+            this.pServer.ToggleOnBoard (AGSettings.get_boolean(AGSettings.KEY_ONSCREEN_KEYBOARD));
+        }
+        catch (Error pError)
+        {
+            error ("%s\n", pError.message);
+        }
     }
 
     public bool is_authenticated ()
