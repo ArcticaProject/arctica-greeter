@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2023-09-26 19:01+0000\n"
-"Last-Translator: Tomáš Marný <tomik.marny@gmail.com>\n"
+"PO-Revision-Date: 2023-09-27 20:02+0000\n"
+"Last-Translator: Filip Hron <filip.hron@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/cs/>\n"
 "Language: cs\n"
@@ -232,9 +232,8 @@ msgid "Server type not supported."
 msgstr "Tento typ serveru není podporován."
 
 #: ../src/user-list.vala:764
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Sezení hosta"
+msgstr "Relace X2Go"
 
 #: ../src/user-list.vala:784
 msgid "Domain:"
@@ -286,7 +285,9 @@ msgstr ""
 msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
-msgstr "Další možností je uložit soubory ve složce / var / guest-data."
+msgstr ""
+"Další možností je uložit soubory ve složce \n"
+"/ var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 #, fuzzy
