@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-31 22:51+0200\n"
-"PO-Revision-Date: 2023-09-27 20:02+0000\n"
+"PO-Revision-Date: 2023-09-28 19:02+0000\n"
 "Last-Translator: Tomáš Marný <tomik.marny@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/cs/>\n"
@@ -180,13 +180,12 @@ msgstr "Nesprávná e-mailová adresa nebo heslo"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:600
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Pokud máte účet na serveru RDP, Vzdálené přihlášení vám umožní spouštět "
-"aplikace z tohoto serveru."
+"Pokud máte účet na serveru RDP nebo X2Go, vzdálené přihlášení vám umožní "
+"spouštět aplikace z tohoto serveru."
 
 #: ../src/user-list.vala:603
 msgid "Cancel"
