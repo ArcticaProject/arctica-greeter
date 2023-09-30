@@ -873,20 +873,19 @@ public class ArcticaGreeter : Object
         }
     }
 
-    private static void check_hidpi ()
+    private static int check_hidpi ()
     {
         try {
             string output;
             Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-check-hidpi"), out output, null, null);
-            output = output.strip();
-            if (output == "2") {
-                debug ("Activating HiDPI (2x scale ratio)");
-                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
-            }
+            debug ("Auto-detected scaling factor in check_hidpi(): %d", int.parse(output));
+            return int.parse (output);
         }
         catch (Error e){
             warning ("Error while setting HiDPI support: %s", e.message);
         }
+        /* Fallback value for GDK scaling */
+        return 1;
     }
 
     public static int main (string[] args)
@@ -937,6 +936,25 @@ public class ArcticaGreeter : Object
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
 
+        int scaling_factor_hidpi = 1;
+
+        /* HiDPI settings */
+        var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
+        debug ("HiDPI support: %s", hidpi);
+        if (hidpi == "auto")
+        {
+            /* This detects if the display size "recommends" hidpi and sets scaling_factor to 2. */
+            scaling_factor_hidpi = check_hidpi ();
+        }
+        else if (hidpi == "on")
+        {
+            /* User configured an exlicit scaling factor via KEY_ENBALE_HIDPI. */
+            scaling_factor_hidpi = 2;
+        }
+        /* Adjust GDK_SCALE to our configured scaling factor (via HiDPI settings). */
+        debug ("Setting GDK_SCALE to: %d (scaling all UI elements by this factor)", scaling_factor_hidpi);
+        GLib.Environment.set_variable ("GDK_SCALE", "%d".printf (scaling_factor_hidpi), true);
+
         /* Make nm-applet hide items the user does not have permissions to interact with */
         Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
 
@@ -986,17 +1004,6 @@ public class ArcticaGreeter : Object
             return Posix.EXIT_FAILURE;
         }
 
-        if (!do_test_mode)
-        {
-            var hidpi = AGSettings.get_string (AGSettings.KEY_ENABLE_HIDPI);
-            debug ("HiDPI support: %s", hidpi);
-            if (hidpi == "auto") {
-                check_hidpi ();
-            }
-            else if (hidpi == "on") {
-                GLib.Environment.set_variable ("GDK_SCALE", "2", true);
-            }
-        }
 
         if (do_show_version)
         {
