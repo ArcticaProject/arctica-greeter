@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2013-04-16 05:44+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Crimean Turkish; Crimean Tatar <crh@li.org>\n"
@@ -27,11 +27,11 @@ msgstr "%s içün sır-söz kirsetiñiz"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "Parol:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Qullanıcı adı:"
 
@@ -51,31 +51,19 @@ msgstr ""
 msgid "Logging in…"
 msgstr ""
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "İçeri İmzalanım Ekranı"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr ""
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Ekran-üstü klavye"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Yüksek Tezat"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Ekran Oquyıcı"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Oturım Seçenekleri"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "Masaüstü çevresini saylañız"
 
@@ -110,14 +98,14 @@ msgid "Restart"
 msgstr ""
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -128,34 +116,34 @@ msgid "%s (Default)"
 msgstr "%s (Ögbelgilengen)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "Çıqarılış sürümini köster"
 
 # tüklü
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "Sınama kipinde çaptır"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 # tüklü
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Arctica Qarşılayıcısı"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -166,17 +154,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Musafir Oturımı"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Lütfen tam bir e-poşta adresi kirsetiñiz"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Yañlış e-poçta yaki sır-söz"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 #, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
@@ -185,15 +173,15 @@ msgstr ""
 "Eger bir RDP sunucısı üzerinde bir hesabıñız bar ise, Uzaqtan İçeri "
 "İmzalanım sizge o sunucıdan uyğulamalarnı çalıştırmağa imkân berir."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Vazgeç"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Ayarlama…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
@@ -202,11 +190,11 @@ msgstr ""
 "Bu hızmetni qullanmaq içün bir Ubuntu Uzaqtan İçeri İmzalanım hesabına "
 "ihtiyacıñız bar. Şimdi bir hesapnı ayarlamağa ister ediñizmi?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "Tamam"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -215,7 +203,7 @@ msgstr ""
 "Bu hızmetni qullanmaq içün bir Ubuntu Uzaqtan İçeri İmzalanım hesabına "
 "muhtacsıñız. Bir hesapnı ayarlamaq içün uccs.canonical.com ziyaret etiñiz."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
@@ -224,43 +212,43 @@ msgstr ""
 "Bu hızmetni qullanmaq içün bir Ubuntu Uzaqtan İçeri İmzalanım hesabına "
 "ihtiyacıñız bar. Şimdi bir hesapnı ayarlamağa ister ediñizmi?"
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Sunucı türü desteklenmey."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Musafir Oturımı"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Saha:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "İçeri İmzalan"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "%s olaraq içeri imzalan"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Kene deñe"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "%s olaraq kene deñe"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "İçeri İmzalanım"
 
@@ -290,6 +278,15 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Arctica Qarşılayıcısı"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Ekran-üstü klavye"
+
+#~ msgid "High Contrast"
+#~ msgstr "Yüksek Tezat"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Ekran Oquyıcı"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2012-10-26 12:43+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <ast@li.org>\n"
@@ -27,11 +27,11 @@ msgstr "Introduz la contraseña pa %s"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Nome d'usuariu:"
 
@@ -51,31 +51,19 @@ msgstr "Fallu al aniciar sesión"
 msgid "Logging in…"
 msgstr "Aniciando sesión..."
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "Pantalla d'aniciu sesión"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "Atrás"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Tecláu en pantalla"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Contraste altu"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Llector de pantalla"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Opciones de sesión"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "Esbillar entornu d'escritoriu"
 
@@ -112,14 +100,14 @@ msgid "Restart"
 msgstr "Reaniciar"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -130,32 +118,32 @@ msgid "%s (Default)"
 msgstr "%s (Por defeutu)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "Amosar versión"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "Executar en mou de prueba"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Pantalla d'entrada d'Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -164,17 +152,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Sesión d'invitáu"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Por favor, introduz una direición de corréu completa"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Direición de corréu o contraseña incorreutes"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 #, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
@@ -183,15 +171,15 @@ msgstr ""
 "Si tienes una cuenta nun sirvidor RDP, Conexón Remota permítete executar "
 "aplicaciones dende esi sirvidor."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Encaboxar"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Configurar..."
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
@@ -200,11 +188,11 @@ msgstr ""
 "Necesites una cuenta d'Ubuntu Conexón Remota pa usar esti serviciu. "
 "¿Prestaríate configurar una cuenta agora?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "Aceutar"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -213,7 +201,7 @@ msgstr ""
 "Necesites una cuenta d'Ubuntu Conexón Remota pa usar esti serviciu. Visita "
 "uccs.canonical.com pa configurar una cuenta."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
@@ -222,43 +210,43 @@ msgstr ""
 "Necesites una cuenta d'Ubuntu Conexón Remota pa usar esti serviciu. "
 "¿Prestaríate configurar una cuenta agora?"
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Triba de sirvidor ensin sofitu."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Sesión d'invitáu"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Dominiu:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "Aniciar sesión"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "Aniciar sesión como %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Reintentar"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "Reintentar como %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "Aniciar sesión"
 
@@ -287,6 +275,15 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Pantalla d'entrada d'Arctica"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Tecláu en pantalla"
+
+#~ msgid "High Contrast"
+#~ msgstr "Contraste altu"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Llector de pantalla"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

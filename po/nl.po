@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2019-10-11 12:51+0000\n"
 "Last-Translator: Jennifer <jen@elypia.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/arctica-framework/"
@@ -29,11 +29,11 @@ msgstr "Wachtwoord voor %s invoeren"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Gebruikersnaam:"
 
@@ -53,31 +53,19 @@ msgstr "Sessie starten mislukt"
 msgid "Logging in…"
 msgstr "Aanmelden…"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "Aanmeldscherm"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "Terug"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Schermtoetsenbord"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Hoog contrast"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Schermlezer"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Sessie-eigenschappen"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "Bureaubladomgeving selecteren"
 
@@ -114,14 +102,14 @@ msgid "Restart"
 msgstr "Herstarten"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -132,32 +120,32 @@ msgid "%s (Default)"
 msgstr "%s (Standaard)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "Uitgaveversie tonen"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "In testmodus uitvoeren"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Arctica-aanmeldscherm (greeter)"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "Voer ‘%s --help’ uit voor een lijst van alle opdrachtregelopties."
@@ -166,17 +154,17 @@ msgstr "Voer ‘%s --help’ uit voor een lijst van alle opdrachtregelopties."
 msgid "Guest Session"
 msgstr "Gastsessie"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Gelieve een volledig e-mailadres in te voeren"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Onjuist e-mailadres of wachtwoord"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -184,15 +172,15 @@ msgstr ""
 "Als u een account heeft op een RDP of X2Go server kunt u met Remote Login "
 "toepassingen vanaf die server draaien."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Instellen…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -200,11 +188,11 @@ msgstr ""
 "U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
 "Wilt u nu een account instellen?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "Ok"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -213,7 +201,7 @@ msgstr ""
 "U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
 "Bezoek %s om een account aan te maken."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -221,42 +209,42 @@ msgstr ""
 "U heeft een Remote Login-account nodig om van deze dienst gebruik te maken. "
 "Informeer bij uw beheerder voor meer details."
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Servertype wordt niet ondersteund."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "X2Go sessie:"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Domein:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "Account ID"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "Aanmelden"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "Aanmelden als %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Opnieuw proberen"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "Opnieuw proberen als %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "Aanmelden"
 
@@ -290,6 +278,15 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr "Arctica-aanmeldscherm"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Schermtoetsenbord"
+
+#~ msgid "High Contrast"
+#~ msgstr "Hoog contrast"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Schermlezer"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

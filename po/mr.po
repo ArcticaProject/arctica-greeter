@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2020-01-06 19:21+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://hosted.weblate.org/projects/arctica-"
@@ -29,11 +29,11 @@ msgstr "%s साठी गुप्तशब्द दाखल करा"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "गुप्तशब्द:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "युजरनेम:"
 
@@ -53,31 +53,19 @@ msgstr "सत्र प्रारंभ करण्यात अयशस्
 msgid "Logging in…"
 msgstr "लॉग इन करीत आहे…"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "लॉगिन स्क्रीन"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "मागे"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "ऑनस्क्रीन कीबोर्ड"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "उच्च विरोधाभास"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "पटल वाचक"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "सत्रासाठी पर्याय"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "डेस्कटॉप वातावरण निवडा"
 
@@ -113,14 +101,14 @@ msgid "Restart"
 msgstr "पुन्हा सुरू करा"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -131,32 +119,32 @@ msgid "%s (Default)"
 msgstr "%s (डीफॉल्ट)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "प्रकाशन आवृत्ती दर्शवा"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "चाचणी अवस्थेत चालवा"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- आर्कटिका ग्रीटर"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "उपलब्ध कमांड लाइन पर्यायांची पूर्ण यादी पाहण्यासाठी '%s --help' चालवा."
@@ -165,17 +153,17 @@ msgstr "उपलब्ध कमांड लाइन पर्यायां
 msgid "Guest Session"
 msgstr "अतिथी सत्र"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "कृपया एक पूर्ण ई-मेल पत्ता प्रविष्ट करा"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "चुकीचा ई-मेल पत्ता किंवा संकेतशब्द"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -183,15 +171,15 @@ msgstr ""
 "आपल्याकडे आरडीपी सर्व्हर किंवा एक्स 2 गो सर्व्हरवर खाते असल्यास, रिमोट लॉगिन आपल्याला "
 "त्या सर्व्हरवरून अनुप्रयोग चालवू देते."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "रद्द करा"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "सेट अप करा…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -199,11 +187,11 @@ msgstr ""
 "या सेवेचा लाभ घेण्याकरिता तुम्हाला उबुंतू दूरस्थ खाते वापरणे आवश्यक आहे. तुम्हाला आता खाते "
 "काढणे आवडेल का ?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "ठीक"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -212,7 +200,7 @@ msgstr ""
 "आपल्याला ही सेवा वापरण्यासाठी रिमोट लॉगऑन खाते आवश्यक आहे. खात्याची विनंती करण्यासाठी "
 "%s ला भेट द्या."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -220,42 +208,42 @@ msgstr ""
 "आपल्याला ही सेवा वापरण्यासाठी रिमोट लॉगऑन खाते आवश्यक आहे. कृपया तपशीलांसाठी आपल्या "
 "साइट प्रशासकाला विचारा."
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "सर्व्हर प्रकार समर्थित नाही."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "X2Go सत्र:"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "डोमेन:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "खाते आयडी"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "लॉग इन करा"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "%s म्हणून प्रवेश करा"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "पुन्हा प्रयत्न करा"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "%s म्हणून पुन्हा प्रयत्न करा"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "लॉगिन"
 
@@ -289,3 +277,12 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr "आर्कटिका ग्रीटर"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "ऑनस्क्रीन कीबोर्ड"
+
+#~ msgid "High Contrast"
+#~ msgstr "उच्च विरोधाभास"
+
+#~ msgid "Screen Reader"
+#~ msgstr "पटल वाचक"

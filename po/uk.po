@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2023-09-04 20:55+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
+"framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,11 +30,11 @@ msgstr "Введіть пароль для %s"
 msgid "Enter your username"
 msgstr "Введіть своє ім'я користувача"
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Ім'я користувача:"
 
@@ -54,31 +54,19 @@ msgstr "Не вдалося розпочати сеанс"
 msgid "Logging in…"
 msgstr "Входимо…"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "Вікно входу"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "Назад"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Екранна клавіатура"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Висока контрастність"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Читання з екрана"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Параметри сеансу"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "Виберіть середовище робочого столу"
 
@@ -115,17 +103,18 @@ msgid "Restart"
 msgstr "Перезавантажити комп’ютер"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+#, fuzzy
+msgid "Executing selected action now."
 msgstr "Зараз буде обрано типову дію."
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
-msgstr[0] "Типову дію буде обрано за секунду …"
-msgstr[1] "Типову дію буде обрано за %u секунди …"
-msgstr[2] "Типову дію буде обрано за %u секунд …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -134,32 +123,32 @@ msgid "%s (Default)"
 msgstr "%s (типове)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "Показати версію випуску"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "Запуск в тестовому режимі"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr "Запуск в тестовому режимі з увімкненою висококонтрастною темою"
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr "Запуск у тестовому режимі з увімкненим великим шрифтом"
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Вітальне вікно Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -170,17 +159,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Гостьовий сеанс"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Вкажіть повну адресу електронної пошти"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Адресу електронної пошти або пароль вказано неправильно"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -188,15 +177,15 @@ msgstr ""
 "Якщо у Вас є обліковий запис на сервері RDP або на сервері X2Go, віддалений "
 "вхід дозволяє запускати програми з цього сервера."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Налаштувати…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -204,11 +193,11 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Створити обліковий запис зараз?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "ОК"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -217,7 +206,7 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Запит на створення можна залишити на %s."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -225,42 +214,42 @@ msgstr ""
 "Для використання цієї служби потрібен обліковий запис віддаленого входу. "
 "Щодо подробиць зверніться, будь ласка, до адміністратора сайту."
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Цей тип серверів не підтримується."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "Сеанс X2Go:"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Домен:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "ID облікового запису"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "Увійти"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "Увійти як %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Повторити"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "Повторити як %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "Увійти"
 
@@ -294,6 +283,22 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr "Вітальне вікно Arctica"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Екранна клавіатура"
+
+#~ msgid "High Contrast"
+#~ msgstr "Висока контрастність"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Читання з екрана"
+
+#, c-format
+#~ msgid "Selecting default action in one second …"
+#~ msgid_plural "Selecting default action in %u seconds …"
+#~ msgstr[0] "Типову дію буде обрано за секунду …"
+#~ msgstr[1] "Типову дію буде обрано за %u секунди …"
+#~ msgstr[2] "Типову дію буде обрано за %u секунд …"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
