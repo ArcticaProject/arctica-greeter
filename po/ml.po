@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2020-09-09 07:36+0000\n"
 "Last-Translator: Suraj <thekkethilsuraj@gmail.com>\n"
 "Language-Team: Malayalam <https://hosted.weblate.org/projects/arctica-"
@@ -29,11 +29,11 @@ msgstr "%s-നുള്ള അടയാളവാക്കു് നല്‍ക�
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "അടയാളവാക്ക്:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "നാമം:"
 
@@ -53,31 +53,19 @@ msgstr "സെഷൻ ആരംഭിക്കുന്നതിൽ പരാജ�
 msgid "Logging in…"
 msgstr "പ്രവേശിക്കുന്നു"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "പ്രവേശന ജാലകം"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "പിന്നോട്ട്"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "സ്‌ക്രീന്‍ കീ-ബോര്‍ഡ്"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "ഉയർന്ന തെളിച്ചം"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "യവനികാവായനോപാധി"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "വേളയില്‍ തിരഞ്ഞെട‌ുക്കാവ‌ുന്നവ"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "ഡെസ്ക്ടോപ്പ് പരിസരം തിരഞ്ഞെടുക്കുക"
 
@@ -113,14 +101,14 @@ msgid "Restart"
 msgstr "പുനരാരംഭിക്കുക"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -131,32 +119,32 @@ msgid "%s (Default)"
 msgstr "%s (സ്വതേ)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "പതിപ്പുവിവരം പ്രദര്‍ശിപ്പിക്കുക"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "പരീക്ഷണരൂപേണ പ്രവര്‍ത്തിപ്പിക്കുക"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Arctica സ്വാഗത ജാലകം"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "ലഭ്യമായ കമാന്‍ഡ് ലൈന്‍ ഉപാധികള്‍ക്കായി '%s --help' കാണുക."
@@ -165,17 +153,17 @@ msgstr "ലഭ്യമായ കമാന്‍ഡ് ലൈന്‍ ഉപാ
 msgid "Guest Session"
 msgstr "'അതിഥി' വേള"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "പൂര്‍ണമായ ഇമെയില്‍  വിലാസം നല്‍കുക"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "ഇ-മെയില്‍ ഐടിയിലോ അടയാളവാക്കിലോ പിശകുണ്ട്"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -183,15 +171,15 @@ msgstr ""
 "നിങ്ങള്‍ക്ക് RDP-യിലോ, X2Go-യിലോ അക്കൌണ്ട് ഉണ്ടെങ്കിൽ, ആ സര്‍വ്വറില്‍ നിന്ന് തന്നെ റിമോട്ട് "
 "ലോഗിനിലൂടെ ആപ്ലിക്കേഷനുകള്‍ പ്രവര്‍ത്തിപ്പിക്കാനാകും"
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "റദ്ദാക്കുക"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "തയ്യാറാക്കുക"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -199,11 +187,11 @@ msgstr ""
 "നിങ്ങള്ക്ക്  ഈ സര്‍വീസ്  ഉപയോഗിക്കണമെങ്കില്‍ ഉബുണ്ടു റിമോട്ട് ലോഗിന്‍ അക്കൗണ്ട്‌ അത്യാവശ്യമാണ് . "
 "നിങ്ങള്‍ ഒരു അക്കൗണ്ട്‌ തുടങ്ങാന്‍ താല്പര്യപ്പെടുന്നുണ്ടോ??"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "ശെരി"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -212,7 +200,7 @@ msgstr ""
 "ഈ സേവനം ഉപയോഗിക്കാൻ ഉബുണ്ടു റിമോട്ട് ലോഗിൻ അക്കൗണ്ട് ആവശ്യമാണ്. പുതിയ അക്കൗണ്ട് തുടങ്ങാൻ %s "
 "സന്ദർശിക്കുക."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -220,42 +208,42 @@ msgstr ""
 "ഈ സേവനം ഉപയോഗിക്കാൻ റിമോട്ട് ലോഗിൻ അക്കൗണ്ട് ആവശ്യമാണ്. കൂടുതൽ വിവരങ്ങൾക്ക് "
 "അഡ്മിനിസ്ട്രേറ്ററുമായി ബന്ധപ്പെടുക."
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "ഈ തരം സര്‍വ്വര്‍ പിന്‍താങ്ങപ്പെടുന്നതല്ല"
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "X2Go വേള"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "ഡൊമെയിന്‍:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "അക്കൗണ്ട് ഐഡി"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "പ്രവേശിക്കുക"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "%s- ആയി പ്രവേശിക്കുക"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "വീണ്ടും ശ്രമിക്കുക"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "%s ആയി വീണ്ടും ശ്രമിക്കുക"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "പ്രവേശിക്കുക"
 
@@ -284,6 +272,15 @@ msgstr ""
 #, fuzzy
 msgid "Arctica Greeter"
 msgstr "- Arctica സ്വാഗത ജാലകം"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "സ്‌ക്രീന്‍ കീ-ബോര്‍ഡ്"
+
+#~ msgid "High Contrast"
+#~ msgstr "ഉയർന്ന തെളിച്ചം"
+
+#~ msgid "Screen Reader"
+#~ msgstr "യവനികാവായനോപാധി"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

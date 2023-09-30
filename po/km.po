@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2021-09-28 10:35+0000\n"
 "Last-Translator: ប៉ុកណូ រ៉ូយ៉ាល់ <royalpokno68@gmail.com>\n"
 "Language-Team: Khmer (Central) <https://hosted.weblate.org/projects/arctica-"
@@ -30,11 +30,11 @@ msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​សម្
 msgid "Enter your username"
 msgstr "បញ្ចូល​ឈ្មោះ​អ្នក​ប្រើ"
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "ពាក្យ​សម្ងាត់ ៖"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ ៖"
 
@@ -54,31 +54,19 @@ msgstr "បានបរាជ័យក្នុងការចាប់ផ្ត
 msgid "Logging in…"
 msgstr "កំពុង​ចូល…"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "អេក្រង់​​ចូល"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "ថយក្រោយ"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "ក្ដារចុច​លើ​អេក្រង់"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "កម្រិត​ពណ៌​ខ្ពស់"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "កម្មវិធី​អាន​អេក្រង់"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "ជម្រើស​សម័យ"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "ជ្រើស​បរិស្ថាន​ផ្ទៃតុ"
 
@@ -115,14 +103,14 @@ msgid "Restart"
 msgstr "ចាប់ផ្ដើម​ឡើង​វិញ"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 
 #. Translators: %s is a session name like KDE or Ubuntu
@@ -132,32 +120,32 @@ msgid "%s (Default)"
 msgstr "%s (លំនាំដើម)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "បង្ហាញ​កំណែ​ចេញ​ផ្សាយ"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "ដំណើរការ​ក្នុង​របៀប​សាកល្បង"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- សារ​ស្វាគមន៍​របស់ Arctica"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "ដំណើរការ '%s --help' ដើម្បី​មើល​បញ្ជី​ជម្រើស​បន្ទាត់​ពាក្យ​បញ្ជា​ពេញលេញ ។"
@@ -166,17 +154,17 @@ msgstr "ដំណើរការ '%s --help' ដើម្បី​មើល​�
 msgid "Guest Session"
 msgstr "សម័យ​ភ្ញៀវ"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "សូម​បញ្ចូល​អាសយដ្ឋាន​អ៊ីមែល​របស់​អ្នក"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "ពាក្យ​សម្ងាត់ ឬ​​អាសយដ្ឋាន​អ៊ីមែល​​មិន​ត្រឹមត្រូវ"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -184,32 +172,32 @@ msgstr ""
 "ប្រសិនបើ​អ្នក​មាន​គណនី​នៅ​លើ​ម៉ាស៊ីន​មេ RDP ឬម៉ាស៊ីនមេ X2Go ការចូលបញ្ជា​ពី​ចម្ងាយ អាចឲ្យ​អ្នក​​​ដំណើរការ​"
 "កម្មវិធី​ពី​ម៉ាស៊ីន​មេ​នោះ​បាន។"
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "បោះបង់"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "រៀបចំ…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr "អ្នក​ត្រូវការ​​គណនីចូលបញ្ជា​​ពី​ចម្ងាយ ​ដើម្បី​ប្រើសេវាកម្ម​នេះ។ តើអ្នកចង់បង្កើតគណនីឥឡូវនេះទេ?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "យល់ព្រម"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr "អ្នក​ត្រូវ​ការ​គណនីចូលបញ្ជា​ពី​ចម្ងាយ​ ដើម្បី​ប្រើ​​សេវាកម្មនេះ។ សូមមើល %s ដើម្បីស្នើសុំគណនី។"
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -217,42 +205,42 @@ msgstr ""
 "អ្នក​ត្រូវការគណនីចូលបញ្ជា​​ពី​ចម្ងាយ​ ដើម្បីប្រើសេវាកម្មនេះ។ "
 "សូមអ្នកសួរអ្នកគ្រប់គ្រងគេហទំព័ររបស់អ្នកសម្រាប់ព័ត៌មានលម្អិត។"
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "ប្រភេទ​ម៉ាស៊ីន​មេ ​មិន​ត្រូវ​បាន​គាំទ្រ។"
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "សម័យ ​X2Go៖"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "ដែន ៖"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "គណនី ID"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "ចូល"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "ចូល​ជា %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "ព្យាយាម​ម្ដង​ទៀត"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "ព្យាយាម​ម្ដងទៀត​ជា %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "ចូល"
 
@@ -284,6 +272,15 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr "សារ​ស្វាគមន៍​របស់ Arctica"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "ក្ដារចុច​លើ​អេក្រង់"
+
+#~ msgid "High Contrast"
+#~ msgstr "កម្រិត​ពណ៌​ខ្ពស់"
+
+#~ msgid "Screen Reader"
+#~ msgstr "កម្មវិធី​អាន​អេក្រង់"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

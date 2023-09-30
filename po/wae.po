@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2012-01-24 16:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Walser <wae@li.org>\n"
@@ -27,11 +27,11 @@ msgstr "Z password fer %s igä"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr ""
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Username"
 
@@ -51,31 +51,19 @@ msgstr ""
 msgid "Logging in…"
 msgstr ""
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "Loginbildširm"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr ""
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Bildschirmtaschtatür"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Schtarčä kontrašt"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Bildširmläser"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Session Optionä"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "D desktopumgäbig üsläse"
 
@@ -110,14 +98,14 @@ msgid "Restart"
 msgstr ""
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -128,32 +116,32 @@ msgid "%s (Default)"
 msgstr "%s (Default)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr ""
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr ""
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr ""
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr ""
@@ -162,17 +150,17 @@ msgstr ""
 msgid "Guest Session"
 msgstr "Gascht login"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Bitte en kompletti e-mail adräs igä"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Falschi e-mail adräss oder password"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 #, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
@@ -181,15 +169,15 @@ msgstr ""
 "Wennt es login fer en RDP server hesch, chansch di mit Remote Login üf dem "
 "server ilogge."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Abbräče"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Ischtelle"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
@@ -198,11 +186,11 @@ msgstr ""
 "Dü brüchsch en Ubuntu Remote Login benutzer um dischä service z brüche. "
 "Willt jetzt en account erstelle?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "OK"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, fuzzy, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -211,7 +199,7 @@ msgstr ""
 "Dü brüchsch en Ubuntu Remote Login benutzer um dischä service z brüche. Gang "
 "derfir üf uccs.canonical.com."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 #, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
@@ -220,43 +208,43 @@ msgstr ""
 "Dü brüchsch en Ubuntu Remote Login benutzer um dischä service z brüche. "
 "Willt jetzt en account erstelle?"
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Server typ isch nit unerstitzt."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 #, fuzzy
 msgid "X2Go Session:"
 msgstr "Gascht login"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Domain:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr ""
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "Iloġe"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "Iloġe als %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Numal probiere"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "Numal probiere als %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr ""
 
@@ -284,6 +272,15 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr ""
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Bildschirmtaschtatür"
+
+#~ msgid "High Contrast"
+#~ msgstr "Schtarčä kontrašt"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Bildširmläser"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "

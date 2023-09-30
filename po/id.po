@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-31 22:51+0200\n"
+"POT-Creation-Date: 2023-09-30 08:31+0200\n"
 "PO-Revision-Date: 2021-02-19 03:50+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/arctica-"
@@ -29,11 +29,11 @@ msgstr "Masukan kata sandi untuk %s"
 msgid "Enter your username"
 msgstr ""
 
-#: ../src/greeter-list.vala:834 ../src/user-list.vala:758
+#: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
 msgstr "Kata sandi:"
 
-#: ../src/greeter-list.vala:836 ../src/user-list.vala:752
+#: ../src/greeter-list.vala:836 ../src/user-list.vala:755
 msgid "Username:"
 msgstr "Nama pengguna:"
 
@@ -53,31 +53,19 @@ msgstr "Gagal memulai sesi"
 msgid "Logging in…"
 msgstr "Sedang masuk…"
 
-#: ../src/main-window.vala:54
+#: ../src/main-window.vala:56
 msgid "Login Screen"
 msgstr "Layar Masuk"
 
-#: ../src/main-window.vala:121
+#: ../src/main-window.vala:123
 msgid "Back"
 msgstr "Kembali"
-
-#: ../src/menubar.vala:369
-msgid "Onscreen keyboard"
-msgstr "Papan ketik pada layar"
-
-#: ../src/menubar.vala:374
-msgid "High Contrast"
-msgstr "Kontras Tinggi"
-
-#: ../src/menubar.vala:392
-msgid "Screen Reader"
-msgstr "Pembaca Layar"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
 msgstr "Pilihan Sesi"
 
-#: ../src/session-list.vala:42
+#: ../src/session-list.vala:36
 msgid "Select desktop environment"
 msgstr "Pilih desktop"
 
@@ -114,14 +102,14 @@ msgid "Restart"
 msgstr "Nyalakan ulang"
 
 #. Fun begins here, actually trigger option.
-#: ../src/shutdown-dialog.vala:295
-msgid "Selecting default action now."
+#: ../src/shutdown-dialog.vala:297
+msgid "Executing selected action now."
 msgstr ""
 
-#: ../src/shutdown-dialog.vala:328
+#: ../src/shutdown-dialog.vala:331
 #, c-format
-msgid "Selecting default action in one second …"
-msgid_plural "Selecting default action in %u seconds …"
+msgid "Waiting one more second before executing selected action …"
+msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
 
 #. Translators: %s is a session name like KDE or Ubuntu
@@ -131,32 +119,32 @@ msgid "%s (Default)"
 msgstr "%s (Baku)"
 
 #. Help string for command line --version flag
-#: ../src/arctica-greeter.vala:916
+#: ../src/arctica-greeter.vala:957
 msgid "Show release version"
 msgstr "Tampilkan versi rilis"
 
 #. Help string for command line --test-mode flag
-#: ../src/arctica-greeter.vala:919
+#: ../src/arctica-greeter.vala:960
 msgid "Run in test mode"
 msgstr "Jalankan dalam mode percobaan"
 
 #. Help string for command line --test-highcontrast flag
-#: ../src/arctica-greeter.vala:922
+#: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
 
 #. Help string for command line --test-bigfont flag
-#: ../src/arctica-greeter.vala:925
+#: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
 msgstr ""
 
 #. Arguments and description for --help text
-#: ../src/arctica-greeter.vala:931
+#: ../src/arctica-greeter.vala:972
 msgid "- Arctica Greeter"
 msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
-#: ../src/arctica-greeter.vala:942
+#: ../src/arctica-greeter.vala:983
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
 msgstr "Jalankan '%s --help' untuk melihat pilihan perintah yang tersedia."
@@ -165,17 +153,17 @@ msgstr "Jalankan '%s --help' untuk melihat pilihan perintah yang tersedia."
 msgid "Guest Session"
 msgstr "Sesi Tamu"
 
-#: ../src/user-list.vala:477
+#: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
 msgstr "Ketikkanlah alamat surel yang lengkap"
 
-#: ../src/user-list.vala:566
+#: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
 msgstr "Alamat surel atau sandinya salah"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
-#: ../src/user-list.vala:600
+#: ../src/user-list.vala:603
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
@@ -183,15 +171,15 @@ msgstr ""
 "Apabila Anda memiliki akun pada server RDP atau X2Go, Masuk Jarak Jauh "
 "memungkinkan Anda untuk menjalankan aplikasi dari server itu."
 
-#: ../src/user-list.vala:603
+#: ../src/user-list.vala:606
 msgid "Cancel"
 msgstr "Batal"
 
-#: ../src/user-list.vala:604
+#: ../src/user-list.vala:607
 msgid "Set Up…"
 msgstr "Setel…"
 
-#: ../src/user-list.vala:606
+#: ../src/user-list.vala:609
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
@@ -199,11 +187,11 @@ msgstr ""
 "Anda memerlukan akun Log Masuk Jarak Jauh Ubuntu untuk menggunakan layanan "
 "ini. Buat akun sekarang?"
 
-#: ../src/user-list.vala:610
+#: ../src/user-list.vala:613
 msgid "OK"
 msgstr "Oke"
 
-#: ../src/user-list.vala:612
+#: ../src/user-list.vala:615
 #, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
@@ -212,7 +200,7 @@ msgstr ""
 "Anda memerlukan akun Masuk Jarak Jauh Ubuntu untuk menggunakan layanan ini. "
 "Kunjungilah %s untuk membuat akun."
 
-#: ../src/user-list.vala:614
+#: ../src/user-list.vala:617
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
@@ -220,42 +208,42 @@ msgstr ""
 "Anda memerlukan akun Masuk Jarak Jauh Ubuntu untuk menggunakan layanan ini. "
 "Silakan tanyakan kepada administrator situs Anda untuk detailnya."
 
-#: ../src/user-list.vala:736
+#: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Jenis server tidak didukung."
 
-#: ../src/user-list.vala:764
+#: ../src/user-list.vala:767
 msgid "X2Go Session:"
 msgstr "Sesi X2Go:"
 
-#: ../src/user-list.vala:784
+#: ../src/user-list.vala:787
 msgid "Domain:"
 msgstr "Domain:"
 
-#: ../src/user-list.vala:846
+#: ../src/user-list.vala:849
 msgid "Account ID"
 msgstr "Akun ID"
 
 #. 'Log In' here is the button for logging in.
-#: ../src/user-list.vala:895
+#: ../src/user-list.vala:898
 msgid "Log In"
 msgstr "Masuk"
 
-#: ../src/user-list.vala:896
+#: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
 msgstr "Masuk sebagai %s"
 
-#: ../src/user-list.vala:900
+#: ../src/user-list.vala:903
 msgid "Retry"
 msgstr "Coba lagi"
 
-#: ../src/user-list.vala:901
+#: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
 msgstr "Coba sebagai %s"
 
-#: ../src/user-list.vala:945
+#: ../src/user-list.vala:948
 msgid "Login"
 msgstr "Masuk"
 
@@ -289,6 +277,15 @@ msgstr ""
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
 msgstr "Arctica Greeter"
+
+#~ msgid "Onscreen keyboard"
+#~ msgstr "Papan ketik pada layar"
+
+#~ msgid "High Contrast"
+#~ msgstr "Kontras Tinggi"
+
+#~ msgid "Screen Reader"
+#~ msgstr "Pembaca Layar"
 
 #~ msgid ""
 #~ "If you have an account on an RDP or Citrix server, Remote Login lets you "
