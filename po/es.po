@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-30 08:31+0200\n"
-"PO-Revision-Date: 2023-09-09 07:55+0000\n"
+"PO-Revision-Date: 2023-10-01 10:03+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/es/>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -102,16 +102,15 @@ msgstr "Reiniciar"
 
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
-#, fuzzy
 msgid "Executing selected action now."
-msgstr "Seleccionar la acción por defecto ahora."
+msgstr "Se está ejecutando la acción seleccionada."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Espera un segundo más antes de ejecutar la acción seleccionada …"
+msgstr[1] "Espera %u segundos antes de ejecutar la acción seleccionada …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
