@@ -133,7 +133,7 @@ public class ToggleBox : Gtk.Box
                                   "   border-color: %s\n;".printf(AGSettings.get_string (AGSettings.KEY_TOGGLEBOX_BUTTON_BORDERCOLOR_SELECTED))+
                                   "}\n" +
                                   "button.high_contrast {\n" +
-                                  "   background-color: %s;\n".printf ("rgba(70, 70, 70, 1.0)") +
+                                  "   background-color: %s;\n".printf ("rgba(80, 80, 80, 1.0)") +
                                   "   background-image: none;\n" +
                                   "   border-color: %s\n;".printf ("rgba(0, 0, 0, 1.0)") +
                                   "}\n" +
