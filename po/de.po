@@ -8,7 +8,11 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-30 08:31+0200\n"
+<<<<<<< HEAD
 "PO-Revision-Date: 2023-09-30 08:16+0000\n"
+=======
+"PO-Revision-Date: 2023-08-31 21:08+0000\n"
+>>>>>>> 0bc0e33 (po/: Translation update.)
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/de/>\n"
@@ -103,15 +107,26 @@ msgstr "Neustarten"
 
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
+<<<<<<< HEAD
 msgid "Executing selected action now."
 msgstr "Führe ausgewählte Aktion jetzt aus."
+=======
+#, fuzzy
+msgid "Executing selected action now."
+msgstr "Wähle Standardaktion jetzt."
+>>>>>>> 0bc0e33 (po/: Translation update.)
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
+<<<<<<< HEAD
 msgstr[0] "Warte noch eine Sekunde before die ausgewählte Aktion ausgeführt wird …"
 msgstr[1] "Warte %u Sekunden before die ausgewählte Aktion ausgeführt wird …"
+=======
+msgstr[0] ""
+msgstr[1] ""
+>>>>>>> 0bc0e33 (po/: Translation update.)
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
