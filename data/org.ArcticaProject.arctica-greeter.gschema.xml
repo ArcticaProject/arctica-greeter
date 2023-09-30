@@ -187,6 +187,10 @@
       <default>'auto'</default>
       <summary>Whether to enable HiDPI support</summary>
     </key>
+    <key name="font-scaling" type="d">
+      <default>1.0</default>
+      <summary>Scaling factor for fonts that can be used to adjust the greeter's font sizes.</summary>
+    </key>
     <key name="menubar-alpha" type="d">
       <default>0.5</default>
       <summary>Alpha value for menubar, multiplied with the theme-provided transparency value. Not used in high contrast mode.</summary>
