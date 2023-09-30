@@ -937,6 +937,9 @@ public class ArcticaGreeter : Object
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
 
+        /* Make nm-applet hide items the user does not have permissions to interact with */
+        Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
+
         bool do_show_version = false;
         bool do_test_mode = false;
         bool do_test_highcontrast = false;
@@ -960,6 +963,16 @@ public class ArcticaGreeter : Object
         c.add_main_entries (options, Config.GETTEXT_PACKAGE);
         c.add_group (Gtk.get_option_group (true));
 
+        /*
+         * IMPORTANT: environment variable setup must go above this comment
+         *
+         * GLib.Environment.set_variable() calls won't take effect (for
+         * whatever unknown reason...) if they get issued after the c.parse()
+         * method call on our OptionContext object (see a few lines below).
+         *
+         * To mitigate this (strange) behaviour, make sure that all env
+         * variable setups in main() are located above this comment.
+         */
         try
         {
             c.parse (ref args);
@@ -1191,9 +1204,6 @@ public class ArcticaGreeter : Object
                 }
 
             }
-
-            /* Make nm-applet hide items the user does not have permissions to interact with */
-            Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
 
             try
             {
