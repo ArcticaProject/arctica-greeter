@@ -26,3 +26,33 @@
 [CCode(cname = "GTK_IS_CONTAINER", cheader_filename="gtk/gtk.h", simple_generics = true, has_target = false)]
 static extern bool gtk_is_container<T> (T widget);
 #endif
+
+namespace AGUtils {
+    public void greeter_set_env (string key, string val)
+    {
+        GLib.Environment.set_variable (key, val, true);
+
+        /* And also set it in the DBus activation environment so that any
+         * indicator services pick it up. */
+        try
+        {
+            var proxy = new GLib.DBusProxy.for_bus_sync (GLib.BusType.SESSION,
+                                                         GLib.DBusProxyFlags.NONE, null,
+                                                         "org.freedesktop.DBus",
+                                                         "/org/freedesktop/DBus",
+                                                         "org.freedesktop.DBus",
+                                                         null);
+
+            var builder = new GLib.VariantBuilder (GLib.VariantType.ARRAY);
+            builder.add ("{ss}", key, val);
+
+            debug ("Updating DBus activation environment, updating '%s' to '%s'", key, val);
+            proxy.call_sync ("UpdateActivationEnvironment", new GLib.Variant ("(a{ss})", builder), GLib.DBusCallFlags.NONE, -1, null);
+        }
+        catch (Error e)
+        {
+            warning ("Could not set environment variable '%s' to '%s', error was: '%s'", key, val, e.message);
+            return;
+        }
+    }
+}
