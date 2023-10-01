@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-30 08:31+0200\n"
-"PO-Revision-Date: 2023-02-10 22:38+0000\n"
+"PO-Revision-Date: 2023-10-02 19:03+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
-"Language-Team: Occitan <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/oc/>\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/oc/>\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -104,14 +104,14 @@ msgstr "Tornar aviar"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Execucion de las accions seleccionadas."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Esperatz una segonda de mai abans d’executar l’accion seleccionada…"
+msgstr[1] "Esperatz %u segondas de mai abans d’executar l’accion seleccionada…"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -132,12 +132,12 @@ msgstr "Aviar en mòde tèst"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Executar en mòde pròva amb a11y tèma naut contraste activat"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
-msgstr ""
+msgstr "Executar en mòde pròva amb a11y amb polissa granda activada"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:972
