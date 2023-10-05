@@ -20,11 +20,11 @@ override_dh_autoreconf:
 
 override_dh_auto_configure:
 	set -x; if [ -x "$(GUEST_WRAPPER_BINARY_LIBEXEC)" ]; then \
-	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/libexec/lightdm/lightdm-guest-session; \
+	    dh_auto_configure -- --libexecdir=/usr/libexec GUEST_WRAPPER_BINARY=/usr/libexec/lightdm/lightdm-guest-session; \
 	elif [ -x "${GUEST_WRAPPER_BINARY_M_LIB}" ]; then \
-	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session; \
+	    dh_auto_configure -- --libexecdir=/usr/libexec GUEST_WRAPPER_BINARY=/usr/lib/$(DEB_HOST_MULTIARCH)/lightdm/lightdm-guest-session; \
 	elif [ -x "${GUEST_WRAPPER_BINARY_LIB}" ]; then \
-	    dh_auto_configure -- GUEST_WRAPPER_BINARY=/usr/lib/lightdm/lightdm-guest-session; \
+	    dh_auto_configure -- --libexecdir=/usr/libexec GUEST_WRAPPER_BINARY=/usr/lib/lightdm/lightdm-guest-session; \
 	else \
 	    echo "Error: GUEST_WRAPPER_BINARY (lightdm-guest-session executable from LightDM) not found!"; \
 	    exit 1; \
