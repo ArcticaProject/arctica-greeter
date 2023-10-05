@@ -24,6 +24,8 @@ class BackgroundLoader : Object
 {
     public string filename { get; private set; }
     public Cairo.Surface logo { get; set; }
+    public int logo_width;
+    public int logo_height;
 
     public int[] widths;
     public int[] heights;
@@ -204,8 +206,8 @@ class BackgroundLoader : Object
         if (logo != null)
         {
             bc.save ();
-            var x = (int) grid_x_offset + 1.5 * grid_size;
-            var y = (int) (image.height / grid_size - 2) * grid_size + grid_y_offset;
+            var x = (int) (grid_x_offset + 1.1 * grid_size);
+            var y = (int) (image.height - 1.1 * grid_size - logo_height + grid_y_offset);
             bc.translate (x, y);
             bc.set_source_surface (logo, 0, 0);
             bc.paint_with_alpha (AGSettings.get_double (AGSettings.KEY_LOGO_ALPHA));
@@ -803,6 +805,8 @@ public class Background : Gtk.Fixed
 
             b = new BackgroundLoader (target_surface, filename, widths, heights);
             b.logo = version_logo_surface;
+            b.logo_width = version_logo_width;
+            b.logo_height = version_logo_height;
             b.loaded.connect (() => { reload (); });
             b.load ();
             loaders.insert (filename, b);
