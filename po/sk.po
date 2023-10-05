@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-30 08:31+0200\n"
-"PO-Revision-Date: 2019-08-05 12:23+0000\n"
-"Last-Translator: Matúš Baňas <banas.mato@gmail.com>\n"
+"PO-Revision-Date: 2023-10-06 22:12+0000\n"
+"Last-Translator: Milan Šalka <salka.milan@googlemail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/sk/>\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -27,7 +27,7 @@ msgstr "Zadajte heslo pre %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Zadajte svoje používateľské meno"
 
 #: ../src/greeter-list.vala:834 ../src/user-list.vala:761
 msgid "Password:"
@@ -104,15 +104,15 @@ msgstr "Reštartovať"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Prevedenie vybranej akcie teraz."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Čakanie jednu sekundu pred vykonaním vybranej akcie …"
+msgstr[1] "Čakanie niekoľko sekúnd pred vykonaním vybranej akcie …"
+msgstr[2] "Čakanie %u sekúnd pred vykonaním vybranej akcie …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -133,12 +133,12 @@ msgstr "Spustiť v skúšobnom režime"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:963
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Spustiť v testovacom režime s a11y highcontrast tému povolený"
 
 #. Help string for command line --test-bigfont flag
 #: ../src/arctica-greeter.vala:966
 msgid "Run in test mode with a11y big font feature enabled"
-msgstr ""
+msgstr "Run v testovacom režime s a11y veľká funkcia písma povolený"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:972
@@ -231,7 +231,7 @@ msgstr "ID účtu"
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
 msgid "Log In"
-msgstr "Prihlásiť sa"
+msgstr "Prihlásiť"
 
 #: ../src/user-list.vala:899
 #, c-format
