@@ -74,23 +74,7 @@ public class MainWindow : Gtk.Window
             shadow_style = "background-image: url('%s');
                             background-repeat: repeat;".printf(shadow_path);
         }
-        /* Disable the shadow image, we will use CSS instead. */
-        /*
-        try
-        {
-            var style = new Gtk.CssProvider ();
-            style.load_from_data ("* {background-color: transparent;
-                                      %s
-                                     }".printf(shadow_style), -1);
-            var context = menubox.get_style_context ();
-            context.add_provider (style,
-                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        }
-        catch (Error e)
-        {
-            debug ("Internal error loading menubox style: %s", e.message);
-        }
-        */
+
         menubox.set_size_request (-1, MENUBAR_HEIGHT);
         menubox.show ();
         login_box.add (menubox);
