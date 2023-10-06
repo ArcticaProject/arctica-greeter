@@ -875,17 +875,36 @@ public class ArcticaGreeter : Object
 
     private static int check_hidpi ()
     {
+        int ret = 1;
+
         try {
             string output;
             Process.spawn_command_line_sync(Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-check-hidpi"), out output, null, null);
-            debug ("Auto-detected scaling factor in check_hidpi(): %d", int.parse(output));
-            return int.parse (output);
+            ret = int.parse (output);
+            debug ("Auto-detected scaling factor in check_hidpi(): %d", ret);
         }
         catch (Error e){
             warning ("Error while setting HiDPI support: %s", e.message);
         }
-        /* Fallback value for GDK scaling */
-        return 1;
+
+        /*
+         * Make sure that the value lies in the range of 0 < x <= 5.
+         *
+         * GDK only knows integer-based scaling factors and anything above 2
+         * is highly unusual. Anything above 5 is most likely an error (at the
+         * time of writing this code; we might want to respect this in the
+         * future).
+         * A scaling factor of 0 doesn't make sense, as is the case with
+         * negative values.
+         */
+        if ((1 > ret) || (5 < ret))
+        {
+            /* Fallback value for GDK scaling */
+            debug ("Scaling factor out of range, defaulting to 1");
+            ret = 1;
+        }
+
+        return ret;
     }
 
     public static int main (string[] args)
