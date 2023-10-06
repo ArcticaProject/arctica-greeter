@@ -288,33 +288,6 @@ public class MenuBar : Gtk.MenuBar
         nat = HEIGHT;
     }
 
-    private void greeter_set_env (string key, string val)
-    {
-        GLib.Environment.set_variable (key, val, true);
-
-        /* And also set it in the DBus activation environment so that any
-         * indicator services pick it up. */
-        try
-        {
-            var proxy = new GLib.DBusProxy.for_bus_sync (GLib.BusType.SESSION,
-                                                         GLib.DBusProxyFlags.NONE, null,
-                                                         "org.freedesktop.DBus",
-                                                         "/org/freedesktop/DBus",
-                                                         "org.freedesktop.DBus",
-                                                         null);
-
-            var builder = new GLib.VariantBuilder (GLib.VariantType.ARRAY);
-            builder.add ("{ss}", key, val);
-
-            proxy.call_sync ("UpdateActivationEnvironment", new GLib.Variant ("(a{ss})", builder), GLib.DBusCallFlags.NONE, -1, null);
-        }
-        catch (Error e)
-        {
-            warning ("Could not get set environment for indicators: %s", e.message);
-            return;
-        }
-    }
-
     private Indicator.Object? load_indicator_file (string indicator_name)
     {
         string dir = Config.INDICATOR_FILE_DIR;
@@ -386,20 +359,20 @@ public class MenuBar : Gtk.MenuBar
     private void setup_indicators ()
     {
         /* Set indicators to run with reduced functionality */
-        greeter_set_env ("INDICATOR_GREETER_MODE", "1");
+        AGUtils.greeter_set_env ("INDICATOR_GREETER_MODE", "1");
 
         /* Don't allow virtual file systems? */
-        greeter_set_env ("GIO_USE_VFS", "local");
-        greeter_set_env ("GVFS_DISABLE_FUSE", "1");
+        AGUtils.greeter_set_env ("GIO_USE_VFS", "local");
+        AGUtils.greeter_set_env ("GVFS_DISABLE_FUSE", "1");
 
         /* Hint to have mate-settings-daemon run in greeter mode */
-        greeter_set_env ("RUNNING_UNDER_GDM", "1");
+        AGUtils.greeter_set_env ("RUNNING_UNDER_GDM", "1");
 
         /* Let indicators know about our unique dbus name */
         try
         {
             var conn = Bus.get_sync (BusType.SESSION);
-            greeter_set_env ("ARCTICA_GREETER_DBUS_NAME", conn.get_unique_name ());
+            AGUtils.greeter_set_env ("ARCTICA_GREETER_DBUS_NAME", conn.get_unique_name ());
         }
         catch (IOError e)
         {
