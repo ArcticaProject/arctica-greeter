@@ -52,7 +52,6 @@ public class AGSettings : Object
     public const string KEY_ONSCREEN_KEYBOARD_THEME = "onscreen-keyboard-theme";
     public const string KEY_HIGH_CONTRAST_ONSCREEN_KEYBOARD_THEME = "high-contrast-onscreen-keyboard-theme";
     public const string KEY_HIGH_CONTRAST = "high-contrast";
-    public const string KEY_BIG_FONT = "big-font";
     public const string KEY_SCREEN_READER = "screen-reader";
     public const string KEY_PLAY_READY_SOUND = "play-ready-sound";
     public const string KEY_INDICATORS = "indicators";
@@ -202,23 +201,6 @@ public class AGSettings : Object
         }
     }
 
-    public bool big_font {
-        get {
-            return this.big_font_;
-        }
-
-        set {
-            this.big_font_ = value;
-
-            /* Also sync back to dconf, so that this state is persistent. */
-            set_boolean (AGSettings.KEY_BIG_FONT, value);
-
-            var greeter = new ArcticaGreeter ();
-            greeter.switch_font (value);
-        }
-    }
-
     private const string SCHEMA = "org.ArcticaProject.arctica-greeter";
     private bool high_contrast_ = AGSettings.get_boolean (AGSettings.KEY_HIGH_CONTRAST);
-    private bool big_font_ = AGSettings.get_boolean (AGSettings.KEY_BIG_FONT);
 }

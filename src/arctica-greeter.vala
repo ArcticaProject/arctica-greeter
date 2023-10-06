@@ -34,7 +34,6 @@ public class ArcticaGreeter : Object
     public Gtk.Window? pKeyboardWindow { get; set; default = null; }
     public bool test_mode { get; construct; default = false; }
     public bool test_highcontrast { get; construct; default = false; }
-    public bool test_bigfont { get; construct; default = false; }
     private string state_file;
     private KeyFile state;
     private DBusServer pServer;
@@ -127,12 +126,10 @@ public class ArcticaGreeter : Object
      * additionally avoid changing it in later calls of our constructor.
      */
     public ArcticaGreeter (bool test_mode_ = false,
-                           bool test_highcontrast_ = false,
-                           bool test_bigfont_ = false)
+                           bool test_highcontrast_ = false)
     {
         Object (test_mode: test_mode_,
-                test_highcontrast: test_highcontrast_,
-                test_bigfont: test_bigfont_
+                test_highcontrast: test_highcontrast_
         );
     }
 
@@ -429,10 +426,8 @@ public class ArcticaGreeter : Object
         var agsettings = new AGSettings ();
         if (!test_mode) {
             agsettings.high_contrast = !(!(agsettings.high_contrast));
-            agsettings.big_font = !(!(agsettings.big_font));
         } else {
             agsettings.high_contrast = test_highcontrast;
-            agsettings.big_font = test_bigfont;
         }
 
         /*
@@ -456,17 +451,6 @@ public class ArcticaGreeter : Object
             }
             */
             switch_contrast (agsettings_intimer.high_contrast);
-
-            return true;
-        });
-        Timeout.add_full (GLib.Priority.HIGH_IDLE, 302, () => {
-            var agsettings_intimer = new AGSettings ();
-            /*
-            if (0 == GLib.Random.int_range (0, 10)) {
-                debug ("Syncing up big font value via timer: %s", agsettings_intimer.big_font.to_string ());
-            }
-            */
-            switch_font (agsettings_intimer.big_font);
 
             return true;
         });
@@ -658,11 +642,6 @@ public class ArcticaGreeter : Object
         // var time_diff_msec = time_diff / 1000;
         // var time_diff_usec = time_diff % 1000000;
         // debug ("Time passed: %" + int64.FORMAT + " s, %" + int64.FORMAT + " ms, %" + int64.FORMAT + " us", time_diff_sec, time_diff_msec, time_diff_usec);
-    }
-
-    public void switch_font (bool big)
-    {
-        iterate_children_generic (main_window, switch_generic, "big_font", big);
     }
 
     private Gdk.FilterReturn focus_upon_map (Gdk.XEvent gxevent, Gdk.Event event)
@@ -961,7 +940,6 @@ public class ArcticaGreeter : Object
         bool do_show_version = false;
         bool do_test_mode = false;
         bool do_test_highcontrast = false;
-        bool do_test_bigfont = false;
 
         OptionEntry versionOption = { "version", 'v', 0, OptionArg.NONE, ref do_show_version,
                 /* Help string for command line --version flag */
@@ -972,17 +950,16 @@ public class ArcticaGreeter : Object
         OptionEntry highcontrastOption =  { "test-highcontrast", 0, 0, OptionArg.NONE, ref do_test_highcontrast,
                 /* Help string for command line --test-highcontrast flag */
                 N_("Run in test mode with a11y highcontrast theme enabled"), null };
-        OptionEntry bigfontOption =  { "test-bigfont", 0, 0, OptionArg.NONE, ref do_test_bigfont,
-                /* Help string for command line --test-bigfont flag */
-                N_("Run in test mode with a11y big font feature enabled"), null };
         OptionEntry nullOption = { null };
-        OptionEntry[] options = { versionOption, testOption, highcontrastOption, bigfontOption, nullOption };
+        OptionEntry[] options = { versionOption, testOption, highcontrastOption, nullOption };
 
         debug ("Loading command line options");
         var c = new OptionContext (/* Arguments and description for --help text */
                                    _("- Arctica Greeter"));
+
         c.add_main_entries (options, Config.GETTEXT_PACKAGE);
         c.add_group (Gtk.get_option_group (true));
+
         try
         {
             c.parse (ref args);
@@ -1019,9 +996,6 @@ public class ArcticaGreeter : Object
             debug ("Running in test mode");
             if (do_test_highcontrast) {
                 debug ("Switching on highcontrast theme for test mode");
-            }
-            if (do_test_bigfont) {
-                debug ("Switching on big font feature for test mode");
             }
         }
 
@@ -1144,7 +1118,7 @@ public class ArcticaGreeter : Object
             settings.set ("gtk-xft-rgba", value, null);
 
         debug ("Creating Arctica Greeter");
-        var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast, do_test_bigfont);
+        var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast);
         greeter.go();
 
         Pid nmapplet_pid = 0;

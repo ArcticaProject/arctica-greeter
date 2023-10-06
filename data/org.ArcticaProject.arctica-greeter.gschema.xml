@@ -154,10 +154,6 @@
       <default>false</default>
       <summary>Whether to use a high contrast theme</summary>
     </key>
-    <key name="big-font" type="b">
-      <default>false</default>
-      <summary>Whether to use big fonts throughout the application</summary>
-    </key>
     <key name="screen-reader" type="b">
       <default>false</default>
       <summary>Whether to enable the screen reader</summary>
