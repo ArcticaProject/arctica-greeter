@@ -56,7 +56,7 @@ public class ArcticaGreeter : Object
 
     construct
     {
-        Bus.own_name (BusType.SESSION, "org.ArcticaProject.ArcticaGreeter", BusNameOwnerFlags.NONE, onBusAcquired);
+        Bus.own_name (BusType.SESSION, "org.ayatana.greeter", BusNameOwnerFlags.NONE, onBusAcquired);
 
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
@@ -138,7 +138,7 @@ public class ArcticaGreeter : Object
         try
         {
             this.pServer = new DBusServer (pConnection, this);
-            pConnection.register_object ("/org/ArcticaProject/ArcticaGreeter", this.pServer);
+            pConnection.register_object ("/org/ayatana/greeter", this.pServer);
         }
         catch (IOError pError)
         {
@@ -1346,7 +1346,7 @@ private interface SettingsDaemonDBusInterface : Object
     public signal void plugin_deactivated (string name);
 }
 
-[DBus (name = "org.ArcticaProject.ArcticaGreeter")]
+[DBus (name = "org.ayatana.greeter")]
 public class DBusServer : Object
 {
     private DBusConnection pConnection;
@@ -1394,7 +1394,7 @@ public class DBusServer : Object
 
         try
         {
-            this.pConnection.emit_signal (null, "/org/ArcticaProject/ArcticaGreeter", "org.ArcticaProject.ArcticaGreeter", "UserChanged", pUser);
+            this.pConnection.emit_signal (null, "/org/ayatana/greeter", "org.ayatana.greeter", "UserChanged", pUser);
         }
         catch (Error pError)
         {
