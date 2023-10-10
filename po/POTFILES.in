@@ -27,3 +27,4 @@ src/user-prompt-box.vala
 arctica-greeter-guest-account-script.in
 arctica-greeter-guest-session-auto.sh
 data/arctica-greeter.desktop.in
+data/org.ArcticaProject.arctica-greeter.gschema.xml
