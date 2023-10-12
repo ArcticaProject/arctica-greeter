@@ -974,6 +974,14 @@ public class ArcticaGreeter : Object
         debug ("Setting GDK_SCALE to: %d (scaling all UI elements by this factor)", scaling_factor_hidpi);
         GLib.Environment.set_variable ("GDK_SCALE", "%d".printf (scaling_factor_hidpi), true);
 
+        /* Font scaling settings */
+        var scaling_factor_fonts = AGSettings.get_double (AGSettings.KEY_FONT_SCALING);
+        debug ("Scaling factor for fonts is: %f", scaling_factor_fonts);
+
+        /* Adjust GDK_SCALE / GDK_DPI_SCALE to our configured scaling factors. */
+        debug ("Setting GDK_DPI_SCALE to: %f (scaling fonts only by this factor)", scaling_factor_fonts);
+        GLib.Environment.set_variable ("GDK_DPI_SCALE", "%f".printf (scaling_factor_fonts), true);
+
         /* Make nm-applet hide items the user does not have permissions to interact with */
         Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
 

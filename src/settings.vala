@@ -73,6 +73,7 @@ public class AGSettings : Object
     public const string KEY_FLATBUTTON_BGCOLOR = "flatbutton-bgcolor";
     public const string KEY_FLATBUTTON_BORDERCOLOR = "flatbutton-bordercolor";
     public const string KEY_ENABLE_HIDPI = "enable-hidpi";
+    public const string KEY_FONT_SCALING = "font-scaling";
     public const string KEY_MENUBAR_ALPHA = "menubar-alpha";
     public const string KEY_HIDE_DEFAULT_XSESSION = "hide-default-xsession";
     public const string KEY_HIDE_X11_SESSIONS = "hide-x11-sessions";
