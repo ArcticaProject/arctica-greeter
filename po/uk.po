@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2023-10-12 19:53+0000\n"
+"PO-Revision-Date: 2023-10-12 20:36+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -279,7 +279,6 @@ msgid "Arctica Greeter"
 msgstr "Вітальне вікно Arctica"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
-#, fuzzy
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr "Файл для фону, шлях до картинки або колір (напр. #772953)."
@@ -298,16 +297,16 @@ msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
-"Колір шрифту (напр. #A0A0A0) для не активних/наведених та для не вибраних "
-"назв сеансів у списку сеансів."
+"Колір шрифту (напр. #A0A0A0) для назв сеансів у списку сеансів, які не "
+"активні, на них не наведено курсор миші та вони не вибрані."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
-"Колір шрифту (напр. #A0A0A0) для активних/наведених назв сеансів у списку "
-"сеансів."
+"Колір шрифту (напр. #A0A0A0) для назв сеансів у списку сеансів, які або "
+"активні, або на них наведено вказівник миші."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
@@ -321,16 +320,16 @@ msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
 msgstr ""
-"Колір фону (напр. #391C31) для не активних/наведених та для не вибраних назв "
-"сеансів у списку сеансів."
+"Колір фону (напр. #391C31) для імен сеансів у списку сеансів, які не "
+"активні, на них не наведено курсор миші та вони не вибрані."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
 msgstr ""
-"Колір фону (напр. #391C31) для активних/наведених назв сеансів у списку "
-"сеансів."
+"Колір фону (напр. #391C31) для імен сеансів у списку сеансів, які або "
+"активні, або на них наведено вказівник миші."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
@@ -343,16 +342,16 @@ msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
 msgstr ""
-"Колір рамки (напр. #391C31) для не активних/наведених та для не вибраних "
-"назв сеансів у списку сеансів."
+"Колір рамки (напр. #391C31) для назв сеансів у списку сеансів, які не "
+"активні, на них не наведено курсор миші та вони не вибрані."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
 msgstr ""
-"Колір рамки (напр. #391C31) для активних/наведених назв сеансів у списку "
-"сеансів."
+"Колір рамки (напр. #391C31) для імен сеансів у списку сеансів, які активні "
+"або на які наведено курсор миші."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
@@ -390,11 +389,10 @@ msgid "Whether to show the hostname in the menubar."
 msgstr "Показувати назву хоста в панелі меню."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
-#, fuzzy
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
-"Показувати позначки \"Ім'я користувача:\" та \"Пароль:\" в діалозі входу."
+"Показувати позначки \"Ім'я користувача:\" та \"Пароль:\" у діалозі входу."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
@@ -462,7 +460,7 @@ msgstr "Вмикати читача з екрана."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
-msgstr "Програвати звук, коли вітальний діалог буде готовий."
+msgstr "Програвати звук, коли діалогове вікно входу буде готове."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
@@ -488,22 +486,25 @@ msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Кількість секунд неактивності перед вимкненням екрана. Для вимкнення тайм-"
+"ауту 0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
-#, fuzzy
 msgid "Whether to enable HiDPI support"
-msgstr "Вмикати читача з екрана."
+msgstr "Вмикати підтримку високої роздільної здатності"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
-msgstr ""
+msgstr "Коефіцієнт масштабування шрифту для діалогового вікна входу."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Альфа-значення для панелі меню, помножене на значення прозорості теми. Не "
+"використовується в контрастному режимі."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
