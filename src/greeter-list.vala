@@ -903,7 +903,7 @@ public abstract class GreeterList : FadableBox
             {
                 /* Show an error if one wasn't provided */
                 if (will_clear)
-                    show_message (_("Invalid password, please try again"), true);
+                    show_message (_("Invalid username or password, please try again"), true);
 
                 selected_entry.reset_spinners ();
 
