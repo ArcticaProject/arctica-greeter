@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2023-10-12 19:53+0000\n"
+"PO-Revision-Date: 2023-10-16 04:19+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,9 +39,8 @@ msgid "Username:"
 msgstr "Имя пользователя:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Неправильный пароль, попробуйте ещё раз"
+msgstr "Неправильный пароль или имя пользователя, попробуйте ещё раз"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -280,7 +279,6 @@ msgid "Arctica Greeter"
 msgstr "Экран приветствия Arctica"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
-#, fuzzy
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr "Файл для фона, путь к картинке или цвет (напр. #772953)."
@@ -392,7 +390,6 @@ msgid "Whether to show the hostname in the menubar."
 msgstr "Показывать название хоста в панели меню."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
-#, fuzzy
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr "Показывать ярлыки \"Имя пользователя:\" и \"Пароль:\" в диалоге входа."
@@ -402,7 +399,6 @@ msgid "Logo file to use."
 msgstr "Файл для логотипа."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
-#, fuzzy
 msgid "Alpha value for blending the logo onto the background."
 msgstr "Альфа-значение для отрисовки лого на подкладке."
 
@@ -489,80 +485,91 @@ msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Количество секунд простоя перед выключением экрана. Для отключения таймаута "
+"0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
-#, fuzzy
 msgid "Whether to enable HiDPI support"
-msgstr "Активировать чтение с экрана."
+msgstr "Активировать поддержку высокого разрешения"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
-msgstr ""
+msgstr "Коэффициент масштабирования шрифта в приветственном диалоге."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Альфа-значение для панели меню, умноженное на значение прозрачности темы. Не "
+"используется в контрастном режиме."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
-msgstr ""
+msgstr "Значение FQDN по умолчанию для хоста со службой удалённого доступа."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:45
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
-msgstr ""
+msgstr "Включать Numlock. Для этого нужно установить numlockx."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "Экран, на котором показывать окно входа."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
+"Название раскладки экранной клавиатуры (см. /usr/share/onboard/layouts/*."
+"onboard с возможными названиями раскладок)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
+"Название темы экранной клавиатуры (см. /usr/share/onboard/themes/*.theme для "
+"возможных названий тем)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
+"Название темы экранной клавиатуры для контрастного режима (см. /usr/share/"
+"onboard/themes/*.theme с возможными названиями тем)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
-msgstr ""
+msgstr "Скрыть тип сеанса X11 \"lightdm-xsession\" по умолчанию."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
-#, fuzzy
 msgid "Whether to hide X11 sessions."
-msgstr "Сглаживать шрифты Xft."
+msgstr "Скрывать сеансы X11."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
-#, fuzzy
 msgid "Whether to hide Wayland sessions."
-msgstr "Сглаживать шрифты Xft."
+msgstr "Скрывать сеансы Wayland."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"Упорядоченный список приоритетных сеансов рабочего стола (для определения "
+"типа сеанса по умолчанию)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Время в секундах перед принудительным выбором действия в диалоге выключения. "
+"Для отключения таймера 0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -570,6 +577,9 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"Неотсортированный список отобранных сеансов рабочего стола (если заполнено, "
+"в диалоге приветствия будут только указанные типы сеансов). В приоритете над "
+"списком исключённых сеансов."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -577,6 +587,9 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"Неотсортированный список исключённых сеансов рабочего стола (если заполнено, "
+"в диалоге приветствия будут только не указанные типы сеансов). Используется "
+"только при пустом списке отобранных сеансов."
 
 #~ msgid "Invalid password, please try again"
 #~ msgstr "Неправильный пароль, попробуйте ещё раз"
