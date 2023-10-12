@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2023-10-12 20:36+0000\n"
+"PO-Revision-Date: 2023-10-16 04:19+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "arctica-framework/greeter/uk/>\n"
@@ -245,7 +245,7 @@ msgstr "Повторити як %s"
 
 #: ../src/user-list.vala:948
 msgid "Login"
-msgstr "Увійти"
+msgstr "Вхід"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
@@ -514,64 +514,63 @@ msgstr "Типове значення FQDN для хосту зі службою
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
-msgstr ""
+msgstr "Активувати Numlock. Для цього потрібно встановити numlockx."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
 msgstr "Екран, де показувати вікно входу."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
-#, fuzzy
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
-"Назва теми екранної клавіатури для контрастного режиму (див. /usr/share/"
-"onboard/themes/*.theme для можливих назв тем)."
+"Назва розкладки екранної клавіатури (див. /usr/share/onboard/layouts/*."
+"onboard з можливими назвами розкладок)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
-#, fuzzy
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
-"Назва теми екранної клавіатури для контрастного режиму (див. /usr/share/"
-"onboard/themes/*.theme для можливих назв тем)."
+"Назва теми екранної клавіатури (див. /usr/share/onboard/themes/*.theme для "
+"можливих назв тем)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
-#, fuzzy
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
 "Назва теми екранної клавіатури для контрастного режиму (див. /usr/share/"
-"onboard/themes/*.theme для можливих назв тем)."
+"onboard/themes/*.theme з можливими назвами тем)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
-msgstr ""
+msgstr "Приховувати стандартний тип \"lightdm-xsession\" сеансу X11."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
-#, fuzzy
 msgid "Whether to hide X11 sessions."
-msgstr "Згладжувати шрифти Xft."
+msgstr "Приховувати сеанси X11."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
-#, fuzzy
 msgid "Whether to hide Wayland sessions."
-msgstr "Згладжувати шрифти Xft."
+msgstr "Приховувати сеанси Wayland."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"Впорядкований список бажаних сеансів робочого столу (для визначення "
+"стандартного типу сеансу)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Час у секундах перед примусовим вибором дії у діалозі вимкнення. Для "
+"вимкнення таймера 0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -579,6 +578,9 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"Невпорядкований список відібраних сеансів робочого столу (якщо заповнений, у "
+"вітальному діалозі будуть лише вказані типи сеансів). Має пріоритет над "
+"списком виключених сеансів."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -586,6 +588,9 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"Невпорядкований список виключених сеансів робочого столу (якщо не порожній, "
+"у вітальному діалозі будуть лише не вказані тут типи сеансів). "
+"Використовується тільки при порожньому списку відібраних типів."
 
 #~ msgid "Invalid password, please try again"
 #~ msgstr "Неправильний пароль, повторіть спробу"
