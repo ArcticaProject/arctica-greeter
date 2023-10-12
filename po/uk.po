@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 21:26+0200\n"
-"PO-Revision-Date: 2023-09-04 20:55+0000\n"
+"PO-Revision-Date: 2023-10-12 19:53+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -39,9 +39,8 @@ msgid "Username:"
 msgstr "Ім'я користувача:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Неправильний пароль, повторіть спробу"
+msgstr "Неправильний пароль або ім'я користувача, повторіть спробу"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -283,14 +282,15 @@ msgstr "Вітальне вікно Arctica"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"Файл фонового зображення, шлях до файлу зображення чи колір (напр. #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
-msgstr ""
+msgstr "Колір фону (напр. #772953) встановлюється перед появою шпалер."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "Колір фону (напр. #000000 чи #FFFFFF) для контрастного режиму."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
@@ -467,11 +467,11 @@ msgid ""
 "never timeout."
 msgstr ""
 "Кількість секунд неактивності перед вимкненням екрана. Для вимкнення тайм-"
-"ауту значення 0."
+"ауту 0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr "Чи вмикати підтримку високої роздільної здатності"
+msgstr "Вмикати підтримку високої роздільної здатності"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
@@ -483,8 +483,8 @@ msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
-"Альфа значення для панелі меню, помножене на значення прозорості. Не "
-"використовується в режимі контрасту."
+"Альфа-значення для панелі меню, помножене на значення прозорості теми. Не "
+"використовується в контрастному режимі."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
@@ -769,8 +769,8 @@ msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)"
 msgstr ""
-"Список груп, до яких повинні належати користувачі, щоб їх було видно "
-"(порожній список покаже усіх користувачів)"
+"Список груп, до яких повинні належати користувачі для відтворення (порожній "
+"список виведе усіх користувачів)"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid "Default FQDN for host offering Remote Logon Service"
