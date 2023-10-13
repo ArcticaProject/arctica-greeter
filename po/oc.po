@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2023-10-02 19:03+0000\n"
+"PO-Revision-Date: 2023-10-16 04:19+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
-"Language-Team: Occitan <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/oc/>\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/oc/>\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,9 +38,8 @@ msgid "Username:"
 msgstr "Nom d'utilizaire :"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Senhal invalid, ensajatz tornarmai"
+msgstr "Nom d’utilizaire o senhal invalid, ensajatz tornarmai"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -285,10 +284,12 @@ msgstr ""
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Color de fons (ex : #772953), definida abans que lo papièr pintrat siá "
+"visible."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "Color de fons (ex : #000000 o #FFFFFF) pel mòde fòrt contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
@@ -357,19 +358,19 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "Determina coma l’imatge de fons es afichat."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "Indica se cal dessenhar lo fons de l’utilizaire."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "Indica se cal dessenhar una grasilha de revestiment."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "Indica se cal mostrar lo nom d’òste a la barra de menú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
@@ -378,7 +379,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "Fichièr de logotipe d’utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
@@ -386,19 +387,19 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "Tèma GTK+ d’utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "Tèma GTK+ d’utilizar en mòde fòrt contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "Tèma d’icònas d’utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "Tèma d’icònas d’utilizar en mòde fòrt contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
@@ -410,7 +411,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "Polissa d’utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
