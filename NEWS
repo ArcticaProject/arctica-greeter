@@ -1,3 +1,69 @@
+Overview of changes in arctica-greeter 0.99.4.0
+
+  - OSK: Add OSK theme gsetting to individually configure the OSK theme
+    used via ArcticaGreeter's settings.
+  - Use 'Compact' onboard layout for providing special keys such as Umlauts
+    etc.
+  - session list: Treat 'gnome-xorg' as GNOME and 'plasma5' as KDE.
+  - session badges: Add badge for (open)SUSE's 'SLE Classic' session.
+  - Add support for hiding X11 and/or Wayland sessions.
+  - main-window: Smooth transition to greeter screen.
+  - Add option to span background across multiple monitors.
+  - login prompt box: Enable line wrapping for (error) messages.
+  - login prompt box: Set background color for error messages to pure white
+    and font color to red for error messages.
+  - src/arctica-greeter.vala: Add D-Bus server with methods needed by
+    the keyboard indicator.
+  - src/menubar.vala: Fix host name position.
+  - settings: Add configuration option for logo alpha.
+  - background: Use logo alpha dconf setting.
+  - shutdown dialog: Implement timer function triggering shutdown if nothing
+    gets selected.
+  - lightdm-arctica-greeter-session: Switch from dbus-launch to
+    dbus-run-session.
+  - Drop indicator startup via systemctl and spawn_async them directly.
+  - Reenable lightdm-arctica-greeter-session greeter-wrapper again, fixes
+    the greeter's multi-seat support.
+  - building: Implement proper GTK+ 3/GTK 4 switching support.
+  - Introduce gsetting (array of strings): preferred-sessions.
+  - Rework case-insensitive session sorting. Do the sorting on a deep copy of
+    the session list from LightDM. Fixes session types disappearing when
+    opening the session type list a second time.
+  - Introduce gsettings (list): includeonly-sessions, excluded-sessions.
+  - Introduce gsetting (bool): hide-default-xsession.
+  - Start using new a11y indicator from Ayatana Indicators.
+  - a11y: Make Orca, high contrast and OnBoard toggable via D-Bus.
+  - Drop all internal a11y indicator related code.
+  - a11y: Disable background image when in high-contrast mode.
+  - a11y: Disable drawing the grid when in high-contrast mode.
+  - a11y: Switch from HighContrastInverse to HighContrast as default GTK+
+    theme for high contrast mode.
+  - settings: Introduce 'high-contrast-icon-theme-name'
+    gsetting and toggle icon theme if a11y indicator's high contrast
+    switch gets toggled.
+  - a11y Check for high-contrast mode when initializing gtk-theme-name
+    and gtk-icon-theme-name, startup in high contrast mode based on
+    previous settings.
+  - a11y / OSK: Restart OSK on theme toggling (normal/high-contrast)
+    and adjust the OSK theme accordingly.
+  - Initialize screen-reader and OSK on greeter startup as configured in
+    gsettings.
+  - Initialise OnBoard and Orca after the greeter is presented.
+  - a11y: In high-contrast mode, brighten up the non-selected buttons. Provide
+    as much contrast between white, gray and black as possible.
+  - logo: Better positioning of logo, make the positioning independent of logo
+    height (i.e., adjust the position to the logo height).
+  - settings: Introduce configurable (on/off) labels for 'Username:' and
+    'Password:'.
+  - Drop big-font setting. Font scaling will be handled differently and
+    more statically.
+  - Add error handling to check_hidpi().
+  - settings: Add font scaling via GDK_DPI_SCALE. This is not adjustable at
+    runtime (for now).
+  - login prompt box: Leave it unclear in message whether username
+    or password was invalid.
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.3.0
 
     - Integrate with Lomiri Operating Environment and recent Lomiri-specific

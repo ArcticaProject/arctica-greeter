@@ -1,6 +1,525 @@
+2023-10-13 Mike Gabriel
+
+        * release 0.99.4.0 (HEAD -> master, tag: 0.99.4.0)
+
+2023-10-12 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (5de520b)
+
+2023-10-12 Mike Gabriel
+
+        * Translated using Weblate (German) (c56d2f3)
+        * po/: Update translation files once more. (9899ec2)
+        * po/: Manually fix ru.po and uk.po. (895ea23)
+
+2023-10-12 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (01c65b9)
+        * Translated using Weblate (Russian) (9c206b7)
+
+2023-10-12 Mike Gabriel
+
+        * Translated using Weblate (German) (3c78941)
+
+2023-10-12 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (355998e)
+        * Translated using Weblate (Russian) (c52b6b2)
+
+2023-10-12 Mike Gabriel
+
+        * po/: Update translation files. (b908fa9)
+        * src/greeter-list.vala: Leave it unclear in message whether username
+          or password was invalid. (8c87ad2)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Rework summary
+          strings, esp. let them end with a full-stop. (e7c25dc)
+
+2023-10-12 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/add-font-scaling-support' (97001bc)
+
+2023-10-11 Mike Gabriel
+
+        * po/: Update translation files. (df05936)
+
+2023-09-30 Mike Gabriel
+
+        * settings: Add font scaling via GDK_DPI_SCALE. This is not
+          adjustable at runtime (for now). (d60f177)
+
+2023-10-10 Mike Gabriel
+
+        * Merge branch 'Ionic-feature/hidpi-error-handling' (008705c)
+
+2023-10-06 Mihai Moldovan
+
+        * src/arctica-greeter.vala: add error handling to check_hidpi ().
+          (f3a3bc4)
+
+2023-10-10 Mike Gabriel
+
+        * Merge branch 'tari01-pr/indicator-dbus-path' (9e1b5ad)
+
+2023-10-09 Robert Tari
+
+        * src/arctica-greeter.vala: Change D-Bus name and path (04b6109)
+
+2023-10-05 Milan Šalka
+
+        * Translated using Weblate (Slovak) (a395c5e)
+
+2023-10-06 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/logo-position' (1c9f536)
+        * Merge branch 'sunweaver-mr/earlier-hidpi-setup' (23a2bd2)
+
+2023-09-30 Mike Gabriel
+
+        * src/arctica-greeter.vala: Move HiDPI setup above OptionContext
+          parsing. (27993e4)
+
+2023-10-06 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/earlier-env-var-setup' (57838b0)
+
+2023-09-30 Mike Gabriel
+
+        * Move NM_APPLET_HIDE_POLICY_ITEMS env var setting above
+          OptionContext parsing. (9f1c482)
+
+2023-10-06 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/drop-big-font-code' (fc424c8)
+
+2023-09-30 Mike Gabriel
+
+        * Drop big-font setting. Font scaling will be handled differently and
+          more statically. (975dafd)
+
+2023-10-06 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/greeter-set-env' (adfa1f3)
+
+2023-09-30 Mike Gabriel
+
+        * Move greeter_set_env to AGUtils. (b96c755)
+
+2023-10-06 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/show-login-labels' (cab9f6a)
+
+2023-09-25 Mike Gabriel
+
+        * Show labels for 'Username:' and 'Password:' if configured via
+          gsettings. (622780a)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/62
+
+2023-10-05 Mike Gabriel
+
+        * src/background.vala: better positioning of logo, make the
+          positioning independent of logo height (i.e., adjust the
+          position to the logo height). (7bbd070)
+
+2023-10-05 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/libexecdir-debian' (df7825b)
+
+2023-09-30 Mike Gabriel
+
+        * debian/: Install all helper scripts to LIBEXECDIR. (a94b229)
+
+2023-10-05 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/drop-commented-out-code' (55cfcc8)
+
+2023-09-26 Mike Gabriel
+
+        * src/main-window.vala: Drop obsolete / commented out code. (199b640)
+
+2023-10-05 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/button-grey-tone-in-toggle-box'
+          (2d3628e)
+
+2023-09-30 Mike Gabriel
+
+        * src/toggle-box.vala: In high-contrast mode, brighten up the
+          non-selected buttons. Provide as much contrast between
+          white, gray and black as possible. (28c7db3)
+
+2023-10-03 Mike Gabriel
+
+        * Merge branch 'tari01-pr/move-orca-onboard-init' (b98ac08)
+
+2023-10-03 Robert Tari
+
+        * src/arctica-greeter.vala: Initialise OnBoard and Orca after the
+          greeter is presented (a914e22)
+
+2023-10-03 Mike Gabriel
+
+        * Merge branch 'sunweaver-mr/initialize-sr-and-osk' (1328cb1)
+
+2023-09-26 Mike Gabriel
+
+        * src/arctica-greeter.vala: Initialize screen-reader and OSK as
+          configured in gsettings. (2f200b0)
+
+2023-10-01 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (0a64b48)
+
+2023-10-03 Mike Gabriel
+
+        * Merge branch 'sunweaver-mr/osk-theme-toggling' (53795ed)
+
+2023-09-21 Mike Gabriel
+
+        * a11y / OSK: Restart OSK on theme toggling (normal/high-contrast)
+          and adjust the OSK theme accordingly. (8943989)
+
+2023-09-30 gallegonovato
+
+        * Translated using Weblate (Spanish) (70c3a0f)
+
+2023-09-30 Mike Gabriel
+
+        * Translated using Weblate (German) (d3bf7c9)
+        * po/: Translation update. (e9ee7fd)
+
+2023-09-28 Tomáš Marný
+
+        * Translated using Weblate (Czech) (df6700a)
+
+2023-09-26 Tomáš Marný
+
+        * Translated using Weblate (Czech) (aaf538e)
+
+2023-09-26 Filip Hron
+
+        * Translated using Weblate (Czech) (8cbafec)
+
+2023-09-26 Tomáš Marný
+
+        * Translated using Weblate (Czech) (e7c65c8)
+
+2023-09-23 Ryo Nakano
+
+        * Translated using Weblate (Japanese) (d26d014)
+
+2023-09-19 Mike Gabriel
+
+        * Merge branch 'sunweaver-mr/highcontrast-icon-theme-toggling'
+          (03092a0)
+
+2023-09-18 Mike Gabriel
+
+        * src/settings.vala: refactor (icon) theme setting in a cleaner way.
+          (273045d)
+        * src/arctica-greeter.vala: Check for high-contrast mode when
+          initializing gtk-theme-name and gtk-icon-theme-name.
+          (0f287c9)
+
+2023-09-19 Mihai Moldovan
+
+        * src/settings.vala: remove default_theme_name_ private variable.
+          (f2f92d4)
+
+2023-09-17 Mike Gabriel
+
+        * src/settings.vala: Introduce 'high-contrast-icon-theme-name'
+          gsetting and toggle icon theme if a11y indicator's high
+          contrast switch gets toggled. (c57a53e)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Switch from
+          HighContrastInverse to HighContrast as default GTK+ theme.
+          (b974016)
+
+2023-09-18 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/highcontrast-background-color' (264b8a7)
+
+2023-09-18 Mike Gabriel
+
+        * src/background.vala: Produce debug output when current_background
+          gets changed. (d99c415)
+        * src/background.vala: Disable drawing the grid when in high-contrast
+          mode. (d49e351)
+        * a11y: Disable background image when in high-contrast mode.
+          (72e03f9)
+        * src/user-list.vala: Add debug output on high-contrast toggle switch
+          background change requests. (7cbf0b1)
+
+2023-09-16 Mike Gabriel
+
+        * Merge branch 'tari01-pr/use-ayatana-a11y' (233d577)
+
+2023-07-03 Robert Tari
+
+        * Drop all internal a11y indicator related code (5509d9c)
+        * src/arctica-greeter.vala: Toggle Orca, high contrast and OnBoard
+          via D-Bus (2c57167)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Use Ayatana
+          a11y indicator (ee69fd5)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/hide-default-xsessions' (8f5cb2c)
+
+2023-09-15 Mike Gabriel
+
+        * src/arctica-greeter.vala: In validate_session() make it easier for
+          the human eye to identified code-blocks. (6921a38)
+        * src/arctica-greeter.vala: Use '&&' operators instead of '&' in
+          if-clauses. (f917d8c)
+        * Introduce gsetting (bool): hide-default-xsession. (e3e1452)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/hide-enforce-only-sessions' (a10a482)
+
+2023-09-15 Mike Gabriel
+
+        * Introduce gsettings (list): includeonly-sessions,
+          excluded-sessions. (8dfc61b)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/session-chooser-fix-sorting' (6c027e7)
+
+2023-09-15 Mike Gabriel
+
+        * src/session-list.vala: Rework case-insensitive session sorting. Do
+          the sorting on a deep copy of the session list from
+          LightDM. (c284698)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/fix-font-size-without-unit' (9faeec2)
+
+2023-09-15 Mike Gabriel
+
+        * src/toggle-box.vala: Fix runtime Gtk.Warning about missing size
+          unit. Using size unit 'pt' now (and reducing font size by
+          3). (e7f1111)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/preferred-sessions-gsettings' (cf4253c)
+
+2023-09-15 Mike Gabriel
+
+        * Introduce gsetting (array of strings): preferred-sessions.
+          (2c4ff94)
+
+2023-09-15 Mihai Moldovan
+
+        * Merge branch 'sunweaver-mr/default-to-gtk-drop-auto-detection'
+          (b542dbe)
+
+2023-09-15 Mike Gabriel
+
+        * configure.ac: Drop auto-recognition of GTK library, default to
+          GTK-3. (277c25e)
+        * Merge branch 'Ionic-feature/gtk34-chooser' (5a0a920)
+
+2023-09-12 Mihai Moldovan
+
+        * {src,tests}/Makefile.am: implement proper GTK+ 3/GTK 4 switching
+          support. (df8e0f9)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/56
+
+        * configure.ac: add --disable-gtk4 flag. (60a55eb)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/56
+
+2023-09-11 Mike Gabriel
+
+        * Merge branch 'sunweaver-pr/fix-multiseat-support-with-systemd'
+          (b54bc72)
+        * src/arctica-greeter.vala: Add FIXME for new/direct indicator
+          startup method. (c3d8a7d)
+
+2023-09-01 Mike Gabriel
+
+        * data/50-arctica-greeter.conf.in: Reenable
+          lightdm-arctica-greeter-session greeter-wrapper again.
+          (2561414)
+        * src/arctica-greeter.vala: Drop indicator startup via systemctl and
+          spawn_async them directly. (0c431ca)
+        * debian/control: Drop dbus-x11 from B-D. (0fd4f87)
+        * lightdm-arctica-greeter-session: Switch from dbus-launch to
+          dbus-run-session. (dfbe9cb)
+
+2023-09-11 Mike Gabriel
+
+        * Merge branch 'Ionic-bugfix/shutdown-dialog-resize' (b35978f)
+
+2023-09-04 Mihai Moldovan
+
+        * src/shutdown-dialog.vala: keep dialog size fixed. (d29ba9c)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/58
+
+2023-09-08 gallegonovato
+
+        * Translated using Weblate (Spanish) (35c88c1)
+
+2023-09-07 Mihai Moldovan
+
+        * Merge branch 'sunweaver/rephrase-shutdown-timeout-message'
+          (4af2208)
+
+2023-09-01 Mike Gabriel
+
+        * src/shutdown-dialog.vala: Rephrase shutdown dialog's new timeout
+          message(s) slightly. (6bfe258)
+
+2023-09-06 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (65b9431)
+
+2023-09-03 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (1678fc1)
+        * Translated using Weblate (Russian) (8e0de0e)
+
+2023-09-02 gallegonovato
+
+        * Translated using Weblate (Spanish) (0764365)
+
+2023-08-31 Mike Gabriel
+
+        * Translated using Weblate (German) (57fc828)
+        * po/: Update translation files. (ef896f8)
+        * Merge branch 'Ionic-feature/shutdown-dialog-timeout' (6df8607)
+
+2023-08-31 Mihai Moldovan
+
+        * src/shutdown-dialog.vala: implement timer function triggering
+          focused button. (91d8d20)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/39
+
+        * src/shutdown-dialog.vala: remove focus_{next,prev}. (9b8185c)
+        * settings: add shutdown-dialog-timeout integer option. (2c782ad)
+
+2023-08-30 Mike Gabriel
+
+        * Merge branch 'Ionic-bugfix/tiny-window-on-startup' (d5463d3)
+
+2023-08-30 Mihai Moldovan
+
+        * src/arctica-greeter.vala: fix tiny main window on startup.
+          (9a8c29d)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/47
+
+2023-08-28 Mike Gabriel
+
+        * Merge branch 'Ionic-feature/configurable-logo-alpha' (e4e7bde)
+
+2023-08-28 Mihai Moldovan
+
+        * background: use logo alpha dconf setting. (5893632)
+          Fixes:
+          https://github.com/ArcticaProject/arctica-greeter/issues/21
+
+        * settings: add configuration option for logo alpha. (240d478)
+
+2023-08-07 Mike Gabriel
+
+        * Merge branch 'tari01-pr/no-user-rename' (50d3378)
+
+2023-07-02 Robert Tari
+
+        * src/arctica-greeter.vala: Do not rename users in D-Bus methods
+          (d4e7229)
+
+2023-05-09 Mike Gabriel
+
+        * Merge branch 'tari01-pr/user-change-fix' (f775bdc)
+
+2023-05-09 Robert Tari
+
+        * src/arctica-greeter.vala: Modify user change signalling (63e6243)
+
+2023-05-09 Mike Gabriel
+
+        * Merge branch 'tari01-pr/gdk-x11-display-cast' (c4e49bf)
+
+2023-05-08 Robert Tari
+
+        * src/idle-monitor.vala: Fix Gdk.Display -> Gdk.X11.Display casting
+          (c3820b9)
+        * src/main-window: Rewrite some deprecated Gtk.Alignments (886d9b7)
+        * src/menubar.vala: Fix host name position (9b4d664)
+
+2023-05-07 Mike Gabriel
+
+        * Merge branch 'tari01-pr/dbus-server' (7004a8b)
+
+2023-05-06 Robert Tari
+
+        * src/arctica-greeter.vala: Add D-Bus server with methods needed by
+          the keyboard indicator (bfb99d8)
+        * Add missing default to switch (36ac6b1)
+        * Fix some deprecations (a919238)
+        * Comment out unused code (a2240b3)
+
+2023-05-05 Robert Tari
+
+        * Fix casting issues (0718f26)
+        * Add missing error handlers (c9b2de2)
+        * Fix error handlers for D-Bus methods (1c150a7)
+
+2023-05-07 Mike Gabriel
+
+        * Merge branch 'Ionic-bugfix/pam-messages-and-misc' (3c44cdf)
+
+2023-03-22 Mihai Moldovan
+
+        * src/arctica-greeter.vala: fix "this this" typo in comment.
+          (bb6534f)
+        * tests/arctica-greeter.vala: remove left-over singleton class
+          member. (1acf31c)
+        * src/prompt-box.vala: darken red error message text color. (5cc2e00)
+        * src/prompt-box.vala: set background color for error messages to
+          pure white. (20836a6)
+        * src/prompt-box.vala: enable line wrapping for (error) messages.
+          (036a3b7)
+        * configure.ac: pass INDICATORDIR down to automake. (8cda2dd)
+
+2023-05-03 Geoff Paul
+
+        * Add option to span background across multiple monitors (cad5922)
+
+2023-05-03 Mike Gabriel
+
+        * main-window: Smooth transition to greeter screen. (3a5ca24)
+
+2023-04-03 Mike Gabriel
+
+        * Add support for hiding X11 and/or Wayland sessions. (2614224)
+        * data/badges/: Add badge for (open)SUSE's 'SLE Classic' session.
+          (c9a2d90)
+        * src/session-list.vala: Treat 'gnome-xorg' as GNOME and 'plasma5'
+          has KDE, as well. (7bb7689)
+
+2023-03-02 Mike Gabriel
+
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Use 'Compact'
+          onboard layout for providing special keys such as Umlauts
+          etc. (5cd780e)
+        * OSK: Add OSK theme gsetting to individually configure the OSK theme
+          used via ArcticaGreeter's settings. (c681797)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Improve
+          description of onscreen-keyboard-layout. (f2eeb8a)
+
 2023-03-01 Mike Gabriel
 
-        * release 0.99.3.0 (HEAD -> master, tag: 0.99.3.0)
+        * release 0.99.3.0 (1dde4fc) (tag: 0.99.3.0)
         * debian/control: Drop from D (arctica-greeter): marco. (1858744)
 
 2022-02-28 Bastian Kanbach
