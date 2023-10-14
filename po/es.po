@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2023-10-01 10:03+0000\n"
+"PO-Revision-Date: 2023-10-16 04:19+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/es/>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,9 +38,8 @@ msgid "Username:"
 msgstr "Nombre de usuario:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Contraseña no válida; inténtelo de nuevo"
+msgstr "Nombre de usuario o contraseña no válidos, inténtelo de nuevo"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -280,144 +279,174 @@ msgstr "Recibidor de Arctica"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"Archivo de imagen de fondo a utilizar, ya sea una ruta de una imagen o un "
+"color (por ejemplo, #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Color de fondo (por ejemplo, #772953), establecido antes de ver el fondo de "
+"pantalla."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
 msgstr ""
+"Color de fondo (por ejemplo, #000000 o #FFFFFF) para el modo de alto "
+"contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
+"Color en primer plano de la fuente (por ejemplo, #A0A0A0) para los nombres "
+"de la sesión no activos/no seleccionados en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
+"Color en primer plano de la fuente (por ejemplo, #A0A0A0) para el nombre de "
+"la sesión activa/sobreescrita en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the selected session name in the "
 "session list."
 msgstr ""
+"Color en primer plano de la fuente (por ejemplo, #A0A0A0) para el nombre de "
+"la sesión seleccionada en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:7
 msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
 msgstr ""
+"Color de fondo (por ejemplo, #391C31) para los nombres de las sesiones no "
+"activas/no seleccionadas en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
 msgstr ""
+"Color de fondo (por ejemplo, #391C31) para el nombre de la sesión activa/"
+"sobreescrita en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
 "Background color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Color de fondo (por ejemplo, #391C31) para el nombre de la sesión "
+"seleccionada en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:10
 msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
 msgstr ""
+"Color del borde (por ejemplo, #391C31) para los nombres de las sesiones no "
+"activas/no seleccionadas en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
 msgstr ""
+"Color del borde (por ejemplo, #391C31) para el nombre de la sesión activa/"
+"superpuesta en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
 "Border color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Color del borde (por ejemplo, #391C31) para el nombre de la sesión "
+"seleccionada en la lista de sesiones."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:13
 msgid ""
 "Background color (e.g. #391C31) of flat buttons (e.g. the session chooser "
 "icon)."
 msgstr ""
+"Color de fondo (por ejemplo, #391C31) de los botones planos (por ejemplo, el "
+"icono del selector de sesiones)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:14
 msgid ""
 "Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)."
 msgstr ""
+"Color del borde (por ejemplo, #391C31) de los botones planos (por ejemplo, "
+"el icono del selector de sesiones)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "Determina cómo se muestra la imagen de fondo."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "Si se deben mostrar los fondos del usuario."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "Ya sea para dibujar una cuadrícula superpuesta."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "Si mostrar el nombre del host en la barra del menú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
+"Si deseas mostrar las etiquetas \"Nombre de usuario:\" y \"Contraseña:\" "
+"(etc.) en el cuadro de inicio de la sesión."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "Fichero del logotipo que debe utilizarse."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
-msgstr ""
+msgstr "Valor para alfa para mezclar el logotipo con el fondo."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "Tema GTK+ para usar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "Tema GTK+ para utilizar en modo de alto contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "Tema de los iconos a utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "Tema de los iconos para utilizar en modo de alto contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "Tema del cursor a utilizar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
-msgstr ""
+msgstr "Tamaño de los cursores."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "Tipo de letra a usar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
-msgstr ""
+msgstr "Si se debe utilizar el suavizado para las fuentes Xft."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:30
 msgid "Resolution for Xft in dots per inch."
-msgstr ""
+msgstr "Resolución de Xft en puntos por pulgada (ppp)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:31
 msgid "What degree of hinting to use."
@@ -425,115 +454,145 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "Tipo del suavizado espacial de los subpíxeles."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
-msgstr ""
+msgstr "Activar o no el teclado en pantalla."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:34
 msgid "Whether to use a high contrast theme."
-msgstr ""
+msgstr "Si se utiliza un tema de alto contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:35
 msgid "Whether to enable the screen reader."
-msgstr ""
+msgstr "Si desea activar el lector de pantalla."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
 msgstr ""
+"Si se debe reproducir un sonido cuando el cuadro de diálogo de inicio de "
+"sesión esté listo."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "Qué indicadores hay que cargar."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
 "List of usernames that are hidden until a special key combination is hit."
 msgstr ""
+"Lista de nombres de usuario que se ocultan hasta que se pulsa una "
+"combinación de teclas especial."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:39
 msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)."
 msgstr ""
+"Lista de grupos de los que deben formar parte los usuarios para mostrarse ("
+"una lista vacía muestra todos los usuarios)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:40
 msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Número de segundos de inactividad antes de borrar la pantalla. Establézcalo "
+"en 0 para que nunca se agote el tiempo."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "Activar o no la compatibilidad con HiDPI"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
 msgstr ""
+"Factor de escala para las fuentes que se puede utilizar para ajustar los "
+"tamaños de la fuente del inicio de sesión."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Valor para alfa para la barra de menú, multiplicado por el valor de "
+"transparencia proporcionado por el tema. No se utiliza en modo de alto "
+"contraste."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
 msgstr ""
+"FQDN predeterminado para el host que ofrece el servicio de inicio de sesión "
+"remoto."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:45
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
 msgstr ""
+"Si desea activar el bloqueo numérico (Bloq Num). Esta función requiere la "
+"instalación de numlockx."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "Monitor en el que mostrar la GUI del inicio de sesión."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
+"Nombre de la distribución del teclado en pantalla (consulte /usr/share/"
+"onboard/layouts/*.onboard para ver los nombres de la distribución "
+"disponibles)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
+"Nombre del tema del teclado en pantalla (consulte /usr/share/onboard/themes/*"
+".theme para ver los nombres de los temas disponibles)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
+"Nombre del tema del teclado en pantalla cuando está en modo de alto "
+"contraste (consulte /usr/share/onboard/themes/*.theme para ver los nombres "
+"de los temas disponibles)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
-msgstr ""
+msgstr "Si ocultar el tipo de sesión X11 por defecto 'lightdm-xsession'."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "Si ocultar las sesiones X11."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "Si ocultar las sesiones de Wayland."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"Lista ordenada de sesiones de escritorio preferidas (para detectar el tipo "
+"de sesión por defecto)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Tiempo en segundos hasta que el cuadro de diálogo de apagado se centra en "
+"seleccionar la acción predeterminada. Establezca en 0 para desactivar el "
+"temporizador."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -541,6 +600,10 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"Lista no ordenada de sesiones de escritorio que se mostrarán (si no está "
+"vacía, solo se ofrecen los tipos de sesión enumerados explícitamente en el "
+"cuadro de diálogo de inicio de sesión). Anula las listas de las sesiones "
+"excluidas en la configuración."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -548,6 +611,9 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"Lista desordenada de las sesiones de escritorio excluidas (si no está vacía, "
+"no ofrecerá los tipos de sesiones de la lista). Sólo se utiliza si "
+"includeonly-sessions está vacío."
 
 #~ msgid "Run in test mode with a11y big font feature enabled"
 #~ msgstr ""
