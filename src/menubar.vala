@@ -33,6 +33,8 @@ private class IndicatorMenuItem : Gtk.MenuItem
         this.hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
         this.add (this.hbox);
         this.hbox.show ();
+        this.add_events (Gdk.EventMask.SCROLL_MASK);
+        this.scroll_event.connect (this.scrolled_cb);
 
         if (entry.label != null)
         {
@@ -64,6 +66,14 @@ private class IndicatorMenuItem : Gtk.MenuItem
     public void visibility_changed_cb (Gtk.Widget widget)
     {
         visible = has_visible_child ();
+    }
+
+    public bool scrolled_cb (Gtk.Widget pWidget, Gdk.EventScroll pEvent)
+    {
+        Indicator.Object pObject = pWidget.get_data ("indicator-object");
+        GLib.Signal.emit_by_name (pObject, "entry-scrolled", 1, pEvent.direction);
+
+        return false;
     }
 }
 
@@ -449,6 +459,7 @@ public class MenuBar : Gtk.MenuBar
         debug ("Adding indicator object %p at position %d", entry, pos);
 
         var menuitem = new IndicatorMenuItem (entry);
+        menuitem.set_data ("indicator-object", object);
         insert (menuitem, pos);
     }
 
