@@ -71,7 +71,18 @@ private class IndicatorMenuItem : Gtk.MenuItem
     public bool scrolled_cb (Gtk.Widget pWidget, Gdk.EventScroll pEvent)
     {
         Indicator.Object pObject = pWidget.get_data ("indicator-object");
-        GLib.Signal.emit_by_name (pObject, "entry-scrolled", 1, pEvent.direction);
+        int nDirection = 0;
+
+        if (pEvent.direction == Gdk.ScrollDirection.UP)
+        {
+            nDirection = 1;
+        }
+        else if (pEvent.direction == Gdk.ScrollDirection.DOWN)
+        {
+            nDirection = -1;
+        }
+
+        GLib.Signal.emit_by_name (pObject, "entry-scrolled", 1, nDirection);
 
         return false;
     }
