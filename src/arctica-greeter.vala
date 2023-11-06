@@ -1383,7 +1383,7 @@ public class DBusServer : Object
     private Gtk.Socket pSocket = null;
     private bool high_contrast_osk = AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST);
 
-    private void closePid (ref Pid nPid)
+    private void closePid (ref Pid nPid, int nMultiplier)
     {
         if (nPid > 0)
         {
@@ -1395,17 +1395,17 @@ public class DBusServer : Object
              * Otherwise a follow-up onboard process (group) will refuse to start
              * immediately after having killed the previous process (group).
              */
-            Posix.kill (-nPid, Posix.Signal.TERM);
+            Posix.kill (nPid * nMultiplier, Posix.Signal.TERM);
             int nStatus;
-            Posix.waitpid (-nPid, out nStatus, 0);
+            Posix.waitpid (nPid * nMultiplier, out nStatus, 0);
             nPid = 0;
         }
     }
 
     private void cleanup ()
     {
-        closePid (ref nOnBoard);
-        closePid (ref nOrca);
+        closePid (ref nOnBoard, -1);
+        closePid (ref nOrca, 1);
     }
 
     public DBusServer (DBusConnection pConnection, ArcticaGreeter pGreeter)
@@ -1477,7 +1477,7 @@ public class DBusServer : Object
 
                 /* calling closePid sets nOnBoard to 0 */
                 debug ("Closing previous keyboard with PID %d", nOnBoard);
-                closePid (ref nOnBoard);
+                closePid (ref nOnBoard, -1);
 
                 /* Sending SIGTERM to the plug (i.e. the onboard process group)
                  * will destroy pSocket, so NULLing it now.
@@ -1642,7 +1642,7 @@ public class DBusServer : Object
         }
         else
         {
-            closePid (ref nOrca);
+            closePid (ref nOrca, 1);
         }
     }
 
