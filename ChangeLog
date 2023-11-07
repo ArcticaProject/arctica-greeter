@@ -1,6 +1,10 @@
 2023-11-07 Mike Gabriel
 
-        * release 0.99.4.1 (HEAD -> master, tag: 0.99.4.1)
+        * release 0.99.4.2 (HEAD -> master, tag: 0.99.4.2)
+        * d/rules: Drop dh_auto_install override. (e195dda)
+        * data/: Move config files and policykit .pkla file from debian/ to
+          data/ and install via automake. (de16229)
+        * release 0.99.4.1 (b64cf87) (tag: 0.99.4.1)
         * data/arctica-greeter.1: Document --test-highcontrast option in man
           page. (06d5728)
 

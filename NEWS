@@ -1,3 +1,8 @@
+Overview of changes in arctica-greeter 0.99.4.2
+
+  - Move config files and policykit .pkla file from debian/ to
+    data/ and install via automake.
+
 Overview of changes in arctica-greeter 0.99.4.1
 
   - src/menubar.vala: Add scroll signalling.
