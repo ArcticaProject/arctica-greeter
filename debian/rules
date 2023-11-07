@@ -36,15 +36,6 @@ override_dh_auto_build:
 override_dh_missing:
 	dh_missing --fail-missing
 
-override_dh_auto_install:
-	dh_auto_install
-	mkdir -p debian/tmp/var/lib/polkit-1/localauthority/10-vendor.d/
-	cp debian/arctica-greeter.pkla debian/tmp/var/lib/polkit-1/localauthority/10-vendor.d/
-	mkdir -p debian/tmp/etc/lightdm/lightdm.conf.d/
-	cp debian/90-arctica-greeter.conf debian/tmp/etc/lightdm/lightdm.conf.d/
-	cp debian/91-arctica-greeter-guest-session.conf debian/tmp/etc/lightdm/lightdm.conf.d/
-	cp debian/92-arctica-greeter-remote-logon.conf debian/tmp/etc/lightdm/lightdm.conf.d/
-
 override_dh_auto_clean:
 	dh_auto_clean
 	if [ -e po/arctica-greeter.pot.bak ]; then \
