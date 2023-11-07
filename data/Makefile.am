@@ -1,5 +1,7 @@
 # -*- Mode: Automake; indent-tabs-mode: t; tab-width: 4 -*-
 
+NULL =
+
 50-arctica-greeter.conf: 50-arctica-greeter.conf.in
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
 
@@ -9,7 +11,20 @@
 lightdm_confdir = $(datadir)/lightdm/lightdm.conf.d
 lightdm_conf_DATA = \
 	50-arctica-greeter.conf \
-	50-arctica-greeter-guest-wrapper.conf
+	50-arctica-greeter-guest-wrapper.conf \
+	$(NULL)
+
+lightdm_sysconfdir = $(sysconfdir)/lightdm/lightdm.conf.d
+lightdm_sysconf_DATA = \
+	90-arctica-greeter.conf \
+	91-arctica-greeter-guest-session.conf \
+	92-arctica-greeter-remote-logon.conf \
+	$(NULL)
+
+pkla_policydir = $(localstatedir)/lib/polkit-1/localauthority/10-vendor.d
+pkla_policy_DATA = \
+	arctica-greeter.pkla \
+	$(NULL)
 
 arctica-greeter-guest-session-startup.desktop: arctica-greeter-guest-session-startup.desktop.in
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
