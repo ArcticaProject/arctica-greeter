@@ -1,6 +1,57 @@
+2023-11-07 Mike Gabriel
+
+        * release 0.99.4.1 (HEAD -> master, tag: 0.99.4.1)
+        * data/arctica-greeter.1: Document --test-highcontrast option in man
+          page. (06d5728)
+
+2023-11-06 Mike Gabriel
+
+        * Merge branch 'tari01-pr/kill-orca' (d48b9b3)
+
+2023-11-06 Robert Tari
+
+        * src/arctica-greeter.vala: Fix killing Orca (19eb6b5)
+
+2023-11-04 Mike Gabriel
+
+        * Merge branch 'tari01-pr/scroll-direction' (4d926cf)
+
+2023-11-04 Robert Tari
+
+        * src/menubar.vala: Fix scroll direction value (daec7e9)
+
+2023-11-04 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-scroll' (80d54d1)
+
+2023-11-03 Robert Tari
+
+        * src/menubar.vala: Add scroll signalling (bbd3412)
+
+2023-10-23 gallegonovato
+
+        * Translated using Weblate (Spanish) (b6e2c6d)
+
+2023-10-20 Ryo Nakano
+
+        * Translated using Weblate (Japanese) (84d209c)
+
+2023-10-12 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (74c6780)
+        * Translated using Weblate (Russian) (def5867)
+
+2023-10-13 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (c8cb544)
+
+2023-10-14 gallegonovato
+
+        * Translated using Weblate (Spanish) (13e2d6d)
+
 2023-10-13 Mike Gabriel
 
-        * release 0.99.4.0 (HEAD -> master, tag: 0.99.4.0)
+        * release 0.99.4.0 (a68f7c4) (tag: 0.99.4.0)
 
 2023-10-12 Serhii Horichenko
 

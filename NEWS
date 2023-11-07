@@ -1,3 +1,11 @@
+Overview of changes in arctica-greeter 0.99.4.1
+
+  - src/menubar.vala: Add scroll signalling.
+  - src/arctica-greeter.vala: Fix killing Orca.
+  - data/arctica-greeter.1: Document --test-highcontrast option in man
+    page.
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.4.0
 
   - OSK: Add OSK theme gsetting to individually configure the OSK theme
