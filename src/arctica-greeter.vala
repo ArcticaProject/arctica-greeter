@@ -1214,7 +1214,7 @@ public class ArcticaGreeter : Object
 
                 try {
                     /* Start the indicator service */
-                    string[] argv;
+                    string[] argv = null;
 
                     /* FIXME: This path is rather hard-coded here.
                      * If it pops up, we need to handle this in
@@ -1222,15 +1222,25 @@ public class ArcticaGreeter : Object
                      * how we find at-spi-bus-launcher on the file
                      * system.
                      */
-                    Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
-                    Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out indicator_service_pid);
-                    launched_indicator_service_pids.append(indicator_service_pid);
-                    debug ("Successfully started Ayatana Indicator Service '%s' [%d]", indicator_service, indicator_service_pid);
+                    if (FileUtils.test ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
+                        Shell.parse_argv ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), out argv);
+                    else if (FileUtils.test ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
+                        Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
+                    if (argv != null)
+                    {
+                        Process.spawn_async (null,
+                                             argv,
+                                             null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out indicator_service_pid);
+                        launched_indicator_service_pids.append(indicator_service_pid);
+                        debug ("Successfully started Ayatana Indicator Service '%s' [%d]", indicator_service, indicator_service_pid);
+                    }
+                    else
+                    {
+                        warning ("Could not find indicator service executable for Indicator Service '%s'", indicator_service);
+                    }
                 }
                 catch (Error e)
                 {
