@@ -1,3 +1,11 @@
+Overview of changes in arctica-greeter 0.99.4.3
+
+  - lightdm-arctica-greeter-session: Export sensible system PATH
+    variable, so that the greeter executable can get found (issue
+    discovered on openSUSE).
+  - src/arctica-greeter.vala: Search at alternative installation path
+    /usr/lib for indicator service executables.
+
 Overview of changes in arctica-greeter 0.99.4.2
 
   - Move config files and policykit .pkla file from debian/ to

@@ -1,6 +1,15 @@
+2023-11-10 Mike Gabriel
+
+        * release 0.99.4.3 (HEAD -> main, tag: 0.99.4.3)
+        * src/arctica-greeter.vala: Search at alternative installation path
+          /usr/lib for indicator service executables. (42a13a2)
+        * lightdm-arctica-greeter-session: Export sensible system PATH
+          variable, so that the greeter executables can get found
+          (issue discovered on openSUSE). (01ff581)
+
 2023-11-07 Mike Gabriel
 
-        * release 0.99.4.2 (HEAD -> master, tag: 0.99.4.2)
+        * release 0.99.4.2 (8d4ac78) (tag: 0.99.4.2)
         * d/rules: Drop dh_auto_install override. (e195dda)
         * data/: Move config files and policykit .pkla file from debian/ to
           data/ and install via automake. (de16229)
