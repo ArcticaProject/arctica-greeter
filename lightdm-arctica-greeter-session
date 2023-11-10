@@ -14,6 +14,8 @@
 # script does.  Otherwise, it's very easy for dbus-daemon to be autolaunched
 # and detached from the greeter.
 
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+
 trap cleanup TERM EXIT
 
 cleanup()
