@@ -1066,11 +1066,9 @@ public class ArcticaGreeter : Object
                 string[] argv = null;
 
                 if (FileUtils.test ("/usr/lib/at-spi2-core/at-spi-bus-launcher", FileTest.EXISTS)) {
-                    // Debian & derivatives...
                     Shell.parse_argv ("/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately", out argv);
                 }
                 else if  (FileUtils.test ("/usr/libexec/at-spi-bus-launcher", FileTest.EXISTS)) {
-                    // Fedora & derivatives...
                     Shell.parse_argv ("/usr/libexec/at-spi-bus-launcher --launch-immediately", out argv);
                 }
                 if (argv != null)
