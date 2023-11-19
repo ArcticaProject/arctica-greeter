@@ -247,5 +247,9 @@
       <default>[]</default>
       <summary>Unordered list of excluded desktop sessions (if non-empty, listed sessions types will not be offered by the greeter). Only used if includeonly-sessions is empty.</summary>
     </key>
+    <key name="geoclue-agent" type="b">
+      <default>true</default>
+      <summary>Whether to enable the GeoClue-2.0 agent (enhances ayatana-indicator-display).</summary>
+    </key>
   </schema>
 </schemalist>

@@ -1086,6 +1086,35 @@ public class ArcticaGreeter : Object
             }
         }
 
+        Pid geoclueagent_pid = 0;
+        if (AGSettings.get_boolean (AGSettings.KEY_GEOCLUE_AGENT) && (!do_test_mode))
+        {
+
+            try
+            {
+                string[] argv = null;
+
+                if (FileUtils.test ("/usr/lib/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
+                    Shell.parse_argv ("/usr/lib/geoclue-2.0/demos/agent", out argv);
+                }
+                else if  (FileUtils.test ("/usr/libexec/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
+                    Shell.parse_argv ("/usr/libexec/geoclue-2.0/demos/agent", out argv);
+                }
+                if (argv != null)
+                    Process.spawn_async (null,
+                                         argv,
+                                         null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out geoclueagent_pid);
+                debug ("Launched GeoClue-2.0 agent. PID: %d", geoclueagent_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting the GeoClue-2.0 agent: %s", e.message);
+            }
+        }
+
         /* Enable touchpad tap-to-click */
         enable_tap_to_click ();
 
@@ -1336,6 +1365,22 @@ public class ArcticaGreeter : Object
                 else
                     debug ("AT-SPI terminated with signal %d", Process.term_sig (status));
                 atspi_pid = 0;
+            }
+
+            if (geoclueagent_pid != 0)
+            {
+#if VALA_0_40
+                Posix.kill (geoclueagent_pid, Posix.Signal.KILL);
+#else
+                Posix.kill (geoclueagent_pid, Posix.SIGKILL);
+#endif
+                int status;
+                Posix.waitpid (geoclueagent_pid, out status, 0);
+                if (Process.if_exited (status))
+                    debug ("GeoClue-2.0 agent exited with return value %d", Process.exit_status (status));
+                else
+                    debug ("GeoClue-2.0 agent terminated with signal %d", Process.term_sig (status));
+                geoclueagent_pid = 0;
             }
         }
 

@@ -82,6 +82,7 @@ public class AGSettings : Object
     public const string KEY_EXCLUDED_SESSIONS = "excluded-sessions";
     public const string KEY_SHUTDOWN_DIALOG_TIMEOUT = "shutdown-dialog-timeout";
     public const string KEY_PREFERRED_SESSIONS = "preferred-sessions";
+    public const string KEY_GEOCLUE_AGENT = "geoclue-agent";
 
     public static bool get_boolean (string key)
     {
