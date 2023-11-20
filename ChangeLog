@@ -1,6 +1,25 @@
+2023-11-20 Mike Gabriel
+
+        * release 0.99.4.4 (HEAD -> master, tag: 0.99.4.4)
+        * d/control: recommend ayatana-indicator-display (7b2b609)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Request
+          display indicator by default, as well. (78fb657)
+
+2023-11-19 Robert Tari
+
+        * Merge branch 'sunweaver-pr/geoclue-agent-loading' (9fd6b51)
+
+2023-11-18 Mike Gabriel
+
+        * src/arctica-greeter.vala: Support (configurably) loading the
+          GeoClue-2.0 agent. (6e6190e)
+        * src/arctica-greeter.vala: Drop comments that we cannot maintain
+          (because we lack implementation detail knowledge over
+          time). (7f203af)
+
 2023-11-10 Mike Gabriel
 
-        * release 0.99.4.3 (HEAD -> main, tag: 0.99.4.3)
+        * release 0.99.4.3 (0e1ecfb) (tag: 0.99.4.3)
         * src/arctica-greeter.vala: Search at alternative installation path
           /usr/lib for indicator service executables. (42a13a2)
         * lightdm-arctica-greeter-session: Export sensible system PATH

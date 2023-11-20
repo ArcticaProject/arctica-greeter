@@ -1,3 +1,8 @@
+Overview of changes in arctica-greeter 0.99.4.4
+
+  - Support (configurably) loading the GeoClue-2.0 agent.
+  - Add display indicator to the menubar.
+
 Overview of changes in arctica-greeter 0.99.4.3
 
   - lightdm-arctica-greeter-session: Export sensible system PATH
