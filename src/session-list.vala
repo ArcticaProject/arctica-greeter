@@ -130,6 +130,7 @@ public class SessionList : GreeterList
         case "openbox-kde":
         case "plasma":
         case "plasma5":
+        case "plasmawayland":
             return "kde_badge.png";
         case "i3":
         case "i3-with-shmlog":
@@ -168,6 +169,7 @@ public class SessionList : GreeterList
             return "recovery_console_badge.png";
         case "xmonad":
             return "xmonad_badge.png";
+        case "icewm":
         case "icewm-session":
             return "icewm_badge.png";
         case "fynedesk":
