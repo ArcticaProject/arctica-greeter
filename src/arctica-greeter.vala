@@ -133,6 +133,11 @@ public class ArcticaGreeter : Object
         );
     }
 
+    public DBusServer getDBusServer ()
+    {
+        return this.pServer;
+    }
+
     private void onBusAcquired (DBusConnection pConnection)
     {
         try
