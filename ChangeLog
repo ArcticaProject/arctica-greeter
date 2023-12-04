@@ -1,6 +1,22 @@
+2023-12-04 Mike Gabriel
+
+        * release 0.99.4.5 (HEAD -> master, tag: 0.99.4.5)
+        * Merge branch 'tari01-pr/manual-user-change' (1882ca7)
+
+2023-11-29 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (eae8415)
+        * Translated using Weblate (Swedish) (b1a1a09)
+
+2023-11-24 Robert Tari
+
+        * Send user change signal for manual user entries (3f333ac)
+
 2023-11-20 Mike Gabriel
 
-        * release 0.99.4.4 (HEAD -> master, tag: 0.99.4.4)
+        * src/session-list.vala: More session name / icon file mappings
+          (plasmawayland, icewm). (d604c30)
+        * release 0.99.4.4 (9a7db1c) (tag: 0.99.4.4)
         * d/control: recommend ayatana-indicator-display (7b2b609)
         * data/org.ArcticaProject.arctica-greeter.gschema.xml: Request
           display indicator by default, as well. (78fb657)

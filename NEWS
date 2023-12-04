@@ -1,3 +1,10 @@
+Overview of changes in arctica-greeter 0.99.4.5
+
+  - src/session-list.vala: More session name / icon file mappings
+    (plasmawayland, icewm).
+  - Send user change signal for manual user entries
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.4.4
 
   - Support (configurably) loading the GeoClue-2.0 agent.
