@@ -39,6 +39,7 @@ int remote_server_field_sort_function (RemoteServerField? item1, RemoteServerFie
 public class UserList : GreeterList
 {
     private bool _offer_guest = false;
+    private string sLastAddedUser = null;
     public bool offer_guest
     {
         get { return _offer_guest; }
@@ -936,6 +937,11 @@ public class UserList : GreeterList
         e.set_is_active (is_active);
         debug ("Adding user to list. User: %s, background: %s, is_active: %s, has_messages: %s, session: %s", e.label, e.background, is_active.to_string(), has_messages.to_string(), session);
 
+        if (have_entries () && always_show_manual)
+        {
+            this.sLastAddedUser = label;
+        }
+
         /* Remove manual option when have users */
         if (have_entries () && !always_show_manual)
             remove_entry ("*other");
@@ -1207,7 +1213,22 @@ public class UserList : GreeterList
             }
         }
         else
+        {
             base.show_prompt_cb (text, type);
+
+            if (type == LightDM.PromptType.SECRET && this.sLastAddedUser != null)
+            {
+                try
+                {
+                    DBusServer pServer = this.greeter.getDBusServer ();
+                    pServer.sendUserChange (this.sLastAddedUser);
+                }
+                catch (Error pError)
+                {
+                    error ("Panic: %s", pError.message);
+                }
+            }
+        }
     }
 
     /* A lot of test code below here */
