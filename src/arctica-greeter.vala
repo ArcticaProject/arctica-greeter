@@ -1438,8 +1438,23 @@ public class DBusServer : Object
     private ArcticaGreeter pGreeter;
     private Pid nOrca = 0;
     private Pid nOnBoard = 0;
+    private Pid nMagnifier = 0;
     private Gtk.Socket pSocket = null;
     private bool high_contrast_osk = AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST);
+
+    private void onMagnifierClosed (Pid nPid, int nStatus)
+    {
+        nMagnifier = 0;
+
+        try
+        {
+            this.pConnection.emit_signal (null, "/org/ayatana/greeter", "org.ayatana.greeter", "MagnifierClosed", null);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Could not send magnifier closed signal: %s", pError.message);
+        }
+    }
 
     private void closePid (ref Pid nPid, int nMultiplier)
     {
@@ -1464,6 +1479,7 @@ public class DBusServer : Object
     {
         closePid (ref nOnBoard, -1);
         closePid (ref nOrca, 1);
+        closePid (ref nMagnifier, 1);
     }
 
     public DBusServer (DBusConnection pConnection, ArcticaGreeter pGreeter)
@@ -1701,6 +1717,7 @@ public class DBusServer : Object
         else
         {
             closePid (ref nOrca, 1);
+            nOrca = 0;
         }
     }
 
@@ -1712,5 +1729,28 @@ public class DBusServer : Object
         /* Trigger onboard restart with correct theme */
         debug ("High-Contrast mode toggled (new state: %b), refreshing OSK, as well.", bActive);
         ToggleOnBoard (AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD));
+    }
+
+    public void ToggleMagnifier (bool bActive) throws GLib.DBusError, GLib.IOError
+    {
+        AGSettings.set_boolean (AGSettings.KEY_MAGNIFIER, bActive);
+
+        if (bActive)
+        {
+            try
+            {
+                Process.spawn_async (null, {"magnus"}, null, SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD, null, out nMagnifier);
+                GLib.ChildWatch.add (nMagnifier, onMagnifierClosed);
+            }
+            catch (Error pError)
+            {
+                warning ("Failed to run magnifier: %s", pError.message);
+            }
+        }
+        else
+        {
+            closePid (ref nMagnifier, 1);
+            nMagnifier = 0;
+        }
     }
 }
