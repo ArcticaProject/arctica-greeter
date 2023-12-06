@@ -1,6 +1,17 @@
+2023-12-06 Mike Gabriel
+
+        * release 0.99.4.6 (HEAD -> master, tag: 0.99.4.6)
+        * Merge branch 'tari01-pr/add-magnifier' (ce35028)
+
+2023-12-06 Robert Tari
+
+        * Add magnifier toggling logic (64e0a76)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Store screen
+          magnifier state (7f0adec)
+
 2023-12-04 Mike Gabriel
 
-        * release 0.99.4.5 (HEAD -> master, tag: 0.99.4.5)
+        * release 0.99.4.5 (09a1593) (tag: 0.99.4.5)
         * Merge branch 'tari01-pr/manual-user-change' (1882ca7)
 
 2023-11-29 bittin1ddc447d824349b2

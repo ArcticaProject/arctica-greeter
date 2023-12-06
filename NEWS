@@ -1,3 +1,9 @@
+Overview of changes in arctica-greeter 0.99.4.6
+
+  - data/org.ArcticaProject.arctica-greeter.gschema.xml: Store screen
+    magnifier state.
+  - Add magnifier toggling logic.
+
 Overview of changes in arctica-greeter 0.99.4.5
 
   - src/session-list.vala: More session name / icon file mappings
