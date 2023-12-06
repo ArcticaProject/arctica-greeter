@@ -150,6 +150,10 @@
       <default>false</default>
       <summary>Whether to enable the onscreen keyboard.</summary>
     </key>
+    <key name="magnifier" type="b">
+      <default>false</default>
+      <summary>Whether to enable the screen magnifier.</summary>
+    </key>
     <key name="high-contrast" type="b">
       <default>false</default>
       <summary>Whether to use a high contrast theme.</summary>
