@@ -1,0 +1,33 @@
+polkit.addRule (function (action, subject) {
+  if (subject.user == "lightdm") {
+    switch (action.id) {
+      // Disable Controlling of Network Devices
+      case 'org.freedesktop.NetworkManager.enable-disable-network':
+      case 'org.freedesktop.NetworkManager.enable-disable-wifi':
+      case 'org.freedesktop.NetworkManager.enable-disable-wwan':
+      case 'org.freedesktop.NetworkManager.enable-disable-wimax':
+      // Disable Sleep and Wake
+      case 'org.freedesktop.NetworkManager.sleep-wake':
+      // Disable WiFi Sharing
+      case 'org.freedesktop.NetworkManager.wifi.share.protected':
+      case 'org.freedesktop.NetworkManager.wifi.share.open':
+      // Disable Settings Modifications
+      case 'org.freedesktop.NetworkManager.settings.modify.own':
+      case 'org.freedesktop.NetworkManager.settings.modify.system':
+      case 'org.freedesktop.NetworkManager.settings.modify.hostname':
+      // Disable User Connections
+      case 'org.freedesktop.NetworkManager.use-user-connections':
+      // Enable Controlling of Network Connections
+      case 'org.freedesktop.NetworkManager.network-control':
+        return polkit.Result.NO;
+        break;
+      default:
+        /*
+         * Do nothing... for now.
+         *
+         * This means that polkit will continue scanning for other rules.
+         */
+        break;
+    }
+  }
+});
