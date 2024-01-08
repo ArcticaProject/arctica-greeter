@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2021-02-19 03:50+0000\n"
+"PO-Revision-Date: 2024-01-09 23:06+0000\n"
 "Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -27,7 +27,7 @@ msgstr "Masukan kata sandi untuk %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Masukkan nama pengguna"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
@@ -38,9 +38,8 @@ msgid "Username:"
 msgstr "Nama pengguna:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Kata kunci salah, coba lagi"
+msgstr "Nama pengguna atau kata sandi salah, coba lagi"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -105,13 +104,13 @@ msgstr "Nyalakan ulang"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Menjalankan tindakan yang dipilih sekarang."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
+msgstr[0] "Menunggu %u detik sebelum mengeksekusi tindakan yang dipilih …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -132,7 +131,7 @@ msgstr "Jalankan dalam mode percobaan"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Jalankan dalam mode uji dengan tema kontras tinggi a11y yang diaktifkan"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -278,26 +277,35 @@ msgstr "Arctica Greeter"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"File gambar latar belakang yang akan digunakan, baik berupa lokasi gambar "
+"atau warna (mis. #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Warna latar belakang (mis. #772953), ditetapkan sebelum wallpaper terlihat."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
 msgstr ""
+"Warna latar belakang (misalnya #000000 atau #FFFFFF) untuk mode kontras "
+"tinggi."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
+"Warna latar depan font (misalnya #A0A0A0) untuk nama sesi yang tidak aktif/"
+"berlayang dan tidak dipilih dalam daftar sesi."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
+"Warna latar depan font (misalnya #A0A0A0) untuk nama sesi yang aktif/di atas "
+"dalam daftar sesi."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
