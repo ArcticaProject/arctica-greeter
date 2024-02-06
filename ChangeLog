@@ -1,6 +1,46 @@
+2024-02-06 Mike Gabriel
+
+        * release 0.99.5.0 (HEAD -> master, tag: 0.99.5.0)
+        * debian/arctica-greeter.install: Adjust to new binary installation
+          path. (ffb69e1)
+        * src/Makefile.am: Install arctica-greeter to <prefix>/bin (instead
+          of sbin). (e27a49b)
+        * Merge branch 'Ionic-feature/polkit-0.106' (13cb331)
+
+2023-12-08 Mihai Moldovan
+
+        * debian/arctica-greeter.install: add polkit JS rules file. (0db687f)
+
+2023-12-07 Mihai Moldovan
+
+        * data/Makefile.am: install
+          50-org.Arctica-Project.arctica-greeter.rules. (17331af)
+        * data: add 50-org.Arctica-Project.arctica-greeter.rules. (a16208d)
+        * data/arctica-greeter.pkla: fix Results* keys. (de9c25b)
+
+2024-02-03 Kristjan Räts
+
+        * Translated using Weblate (Estonian) (a5e0cdb)
+
+2024-01-28 Kristjan Räts
+
+        * Translated using Weblate (Estonian) (926e4fa)
+
+2024-01-11 Iago Emanuel
+
+        * Translated using Weblate (Portuguese (Brazil)) (19093b1)
+
+2024-01-08 Reza Almanda
+
+        * Translated using Weblate (Indonesian) (9ec134b)
+
+2023-12-13 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (4f1728f)
+
 2023-12-06 Mike Gabriel
 
-        * release 0.99.4.6 (HEAD -> master, tag: 0.99.4.6)
+        * release 0.99.4.6 (6312d50) (tag: 0.99.4.6)
         * Merge branch 'tari01-pr/add-magnifier' (ce35028)
 
 2023-12-06 Robert Tari

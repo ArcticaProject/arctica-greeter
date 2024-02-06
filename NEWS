@@ -1,3 +1,11 @@
+Overview of changes in arctica-greeter 0.99.5.0
+
+  - data/arctica-greeter.pkla: Fix Results* keys.
+  - data: Add 50-org.Arctica-Project.arctica-greeter.rules.
+  - src/Makefile.am: Install arctica-greeter to <prefix>/bin (instead
+    of sbin).
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.4.6
 
   - data/org.ArcticaProject.arctica-greeter.gschema.xml: Store screen
