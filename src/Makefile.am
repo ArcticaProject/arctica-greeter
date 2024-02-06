@@ -1,6 +1,6 @@
 # -*- Mode: Automake; indent-tabs-mode: t; tab-width: 4 -*-
 
-sbin_PROGRAMS = arctica-greeter
+bin_PROGRAMS = arctica-greeter
 noinst_PROGRAMS = logo-generator
 
 arctica_greeter_SOURCES = \
