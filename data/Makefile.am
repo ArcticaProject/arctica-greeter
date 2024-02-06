@@ -26,6 +26,11 @@ pkla_policy_DATA = \
 	arctica-greeter.pkla \
 	$(NULL)
 
+rules_policydir = $(datadir)/polkit-1/rules.d/
+rules_policy_DATA = \
+	50-org.Arctica-Project.arctica-greeter.rules \
+	$(NULL)
+
 arctica-greeter-guest-session-startup.desktop: arctica-greeter-guest-session-startup.desktop.in
 	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
 

@@ -7,6 +7,7 @@ usr/share/glib-2.0/
 usr/share/lightdm/lightdm.conf.d/50-arctica-greeter.conf
 usr/share/locale/
 usr/share/man/man1/
+usr/share/polkit-1/rules.d/50-org.Arctica-Project.arctica-greeter.rules
 usr/share/sounds/
 usr/share/xgreeters/
 usr/libexec/arctica-greeter/lightdm-arctica-greeter-session
