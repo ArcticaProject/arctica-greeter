@@ -1,5 +1,5 @@
 etc/lightdm/lightdm.conf.d/90-arctica-greeter.conf
-usr/sbin/arctica-greeter
+usr/bin/arctica-greeter
 usr/share/arctica-greeter/*.png
 usr/share/arctica-greeter/*.svg
 usr/share/arctica-greeter/backgrounds/
