@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2024 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -32,13 +32,13 @@ public class ArcticaGreeter : Object
     public signal void starting_session ();
     public MainWindow main_window { get; private set; default = null; }
     public Gtk.Window? pKeyboardWindow { get; set; default = null; }
+    public Gtk.Window? pMagnifierWindow { get; set; default = null; }
     public bool test_mode { get; construct; default = false; }
     public bool test_highcontrast { get; construct; default = false; }
     private string state_file;
     private KeyFile state;
     private DBusServer pServer;
     private Cairo.XlibSurface background_surface;
-
     private SettingsDaemon settings_daemon;
 
     public bool orca_needs_kick;
@@ -57,7 +57,6 @@ public class ArcticaGreeter : Object
     construct
     {
         Bus.own_name (BusType.SESSION, "org.ayatana.greeter", BusNameOwnerFlags.NONE, onBusAcquired);
-
         greeter = new LightDM.Greeter ();
         greeter.show_message.connect ((text, type) => { show_message (text, type); });
 
@@ -667,13 +666,28 @@ public class ArcticaGreeter : Object
                     keyboard_xid = pWindow.get_xid ();
                 }
 
-                if (xwin != keyboard_xid && win.get_type_hint() != Gdk.WindowTypeHint.NOTIFICATION)
+                // Now check to see if this is the magnifier - no focus for it, either
+                X.Window nMagnifier = 0;
+
+                if (this.pMagnifierWindow != null)
+                {
+                    Gdk.X11.Window pWindow = (Gdk.X11.Window) this.pMagnifierWindow.get_window ();
+                    nMagnifier = pWindow.get_xid ();
+                }
+
+                if (xwin != keyboard_xid && xwin != nMagnifier && win.get_type_hint() != Gdk.WindowTypeHint.NOTIFICATION)
                 {
                     win.focus (Gdk.CURRENT_TIME);
 
                     /* Make sure to keep keyboard above */
                     if (this.pKeyboardWindow != null)
                         this.pKeyboardWindow.get_window ().raise ();
+
+                    // And the magnifier on top of everything
+                    if (this.pMagnifierWindow != null)
+                    {
+                        this.pMagnifierWindow.get_window ().raise ();
+                    }
                 }
             }
         }
@@ -698,6 +712,12 @@ public class ArcticaGreeter : Object
                 /* Make sure to keep keyboard above */
                 if (this.pKeyboardWindow != null)
                     this.pKeyboardWindow.get_window ().raise ();
+
+                // And the magnifier on top of everything
+                if (this.pMagnifierWindow != null)
+                {
+                    this.pMagnifierWindow.get_window ().raise ();
+                }
             }
         }
         return Gdk.FilterReturn.CONTINUE;
@@ -1439,22 +1459,9 @@ public class DBusServer : Object
     private Pid nOrca = 0;
     private Pid nOnBoard = 0;
     private Pid nMagnifier = 0;
-    private Gtk.Socket pSocket = null;
+    private Gtk.Socket pKeyboardSocket = null;
+    private Gtk.Socket pMagnifierSocket = null;
     private bool high_contrast_osk = AGSettings.get_boolean(AGSettings.KEY_HIGH_CONTRAST);
-
-    private void onMagnifierClosed (Pid nPid, int nStatus)
-    {
-        nMagnifier = 0;
-
-        try
-        {
-            this.pConnection.emit_signal (null, "/org/ayatana/greeter", "org.ayatana.greeter", "MagnifierClosed", null);
-        }
-        catch (Error pError)
-        {
-            error ("Panic: Could not send magnifier closed signal: %s", pError.message);
-        }
-    }
 
     private void closePid (ref Pid nPid, int nMultiplier)
     {
@@ -1554,11 +1561,11 @@ public class DBusServer : Object
                 closePid (ref nOnBoard, -1);
 
                 /* Sending SIGTERM to the plug (i.e. the onboard process group)
-                 * will destroy pSocket, so NULLing it now.
+                 * will destroy pKeyboardSocket, so NULLing it now.
                  */
                 debug ("Tearing down OSK's Gtk.Socket");
-                this.pGreeter.pKeyboardWindow.remove (pSocket);
-                pSocket = null;
+                this.pGreeter.pKeyboardWindow.remove (pKeyboardSocket);
+                pKeyboardSocket = null;
 
                 /* Start with fresh Gkt.Window object for OSK relaunch.
                  */
@@ -1635,14 +1642,14 @@ public class DBusServer : Object
             }
         }
 
-        if (pSocket == null)
+        if (pKeyboardSocket == null)
         {
             debug ("Creating Gtk.Socket for OSK");
-            pSocket = new Gtk.Socket ();
-            pSocket.show ();
+            pKeyboardSocket = new Gtk.Socket ();
+            pKeyboardSocket.show ();
         }
 
-        if ((this.pGreeter.pKeyboardWindow == null) && (pSocket != null))
+        if ((this.pGreeter.pKeyboardWindow == null) && (pKeyboardSocket != null))
         {
             debug ("Creating Gtk.Window for OSK");
             this.pGreeter.pKeyboardWindow = new Gtk.Window ();
@@ -1651,14 +1658,14 @@ public class DBusServer : Object
             this.pGreeter.pKeyboardWindow.set_title("OSK (theme: %s)".printf(sTheme));
         }
 
-        if ((this.pGreeter.pKeyboardWindow != null) && (pSocket != null) && (nId != 0))
+        if ((this.pGreeter.pKeyboardWindow != null) && (pKeyboardSocket != null) && (nId != 0))
         {
             /* attach the GtkSocket, which will host the onboard keyboard, to pKeyboardWindow */
             debug ("Adding OSK Gtk.Socket to OSK Gtk.Window");
-            this.pGreeter.pKeyboardWindow.add (pSocket);
+            this.pGreeter.pKeyboardWindow.add (pKeyboardSocket);
 
             debug ("Attaching new onboard process to OSK Gtk.Socket (+ Gtk.Window)");
-            pSocket.add_id (nId);
+            pKeyboardSocket.add_id (nId);
 
             /* resize the keyboard window to cover the lower part of the screen */
             debug ("Resizing OSK window.");
@@ -1733,24 +1740,57 @@ public class DBusServer : Object
 
     public void ToggleMagnifier (bool bActive) throws GLib.DBusError, GLib.IOError
     {
+        int nId = 0;
         AGSettings.set_boolean (AGSettings.KEY_MAGNIFIER, bActive);
 
-        if (bActive)
+        if (this.nMagnifier == 0)
         {
             try
             {
-                Process.spawn_async (null, {"magnus"}, null, SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD, null, out nMagnifier);
-                GLib.ChildWatch.add (nMagnifier, onMagnifierClosed);
+                int nMagnifierFD = 0;
+                string sPath = Path.build_filename (Config.PKGLIBEXECDIR, "arctica-greeter-magnifier");
+                Process.spawn_async_with_pipes (null, {sPath}, null, SpawnFlags.SEARCH_PATH, null, out this.nMagnifier, null, out nMagnifierFD, null);
+                var pFile = FileStream.fdopen (nMagnifierFD, "r");
+                var sText = new char[1024];
+
+                if (pFile.gets (sText) != null)
+                {
+                    nId = int.parse ((string) sText);
+                }
             }
             catch (Error pError)
             {
                 warning ("Failed to run magnifier: %s", pError.message);
+
+                return;
             }
         }
-        else
+
+        if (pMagnifierSocket == null)
         {
-            closePid (ref nMagnifier, 1);
-            nMagnifier = 0;
+            debug ("Creating Gtk.Socket for the magnifier");
+            pMagnifierSocket = new Gtk.Socket ();
+            pMagnifierSocket.show ();
         }
+
+        if ((this.pGreeter.pMagnifierWindow == null) && (pMagnifierSocket != null))
+        {
+            debug ("Creating Gtk.Window for the magnifier");
+            this.pGreeter.pMagnifierWindow = new Gtk.Window ();
+            this.pGreeter.pMagnifierWindow.accept_focus = false;
+            this.pGreeter.pMagnifierWindow.focus_on_map = false;
+            this.pGreeter.pMagnifierWindow.set_title ("Magnifier");
+        }
+
+        if ((this.pGreeter.pMagnifierWindow != null) && (pMagnifierSocket != null) && (nId != 0))
+        {
+            debug ("Adding the magnifier Gtk.Socket to the magnifier Gtk.Window");
+            this.pGreeter.pMagnifierWindow.add (pMagnifierSocket);
+
+            debug ("Attaching new magnifier process to the magnifier Gtk.Socket (+ Gtk.Window)");
+            pMagnifierSocket.add_id (nId);
+        }
+
+        this.pGreeter.pMagnifierWindow.visible = bActive;
     }
 }
