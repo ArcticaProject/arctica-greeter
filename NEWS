@@ -1,3 +1,8 @@
+Overview of changes in arctica-greeter 0.99.6.0
+
+  - Add a Magnus fork and wrap it in a new window.
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.5.0
 
   - data/arctica-greeter.pkla: Fix Results* keys.
