@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2019-08-28 11:24+0000\n"
-"Last-Translator: Swann Martinet <swann.ranskassa@laposte.net>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/it/>\n"
+"PO-Revision-Date: 2024-05-18 07:01+0000\n"
+"Last-Translator: Giorgio Berardi <giorgio.berardi@outlook.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -27,7 +27,7 @@ msgstr "Inserire la password per %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Inserire il nome utente"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
@@ -105,14 +105,15 @@ msgstr "Riavvia"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Attivazione dell'azione selezionata."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
-msgstr[1] ""
+"Attesa di un altro secondo prima dell'attivazione dell'azione selezionata…"
+msgstr[1] "Attesa di %u secondi prima dell'attivazione dell'azione selezionata…"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -134,6 +135,7 @@ msgstr "Esegui in modalità di test"
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
+"Avvio in modalità test con l'abilitazione del tema ally a elevato contrasto"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -279,14 +281,19 @@ msgstr "Schermata di benvenuto di Arctica"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"File dell'immagine di sfondo da utilizzare, sotto forma di percorso file "
+"immagine o colore (p.es. #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Colore di sfondo (p.es. 772953), impostato prima della visualizzazione dello "
+"sfondo dello schermo."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
 msgstr ""
+"Colore di sfondo (p.es. #000000 o #FFFFFF) per modalità a elevato contrasto."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
