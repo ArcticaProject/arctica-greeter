@@ -111,6 +111,7 @@ dist_pkgdata_DATA = \
 	badges/ubuntu_badge.png \
 	badges/ubuntustudio_badge.svg \
 	badges/unknown_badge.png \
+	badges/weston_badge.png \
 	badges/wmii_badge.png \
 	badges/xbmc_badge.png \
 	badges/xfce_badge.png \
