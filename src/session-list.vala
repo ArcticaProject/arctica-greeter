@@ -110,10 +110,18 @@ public class SessionList : GreeterList
         {
         case "budgie-desktop":
             return "budgie_badge.png";
-        case "ubuntu-2d":
-        case "unity":
-            return "ubuntu_badge.png";
+        case "cairo-dock-fallback":
+        case "cairo-dock-unity":
+            return "cairo-dock_badge.svg";
+        case "cinnamon-wayland":
+        case "cinnamon2d":
+            return "cinnamon_badge.svg";
+        case "fvwm-crystal":
+        case "fvwm1":
+            return "fvwm_badge.png";
         case "gnome-classic":
+        case "gnome-classic-xorg":
+        case "gnome-classic-wayland":
         case "gnome-flashback-compiz":
         case "gnome-flashback-metacity":
         case "gnome-shell":
@@ -121,10 +129,13 @@ public class SessionList : GreeterList
         case "gnome-xorg":
         case "openbox-gnome":
             return "gnome_badge.png";
-        case "sle-classic":
-            return "sleclassic_badge.png";
         case "wmaker-common":
             return "gnustep_badge.png";
+        case "IceWM-Experimental":
+        case "IceWM-Lite":
+        case "IceWM":
+        case "icewm-session":
+            return "icewm_badge.png";
         case "kde-plasma":
         case "openbox-kde":
         case "plasma":
@@ -136,19 +147,40 @@ public class SessionList : GreeterList
         case "lightdm-xsession":
             return "xsession_badge.png";
         case "LXDE":
+        case "lubuntu-nexus7":
+        case "lxgames":
+        case "Lubuntu":
+        case "Lubuntu-Netbook":
+        case "QLubuntu":
             return "lxde_badge.png";
         case "LXQt":
             return "lxqt_badge.png";
         case "mir-shell":
             return "mirshell_badge.png";
+        case "sle-classic":
+            return "sleclassic_badge.png";
+        case "sugar-session-0.84":
+        case "sugar-session-0.86":
+        case "sugar-session-0.88":
+        case "sugar-session-0.90":
+        case "sugar-session-0.96":
+        case "sugar-session-0.98":
+        case "usr":
+            return "sugar_badge.png";
         case "surf-display":
             return "surf_badge.png";
+        case "ubuntu-2d":
+        case "ubuntu-xorg":
+        case "unity":
+            return "ubuntu_badge.png";
+        case "XBMC":
+            return "xbmc_badge.png";
+        case "xubuntu":
+            return "xfce_badge.png";
         case "xterm":
             return "recovery_console_badge.png";
-        case "xmonad":
+        case "gnome-xmonad":
             return "xmonad_badge.png";
-        case "icewm-session":
-            return "icewm_badge.png";
         case "remote-login":
             return "remote_login_help.png";
         default:
