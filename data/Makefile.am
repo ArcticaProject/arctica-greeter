@@ -55,31 +55,64 @@ dist_soundsstereo_DATA = \
 	sounds/stereo/system-ready.ogg
 
 dist_pkgdata_DATA = \
+	badges/aewm++_badge.png \
+	badges/afterstep_badge.png \
+	badges/amiwm_badge.png \
 	badges/awesome_badge.png \
+	badges/blackbox_badge.png \
 	badges/budgie_badge.png \
+	badges/cairo-dock_badge.png \
+	badges/cde_badge.svg \
+	badges/chromium_badge.svg \
+	badges/cinnamon_badge.svg \
+	badges/deepin_badge.png \
+	badges/dwm_badge.svg \
+	badges/ede_badge.png \
+	badges/enlightenment_badge.svg \
+	badges/etoile_badge.svg \
+	badges/evilwm_badge.png \
+	badges/fluxbox_badge.svg \
+	badges/fvwm_badge.png \
+	badges/fynedesk_badge.svg \
 	badges/gnome_badge.png \
+	badges/gnome-bluetile_badge.svg \
 	badges/gnustep_badge.png \
+	badges/herbstluftwm_badge.png \
 	badges/i3_badge.png \
 	badges/icewm_badge.png \
-	badges/fynedesk_badge.svg \
 	badges/kde_badge.png \
+	badges/larswm_badge.png \
 	badges/lomiri_badge.png \
 	badges/lxde_badge.png \
 	badges/lxqt_badge.png \
 	badges/matchbox_badge.png \
 	badges/mate_badge.png \
 	badges/mirshell_badge.png \
+	badges/mythbuntu_badge.png \
 	badges/openbox_badge.png \
+	badges/openbsd-cwm_badge.png \
 	badges/pademelon_badge.png \
-	badges/remote_login_help.png \
+	badges/pantheon_badge.png \
+	badges/pekwm_badge.png \
+	badges/ratpoison_badge.png \
+	badges/razor_badge.png \
 	badges/recovery_console_badge.png \
+	badges/remote_login_help.png \
+	badges/sawfish_badge.png \
 	badges/sleclassic_badge.png \
+	badges/steamos_badge.svg \
+	badges/stumpwm_badge.png \
+	badges/subtle_badge.png \
 	badges/sugar_badge.png \
 	badges/surf_badge.png \
 	badges/sway_badge.svg \
+	badges/trinity_badge.png \
 	badges/twm_badge.png \
 	badges/ubuntu_badge.png \
+	badges/ubuntustudio_badge.svg \
 	badges/unknown_badge.png \
+	badges/wmii_badge.png \
+	badges/xbmc_badge.png \
 	badges/xfce_badge.png \
 	badges/xmonad_badge.png \
 	badges/xsession_badge.png \
@@ -103,7 +136,8 @@ dist_pkgdata_DATA = \
 	suspend.png \
 	switcher_corner.png \
 	switcher_left.png \
-	switcher_top.png
+	switcher_top.png \
+	$(NULL)
 
 logo.png: logo-bare.png
 	../src/logo-generator --logo logo-bare.png --text '$(VERSION)' --output logo.png

@@ -29,6 +29,51 @@ License: GPL-3
 ----
 
 Files:
+ aewm++_badge.png
+ afterstep_badge.png
+ amiwm_badge.png
+ blackbox_badge.png
+ cairo-dock_badge.png
+ cde_badge.svg
+ chromium_badge.svg
+ cinnamon_badge.svg
+ deepin_badge.png
+ dwm_badge.svg
+ ede_badge.png
+ enlightenment_badge.svg
+ etoile_badge.svg
+ evilwm_badge.png
+ fluxbox_badge.svg
+ fvwm_badge.png
+ gnome-bluetile_badge.svg
+ herbstluftwm_badge.png
+ larswm_badge.png
+ mythbuntu_badge.png
+ openbsd-cwm_badge.png
+ pantheon_badge.png
+ pekwm_badge.png
+ ratpoison_badge.png
+ razor_badge.png
+ sawfish_badge.png
+ steamos_badge.svg
+ stumpwm_badge.png
+ subtle_badge.png
+ trinity_badge.png
+ ubuntustudio_badge.svg
+ weston_badge.png
+ weston_badge.xcf
+ wmii_badge.png
+ xbmc_badge.png
+
+These files have been created for slick-greeter, we can only assume a
+copyright holdership and license from their debian/copyright file. There, those files
+are attributed to (C) 2013 zombifier.
+
+Licensed under the CC-by-SA-v3.0 license (full text see below).
+
+----
+
+Files:
   *.xcf
   <all PNGs derived from those .xcf files>
 
