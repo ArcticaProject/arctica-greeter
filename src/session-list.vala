@@ -100,15 +100,16 @@ public class SessionList : GreeterList
     protected override void add_manual_entry () {}
     public override void show_authenticated (bool successful = true) {}
 
-    private static string? get_badge_name (string session)
+    private static string? get_badge_name_from_alias_list (string session)
     {
+        /*
+         * Only list aliases here, if the badge name can be derived from <session>
+         * via <session>_badge.(svg|png) then the badge file is found automatically.
+         */
         switch (session)
         {
-        case "awesome":
-            return "awesome_badge.png";
         case "budgie-desktop":
             return "budgie_badge.png";
-        case "ubuntu":
         case "ubuntu-2d":
         case "unity":
             return "ubuntu_badge.png";
@@ -118,62 +119,36 @@ public class SessionList : GreeterList
         case "gnome-shell":
         case "gnome-wayland":
         case "gnome-xorg":
-        case "gnome":
         case "openbox-gnome":
             return "gnome_badge.png";
         case "sle-classic":
             return "sleclassic_badge.png";
         case "wmaker-common":
             return "gnustep_badge.png";
-        case "kde":
         case "kde-plasma":
         case "openbox-kde":
         case "plasma":
         case "plasma5":
         case "plasmawayland":
             return "kde_badge.png";
-        case "i3":
         case "i3-with-shmlog":
             return "i3_badge.png";
-        case "sway":
-            return "sway_badge.svg";
         case "lightdm-xsession":
             return "xsession_badge.png";
-        case "lomiri":
-            return "lomiri_badge.png";
-        case "lxde":
         case "LXDE":
             return "lxde_badge.png";
-        case "lxqt":
         case "LXQt":
             return "lxqt_badge.png";
-        case "matchbox":
-            return "matchbox_badge.png";
-        case "mate":
-            return "mate_badge.png";
         case "mir-shell":
             return "mirshell_badge.png";
-        case "openbox":
-            return "openbox_badge.png";
-        case "pademelon":
-            return "pademelon_badge.png";
-        case "sugar":
-            return "sugar_badge.png";
         case "surf-display":
             return "surf_badge.png";
-        case "twm":
-            return "twm_badge.png";
-        case "xfce":
-            return "xfce_badge.png";
         case "xterm":
             return "recovery_console_badge.png";
         case "xmonad":
             return "xmonad_badge.png";
-        case "icewm":
         case "icewm-session":
             return "icewm_badge.png";
-        case "fynedesk":
-            return "fynedesk_badge.svg";
         case "remote-login":
             return "remote_login_help.png";
         default:
@@ -184,7 +159,21 @@ public class SessionList : GreeterList
     private static HashTable<string, Gdk.Pixbuf> badges; /* cache of badges */
     public static Gdk.Pixbuf? get_badge (string session)
     {
-        var name = get_badge_name (session);
+        var name = get_badge_name_from_alias_list (session);
+
+        if (name == null)
+        {
+            var default_name_svg = "%s_badge.svg".printf (session);
+            var default_name_png = "%s_badge.png".printf (session);
+            var default_name_svg_path = Path.build_filename (Config.PKGDATADIR, default_name_svg, null);
+            var default_name_png_path = Path.build_filename (Config.PKGDATADIR, default_name_png, null);
+            if (FileUtils.test (default_name_svg_path, FileTest.EXISTS)) {
+                name = default_name_svg;
+            }
+            else if (FileUtils.test (default_name_png_path, FileTest.EXISTS)) {
+                name = default_name_png;
+            }
+        }
 
         if (name == null)
         {
