@@ -84,6 +84,7 @@ public class AGSettings : Object
     public const string KEY_PREFERRED_SESSIONS = "preferred-sessions";
     public const string KEY_GEOCLUE_AGENT = "geoclue-agent";
     public const string KEY_MAGNIFIER = "magnifier";
+    public const string KEY_CONTENT_ALIGN = "content-align";
 
     public static bool get_boolean (string key)
     {

@@ -255,5 +255,14 @@
       <default>true</default>
       <summary>Whether to enable the GeoClue-2.0 agent (enhances ayatana-indicator-display).</summary>
     </key>
+    <key name="content-align" type="s">
+      <choices>
+        <choice value='left'/>
+        <choice value='center'/>
+        <choice value='right'/>
+      </choices>
+      <default>'left'</default>
+      <summary>Alignment of the main content</summary>
+    </key>
   </schema>
 </schemalist>
