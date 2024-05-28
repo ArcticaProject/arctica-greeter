@@ -244,14 +244,7 @@ public class PromptBox : FadableBox
         name_grid.attach (name_label, COL_NAME_LABEL, ROW_NAME, 1, 1);
 
         message_image = new CachedImage (null);
-        try
-        {
-            message_image.pixbuf = new Gdk.Pixbuf.from_file (Path.build_filename (Config.PKGDATADIR, "message.png", null));
-        }
-        catch (Error e)
-        {
-            debug ("Error loading message image: %s", e.message);
-        }
+        message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
 
         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
         align.valign = Gtk.Align.START;
@@ -346,7 +339,7 @@ public class PromptBox : FadableBox
         small_name_grid.attach (small_name_label, 1, 0, 1, 1);
 
         small_message_image = new CachedImage (null);
-        small_message_image.pixbuf = message_image.pixbuf;
+        small_message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
 
         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
         align.set_size_request (-1, grid_size);
