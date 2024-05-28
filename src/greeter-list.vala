@@ -24,6 +24,8 @@
  */
 
 private const int MAX_FIELD_SIZE = 200;
+public int _scale_factor = 1;
+
 
 private int get_grid_offset (int size)
 {
@@ -172,6 +174,8 @@ public abstract class GreeterList : FadableBox
     {
         can_focus = false;
         visible_window = false;
+
+        _scale_factor = get_scale_factor ();
 
         fixed = new Gtk.Fixed ();
         fixed.show ();

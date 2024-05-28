@@ -79,6 +79,8 @@ public class SessionList : GreeterList
 
     private SessionPrompt prompt;
 
+    private const int BADGE_SIZE = 22;
+
     public SessionList (Background bg, MenuBar mb, string? session, string? default_session)
     {
         Object (background: bg, menubar: mb, session: session, default_session: default_session);
@@ -227,7 +229,8 @@ public class SessionList : GreeterList
         {
             try
             {
-                pixbuf = new Gdk.Pixbuf.from_file (Path.build_filename (Config.PKGDATADIR, name, null));
+                pixbuf = new Gdk.Pixbuf.from_file_at_size (Path.build_filename (Config.PKGDATADIR, name, null),
+                                                           BADGE_SIZE * _scale_factor, BADGE_SIZE * _scale_factor);
                 badges.insert (name, pixbuf);
             }
             catch (Error e)

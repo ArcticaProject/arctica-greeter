@@ -394,7 +394,7 @@ public class PromptBox : FadableBox
         if (option_button == null)
             return;
 
-        option_image.pixbuf = image;
+        option_image.set_pixbuf (image);
 
         if (tooltip == null)
             option_image.set_tooltip_text("");
