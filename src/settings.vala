@@ -56,6 +56,8 @@ public class AGSettings : Object
     public const string KEY_PLAY_READY_SOUND = "play-ready-sound";
     public const string KEY_INDICATORS = "indicators";
     public const string KEY_HIDDEN_USERS = "hidden-users";
+    public const string KEY_USER_FILTER= "user-filter";
+    public const string KEY_USER_FILTER_ALWAYS = "user-filter-always";
     public const string KEY_GROUP_FILTER = "group-filter";
     public const string KEY_IDLE_TIMEOUT = "idle-timeout";
     public const string KEY_ACTIVATE_NUMLOCK = "activate-numlock";

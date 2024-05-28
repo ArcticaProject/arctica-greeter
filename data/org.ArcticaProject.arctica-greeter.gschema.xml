@@ -174,6 +174,14 @@
       <default>[]</default>
       <summary>List of usernames that are hidden until a special key combination is hit.</summary>
     </key>
+    <key name="user-filter" type="as">
+      <default>[]</default>
+      <summary>List of usernames that are to be shown in the userlist only.</summary>
+    </key>
+    <key name="user-filter-always" type="b">
+      <default>false</default>
+      <summary>Always filter-out users not listed in user-filter even if user-filter is empty.</summary>
+    </key>
     <key name="group-filter" type="as">
       <default>[]</default>
       <summary>List of groups that users must be part of to be shown (empty list shows all users).</summary>

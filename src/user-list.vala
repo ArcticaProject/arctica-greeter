@@ -1128,6 +1128,20 @@ public class UserList : GreeterList
                     return;
         }
 
+        var user_filter = AGSettings.get_strv (AGSettings.KEY_USER_FILTER);
+        bool user_filter_always = AGSettings.get_boolean (AGSettings.KEY_USER_FILTER_ALWAYS);
+
+        if ((user_filter_always) || (user_filter.length != 0))
+        {
+            var match_found = false;
+            foreach (var username in user_filter)
+                if (username == user.name)
+                    match_found = true;
+            // bail-out if user.name is not in user_filter
+            if (match_found == false)
+                return;
+        }
+
         if (!filter_group (user.name))
             return;
 
