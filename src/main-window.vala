@@ -144,6 +144,8 @@ public class MainWindow : Gtk.Window
         align.add (hbox);
 
         align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+        // Hack to avoid gtk 3.20's new allocate logic, which messes us up.
+        align.resize_mode = Gtk.ResizeMode.QUEUE;
         align.set_size_request (grid_size, -1);
         align.margin_bottom = ArcticaGreeter.MENUBAR_HEIGHT; /* offset for menubar at top */
         align.show ();
