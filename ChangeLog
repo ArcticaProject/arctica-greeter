@@ -1,6 +1,62 @@
+2024-06-04 Mike Gabriel
+
+        * release 0.99.7.0 (HEAD -> master, tag: 0.99.7.0)
+        * Revert "Work around GTK 3.20's new allocation logic. Ported from
+          slick-greeter." (dd603ac1)
+        * src/greeter-list.vala: Redraw greeter box after showing/adding a
+          message to it. (8286af78)
+        * src/greeter-list.vala: Drop extra Gtk >= 3.20 queue_allocate(). Not
+          required anymore. (1b5446f7)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Amend
+          phrasings in GSettings descriptions. (1196cff5)
+
+2024-05-28 Mike Gabriel
+
+        * Add user filter to greeter's user list. (f5f819ea)
+
+2024-05-28 Michael Webster
+
+        * Fix hidpi rendering of session badges. (5a2e16b8)
+        * src/promptbox.vala: Use themed icon for unread messages. (dc19d70c)
+
+2023-12-15 Michael Webster
+
+        * greeter-list.vala: Make the user and session box wider. (6faf57da)
+
+2024-05-28 Eugenio Depalo
+
+        * src/{main-window,settings}.vala: Add a setting to configure the
+          user list alignment. (67fb7bff)
+
+2024-05-20 Mike Gabriel
+
+        * src/session-list.vala: Add several more session name / badge
+          filename aliases. (6cf3cb27)
+        * data/badges/: Add badge icon for the Weston compositor. (afab250d)
+        * data/badges: Port over various session badge icons from
+          slick-greeter. (6fecb87f)
+        * src/session-list.vala: Auto-find session badges if session name
+          matches badge filename. (6b0c7220)
+
+2023-07-17 Sam Lane
+
+        * Add man pages for arctica-greeter's helper scripts. (fcbc29e8)
+
+2024-05-20 Mike Gabriel
+
+        * Drop to-be-reviewed slick-greeter patches. 0025 is already applied,
+          0027 will not be applied. (a3aa22f8)
+
 2024-04-08 Mike Gabriel
 
-        * release 0.99.6.0 (HEAD -> master, tag: 0.99.6.0)
+        * release 0.99.6.0 (872a22ee)
+
+2024-05-17 Giorgio Berardi
+
+        * Translated using Weblate (Italian) (0fc62a97)
+
+2024-04-08 Mike Gabriel
+
         * debian/control: Sort deps in D: (arctica-greeter). (3fff402c)
         * debian/control: Satisfy dependencies of arctica-greeter-magnifier.
           (3b0e9c8f)

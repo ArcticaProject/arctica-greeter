@@ -1,3 +1,31 @@
+Overview of changes in arctica-greeter 0.99.7.0
+
+  - Drop to-be-reviewed slick-greeter patches. 0025 is already applied,
+    0027 will not be applied.
+  - Add man pages for arctica-greeter's helper scripts.
+  - src/session-list.vala: Auto-find session badges if session name
+    matches badge filename.
+  - data/badges: Port over various session badge icons from
+    slick-greeter.
+  - data/badges/: Add badge icon for the Weston compositor.
+  - src/session-list.vala: Add several more session name / badge
+    filename aliases.
+  - src/{main-window,settings}.vala: Add a setting to configure the
+    user list alignment.
+  - greeter-list.vala: Make the user and session box wider.
+  - src/promptbox.vala: Use themed icon for unread messages.
+  - Fix hidpi rendering of session badges.
+  - Add user filter to greeter's user list.
+  - data/org.ArcticaProject.arctica-greeter.gschema.xml: Amend
+    phrasings in GSettings descriptions.
+  - src/greeter-list.vala: Drop extra Gtk >= 3.20 queue_allocate(). Not
+    required anymore.
+  - src/greeter-list.vala: Redraw greeter box after showing/adding a
+    message to it.
+  - Revert "Work around GTK 3.20's new allocation logic. Ported from
+    slick-greeter."
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.6.0
 
   - Add a Magnus fork and wrap it in a new window.
