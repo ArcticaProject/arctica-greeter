@@ -648,10 +648,6 @@ public abstract class GreeterList : FadableBox
         focus_prompt ();
         entry_displayed_done ();
         mode = Mode.ENTRY;
-
-#if HAVE_GTK_3_20_0
-        queue_allocate ();
-#endif
     }
 
     protected void select_entry (PromptBox entry, double direction, bool do_scroll = true)
