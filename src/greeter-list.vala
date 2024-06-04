@@ -294,6 +294,7 @@ public abstract class GreeterList : FadableBox
         }
 
         selected_entry.add_message (text, is_error);
+        redraw_greeter_box ();
     }
 
     public DashEntry add_prompt (string text, bool secret = false)
