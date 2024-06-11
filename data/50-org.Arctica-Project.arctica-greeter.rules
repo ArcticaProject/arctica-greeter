@@ -1,33 +1,66 @@
-polkit.addRule (function (action, subject) {
-  if (subject.user == "lightdm") {
-    switch (action.id) {
-      // Disable Controlling of Network Devices
-      case 'org.freedesktop.NetworkManager.enable-disable-network':
-      case 'org.freedesktop.NetworkManager.enable-disable-wifi':
-      case 'org.freedesktop.NetworkManager.enable-disable-wwan':
-      case 'org.freedesktop.NetworkManager.enable-disable-wimax':
-      // Disable Sleep and Wake
-      case 'org.freedesktop.NetworkManager.sleep-wake':
-      // Disable WiFi Sharing
-      case 'org.freedesktop.NetworkManager.wifi.share.protected':
-      case 'org.freedesktop.NetworkManager.wifi.share.open':
-      // Disable Settings Modifications
-      case 'org.freedesktop.NetworkManager.settings.modify.own':
-      case 'org.freedesktop.NetworkManager.settings.modify.system':
-      case 'org.freedesktop.NetworkManager.settings.modify.hostname':
-      // Disable User Connections
-      case 'org.freedesktop.NetworkManager.use-user-connections':
-      // Enable Controlling of Network Connections
-      case 'org.freedesktop.NetworkManager.network-control':
-        return polkit.Result.NO;
-        break;
-      default:
-        /*
-         * Do nothing... for now.
-         *
-         * This means that polkit will continue scanning for other rules.
-         */
-        break;
+// Disable Controlling of Network Devices
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if (action.id == "org.freedesktop.NetworkManager.enable-disable-network" ||
+         action.id == "org.freedesktop.NetworkManager.enable-disable-wifi" ||
+         action.id == "org.freedesktop.NetworkManager.enable-disable-wwan" ||
+         action.id == "org.freedesktop.NetworkManager.enable-disable-wimax") {
+            return polkit.Result.NO;
     }
-  }
+});
+
+// Disable Sleep and Wake
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if (action.id == "org.freedesktop.NetworkManager.sleep-wake") {
+            return polkit.Result.NO;
+    }
+});
+
+// Disable WiFi Sharing
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if ((action.id == "org.freedesktop.NetworkManager.wifi.share.protected" ||
+         action.id == "org.freedesktop.NetworkManager.wifi.share.open")) {
+            return polkit.Result.NO;
+    }
+});
+
+// Disable Settings Modifications
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if (action.id == "org.freedesktop.NetworkManager.settings.modify.own" ||
+         action.id == "org.freedesktop.NetworkManager.settings.modify.system" ||
+         action.id == "org.freedesktop.NetworkManager.settings.modify.hostname") {
+            return polkit.Result.NO;
+    }
+});
+
+// Disable User Connections
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if (action.id == "org.freedesktop.NetworkManager.use-user-connections") {
+            return polkit.Result.NO;
+    }
+});
+
+// Enable Controlling of Network Connections
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm')
+        return undefined;
+
+    if (action.id.match("org.freedesktop.NetworkManager.network-control") &&
+        subject.active == true) {
+            return polkit.Result.YES;
+    }
 });
