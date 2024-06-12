@@ -25,9 +25,10 @@ public class SettingsDaemon : Object
 {
     private int sd_pid = 0;
     private int logind_inhibit_fd = -1;
-    private ScreenSaverInterface screen_saver;
+    private GnomeScreenSaverInterface gnome_screen_saver;
+    private MateScreenSaverInterface mate_screen_saver;
     private SessionManagerInterface session_manager;
-    private int n_names = 2;
+    private int n_names = 3;
 
     public void start ()
     {
@@ -83,14 +84,15 @@ public class SettingsDaemon : Object
          * the event to trigger this (which actually comes from mate-session).
          * We implement the mate-screensaver interface and start the settings
          * daemon once it is registered on the bus so mate-screensaver is not
-         * started when it accesses this interface */
-        screen_saver = new ScreenSaverInterface ();
+         * started when it accesses this interface.
+         */
+        gnome_screen_saver = new GnomeScreenSaverInterface ();
         GLib.Bus.own_name (BusType.SESSION, "org.gnome.ScreenSaver", BusNameOwnerFlags.NONE,
                            (c) =>
                            {
                                try
                                {
-                                   c.register_object ("/org/gnome/ScreenSaver", screen_saver);
+                                   c.register_object ("/org/gnome/ScreenSaver", gnome_screen_saver);
                                }
                                catch (Error e)
                                {
@@ -103,6 +105,29 @@ public class SettingsDaemon : Object
                                start_settings_daemon ();
                            },
                            () => debug ("Failed to acquire name org.gnome.ScreenSaver"));
+
+        /* MATE components (e.g. mate-notification-daemon) expect org.mate.ScreenSaver being
+         * available. Mimick it so that the real mate-screensaver won't come up.
+         */
+        mate_screen_saver = new MateScreenSaverInterface ();
+        GLib.Bus.own_name (BusType.SESSION, "org.mate.ScreenSaver", BusNameOwnerFlags.NONE,
+                           (c) =>
+                           {
+                               try
+                               {
+                                   c.register_object ("/org/mate/ScreenSaver", mate_screen_saver);
+                               }
+                               catch (Error e)
+                               {
+                                   warning ("Failed to register /org/mate/ScreenSaver: %s", e.message);
+                               }
+                           },
+                           () =>
+                           {
+                               debug ("Acquired org.mate.ScreenSaver");
+                               start_settings_daemon ();
+                           },
+                           () => debug ("Failed to acquire name org.mate.ScreenSaver"));
 
         /* The media-keys plugin inhibits the power key, but we don't want
            all the other keys doing things. So inhibit it ourselves */
@@ -203,7 +228,6 @@ public class SettingsDaemon : Object
 
 }
 
-[DBus (name="org.gnome.ScreenSaver")]
 public class ScreenSaverInterface : Object
 {
     public signal void active_changed (bool value);
@@ -282,6 +306,12 @@ public class ScreenSaverInterface : Object
     public void show_message (string summary, string body, string icon) throws GLib.DBusError, GLib.IOError {}
     public void simulate_user_activity () throws GLib.DBusError, GLib.IOError {}
 }
+
+[DBus (name="org.gnome.ScreenSaver")]
+public class GnomeScreenSaverInterface : ScreenSaverInterface {}
+
+[DBus (name="org.mate.ScreenSaver")]
+public class MateScreenSaverInterface : ScreenSaverInterface {}
 
 [DBus (name="org.gnome.SessionManager")]
 public class SessionManagerInterface : Object
