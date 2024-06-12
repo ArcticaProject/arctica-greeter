@@ -213,7 +213,16 @@ public class SettingsDaemon : Object
          */
         debug ("Launching Ayatana Indicators...");
         var greeter = new ArcticaGreeter();
-        greeter.start_indicators ();
+        Timeout.add (50, () =>
+            {
+                greeter.start_notification_daemon ();
+                return false;
+            });
+        Timeout.add (100, () =>
+            {
+                greeter.start_indicators ();
+                return false;
+            });
     }
 
     private void stop_settings_daemon ()

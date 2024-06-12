@@ -55,6 +55,7 @@ public class ArcticaGreeter : Object
     public signal void greeter_ready ();
 
     public List<Pid> indicator_service_pids;
+    Pid notificationdaemon_pid = 0;
 
     construct
     {
@@ -1030,6 +1031,52 @@ public class ArcticaGreeter : Object
         }
     }
 
+    public void start_notification_daemon ()
+    {
+        try
+        {
+            string[] argv = null;
+
+            if (FileUtils.test ("/usr/lib/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
+                Shell.parse_argv ("/usr/lib/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+            }
+            else if (FileUtils.test ("/usr/libexec/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
+                Shell.parse_argv ("/usr/libexec/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+            }
+            if (argv != null)
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out notificationdaemon_pid);
+            debug ("Launched mate-notification-daemon. PID: %d", notificationdaemon_pid);
+        }
+        catch (Error e)
+        {
+            warning ("Error starting the mate-notification-daemon registry: %s", e.message);
+        }
+    }
+
+    public void stop_notification_daemon ()
+    {
+        if (notificationdaemon_pid != 0)
+        {
+#if VALA_0_40
+            Posix.kill (notificationdaemon_pid, Posix.Signal.KILL);
+#else
+            Posix.kill (notificationdaemon_pid, Posix.SIGKILL);
+#endif
+            int status;
+            Posix.waitpid (notificationdaemon_pid, out status, 0);
+            if (Process.if_exited (status))
+                debug ("mate-notification-daemon exited with return value %d", Process.exit_status (status));
+            else
+                debug ("mate-notification-daemon terminated with signal %d", Process.term_sig (status));
+            notificationdaemon_pid = 0;
+        }
+    }
+
     public static int main (string[] args)
     {
         /* Protect memory from being paged to disk, as we deal with passwords
@@ -1181,6 +1228,8 @@ public class ArcticaGreeter : Object
         }
 
         Pid atspi_pid = 0;
+        Pid nmapplet_pid = 0;
+
         if (!do_test_mode)
         {
 
@@ -1318,8 +1367,6 @@ public class ArcticaGreeter : Object
         var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast);
         greeter.go();
 
-        Pid nmapplet_pid = 0;
-
         if (!do_test_mode)
         {
 
@@ -1368,6 +1415,7 @@ public class ArcticaGreeter : Object
         {
 
             greeter.stop_indicators();
+            greeter.stop_notification_daemon();
             greeter.settings_daemon.stop();
 
             if (nmapplet_pid != 0)
