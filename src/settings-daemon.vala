@@ -205,6 +205,15 @@ public class SettingsDaemon : Object
         {
             debug ("Could not start %s: %s", Config.SD_BINARY, e.message);
         }
+
+        /* Start Ayatana Indicators...
+         * The indicator start has been moved here, because the session
+         * indicator requires org.gnome.ScreenSaver to have been setup
+         * accurately (which is happening before the settings-daemon start).
+         */
+        debug ("Launching Ayatana Indicators...");
+        var greeter = new ArcticaGreeter();
+        greeter.start_indicators ();
     }
 
     private void stop_settings_daemon ()

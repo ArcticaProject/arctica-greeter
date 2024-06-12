@@ -54,6 +54,8 @@ public class ArcticaGreeter : Object
     public signal void xsettings_ready ();
     public signal void greeter_ready ();
 
+    public List<Pid> indicator_service_pids;
+
     construct
     {
         Bus.own_name (BusType.SESSION, "org.ayatana.greeter", BusNameOwnerFlags.NONE, onBusAcquired);
@@ -932,6 +934,102 @@ public class ArcticaGreeter : Object
         return ret;
     }
 
+    public void start_indicators ()
+    {
+        var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
+
+        var update_indicator_list = false;
+        for (var i = 0; i < indicator_list.length; i++)
+        {
+            if (indicator_list[i] == "ug-keyboard")
+            {
+                indicator_list[i] = "org.ayatana.indicator.keyboard";
+                update_indicator_list = true;
+            }
+        }
+
+        if (update_indicator_list)
+            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
+
+        if (!test_mode)
+        {
+            var indicator_service = "";
+            foreach (unowned string indicator in indicator_list)
+            {
+                Pid indicator_service_pid = 0;
+
+                if ("ug-" in indicator && ! ("." in indicator))
+                    continue;
+
+                if ("org.ayatana.indicator." in indicator)
+                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set(".")[3]);
+                else if ("ayatana-" in indicator)
+                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set("-")[1]);
+                else
+                    indicator_service = indicator;
+
+                try {
+                    /* Start the indicator service */
+                    string[] argv = null;
+
+                    /* FIXME: This path is rather hard-coded here.
+                     * If it pops up, we need to handle this in
+                     * some path detection fashion similar to
+                     * how we find at-spi-bus-launcher on the file
+                     * system.
+                     */
+                    if (FileUtils.test ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
+                        Shell.parse_argv ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), out argv);
+                    else if (FileUtils.test ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
+                        Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
+                    if (argv != null)
+                    {
+                        Process.spawn_async (null,
+                                             argv,
+                                             null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out indicator_service_pid);
+                        indicator_service_pids.append(indicator_service_pid);
+                        debug ("Successfully started Ayatana Indicator Service '%s' [%d]", indicator_service, indicator_service_pid);
+                    }
+                    else
+                    {
+                        warning ("Could not find indicator service executable for Indicator Service '%s'", indicator_service);
+                    }
+                }
+                catch (Error e)
+                {
+                    warning ("Error starting Indicator Service '%s': %s", indicator_service, e.message);
+                }
+
+            }
+        }
+    }
+
+    public void stop_indicators ()
+    {
+        foreach (unowned Pid indicator_service_pid in indicator_service_pids)
+        {
+            if (indicator_service_pid != 0)
+            {
+#if VALA_0_40
+                Posix.kill (indicator_service_pid, Posix.Signal.TERM);
+#else
+                Posix.kill (indicator_service_pid, Posix.SIGTERM);
+#endif
+
+                int status;
+                Posix.waitpid (indicator_service_pid, out status, 0);
+                if (Process.if_exited (status))
+                    debug ("Indicator Service process [%d] exited with return value %d", indicator_service_pid, Process.exit_status (status));
+                else
+                    debug ("Indicator Service process [%d] terminated with signal %d", indicator_service_pid, Process.term_sig (status));
+                indicator_service_pid = 0;
+            }
+        }
+    }
+
     public static int main (string[] args)
     {
         /* Protect memory from being paged to disk, as we deal with passwords
@@ -1222,23 +1320,6 @@ public class ArcticaGreeter : Object
 
         Pid nmapplet_pid = 0;
 
-        var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
-
-        var update_indicator_list = false;
-        for (var i = 0; i < indicator_list.length; i++)
-        {
-            if (indicator_list[i] == "ug-keyboard")
-            {
-                indicator_list[i] = "org.ayatana.indicator.keyboard";
-                update_indicator_list = true;
-            }
-        }
-
-        if (update_indicator_list)
-            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
-
-        var launched_indicator_service_pids = new List<Pid>();
-
         if (!do_test_mode)
         {
 
@@ -1248,58 +1329,6 @@ public class ArcticaGreeter : Object
                 debug ("Showing greeter");
                 greeter.show ();
             });
-
-            var indicator_service = "";
-            foreach (unowned string indicator in indicator_list)
-            {
-                Pid indicator_service_pid = 0;
-
-                if ("ug-" in indicator && ! ("." in indicator))
-                    continue;
-
-                if ("org.ayatana.indicator." in indicator)
-                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set(".")[3]);
-                else if ("ayatana-" in indicator)
-                    indicator_service = "ayatana-indicator-%s".printf(indicator.split_set("-")[1]);
-                else
-                    indicator_service = indicator;
-
-                try {
-                    /* Start the indicator service */
-                    string[] argv = null;
-
-                    /* FIXME: This path is rather hard-coded here.
-                     * If it pops up, we need to handle this in
-                     * some path detection fashion similar to
-                     * how we find at-spi-bus-launcher on the file
-                     * system.
-                     */
-                    if (FileUtils.test ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
-                        Shell.parse_argv ("/usr/lib/%s/%s-service".printf(indicator_service, indicator_service), out argv);
-                    else if (FileUtils.test ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), FileTest.EXISTS))
-                        Shell.parse_argv ("/usr/libexec/%s/%s-service".printf(indicator_service, indicator_service), out argv);
-                    if (argv != null)
-                    {
-                        Process.spawn_async (null,
-                                             argv,
-                                             null,
-                                         SpawnFlags.SEARCH_PATH,
-                                         null,
-                                         out indicator_service_pid);
-                        launched_indicator_service_pids.append(indicator_service_pid);
-                        debug ("Successfully started Ayatana Indicator Service '%s' [%d]", indicator_service, indicator_service_pid);
-                    }
-                    else
-                    {
-                        warning ("Could not find indicator service executable for Indicator Service '%s'", indicator_service);
-                    }
-                }
-                catch (Error e)
-                {
-                    warning ("Error starting Indicator Service '%s': %s", indicator_service, e.message);
-                }
-
-            }
 
             try
             {
@@ -1338,26 +1367,7 @@ public class ArcticaGreeter : Object
         if (!do_test_mode)
         {
 
-            foreach (unowned Pid indicator_service_pid in launched_indicator_service_pids)
-            {
-                if (indicator_service_pid != 0)
-                {
-#if VALA_0_40
-                    Posix.kill (indicator_service_pid, Posix.Signal.TERM);
-#else
-                    Posix.kill (indicator_service_pid, Posix.SIGTERM);
-#endif
-
-                    int status;
-                    Posix.waitpid (indicator_service_pid, out status, 0);
-                    if (Process.if_exited (status))
-                        debug ("Indicator Service process [%d] exited with return value %d", indicator_service_pid, Process.exit_status (status));
-                    else
-                        debug ("Indicator Service process [%d] terminated with signal %d", indicator_service_pid, Process.term_sig (status));
-                    indicator_service_pid = 0;
-                }
-            }
-
+            greeter.stop_indicators();
             greeter.settings_daemon.stop();
 
             if (nmapplet_pid != 0)
