@@ -1,66 +1,76 @@
-// Disable Controlling of Network Devices
+// Allow enabling/disabling of Network Devices in arctica-greeter / LightDM
 polkit.addRule(function(action, subject) {
-    if (subject.user !== 'lightdm')
+    if (subject.user !== 'lightdm') {
         return undefined;
+    }
 
     if (action.id == "org.freedesktop.NetworkManager.enable-disable-network" ||
          action.id == "org.freedesktop.NetworkManager.enable-disable-wifi" ||
          action.id == "org.freedesktop.NetworkManager.enable-disable-wwan" ||
          action.id == "org.freedesktop.NetworkManager.enable-disable-wimax") {
-            return polkit.Result.NO;
+        return polkit.Result.YES;
     }
 });
 
-// Disable Sleep and Wake
+// Allow Sleep and Wake in LightDM (for power management purposes)
 polkit.addRule(function(action, subject) {
-    if (subject.user !== 'lightdm')
+    if (subject.user !== 'lightdm') {
         return undefined;
+    }
 
     if (action.id == "org.freedesktop.NetworkManager.sleep-wake") {
-            return polkit.Result.NO;
+        return polkit.Result.YES;
     }
 });
 
-// Disable WiFi Sharing
+// Disable WiFi Sharing in LightDM
 polkit.addRule(function(action, subject) {
-    if (subject.user !== 'lightdm')
+    if (subject.user !== 'lightdm') {
         return undefined;
+    }
 
     if ((action.id == "org.freedesktop.NetworkManager.wifi.share.protected" ||
          action.id == "org.freedesktop.NetworkManager.wifi.share.open")) {
-            return polkit.Result.NO;
+        return polkit.Result.NO;
     }
 });
 
-// Disable Settings Modifications
+// Allow system settings modifications via arctica-greeter / LightDM
+// This leads to the greeter's nm-applet creating non-private WiFi connection profiles
+// by default, see:
+// https://gitlab.gnome.org/GNOME/network-manager-applet/-/commit/a0f95d83ff946ba854143414c97c4ed7af19b7fa
+//
+// As a result, all users can use WiFi connection profiles that were originally configured
+// in the greeter. Security implications are that all users with access to the greeter can
+// via WiFi credentials that other users configured previously via the greeter.
+polkit.addRule(function(action, subject) {
+    if (subject.user !== 'lightdm') {
+        return undefined;
+    }
+
+    if (action.id == "org.freedesktop.NetworkManager.settings.modify.system") {
+        return polkit.Result.YES;
+    }
+});
+
+// Allow users to create new WiFi connection profiles via arctica-greeter / LightDM
 polkit.addRule(function(action, subject) {
     if (subject.user !== 'lightdm')
         return undefined;
 
     if (action.id == "org.freedesktop.NetworkManager.settings.modify.own" ||
-         action.id == "org.freedesktop.NetworkManager.settings.modify.system" ||
-         action.id == "org.freedesktop.NetworkManager.settings.modify.hostname") {
-            return polkit.Result.NO;
+        action.id == "org.freedesktop.NetworkManager.settings.modify.hostname") {
+        return polkit.Result.NO;
     }
 });
 
-// Disable User Connections
+// Enable Controlling of Network Connections in LightDM
 polkit.addRule(function(action, subject) {
     if (subject.user !== 'lightdm')
         return undefined;
 
-    if (action.id == "org.freedesktop.NetworkManager.use-user-connections") {
-            return polkit.Result.NO;
-    }
-});
-
-// Enable Controlling of Network Connections
-polkit.addRule(function(action, subject) {
-    if (subject.user !== 'lightdm')
-        return undefined;
-
-    if (action.id.match("org.freedesktop.NetworkManager.network-control") &&
+    if (action.id.match("org.freedesktop.NetworkManager.network-control")) &&
         subject.active == true) {
-            return polkit.Result.YES;
+        return polkit.Result.YES;
     }
 });
