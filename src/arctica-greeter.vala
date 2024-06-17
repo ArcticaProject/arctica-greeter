@@ -254,58 +254,75 @@ public class ArcticaGreeter : Object
 
     public string? get_default_session ()
     {
-        var sessions = new List<string> ();
+        var available_sessions = new List<string> ();
         var hide_default_xsession = AGSettings.get_boolean (AGSettings.KEY_HIDE_DEFAULT_XSESSION);
+
+        /* Debian/Ubuntu style of defining the default xsession.
+         */
         if (!hide_default_xsession) {
-            sessions.append ("lightdm-xsession");
+            var default_session_path_suse = Path.build_filename  ("/usr/share/xsessions/default.desktop", null);
+            var default_session_path_deb = Path.build_filename  ("/usr/share/xsessions/lightdm-xsession.desktop", null);
+            if (FileUtils.test (default_session_path_suse, FileTest.EXISTS)) {
+                /* openSUSE/SLED style of defining the default xsession.
+                 */
+                available_sessions.append ("default");
+            }
+            else if (FileUtils.test (default_session_path_deb, FileTest.EXISTS)) {
+                /* Debian/Ubuntu style of defining the default xsession.
+                 */
+                available_sessions.append ("lightdm-xsession");
+            }
         }
 
         var preferred_sessions = AGSettings.get_strv (AGSettings.KEY_PREFERRED_SESSIONS);
+        if (preferred_sessions.length > 0) {
+            foreach (var preferred_session in preferred_sessions) {
+                available_sessions.append (preferred_session);
+            }
 
-        foreach (var preferred_session in preferred_sessions) {
-            sessions.append (preferred_session);
-        }
+            var excluded_sessions = AGSettings.get_strv (AGSettings.KEY_EXCLUDED_SESSIONS);
+            var includeonly_sessions = AGSettings.get_strv (AGSettings.KEY_INCLUDEONLY_SESSIONS);
 
-        var excluded_sessions = AGSettings.get_strv (AGSettings.KEY_EXCLUDED_SESSIONS);
-        var includeonly_sessions = AGSettings.get_strv (AGSettings.KEY_INCLUDEONLY_SESSIONS);
-
-        if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
-            foreach (string session in sessions) {
-                if (includeonly_sessions.length > 0) {
-                    if (!(session in includeonly_sessions)) {
+            if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_WAYLAND_SESSIONS)) {
+                foreach (string session in available_sessions) {
+                    if (includeonly_sessions.length > 0) {
+                        if (!(session in includeonly_sessions)) {
+                            continue;
+                        }
+                    }
+                    else if (session in excluded_sessions) {
                         continue;
                     }
-                }
-                else if (session in excluded_sessions) {
-                    continue;
-                }
-                var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
-                if (FileUtils.test (path, FileTest.EXISTS)) {
-                    debug ("Using %s as default (Wayland) session.", session);
-                    return session;
-                }
-            }
-        }
-
-        if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS)) {
-            foreach (string session in sessions) {
-                if (includeonly_sessions.length > 0) {
-                    if (!(session in includeonly_sessions)) {
-                        continue;
+                    var path = Path.build_filename  ("/usr/share/wayland-sessions/", session.concat(".desktop"), null);
+                    if (FileUtils.test (path, FileTest.EXISTS)) {
+                        debug ("Using %s as default (Wayland) session.", session);
+                        return session;
                     }
                 }
-                else if (session in excluded_sessions) {
-                    continue;
-                }
-                var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
-                if (FileUtils.test (path, FileTest.EXISTS)) {
-                    debug ("Using %s as default (X11) session.", session);
-                    return session;
+            }
+
+            if (!AGSettings.get_boolean (AGSettings.KEY_HIDE_X11_SESSIONS)) {
+                foreach (string session in available_sessions) {
+                    if (includeonly_sessions.length > 0) {
+                        if (!(session in includeonly_sessions)) {
+                            continue;
+                        }
+                    }
+                    else if (session in excluded_sessions) {
+                        continue;
+                    }
+                    var path = Path.build_filename  ("/usr/share/xsessions/", session.concat(".desktop"), null);
+                    if (FileUtils.test (path, FileTest.EXISTS)) {
+                        debug ("Using %s as default (X11) session.", session);
+                        return session;
+                    }
                 }
             }
+
+            warning ("Could not find a default session. Falling back to LightDM's system default.");
         }
 
-        warning ("Could not find a default session. Falling back to LightDM's system default.");
+        warning ("Using default session '%s' as configured as LightDM's system default.", greeter.default_session_hint);
         return greeter.default_session_hint;
     }
 

@@ -47,14 +47,50 @@ public class SessionPrompt : PromptBox
         }
         else
         {
-            var sessions = LightDM.get_sessions().copy();
-            sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold().collate_key(), b.name.casefold().collate_key()));
-            foreach (var session in sessions)
+            /* Pick the selected session (if any) and add it as first item.
+             */
+            var dm_sessions = LightDM.get_sessions().copy();
+            foreach (var dm_session in dm_sessions)
             {
+                if (dm_session.key == session) {
+                    debug ("Adding session %s (%s) as first entry", dm_session.key, dm_session.name);
+                    box.add_item (dm_session.key, dm_session.name, SessionList.get_badge (dm_session.key));
+                    break;
+                }
+            }
+            /* Pick the default session (if different from selected session) and add it as next item.
+             */
+            if (session != default_session) {
+                foreach (var dm_session in dm_sessions)
+                {
+                    if (dm_session.key == default_session) {
+                        debug ("Adding session %s (%s) as second entry", dm_session.key, dm_session.name);
+                        box.add_item (dm_session.key, dm_session.name, SessionList.get_badge (dm_session.key));
+                        break;
+                    }
+                }
+            }
+
+            dm_sessions.sort_with_data((a, b) => GLib.strcmp (a.name.casefold().collate_key(), b.name.casefold().collate_key()));
+            foreach (var dm_session in dm_sessions)
+            {
+                /* Skip the selected session, we already have added that as first time.
+                 */
+                if (dm_session.key == session) {
+                    continue;
+                }
+
+                /* Skip the default session, we already have added that as first or second item
+                   (depending on whether there was a selected session).
+                 */
+                if (dm_session.key == default_session) {
+                    continue;
+                }
+
                 /* Apply hide x11/wayland filter */
-                if (greeter.validate_session(session.key, false) != null) {
-                    debug ("Adding session %s (%s)", session.key, session.name);
-                    box.add_item (session.key, session.name, SessionList.get_badge (session.key));
+                if (greeter.validate_session(dm_session.key, false) != null) {
+                    debug ("Adding session %s (%s)", dm_session.key, dm_session.name);
+                    box.add_item (dm_session.key, dm_session.name, SessionList.get_badge (dm_session.key));
                 }
             }
         }
@@ -193,6 +229,26 @@ public class SessionList : GreeterList
     private static HashTable<string, Gdk.Pixbuf> badges; /* cache of badges */
     public static Gdk.Pixbuf? get_badge (string session)
     {
+        if (session == "default")
+        {
+            var sessions = LightDM.get_sessions().copy();
+            foreach (var find_session in sessions)
+            {
+                if (find_session.key == "default")
+                {
+                    foreach (var real_session in sessions)
+                    {
+                        if (real_session.name == find_session.name)
+                        {
+                            session = real_session.key;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
         var name = get_badge_name_from_alias_list (session);
 
         if (name == null)
