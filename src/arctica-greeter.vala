@@ -492,6 +492,7 @@ public class ArcticaGreeter : Object
         debug ("Showing main window");
         if (!test_mode)
             main_window.set_decorated (false);
+        main_window.set_keep_below (true);
         main_window.realize ();
         main_window.setup_window ();
         main_window.show ();
@@ -693,7 +694,6 @@ public class ArcticaGreeter : Object
 
                 // Now check to see if this is the magnifier - no focus for it, either
                 X.Window nMagnifier = 0;
-
                 if (this.pMagnifierWindow != null)
                 {
                     Gdk.X11.Window pWindow = (Gdk.X11.Window) this.pMagnifierWindow.get_window ();
@@ -702,6 +702,7 @@ public class ArcticaGreeter : Object
 
                 if (xwin != keyboard_xid && xwin != nMagnifier && win.get_type_hint() != Gdk.WindowTypeHint.NOTIFICATION)
                 {
+                    win.set_keep_below (true);
                     win.focus (Gdk.CURRENT_TIME);
 
                     /* Make sure to keep keyboard above */
