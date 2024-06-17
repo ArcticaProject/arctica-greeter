@@ -105,14 +105,19 @@ public class ArcticaGreeter : Object
 
         state_file = Path.build_filename (state_dir, state_file_name);
         state = new KeyFile ();
-        try
-        {
-            state.load_from_file (state_file, KeyFileFlags.NONE);
+        if (FileUtils.test (state_file, FileTest.EXISTS)) {
+            try
+            {
+                state.load_from_file (state_file, KeyFileFlags.NONE);
+            }
+            catch (Error e)
+            {
+                if (!(e is FileError.NOENT))
+                    warning ("Failed to load state from %s: %s\n", state_file, e.message);
+            }
         }
-        catch (Error e)
-        {
-            if (!(e is FileError.NOENT))
-                warning ("Failed to load state from %s: %s\n", state_file, e.message);
+        else {
+            debug ("State file does not (yet) exist: %s\n", state_file);
         }
     }
 
