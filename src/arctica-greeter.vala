@@ -1980,6 +1980,19 @@ public class DBusServer : Object
             pMagnifierSocket.add_id (nId);
         }
 
+        if ((this.pGreeter.pMagnifierWindow != null) && (pMagnifierSocket != null) && bActive)
+        {
+            /* resize and position the magnifier window to be in the right part of the screen */
+            debug ("Resizing and positioning Magnifier window.");
+            var pDisplay = this.pGreeter.main_window.get_display ();
+            var pMonitor = pDisplay.get_monitor_at_window (this.pGreeter.main_window.get_window ());
+            Gdk.Rectangle cRect = pMonitor.get_geometry ();
+            int magnifier_width  = 2 * cRect.width / 5;
+            int magnifier_height = 2 * cRect.height / 5;
+            this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - cRect.width / 10 - magnifier_width, cRect.y + cRect.height / 5 + cRect.height / 10);
+            this.pGreeter.pMagnifierWindow.resize (magnifier_width, magnifier_height);
+        }
+
         this.pGreeter.pMagnifierWindow.visible = bActive;
     }
 }
