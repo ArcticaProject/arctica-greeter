@@ -1,3 +1,15 @@
+Overview of changes in arctica-greeter 0.99.8.2
+
+  - src/: Resize and position magnifier window.
+  - src/: Let onboard know that it got launched for arctica-greeter.
+  - src/: On every toggle/enable resize/reposition the OSK. Required
+    when running under a window manager such as metacity or marco.
+  - src/: OSK and Magnifier: always keep above other windows, don't use
+    window decorations. Required when running under a window manager
+    such as metacity or marco.
+  - arctica-greeter-magnifier: Enforce start without window
+    decorations.
+
 Overview of changes in arctica-greeter 0.99.8.1
 
   - src/arctica-greeter.vala: Don't reference 'Marco' anymore, the WM

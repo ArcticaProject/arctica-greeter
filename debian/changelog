@@ -1,3 +1,10 @@
+arctica-greeter (0.99.8.2-0) unstable; urgency=medium
+
+  * Upstream-provided Debian package for Arctica Greeter.
+    See upstream ChangeLog for recent changes.
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Tue, 18 Jun 2024 17:43:33 +0200
+
 arctica-greeter (0.99.8.1-0) unstable; urgency=medium
 
   * Upstream-provided Debian package for Arctica Greeter.

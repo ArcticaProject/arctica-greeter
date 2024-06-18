@@ -1,6 +1,18 @@
 2024-06-18 Mike Gabriel
 
-        * release 0.99.8.1 (HEAD -> master, tag: 0.99.8.1)
+        * release 0.99.8.2 (HEAD -> main, tag: 0.99.8.2)
+        * arctica-greeter-magnifier: Enforce start without window
+          decorations. (6f803ae0)
+        * src/: OSK and Magnifier: always keep above other windows, don't use
+          window decoration. Required when running under a window
+          manager such as metacity or marco. (7534bae6)
+        * src/: On every toggle/enable resize/reposition the OSK. Required
+          when running under a window manager such as metacity or
+          marco. (24da9451)
+        * src/: Let onboard know that it got launched for arctica-greeter.
+          (1d49f96d)
+        * src/: Resize and position magnifier window. (e5040b08)
+        * release 0.99.8.1 (b98f5c0c) (tag: 0.99.8.1)
         * src/main-window.vala: Update struts when monitor setup changed.
           (d094aada)
         * src/main-window.vala: In set_struts() consider window scaling when
