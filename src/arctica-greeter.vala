@@ -1579,9 +1579,9 @@ public class ArcticaGreeter : Object
                 int status;
                 Posix.waitpid (windowmanager_pid, out status, 0);
                 if (Process.if_exited (status))
-                    debug ("Marco Window Manager exited with return value %d", Process.exit_status (status));
+                    debug ("Window Manager exited with return value %d", Process.exit_status (status));
                 else
-                    debug ("Marco Window Manager terminated with signal %d", Process.term_sig (status));
+                    debug ("Window Manager terminated with signal %d", Process.term_sig (status));
                 windowmanager_pid = 0;
             }
         }
