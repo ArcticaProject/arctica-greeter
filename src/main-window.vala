@@ -346,6 +346,7 @@ public class MainWindow : Gtk.Window
         debug ("MainWindow is %dx%d pixels", background.width, background.height);
 
         background.set_monitors (monitors);
+        set_struts (this, MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
 
         if(do_resize)
         {
