@@ -1178,6 +1178,28 @@ public class ArcticaGreeter : Object
         /* Make nm-applet hide items the user does not have permissions to interact with */
         Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
 
+        /* Set indicators to run with reduced functionality */
+        AGUtils.greeter_set_env ("INDICATOR_GREETER_MODE", "1");
+
+        /* Don't allow virtual file systems? */
+        AGUtils.greeter_set_env ("GIO_USE_VFS", "local");
+        AGUtils.greeter_set_env ("GVFS_DISABLE_FUSE", "1");
+
+        /* Hint to have onboard running in greeter mode */
+        AGUtils.greeter_set_env ("RUNNING_UNDER_GDM", "1");
+
+        /* Let indicators know about our unique dbus name */
+        try
+        {
+            var conn = Bus.get_sync (BusType.SESSION);
+            AGUtils.greeter_set_env ("ARCTICA_GREETER_DBUS_NAME", conn.get_unique_name ());
+        }
+        catch (IOError e)
+        {
+            debug ("Could not set DBUS_NAME: %s", e.message);
+        }
+
+
         bool do_show_version = false;
         bool do_test_mode = false;
         bool do_test_highcontrast = false;
@@ -1207,6 +1229,7 @@ public class ArcticaGreeter : Object
          * GLib.Environment.set_variable() calls won't take effect (for
          * whatever unknown reason...) if they get issued after the c.parse()
          * method call on our OptionContext object (see a few lines below).
+         * Same applies to AGUtils.set_greeter_env().
          *
          * To mitigate this (strange) behaviour, make sure that all env
          * variable setups in main() are located above this comment.
