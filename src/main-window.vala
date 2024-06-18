@@ -250,40 +250,43 @@ public class MainWindow : Gtk.Window
         set_struts (this, MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
     }
 
-    public static void set_struts(Gtk.Window? window, uint position, long menubar_size)
+    public void set_struts(Gtk.Window? window, uint position, long menubar_size)
     {
-        Gdk.Atom atom;
-        long struts[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        var screen = window.screen;
-        Gdk.Monitor mon = screen.get_display().get_primary_monitor();
-        Gdk.Rectangle primary_monitor_rect = mon.get_geometry();
-
         if (!window.get_realized()) {
                 return;
         }
 
+        var screen = window.screen;
+
+        if (primary_monitor == null) {
+            return;
+        }
+
+        Gdk.Atom atom;
+        long struts[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
         // Struts dependent on position
         switch (position) {
             case MenubarPositions.TOP:
-                struts[Struts.TOP] = (menubar_size + primary_monitor_rect.y);
-                struts[Struts.TOP_START] = primary_monitor_rect.x;
-                struts[Struts.TOP_END] = (primary_monitor_rect.x + primary_monitor_rect.width) - 1;
+                struts[Struts.TOP] = (menubar_size + primary_monitor.y);
+                struts[Struts.TOP_START] = primary_monitor.x;
+                struts[Struts.TOP_END] = (primary_monitor.x + primary_monitor.width) - 1;
                 break;
             case MenubarPositions.LEFT:
-                struts[Struts.LEFT] = (primary_monitor_rect.x + menubar_size);
-                struts[Struts.LEFT_START] = primary_monitor_rect.y;
-                struts[Struts.LEFT_END] = (primary_monitor_rect.y + primary_monitor_rect.height) - 1;
+                struts[Struts.LEFT] = (primary_monitor.x + menubar_size);
+                struts[Struts.LEFT_START] = primary_monitor.y;
+                struts[Struts.LEFT_END] = (primary_monitor.y + primary_monitor.height) - 1;
                 break;
             case MenubarPositions.RIGHT:
-                struts[Struts.RIGHT] = (menubar_size + screen.get_width() - primary_monitor_rect.x - primary_monitor_rect.width);
-                struts[Struts.RIGHT_START] = primary_monitor_rect.y;
-                struts[Struts.RIGHT_END] = (primary_monitor_rect.y + primary_monitor_rect.height) - 1;
+                struts[Struts.RIGHT] = (menubar_size + screen.get_width() - primary_monitor.x - primary_monitor.width);
+                struts[Struts.RIGHT_START] = primary_monitor.y;
+                struts[Struts.RIGHT_END] = (primary_monitor.y + primary_monitor.height) - 1;
                 break;
             case MenubarPositions.BOTTOM:
                 default:
-                struts[Struts.BOTTOM] = (menubar_size + screen.get_height() - primary_monitor_rect.y - primary_monitor_rect.height);
-                struts[Struts.BOTTOM_START] = primary_monitor_rect.x;
-                struts[Struts.BOTTOM_END] = (primary_monitor_rect.x + primary_monitor_rect.width) - 1;
+                struts[Struts.BOTTOM] = (menubar_size + screen.get_height() - primary_monitor.y - primary_monitor.height);
+                struts[Struts.BOTTOM_START] = primary_monitor.x;
+                struts[Struts.BOTTOM_END] = (primary_monitor.x + primary_monitor.width) - 1;
                 break;
         }
 
