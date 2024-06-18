@@ -1,6 +1,24 @@
 2024-06-18 Mike Gabriel
 
-        * release 0.99.8.0 (HEAD -> master, tag: 0.99.8.0)
+        * release 0.99.8.1 (HEAD -> master, tag: 0.99.8.1)
+        * src/main-window.vala: Update struts when monitor setup changed.
+          (d094aada)
+        * src/main-window.vala: In set_struts() consider window scaling when
+          calculting _NET_WM_STRUT{,_PARTIAL} (fixes broken
+          geometry). (041352dd)
+        * src/: In set_struts(), use already discovered geometry of the
+          primary monitor. (141a1820)
+        * src/: Don't launch Geoclue agent when in test mode. (5ced7b58)
+        * src/: Launch/stop real window manager event based. (0bf37ddc)
+        * d/changelog: amend revision in package version (6739f24a)
+        * d/control: Switch from metacity to to marco in D:. (c0f1b48b)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Default to
+          'marco' as window manager. (c400b725)
+        * window manager: Alternatively to metacity, also support marco.
+          (aac3361d)
+        * src/arctica-greeter.vala: Don't reference 'Marco' anymore, the WM
+          is / will be configurable. (b094a119)
+        * release 0.99.8.0 (238d956e) (tag: 0.99.8.0)
         * src/: Set _NET_WM_STRUT{,_PARTIAL} so that notification bubbles
           don't overlay the menubar. (27570360)
         * d/control: Add to R: metacity. (816fdaec)

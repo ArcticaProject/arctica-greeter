@@ -1,3 +1,18 @@
+Overview of changes in arctica-greeter 0.99.8.1
+
+  - src/arctica-greeter.vala: Don't reference 'Marco' anymore, the WM
+    is / will be configurable.
+  - window manager: Alternatively to metacity, also support marco.
+  - data/org.ArcticaProject.arctica-greeter.gschema.xml: Default to
+    'marco' as window manager.
+  - src/: Launch/stop real window manager event based.
+  - src/: Don't launch Geoclue agent when in test mode.
+  - src/: In set_struts(), use already discovered geometry of the
+    primary monitor.
+  - src/main-window.vala: In set_struts() consider window scaling when
+    calculting _NET_WM_STRUT{,_PARTIAL} (fixes broken geometry).
+  - src/main-window.vala: Update struts when monitor setup changed.
+
 Overview of changes in arctica-greeter 0.99.8.0
 
   - data/50-org.Arctica-Project.arctica-greeter.rules: Make file better
