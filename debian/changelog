@@ -1,4 +1,4 @@
-arctica-greeter (0.99.8.0-1) unstable; urgency=medium
+arctica-greeter (0.99.8.0-0) unstable; urgency=medium
 
   * Upstream-provided Debian package for Arctica Greeter.
     See upstream ChangeLog for recent changes.
