@@ -1845,6 +1845,8 @@ public class DBusServer : Object
             this.pGreeter.pKeyboardWindow.accept_focus = false;
             this.pGreeter.pKeyboardWindow.focus_on_map = false;
             this.pGreeter.pKeyboardWindow.set_title("OSK (theme: %s)".printf(sTheme));
+            this.pGreeter.pKeyboardWindow.set_decorated (false);
+            this.pGreeter.pKeyboardWindow.set_keep_above (true);
         }
 
         if ((this.pGreeter.pKeyboardWindow != null) && (pKeyboardSocket != null) && (nId != 0))
@@ -1972,6 +1974,8 @@ public class DBusServer : Object
             this.pGreeter.pMagnifierWindow.accept_focus = false;
             this.pGreeter.pMagnifierWindow.focus_on_map = false;
             this.pGreeter.pMagnifierWindow.set_title ("Magnifier");
+            this.pGreeter.pMagnifierWindow.set_decorated (false);
+            this.pGreeter.pMagnifierWindow.set_keep_above (true);
         }
 
         if ((this.pGreeter.pMagnifierWindow != null) && (pMagnifierSocket != null) && (nId != 0))
