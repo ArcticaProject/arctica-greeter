@@ -35,6 +35,10 @@ public class ArcticaGreeter : Object
     public Gtk.Window? pMagnifierWindow { get; set; default = null; }
     public bool test_mode { get; construct; default = false; }
     public bool test_highcontrast { get; construct; default = false; }
+
+    // Menubar is smaller, but with shadow, we reserve more space
+    public const int MENUBAR_HEIGHT = 40;
+
     private string state_file;
     private KeyFile state;
     private DBusServer pServer;

@@ -120,11 +120,11 @@ public abstract class GreeterList : FadableBox
         get
         {
             /* First, get grid row number as if menubar weren't there */
-            var row = (MainWindow.MENUBAR_HEIGHT + get_allocated_height ()) / grid_size;
+            var row = (ArcticaGreeter.MENUBAR_HEIGHT + get_allocated_height ()) / grid_size;
             row = row - DEFAULT_BOX_HEIGHT; /* and no default dash box */
             row = row / 2; /* and in the middle */
             /* Now calculate y pixel spot keeping in mind menubar's allocation */
-            return row * grid_size - MainWindow.MENUBAR_HEIGHT;
+            return row * grid_size - ArcticaGreeter.MENUBAR_HEIGHT;
         }
     }
 
