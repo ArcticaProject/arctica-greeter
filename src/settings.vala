@@ -43,6 +43,7 @@ public class AGSettings : Object
     public const string KEY_CURSOR_THEME_NAME = "cursor-theme-name";
     public const string KEY_CURSOR_THEME_SIZE = "cursor-theme-size";
     public const string KEY_FONT_NAME = "font-name";
+    public const string KEY_WINDOW_MANAGER = "window-manager";
     public const string KEY_XFT_ANTIALIAS = "xft-antialias";
     public const string KEY_XFT_DPI = "xft-dpi";
     public const string KEY_XFT_HINTSTYLE = "xft-hintstyle";

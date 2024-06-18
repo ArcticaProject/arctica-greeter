@@ -117,6 +117,14 @@
       <default>'Noto Sans 11'</default>
       <summary>Font to use.</summary>
     </key>
+    <key name="window-manager" type="s">
+      <choices>
+        <choice value='none'/>
+        <choice value='metacity'/>
+      </choices>
+      <default>'metacity'</default>
+      <summary>If at all and if yes, which window manager to use.</summary>
+    </key>
     <key name="xft-antialias" type="b">
       <default>true</default>
       <summary>Whether to antialias Xft fonts.</summary>
