@@ -1358,6 +1358,7 @@ public class ArcticaGreeter : Object
 
         Pid atspi_pid = 0;
         Pid nmapplet_pid = 0;
+        Pid geoclueagent_pid = 0;
 
         if (!do_test_mode)
         {
@@ -1385,34 +1386,33 @@ public class ArcticaGreeter : Object
             {
                 warning ("Error starting the at-spi registry: %s", e.message);
             }
-        }
 
-        Pid geoclueagent_pid = 0;
-        if (AGSettings.get_boolean (AGSettings.KEY_GEOCLUE_AGENT) && (!do_test_mode))
-        {
-
-            try
+            if (AGSettings.get_boolean (AGSettings.KEY_GEOCLUE_AGENT) && (!do_test_mode))
             {
-                string[] argv = null;
 
-                if (FileUtils.test ("/usr/lib/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
-                    Shell.parse_argv ("/usr/lib/geoclue-2.0/demos/agent", out argv);
+                try
+                {
+                    string[] argv = null;
+
+                    if (FileUtils.test ("/usr/lib/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
+                        Shell.parse_argv ("/usr/lib/geoclue-2.0/demos/agent", out argv);
+                    }
+                    else if  (FileUtils.test ("/usr/libexec/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
+                        Shell.parse_argv ("/usr/libexec/geoclue-2.0/demos/agent", out argv);
+                    }
+                    if (argv != null)
+                        Process.spawn_async (null,
+                                             argv,
+                                             null,
+                                             SpawnFlags.SEARCH_PATH,
+                                             null,
+                                             out geoclueagent_pid);
+                    debug ("Launched GeoClue-2.0 agent. PID: %d", geoclueagent_pid);
                 }
-                else if  (FileUtils.test ("/usr/libexec/geoclue-2.0/demos/agent", FileTest.EXISTS)) {
-                    Shell.parse_argv ("/usr/libexec/geoclue-2.0/demos/agent", out argv);
+                catch (Error e)
+                {
+                    warning ("Error starting the GeoClue-2.0 agent: %s", e.message);
                 }
-                if (argv != null)
-                    Process.spawn_async (null,
-                                         argv,
-                                         null,
-                                         SpawnFlags.SEARCH_PATH,
-                                         null,
-                                         out geoclueagent_pid);
-                debug ("Launched GeoClue-2.0 agent. PID: %d", geoclueagent_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting the GeoClue-2.0 agent: %s", e.message);
             }
         }
 
