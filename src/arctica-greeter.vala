@@ -1199,6 +1199,9 @@ public class ArcticaGreeter : Object
             debug ("Could not set DBUS_NAME: %s", e.message);
         }
 
+        var gsettings_mate_desktop_interface = new Settings ("org.mate.interface");
+        int wsf_orig = gsettings_mate_desktop_interface.get_int ("window-scaling-factor");
+        gsettings_mate_desktop_interface.set_int ("window-scaling-factor", 1);
 
         bool do_show_version = false;
         bool do_test_mode = false;
@@ -1512,6 +1515,8 @@ public class ArcticaGreeter : Object
                 geoclueagent_pid = 0;
             }
         }
+
+        gsettings_mate_desktop_interface.set_int ("window-scaling-factor", wsf_orig);
 
         var screen = Gdk.Screen.get_default ();
         Gdk.X11.Display pDisplay = (Gdk.X11.Display) screen.get_display ();
