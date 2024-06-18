@@ -16,6 +16,7 @@ class Main(object):
         self.w = Gtk.Window.new(Gtk.WindowType.TOPLEVEL)
         self.w.set_size_request(300, 300)
         self.w.set_title("Magnus")
+        self.w.set_decorated(False)
         self.w.connect("destroy", lambda a: Gtk.main_quit())
         self.w.connect("configure-event", self.window_configure)
         self.img = Gtk.Image()
