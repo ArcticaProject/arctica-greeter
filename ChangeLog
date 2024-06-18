@@ -1,6 +1,49 @@
+2024-06-18 Mike Gabriel
+
+        * release 0.99.8.0 (HEAD -> master, tag: 0.99.8.0)
+        * src/: Set _NET_WM_STRUT{,_PARTIAL} so that notification bubbles
+          don't overlay the menubar. (27570360)
+        * d/control: Add to R: metacity. (816fdaec)
+        * src/: Re-introduce having a window manager (metacity this time,
+          with keybindings disabled). Make having it conifugrable
+          via GSettings. (b9911e7d)
+        * src/: Assure that org.mate.interface's window-scaling-factor is set
+          to 1x scaling (we handle it ourselves via env vars and
+          don't want the HiDPI effect to duplicated. (cf054d04)
+        * src/: Use AGUtils.greeter_set_env() (includes update of the D-Bus
+          activation environment) instead of
+          GLib.Environment.set_variable(). (173a4988)
+        * src/: Move all env variable settings before the cmdline option
+          parse() method to actually have an effect. (762058e4)
+
+2024-06-17 Mike Gabriel
+
+        * data/50-org.Arctica-Project.arctica-greeter.rules: Make networking
+          more configurable in Arctica Greeter. (f77de32b)
+        * main window: Keep always below all other windows (esp. helpful for
+          nm-applets WiFi credentials dialog). (4418e2c0)
+        * Support openSUSE style of marking the default (X11) session.
+          (30e18f5d)
+        * src/arctica-greeter.vala: Only load state file if it already
+          exists. (7e692b9d)
+
+2024-06-12 Mike Gabriel
+
+        * Launch mate-notification-daemon in greeter session for showing
+          system notifications. (8bc357f3)
+        * Wait with Ayatana Indicators startup until D-Bus mimick services
+          have come up. (7b0bf068)
+        * src/settings-daemon.vala: Also mimick org.mate.ScreenSaver D-Bus
+          service. (f4e287ab)
+
+2024-06-11 Mike Gabriel
+
+        * data/50-org.Arctica-Project.arctica-greeter.rules: Make file better
+          readable. (c14dee80)
+
 2024-06-04 Mike Gabriel
 
-        * release 0.99.7.0 (HEAD -> master, tag: 0.99.7.0)
+        * release 0.99.7.0 (f6ae4a30) (tag: 0.99.7.0)
         * Revert "Work around GTK 3.20's new allocation logic. Ported from
           slick-greeter." (dd603ac1)
         * src/greeter-list.vala: Redraw greeter box after showing/adding a

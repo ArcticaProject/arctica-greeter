@@ -1,3 +1,35 @@
+Overview of changes in arctica-greeter 0.99.8.0
+
+  - data/50-org.Arctica-Project.arctica-greeter.rules: Make file better
+    readable.
+  - src/settings-daemon.vala: Also mimick org.mate.ScreenSaver D-Bus
+    service.
+  - Wait with Ayatana Indicators startup until D-Bus mimick services
+    have come up.
+  - Launch mate-notification-daemon in greeter session for showing
+    system notifications.
+  - src/arctica-greeter.vala: Only load state file if it already
+    exists.
+  - Support openSUSE style of marking the default (X11) session.
+  - main window: Keep always below all other windows (esp. helpful for
+    nm-applets WiFi credentials dialog).
+  - data/50-org.Arctica-Project.arctica-greeter.rules: Make networking
+    more configurable in Arctica Greeter.
+  - src/: Move all env variable settings before the cmdline option
+    parse() method to actually have an effect.
+  - src/: Use AGUtils.greeter_set_env() (includes update of the D-Bus
+    activation environment) instead of
+    GLib.Environment.set_variable().
+  - src/: Assure that org.mate.interface's window-scaling-factor is set
+    to 1x scaling (we handle it ourselves via env vars and don't
+    want the HiDPI effect to duplicated.
+  - src/: Re-introduce having a window manager (metacity this time,
+    with keybindings disabled). Make having it conifugrable via
+    GSettings.
+  - d/control: Add to R: metacity.
+  - src/: Set _NET_WM_STRUT{,_PARTIAL} so that notification bubbles
+    don't overlay the menubar.
+
 Overview of changes in arctica-greeter 0.99.7.0
 
   - Drop to-be-reviewed slick-greeter patches. 0025 is already applied,
