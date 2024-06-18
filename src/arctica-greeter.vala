@@ -60,6 +60,7 @@ public class ArcticaGreeter : Object
 
     public List<Pid> indicator_service_pids;
     Pid notificationdaemon_pid = 0;
+    Pid windowmanager_pid = 0;
 
     construct
     {
@@ -833,7 +834,10 @@ public class ArcticaGreeter : Object
 
         main_window = new MainWindow ();
 
-        main_window.destroy.connect(() => { kill_fake_wm (); });
+        main_window.destroy.connect(() => {
+            stop_real_wm ();
+            kill_fake_wm ();
+        });
         main_window.delete_event.connect(() =>
         {
             Gtk.main_quit();
@@ -876,6 +880,7 @@ public class ArcticaGreeter : Object
                           () => debug ("Failed to acquire name com.lomiri.Shell"));
         }
 
+        start_real_wm ();
         start_fake_wm ();
         Gdk.threads_add_idle (ready_cb);
         greeter_ready ();
@@ -1104,6 +1109,77 @@ public class ArcticaGreeter : Object
         }
     }
 
+    public void start_real_wm ()
+    {
+        string wm = AGSettings.get_string (AGSettings.KEY_WINDOW_MANAGER);
+        if ((wm == "metacity") || (wm == "marco"))
+        {
+            try
+            {
+                string[] argv;
+
+                Shell.parse_argv (wm, out argv);
+                Process.spawn_async (null,
+                                     argv,
+                                     null,
+                                     SpawnFlags.SEARCH_PATH,
+                                     null,
+                                     out windowmanager_pid);
+                debug ("Launched '%s' WM. PID: %d", wm, windowmanager_pid);
+            }
+            catch (Error e)
+            {
+                warning ("Error starting the '%s' Window Manager: %s", wm, e.message);
+            }
+
+            Timeout.add (50, () =>
+                {
+                    try
+                    {
+                        string[] argv;
+                        Pid wm_message_pid = 0;
+
+                        Shell.parse_argv ("%s-message disable-keybindings".printf(wm), out argv);
+
+                        Process.spawn_sync (null,
+                                            argv,
+                                            null,
+                                            SpawnFlags.SEARCH_PATH,
+                                            null,
+                                            null,
+                                            null,
+                                            null);
+                        debug ("Launched '%s-message disable-keybindings' command", wm);
+                        return false;
+                    }
+                    catch (Error e)
+                    {
+                        warning ("Error during '%s-message disable-keybindings' command call: %s", wm, e.message);
+                        return true;
+                    }
+                });
+        }
+    }
+
+    public void stop_real_wm ()
+    {
+        if (windowmanager_pid != 0)
+        {
+#if VALA_0_40
+            Posix.kill (windowmanager_pid, Posix.Signal.TERM);
+#else
+            Posix.kill (windowmanager_pid, Posix.SIGTERM);
+#endif
+            int status;
+            Posix.waitpid (windowmanager_pid, out status, 0);
+            if (Process.if_exited (status))
+                debug ("Window Manager exited with return value %d", Process.exit_status (status));
+            else
+                debug ("Window Manager terminated with signal %d", Process.term_sig (status));
+            windowmanager_pid = 0;
+        }
+    }
+
     public static int main (string[] args)
     {
         /* Protect memory from being paged to disk, as we deal with passwords
@@ -1282,7 +1358,6 @@ public class ArcticaGreeter : Object
 
         Pid atspi_pid = 0;
         Pid nmapplet_pid = 0;
-        Pid windowmanager_pid = 0;
 
         if (!do_test_mode)
         {
@@ -1426,55 +1501,6 @@ public class ArcticaGreeter : Object
 
             activate_upower();
 
-            string wm = AGSettings.get_string (AGSettings.KEY_WINDOW_MANAGER);
-            if ((wm == "metacity") || (wm == "marco"))
-            {
-                try
-                {
-                    string[] argv;
-
-                    Shell.parse_argv (wm, out argv);
-                    Process.spawn_async (null,
-                                         argv,
-                                         null,
-                                         SpawnFlags.SEARCH_PATH,
-                                         null,
-                                         out windowmanager_pid);
-                    debug ("Launched '%s' WM. PID: %d", wm, windowmanager_pid);
-                }
-                catch (Error e)
-                {
-                    warning ("Error starting the '%s' Window Manager: %s", wm, e.message);
-                }
-
-                Timeout.add (50, () =>
-                    {
-                        try
-                        {
-                            string[] argv;
-                            Pid wm_message_pid = 0;
-
-                            Shell.parse_argv ("%s-message disable-keybindings".printf(wm), out argv);
-
-                            Process.spawn_sync (null,
-                                                argv,
-                                                null,
-                                                SpawnFlags.SEARCH_PATH,
-                                                null,
-                                                null,
-                                                null,
-                                                null);
-                            debug ("Launched '%s-message disable-keybindings' command", wm);
-                            return false;
-                        }
-                        catch (Error e)
-                        {
-                            warning ("Error during '%s-message disable-keybindings' command call: %s", wm, e.message);
-                            return true;
-                        }
-                    });
-            }
-
             greeter.greeter_ready.connect (() => {
                 debug ("Showing greeter");
                 greeter.show ();
@@ -1567,22 +1593,6 @@ public class ArcticaGreeter : Object
                 else
                     debug ("GeoClue-2.0 agent terminated with signal %d", Process.term_sig (status));
                 geoclueagent_pid = 0;
-            }
-
-            if (windowmanager_pid != 0)
-            {
-#if VALA_0_40
-                Posix.kill (windowmanager_pid, Posix.Signal.TERM);
-#else
-                Posix.kill (windowmanager_pid, Posix.SIGTERM);
-#endif
-                int status;
-                Posix.waitpid (windowmanager_pid, out status, 0);
-                if (Process.if_exited (status))
-                    debug ("Window Manager exited with return value %d", Process.exit_status (status));
-                else
-                    debug ("Window Manager terminated with signal %d", Process.term_sig (status));
-                windowmanager_pid = 0;
             }
         }
 
