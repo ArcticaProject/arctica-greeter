@@ -257,6 +257,7 @@ public class MainWindow : Gtk.Window
         }
 
         var screen = window.screen;
+        int scale = window.get_scale_factor();
 
         if (primary_monitor == null) {
             return;
@@ -268,25 +269,25 @@ public class MainWindow : Gtk.Window
         // Struts dependent on position
         switch (position) {
             case MenubarPositions.TOP:
-                struts[Struts.TOP] = (menubar_size + primary_monitor.y);
-                struts[Struts.TOP_START] = primary_monitor.x;
-                struts[Struts.TOP_END] = (primary_monitor.x + primary_monitor.width) - 1;
+                struts[Struts.TOP] = (menubar_size + primary_monitor.y) * scale;
+                struts[Struts.TOP_START] = primary_monitor.x * scale;
+                struts[Struts.TOP_END] = (primary_monitor.x + primary_monitor.width) * scale - 1;
                 break;
             case MenubarPositions.LEFT:
-                struts[Struts.LEFT] = (primary_monitor.x + menubar_size);
-                struts[Struts.LEFT_START] = primary_monitor.y;
-                struts[Struts.LEFT_END] = (primary_monitor.y + primary_monitor.height) - 1;
+                struts[Struts.LEFT] = (primary_monitor.x + menubar_size) * scale;
+                struts[Struts.LEFT_START] = primary_monitor.y * scale;
+                struts[Struts.LEFT_END] = (primary_monitor.y + primary_monitor.height) * scale - 1;
                 break;
             case MenubarPositions.RIGHT:
-                struts[Struts.RIGHT] = (menubar_size + screen.get_width() - primary_monitor.x - primary_monitor.width);
-                struts[Struts.RIGHT_START] = primary_monitor.y;
-                struts[Struts.RIGHT_END] = (primary_monitor.y + primary_monitor.height) - 1;
+                struts[Struts.RIGHT] = (menubar_size + screen.get_width() - primary_monitor.x - primary_monitor.width) * scale;
+                struts[Struts.RIGHT_START] = primary_monitor.y * scale;
+                struts[Struts.RIGHT_END] = (primary_monitor.y + primary_monitor.height) * scale - 1;
                 break;
             case MenubarPositions.BOTTOM:
                 default:
-                struts[Struts.BOTTOM] = (menubar_size + screen.get_height() - primary_monitor.y - primary_monitor.height);
-                struts[Struts.BOTTOM_START] = primary_monitor.x;
-                struts[Struts.BOTTOM_END] = (primary_monitor.x + primary_monitor.width) - 1;
+                struts[Struts.BOTTOM] = (menubar_size + screen.get_height() - primary_monitor.y - primary_monitor.height) * scale;
+                struts[Struts.BOTTOM_START] = primary_monitor.x * scale;
+                struts[Struts.BOTTOM_END] = (primary_monitor.x + primary_monitor.width) * scale - 1;
                 break;
         }
 
