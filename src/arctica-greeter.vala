@@ -1855,7 +1855,10 @@ public class DBusServer : Object
 
             debug ("Attaching new onboard process to OSK Gtk.Socket (+ Gtk.Window)");
             pKeyboardSocket.add_id (nId);
+        }
 
+        if ((this.pGreeter.pKeyboardWindow != null) && (pKeyboardSocket != null) && bActive)
+        {
             /* resize the keyboard window to cover the lower part of the screen */
             debug ("Resizing OSK window.");
             var pDisplay = this.pGreeter.main_window.get_display ();
