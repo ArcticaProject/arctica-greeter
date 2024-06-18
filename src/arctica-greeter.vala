@@ -1137,13 +1137,13 @@ public class ArcticaGreeter : Object
         Intl.textdomain (Config.GETTEXT_PACKAGE);
 
         /* Set up the accessibility stack, in case the user needs it for screen reading etc. */
-        Environment.set_variable ("GTK_MODULES", "atk-bridge", false);
+        AGUtils.greeter_set_env ("GTK_MODULES", "atk-bridge");
 
         /* Fix for https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482
            Slick-greeter sets the mouse cursor on the root window.
            Without GDK_CORE_DEVICE_EVENTS set, the DE is unable to apply its own cursor theme and size.
         */
-        GLib.Environment.set_variable ("GDK_CORE_DEVICE_EVENTS", "1", true);
+        AGUtils.greeter_set_env ("GDK_CORE_DEVICE_EVENTS", "1");
 
         log_timer = new Timer ();
         Log.set_default_handler (log_cb);
@@ -1165,7 +1165,7 @@ public class ArcticaGreeter : Object
         }
         /* Adjust GDK_SCALE to our configured scaling factor (via HiDPI settings). */
         debug ("Setting GDK_SCALE to: %d (scaling all UI elements by this factor)", scaling_factor_hidpi);
-        GLib.Environment.set_variable ("GDK_SCALE", "%d".printf (scaling_factor_hidpi), true);
+        AGUtils.greeter_set_env ("GDK_SCALE", "%d".printf (scaling_factor_hidpi));
 
         /* Font scaling settings */
         var scaling_factor_fonts = AGSettings.get_double (AGSettings.KEY_FONT_SCALING);
@@ -1173,10 +1173,10 @@ public class ArcticaGreeter : Object
 
         /* Adjust GDK_SCALE / GDK_DPI_SCALE to our configured scaling factors. */
         debug ("Setting GDK_DPI_SCALE to: %f (scaling fonts only by this factor)", scaling_factor_fonts);
-        GLib.Environment.set_variable ("GDK_DPI_SCALE", "%f".printf (scaling_factor_fonts), true);
+        AGUtils.greeter_set_env ("GDK_DPI_SCALE", "%f".printf (scaling_factor_fonts));
 
         /* Make nm-applet hide items the user does not have permissions to interact with */
-        Environment.set_variable ("NM_APPLET_HIDE_POLICY_ITEMS", "1", true);
+        AGUtils.greeter_set_env ("NM_APPLET_HIDE_POLICY_ITEMS", "1");
 
         /* Set indicators to run with reduced functionality */
         AGUtils.greeter_set_env ("INDICATOR_GREETER_MODE", "1");
