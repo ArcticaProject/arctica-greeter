@@ -123,7 +123,7 @@
         <choice value='metacity'/>
         <choice value='marco'/>
       </choices>
-      <default>'metacity'</default>
+      <default>'marco'</default>
       <summary>If at all and if yes, which window manager to use.</summary>
     </key>
     <key name="xft-antialias" type="b">
