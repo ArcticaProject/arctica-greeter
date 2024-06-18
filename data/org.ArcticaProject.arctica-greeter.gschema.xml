@@ -121,6 +121,7 @@
       <choices>
         <choice value='none'/>
         <choice value='metacity'/>
+        <choice value='marco'/>
       </choices>
       <default>'metacity'</default>
       <summary>If at all and if yes, which window manager to use.</summary>

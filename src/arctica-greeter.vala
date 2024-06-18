@@ -1427,7 +1427,7 @@ public class ArcticaGreeter : Object
             activate_upower();
 
             string wm = AGSettings.get_string (AGSettings.KEY_WINDOW_MANAGER);
-            if (wm == "metacity")
+            if ((wm == "metacity") || (wm == "marco"))
             {
                 try
                 {
