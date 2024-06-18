@@ -1799,7 +1799,7 @@ public class DBusServer : Object
                     sThemeArgs  = "--theme='%s'".printf (sThemePath);
                 }
 
-                string sCommand = "onboard --xid %s %s".printf (sLayoutArgs, sThemeArgs);
+                string sCommand = "onboard --keep-aspect --launched-by=arctica-greeter --xid %s %s".printf (sLayoutArgs, sThemeArgs);
                 debug ("Launching OSK: '%s'", sCommand);
 
                 string[] lArgs;
