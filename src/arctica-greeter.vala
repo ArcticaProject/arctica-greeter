@@ -969,23 +969,23 @@ public class ArcticaGreeter : Object
 
     public void start_indicators ()
     {
-        var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
-
-        var update_indicator_list = false;
-        for (var i = 0; i < indicator_list.length; i++)
-        {
-            if (indicator_list[i] == "ug-keyboard")
-            {
-                indicator_list[i] = "org.ayatana.indicator.keyboard";
-                update_indicator_list = true;
-            }
-        }
-
-        if (update_indicator_list)
-            AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
-
         if (!test_mode)
         {
+            var indicator_list = AGSettings.get_strv(AGSettings.KEY_INDICATORS);
+
+            var update_indicator_list = false;
+            for (var i = 0; i < indicator_list.length; i++)
+            {
+                if (indicator_list[i] == "ug-keyboard")
+                {
+                    indicator_list[i] = "org.ayatana.indicator.keyboard";
+                    update_indicator_list = true;
+                }
+            }
+
+            if (update_indicator_list)
+                AGSettings.set_strv(AGSettings.KEY_INDICATORS, indicator_list);
+
             var indicator_service = "";
             foreach (unowned string indicator in indicator_list)
             {
