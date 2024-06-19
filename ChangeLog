@@ -1,6 +1,34 @@
+2024-06-19 Mike Gabriel
+
+        * release 0.99.8.3 (HEAD -> master, tag: 0.99.8.3)
+        * arctica-greeter-check-hidpi: Import syslog module (we use it in
+          case of an occurring error). (347bbf05)
+        * src/settings-daemon.vala: Fake org.gnome.SessionManager's
+          RegisterClient D-Bus method. (8cbb98da)
+        * src/: Drop another (now) superfluous '!do_test_mode' check.
+          (f43aca36)
+        * src/: Skip start_notification_daemon() and start_real_wm() if in
+          test-mode. (e743bfba)
+        * src/: Exclude more code from being run in start_indicators() when
+          in test-mode. (1a5f9e5a)
+        * src/arctica-greeter: Reduce \!do_test_mode checks by 1. (127c52ae)
+        * src/: Only run enable_tap_to_click() when not in test-mode.
+          (d75bd38a)
+        * src/: Only fiddle with MATE scaling factor settings if not in
+          test-mode. (6ff5b6f1)
+        * src/arctica-greeter.vala: Handle get_state() return null gracefully
+          in ArcticaGreeter.GetUser(), don't operate on null as if
+          it was a string. (fb226b66)
+        * arctica-greeter-check-hidpi: Don't fail if no DISPLAY variable is
+          set, silently return scaling factor 1. (0b74a974)
+
+2024-06-19 Robert Tari
+
+        * Make position of the greeter magnifier configurable (d9736d71)
+
 2024-06-18 Mike Gabriel
 
-        * release 0.99.8.2 (HEAD -> main, tag: 0.99.8.2)
+        * release 0.99.8.2 (c48673e2) (tag: 0.99.8.2)
         * arctica-greeter-magnifier: Enforce start without window
           decorations. (6f803ae0)
         * src/: OSK and Magnifier: always keep above other windows, don't use

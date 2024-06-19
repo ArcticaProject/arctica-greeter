@@ -1,3 +1,25 @@
+Overview of changes in arctica-greeter 0.99.8.3
+
+  - Make position of the greeter magnifier configurable.
+  - arctica-greeter-check-hidpi: Don't fail if no DISPLAY variable is
+    set, silently return scaling factor 1.
+  - src/arctica-greeter.vala: Handle get_state() return null gracefully
+    in ArcticaGreeter.GetUser(), don't operate on null as if it was
+    a string.
+  - src/: Only fiddle with MATE scaling factor settings if not in
+    test-mode.
+  - src/: Only run enable_tap_to_click() when not in test-mode.
+  - src/arctica-greeter: Reduce '!do_test_mode' checks by 1.
+  - src/: Exclude more code from being run in start_indicators() when
+    in test-mode.
+  - src/: Skip start_notification_daemon() and start_real_wm() if in
+    test-mode.
+  - src/: Drop another (now) superfluous '!do_test_mode' check.
+  - src/settings-daemon.vala: Fake org.gnome.SessionManager's
+    RegisterClient D-Bus method.
+  - arctica-greeter-check-hidpi: Import syslog module (we use it in
+    case of an occurring error).
+
 Overview of changes in arctica-greeter 0.99.8.2
 
   - src/: Resize and position magnifier window.
