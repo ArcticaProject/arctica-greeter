@@ -1989,14 +1989,36 @@ public class DBusServer : Object
 
         if ((this.pGreeter.pMagnifierWindow != null) && (pMagnifierSocket != null) && bActive)
         {
-            /* resize and position the magnifier window to be in the right part of the screen */
+            /* resize and position the magnifier window */
             debug ("Resizing and positioning Magnifier window.");
             var pDisplay = this.pGreeter.main_window.get_display ();
             var pMonitor = pDisplay.get_monitor_at_window (this.pGreeter.main_window.get_window ());
             Gdk.Rectangle cRect = pMonitor.get_geometry ();
             int magnifier_width  = 2 * cRect.width / 5;
             int magnifier_height = 2 * cRect.height / 5;
-            this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - cRect.width / 10 - magnifier_width, cRect.y + cRect.height / 5 + cRect.height / 10);
+            string sPosition = AGSettings.get_string (AGSettings.KEY_MAGNIFIER_POSITION);
+
+            if (sPosition == "top-left")
+            {
+                magnifier_width  = (int) (magnifier_width * 0.75);
+                magnifier_height = (int) (magnifier_height * 0.75);
+                this.pGreeter.pMagnifierWindow.move (cRect.x + ArcticaGreeter.MENUBAR_HEIGHT, cRect.y + ArcticaGreeter.MENUBAR_HEIGHT * 2);
+            }
+            else if (sPosition == "top-right")
+            {
+                magnifier_width  = (int) (magnifier_width * 0.75);
+                magnifier_height = (int) (magnifier_height * 0.75);
+                this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - ArcticaGreeter.MENUBAR_HEIGHT - magnifier_width, cRect.y + ArcticaGreeter.MENUBAR_HEIGHT * 2);
+            }
+            else if (sPosition == "centre-left")
+            {
+                this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width / 10, cRect.y + cRect.height / 5 + cRect.height / 10);
+            }
+            else if (sPosition == "centre-right")
+            {
+                this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - cRect.width / 10 - magnifier_width, cRect.y + cRect.height / 5 + cRect.height / 10);
+            }
+
             this.pGreeter.pMagnifierWindow.resize (magnifier_width, magnifier_height);
         }
 
