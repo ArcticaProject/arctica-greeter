@@ -1701,9 +1701,9 @@ public class DBusServer : Object
 
     public string GetUser () throws GLib.DBusError, GLib.IOError
     {
-        string sUser = this.pGreeter.get_state ("last-user");
+        var sUser = this.pGreeter.get_state ("last-user");
 
-        return sUser;
+        return (sUser != null) ? sUser : "*other";
     }
 
     public void SetLayout (string sLanguage, string sVariant) throws GLib.DBusError, GLib.IOError
