@@ -1279,10 +1279,6 @@ public class ArcticaGreeter : Object
             debug ("Could not set DBUS_NAME: %s", e.message);
         }
 
-        var gsettings_mate_desktop_interface = new Settings ("org.mate.interface");
-        int wsf_orig = gsettings_mate_desktop_interface.get_int ("window-scaling-factor");
-        gsettings_mate_desktop_interface.set_int ("window-scaling-factor", 1);
-
         bool do_show_version = false;
         bool do_test_mode = false;
         bool do_test_highcontrast = false;
@@ -1345,6 +1341,9 @@ public class ArcticaGreeter : Object
             }
         }
 
+        var gsettings_mate_desktop_interface = new Settings ("org.mate.interface");
+        int wsf_orig = 0;
+
         if (!do_test_mode) {
             /* Set the keyboard layout */
             set_keyboard_layout ();
@@ -1362,6 +1361,8 @@ public class ArcticaGreeter : Object
 
         if (!do_test_mode)
         {
+            wsf_orig = gsettings_mate_desktop_interface.get_int ("window-scaling-factor");
+            gsettings_mate_desktop_interface.set_int ("window-scaling-factor", 1);
 
             try
             {
@@ -1596,7 +1597,10 @@ public class ArcticaGreeter : Object
             }
         }
 
-        gsettings_mate_desktop_interface.set_int ("window-scaling-factor", wsf_orig);
+        if (!do_test_mode)
+        {
+            gsettings_mate_desktop_interface.set_int ("window-scaling-factor", wsf_orig);
+        }
 
         var screen = Gdk.Screen.get_default ();
         Gdk.X11.Display pDisplay = (Gdk.X11.Display) screen.get_display ();
