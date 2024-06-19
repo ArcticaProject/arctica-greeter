@@ -1341,6 +1341,10 @@ public class ArcticaGreeter : Object
             }
         }
 
+        Pid atspi_pid = 0;
+        Pid nmapplet_pid = 0;
+        Pid geoclueagent_pid = 0;
+
         var gsettings_mate_desktop_interface = new Settings ("org.mate.interface");
         int wsf_orig = 0;
 
@@ -1353,14 +1357,7 @@ public class ArcticaGreeter : Object
                 debug ("Activating numlock");
                 activate_numlock ();
             }
-        }
 
-        Pid atspi_pid = 0;
-        Pid nmapplet_pid = 0;
-        Pid geoclueagent_pid = 0;
-
-        if (!do_test_mode)
-        {
             wsf_orig = gsettings_mate_desktop_interface.get_int ("window-scaling-factor");
             gsettings_mate_desktop_interface.set_int ("window-scaling-factor", 1);
 
