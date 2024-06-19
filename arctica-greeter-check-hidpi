@@ -21,6 +21,7 @@ import gi
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 import sys
+import syslog
 import os
 
 HIDPI_LIMIT = 192
