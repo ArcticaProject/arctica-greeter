@@ -1065,28 +1065,31 @@ public class ArcticaGreeter : Object
 
     public void start_notification_daemon ()
     {
-        try
+        if (!test_mode)
         {
-            string[] argv = null;
+            try
+            {
+                string[] argv = null;
 
-            if (FileUtils.test ("/usr/lib/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
-                Shell.parse_argv ("/usr/lib/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+                if (FileUtils.test ("/usr/lib/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
+                    Shell.parse_argv ("/usr/lib/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+                }
+                else if (FileUtils.test ("/usr/libexec/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
+                    Shell.parse_argv ("/usr/libexec/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+                }
+                if (argv != null)
+                    Process.spawn_async (null,
+                                         argv,
+                                         null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out notificationdaemon_pid);
+                debug ("Launched mate-notification-daemon. PID: %d", notificationdaemon_pid);
             }
-            else if (FileUtils.test ("/usr/libexec/mate-notification-daemon/mate-notification-daemon", FileTest.EXISTS)) {
-                Shell.parse_argv ("/usr/libexec/mate-notification-daemon/mate-notification-daemon --replace", out argv);
+            catch (Error e)
+            {
+                warning ("Error starting the mate-notification-daemon registry: %s", e.message);
             }
-            if (argv != null)
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out notificationdaemon_pid);
-            debug ("Launched mate-notification-daemon. PID: %d", notificationdaemon_pid);
-        }
-        catch (Error e)
-        {
-            warning ("Error starting the mate-notification-daemon registry: %s", e.message);
         }
     }
 
@@ -1111,53 +1114,56 @@ public class ArcticaGreeter : Object
 
     public void start_real_wm ()
     {
-        string wm = AGSettings.get_string (AGSettings.KEY_WINDOW_MANAGER);
-        if ((wm == "metacity") || (wm == "marco"))
+        if (!test_mode)
         {
-            try
+            string wm = AGSettings.get_string (AGSettings.KEY_WINDOW_MANAGER);
+            if ((wm == "metacity") || (wm == "marco"))
             {
-                string[] argv;
-
-                Shell.parse_argv (wm, out argv);
-                Process.spawn_async (null,
-                                     argv,
-                                     null,
-                                     SpawnFlags.SEARCH_PATH,
-                                     null,
-                                     out windowmanager_pid);
-                debug ("Launched '%s' WM. PID: %d", wm, windowmanager_pid);
-            }
-            catch (Error e)
-            {
-                warning ("Error starting the '%s' Window Manager: %s", wm, e.message);
-            }
-
-            Timeout.add (50, () =>
+                try
                 {
-                    try
-                    {
-                        string[] argv;
-                        Pid wm_message_pid = 0;
+                    string[] argv;
 
-                        Shell.parse_argv ("%s-message disable-keybindings".printf(wm), out argv);
+                    Shell.parse_argv (wm, out argv);
+                    Process.spawn_async (null,
+                                         argv,
+                                         null,
+                                         SpawnFlags.SEARCH_PATH,
+                                         null,
+                                         out windowmanager_pid);
+                    debug ("Launched '%s' WM. PID: %d", wm, windowmanager_pid);
+                }
+                catch (Error e)
+                {
+                    warning ("Error starting the '%s' Window Manager: %s", wm, e.message);
+                }
 
-                        Process.spawn_sync (null,
-                                            argv,
-                                            null,
-                                            SpawnFlags.SEARCH_PATH,
-                                            null,
-                                            null,
-                                            null,
-                                            null);
-                        debug ("Launched '%s-message disable-keybindings' command", wm);
-                        return false;
-                    }
-                    catch (Error e)
+                Timeout.add (50, () =>
                     {
-                        warning ("Error during '%s-message disable-keybindings' command call: %s", wm, e.message);
-                        return true;
-                    }
-                });
+                        try
+                        {
+                            string[] argv;
+                            Pid wm_message_pid = 0;
+
+                            Shell.parse_argv ("%s-message disable-keybindings".printf(wm), out argv);
+
+                            Process.spawn_sync (null,
+                                                argv,
+                                                null,
+                                                SpawnFlags.SEARCH_PATH,
+                                                null,
+                                                null,
+                                                null,
+                                                null);
+                            debug ("Launched '%s-message disable-keybindings' command", wm);
+                            return false;
+                        }
+                        catch (Error e)
+                        {
+                            warning ("Error during '%s-message disable-keybindings' command call: %s", wm, e.message);
+                            return true;
+                        }
+                    });
+            }
         }
     }
 
