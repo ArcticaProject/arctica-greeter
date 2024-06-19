@@ -334,6 +334,15 @@ public class MateScreenSaverInterface : ScreenSaverInterface {}
 [DBus (name="org.gnome.SessionManager")]
 public class SessionManagerInterface : Object
 {
+    private int client_id = 0;
+
+    public async ObjectPath RegisterClient(string app_id, string client_startup_id) throws GLib.DBusError, GLib.IOError
+    {
+        client_id++;
+        string path = "/org/ArcticaProject/artica_greeter/client/%d".printf (client_id);
+        debug ("Our fake org.gnome.SessionManager received RegisterClient request (app_id: %s, client_startup_id: %s), returning ObjectPath %s", app_id, client_startup_id, path);
+        return (ObjectPath)path;
+    }
     public bool session_is_active { get { return true; } }
     public string session_name { get { return "greeter"; } }
     public uint32 inhibited_actions { get { return 0; } }
