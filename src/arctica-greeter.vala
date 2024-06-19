@@ -1391,7 +1391,7 @@ public class ArcticaGreeter : Object
                 warning ("Error starting the at-spi registry: %s", e.message);
             }
 
-            if (AGSettings.get_boolean (AGSettings.KEY_GEOCLUE_AGENT) && (!do_test_mode))
+            if (AGSettings.get_boolean (AGSettings.KEY_GEOCLUE_AGENT))
             {
 
                 try
