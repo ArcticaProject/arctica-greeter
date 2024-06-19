@@ -1415,10 +1415,11 @@ public class ArcticaGreeter : Object
                     warning ("Error starting the GeoClue-2.0 agent: %s", e.message);
                 }
             }
-        }
 
-        /* Enable touchpad tap-to-click */
-        enable_tap_to_click ();
+            /* Enable touchpad tap-to-click */
+            enable_tap_to_click ();
+
+        }
 
         Gtk.init (ref args);
         Ido.init ();
