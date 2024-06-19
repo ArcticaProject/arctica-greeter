@@ -3,7 +3,7 @@
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  * Copyright (C) 2022 Mihai Moldovan <ionic@ionic.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2024 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -88,6 +88,7 @@ public class AGSettings : Object
     public const string KEY_GEOCLUE_AGENT = "geoclue-agent";
     public const string KEY_MAGNIFIER = "magnifier";
     public const string KEY_CONTENT_ALIGN = "content-align";
+    public const string KEY_MAGNIFIER_POSITION = "magnifier-position";
 
     public static bool get_boolean (string key)
     {

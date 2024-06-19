@@ -159,6 +159,16 @@
       <default>false</default>
       <summary>Whether to enable the onscreen keyboard.</summary>
     </key>
+    <key name="magnifier-position" type="s">
+      <choices>
+        <choice value='top-left'/>
+        <choice value='top-right'/>
+        <choice value='centre-left'/>
+        <choice value='centre-right'/>
+      </choices>
+      <default>'centre-right'</default>
+      <summary>Position of the magnifier window.</summary>
+    </key>
     <key name="magnifier" type="b">
       <default>false</default>
       <summary>Whether to enable the screen magnifier.</summary>
