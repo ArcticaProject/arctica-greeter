@@ -7,8 +7,6 @@ arctica_greeter_SOURCES = \
 	config.vapi \
 	fixes.vapi \
 	indicator.vapi \
-	pam_freerdp2.vapi \
-	pam_x2go.vapi \
 	xsync.vapi \
 	animate-timer.vala \
 	background.vala \
@@ -38,7 +36,13 @@ arctica_greeter_SOURCES = \
 	arctica-greeter.vala \
 	user-list.vala \
 	user-prompt-box.vala \
-	util.vala
+	util.vala \
+	$(NULL)
+
+# Disable remote logon features we haven't packaged yet.
+#	pam_freerdp2.vapi \
+#	pam_x2go.vapi \
+#	$(NULL)
 
 logo_generator_SOURCES = logo-generator.vala
 

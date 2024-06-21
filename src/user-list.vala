@@ -1191,6 +1191,10 @@ public class UserList : GreeterList
         if (selected_entry.id.has_prefix ("*remote_login"))
         {
             var greeter = new ArcticaGreeter ();
+            /*
+             * Fully disable some remote logon features for now.
+             */
+            /*
             if ((text == pam_x2go.PROMPT_USER) || (text == pam_freerdp2.PROMPT_USER))
             {
                 Gtk.Entry field = current_remote_fields.get ("username") as Gtk.Entry;
@@ -1225,6 +1229,7 @@ public class UserList : GreeterList
                 debug ("remote_login prompt parsing: command -> %s", answer);
                 greeter.respond (answer);
             }
+            */
         }
         else
         {
