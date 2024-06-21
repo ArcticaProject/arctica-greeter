@@ -1,0 +1,5 @@
+[Desktop Entry]
+_Name=Arctica Greeter
+_Comment=Arctica Greeter
+Exec=@pkglibexecdir@/lightdm-arctica-greeter-session arctica-greeter
+Type=Application

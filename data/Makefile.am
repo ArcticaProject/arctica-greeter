@@ -37,6 +37,9 @@ arctica-greeter-guest-session-startup.desktop: arctica-greeter-guest-session-sta
 guestsession_autostartdir = $(datadir)/arctica-greeter/guest-session/skel/.config/autostart
 guestsession_autostart_DATA = arctica-greeter-guest-session-startup.desktop
 
+arctica-greeter.desktop.in: arctica-greeter.desktop.in.in
+	$(AM_V_GEN) sed -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
+
 xgreeterdir = $(datarootdir)/xgreeters
 dist_xgreeter_in_files = arctica-greeter.desktop.in
 dist_xgreeter_DATA = $(dist_xgreeter_in_files:.desktop.in=.desktop)
