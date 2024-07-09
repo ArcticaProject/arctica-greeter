@@ -239,6 +239,12 @@ public class SessionList : GreeterList
                 {
                     foreach (var real_session in sessions)
                     {
+                        // Skip the default session
+                        if (real_session.key == "default") {
+                            continue;
+                        }
+
+                        // If we find the real session, use its key value for badge icon loading...
                         if (real_session.name == find_session.name)
                         {
                             session = real_session.key;
