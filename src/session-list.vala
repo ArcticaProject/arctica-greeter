@@ -59,6 +59,12 @@ public class SessionPrompt : PromptBox
                 }
             }
             /* Pick the default session (if different from selected session) and add it as next item.
+             *
+             * In SUSE and derivatives, LightDM ships a distro-specific patch that hides the default.desktop
+             * (and other) symlink(s) from LightDM.
+             * https://build.opensuse.org/projects/X11:Utilities/packages/lightdm/files/lightdm-ignore-known-symlink-sessions.patch?expand=1
+             *
+             * So the next if-clause won't take effect on SUSE-based systems.
              */
             if (session != default_session) {
                 foreach (var dm_session in dm_sessions)
