@@ -1226,7 +1226,7 @@ public class ArcticaGreeter : Object
         AGUtils.greeter_set_env ("GTK_MODULES", "atk-bridge");
 
         /* Fix for https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482
-           Slick-greeter sets the mouse cursor on the root window.
+           arctica-greeter sets the mouse cursor on the root window.
            Without GDK_CORE_DEVICE_EVENTS set, the DE is unable to apply its own cursor theme and size.
         */
         AGUtils.greeter_set_env ("GDK_CORE_DEVICE_EVENTS", "1");
