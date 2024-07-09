@@ -1,6 +1,22 @@
+2024-07-09 Mike Gabriel
+
+        * release 0.99.8.4 (HEAD -> master, tag: 0.99.8.4)
+        * src/session-list.vala: Document SUSE's handling of default.desktop
+          in /usr/share/xsessions/. (f1414dd0)
+        * src/session-list.vala: Skip session key 'default' when detecting
+          the session's icon name. (1aeb61ff)
+        * src/session-list.vala: Use xsession_badge.png for session key
+          "default". (fc7211c8)
+        * src/arctica-greeter.vala: Adjust comment (Slick Greeter ->
+          arctica-greeter). (78927b58)
+
+2024-07-05 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (242d041d)
+
 2024-06-19 Mike Gabriel
 
-        * release 0.99.8.3 (HEAD -> master, tag: 0.99.8.3)
+        * release 0.99.8.3 (1e92ca18) (tag: 0.99.8.3)
         * arctica-greeter-check-hidpi: Import syslog module (we use it in
           case of an occurring error). (347bbf05)
         * src/settings-daemon.vala: Fake org.gnome.SessionManager's
