@@ -182,6 +182,7 @@ public class SessionList : GreeterList
             return "kde_badge.png";
         case "i3-with-shmlog":
             return "i3_badge.png";
+        case "default":
         case "lightdm-xsession":
             return "xsession_badge.png";
         case "LXDE":
