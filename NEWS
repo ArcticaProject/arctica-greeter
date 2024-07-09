@@ -1,3 +1,15 @@
+Overview of changes in arctica-greeter 0.99.8.4
+
+  - src/arctica-greeter.vala: Adjust comment (Slick Greeter ->
+    arctica-greeter).
+  - src/session-list.vala: Use xsession_badge.png for session key
+    "default".
+  - src/session-list.vala: Skip session key 'default' when detecting
+    the session's real icon name.
+  - src/session-list.vala: Document SUSE's handling of default.desktop
+    in /usr/share/xsessions/.
+  - Translation updates.
+
 Overview of changes in arctica-greeter 0.99.8.3
 
   - Make position of the greeter magnifier configurable.
