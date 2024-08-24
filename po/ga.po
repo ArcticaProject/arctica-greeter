@@ -8,15 +8,18 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish <ga@li.org>\n"
+"PO-Revision-Date: 2024-08-25 13:09+0000\n"
+"Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@gmail.com>\n"
+"Language-Team: Irish <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/ga/>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :("
+"n>6 && n<11) ? 3 : 4;\n"
+"X-Generator: Weblate 5.7.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:306
 #, c-format
@@ -25,7 +28,7 @@ msgstr "Cuir isteach focal faire do %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Cuir isteach d'ainm úsáideora"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
@@ -36,9 +39,8 @@ msgid "Username:"
 msgstr "Ainm úsáideora:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Focal faire mícheart, triail arís é"
+msgstr "Ainm úsáideora nó pasfhocal neamhbhailí, bain triail eile as"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -103,14 +105,17 @@ msgstr "Atosaigh"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Gníomh roghnaithe a chur i gcrích anois."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ag fanacht soicind eile roimh an ngníomh roghnaithe a chur i gcrích …"
+msgstr[1] "Ag fanacht %u soicind roimh an ngníomh roghnaithe a chur i gcrích …"
+msgstr[2] "Ag fanacht %u soicind roimh an ngníomh roghnaithe a chur i gcrích …"
+msgstr[3] "Ag fanacht %u soicind roimh an ngníomh roghnaithe a chur i gcrích …"
+msgstr[4] "Ag fanacht %u soicind roimh an ngníomh roghnaithe a chur i gcrích …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -131,7 +136,7 @@ msgstr "Rith i mhodh scrúdú"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "Rith i mód tástála le téama ardchodarsnachta a11y cumasaithe"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -161,13 +166,12 @@ msgstr "Seoladh ríomhphoist nó focal faire mícheart"
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
 #: ../src/user-list.vala:603
-#, fuzzy
 msgid ""
 "If you have an account on an RDP server or X2Go server, Remote Login lets "
 "you run applications from that server."
 msgstr ""
-"Má tá cúntas agat ar freastalaí RDP, is féidir leat feidhmeanna a cur ar "
-"siúl ón freastalaí sin  le cianlogáil-isteach."
+"Má tá cuntas agat ar fhreastalaí RDP nó ar fhreastalaí X2Go, ligeann Logáil "
+"isteach Cianda duit feidhmchláir a rith ón bhfreastalaí sin."
 
 #: ../src/user-list.vala:606
 msgid "Cancel"
@@ -178,44 +182,41 @@ msgid "Set Up…"
 msgstr "Cumraigh"
 
 #: ../src/user-list.vala:609
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Is gá duit cúntas Logáil Isteach Cianda Ubuntu chun an seirbhís seo a "
-"húsáid. Ba mhaith leat cúntas a chruthú anois?"
+"Teastaíonn cuntas Cian-logála uait chun an tseirbhís seo a úsáid. Ar mhaith "
+"leat cuntas a shocrú anois?"
 
 #: ../src/user-list.vala:613
 msgid "OK"
 msgstr "Ceart go leor"
 
 #: ../src/user-list.vala:615
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "You need a Remote Logon account to use this service. Visit %s to request an "
 "account."
 msgstr ""
-"Is gá duit cúntas Logáil Isteach Cianda Ubuntu chun an seirbhís seo a "
-"húsáid. Tabhair cuairt do uccs.canonical.com chun cúntas a chruthú."
+"Teastaíonn cuntas Cian-logála uait chun an tseirbhís seo a úsáid. Tabhair "
+"cuairt ar %s chun cuntas a iarraidh."
 
 #: ../src/user-list.vala:617
-#, fuzzy
 msgid ""
 "You need a Remote Logon account to use this service. Please ask your site "
 "administrator for details."
 msgstr ""
-"Is gá duit cúntas Logáil Isteach Cianda Ubuntu chun an seirbhís seo a "
-"húsáid. Ba mhaith leat cúntas a chruthú anois?"
+"Teastaíonn cuntas Cian-logála uait chun an tseirbhís seo a úsáid. Iarr "
+"sonraí ar do riarthóir láithreáin."
 
 #: ../src/user-list.vala:739
 msgid "Server type not supported."
 msgstr "Níl saghas an freastalaí faoi thacaíocht."
 
 #: ../src/user-list.vala:767
-#, fuzzy
 msgid "X2Go Session:"
-msgstr "Seisiún Aoi"
+msgstr "Seisiún X2Go:"
 
 #: ../src/user-list.vala:787
 msgid "Domain:"
@@ -223,7 +224,7 @@ msgstr "Fearann:"
 
 #: ../src/user-list.vala:849
 msgid "Account ID"
-msgstr ""
+msgstr "Aitheantas cuntais"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
@@ -249,9 +250,9 @@ msgid "Login"
 msgstr "Logáil isteach"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
-#, fuzzy, sh-format
+#, sh-format
 msgid "Temporary Guest Session"
-msgstr "Seisiún Aoi"
+msgstr "Seisiún Aoi Sealadach"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -261,6 +262,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Scriosfar na sonraí go léir a cruthaíodh le linn an tseisiúin aoi seo\n"
+"nuair a logálann tú amach, agus athshocrófar socruithe go mainneachtainí.\n"
+"Sábháil comhaid ar ghléas seachtrach éigin, mar shampla a\n"
+"USB bata, más mian leat rochtain a fháil orthu arís níos déanaí."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -268,270 +273,321 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Rogha eile is ea comhaid a shábháil sa\n"
+"/var/guest-data fillteán."
 
 #: ../data/arctica-greeter.desktop.in.h:1
-#, fuzzy
 msgid "Arctica Greeter"
-msgstr "- Beannachtóir Arctica"
+msgstr "Beannacht Artach"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
-msgstr ""
+msgstr "Comhad íomhá cúlra le húsáid, cosán íomhá nó dath (m.sh. #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Dath an chúlra (m.sh. #772953), socraithe sula bhfeictear páipéar balla."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
 msgstr ""
+"Dath an chúlra (m.sh. #000000 nó #FFFFFF) le haghaidh mód ardchodarsnachta."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
+"Dath cló-tulra (m.sh. #A0A0A0) le haghaidh ainmneacha seisiún neamhghní"
+"omhach/-hovered agus neamhroghnaithe sa liosta seisiún."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
+"Dath cló-tulra (m.sh. #A0A0A0) don ainm seisiúin gníomhach/hovered-thuas sa "
+"liosta seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the selected session name in the "
 "session list."
 msgstr ""
+"Clónna dath tulra (m.sh. #A0A0A0) don ainm seisiúin roghnaithe sa liosta "
+"seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:7
 msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
 msgstr ""
+"Dath an chúlra (m.sh. #391C31) le haghaidh ainmneacha seisiún neamhghní"
+"omhach/-folaithe agus neamhroghnaithe sa liosta seisiún."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
 msgstr ""
+"Dath an chúlra (m.sh. #391C31) don ainm seisiúin gníomhach/hovered-thuas sa "
+"liosta seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
 "Background color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Dath an chúlra (m.sh. #391C31) don ainm seisiúin roghnaithe sa liosta "
+"seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:10
 msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
 msgstr ""
+"Dath teorann (m.sh. #391C31) d’ainmneacha seisiúin neamhghníomhacha/-"
+"folaithe agus neamhroghnaithe sa liosta seisiún."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
 msgstr ""
+"Dath teorann (m.sh. #391C31) don ainm seisiúin gníomhach/hovered-thuas ar an "
+"liosta seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
 "Border color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Dath teorann (m.sh. #391C31) don ainm seisiúin roghnaithe sa liosta seisiúin."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:13
 msgid ""
 "Background color (e.g. #391C31) of flat buttons (e.g. the session chooser "
 "icon)."
 msgstr ""
+"Dath cúlra (m.sh. #391C31) na gcnaipí cothroma (m.sh. deilbhín an roghnóir "
+"seisiúin)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:14
 msgid ""
 "Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)."
 msgstr ""
+"Dath teorann (m.sh. #391C31) de chnaipí cothroma (m.sh. deilbhín an roghnóir "
+"seisiúin)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "Cinneann sé conas a rindreáiltear an íomhá chúlra."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "Cibé ar cheart cúlraí úsáideora a tharraingt."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "Cé acu ar cheart greille forleagan a tharraingt."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "Cibé an dtaispeánfar an t-óstainm sa bharra roghchláir."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
+"Cibé an dtaispeánfar lipéid 'Ainm Úsáideora:' agus 'Pasfhocal:' (etc.) sa "
+"bhosca logáil isteach."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "Comhad lógó le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
-msgstr ""
+msgstr "Luach alfa chun an lógó a chumasc leis an gcúlra."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "Téama GTK+ le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "Téama GTK+ le húsáid i mód ardchodarsnachta."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "Téama deilbhín le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "Téama deilbhín le húsáid i mód ardchodarsnachta."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "Téama cúrsóra le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
-msgstr ""
+msgstr "Méid le húsáid le haghaidh cúrsóirí."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "Cló le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
-msgstr ""
+msgstr "Cibé an bhfuil an antialias clónna Xft."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:30
 msgid "Resolution for Xft in dots per inch."
-msgstr ""
+msgstr "Taifeach do Xft ina poncanna san orlach."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:31
 msgid "What degree of hinting to use."
-msgstr ""
+msgstr "Cén méid leid atá le húsáid."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "Cineál antialiasing subpixel."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
-msgstr ""
+msgstr "Cibé ar cheart an méarchlár ar an scáileán a chumasú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:34
 msgid "Whether to use a high contrast theme."
-msgstr ""
+msgstr "Cibé an úsáidfear téama ardchodarsnachta."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:35
 msgid "Whether to enable the screen reader."
-msgstr ""
+msgstr "Cé acu an féidir an léitheoir scáileáin a chumasú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
-msgstr ""
+msgstr "Cibé an seinnfear fuaim nuair a bhíonn an beannachtaí réidh."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "Cad iad na táscairí a luchtú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
 "List of usernames that are hidden until a special key combination is hit."
 msgstr ""
+"Liosta de na hainmneacha úsáideoirí atá i bhfolach go dtí go bhfuil teaglaim "
+"eochair speisialta buailte."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:39
 msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)."
 msgstr ""
+"Liosta de na grúpaí nach mór d’úsáideoirí a bheith mar chuid díobh le "
+"taispeáint (léiríonn liosta folamh gach úsáideoir)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:40
 msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Líon soicind neamhghníomhaíochta roimh an scáileán a bhánú. Socraigh ar 0 "
+"gan teorainn ama riamh."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "Cibé ar cheart tacaíocht HiDPI a chumasú"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
 msgstr ""
+"Fachtóir scálaithe le haghaidh clónna is féidir a úsáid chun clómhéid an "
+"bheannóra a choigeartú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Luach alfa don bharra roghchláir, arna iolrú leis an luach trédhearcachta a "
+"sholáthraíonn an téama. Ní úsáidtear i mód codarsnachta ard."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
-msgstr ""
+msgstr "Réamhshocrú FQDN don óstríomhaire a thairgeann Seirbhís Logála Cianda."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:45
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
 msgstr ""
+"Cibé an ndéanfar numlock a ghníomhachtú. Éilíonn an gnéithe seo a shuiteáil "
+"numlockx."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "Monatóireacht a dhéanamh chun an GUI Logála a thaispeáint."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
+"Ainm leagan amach an mhéarchláir ar an scáileán (féach /usr/share/onboard/"
+"layouts/*.onboard le haghaidh ainmneacha leagan amach atá ar fáil)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
+"Ainm an téama méarchláir ar an scáileán (féach /usr/share/onboard/themes/*."
+"theme le haghaidh ainmneacha na dtéamaí atá ar fáil)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
+"Ainm an téama méarchláir ar an scáileán agus é i mód ardchodarsnachta (féach "
+"/usr/share/onboard/themes/*.theme le haghaidh ainmneacha na dtéamaí atá ar "
+"fáil)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
 msgstr ""
+"Cibé ar cheart an cineál seisiúin X11 réamhshocraithe 'lightdm-xsession' a "
+"cheilt."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "Cibé ar cheart seisiúin X11 a chur i bhfolach."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "Cé acu seisiúin Wayland a cheilt."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"Liosta ordaithe de na seisiúin deisce roghnaithe (chun an cineál seisiúin "
+"réamhshocraithe a bhrath)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Am i soicindí go dtí go roghnaíonn an dialóg múchta go láidir an gníomh "
+"réamhshocraithe. Socraigh go 0 chun é a dhíchumasú."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -539,6 +595,9 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"Liosta neamhordúil de sheisiúin deisce lena n-áirítear amháin (mura bhfuil "
+"siad folamh, ní thairgfidh an beannachtaí ach cineálacha seisiún atá "
+"liostaithe go sainráite). Bíonn tosaíocht aige ar liosta na seisiún eisiata."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -546,6 +605,9 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"Liosta neamhordúil de sheisiúin deisce eisiata (mura bhfuil siad folamh, ní "
+"thairgfidh an beannachtaí cineálacha seisiún liostaithe). Ní úsáidtear é ach "
+"amháin má bhíonn seisiúin áirimh amháin folamh."
 
 #~ msgid "Onscreen keyboard"
 #~ msgstr "Méarchláir ar-scáileán"
