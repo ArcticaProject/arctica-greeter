@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2019-08-28 11:24+0000\n"
-"Last-Translator: leela <53352@protonmail.com>\n"
-"Language-Team: Bosnian <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/bs/>\n"
+"PO-Revision-Date: 2024-11-18 13:42+0000\n"
+"Last-Translator: AbdurahmanKarisik <abdurahman.karisik@gmail.com>\n"
+"Language-Team: Bosnian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/bs/>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 5.9-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -28,7 +28,7 @@ msgstr "Unesite šifru za %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Unesite korisničko ime"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
@@ -36,20 +36,19 @@ msgstr "Lozinka:"
 
 #: ../src/greeter-list.vala:842 ../src/user-list.vala:755
 msgid "Username:"
-msgstr ""
+msgstr "Korisničko ime:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Pogrešna lozinka, molimo pokušajte ponovo"
+msgstr "Pogrešno korisničko ime ili lozinka, molimo pokušajte ponovo"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Neuspješna autentifikacija"
 
 #: ../src/greeter-list.vala:965
 msgid "Failed to start session"
-msgstr "Neuspjelo pokretanje sesije"
+msgstr "Neuspješno pokretanje sesije"
 
 #: ../src/greeter-list.vala:979
 msgid "Logging in…"
@@ -57,7 +56,7 @@ msgstr "Prijavljujem se…"
 
 #: ../src/main-window.vala:56
 msgid "Login Screen"
-msgstr ""
+msgstr "Ekran za prijavljivanje"
 
 #: ../src/main-window.vala:107
 msgid "Back"
@@ -106,15 +105,15 @@ msgstr "Ponovo pokreni"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Izvršavanje odabrane radnje sada."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Čekanje još %u sekundu prije izvršavanja odabrane akcije…"
+msgstr[1] "Čekanje još %u sekunde prije izvršavanja odabrane akcije…"
+msgstr[2] "Čekanje još %u sekundi prije izvršavanja odabrane akcije…"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -125,17 +124,18 @@ msgstr "%s (podrazumijevano)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:994
 msgid "Show release version"
-msgstr ""
+msgstr "Prikaži verziju izdanja"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:997
 msgid "Run in test mode"
-msgstr "Pokreni u testnom režimu"
+msgstr "Pokreni u režimu testiranja"
 
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
+"Pokreni u režimu testiranja sa a11y visokom kontrastnom temom uključenom"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -146,11 +146,11 @@ msgstr ""
 #: ../src/arctica-greeter.vala:1029
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options."
-msgstr ""
+msgstr "Pokreni '%s --help' da bi vidio sve moguće opcije komandnih linija."
 
 #: ../src/user-list.vala:49
 msgid "Guest Session"
-msgstr ""
+msgstr "Gostujuća sesija"
 
 #: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
@@ -177,7 +177,7 @@ msgstr "Odustani"
 
 #: ../src/user-list.vala:607
 msgid "Set Up…"
-msgstr "Postavi..."
+msgstr "Postavi…"
 
 #: ../src/user-list.vala:609
 #, fuzzy
@@ -216,7 +216,7 @@ msgstr "Vrsta servera nije podržana"
 
 #: ../src/user-list.vala:767
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go Sesija:"
 
 #: ../src/user-list.vala:787
 msgid "Domain:"
@@ -229,16 +229,16 @@ msgstr ""
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
 msgid "Log In"
-msgstr ""
+msgstr "Prijavite se"
 
 #: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "Prijavite se kao %s"
 
 #: ../src/user-list.vala:903
 msgid "Retry"
-msgstr "Pokušaj Ponovo"
+msgstr "Pokušajte Ponovo"
 
 #: ../src/user-list.vala:904
 #, c-format
@@ -252,7 +252,7 @@ msgstr "Prijava"
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "Privremena Gostujuća Sesija"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -262,6 +262,10 @@ msgid ""
 "Please save files on some external device, for instance a\n"
 "USB stick, if you would like to access them again later."
 msgstr ""
+"Svi podaci kreirani tokom ove gostujuće sesije bit će izbrisani \n"
+"kada se odjavite, a postavke će biti vraćene na zadane. \n"
+"Molimo vas da sačuvate fajlove na nekom eksternom uređaju, na primjer \n"
+"USB sticku, ako želite da im ponovo pristupite kasnije."
 
 #: ../arctica-greeter-guest-session-auto.sh:40
 #, sh-format
@@ -269,10 +273,12 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"Druga alternativa je da sačuvate fajlove u folderu\n"
+" /var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Greeter"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
 msgid ""
