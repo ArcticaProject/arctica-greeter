@@ -248,10 +248,16 @@ public class MainWindow : Gtk.Window
         resize (background.width, background.height);
         move (0, 0);
         move_to_monitor (primary_monitor);
-        set_struts (MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
+        set_struts ();
     }
 
-    public void set_struts (uint position, long menubar_size)
+    public void set_struts ()
+    {
+        /* Substract the 5px shadow from the menubar height, so that indicators' menus render well */
+        _set_struts (MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
+    }
+
+    private void _set_struts (uint position, long menubar_size)
     {
         if (!get_realized()) {
                 return;
@@ -346,7 +352,7 @@ public class MainWindow : Gtk.Window
         debug ("MainWindow is %dx%d pixels", background.width, background.height);
 
         background.set_monitors (monitors);
-        set_struts (MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
+        set_struts ();
 
         if(do_resize)
         {
