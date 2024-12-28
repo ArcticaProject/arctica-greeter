@@ -271,6 +271,9 @@ public class MainWindow : Gtk.Window
         Gdk.Atom atom;
         long struts[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+        /* Subtract (non-scaled) 5px border + 2px extra spacing (to make indicator menus render nicely below menubar) */
+        menubar_size = menubar_size - 7;
+
         // Struts dependent on position
         switch (position) {
             case MenubarPositions.TOP:
