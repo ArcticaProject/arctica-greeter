@@ -297,11 +297,11 @@ public class MainWindow : Gtk.Window
         }
 
         atom = Gdk.Atom.intern("_NET_WM_STRUT", false);
-        Gdk.property_change(window.get_window(), atom, Gdk.Atom.intern("CARDINAL", false),
+        Gdk.property_change(get_toplevel().get_window(), atom, Gdk.Atom.intern("CARDINAL", false),
             32, Gdk.PropMode.REPLACE, (uint8[])struts, 4);
 
         atom = Gdk.Atom.intern("_NET_WM_STRUT_PARTIAL", false);
-        Gdk.property_change(window.get_window(), atom, Gdk.Atom.intern("CARDINAL", false),
+        Gdk.property_change(get_toplevel().get_window(), atom, Gdk.Atom.intern("CARDINAL", false),
             32, Gdk.PropMode.REPLACE, (uint8[])struts, 12);
     }
 
