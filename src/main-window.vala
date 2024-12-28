@@ -205,6 +205,7 @@ public class MainWindow : Gtk.Window
         }
         else
         {
+            set_type_hint(Gdk.WindowTypeHint.DOCK);
             var screen = get_screen ();
             screen.monitors_changed.connect (monitors_changed_cb);
             monitors_changed_cb (screen);
