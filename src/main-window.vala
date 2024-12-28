@@ -248,7 +248,6 @@ public class MainWindow : Gtk.Window
         resize (background.width, background.height);
         move (0, 0);
         move_to_monitor (primary_monitor);
-        set_struts ();
     }
 
     public void set_struts ()
@@ -352,7 +351,6 @@ public class MainWindow : Gtk.Window
         debug ("MainWindow is %dx%d pixels", background.width, background.height);
 
         background.set_monitors (monitors);
-        set_struts ();
 
         if(do_resize)
         {
@@ -362,6 +360,8 @@ public class MainWindow : Gtk.Window
         {
             do_resize = true;
         }
+
+        set_struts ();
     }
 
     /* Check if a monitor has a unique position */
