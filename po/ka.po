@@ -8,122 +8,126 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2012-02-21 00:39+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Georgian <ka@li.org>\n"
+"PO-Revision-Date: 2025-02-17 03:03+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
-msgstr ""
+msgstr "შეიყვანეთ პაროლი %s-სთვის"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "შეიყვანეთ თქვენი მომხმარებლის სახელი"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
-msgstr ""
+msgstr "პაროლი:"
 
 #: ../src/greeter-list.vala:842 ../src/user-list.vala:755
 msgid "Username:"
-msgstr ""
+msgstr "მომხმარებლის სახელი:"
 
 #: ../src/greeter-list.vala:906
 msgid "Invalid username or password, please try again"
-msgstr ""
+msgstr "არასწორი მომხმარებლის სახელი ან პაროლი. თავიდან სცადეთ"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "ავთენტიკაცია ჩავარდა"
 
 #: ../src/greeter-list.vala:965
 msgid "Failed to start session"
-msgstr ""
+msgstr "სესიის დაწყება ჩავარდა"
 
 #: ../src/greeter-list.vala:979
 msgid "Logging in…"
-msgstr ""
+msgstr "მიმდინარეობს შესვლა…"
 
 #: ../src/main-window.vala:56
 msgid "Login Screen"
-msgstr ""
+msgstr "შესვლის ეკრანი"
 
 #: ../src/main-window.vala:107
 msgid "Back"
-msgstr ""
+msgstr "უკან"
 
 #: ../src/prompt-box.vala:305
 msgid "Session Options"
-msgstr ""
+msgstr "სესიის მორგება"
 
 #: ../src/session-list.vala:36
 msgid "Select desktop environment"
-msgstr ""
+msgstr "აირჩიეთ სამუშაო გარემო"
 
 #: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "ნახვამდის. ხომ არ გნებავთ…"
 
 #: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
-msgstr ""
+msgstr "გამორთვა"
 
 #: ../src/shutdown-dialog.vala:156
 msgid "Are you sure you want to shut down the computer?"
-msgstr ""
+msgstr "მართლა გნებავთ კომპიუტერი გამორთოთ?"
 
 #: ../src/shutdown-dialog.vala:181
 msgid ""
 "Other users are currently logged in to this computer, shutting down now will "
 "also close these other sessions."
 msgstr ""
+"ამ კომპიუტერზე სხვა მომხმარებლებიც არიან შესულები. მისი გამორთვა სხვა "
+"სესიებსაც დახურავს."
 
 #: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
-msgstr ""
+msgstr "ძილი"
 
 #: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
-msgstr ""
+msgstr "პროგრამული ძილი"
 
 #: ../src/shutdown-dialog.vala:233
 msgid "Restart"
-msgstr ""
+msgstr "გადატვირთვა"
 
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "მიმდინარეობს არჩეული ქმედების შესრულება."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "არჩეული ქმედების შესრულებამდე დარჩენილია კიდევ ერთი წამი …"
+msgstr[1] "არჩეული ქმედების შესრულებამდე დარჩენილია %u წამი …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
 #, c-format
 msgid "%s (Default)"
-msgstr ""
+msgstr "%s (ნაგულისხმევი)"
 
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:994
 msgid "Show release version"
-msgstr ""
+msgstr "რელიზის ვერსიის ჩვენება"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:997
 msgid "Run in test mode"
-msgstr ""
+msgstr "გაშვება სატესტო რეჟიმში"
 
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
@@ -133,7 +137,7 @@ msgstr ""
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
 msgid "- Arctica Greeter"
-msgstr ""
+msgstr "- Arctica Greeter"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:1029
@@ -143,7 +147,7 @@ msgstr ""
 
 #: ../src/user-list.vala:49
 msgid "Guest Session"
-msgstr ""
+msgstr "სტუმრის სესია"
 
 #: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
@@ -151,7 +155,7 @@ msgstr ""
 
 #: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
-msgstr ""
+msgstr "არასწორი ელფოსტის მისამართი, ან პაროლი"
 
 #. dialog.secondary_text = _("If you have an account on an RDP or Citrix server, Remote Login lets you run applications from that server.");
 #. For 12.10 we still don't support Citrix
@@ -163,11 +167,11 @@ msgstr ""
 
 #: ../src/user-list.vala:606
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: ../src/user-list.vala:607
 msgid "Set Up…"
-msgstr ""
+msgstr "მორგება…"
 
 #: ../src/user-list.vala:609
 msgid ""
@@ -177,7 +181,7 @@ msgstr ""
 
 #: ../src/user-list.vala:613
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: ../src/user-list.vala:615
 #, c-format
@@ -194,47 +198,47 @@ msgstr ""
 
 #: ../src/user-list.vala:739
 msgid "Server type not supported."
-msgstr ""
+msgstr "სერვერის ტიპი მხარდაჭერილი არაა."
 
 #: ../src/user-list.vala:767
 msgid "X2Go Session:"
-msgstr ""
+msgstr "X2Go-ის სესია:"
 
 #: ../src/user-list.vala:787
 msgid "Domain:"
-msgstr ""
+msgstr "დომენი:"
 
 #: ../src/user-list.vala:849
 msgid "Account ID"
-msgstr ""
+msgstr "ანგარიშის ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
 msgid "Log In"
-msgstr ""
+msgstr "შესვლა"
 
 #: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
-msgstr ""
+msgstr "შესვლა, როგორც %s"
 
 #: ../src/user-list.vala:903
 msgid "Retry"
-msgstr ""
+msgstr "თავიდან ცდა"
 
 #: ../src/user-list.vala:904
 #, c-format
 msgid "Retry as %s"
-msgstr ""
+msgstr "თავიდან ცდა, როგორც %s"
 
 #: ../src/user-list.vala:948
 msgid "Login"
-msgstr ""
+msgstr "შესვლა"
 
 #: ../arctica-greeter-guest-session-auto.sh:35
 #, sh-format
 msgid "Temporary Guest Session"
-msgstr ""
+msgstr "დროებითი სტუმრის სესია"
 
 #: ../arctica-greeter-guest-session-auto.sh:36
 #, sh-format
@@ -254,7 +258,7 @@ msgstr ""
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
-msgstr ""
+msgstr "Arctica Greeter"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
 msgid ""
@@ -340,7 +344,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "დაიხატება თუ არა მომხმარებლის ფონი."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
@@ -357,7 +361,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "ლოგოს ფაილი."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
@@ -365,7 +369,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "GTK+-ის თემა."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
@@ -373,7 +377,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "ხატულას თემა."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
@@ -381,7 +385,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "კურსორის თემა."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
@@ -389,7 +393,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "ფონტი."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
@@ -405,7 +409,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "ქვეპიქსელის მოგლუვების ტიპი."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
@@ -425,7 +429,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "რომელი ინდიკატორები ჩაიტვირთება."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
@@ -446,7 +450,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "ჩაირთვება თუ არა HiDPI-ის მხარდაჭერა"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
@@ -497,11 +501,11 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "დაიმალება თუ არა X11-ის სესიები."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "დაიმალება, თუ არა Wayland-ის სესიები."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
