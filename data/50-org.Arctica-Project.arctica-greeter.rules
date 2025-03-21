@@ -69,7 +69,7 @@ polkit.addRule(function(action, subject) {
     if (subject.user !== 'lightdm')
         return undefined;
 
-    if (action.id.match("org.freedesktop.NetworkManager.network-control")) &&
+    if (action.id.match("org.freedesktop.NetworkManager.network-control") &&
         subject.active == true) {
         return polkit.Result.YES;
     }
