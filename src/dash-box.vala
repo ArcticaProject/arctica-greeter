@@ -165,8 +165,10 @@ public class DashBox : Gtk.Box
             }
             else
             {
-                min = grid_size * GreeterList.DEFAULT_BOX_HEIGHT - GreeterList.BORDER * 2;
-                nat = grid_size * GreeterList.DEFAULT_BOX_HEIGHT - GreeterList.BORDER * 2;
+                var greeter = new ArcticaGreeter();
+
+                min = greeter.grid_size * GreeterList.DEFAULT_BOX_HEIGHT - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2);
+                nat = greeter.grid_size * GreeterList.DEFAULT_BOX_HEIGHT - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2);
             }
         }
         else
@@ -184,8 +186,9 @@ public class DashBox : Gtk.Box
 
     public override void get_preferred_width (out int min, out int nat)
     {
-        min = grid_size * GreeterList.BOX_WIDTH - GreeterList.BORDER * 2;
-        nat = grid_size * GreeterList.BOX_WIDTH - GreeterList.BORDER * 2;
+        var greeter = new ArcticaGreeter();
+        min = greeter.grid_size * GreeterList.BOX_WIDTH - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2);
+        nat = greeter.grid_size * GreeterList.BOX_WIDTH - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2);
     }
 
     public override bool draw (Cairo.Context c)
@@ -200,8 +203,10 @@ public class DashBox : Gtk.Box
             c.restore ();
         }
 
+        var greeter = new ArcticaGreeter();
+
         /* Draw darker background with a rounded border */
-        var box_r = 0.3 * grid_size;
+        var box_r = 0.3 * greeter.grid_size;
         int box_y = 0;
         int box_w;
         int box_h;

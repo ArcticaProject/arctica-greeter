@@ -29,7 +29,8 @@ public int _scale_factor = 1;
 
 private int get_grid_offset (int size)
 {
-    return (int) (size % grid_size) / 2;
+    var greeter = new ArcticaGreeter();
+    return (int) (size % greeter.grid_size) / 2;
 }
 
 [DBus (name="com.lomiri.LomiriGreeter.List")]
@@ -119,12 +120,13 @@ public abstract class GreeterList : FadableBox
     {
         get
         {
+            var greeter = new ArcticaGreeter();
             /* First, get grid row number as if menubar weren't there */
-            var row = (ArcticaGreeter.MENUBAR_HEIGHT + get_allocated_height ()) / grid_size;
+            var row = (greeter.menubar_height + get_allocated_height ()) / greeter.grid_size;
             row = row - DEFAULT_BOX_HEIGHT; /* and no default dash box */
             row = row / 2; /* and in the middle */
             /* Now calculate y pixel spot keeping in mind menubar's allocation */
-            return row * grid_size - ArcticaGreeter.MENUBAR_HEIGHT;
+            return row * greeter.grid_size - greeter.menubar_height;
         }
     }
 
@@ -227,8 +229,9 @@ public abstract class GreeterList : FadableBox
 
     public override void get_preferred_width (out int min, out int nat)
     {
-        min = BOX_WIDTH * grid_size;
-        nat = BOX_WIDTH * grid_size;
+        var greeter = new ArcticaGreeter();
+        min = BOX_WIDTH * greeter.grid_size;
+        nat = BOX_WIDTH * greeter.grid_size;
     }
 
     public override void get_preferred_height (out int min, out int nat)
@@ -403,8 +406,10 @@ public abstract class GreeterList : FadableBox
 
     protected void add_entry (PromptBox entry)
     {
+        var greeter = new ArcticaGreeter();
+
         entry.expand = true;
-        entry.set_size_request (grid_size * BOX_WIDTH - BORDER * 2, -1);
+        entry.set_size_request (greeter.grid_size * BOX_WIDTH - (int)(BORDER * greeter.scaling_factor_widgets * 2), -1);
         add_with_class (entry);
 
         insert_entry (entry);
@@ -515,33 +520,39 @@ public abstract class GreeterList : FadableBox
 
     protected int get_greeter_box_height_grids ()
     {
+        var greeter = new ArcticaGreeter();
+
         int height = get_greeter_box_height ();
-        return height / grid_size + 1; /* +1 because we'll be slightly under due to BORDER */
+        return height / greeter.grid_size + 1; /* +1 because we'll be slightly under due to BORDER */
     }
 
     protected int get_greeter_box_x ()
     {
-        return box_x + BORDER;
+        var greeter = new ArcticaGreeter();
+        return box_x + (int)(BORDER * greeter.scaling_factor_widgets);
     }
 
     protected int get_greeter_box_y ()
     {
-        return box_y + BORDER;
+        var greeter = new ArcticaGreeter();
+        return box_y + (int)(BORDER * greeter.scaling_factor_widgets);
     }
 
     protected virtual int get_position_y (double position)
     {
+        var greeter = new ArcticaGreeter();
+
         // Most position heights are just the grid height.  Except for the
         // greeter box itself.
-        int box_height = get_greeter_box_height_grids () * grid_size;
+        int box_height = get_greeter_box_height_grids () * greeter.grid_size;
         double offset;
 
         if (position < 0)
-            offset = position * grid_size;
+            offset = position * greeter.grid_size;
         else if (position < 1)
             offset = position * box_height;
         else
-            offset = (position - 1) * grid_size + box_height;
+            offset = (position - 1) * greeter.grid_size + box_height;
 
         return box_y + (int)Math.round(offset);
     }
@@ -561,8 +572,10 @@ public abstract class GreeterList : FadableBox
         Gtk.Allocation allocation;
         get_allocation (out allocation);
 
+        var greeter = new ArcticaGreeter();
+
         var child_allocation = Gtk.Allocation ();
-        child_allocation.width = grid_size * BOX_WIDTH - BORDER * 2;
+        child_allocation.width = greeter.grid_size * BOX_WIDTH - (int)(BORDER * greeter.scaling_factor_widgets * 2);
         entry.get_preferred_height_for_width (child_allocation.width, null, out child_allocation.height);
         child_allocation.x = allocation.x + get_greeter_box_x ();
         child_allocation.y = allocation.y + get_position_y (position);
@@ -758,12 +771,14 @@ public abstract class GreeterList : FadableBox
         fixed.propagate_draw (greeter_box, c); /* Always full alpha */
         c.restore ();
 
+        var greeter = new ArcticaGreeter();
+
         if (greeter_box.base_alpha != 0.0)
         {
             c.save ();
             c.push_group ();
 
-            c.rectangle (get_greeter_box_x (), get_greeter_box_y () - n_above * grid_size, grid_size * BOX_WIDTH - BORDER * 2, grid_size * (n_above + n_below + get_greeter_box_height_grids ()));
+            c.rectangle (get_greeter_box_x (), get_greeter_box_y () - n_above * greeter.grid_size, greeter.grid_size * BOX_WIDTH - (int)(BORDER * greeter.scaling_factor_widgets * 2), greeter.grid_size * (n_above + n_below + get_greeter_box_height_grids ()));
             c.clip ();
 
             foreach (var child in fixed.get_children ())

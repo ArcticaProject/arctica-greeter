@@ -35,7 +35,9 @@ public class ListStack : Gtk.Fixed
 
     construct
     {
-        width = grid_size * GreeterList.BOX_WIDTH;
+        var greeter = new ArcticaGreeter();
+
+        width = greeter.grid_size * GreeterList.BOX_WIDTH;
     }
 
     public GreeterList? top ()

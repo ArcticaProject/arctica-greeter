@@ -298,8 +298,11 @@ public class SessionList : GreeterList
         {
             try
             {
+                var greeter = new ArcticaGreeter();
+
                 pixbuf = new Gdk.Pixbuf.from_file_at_size (Path.build_filename (Config.PKGDATADIR, name, null),
-                                                           BADGE_SIZE * _scale_factor, BADGE_SIZE * _scale_factor);
+                                                           (int)(BADGE_SIZE * _scale_factor * greeter.scaling_factor_widgets),
+                                                           (int)(BADGE_SIZE * _scale_factor * greeter.scaling_factor_widgets));
                 badges.insert (name, pixbuf);
             }
             catch (Error e)
