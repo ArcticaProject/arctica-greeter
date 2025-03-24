@@ -576,7 +576,8 @@ public class PromptBox : FadableBox
         try
         {
             var font_provider = new Gtk.CssProvider ();
-            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size-1);
+            var css = "* {font-family: %s; font-size: %dpt; color: white}
+                       *.high_contrast {color: black; }".printf (font_family, font_size-1);
             font_provider.load_from_data (css, -1);
             style_ctx.add_provider (font_provider,
                                     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -586,8 +587,10 @@ public class PromptBox : FadableBox
             debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size-1, e.message);
         }
 
-        Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
         if (is_error) {
+
+            /* red */
+            Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
             color.parse ("#820900");
 
             /*
@@ -598,9 +601,8 @@ public class PromptBox : FadableBox
              */
             Gdk.RGBA bg_color = { 1.0f, 1.0f, 1.0f, 1.0f };
             label.override_background_color (Gtk.StateFlags.NORMAL, bg_color);
+            label.override_color (Gtk.StateFlags.NORMAL, color);
         }
-        label.override_color (Gtk.StateFlags.NORMAL, color);
-
 
         label.xalign = 0.0f;
         label.set_data<bool> ("prompt-box-is-error", is_error);

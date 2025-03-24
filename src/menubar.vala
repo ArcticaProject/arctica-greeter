@@ -179,6 +179,20 @@ public class MenuBar : Gtk.MenuBar
     {
         add_style_class (this);
 
+        /* Handle high contrast background color */
+        var menubar_style = new Gtk.CssProvider ();
+
+        try
+        {
+            menubar_style.load_from_data ("*.high_contrast { background-color: #ffffff; }", -1);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Failed adding high contrast background-color: %s", pError.message);
+        }
+        this.get_style_context ().add_provider (menubar_style,
+                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         /* Add shadow. */
         var shadow_style = new Gtk.CssProvider ();
 
@@ -232,7 +246,8 @@ public class MenuBar : Gtk.MenuBar
                 var sensitive_color = hostname_item_ctx.get_color (Gtk.StateFlags.NORMAL);
                 debug ("Directly fetched sensitive color: %s", sensitive_color.to_string ());
 
-                insensitive_override_style.load_from_data ("*:disabled { color: %s; }".printf(sensitive_color.to_string ()), -1);
+                insensitive_override_style.load_from_data ("*:disabled { color: %s; }
+                                                            *.high_contrast:disabled { color: #000000; }".printf(sensitive_color.to_string ()), -1);
             }
             catch (Error e)
             {
