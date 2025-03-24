@@ -163,7 +163,10 @@ public class MainWindow : Gtk.Window
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {background-color: transparent;
                                       %s
-                                     }".printf(shadow_style), -1);
+                                     }
+                                   *.high_contrast {background-color: black;
+                                                    border-color: white;
+                                                   }".printf(shadow_style), -1);
             var context = back_button.get_style_context();
             context.add_provider (style,
                                   Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
