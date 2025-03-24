@@ -186,7 +186,7 @@ public class MenuBar : Gtk.MenuBar
 
         try
         {
-            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px #000000; }", -1);
+            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(0.2,0.2,0.2,%f); }".printf(AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA)), -1);
         }
         catch (Error pError)
         {
