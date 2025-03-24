@@ -94,8 +94,6 @@ public class MenuBar : Gtk.MenuBar
     public Gtk.Window? keyboard_window { get; private set; default = null; }
     public Gtk.AccelGroup? accel_group { get; construct; }
 
-    private const int HEIGHT = 32;
-
     public MenuBar (Background bg, Gtk.AccelGroup ag)
     {
         Object (background: bg, accel_group: ag);
@@ -305,8 +303,9 @@ public class MenuBar : Gtk.MenuBar
 
     public override void get_preferred_height (out int min, out int nat)
     {
-        min = HEIGHT;
-        nat = HEIGHT;
+        var greeter = new ArcticaGreeter ();
+        min = (int)Math.round(greeter.menubar_height - 8);
+        nat = (int)Math.round(greeter.menubar_height - 8);
     }
 
     private Indicator.Object? load_indicator_file (string indicator_name)

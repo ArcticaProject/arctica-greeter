@@ -194,6 +194,7 @@ class BackgroundLoader : Object
     {
         var grid_x_offset = get_grid_offset (image.width);
         var grid_y_offset = get_grid_offset (image.height);
+        var greeter = new ArcticaGreeter();
 
         /* Create background */
         var surface = new Cairo.Surface.similar (target_surface, Cairo.Content.COLOR, image.width, image.height);
@@ -206,8 +207,8 @@ class BackgroundLoader : Object
         if (logo != null)
         {
             bc.save ();
-            var x = (int) (grid_x_offset + 1.1 * grid_size);
-            var y = (int) (image.height - 1.1 * grid_size - logo_height + grid_y_offset);
+            var x = (int) (grid_x_offset + 2 * greeter.grid_size);
+            var y = (int) (image.height - 1 * greeter.grid_size - logo_height + grid_y_offset);
             bc.translate (x, y);
             bc.set_source_surface (logo, 0, 0);
             bc.paint_with_alpha (AGSettings.get_double (AGSettings.KEY_LOGO_ALPHA));
@@ -835,14 +836,15 @@ public class Background : Gtk.Fixed
         var height = get_allocated_height ();
         var grid_x_offset = get_grid_offset (width);
         var grid_y_offset = get_grid_offset (height);
+        var greeter = new ArcticaGreeter();
 
         /* Overlay grid */
-        var overlay_surface = new Cairo.Surface.similar (target_surface, Cairo.Content.COLOR_ALPHA, grid_size, grid_size);
+        var overlay_surface = new Cairo.Surface.similar (target_surface, Cairo.Content.COLOR_ALPHA, greeter.grid_size, greeter.grid_size);
         var oc = new Cairo.Context (overlay_surface);
         oc.rectangle (0, 0, 1, 1);
-        oc.rectangle (grid_size - 1, 0, 1, 1);
-        oc.rectangle (0, grid_size - 1, 1, 1);
-        oc.rectangle (grid_size - 1, grid_size - 1, 1, 1);
+        oc.rectangle (greeter.grid_size - 1, 0, 1, 1);
+        oc.rectangle (0, greeter.grid_size - 1, 1, 1);
+        oc.rectangle (greeter.grid_size - 1, greeter.grid_size - 1, 1, 1);
         oc.set_source_rgba (1.0, 1.0, 1.0, 0.25);
         oc.fill ();
         var overlay = new Cairo.Pattern.for_surface (overlay_surface);

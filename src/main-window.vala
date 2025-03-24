@@ -95,7 +95,8 @@ public class MainWindow : Gtk.Window
                             background-repeat: repeat;".printf(shadow_path);
         }
 
-        menubox.set_size_request (-1, ArcticaGreeter.MENUBAR_HEIGHT);
+        var greeter = new ArcticaGreeter();
+        menubox.set_size_request (-1, greeter.menubar_height);
         menubox.show ();
         login_box.add (menubox);
         ArcticaGreeter.add_style_class (menubox);
@@ -132,7 +133,7 @@ public class MainWindow : Gtk.Window
         if (content_align == "center")
         {
             // offset for back button
-            align.margin_right = grid_size;
+            align.margin_right = greeter.grid_size;
         }
 
         align.show ();
@@ -144,8 +145,8 @@ public class MainWindow : Gtk.Window
         align.add (hbox);
 
         align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.set_size_request (grid_size, -1);
-        align.margin_bottom = ArcticaGreeter.MENUBAR_HEIGHT; /* offset for menubar at top */
+        align.set_size_request (greeter.grid_size, -1);
+        align.margin_bottom = greeter.menubar_height; /* offset for menubar at top */
         align.show ();
         hbox.add (align);
 
@@ -154,7 +155,8 @@ public class MainWindow : Gtk.Window
         Gtk.button_set_focus_on_click (back_button, false);
         var image = new Gtk.Image.from_file (Path.build_filename (Config.PKGDATADIR, "arrow_left.png", null));
         image.show ();
-        back_button.set_size_request (grid_size - GreeterList.BORDER * 2, grid_size - GreeterList.BORDER * 2);
+        back_button.set_size_request (greeter.grid_size - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2),
+                                      greeter.grid_size - (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2));
 
         try
         {
@@ -192,7 +194,6 @@ public class MainWindow : Gtk.Window
         only_on_monitor = AGSettings.get_string(AGSettings.KEY_ONLY_ON_MONITOR);
         monitor_setting_ok = only_on_monitor == "auto";
 
-        var greeter = new ArcticaGreeter ();
         if (greeter.test_mode)
         {
             /* Simulate an 800x600 monitor to the left of a 640x480 monitor */
@@ -226,17 +227,29 @@ public class MainWindow : Gtk.Window
             back_button.hide ();
 
         stack.pop ();
+
+        redraw_main_window();
     }
+
+    protected void redraw_main_window ()
+    {
+        Gtk.Allocation allocation;
+        this.get_allocation (out allocation);
+        queue_draw_area (allocation.x, allocation.y, allocation.width, allocation.height);
+    }
+
 
     public override void size_allocate (Gtk.Allocation allocation)
     {
         base.size_allocate (allocation);
 
+        var greeter = new ArcticaGreeter();
+
         if (content_box != null)
         {
             var content_align = AGSettings.get_string(AGSettings.KEY_CONTENT_ALIGN);
-            content_box.margin_left = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? grid_size : 0);
-            content_box.margin_right = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? grid_size : 0);
+            content_box.margin_left = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? greeter.grid_size : 0);
+            content_box.margin_right = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? greeter.grid_size : 0);
             content_box.margin_top = get_grid_offset (get_allocated_height ());
             content_box.margin_bottom = get_grid_offset (get_allocated_height ());
         }
@@ -252,8 +265,9 @@ public class MainWindow : Gtk.Window
 
     public void set_struts ()
     {
+        var greeter = new ArcticaGreeter();
         /* Substract the 5px shadow from the menubar height, so that indicators' menus render well */
-        _set_struts (MenubarPositions.TOP, ArcticaGreeter.MENUBAR_HEIGHT);
+        _set_struts (MenubarPositions.TOP, greeter.menubar_height);
     }
 
     private void _set_struts (uint position, long menubar_size)

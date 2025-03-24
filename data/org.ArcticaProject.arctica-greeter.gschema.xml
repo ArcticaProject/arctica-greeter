@@ -218,6 +218,10 @@
       <default>'auto'</default>
       <summary>Whether to enable HiDPI support</summary>
     </key>
+    <key name="widget-scaling" type="d">
+      <default>1.0</default>
+      <summary>Scaling factor for UI elements (menubar, icons, promptboxes). Everything except from fonts.</summary>
+    </key>
     <key name="font-scaling" type="d">
       <default>1.0</default>
       <summary>Scaling factor for fonts that can be used to adjust the greeter's font sizes.</summary>

@@ -21,7 +21,6 @@
  *          Robert Tari <robert@tari.in>
  */
 
-public const int grid_size = 40;
 
 [SingleInstance]
 public class ArcticaGreeter : Object
@@ -37,7 +36,9 @@ public class ArcticaGreeter : Object
     public bool test_highcontrast { get; construct; default = false; }
 
     // Menubar is smaller, but with shadow, we reserve more space
-    public const int MENUBAR_HEIGHT = 40;
+    public int menubar_height { get; set; default = 32 + 8; }
+    public int grid_size { get; set; default = 40; }
+    public double scaling_factor_widgets { get; set; default = 1; }
 
     private string state_file;
     private KeyFile state;
@@ -1500,6 +1501,13 @@ public class ArcticaGreeter : Object
 
         debug ("Creating Arctica Greeter");
         var greeter = new ArcticaGreeter (do_test_mode, do_test_highcontrast);
+
+        /* Widget/UI scaling settings */
+        greeter.scaling_factor_widgets = AGSettings.get_double (AGSettings.KEY_WIDGET_SCALING);
+        debug ("Scaling factor for widgets / UI elements is: %f", greeter.scaling_factor_widgets);
+        greeter.menubar_height = (int)Math.round(greeter.menubar_height * greeter.scaling_factor_widgets);
+        greeter.grid_size = (int)Math.round(greeter.grid_size * greeter.scaling_factor_widgets);
+
         greeter.go();
 
         if (!do_test_mode)
@@ -1998,6 +2006,8 @@ public class DBusServer : Object
 
         if ((this.pGreeter.pMagnifierWindow != null) && (pMagnifierSocket != null) && bActive)
         {
+            var greeter = new ArcticaGreeter();
+
             /* resize and position the magnifier window */
             debug ("Resizing and positioning Magnifier window.");
             var pDisplay = this.pGreeter.main_window.get_display ();
@@ -2011,13 +2021,13 @@ public class DBusServer : Object
             {
                 magnifier_width  = (int) (magnifier_width * 0.75);
                 magnifier_height = (int) (magnifier_height * 0.75);
-                this.pGreeter.pMagnifierWindow.move (cRect.x + ArcticaGreeter.MENUBAR_HEIGHT, cRect.y + ArcticaGreeter.MENUBAR_HEIGHT * 2);
+                this.pGreeter.pMagnifierWindow.move (cRect.x + greeter.menubar_height, cRect.y + greeter.menubar_height * 2);
             }
             else if (sPosition == "top-right")
             {
                 magnifier_width  = (int) (magnifier_width * 0.75);
                 magnifier_height = (int) (magnifier_height * 0.75);
-                this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - ArcticaGreeter.MENUBAR_HEIGHT - magnifier_width, cRect.y + ArcticaGreeter.MENUBAR_HEIGHT * 2);
+                this.pGreeter.pMagnifierWindow.move (cRect.x + cRect.width - greeter.menubar_height - magnifier_width, cRect.y + greeter.menubar_height * 2);
             }
             else if (sPosition == "centre-left")
             {

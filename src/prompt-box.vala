@@ -96,6 +96,8 @@ public class PromptBox : FadableBox
 
     construct
     {
+        var greeter = new ArcticaGreeter();
+
         set_start_row ();
         reset_last_row ();
         expand = true;
@@ -107,7 +109,7 @@ public class PromptBox : FadableBox
         box_grid = new Gtk.Grid ();
         box_grid.column_spacing = 4;
         box_grid.row_spacing = 3;
-        box_grid.margin_top = GreeterList.BORDER;
+        box_grid.margin_top = (int)(GreeterList.BORDER * greeter.scaling_factor_widgets);
         box_grid.margin_bottom = 6;
         box_grid.expand = true;
 
@@ -123,7 +125,7 @@ public class PromptBox : FadableBox
 
         active_indicator = new ActiveIndicator ();
         active_indicator.valign = Gtk.Align.START;
-        active_indicator.margin_top = (grid_size - ActiveIndicator.HEIGHT) / 2;
+        active_indicator.margin_top = (greeter.grid_size - ActiveIndicator.HEIGHT) / 2;
         active_indicator.show ();
         box_grid.attach (active_indicator, COL_ACTIVE, last_row, 1, 1);
 
@@ -148,7 +150,7 @@ public class PromptBox : FadableBox
 
         small_active_indicator = new ActiveIndicator ();
         small_active_indicator.valign = Gtk.Align.START;
-        small_active_indicator.margin_top = (grid_size - ActiveIndicator.HEIGHT) / 2;
+        small_active_indicator.margin_top = (greeter.grid_size - ActiveIndicator.HEIGHT) / 2;
         small_active_indicator.show ();
         small_box_grid.attach (small_active_indicator, 0, 0, 1, 1);
 
@@ -231,12 +233,14 @@ public class PromptBox : FadableBox
             debug ("Internal error setting color on name label: %s", e.message);
         }
 
+        var greeter = new ArcticaGreeter();
+
         name_label.valign = Gtk.Align.START;
         name_label.vexpand = true;
         name_label.yalign = 0.5f;
         name_label.xalign = 0.0f;
         name_label.margin_start = 2;
-        name_label.set_size_request (-1, grid_size);
+        name_label.set_size_request (-1, greeter.grid_size);
         name_label.show ();
         name_grid.attach (name_label, COL_NAME_LABEL, ROW_NAME, 1, 1);
 
@@ -245,7 +249,7 @@ public class PromptBox : FadableBox
 
         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
         align.valign = Gtk.Align.START;
-        align.set_size_request (-1, grid_size);
+        align.set_size_request (-1, greeter.grid_size);
         align.add (message_image);
         align.show ();
         name_grid.attach (align, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
@@ -327,11 +331,13 @@ public class PromptBox : FadableBox
             debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size, e.message);
         }
 
+        var greeter = new ArcticaGreeter();
+
         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
         small_name_label.margin_start = 2;
-        small_name_label.set_size_request (-1, grid_size);
+        small_name_label.set_size_request (-1, greeter.grid_size);
         small_name_label.show ();
         small_name_grid.attach (small_name_label, 1, 0, 1, 1);
 
@@ -339,7 +345,7 @@ public class PromptBox : FadableBox
         small_message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
 
         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.set_size_request (-1, grid_size);
+        align.set_size_request (-1, greeter.grid_size);
         align.add (small_message_image);
         align.show ();
         small_name_grid.attach (align, 2, 0, 1, 1);
@@ -361,22 +367,28 @@ public class PromptBox : FadableBox
 #if HAVE_GTK_3_20_0
     private int round_to_grid (int size)
     {
-        var num_grids = size / grid_size;
-        var remainder = size % grid_size;
+        var greeter = new ArcticaGreeter();
+
+        var num_grids = size / greeter.grid_size;
+        var remainder = size % greeter.grid_size;
         if (remainder > 0)
             num_grids += 1;
         num_grids = int.max (num_grids, 3);
-        return num_grids * grid_size;
+        return num_grids * greeter.grid_size;
     }
 
     public override void get_preferred_height (out int min, out int nat)
     {
         base.get_preferred_height (out min, out nat);
-        min = round_to_grid (min + GreeterList.BORDER * 2) - GreeterList.BORDER * 2;
-        nat = round_to_grid (nat + GreeterList.BORDER * 2) - GreeterList.BORDER * 2;
+
+        var greeter = new ArcticaGreeter();
+
+        int double_border_scaled = (int)(GreeterList.BORDER * greeter.scaling_factor_widgets * 2);
+        min = round_to_grid (min + double_border_scaled) - double_border_scaled;
+        nat = round_to_grid (nat + double_border_scaled) - double_border_scaled;
 
         if (position <= -1 || position >= 1)
-            min = nat = grid_size;
+            min = nat = greeter.grid_size;
     }
 #endif
 
@@ -849,13 +861,15 @@ private class ActiveIndicator : Gtk.Image
 
     public override void get_preferred_width (out int min, out int nat)
     {
-        min = WIDTH;
+        var greeter = new ArcticaGreeter();
+        min = (int)Math.round(WIDTH * greeter.scaling_factor_widgets);
         nat = min;
     }
 
     public override void get_preferred_height (out int min, out int nat)
     {
-        min = HEIGHT;
+        var greeter = new ArcticaGreeter();
+        min = (int)Math.round(HEIGHT * greeter.scaling_factor_widgets);
         nat = min;
     }
 
