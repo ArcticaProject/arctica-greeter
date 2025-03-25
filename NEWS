@@ -1,3 +1,31 @@
+Overview of changes in arctica-greeter 0.99.8.5
+
+  - src/main-window.vala: Render the back-button with black background
+    and white border. As arrow we have a white png.
+  - src/prompt-box.vala: Prompt box messages are always white in normal
+    mode, always black in high-contrast mode (except from errors).
+  - src/menubar.vala: Render the menubar always white (background is
+    always black) and use black font for the hostname if shown.
+  - Introduce UI/widget scaling per scaling factor.
+  - src/menubar.vala: Soften the menubar shadow depending on
+    'menubar-alpha' gsettings configuration.
+  - data/50-org.Arctica-Project.arctica-greeter.rules: Syntax fix.
+  - src/main-window.vala: Recuce the menubar height when settings
+    struts by 7px ( x scaling factor).
+  - src/main-window.vala: Apply Gdk property change to toplevel of the
+    MainWindow (just in case).
+  - src/arctica-greeter.vala: Re-arrange calls to
+    MainWindow.set_struts().
+  - src/main-window.vala: Make set_struts() a method without parameters
+    and move previous set_struts() to _set_struts() (private method
+    now).
+  - src/main-window.vala: Set Gdk.WindowTypeHint.DOCK to make struts
+    not affect the main window itself.
+  - src/main-window.vala: Convert set_struts() method to a non-static
+    method (by its code).
+  - Translation updates (thanks to all contributors on
+    hosted.weblate.org).
+
 Overview of changes in arctica-greeter 0.99.8.4
 
   - src/arctica-greeter.vala: Adjust comment (Slick Greeter ->
