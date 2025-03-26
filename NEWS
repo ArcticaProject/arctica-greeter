@@ -1,3 +1,9 @@
+Overview of changes in arctica-greeter 0.99.8.6
+
+  - Regression fix for 0.99.8.5 for non-English systems:
+    src/{arctica-greeter,menubar}.vala: Set locale to LC_NUMERIC before
+    using printf with floats.
+
 Overview of changes in arctica-greeter 0.99.8.5
 
   - src/main-window.vala: Render the back-button with black background

@@ -1,6 +1,12 @@
+2025-03-26 Mike Gabriel
+
+        * Release 0.99.8.6 (HEAD -> master, tag: 0.99.8.6)
+        * src/{arctica-greeter,menubar}.vala: Set locale to LC_NUMERIC before
+          using printf with floats. (fa0e19e)
+
 2025-03-25 Mike Gabriel
 
-        * Release 0.99.8.5 (HEAD -> master, tag: 0.99.8.5)
+        * Release 0.99.8.5 (71f38fc) (tag: 0.99.8.5)
 
 2025-03-24 Mike Gabriel
 
