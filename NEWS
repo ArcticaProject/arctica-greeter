@@ -1,3 +1,10 @@
+Overview of changes in arctica-greeter 0.99.8.7
+
+  - arctica-greeter/src/greeter-list.vala: Fix DashBox height when the
+    content changes.
+  - Translation updates (thanks to all contributors on
+    hosted.weblate.org).
+
 Overview of changes in arctica-greeter 0.99.8.6
 
   - Regression fix for 0.99.8.5 for non-English systems:

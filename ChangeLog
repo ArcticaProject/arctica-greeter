@@ -1,6 +1,20 @@
+2025-03-31 Mike Gabriel
+
+        * Release 0.99.8.7 (HEAD -> master, tag: 0.99.8.7)
+        * Merge branch 'tari01-pr/greeter-list-height-fix' (f1b274e)
+
+2025-03-31 Robert Tari
+
+        * arctica-greeter/src/greeter-list.vala: Fix DashBox height when the
+          content changes (946775b)
+
+2025-03-29 Salkin
+
+        * Translated using Weblate (Uyghur) (0ddec6b)
+
 2025-03-26 Mike Gabriel
 
-        * Release 0.99.8.6 (HEAD -> master, tag: 0.99.8.6)
+        * Release 0.99.8.6 (a021f8e) (tag: 0.99.8.6)
         * src/{arctica-greeter,menubar}.vala: Set locale to LC_NUMERIC before
           using printf with floats. (fa0e19e)
 
