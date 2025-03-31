@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -283,6 +283,7 @@ public abstract class GreeterList : FadableBox
 
     protected void redraw_greeter_box ()
     {
+        queue_allocate ();
         Gtk.Allocation allocation;
         greeter_box.get_allocation (out allocation);
         queue_draw_area (allocation.x, allocation.y, allocation.width, allocation.height);
@@ -662,6 +663,7 @@ public abstract class GreeterList : FadableBox
         focus_prompt ();
         entry_displayed_done ();
         mode = Mode.ENTRY;
+        queue_allocate ();
     }
 
     protected void select_entry (PromptBox entry, double direction, bool do_scroll = true)
