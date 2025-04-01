@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -40,6 +40,19 @@ private class IndicatorMenuItem : Gtk.MenuItem
         {
             entry.label.show.connect (this.visibility_changed_cb);
             entry.label.hide.connect (this.visibility_changed_cb);
+            var pContext = entry.label.get_style_context ();
+            var pProvider = new Gtk.CssProvider ();
+
+            try
+            {
+                pProvider.load_from_data ("*.high_contrast {color: #000000; font-size: 12pt; text-shadow: none;}", -1);
+            }
+            catch (Error pError)
+            {
+                error ("Panic: Failed adding indicator label colour: %s", pError.message);
+            }
+
+            pContext.add_provider (pProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             hbox.pack_start (entry.label, false, false, 0);
         }
         if (entry.image != null)
