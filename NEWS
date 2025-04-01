@@ -1,3 +1,7 @@
+Overview of changes in arctica-greeter 0.99.8.8
+
+  - src/menubar.vala: Fix DateTime Indicator high contrast label.
+
 Overview of changes in arctica-greeter 0.99.8.7
 
   - arctica-greeter/src/greeter-list.vala: Fix DashBox height when the

@@ -1,6 +1,16 @@
+2025-04-01 Mike Gabriel
+
+        * Release 0.99.8.8 (HEAD -> master, tag: 0.99.8.8)
+        * Merge branch 'tari01-pr/datetime-high-contrast-label' (e6e3fbe)
+
+2025-04-01 Robert Tari
+
+        * src/menubar.vala: Fix DateTime Indicator high contrast label
+          (4cdc2e0)
+
 2025-03-31 Mike Gabriel
 
-        * Release 0.99.8.7 (HEAD -> master, tag: 0.99.8.7)
+        * Release 0.99.8.7 (fc8c76d) (tag: 0.99.8.7)
         * Merge branch 'tari01-pr/greeter-list-height-fix' (f1b274e)
 
 2025-03-31 Robert Tari
