@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -552,6 +552,99 @@ public class MainWindow : Gtk.Window
                 show_shutdown_dialog (ShutdownDialogType.RESTART);
                 return true;
             }
+            break;
+
+        case Gdk.Key.k:
+
+            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            {
+                bool bActive = AGSettings.get_boolean (AGSettings.KEY_ONSCREEN_KEYBOARD);
+
+                try
+                {
+                    DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
+                    Variant pActive = new Variant.boolean (!bActive);
+                    Variant pTuple = new Variant("(sva{sv})", "onboard", pActive, null);
+                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                }
+                catch (Error pError)
+                {
+                    warning ("%s", pError.message);
+                }
+
+                return true;
+            }
+
+            break;
+
+        case Gdk.Key.h:
+
+            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            {
+                AGSettings pSettings = new AGSettings ();
+                bool bActive = pSettings.high_contrast;
+
+                try
+                {
+                    DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
+                    Variant pActive = new Variant.boolean (!bActive);
+                    Variant pTuple = new Variant("(sva{sv})", "contrast", pActive, null);
+                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                }
+                catch (Error pError)
+                {
+                    warning ("%s", pError.message);
+                }
+
+                return true;
+            }
+
+            break;
+
+        case Gdk.Key.s:
+
+            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            {
+                bool bActive = AGSettings.get_boolean (AGSettings.KEY_SCREEN_READER);
+
+                try
+                {
+                    DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
+                    Variant pActive = new Variant.boolean (!bActive);
+                    Variant pTuple = new Variant("(sva{sv})", "orca", pActive, null);
+                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                }
+                catch (Error pError)
+                {
+                    warning ("%s", pError.message);
+                }
+
+                return true;
+            }
+
+            break;
+
+        case Gdk.Key.m:
+
+            if ((event.state & Gdk.ModifierType.CONTROL_MASK) != 0)
+            {
+                bool bActive = AGSettings.get_boolean (AGSettings.KEY_MAGNIFIER);
+
+                try
+                {
+                    DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
+                    Variant pActive = new Variant.boolean (!bActive);
+                    Variant pTuple = new Variant("(sva{sv})", "magnifier", pActive, null);
+                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                }
+                catch (Error pError)
+                {
+                    warning ("%s", pError.message);
+                }
+
+                return true;
+            }
+
             break;
         }
 
