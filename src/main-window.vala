@@ -145,6 +145,7 @@ public class MainWindow : Gtk.Window
         align.add (hbox);
 
         align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+        align.resize_mode = Gtk.ResizeMode.QUEUE;
         align.set_size_request (greeter.grid_size, -1);
         align.margin_bottom = greeter.menubar_height; /* offset for menubar at top */
         align.show ();

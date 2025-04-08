@@ -283,7 +283,6 @@ public abstract class GreeterList : FadableBox
 
     protected void redraw_greeter_box ()
     {
-        queue_allocate ();
         Gtk.Allocation allocation;
         greeter_box.get_allocation (out allocation);
         queue_draw_area (allocation.x, allocation.y, allocation.width, allocation.height);
@@ -298,7 +297,6 @@ public abstract class GreeterList : FadableBox
         }
 
         selected_entry.add_message (text, is_error);
-        redraw_greeter_box ();
     }
 
     public DashEntry add_prompt (string text, bool secret = false)
@@ -870,6 +868,7 @@ public abstract class GreeterList : FadableBox
 
         /* Limit the number of characters in case a cat is sitting on the keyboard... */
         entry.max_length = MAX_FIELD_SIZE;
+        queue_resize ();
     }
 
     protected virtual void authentication_complete_cb ()
