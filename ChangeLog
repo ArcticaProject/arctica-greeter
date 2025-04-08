@@ -1,6 +1,21 @@
+2025-04-08 Mike Gabriel
+
+        * Release 0.99.8.9 (HEAD -> master, tag: 0.99.8.9)
+        * Merge branch 'tari01-pr/greeter-accelerators' (908972c)
+
+2025-04-07 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (044f8b6)
+        * Translated using Weblate (Occitan) (dcc9194)
+
+2025-04-04 Robert Tari
+
+        * src/main-window.vala: Toggle a11y states when accelerators are
+          pressed (856bd77)
+
 2025-04-01 Mike Gabriel
 
-        * Release 0.99.8.8 (HEAD -> master, tag: 0.99.8.8)
+        * Release 0.99.8.8 (7a83daa) (tag: 0.99.8.8)
         * Merge branch 'tari01-pr/datetime-high-contrast-label' (e6e3fbe)
 
 2025-04-01 Robert Tari
