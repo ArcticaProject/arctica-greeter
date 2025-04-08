@@ -133,7 +133,7 @@ public class MainWindow : Gtk.Window
         if (content_align == "center")
         {
             // offset for back button
-            align.margin_right = greeter.grid_size;
+            align.margin_end = greeter.grid_size;
         }
 
         align.show ();
@@ -252,8 +252,8 @@ public class MainWindow : Gtk.Window
         if (content_box != null)
         {
             var content_align = AGSettings.get_string(AGSettings.KEY_CONTENT_ALIGN);
-            content_box.margin_left = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? greeter.grid_size : 0);
-            content_box.margin_right = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? greeter.grid_size : 0);
+            content_box.margin_start = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? greeter.grid_size : 0);
+            content_box.margin_end = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? greeter.grid_size : 0);
             content_box.margin_top = get_grid_offset (get_allocated_height ());
             content_box.margin_bottom = get_grid_offset (get_allocated_height ());
         }
