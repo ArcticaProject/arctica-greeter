@@ -566,7 +566,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "onboard", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -590,7 +590,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "contrast", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -613,7 +613,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "orca", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -636,7 +636,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "magnifier", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
