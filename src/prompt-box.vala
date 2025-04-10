@@ -223,8 +223,8 @@ public class PromptBox : FadableBox
         try
         {
             var color_provider = new Gtk.CssProvider ();
-            var css = "* { color: rgba(255, 255, 255, 1.0); }\n" +
-                      ".high_contrast { color: rgba (0, 0, 0, 1.0); }";
+            string sColor = AGSettings.get_string (AGSettings.KEY_PROMPTBOX_COLOR_NORMAL);
+            var css = "* { color: %s; } .high_contrast { color: rgba (0, 0, 0, 1.0); }".printf (sColor);
             color_provider.load_from_data (css, -1);
             style_ctx.add_provider (color_provider,
                                     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -576,8 +576,20 @@ public class PromptBox : FadableBox
         try
         {
             var font_provider = new Gtk.CssProvider ();
-            var css = "* {font-family: %s; font-size: %dpt; color: white}
-                       *.high_contrast {color: black; }".printf (font_family, font_size-1);
+            var css = "";
+
+            if (is_error)
+            {
+                string sColor = AGSettings.get_string (AGSettings.KEY_PROMPTBOX_COLOR_ERROR);
+                double fOpacity = AGSettings.get_double (AGSettings.KEY_PROMPTBOX_ERROR_BG_OPACITY);
+                css = "* {font-family: %s; font-size: %dpt; color: %s; background-color: rgba(255, 255, 255, %f); text-shadow: none;}".printf (font_family, font_size-1, sColor, fOpacity);
+            }
+            else
+            {
+                string sColor = AGSettings.get_string (AGSettings.KEY_PROMPTBOX_COLOR_NORMAL);
+                css = "* {font-family: %s; font-size: %dpt; color: %s;} *.high_contrast {color: black; }".printf (font_family, font_size-1, sColor);
+            }
+
             font_provider.load_from_data (css, -1);
             style_ctx.add_provider (font_provider,
                                     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -585,23 +597,6 @@ public class PromptBox : FadableBox
         catch (Error e)
         {
             debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size-1, e.message);
-        }
-
-        if (is_error) {
-
-            /* red */
-            Gdk.RGBA color = { 1.0f, 1.0f, 1.0f, 1.0f };
-            color.parse ("#820900");
-
-            /*
-             * Overriding the background color will look ugly, but at least
-             * always make the text readable, which is probably important for
-             * error messages.
-             * We probably want to find a better way of handling this.
-             */
-            Gdk.RGBA bg_color = { 1.0f, 1.0f, 1.0f, 1.0f };
-            label.override_background_color (Gtk.StateFlags.NORMAL, bg_color);
-            label.override_color (Gtk.StateFlags.NORMAL, color);
         }
 
         label.xalign = 0.0f;
@@ -683,6 +678,31 @@ public class PromptBox : FadableBox
         }
 
         entry.respond.connect (entry_activate_cb);
+        Gtk.StyleContext pContext = entry.get_style_context ();
+        Gtk.CssProvider pProvider = new Gtk.CssProvider ();
+        string sKey = "";
+
+        if (has_errors)
+        {
+            sKey = AGSettings.KEY_PROMPTBOX_COLOR_ERROR;
+        }
+        else
+        {
+            sKey = AGSettings.KEY_PROMPTBOX_COLOR_NORMAL;
+        }
+
+        string sColor = AGSettings.get_string (sKey);
+        string sCss = "entry {border: none; outline: none; box-shadow: 1px 0 %s inset, 0 1px %s inset, -1px 0 %s inset, 0 -1px %s inset;}".printf (sColor, sColor, sColor, sColor);
+
+        try
+        {
+            pProvider.load_from_data (sCss, -1);
+            pContext.add_provider (pProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error pError)
+        {
+            warning ("Panic: Error setting DashEntry border colour: %s", pError.message);
+        }
 
         attach_item (entry);
 

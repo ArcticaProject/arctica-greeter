@@ -3,7 +3,7 @@
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
  * Copyright (C) 2022 Mihai Moldovan <ionic@ionic.de>
- * Copyright (C) 2023-2024 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -90,6 +90,11 @@ public class AGSettings : Object
     public const string KEY_MAGNIFIER = "magnifier";
     public const string KEY_CONTENT_ALIGN = "content-align";
     public const string KEY_MAGNIFIER_POSITION = "magnifier-position";
+    public const string KEY_DASHBOX_BGCOLOR = "dash-box-bgcolor";
+    public const string KEY_DASHBOX_OPACITY = "dash-box-opacity";
+    public const string KEY_PROMPTBOX_COLOR_NORMAL = "prompt-box-color-normal";
+    public const string KEY_PROMPTBOX_COLOR_ERROR = "prompt-box-color-error";
+    public const string KEY_PROMPTBOX_ERROR_BG_OPACITY = "prompt-box-error-bg-opacity";
 
     public static bool get_boolean (string key)
     {
