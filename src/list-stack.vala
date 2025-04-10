@@ -1,7 +1,7 @@
 /* -*- Mode: Vala; indent-tabs-mode: nil; tab-width: 4 -*-
  *
  * Copyright (C) 2011,2012 Canonical Ltd
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -35,6 +35,7 @@ public class ListStack : Gtk.Fixed
 
     construct
     {
+        resize_mode = Gtk.ResizeMode.QUEUE;
         var greeter = new ArcticaGreeter();
 
         width = greeter.grid_size * GreeterList.BOX_WIDTH;

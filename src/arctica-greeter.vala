@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023-2024 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -1144,7 +1144,6 @@ public class ArcticaGreeter : Object
                         try
                         {
                             string[] argv;
-                            Pid wm_message_pid = 0;
 
                             Shell.parse_argv ("%s-message disable-keybindings".printf(wm), out argv);
 

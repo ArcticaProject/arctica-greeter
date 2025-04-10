@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2013 Canonical Ltd
  * Copyright (C) 2015,2016 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -306,7 +306,8 @@ public class ShutdownDialog : Gtk.Fixed
                 var focused = pWindow.get_focus ();
                 if ((null != focused) && (focused is DialogButton))
                 {
-                    (focused as DialogButton).clicked ();
+                    DialogButton pButton = (DialogButton) focused;
+		    pButton.clicked ();
                 }
 
                 --default_action_time_supplemental;

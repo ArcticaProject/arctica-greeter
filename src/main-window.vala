@@ -133,7 +133,7 @@ public class MainWindow : Gtk.Window
         if (content_align == "center")
         {
             // offset for back button
-            align.margin_right = greeter.grid_size;
+            align.margin_end = greeter.grid_size;
         }
 
         align.show ();
@@ -145,6 +145,7 @@ public class MainWindow : Gtk.Window
         align.add (hbox);
 
         align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+        align.resize_mode = Gtk.ResizeMode.QUEUE;
         align.set_size_request (greeter.grid_size, -1);
         align.margin_bottom = greeter.menubar_height; /* offset for menubar at top */
         align.show ();
@@ -251,8 +252,8 @@ public class MainWindow : Gtk.Window
         if (content_box != null)
         {
             var content_align = AGSettings.get_string(AGSettings.KEY_CONTENT_ALIGN);
-            content_box.margin_left = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? greeter.grid_size : 0);
-            content_box.margin_right = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? greeter.grid_size : 0);
+            content_box.margin_start = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? greeter.grid_size : 0);
+            content_box.margin_end = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? greeter.grid_size : 0);
             content_box.margin_top = get_grid_offset (get_allocated_height ());
             content_box.margin_bottom = get_grid_offset (get_allocated_height ());
         }
@@ -273,6 +274,39 @@ public class MainWindow : Gtk.Window
         _set_struts (MenubarPositions.TOP, greeter.menubar_height);
     }
 
+    private void getScreenSize (out int nScreenWidth, out int nScreenHeight)
+    {
+        Gdk.Display pDisplay = Gdk.Display.get_default ();
+        int nMonitors = pDisplay.get_n_monitors ();
+
+        if (nMonitors == 0)
+        {
+            nScreenWidth = 0;
+            nScreenHeight = 0;
+            
+            return;
+        }
+
+        int x0 = int.MAX;
+        int y0 = int.MAX;
+        int x1 = int.MIN;
+        int y1 = int.MIN;
+
+        for (int nMonitor = 0; nMonitor < nMonitors; nMonitor++)
+        {
+            Gdk.Monitor pMonitor = pDisplay.get_monitor (nMonitor);
+            Gdk.Rectangle cRectangle = pMonitor.get_geometry ();
+
+            x0 = int.min (x0, cRectangle.x);
+            y0 = int.min (y0, cRectangle.y);
+            x1 = int.max (x1, cRectangle.x + cRectangle.width);
+            y1 = int.max (y1, cRectangle.y + cRectangle.height);
+        }
+
+        nScreenWidth = x1 - x0;
+        nScreenHeight = y1 - y0;
+    }
+
     private void _set_struts (uint position, long menubar_size)
     {
         if (!get_realized()) {
@@ -291,6 +325,10 @@ public class MainWindow : Gtk.Window
         /* Subtract (non-scaled) 5px border + 2px extra spacing (to make indicator menus render nicely below menubar) */
         menubar_size = menubar_size - 7;
 
+        int nScreenWidth = 0;
+        int nScreenHeight = 0;
+        getScreenSize (out nScreenWidth, out nScreenHeight);
+
         // Struts dependent on position
         switch (position) {
             case MenubarPositions.TOP:
@@ -304,13 +342,13 @@ public class MainWindow : Gtk.Window
                 struts[Struts.LEFT_END] = (primary_monitor.y + primary_monitor.height) * scale - 1;
                 break;
             case MenubarPositions.RIGHT:
-                struts[Struts.RIGHT] = (menubar_size + screen.get_width() - primary_monitor.x - primary_monitor.width) * scale;
+                struts[Struts.RIGHT] = (menubar_size + nScreenWidth - primary_monitor.x - primary_monitor.width) * scale;
                 struts[Struts.RIGHT_START] = primary_monitor.y * scale;
                 struts[Struts.RIGHT_END] = (primary_monitor.y + primary_monitor.height) * scale - 1;
                 break;
             case MenubarPositions.BOTTOM:
                 default:
-                struts[Struts.BOTTOM] = (menubar_size + screen.get_height() - primary_monitor.y - primary_monitor.height) * scale;
+                struts[Struts.BOTTOM] = (menubar_size + nScreenHeight - primary_monitor.y - primary_monitor.height) * scale;
                 struts[Struts.BOTTOM_START] = primary_monitor.x * scale;
                 struts[Struts.BOTTOM_END] = (primary_monitor.x + primary_monitor.width) * scale - 1;
                 break;
@@ -565,7 +603,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "onboard", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -589,7 +627,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "contrast", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -612,7 +650,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "orca", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {
@@ -635,7 +673,7 @@ public class MainWindow : Gtk.Window
                     DBusConnection pConnection = Bus.get_sync (BusType.SESSION);
                     Variant pActive = new Variant.boolean (!bActive);
                     Variant pTuple = new Variant("(sva{sv})", "magnifier", pActive, null);
-                    pConnection.call ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
+                    pConnection.call.begin ("org.ayatana.indicator.a11y", "/org/ayatana/indicator/a11y", "org.gtk.Actions", "SetState", pTuple, null, DBusCallFlags.NONE, -1, null);
                 }
                 catch (Error pError)
                 {

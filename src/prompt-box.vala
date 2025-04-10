@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015,2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -96,6 +96,7 @@ public class PromptBox : FadableBox
 
     construct
     {
+        resize_mode = Gtk.ResizeMode.QUEUE;
         var greeter = new ArcticaGreeter();
 
         set_start_row ();
@@ -569,7 +570,6 @@ public class PromptBox : FadableBox
     public void add_message (string text, bool is_error)
     {
         var label = new FadingLabel (text);
-        label.set_line_wrap (true);
 
         var style_ctx = label.get_style_context();
 
