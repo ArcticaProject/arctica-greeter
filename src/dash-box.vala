@@ -2,7 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
- * Copyright (C) 2023 Robert Tari
+ * Copyright (C) 2023-2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -237,7 +237,11 @@ public class DashBox : Gtk.Box
         }
         else
         {
-            c.set_source_rgba (0.1, 0.1, 0.1, 0.4);
+            string sBackGround = AGSettings.get_string (AGSettings.KEY_DASHBOX_BGCOLOR);
+            Gdk.RGBA cBackground = {1.0, 1.0, 1.0, 1.0};
+            cBackground.parse (sBackGround);
+            double fOpacity = AGSettings.get_double (AGSettings.KEY_DASHBOX_OPACITY);
+            c.set_source_rgba (cBackground.red, cBackground.green, cBackground.blue, fOpacity);
         }
         c.fill_preserve ();
 
