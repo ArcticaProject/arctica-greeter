@@ -317,5 +317,23 @@
       <default>1.0</default>
       <summary>The background opacity of the error message in the prompt box.</summary>
     </key>
+    <key name="logo-position" type="s">
+      <choices>
+        <choice value='top-left'/>
+        <choice value='top-right'/>
+        <choice value='bottom-left'/>
+        <choice value='bottom-right'/>
+      </choices>
+      <default>'bottom-left'</default>
+      <summary>The position of the logo.</summary>
+    </key>
+    <key name="logo-offset-horizontal" type="i">
+      <default>2</default>
+      <summary>The horizontal offset of the logo from the edge of the screen in grid units.</summary>
+    </key>
+    <key name="logo-offset-vertical" type="i">
+      <default>1</default>
+      <summary>The vertical offset of the logo from the edge of the screen in grid units.</summary>
+    </key>
   </schema>
 </schemalist>

@@ -95,6 +95,9 @@ public class AGSettings : Object
     public const string KEY_PROMPTBOX_COLOR_NORMAL = "prompt-box-color-normal";
     public const string KEY_PROMPTBOX_COLOR_ERROR = "prompt-box-color-error";
     public const string KEY_PROMPTBOX_ERROR_BG_OPACITY = "prompt-box-error-bg-opacity";
+    public const string KEY_LOGO_POSITION = "logo-position";
+    public const string KEY_LOGO_OFFSET_HORIZONTAL = "logo-offset-horizontal";
+    public const string KEY_LOGO_OFFSET_VERTICAL = "logo-offset-vertical";
 
     public static bool get_boolean (string key)
     {
