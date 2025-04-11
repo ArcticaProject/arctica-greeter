@@ -322,7 +322,7 @@ public class PromptBox : FadableBox
         try
         {
             var font_provider = new Gtk.CssProvider ();
-            var css = "* {font-family: %s; font-size: %dpt;}".printf (font_family, font_size);
+            var css = "* {color: #FFFFFF; font-family: %s; font-size: %dpt;}".printf (font_family, font_size);
             font_provider.load_from_data (css, -1);
             style_ctx.add_provider (font_provider,
                                     Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -334,7 +334,6 @@ public class PromptBox : FadableBox
 
         var greeter = new ArcticaGreeter();
 
-        small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
         small_name_label.yalign = 0.5f;
         small_name_label.xalign = 0.0f;
         small_name_label.margin_start = 2;

@@ -70,9 +70,21 @@ public class MainWindow : Gtk.Window
         var accel_group = new Gtk.AccelGroup ();
         add_accel_group (accel_group);
 
-        var bg_color = Gdk.RGBA ();
-        bg_color.parse (AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR));
-        override_background_color (Gtk.StateFlags.NORMAL, bg_color);
+        Gtk.StyleContext pContext = get_style_context ();
+        Gtk.CssProvider pProvider = new Gtk.CssProvider ();
+        string sColour = AGSettings.get_string (AGSettings.KEY_BACKGROUND_COLOR);
+        string sCss = "* {background-color: %s;}".printf (sColour);
+
+        try
+        {
+            pProvider.load_from_data (sCss, -1);
+            pContext.add_provider (pProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        }
+        catch (Error pError)
+        {
+            warning ("Panic: Error loading style for main window: %s", pError.message);
+        }
+
         get_accessible ().set_name (_("Login Screen"));
         ArcticaGreeter.add_style_class (this);
 
