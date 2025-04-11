@@ -105,19 +105,6 @@ public class AGSettings : Object
         return gsettings.get_boolean (key);
     }
 
-    /* LP: 1006497 - utility function to make sure we have the key before trying to read it (which will segfault if the key isn't there) */
-    public static bool safe_get_boolean (string key, bool default)
-    {
-        var gsettings = new Settings (SCHEMA);
-        string[] keys = gsettings.list_keys ();
-        foreach (var k in keys)
-            if (k == key)
-                return gsettings.get_boolean (key);
-
-        /* key not in child list */
-        return default;
-    }
-
     public static int get_integer (string key)
     {
         var gsettings = new Settings (SCHEMA);
