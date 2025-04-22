@@ -295,5 +295,45 @@
       <default>'left'</default>
       <summary>Alignment of the main content</summary>
     </key>
+    <key name="dash-box-bgcolor" type="s">
+      <default>'#1A1A1A'</default>
+      <summary>The background color of the dash box in #RRGGBB format.</summary>
+    </key>
+    <key name="dash-box-opacity" type="d">
+      <range min="0.1" max="1.0"/>
+      <default>0.4</default>
+      <summary>The opacity of the dash box.</summary>
+    </key>
+    <key name="prompt-box-color-normal" type="s">
+      <default>'#ffffff'</default>
+      <summary>The normal text color of the prompt box in #RRGGBB format.</summary>
+    </key>
+    <key name="prompt-box-color-error" type="s">
+      <default>'#820900'</default>
+      <summary>The error text color of the prompt box in #RRGGBB format.</summary>
+    </key>
+    <key name="prompt-box-error-bg-opacity" type="d">
+      <range min="0.0" max="1.0"/>
+      <default>1.0</default>
+      <summary>The background opacity of the error message in the prompt box.</summary>
+    </key>
+    <key name="logo-position" type="s">
+      <choices>
+        <choice value='top-left'/>
+        <choice value='top-right'/>
+        <choice value='bottom-left'/>
+        <choice value='bottom-right'/>
+      </choices>
+      <default>'bottom-left'</default>
+      <summary>The position of the logo.</summary>
+    </key>
+    <key name="logo-offset-horizontal" type="i">
+      <default>2</default>
+      <summary>The horizontal offset of the logo from the edge of the screen in grid units.</summary>
+    </key>
+    <key name="logo-offset-vertical" type="i">
+      <default>1</default>
+      <summary>The vertical offset of the logo from the edge of the screen in grid units.</summary>
+    </key>
   </schema>
 </schemalist>

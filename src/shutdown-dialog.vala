@@ -696,7 +696,7 @@ private class DialogButton : Gtk.Button
             try
             {
                 var font_provider = new Gtk.CssProvider ();
-                var css = "* {font-family: %s; font-size: %dpt;}".printf(font_family, font_size);
+                var css = "* {color: #FFFFFF; font-family: %s; font-size: %dpt;}".printf(font_family, font_size);
                 font_provider.load_from_data (css, -1);
                 style_ctx.add_provider (font_provider,
                                         Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -706,9 +706,6 @@ private class DialogButton : Gtk.Button
                 debug ("Internal error loading font style (%s, %dpt): %s", font_family, font_size, e.message);
             }
 
-            l.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 0.0f });
-            l.override_color (Gtk.StateFlags.FOCUSED, { 1.0f, 1.0f, 1.0f, 1.0f });
-            l.override_color (Gtk.StateFlags.ACTIVE, { 1.0f, 1.0f, 1.0f, 1.0f });
             this.get_accessible ().set_name (l.get_text ());
         }
 

@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015-2017 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 class BackgroundLoader : Object
@@ -207,8 +209,31 @@ class BackgroundLoader : Object
         if (logo != null)
         {
             bc.save ();
-            var x = (int) (grid_x_offset + 2 * greeter.grid_size);
-            var y = (int) (image.height - 1 * greeter.grid_size - logo_height + grid_y_offset);
+            string sPosition = AGSettings.get_string (AGSettings.KEY_LOGO_POSITION);
+            int x = AGSettings.get_integer (AGSettings.KEY_LOGO_OFFSET_HORIZONTAL);
+            int y = AGSettings.get_integer (AGSettings.KEY_LOGO_OFFSET_VERTICAL);
+
+            if (sPosition == "top-left")
+            {
+                x = (int) (grid_x_offset + (x * greeter.grid_size));
+                y = (int) (grid_y_offset + ((y + 1) * greeter.grid_size));
+            }
+            else if (sPosition == "top-right")
+            {
+                x = (int) (image.width - (x * greeter.grid_size) - logo_width + grid_x_offset);
+                y = (int) (grid_y_offset + ((y + 1) * greeter.grid_size));
+            }
+            else if (sPosition == "bottom-left")
+            {
+                x = (int) (grid_x_offset + (x * greeter.grid_size));
+                y = (int) (image.height - (y * greeter.grid_size) - logo_height + grid_y_offset);
+            }
+            else if (sPosition == "bottom-right")
+            {
+                x = (int) (image.width - (x * greeter.grid_size) - logo_width + grid_x_offset);
+                y = (int) (image.height - (y * greeter.grid_size) - logo_height + grid_y_offset);
+            }
+
             bc.translate (x, y);
             bc.set_source_surface (logo, 0, 0);
             bc.paint_with_alpha (AGSettings.get_double (AGSettings.KEY_LOGO_ALPHA));
