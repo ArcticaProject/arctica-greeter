@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2024-11-09 13:00+0000\n"
+"PO-Revision-Date: 2025-04-25 09:29+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/ta/>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.2\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
 #, c-format
 msgid "Enter password for %s"
-msgstr "%S க்கு கடவுச்சொல்லை உள்ளிடவும்"
+msgstr "%s க்கு கடவுச்சொல்லை உள்ளிடவும்"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
@@ -31,7 +31,7 @@ msgstr "உங்கள் பயனர்பெயரை உள்ளிடவ�
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
-msgstr "கடவு சொல்"
+msgstr "கடவுசொல்:"
 
 #: ../src/greeter-list.vala:842 ../src/user-list.vala:755
 msgid "Username:"
@@ -51,7 +51,7 @@ msgstr "அமர்வை தொடக்குவதில் தோல்�
 
 #: ../src/greeter-list.vala:979
 msgid "Logging in…"
-msgstr "உள்நுழைகிறது..."
+msgstr "உள்நுழைகிறது…"
 
 #: ../src/main-window.vala:56
 msgid "Login Screen"
@@ -71,7 +71,7 @@ msgstr "திசைமேசை சூளலை தேர்ந்தெடு"
 
 #: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
-msgstr "நன்றி வணக்கம். நீங்கள் விரும்புகிறீர்களா..."
+msgstr "நன்றி வணக்கம். நீங்கள் விரும்புகிறீர்களா…"
 
 #: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
@@ -177,7 +177,7 @@ msgstr "இரத்துசெய்"
 
 #: ../src/user-list.vala:607
 msgid "Set Up…"
-msgstr "அமைக்க..."
+msgstr "அமைக்க…"
 
 #: ../src/user-list.vala:609
 msgid ""
@@ -207,7 +207,7 @@ msgstr ""
 
 #: ../src/user-list.vala:739
 msgid "Server type not supported."
-msgstr "சேவகன் வகை ஆதரிக்கப்படதாதது"
+msgstr "சேவகன் வகை ஆதரிக்கப்படதாதது."
 
 #: ../src/user-list.vala:767
 msgid "X2Go Session:"
@@ -229,7 +229,7 @@ msgstr "புகுபதிகை"
 #: ../src/user-list.vala:899
 #, c-format
 msgid "Login as %s"
-msgstr "%S ஆக உள்நுழைக"
+msgstr "%s ஆக உள்நுழைக"
 
 #: ../src/user-list.vala:903
 msgid "Retry"
