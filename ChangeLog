@@ -1,6 +1,39 @@
+2025-04-24 Mike Gabriel
+
+        * Release 0.99.8.10 (HEAD -> master, tag: 0.99.8.10)
+
+2025-04-22 Mike Gabriel
+
+        * Merge branch 'tari01-pr/prompt-box-tweaks' (2d6ade9)
+
+2025-04-11 Robert Tari
+
+        * src/settings.vala: Drop unused safe_get_boolean (66148f4)
+        * Fix deprecated colour overrides (f270371)
+        * Add logo positioning tweaks (4d10346)
+
+2025-04-10 Robert Tari
+
+        * Add prompt box tweaks (33ec57f)
+
+2025-04-10 Mike Gabriel
+
+        * Merge branch 'tari01-pr/size-position-fix' (65ccc9a)
+
+2025-04-08 Robert Tari
+
+        * src/shutdown-dialog: Fix possible null warning (9153eef)
+        * src/arctica-greeter.vala: Drop unused wm_message_pid (88c789a)
+        * src/main-window.vala: Drop deprecated Gdk.Screen.get_* functions
+          (c2bc2ca)
+        * src/main-window.vala: Fix content_box.margin_right and margin_left
+          (a0e8568)
+        * src/main-window.vala: Fix DBusConnection.call (b5c6f85)
+        * Fix size and position of elements (e0acacd)
+
 2025-04-08 Mike Gabriel
 
-        * Release 0.99.8.9 (HEAD -> master, tag: 0.99.8.9)
+        * Release 0.99.8.9 (81c3c04) (tag: 0.99.8.9)
         * Merge branch 'tari01-pr/greeter-accelerators' (908972c)
 
 2025-04-07 Quentin PAGÈS

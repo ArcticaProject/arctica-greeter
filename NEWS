@@ -1,3 +1,16 @@
+Overview of changes in arctica-greeter 0.99.8.10
+
+  - src/settings.vala: Drop unused safe_get_boolean.
+  - Fix deprecated colour overrides.
+  - Add logo positioning tweaks.
+  - Add prompt box tweaks.
+  - src/shutdown-dialog: Fix possible null warning.
+  - src/arctica-greeter.vala: Drop unused wm_message_pid.
+  - src/main-window.vala: Drop deprecated Gdk.Screen.get_* functions.
+  - src/main-window.vala: Fix content_box.margin_right and margin_left.
+  - src/main-window.vala: Fix DBusConnection.call.
+  - Fix size and position of elements.
+
 Overview of changes in arctica-greeter 0.99.8.9
 
   - src/main-window.vala: Toggle a11y states when accelerators are
