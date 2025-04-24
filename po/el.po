@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2021-02-09 16:50+0000\n"
-"Last-Translator: Michalis <michalisntovas@yahoo.gr>\n"
+"PO-Revision-Date: 2025-04-24 14:06+0000\n"
+"Last-Translator: GiannosOB <giannos2105@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/el/>\n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -27,7 +27,7 @@ msgstr "Εισάγετε κωδικό για %s"
 
 #: ../src/greeter-list.vala:308
 msgid "Enter your username"
-msgstr ""
+msgstr "Εισάγετε το όνομα χρήστη σας"
 
 #: ../src/greeter-list.vala:837 ../src/user-list.vala:761
 msgid "Password:"
@@ -38,9 +38,8 @@ msgid "Username:"
 msgstr "Όνομα χρήστη:"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "Λανθασμένος κωδικός, παρακαλώ δοκιμάστε ξανά"
+msgstr "Μη έγκυρο όνομα χρήστη ή κωδικός πρόσβασης, δοκιμάστε ξανά"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -105,14 +104,17 @@ msgstr "Επανεκκίνηση"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Εκτέλεση της επιλεγμένης ενέργειας τώρα."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
 msgstr[0] ""
+"Αναμονή ενός ακόμη δευτερολέπτου πριν από την εκτέλεση της επιλεγμένης "
+"ενέργειας …"
 msgstr[1] ""
+"Αναμονή %u δευτερολέπτων πριν από την εκτέλεση της επιλεγμένης ενέργειας …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -134,6 +136,8 @@ msgstr "Εκτέλεση σε λειτουργία δοκιμής"
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
+"Εκτέλεση σε δοκιμαστική λειτουργία με ενεργοποιημένο το θέμα υψηλής "
+"αντίθεσης a11y"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -184,8 +188,8 @@ msgid ""
 "You need a Remote Logon account to use this service. Would you like to set "
 "up an account now?"
 msgstr ""
-"Χρειάζεστε ένα λογαριασμό Απομακρυσμένης σύνδεσης  για να χρησιμοποιήσετε "
-"αυτή την υπηρεσία. Θα θέλατε να δημιουργήσετε ένα λογαριασμό τώρα;"
+"Χρειάζεστε έναν λογαριασμό απομακρυσμένης σύνδεσης για να χρησιμοποιήσετε "
+"αυτή την υπηρεσία. Θα θέλατε να δημιουργήσετε έναν λογαριασμό τώρα;"
 
 #: ../src/user-list.vala:613
 msgid "OK"
@@ -273,8 +277,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
-"Μία εναλλακτική λύση είναι να αποθηκεύσετε τα αρχεία στον φάκελο /var/guest-"
-"data."
+"Μια άλλη εναλλακτική λύση είναι να αποθηκεύετε αρχεία στο\n"
+"/var/guest-data."
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
@@ -284,260 +288,315 @@ msgstr "Arctica Greeter"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"Αρχείο εικόνας φόντου που θέλετε να χρησιμοποιήσετε, είτε μια διαδρομή "
+"εικόνας είτε ένα χρώμα (π.χ. #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
 msgstr ""
+"Χρώμα φόντου (π.χ. #772953), που ορίζεται πριν από την εμφάνιση της "
+"ταπετσαρίας."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "Χρώμα φόντου (π.χ. #000000 ή #FFFFFF) για λειτουργία υψηλής αντίθεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
+"Χρώμα προσκηνίου γραμματοσειράς (π.χ. #A0A0A0) για τα ονόματα μη ενεργών/"
+"υπερυψωμένων και μη επιλεγμένων συνόδων στη λίστα συνόδων."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
+"Χρώμα προσκηνίου γραμματοσειράς (π.χ. #A0A0A0) για το όνομα της ενεργής/"
+"υπέρτατης συνεδρίας στη λίστα συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the selected session name in the "
 "session list."
 msgstr ""
+"Χρώμα προσκηνίου γραμματοσειράς (π.χ. #A0A0A0) για το επιλεγμένο όνομα "
+"συνεδρίας στη λίστα συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:7
 msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
 msgstr ""
+"Χρώμα φόντου (π.χ. #391C31) για τα ονόματα μη ενεργών/υπερυψωμένων και μη "
+"επιλεγμένων συνόδων στη λίστα συνόδων."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
 msgstr ""
+"Χρώμα φόντου (π.χ. #391C31) για το όνομα της ενεργής/υπέρτατης συνεδρίας στη "
+"λίστα συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
 "Background color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Χρώμα φόντου (π.χ. #391C31) για το επιλεγμένο όνομα συνεδρίας στη λίστα "
+"συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:10
 msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
 msgstr ""
+"Χρώμα περιθωρίου (π.χ. #391C31) για τα ονόματα μη ενεργών/υπερυψωμένων και "
+"μη επιλεγμένων συνόδων στη λίστα συνόδων."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
 msgstr ""
+"Χρώμα περιθωρίου (π.χ. #391C31) για το ενεργό/υπέρτατο όνομα συνεδρίας στη "
+"λίστα συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
 "Border color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"Χρώμα περιθωρίου (π.χ. #391C31) για το επιλεγμένο όνομα συνεδρίας στη λίστα "
+"συνεδριών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:13
 msgid ""
 "Background color (e.g. #391C31) of flat buttons (e.g. the session chooser "
 "icon)."
 msgstr ""
+"Χρώμα φόντου (π.χ. #391C31) των επίπεδων κουμπιών (π.χ. το εικονίδιο "
+"επιλογής συνεδρίας)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:14
 msgid ""
 "Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)."
 msgstr ""
+"Χρώμα περιγράμματος (π.χ. #391C31) των επίπεδων κουμπιών (π.χ. το εικονίδιο "
+"επιλογής συνεδρίας)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "Καθορίζει τον τρόπο απόδοσης της εικόνας φόντου."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "Αν θα σχεδιάζονται φόντα χρηστών."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "Εάν θέλετε να σχεδιάσετε ένα πλέγμα επικάλυψης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "Εάν θα εμφανίζεται το όνομα κεντρικού υπολογιστή στη γραμμή μενού."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
+"Αν θα εμφανίζονται οι ετικέτες 'Όνομα χρήστη:' και 'Κωδικός πρόσβασης:' "
+"(κ.λπ.) στο πλαίσιο σύνδεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "Αρχείο λογότυπου προς χρήση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
-msgstr ""
+msgstr "Τιμή άλφα για την ανάμειξη του λογότυπου στο φόντο."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "Θέμα GTK+ για χρήση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "Θέμα GTK+ για χρήση σε λειτουργία υψηλής αντίθεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "Θέμα εικονιδίων για χρήση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "Θέμα εικονιδίων για χρήση σε λειτουργία υψηλής αντίθεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "Θέμα δρομέα για χρήση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
-msgstr ""
+msgstr "Μέγεθος που χρησιμοποιείται για τους δρομείς."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "Γραμματοσειρά προς χρήση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
-msgstr ""
+msgstr "Αν θέλετε να κάνετε antialias στις γραμματοσειρές Xft."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:30
 msgid "Resolution for Xft in dots per inch."
-msgstr ""
+msgstr "Ανάλυση για το Xft σε κουκκίδες ανά ίντσα."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:31
 msgid "What degree of hinting to use."
-msgstr ""
+msgstr "Ποιος βαθμός υπαινιγμού πρέπει να χρησιμοποιηθεί."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "Τύπος αντιδιαστολής υποεικονοστοιχείων."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
-msgstr ""
+msgstr "Ενεργοποίηση του πληκτρολογίου οθόνης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:34
 msgid "Whether to use a high contrast theme."
-msgstr ""
+msgstr "Αν θα χρησιμοποιήσετε ένα θέμα υψηλής αντίθεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:35
 msgid "Whether to enable the screen reader."
-msgstr ""
+msgstr "Εάν θέλετε να ενεργοποιήσετε το πρόγραμμα ανάγνωσης οθόνης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
-msgstr ""
+msgstr "Αν θα αναπαράγεται ήχος όταν ο χαιρετιστής είναι έτοιμος."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "Ποιους δείκτες να φορτώσετε."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
 "List of usernames that are hidden until a special key combination is hit."
 msgstr ""
+"Λίστα με ονόματα χρηστών που είναι κρυμμένα μέχρι να πατηθεί ένας ειδικός "
+"συνδυασμός πλήκτρων."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:39
 msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)."
 msgstr ""
+"Λίστα των ομάδων στις οποίες πρέπει να ανήκουν οι χρήστες για να "
+"εμφανίζονται (η κενή λίστα εμφανίζει όλους τους χρήστες)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:40
 msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Αριθμός δευτερολέπτων αδράνειας πριν από το σβήσιμο της οθόνης. Ορίστε την "
+"τιμή 0 για να μην υπάρχει ποτέ timeout."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "Ενεργοποίηση της υποστήριξης HiDPI"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
 msgstr ""
+"Συντελεστής κλιμάκωσης για γραμματοσειρές που μπορεί να χρησιμοποιηθεί για "
+"την προσαρμογή των μεγεθών γραμματοσειράς του χαιρετιστή."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Τιμή άλφα για τη γραμμή μενού, πολλαπλασιασμένη με την τιμή διαφάνειας που "
+"παρέχεται από το θέμα. Δεν χρησιμοποιείται σε λειτουργία υψηλής αντίθεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
 msgstr ""
+"Προεπιλεγμένο FQDN για τον κεντρικό υπολογιστή που προσφέρει την υπηρεσία "
+"απομακρυσμένης σύνδεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:45
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
 msgstr ""
+"Εάν θα ενεργοποιηθεί το numlock. Αυτή η λειτουργία απαιτεί την εγκατάσταση "
+"του numlockx."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "Οθόνη στην οποία θα εμφανιστεί το γραφικό περιβάλλον σύνδεσης."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
+"Όνομα της διάταξης πληκτρολογίου οθόνης (δείτε /usr/share/onboard/layouts/*"
+".onboard για τα διαθέσιμα ονόματα διάταξης)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
+"Όνομα του θέματος του πληκτρολογίου οθόνης (δείτε /usr/share/onboard/themes/*"
+".theme για τα διαθέσιμα ονόματα θεμάτων)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
+"Όνομα του θέματος του πληκτρολογίου οθόνης όταν βρίσκεται σε λειτουργία "
+"υψηλής αντίθεσης (δείτε /usr/share/onboard/themes/*.theme για τα διαθέσιμα "
+"ονόματα θεμάτων)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
 msgstr ""
+"Εάν θέλετε να αποκρύψετε τον προεπιλεγμένο τύπο συνόδου X11 'lightdm-"
+"xsession'."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "Εάν θέλετε να αποκρύψετε συνεδρίες X11."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "Εάν θέλετε να αποκρύψετε συνεδρίες Wayland."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"Ταξινομημένος κατάλογος προτιμώμενων συνόδων εργασίας (για τον εντοπισμό του "
+"προεπιλεγμένου τύπου συνόδου)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Χρόνος σε δευτερόλεπτα έως ότου το παράθυρο διαλόγου τερματισμού επιλέξει "
+"αναγκαστικά την προεπιλεγμένη ενέργεια. Ορίστε την τιμή 0 για απενεργοποίηση."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -545,6 +604,10 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"Μη διατεταγμένη λίστα των συνόδων επιφάνειας εργασίας που περιλαμβάνουν μόνο "
+"τις συνεδρίες (αν δεν είναι κενές, μόνο οι τύποι συνεδριών που αναφέρονται "
+"ρητά θα προσφερθούν από την υπηρεσία υποδοχής). Έχει προτεραιότητα έναντι "
+"της λίστας excluded-sessions."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -552,6 +615,9 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"Μη διατεταγμένη λίστα των αποκλεισμένων συνόδων γραφείου (αν δεν είναι κενή, "
+"οι τύποι συνόδων που παρατίθενται δεν θα προσφέρονται από την υπηρεσία "
+"υποδοχής). Χρησιμοποιείται μόνο αν το includeonly-sessions είναι κενό."
 
 #~ msgid "Onscreen keyboard"
 #~ msgstr "Πληκτρολόγιο οθόνης"
