@@ -247,13 +247,12 @@ public class PromptBox : FadableBox
 
         message_image = new CachedImage (null);
         message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
-
-        var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.valign = Gtk.Align.START;
-        align.set_size_request (-1, greeter.grid_size);
-        align.add (message_image);
-        align.show ();
-        name_grid.attach (align, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
+        message_image.halign = Gtk.Align.CENTER;
+        message_image.valign = Gtk.Align.START;
+        message_image.hexpand = false;
+        message_image.vexpand = false;
+        message_image.set_size_request (-1, greeter.grid_size);
+        name_grid.attach (message_image, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
 
         option_button = new FlatButton ();
         var option_button_ctx = option_button.get_style_context ();
@@ -343,12 +342,12 @@ public class PromptBox : FadableBox
 
         small_message_image = new CachedImage (null);
         small_message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
-
-        var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.set_size_request (-1, greeter.grid_size);
-        align.add (small_message_image);
-        align.show ();
-        small_name_grid.attach (align, 2, 0, 1, 1);
+        small_message_image.halign = Gtk.Align.CENTER;
+        small_message_image.valign = Gtk.Align.CENTER;
+        small_message_image.hexpand = false;
+        small_message_image.vexpand = false;
+        small_message_image.set_size_request (-1, greeter.grid_size);
+        small_name_grid.attach (small_message_image, 2, 0, 1, 1);
 
         small_name_grid.show ();
         return small_name_grid;
