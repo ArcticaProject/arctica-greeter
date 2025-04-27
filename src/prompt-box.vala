@@ -568,7 +568,7 @@ public class PromptBox : FadableBox
 
     public void add_message (string text, bool is_error)
     {
-        var label = new FadingLabel (text);
+        var label = new FadingLabel ("");
 
         var style_ctx = label.get_style_context();
 
@@ -600,6 +600,40 @@ public class PromptBox : FadableBox
 
         label.xalign = 0.0f;
         label.set_data<bool> ("prompt-box-is-error", is_error);
+
+        // Wrap the text if needed
+        ArcticaGreeter pGreeter = new ArcticaGreeter ();
+        Pango.Context pContext = label.get_pango_context ();
+        Pango.Layout pLayout = new Pango.Layout (pContext);
+        Pango.FontDescription pDescription = null;
+        Gtk.StateFlags nFlags = style_ctx.get_state ();
+        style_ctx.get (nFlags, "font", out pDescription, null);
+        pLayout.set_font_description (pDescription);
+        StringBuilder pBuilder = new StringBuilder ();
+        string[] lWords = text.split (" ");
+        string sLine = "";
+
+        foreach (string sWord in lWords)
+        {
+            string sTest = sLine == "" ? sWord : sLine + " " + sWord;
+            pLayout.set_text (sTest, -1);
+            int nWidth = 0;
+            pLayout.get_size (out nWidth, null);
+
+            if (nWidth / Pango.SCALE > (pGreeter.grid_size * GreeterList.BOX_WIDTH - (int)(GreeterList.BORDER * pGreeter.scaling_factor_widgets * 8)) && sLine != "")
+            {
+                pBuilder.append (sLine + "\n");
+                sLine = sWord;
+            }
+            else
+            {
+                sLine = sTest;
+            }
+        }
+
+        pBuilder.append (sLine);
+        label.set_text (pBuilder.str);
+        //~Wrap the text if needed
 
         attach_item (label);
 
