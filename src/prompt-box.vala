@@ -559,7 +559,19 @@ public class PromptBox : FadableBox
             ArcticaGreeter.add_style_class (w);
 
         last_row += 1;
-        box_grid.attach (w, COL_ENTRIES_START, last_row, COL_ENTRIES_WIDTH, 1);
+        bool bErrorBelow = AGSettings.get_boolean (AGSettings.KEY_ERROR_BELOW_ENTRY);
+
+        if (has_errors && bErrorBelow)
+        {
+            Gtk.Widget pChild = box_grid.get_child_at (COL_ENTRIES_START, last_row-1);
+            box_grid.remove (pChild);
+            box_grid.attach (w, COL_ENTRIES_START, last_row-1, COL_ENTRIES_WIDTH, 1);
+            box_grid.attach (pChild, COL_ENTRIES_START, last_row, COL_ENTRIES_WIDTH, 1);
+        }
+        else
+        {
+            box_grid.attach (w, COL_ENTRIES_START, last_row, COL_ENTRIES_WIDTH, 1);
+        }
 
         update_prompt_visibility (w);
         queue_resize ();

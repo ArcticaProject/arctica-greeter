@@ -335,5 +335,9 @@
       <default>1</default>
       <summary>The vertical offset of the logo from the edge of the screen in grid units.</summary>
     </key>
+    <key name="error-below-entry" type="b">
+      <default>false</default>
+      <summary>Whether to display the error label below the login entry.</summary>
+    </key>
   </schema>
 </schemalist>
