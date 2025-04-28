@@ -247,13 +247,12 @@ public class PromptBox : FadableBox
 
         message_image = new CachedImage (null);
         message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
-
-        var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.valign = Gtk.Align.START;
-        align.set_size_request (-1, greeter.grid_size);
-        align.add (message_image);
-        align.show ();
-        name_grid.attach (align, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
+        message_image.halign = Gtk.Align.CENTER;
+        message_image.valign = Gtk.Align.START;
+        message_image.hexpand = false;
+        message_image.vexpand = false;
+        message_image.set_size_request (-1, greeter.grid_size);
+        name_grid.attach (message_image, COL_NAME_MESSAGE, ROW_NAME, 1, 1);
 
         option_button = new FlatButton ();
         var option_button_ctx = option_button.get_style_context ();
@@ -343,12 +342,12 @@ public class PromptBox : FadableBox
 
         small_message_image = new CachedImage (null);
         small_message_image.set_from_icon_name("mail-unread", Gtk.IconSize.BUTTON);
-
-        var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.set_size_request (-1, greeter.grid_size);
-        align.add (small_message_image);
-        align.show ();
-        small_name_grid.attach (align, 2, 0, 1, 1);
+        small_message_image.halign = Gtk.Align.CENTER;
+        small_message_image.valign = Gtk.Align.CENTER;
+        small_message_image.hexpand = false;
+        small_message_image.vexpand = false;
+        small_message_image.set_size_request (-1, greeter.grid_size);
+        small_name_grid.attach (small_message_image, 2, 0, 1, 1);
 
         small_name_grid.show ();
         return small_name_grid;
@@ -568,7 +567,7 @@ public class PromptBox : FadableBox
 
     public void add_message (string text, bool is_error)
     {
-        var label = new FadingLabel (text);
+        var label = new FadingLabel ("");
 
         var style_ctx = label.get_style_context();
 
@@ -600,6 +599,40 @@ public class PromptBox : FadableBox
 
         label.xalign = 0.0f;
         label.set_data<bool> ("prompt-box-is-error", is_error);
+
+        // Wrap the text if needed
+        ArcticaGreeter pGreeter = new ArcticaGreeter ();
+        Pango.Context pContext = label.get_pango_context ();
+        Pango.Layout pLayout = new Pango.Layout (pContext);
+        Pango.FontDescription pDescription = null;
+        Gtk.StateFlags nFlags = style_ctx.get_state ();
+        style_ctx.get (nFlags, "font", out pDescription, null);
+        pLayout.set_font_description (pDescription);
+        StringBuilder pBuilder = new StringBuilder ();
+        string[] lWords = text.split (" ");
+        string sLine = "";
+
+        foreach (string sWord in lWords)
+        {
+            string sTest = sLine == "" ? sWord : sLine + " " + sWord;
+            pLayout.set_text (sTest, -1);
+            int nWidth = 0;
+            pLayout.get_size (out nWidth, null);
+
+            if (nWidth / Pango.SCALE > (pGreeter.grid_size * GreeterList.BOX_WIDTH - (int)(GreeterList.BORDER * pGreeter.scaling_factor_widgets * 8)) && sLine != "")
+            {
+                pBuilder.append (sLine + "\n");
+                sLine = sWord;
+            }
+            else
+            {
+                sLine = sTest;
+            }
+        }
+
+        pBuilder.append (sLine);
+        label.set_text (pBuilder.str);
+        //~Wrap the text if needed
 
         attach_item (label);
 

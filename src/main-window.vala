@@ -129,40 +129,30 @@ public class MainWindow : Gtk.Window
         login_box.add (content_box);
 
         var content_align = AGSettings.get_string(AGSettings.KEY_CONTENT_ALIGN);
-        var x_align = 0.5f;
+        var x_align = Gtk.Align.CENTER;
 
         if (content_align == "left")
         {
-            x_align = 0.0f;
+            x_align = Gtk.Align.START;
         }
         else if (content_align == "right")
         {
-            x_align = 1.0f;
+            x_align = Gtk.Align.END;
         }
-
-        var align = new Gtk.Alignment (x_align, 0.0f, 0.0f, 1.0f);
-
-        if (content_align == "center")
-        {
-            // offset for back button
-            align.margin_end = greeter.grid_size;
-        }
-
-        align.show ();
-        content_box.add (align);
 
         hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         hbox.expand = true;
         hbox.show ();
-        align.add (hbox);
+        hbox.halign = x_align;
+        hbox.valign = Gtk.Align.CENTER;
 
-        align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
-        align.resize_mode = Gtk.ResizeMode.QUEUE;
-        align.set_size_request (greeter.grid_size, -1);
-        align.margin_bottom = greeter.menubar_height; /* offset for menubar at top */
-        align.show ();
-        hbox.add (align);
+        if (content_align == "center")
+        {
+            // offset for back button
+            hbox.margin_end = greeter.grid_size;
+        }
 
+        content_box.add (hbox);
         back_button = new FlatButton ();
         back_button.get_accessible ().set_name (_("Back"));
         Gtk.button_set_focus_on_click (back_button, false);
@@ -191,8 +181,14 @@ public class MainWindow : Gtk.Window
 
         back_button.add (image);
         back_button.clicked.connect (pop_list);
-
-        align.add (back_button);
+        back_button.halign = Gtk.Align.CENTER;
+        back_button.valign = Gtk.Align.CENTER;
+        back_button.hexpand = false;
+        back_button.vexpand = false;
+        back_button.resize_mode = Gtk.ResizeMode.QUEUE;
+        back_button.set_size_request (greeter.grid_size, -1);
+        back_button.margin_bottom = greeter.menubar_height;
+        hbox.add (back_button);
 
         stack = new ListStack ();
         stack.show ();
