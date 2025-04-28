@@ -227,8 +227,8 @@
       <summary>Scaling factor for fonts that can be used to adjust the greeter's font sizes.</summary>
     </key>
     <key name="menubar-alpha" type="d">
-      <default>0.5</default>
-      <summary>Alpha value for menubar, multiplied with the theme-provided transparency value. Not used in high contrast mode.</summary>
+      <default>0.2</default>
+      <summary>Alpha value for menubar. Not used in high contrast mode.</summary>
     </key>
     <key name="remote-service-configure-uri" type="s">
       <default>''</default>
@@ -338,6 +338,10 @@
     <key name="error-below-entry" type="b">
       <default>false</default>
       <summary>Whether to display the error label below the login entry.</summary>
+    </key>
+    <key name="menubar-bgcolor" type="s">
+      <default>'#000000'</default>
+      <summary>The background color of the menubar in #RRGGBB format.</summary>
     </key>
   </schema>
 </schemalist>
