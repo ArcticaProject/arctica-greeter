@@ -1,6 +1,24 @@
+2025-04-28 Mike Gabriel
+
+        * Release 0.99.8.11 (HEAD -> master, tag: 0.99.8.11)
+        * Merge branch 'tari01-pr/message-wrap' (ca471e8)
+
+2025-04-27 Robert Tari
+
+        * Rewrite Gtk.Alignment (0e7e568)
+        * src/prompt-box.vala: Add manual text wrapping (ead00fb)
+
+2025-04-24 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (bb6492c)
+
+2025-04-24 GiannosOB
+
+        * Translated using Weblate (Greek) (ef40d14)
+
 2025-04-24 Mike Gabriel
 
-        * Release 0.99.8.10 (HEAD -> master, tag: 0.99.8.10)
+        * Release 0.99.8.10 (43a3900) (tag: 0.99.8.10)
 
 2025-04-22 Mike Gabriel
 

@@ -1,3 +1,10 @@
+arctica-greeter (0.99.8.11) unstable; urgency=medium
+
+  * Upstream-provided Debian package for arctica-greeter. See upstream
+    ChangeLog for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Mon, 28 Apr 2025 09:41:20 +0200
+
 arctica-greeter (0.99.8.10) unstable; urgency=medium
 
   * Upstream-provided Debian package for arctica-greeter. See upstream
