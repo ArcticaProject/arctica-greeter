@@ -176,7 +176,7 @@ public class MenuBar : Gtk.Grid
 
         try
         {
-            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(0.2,0.2,0.2,0.5); }", -1);
+            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(%i, %i, %i, %f); }".printf (nRed, nGreen, nBlue, fApha), -1);
         }
         catch (Error pError)
         {
