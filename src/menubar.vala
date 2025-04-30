@@ -144,6 +144,9 @@ public class MenuBar : Gtk.Grid
         int nBlue = (int)(pBackGround.blue * 255.0);
         double fApha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
 
+        // Assure that printf operates in C.UTF-8 locale for float-to-string conversions.
+        Intl.setlocale(LocaleCategory.NUMERIC, "C.UTF-8");
+
         try
         {
             pGridProvider.load_from_data ("* { background-color: rgba(%i, %i, %i, %f); } *.high_contrast { background-color: #ffffff; color: #000000; text-shadow: none; }".printf (nRed, nGreen, nBlue, fApha), -1);
@@ -173,7 +176,6 @@ public class MenuBar : Gtk.Grid
 
         try
         {
-            Intl.setlocale(LocaleCategory.NUMERIC, "C.UTF-8");
             shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(0.2,0.2,0.2,0.5); }", -1);
         }
         catch (Error pError)
