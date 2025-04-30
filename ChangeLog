@@ -1,6 +1,20 @@
+2025-04-30 Mike Gabriel
+
+        * Release 0.99.9.0 (HEAD -> master, tag: 0.99.9.0)
+        * src/menubar.vala: Also apply menubar-bgcolor to menubar's shadow
+          style. (01b31d5)
+        * src/menubar.vala: Set LC_NUMERIC to C.UTF-8 more globally.
+          (17ab293)
+        * Merge branch 'tari01-pr/error-below-entry' (e6d5a9c)
+
+2025-04-28 Robert Tari
+
+        * Fix and future-proof the menubar (e221a64)
+        * Allow error label to be displayed below the login entry (652c4d7)
+
 2025-04-28 Mike Gabriel
 
-        * Release 0.99.8.11 (HEAD -> master, tag: 0.99.8.11)
+        * Release 0.99.8.11 (c6e0758) (tag: 0.99.8.11)
         * Merge branch 'tari01-pr/message-wrap' (ca471e8)
 
 2025-04-27 Robert Tari

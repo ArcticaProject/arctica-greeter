@@ -1,3 +1,11 @@
+Overview of changes in arctica-greeter 0.99.9.0
+
+  - Allow error label to be displayed below the login entry.
+  - Fix and future-proof the menubar.
+  - src/menubar.vala: Also apply menubar-bgcolor to menubar's shadow
+    style.
+  - src/menubar.vala: Set LC_NUMERIC to C.UTF-8 more globally.
+
 Overview of changes in arctica-greeter 0.99.8.11
 
   - Rewrite Gtk.Alignment.
