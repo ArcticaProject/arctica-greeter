@@ -101,7 +101,7 @@ private class IndicatorMenuItem : Gtk.MenuItem
     }
 }
 
-public class MenuBar : Gtk.MenuBar
+public class MenuBar : Gtk.Grid
 {
     public Background? background { get; construct; default = null; }
     public Gtk.Window? keyboard_window { get; private set; default = null; }
@@ -110,70 +110,6 @@ public class MenuBar : Gtk.MenuBar
     public MenuBar (Background bg, Gtk.AccelGroup ag)
     {
         Object (background: bg, accel_group: ag);
-    }
-
-    public override bool draw (Cairo.Context c)
-    {
-        if (background != null)
-        {
-            /* Disable background drawing to see how it changes the visuals. */
-            /*
-            int x, y;
-            background.translate_coordinates (this, 0, 0, out x, out y);
-            c.save ();
-            c.translate (x, y);
-            background.draw_full (c, Background.DrawFlags.NONE);
-            c.restore ();
-            */
-        }
-
-        /* Get the style and dimensions. */
-        var style_ctx = this.get_style_context ();
-
-        var w = this.get_allocated_width ();
-        var h = this.get_allocated_height ();
-
-        /* Add a group. */
-        c.push_group ();
-
-        /* Draw the background normally. */
-        style_ctx.render_background (c, 0, 0, w, h);
-
-        /* Draw the frame normally. */
-        style_ctx.render_frame (c, 0, 0, w, h);
-
-        /* Go back to the original widget. */
-        c.pop_group_to_source ();
-
-        var agsettings = new AGSettings ();
-        if (agsettings.high_contrast) {
-            /*
-             * In case the high contrast mode is enabled, do not add any
-             * transparency. While the GTK theme might define one (even though
-             * it better should not, given that we are also switching to a
-             * high contrast theme), we certainly do not want to make the look
-             * fuzzy.
-             */
-             c.paint ();
-        }
-        else {
-            /*
-             * And finally repaint it with additional transparency.
-             * Note that most GTK styles already define a transparency for OSD
-             * menus. We want to have something more transparent, but also
-             * make sure that it is not too transparent, so do not choose a
-             * value that is too low here - certainly not your desired final
-             * alpha value.
-             */
-            c.paint_with_alpha (AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA));
-        }
-
-        foreach (var child in get_children ())
-        {
-            propagate_draw (child, c);
-        }
-
-        return false;
     }
 
     public static void add_style_class (Gtk.Widget widget)
@@ -187,24 +123,50 @@ public class MenuBar : Gtk.MenuBar
     }
 
     private List<Indicator.Object> indicator_objects;
+    private Gtk.MenuBar pMenubar;
 
     construct
     {
+        this.pMenubar = new Gtk.MenuBar ();
+        this.pMenubar.halign = Gtk.Align.END;
+        this.pMenubar.hexpand = true;
+        this.pMenubar.pack_direction = Gtk.PackDirection.RTL;
+        this.pMenubar.show ();
+        this.attach (this.pMenubar, 1, 0, 1, 1);
+        this.show ();
         add_style_class (this);
-
-        /* Handle high contrast background color */
-        var menubar_style = new Gtk.CssProvider ();
+        Gtk.CssProvider pGridProvider = new Gtk.CssProvider ();
+        string sBackGround = AGSettings.get_string (AGSettings.KEY_MENUBAR_BGCOLOR);
+        Gdk.RGBA pBackGround = Gdk.RGBA ();
+        pBackGround.parse (sBackGround);
+        int nRed = (int)(pBackGround.red * 255.0);
+        int nGreen = (int)(pBackGround.green * 255.0);
+        int nBlue = (int)(pBackGround.blue * 255.0);
+        double fApha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
 
         try
         {
-            menubar_style.load_from_data ("*.high_contrast { background-color: #ffffff; }", -1);
+            pGridProvider.load_from_data ("* { background-color: rgba(%i, %i, %i, %f); } *.high_contrast { background-color: #ffffff; color: #000000; text-shadow: none; }".printf (nRed, nGreen, nBlue, fApha), -1);
         }
         catch (Error pError)
         {
-            error ("Panic: Failed adding high contrast background-color: %s", pError.message);
+            error ("Panic: Failed loading menubar grid colours: %s", pError.message);
         }
-        this.get_style_context ().add_provider (menubar_style,
-                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        this.get_style_context ().add_provider (pGridProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        Gtk.CssProvider pMenubarProvider = new Gtk.CssProvider ();
+
+        try
+        {
+            pMenubarProvider.load_from_data ("* { background-color: transparent; } *.high_contrast { color: #000000; text-shadow: none; }", -1);
+        }
+        catch (Error pError)
+        {
+            error ("Panic: Failed loading menubar colours: %s", pError.message);
+        }
+
+        this.pMenubar.get_style_context ().add_provider (pMenubarProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         /* Add shadow. */
         var shadow_style = new Gtk.CssProvider ();
@@ -212,7 +174,7 @@ public class MenuBar : Gtk.MenuBar
         try
         {
             Intl.setlocale(LocaleCategory.NUMERIC, "C.UTF-8");
-            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(0.2,0.2,0.2,%f); }".printf(AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA)), -1);
+            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(0.2,0.2,0.2,0.5); }", -1);
         }
         catch (Error pError)
         {
@@ -222,97 +184,13 @@ public class MenuBar : Gtk.MenuBar
         this.get_style_context ().add_provider (shadow_style,
                                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        pack_direction = Gtk.PackDirection.RTL;
-
         if (AGSettings.get_boolean (AGSettings.KEY_SHOW_HOSTNAME))
         {
-            var hostname_item = new Gtk.MenuItem.with_label (Posix.utsname ().nodename);
-            append (hostname_item);
-            hostname_item.show ();
-
-            /*
-             * Even though this (menu) item is insensitive, we want its label
-             * text to have the sensitive color as to not look out of place
-             * and difficult to read.
-             *
-             * There's a really weird bug that leads to always fetch the
-             * sensitive color after the widget (menuitem in this case) has
-             * been set to insensitive once - at least in this constructor.
-             *
-             * I haven't found a way to fix that, or, for that matter, what is
-             * actually causing the issue. Even waiting on the main event loop
-             * until all events are processed didn't help.
-             *
-             * We'll work around this issue by fetching the color before
-             * setting the widget to insensitive and call it proper.
-             */
-            var insensitive_override_style = new Gtk.CssProvider ();
-
-            /*
-             * First, fetch the associated GtkStyleContext and save the state,
-             * we'll override the state later on.
-             */
-            var hostname_item_ctx = hostname_item.get_style_context ();
-            hostname_item_ctx.save ();
-
-            try {
-                /* Get the actual color. */
-                var sensitive_color = hostname_item_ctx.get_color (Gtk.StateFlags.NORMAL);
-                debug ("Directly fetched sensitive color: %s", sensitive_color.to_string ());
-
-                insensitive_override_style.load_from_data ("*:disabled { color: %s; }
-                                                            *.high_contrast:disabled { color: #000000; }".printf(sensitive_color.to_string ()), -1);
-            }
-            catch (Error e)
-            {
-                debug ("Internal error loading hostname menu item text color: %s", e.message);
-            }
-            finally {
-                /*
-                 * Restore the context, which we might have changed through the
-                 * previous get_color () call.
-                 */
-                hostname_item_ctx.restore ();
-            }
-
-            try {
-                /* And finally override the insensitive color. */
-                hostname_item_ctx.add_provider (insensitive_override_style,
-                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-                /*
-                 * Just overriding the color for the Gtk.MenuItem widget
-                 * doesn't help, we'll also apply it to the children.
-                 *
-                 * In theory, we could just use the get_child () method to
-                 * fetch the only child we should ever have on that widget,
-                 * namely a GtkAccelLabel, but that isn't future-proof enough,
-                 * especially if that is ever extended into having a submenu.
-                 *
-                 * Thus, iterate over all children and override the style for
-                 * all of them.
-                 */
-                if (gtk_is_container (hostname_item)) {
-                    var children = hostname_item.get_children ();
-                    foreach (Gtk.Widget element in children) {
-                        var child_ctx = element.get_style_context ();
-                        debug ("Adding override style provider to child widget %s", element.name);
-                        child_ctx.add_provider (insensitive_override_style,
-                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                    }
-                }
-            }
-            catch (Error e)
-            {
-                debug ("Internal error overriding hostname menu item text color: %s", e.message);
-            }
-
-            hostname_item.set_sensitive (false);
-
-            /* The below does not work, so for now we need to stick to "set_right_justified"
-            hostname_item.set_hexpand (true);
-            hostname_item.set_halign (Gtk.Align.END);*/
-            hostname_item.set_right_justified (true);
+            Gtk.Label pLabel = new Gtk.Label (Posix.utsname ().nodename);
+            pLabel.vexpand = true;
+            pLabel.margin_start = 6;
+            pLabel.show ();
+            this.attach (pLabel, 0, 0, 1, 1);
         }
 
         /* Prevent dragging the window by the menubar */
@@ -320,7 +198,7 @@ public class MenuBar : Gtk.MenuBar
         {
             var style = new Gtk.CssProvider ();
             style.load_from_data ("* {-GtkWidget-window-dragging: false;}", -1);
-            get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            this.pMenubar.get_style_context ().add_provider (style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
         catch (Error e)
         {
@@ -328,6 +206,11 @@ public class MenuBar : Gtk.MenuBar
         }
 
         setup_indicators ();
+    }
+
+    public void select_first (bool bSearchSensitive)
+    {
+        this.pMenubar.select_first (bSearchSensitive);
     }
 
     public override void get_preferred_height (out int min, out int nat)
@@ -482,7 +365,7 @@ public class MenuBar : Gtk.MenuBar
     {
         var index = get_indicator_index (object);
         var pos = 0;
-        foreach (var child in get_children ())
+        foreach (var child in this.pMenubar.get_children ())
         {
             if (!(child is IndicatorMenuItem))
                 break;
@@ -499,19 +382,19 @@ public class MenuBar : Gtk.MenuBar
 
         var menuitem = new IndicatorMenuItem (entry);
         menuitem.set_data ("indicator-object", object);
-        insert (menuitem, pos);
+        this.pMenubar.insert (menuitem, pos);
     }
 
     private void indicator_removed_cb (Indicator.Object object, Indicator.ObjectEntry entry)
     {
         debug ("Removing indicator object %p", entry);
 
-        foreach (var child in get_children ())
+        foreach (var child in this.pMenubar.get_children ())
         {
             var menuitem = (IndicatorMenuItem) child;
             if (menuitem.entry == entry)
             {
-                remove (child);
+                this.pMenubar.remove (child);
                 return;
             }
         }

@@ -98,6 +98,8 @@ public class AGSettings : Object
     public const string KEY_LOGO_POSITION = "logo-position";
     public const string KEY_LOGO_OFFSET_HORIZONTAL = "logo-offset-horizontal";
     public const string KEY_LOGO_OFFSET_VERTICAL = "logo-offset-vertical";
+    public const string KEY_ERROR_BELOW_ENTRY = "error-below-entry";
+    public const string KEY_MENUBAR_BGCOLOR = "menubar-bgcolor";
 
     public static bool get_boolean (string key)
     {
