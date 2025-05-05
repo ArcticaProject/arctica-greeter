@@ -193,6 +193,10 @@
       <default>[]</default>
       <summary>List of usernames that are hidden from the userlist until a special key combination is hit.</summary>
     </key>
+    <key name="hidden-groups" type="as">
+      <default>[]</default>
+      <summary>List of user groups that are hidden from the userlist until a special key combination is hit.</summary>
+    </key>
     <key name="user-filter" type="as">
       <default>[]</default>
       <summary>List of usernames that are to be shown in the userlist only.</summary>

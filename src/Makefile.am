@@ -91,7 +91,5 @@ arctica_greeter_LDADD = \
 
 logo_generator_LDADD = $(arctica_greeter_LDADD)
 
-arctica_greeter_vala.stamp: $(top_srcdir)/config.h
-
 DISTCLEANFILES = \
 	Makefile.in

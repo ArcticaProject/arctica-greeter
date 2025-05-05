@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2011,2012 Canonical Ltd
  * Copyright (C) 2015 Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ * Copyright (C) 2025 Robert Tari
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -18,6 +19,7 @@
  * Authors: Robert Ancell <robert.ancell@canonical.com>
  *          Michael Terry <michael.terry@canonical.com>
  *          Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+ *          Robert Tari <robert@tari.in>
  */
 
 private class AnimateTimer : Object
@@ -32,7 +34,7 @@ private class AnimateTimer : Object
     public const int SLOW =   1000; /* Good for animations that convey information that is only presented in the animation */
 
     /* speed is in milliseconds */
-    public unowned EasingFunc easing_func { get; private set; }
+    public unowned EasingFunc easing_func;
     public int speed { get; set; }
     public bool is_running { get { return timeout != 0; } }
     public double progress { get; private set; }
