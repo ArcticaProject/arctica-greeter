@@ -2,7 +2,7 @@
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT(arctica-greeter, 0.99.9.0)
+AC_INIT(arctica-greeter, 0.99.9.1)
 AC_CONFIG_MACRO_DIR(m4)
 AM_INIT_AUTOMAKE(subdir-objects)
 AM_PROG_CC_C_O

@@ -1,6 +1,23 @@
+2025-05-05 Mike Gabriel
+
+        * Release 0.99.9.1 (HEAD -> master, tag: 0.99.9.1)
+        * Merge branch 'tari01-pr/group-filters' (17054d5)
+
+2025-05-05 Robert Tari
+
+        * src/Makefile.am: Remove arctica_greeter_vala.stamp - it keeps
+          sending config.h to valac (936f8fa)
+        * src/animate-timer.vala: EasingFunc cannot be a GLib.Object property
+          - turn it into a public variable (562b318)
+        * Allow filtering out users from hidden groups (d32c62a)
+
+2025-05-02 Hugo Carvalho
+
+        * Translated using Weblate (Portuguese) (bef6d1f)
+
 2025-04-30 Mike Gabriel
 
-        * Release 0.99.9.0 (HEAD -> master, tag: 0.99.9.0)
+        * Release 0.99.9.0 (0b9b963) (tag: 0.99.9.0)
         * src/menubar.vala: Also apply menubar-bgcolor to menubar's shadow
           style. (01b31d5)
         * src/menubar.vala: Set LC_NUMERIC to C.UTF-8 more globally.
