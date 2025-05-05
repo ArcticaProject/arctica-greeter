@@ -87,10 +87,28 @@ public class UserList : GreeterList
             }
 
             var hidden_users = AGSettings.get_strv (AGSettings.KEY_HIDDEN_USERS);
+            string[] lHiddenGroups =  AGSettings.get_strv (AGSettings.KEY_HIDDEN_GROUPS);
+
             if (!value)
             {
                 foreach (var username in hidden_users)
                     remove_entry (username);
+
+                foreach (string sGroup in lHiddenGroups)
+                {
+                    LightDM.UserList lUsers = LightDM.UserList.get_instance ();
+
+                    foreach (LightDM.User pUser in lUsers.users)
+                    {
+                        bool bInGroup = in_group (sGroup, pUser.name);
+
+                        if (bInGroup)
+                        {
+                            remove_entry (pUser.name);
+                        }
+                    }
+                }
+
                 return;
             }
 
@@ -1126,6 +1144,18 @@ public class UserList : GreeterList
             foreach (var username in hidden_users)
                 if (username == user.name)
                     return;
+
+            string[] lHiddenGroups =  AGSettings.get_strv (AGSettings.KEY_HIDDEN_GROUPS);
+
+            foreach (string sGroup in lHiddenGroups)
+            {
+                bool bInGroup = in_group (sGroup, user.name);
+
+                if (bInGroup)
+                {
+                    return;
+                }
+            }
         }
 
         var user_filter = AGSettings.get_strv (AGSettings.KEY_USER_FILTER);
