@@ -347,5 +347,16 @@
       <default>'#000000'</default>
       <summary>The background color of the menubar in #RRGGBB format.</summary>
     </key>
+    <key name="background-position" type="s">
+      <choices>
+        <choice value='center'/>
+        <choice value='top-left'/>
+        <choice value='top-right'/>
+        <choice value='bottom-left'/>
+        <choice value='bottom-right'/>
+      </choices>
+      <default>'center'</default>
+      <summary>The position of the background image.</summary>
+    </key>
   </schema>
 </schemalist>

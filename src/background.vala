@@ -173,17 +173,43 @@ class BackgroundLoader : Object
         var target_aspect = (double) width / height;
         var aspect = (double) image.width / image.height;
         double scale, offset_x = 0, offset_y = 0;
+        string sPosition = AGSettings.get_string (AGSettings.KEY_BACKGROUND_POSITION);
+
         if (aspect > target_aspect)
         {
             /* Fit height and trim sides */
             scale = (double) height / image.height;
-            offset_x = (image.width * scale - width) / 2;
+
+            if (sPosition == "center")
+            {
+                offset_x = (image.width * scale - width) / 2;
+            }
+            else if (sPosition == "top-left" || sPosition == "bottom-left")
+            {
+                offset_x = 0;
+            }
+            else if (sPosition == "top-right" || sPosition == "bottom-right")
+            {
+                offset_x = (image.width * scale - width);
+            }
         }
         else
         {
             /* Fit width and trim top and bottom */
             scale = (double) width / image.width;
-            offset_y = (image.height * scale - height) / 2;
+
+            if (sPosition == "center")
+            {
+                offset_y = (image.height * scale - height) / 2;
+            }
+            else if (sPosition == "top-left" || sPosition == "top-right")
+            {
+                offset_y = 0;
+            }
+            else if (sPosition == "bottom-left" || sPosition == "bottom-right")
+            {
+                offset_y = (image.height * scale - height);
+            }
         }
 
         var scaled_image = new Gdk.Pixbuf (image.colorspace, image.has_alpha, image.bits_per_sample, width, height);
