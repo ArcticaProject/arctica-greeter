@@ -1,6 +1,19 @@
+2025-05-15 Mike Gabriel
+
+        * Release 0.99.9.2 (HEAD -> master, tag: 0.99.9.2)
+        * Merge branch 'tari01-pr/add-background-position' (800eaa1)
+
+2025-05-12 Robert Tari
+
+        * Add background image position (5086318)
+
+2025-05-08 Putta Anantha Lakshmi
+
+        * Translated using Weblate (Telugu) (d1d8d80)
+
 2025-05-05 Mike Gabriel
 
-        * Release 0.99.9.1 (HEAD -> master, tag: 0.99.9.1)
+        * Release 0.99.9.1 (09061b1) (tag: 0.99.9.1)
         * Merge branch 'tari01-pr/group-filters' (17054d5)
 
 2025-05-05 Robert Tari

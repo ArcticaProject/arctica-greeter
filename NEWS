@@ -1,3 +1,9 @@
+Overview of changes in arctica-greeter 0.99.9.2
+
+  - Add background image position.
+  - Translation updates (thanks to all contributors on
+    hosted.weblate.org).
+
 Overview of changes in arctica-greeter 0.99.9.1
 
   - Allow filtering out users from hidden groups.
