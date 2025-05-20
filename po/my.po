@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2022-04-22 17:10+0000\n"
-"Last-Translator: Michael Kha <michaelkha69@gmail.com>\n"
-"Language-Team: Burmese <https://hosted.weblate.org/projects/arctica-"
-"framework/greeter/my/>\n"
+"PO-Revision-Date: 2025-05-20 10:10+0000\n"
+"Last-Translator: naikhon <naikhon5@gmail.com>\n"
+"Language-Team: Burmese <https://hosted.weblate.org/projects/"
+"arctica-framework/greeter/my/>\n"
 "Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.12.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -72,7 +72,7 @@ msgstr "desktop ပုံစံရွေးရန်"
 
 #: ../src/shutdown-dialog.vala:146
 msgid "Goodbye. Would you like to…"
-msgstr ""
+msgstr "သွားတော့မယ်။ သင် လဲသွားချင်ပါသလား…"
 
 #: ../src/shutdown-dialog.vala:152 ../src/shutdown-dialog.vala:252
 msgid "Shut Down"
@@ -105,7 +105,7 @@ msgstr "အစမှ ပြန်ဖွင့်မည်"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "ရွေးချယ်ထားသောလုပ်ဆောင်ချက်ကို ယခုလုပ်ဆောင်နေပါသည်။"
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
@@ -122,22 +122,23 @@ msgstr "%s (မူလ)"
 #. Help string for command line --version flag
 #: ../src/arctica-greeter.vala:994
 msgid "Show release version"
-msgstr ""
+msgstr "ထွက်ရှိသည့်ဗားရှင်းကိုပြသပါ။"
 
 #. Help string for command line --test-mode flag
 #: ../src/arctica-greeter.vala:997
 msgid "Run in test mode"
-msgstr ""
+msgstr "စမ်းသပ်မုဒ်တွင် လုပ်ဆောင်ပါ။"
 
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
 msgstr ""
+"a11y high contrast အပြင်အဆင်ကို ဖွင့်ထားခြင်းဖြင့် စမ်းသပ်မုဒ်တွင် လုပ်ဆောင်ပါ။"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
 msgid "- Arctica Greeter"
-msgstr "Arctica Greeter"
+msgstr "အာတိတ် နှုတ်ဆက်စကား"
 
 #. Text printed out when an unknown command-line argument provided
 #: ../src/arctica-greeter.vala:1029
@@ -174,7 +175,7 @@ msgstr "ပယ်ဖျက်မည်"
 
 #: ../src/user-list.vala:607
 msgid "Set Up…"
-msgstr "အကောင့် ဖွင့် ခြင်း  ...."
+msgstr "အကောင့် ဖွင့် ခြင်း  .…"
 
 #: ../src/user-list.vala:609
 #, fuzzy
@@ -222,7 +223,7 @@ msgstr "ဒိုမိန်း -"
 
 #: ../src/user-list.vala:849
 msgid "Account ID"
-msgstr ""
+msgstr "အကောင့် ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
