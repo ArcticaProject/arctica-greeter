@@ -232,7 +232,7 @@
     </key>
     <key name="menubar-alpha" type="d">
       <default>0.5</default>
-      <summary>Alpha value for menubar. Not used in high contrast mode and if no custom background color is set.</summary>
+      <summary>Alpha value for menubar. Not used in high contrast mode.</summary>
     </key>
     <key name="remote-service-configure-uri" type="s">
       <default>''</default>
