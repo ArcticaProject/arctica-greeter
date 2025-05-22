@@ -127,6 +127,9 @@ public class MenuBar : Gtk.Grid
 
     construct
     {
+        // Assure that printf operates in C.UTF-8 locale for float-to-string conversions.
+        Intl.setlocale(LocaleCategory.NUMERIC, "C.UTF-8");
+
         this.pMenubar = new Gtk.MenuBar ();
         this.pMenubar.halign = Gtk.Align.END;
         this.pMenubar.hexpand = true;
@@ -137,26 +140,51 @@ public class MenuBar : Gtk.Grid
         add_style_class (this);
         Gtk.CssProvider pGridProvider = new Gtk.CssProvider ();
         string sBackGround = AGSettings.get_string (AGSettings.KEY_MENUBAR_BGCOLOR);
-        Gdk.RGBA pBackGround = Gdk.RGBA ();
-        pBackGround.parse (sBackGround);
+        Gtk.StyleContext pGridContext = this.get_style_context ();
+        Gdk.RGBA pBackGround;
+
+        if (sBackGround != "")
+        {
+            pBackGround = Gdk.RGBA ();
+            pBackGround.parse (sBackGround);
+            pBackGround.alpha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
+        }
+        else
+        {
+            bool bFound = pGridContext.lookup_color ("osd_bg", out pBackGround);
+
+            if (!bFound)
+            {
+                bFound = pGridContext.lookup_color ("dark_bg_color", out pBackGround);
+
+                if (!bFound)
+                {
+                    pBackGround = Gdk.RGBA ();
+                    pBackGround.parse ("rgba(68,68,68,0.8)");
+                    debug ("Failed to retrieve osd_bg and dark_bg_color for the menubar background - falling back to rgba(68,68,68,0.8)");
+                }
+                else
+                {
+                    debug ("Failed to retrieve osd_bg for the menubar background - falling back to dark_bg_color");
+                }
+            }
+        }
+
         int nRed = (int)(pBackGround.red * 255.0);
         int nGreen = (int)(pBackGround.green * 255.0);
         int nBlue = (int)(pBackGround.blue * 255.0);
-        double fApha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
-
-        // Assure that printf operates in C.UTF-8 locale for float-to-string conversions.
-        Intl.setlocale(LocaleCategory.NUMERIC, "C.UTF-8");
+        sBackGround = "* {background-color: rgba(%i, %i, %i, %f); border: none; box-shadow: 0px 5px 5px -5px rgba(%i, %i, %i, %f);}".printf (nRed, nGreen, nBlue, pBackGround.alpha, (int)nRed / 2, (int)nGreen / 2, (int)nBlue / 2, pBackGround.alpha * 2);
 
         try
         {
-            pGridProvider.load_from_data ("* { background-color: rgba(%i, %i, %i, %f); } *.high_contrast { background-color: #ffffff; color: #000000; text-shadow: none; }".printf (nRed, nGreen, nBlue, fApha), -1);
+            pGridProvider.load_from_data (sBackGround + " *.high_contrast {background-color: #ffffff; color: #000000; text-shadow: none; box-shadow: none;}", -1);
         }
         catch (Error pError)
         {
             error ("Panic: Failed loading menubar grid colours: %s", pError.message);
         }
 
-        this.get_style_context ().add_provider (pGridProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        pGridContext.add_provider (pGridProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         Gtk.CssProvider pMenubarProvider = new Gtk.CssProvider ();
 
@@ -170,21 +198,6 @@ public class MenuBar : Gtk.Grid
         }
 
         this.pMenubar.get_style_context ().add_provider (pMenubarProvider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        /* Add shadow. */
-        var shadow_style = new Gtk.CssProvider ();
-
-        try
-        {
-            shadow_style.load_from_data ("* { box-shadow: 0px 0px 5px 5px rgba(%i, %i, %i, %f); }".printf (nRed, nGreen, nBlue, fApha), -1);
-        }
-        catch (Error pError)
-        {
-            error ("Panic: Failed adding shadow: %s", pError.message);
-        }
-
-        this.get_style_context ().add_provider (shadow_style,
-                                                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         if (AGSettings.get_boolean (AGSettings.KEY_SHOW_HOSTNAME))
         {
