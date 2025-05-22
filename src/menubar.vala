@@ -147,7 +147,6 @@ public class MenuBar : Gtk.Grid
         {
             pBackGround = Gdk.RGBA ();
             pBackGround.parse (sBackGround);
-            pBackGround.alpha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
         }
         else
         {
@@ -160,8 +159,8 @@ public class MenuBar : Gtk.Grid
                 if (!bFound)
                 {
                     pBackGround = Gdk.RGBA ();
-                    pBackGround.parse ("rgba(68,68,68,0.8)");
-                    debug ("Failed to retrieve osd_bg and dark_bg_color for the menubar background - falling back to rgba(68,68,68,0.8)");
+                    pBackGround.parse ("#444444");
+                    debug ("Failed to retrieve osd_bg and dark_bg_color for the menubar background - falling back to #444444");
                 }
                 else
                 {
@@ -173,6 +172,7 @@ public class MenuBar : Gtk.Grid
         int nRed = (int)(pBackGround.red * 255.0);
         int nGreen = (int)(pBackGround.green * 255.0);
         int nBlue = (int)(pBackGround.blue * 255.0);
+        pBackGround.alpha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
         sBackGround = "* {background-color: rgba(%i, %i, %i, %f); border: none; box-shadow: 0px 5px 5px -5px rgba(%i, %i, %i, %f);}".printf (nRed, nGreen, nBlue, pBackGround.alpha, (int)nRed / 2, (int)nGreen / 2, (int)nBlue / 2, pBackGround.alpha * 2);
 
         try
