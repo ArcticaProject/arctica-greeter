@@ -102,6 +102,8 @@ public class AGSettings : Object
     public const string KEY_ERROR_BELOW_ENTRY = "error-below-entry";
     public const string KEY_MENUBAR_BGCOLOR = "menubar-bgcolor";
     public const string KEY_BACKGROUND_POSITION = "background-position";
+    public const string KEY_MENUBAR_SHADOW_COLOR = "menubar-shadow-color";
+    public const string KEY_MENUBAR_SHADOW_ALPHA = "menubar-shadow-alpha";
 
     public static bool get_boolean (string key)
     {
