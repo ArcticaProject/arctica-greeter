@@ -139,45 +139,20 @@ public class MenuBar : Gtk.Grid
         this.show ();
         add_style_class (this);
         Gtk.CssProvider pGridProvider = new Gtk.CssProvider ();
-        string sBackGround = AGSettings.get_string (AGSettings.KEY_MENUBAR_BGCOLOR);
         Gtk.StyleContext pGridContext = this.get_style_context ();
-        Gdk.RGBA pBackGround;
-
-        if (sBackGround != "")
-        {
-            pBackGround = Gdk.RGBA ();
-            pBackGround.parse (sBackGround);
-        }
-        else
-        {
-            bool bFound = pGridContext.lookup_color ("osd_bg", out pBackGround);
-
-            if (!bFound)
-            {
-                bFound = pGridContext.lookup_color ("dark_bg_color", out pBackGround);
-
-                if (!bFound)
-                {
-                    pBackGround = Gdk.RGBA ();
-                    pBackGround.parse ("#444444");
-                    debug ("Failed to retrieve osd_bg and dark_bg_color for the menubar background - falling back to #444444");
-                }
-                else
-                {
-                    debug ("Failed to retrieve osd_bg for the menubar background - falling back to dark_bg_color");
-                }
-            }
-        }
-
-        int nRed = (int)(pBackGround.red * 255.0);
-        int nGreen = (int)(pBackGround.green * 255.0);
-        int nBlue = (int)(pBackGround.blue * 255.0);
-        pBackGround.alpha = AGSettings.get_double (AGSettings.KEY_MENUBAR_ALPHA);
-        sBackGround = "* {background-color: rgba(%i, %i, %i, %f); border: none; box-shadow: 0px 5px 5px -5px rgba(%i, %i, %i, %f);}".printf (nRed, nGreen, nBlue, pBackGround.alpha, (int)nRed / 2, (int)nGreen / 2, (int)nBlue / 2, pBackGround.alpha * 2);
+        Gdk.RGBA pBackground = getBackground (pGridContext, AGSettings.KEY_MENUBAR_BGCOLOR, AGSettings.KEY_MENUBAR_ALPHA);
+        int nBackgroundRed = (int)(pBackground.red * 255.0);
+        int nBackgroundGreen = (int)(pBackground.green * 255.0);
+        int nBackgroundBlue = (int)(pBackground.blue * 255.0);
+        Gdk.RGBA pShadow = getBackground (pGridContext, AGSettings.KEY_MENUBAR_SHADOW_COLOR, AGSettings.KEY_MENUBAR_SHADOW_ALPHA);
+        int nShadowRed = (int)(pShadow.red * 255.0);
+        int nShadowGreen = (int)(pShadow.green * 255.0);
+        int nShadowBlue = (int)(pShadow.blue * 255.0);
+        string sBackground = "* {background-color: rgba(%i, %i, %i, %f); border: none; box-shadow: 0px 5px 5px -5px rgba(%i, %i, %i, %f);}".printf (nBackgroundRed, nBackgroundGreen, nBackgroundBlue, pBackground.alpha, nShadowRed, nShadowGreen, nShadowBlue, pShadow.alpha);
 
         try
         {
-            pGridProvider.load_from_data (sBackGround + " *.high_contrast {background-color: #ffffff; color: #000000; text-shadow: none; box-shadow: none;}", -1);
+            pGridProvider.load_from_data (sBackground + " *.high_contrast {background-color: #ffffff; color: #000000; text-shadow: none; box-shadow: none;}", -1);
         }
         catch (Error pError)
         {
@@ -233,6 +208,42 @@ public class MenuBar : Gtk.Grid
         var greeter = new ArcticaGreeter ();
         min = (int)Math.round(greeter.menubar_height - 8);
         nat = (int)Math.round(greeter.menubar_height - 8);
+    }
+
+    private Gdk.RGBA getBackground (Gtk.StyleContext pContext, string sBackgroundKey, string sAlphaKey)
+    {
+        string sBackground = AGSettings.get_string (sBackgroundKey);
+        Gdk.RGBA pBackground;
+
+        if (sBackground != "")
+        {
+            pBackground = Gdk.RGBA ();
+            pBackground.parse (sBackground);
+        }
+        else
+        {
+            bool bFound = pContext.lookup_color ("osd_bg", out pBackground);
+
+            if (!bFound)
+            {
+                bFound = pContext.lookup_color ("dark_bg_color", out pBackground);
+
+                if (!bFound)
+                {
+                    pBackground = Gdk.RGBA ();
+                    pBackground.parse ("#444444");
+                    debug ("Failed to retrieve osd_bg and dark_bg_color for %s - falling back to #444444", sBackgroundKey);
+                }
+                else
+                {
+                    debug ("Failed to retrieve osd_bg for %s - falling back to dark_bg_color", sBackgroundKey);
+                }
+            }
+        }
+
+        pBackground.alpha = AGSettings.get_double (sAlphaKey);
+
+        return pBackground;
     }
 
     private Indicator.Object? load_indicator_file (string indicator_name)

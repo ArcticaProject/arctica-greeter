@@ -358,5 +358,13 @@
       <default>'center'</default>
       <summary>The position of the background image.</summary>
     </key>
+    <key name="menubar-shadow-color" type="s">
+      <default>''</default>
+      <summary>The color of the menubar's shadow in #RRGGBB format. An empty string will attempt to use the OSD background of the theme.</summary>
+    </key>
+    <key name="menubar-shadow-alpha" type="d">
+      <default>0.3</default>
+      <summary>Opacity of the menubar's shadow.</summary>
+    </key>
   </schema>
 </schemalist>
