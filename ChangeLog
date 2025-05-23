@@ -1,6 +1,36 @@
+2025-05-23 Mike Gabriel
+
+        * Release 0.99.9.3 (HEAD -> master, tag: 0.99.9.3)
+        * data/org.ArcticaProject.arctica-greeter.gschema.xml: Set
+          menubar-alpha default to 0.3. (Originally 0.2, changed to
+          0.5 as part of 2bc439d3, now back to a compromise).
+          (fba0c2d)
+
+2025-05-22 Mike Gabriel
+
+        * Merge branch 'tari01-pr/menubar-alpha' (608890b)
+
+2025-05-22 Robert Tari
+
+        * Apply custom menubar transparency even if theme background is used
+          (9991f3e)
+
+2025-05-22 Mike Gabriel
+
+        * Merge branch 'tari01-pr/menubar-osd-bg' (7daa7f8)
+
+2025-05-21 Robert Tari
+
+        * Use the theme menubar background colour if no custom colour is
+          specified (2bc439d)
+
+2025-05-20 naikhon
+
+        * Translated using Weblate (Burmese) (eb2e110)
+
 2025-05-15 Mike Gabriel
 
-        * Release 0.99.9.2 (HEAD -> master, tag: 0.99.9.2)
+        * Release 0.99.9.2 (df04358) (tag: 0.99.9.2)
         * Merge branch 'tari01-pr/add-background-position' (800eaa1)
 
 2025-05-12 Robert Tari
