@@ -231,7 +231,7 @@
       <summary>Scaling factor for fonts that can be used to adjust the greeter's font sizes.</summary>
     </key>
     <key name="menubar-alpha" type="d">
-      <default>0.5</default>
+      <default>0.3</default>
       <summary>Alpha value for menubar. Not used in high contrast mode.</summary>
     </key>
     <key name="remote-service-configure-uri" type="s">
