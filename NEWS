@@ -1,3 +1,7 @@
+Overview of changes in arctica-greeter 0.99.9.4
+
+  - Make menubar shadow configurable.
+
 Overview of changes in arctica-greeter 0.99.9.3
 
   - data/org.ArcticaProject.arctica-greeter.gschema.xml: Set
