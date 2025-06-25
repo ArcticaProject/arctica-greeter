@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2012-01-24 16:14+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Sindhi <sd@li.org>\n"
+"PO-Revision-Date: 2025-06-26 19:03+0000\n"
+"Last-Translator: Javaid Ahmed Solangi <jasolangi786@gmail.com>\n"
+"Language-Team: Sindhi <https://hosted.weblate.org/projects/arctica-framework/"
+"greeter/sd/>\n"
 "Language: sd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
-"X-Generator: Launchpad (build 17656)\n"
 
 #: ../src/greeter-list.vala:306
 #, c-format
@@ -50,7 +52,7 @@ msgstr ""
 
 #: ../src/greeter-list.vala:979
 msgid "Logging in…"
-msgstr "داخل ٿيندي..."
+msgstr "داخل ٿيندي…"
 
 #: ../src/main-window.vala:56
 msgid "Login Screen"
