@@ -267,80 +267,80 @@ msgstr "Arctica 欢迎页"
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
-msgstr ""
+msgstr "要使用的背景图像文件，可以是图像路径或颜色（例如#772953）。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
-msgstr ""
+msgstr "背景颜色（例如 #772953），在壁纸显示前设置。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "高对比度模式的背景颜色(例如#000000或#FFFFFF)。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
-msgstr ""
+msgstr "字体前景色（例如 #A0A0A0），用于会话列表中非活动、非悬停且未选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
-msgstr ""
+msgstr "字体前景色（例如 #A0A0A0），用于会话列表中活动的/悬停的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the selected session name in the "
 "session list."
-msgstr ""
+msgstr "字体前景色（例如 #A0A0A0），用于会话列表中选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:7
 msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
-msgstr ""
+msgstr "背景颜色（例如 #391C31），用于会话列表中非活动、非悬停且未选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
-msgstr ""
+msgstr "背景颜色（例如 #391C31），用于会话列表中活动的/悬停的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
 "Background color (e.g. #391C31) for the selected session name in the session "
 "list."
-msgstr ""
+msgstr "背景颜色（例如 #391C31），用于会话列表中选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:10
 msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
-msgstr ""
+msgstr "边框颜色（例如 #391C31），用于会话列表中非活动、非悬停且未选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
-msgstr ""
+msgstr "边框颜色（例如 #391C31），用于会话列表中活动的/悬停的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
 "Border color (e.g. #391C31) for the selected session name in the session "
 "list."
-msgstr ""
+msgstr "边框颜色（例如 #391C31），用于会话列表中选中的会话名称。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:13
 msgid ""
 "Background color (e.g. #391C31) of flat buttons (e.g. the session chooser "
 "icon)."
-msgstr ""
+msgstr "扁平按钮（例如会话选择器图标）的背景颜色（例如 #391C31）。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:14
 msgid ""
 "Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)."
-msgstr ""
+msgstr "扁平按钮（例如会话选择器图标）的边框颜色（例如 #391C31）。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
@@ -373,7 +373,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr "GTK+ 主题"
+msgstr "GTK+ 主题。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
@@ -501,15 +501,15 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
-msgstr ""
+msgstr "是否隐藏“lightdm-xsession”默认 X11 会话类型。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "是否隐藏 X11 会话。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "是否隐藏 Wayland 会话。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
