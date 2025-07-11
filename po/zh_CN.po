@@ -267,7 +267,7 @@ msgstr "Arctica 欢迎页"
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:1
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
-msgstr "要使用的背景图像文件，可以是图像路径或颜色（例如#772953）。"
+msgstr "要使用的背景图像文件，可以是图像路径或颜色（例如 #772953）。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
@@ -275,7 +275,7 @@ msgstr "背景颜色（例如 #772953），在壁纸显示前设置。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr "高对比度模式的背景颜色(例如#000000或#FFFFFF)。"
+msgstr "高对比度模式的背景颜色（例如 #000000 或 #FFFFFF）。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
@@ -352,7 +352,7 @@ msgstr "是否绘制用户背景。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "是否绘制叠加网格。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
