@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2024-08-07 06:09+0000\n"
-"Last-Translator: Jason Cai <caijiajun2010@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"arctica-framework/greeter/zh_Hans/>\n"
+"PO-Revision-Date: 2025-07-12 19:01+0000\n"
+"Last-Translator: \"Alioc.\" <hit.177411245@gmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/arctica-framework/greeter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -38,9 +38,8 @@ msgid "Username:"
 msgstr "用户名："
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "密码不可用，请重试"
+msgstr "用户名或密码无效，请重试"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -90,7 +89,7 @@ msgstr "当前已有其他用户登录此电脑，如果关机，其它用户的
 
 #: ../src/shutdown-dialog.vala:198
 msgid "Suspend"
-msgstr "挂起"
+msgstr "暂停"
 
 #: ../src/shutdown-dialog.vala:215
 msgid "Hibernate"
@@ -103,7 +102,7 @@ msgstr "重启"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr "将执行下面被选择了的功能。"
+msgstr "正在执行选定的操作。"
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
@@ -130,7 +129,7 @@ msgstr "在测试模式下运行"
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "在测试模式下运行，启用高对比度主题"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -149,7 +148,7 @@ msgstr "客户端会话（线程/进程）"
 
 #: ../src/user-list.vala:480
 msgid "Please enter a complete e-mail address"
-msgstr "请输入一个完整的电子邮件地址"
+msgstr "请输入完整的电子邮件地址"
 
 #: ../src/user-list.vala:569
 msgid "Incorrect e-mail address or password"
@@ -209,7 +208,7 @@ msgstr "域："
 
 #: ../src/user-list.vala:849
 msgid "Account ID"
-msgstr "帐号"
+msgstr "账号 ID"
 
 #. 'Log In' here is the button for logging in.
 #: ../src/user-list.vala:898
@@ -345,11 +344,11 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "确定背景图像的呈现方式。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "是否绘制用户背景。"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
@@ -357,7 +356,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "u"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
