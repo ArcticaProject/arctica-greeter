@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2025-11-14 14:08+0000\n"
+"PO-Revision-Date: 2025-11-28 13:00+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/arctica-framework/"
 "greeter/lo/>\n"
@@ -109,7 +109,7 @@ msgstr "ກຳລັງດຳເນີນການຕາມທີ່ເລືອ
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] "ກຳລັງລໍຖ້າອີກ 1 ວິນາທີ ກ່ອນຈະດຳເນີນການຕາມທີ່ເລືອກ…"
+msgstr[0] "ກຳລັງລໍຖ້າອີກ %u ວິນາທີ ກ່ອນຈະດຳເນີນການຕາມທີ່ເລືອກ…"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -475,7 +475,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr "ຈະໃຫ້ເປີດໃຊ້ການຮອງຮັບ HiDPI ຫຼື ບໍ່."
+msgstr "ຈະໃຫ້ເປີດໃຊ້ການຮອງຮັບ HiDPI ຫຼື ບໍ່"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
