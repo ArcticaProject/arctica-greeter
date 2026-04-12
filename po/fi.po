@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:13+0200\n"
-"PO-Revision-Date: 2020-09-25 08:40+0000\n"
-"Last-Translator: Lauri Virtanen <lauri.virtanen@iki.fi>\n"
+"PO-Revision-Date: 2026-04-13 10:09+0000\n"
+"Last-Translator: Kieli Puoli <kielipuoli@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/fi/>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -106,14 +106,14 @@ msgstr "Käynnistä uudelleen"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "Valittu toiminto suoritetaan nyt."
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Odotetaan vielä sekunti ennen valitun toiminnon suorittamista …"
+msgstr[1] "Odotetaan vielä %u sekuntia ennen valitun toiminnon suorittamista …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -280,14 +280,16 @@ msgstr "Arctica Greeter"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"Käytettävä taustakuvatiedosto; joko kuvan tiedostopolku tai värikoodi (esim. "
+"#772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
-msgstr ""
+msgstr "Ennen taustakuvaa näytettävä taustaväri (esim #772953)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "Suuren kontrastin tilan taustaväri (esim. #000000 tai #FFFFFF)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
@@ -356,7 +358,7 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "Määrittelee, miten taustakuva mallinnetaan."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
@@ -368,56 +370,58 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "Näytetäänkö isäntänimi valikossa."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
+"Näytetäänkö kirjautumisikkunassa 'Käyttäjänimi:'- ja 'Salasana:'-otsikot "
+"(yms.) kentille."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "Käytettävä logotiedosto."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
-msgstr ""
+msgstr "Alfa-arvo logon sulauttamiseksi taustaan."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "Käytettävä GTK+-teema."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "Suuren kontrastin tilassa käytettävä GTK+-teema."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "Käytettävä kuvaketeema."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "Suuren kontrastin tilassa käytettävä kuvaketeema."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "Käytettävä osoittimen teema."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
-msgstr ""
+msgstr "Osoittimien koko."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "Käytettävä fontti."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
-msgstr ""
+msgstr "Pehmennetäänkö Xft-fonttien reunat."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:30
 msgid "Resolution for Xft in dots per inch."
-msgstr ""
+msgstr "Xft:n tarkkuus pisteinä tuumaa kohden."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:31
 msgid "What degree of hinting to use."
@@ -425,19 +429,19 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "Alipikselien pehmennystyyppi."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
-msgstr ""
+msgstr "Otetaanko näyttönäppäimistö käyttöön."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:34
 msgid "Whether to use a high contrast theme."
-msgstr ""
+msgstr "Käytetäänkö suuren kontrastin teemaa."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:35
 msgid "Whether to enable the screen reader."
-msgstr ""
+msgstr "Otetaanko näytönlukija käyttöön."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
@@ -445,28 +449,34 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "Mitkä indikaattorit ladataan."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
 "List of usernames that are hidden until a special key combination is hit."
 msgstr ""
+"Niiden käyttäjänimien luettelo, jotka piilotetaan, kunnes tiettyä "
+"näppäinyhdistelmää painetaan."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:39
 msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)."
 msgstr ""
+"Niiden ryhmien luettelo, joihin käyttäjien on kuuluttava, jotta heidät "
+"näytettäisiin (tyhjässä luettelossa näytetään kaikki käyttäjät)."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:40
 msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"Kuinka monen toimettoman sekunnin kuluttua näyttö tyhjennetään. Aseta "
+"arvoksi 0, jos et halua asettaa aikarajaa."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "Otetaanko HiDPI-tuki käyttöön"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
@@ -478,6 +488,8 @@ msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"Valikon alfa-arvo kerrottuna teemasta tulevalla läpinäkyvyysarvolla. Ei "
+"käytössä suuren kontrastin tilassa."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
@@ -488,10 +500,11 @@ msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
 msgstr ""
+"Käytetäänkö numerolukitusta. Tämä toiminto edellyttää numlockx:n asentamista."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "Millä näytöllä kirjautumiskäyttöliittymä näytetään."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
@@ -517,11 +530,11 @@ msgstr ""
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "Piilotetaanko X11-istunnot."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "Piilotetaanko Wayland-istunnot."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
@@ -534,6 +547,8 @@ msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"Kuinka monen sekunnin kuluttua sammutusikkuna valitsee automaattisesti "
+"oletustoiminnon. Voit poistaa tämän käytöstä asettamalla arvoksi 0."
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
