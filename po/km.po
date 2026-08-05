@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: arctica-greeter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-12 22:14+0200\n"
-"PO-Revision-Date: 2021-09-28 10:35+0000\n"
-"Last-Translator: ប៉ុកណូ រ៉ូយ៉ាល់ <royalpokno68@gmail.com>\n"
+"PO-Revision-Date: 2026-08-06 03:01+0000\n"
+"Last-Translator: SeyhaLite <sok123230@gmail.com>\n"
 "Language-Team: Khmer (Central) <https://hosted.weblate.org/projects/arctica-"
 "framework/greeter/km/>\n"
 "Language: km\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 "X-Launchpad-Export-Date: 2015-08-05 05:27+0000\n"
 
 #: ../src/greeter-list.vala:306
@@ -26,7 +26,6 @@ msgid "Enter password for %s"
 msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​សម្រាប់ %s"
 
 #: ../src/greeter-list.vala:308
-#, fuzzy
 msgid "Enter your username"
 msgstr "បញ្ចូល​ឈ្មោះ​អ្នក​ប្រើ"
 
@@ -39,9 +38,8 @@ msgid "Username:"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ ៖"
 
 #: ../src/greeter-list.vala:906
-#, fuzzy
 msgid "Invalid username or password, please try again"
-msgstr "ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ សូម​ព្យាយាម​ម្ដង​ទៀត"
+msgstr "ឈ្មោះ​អ្នក​ប្រើ ឬ​ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ សូម​ព្យាយាម​ម្ដង​ទៀត"
 
 #: ../src/greeter-list.vala:917
 msgid "Failed to authenticate"
@@ -106,13 +104,13 @@ msgstr "ចាប់ផ្ដើម​ឡើង​វិញ"
 #. Fun begins here, actually trigger option.
 #: ../src/shutdown-dialog.vala:297
 msgid "Executing selected action now."
-msgstr ""
+msgstr "កំពុង​ប្រតិបត្តិ​សកម្មភាព​ដែល​បាន​ជ្រើស​ឥឡូវ​នេះ។"
 
 #: ../src/shutdown-dialog.vala:331
 #, c-format
 msgid "Waiting one more second before executing selected action …"
 msgid_plural "Waiting %u seconds before executing selected action …"
-msgstr[0] ""
+msgstr[0] "កំពុង​រង់ចាំ %u វិនាទី​ទៀត មុន​ពេល​ប្រតិបត្តិ​សកម្មភាព​ដែល​បាន​ជ្រើស …"
 
 #. Translators: %s is a session name like KDE or Ubuntu
 #: ../src/toggle-box.vala:205
@@ -133,7 +131,7 @@ msgstr "ដំណើរការ​ក្នុង​របៀប​សាកល
 #. Help string for command line --test-highcontrast flag
 #: ../src/arctica-greeter.vala:1000
 msgid "Run in test mode with a11y highcontrast theme enabled"
-msgstr ""
+msgstr "ដំណើរការ​ក្នុង​របៀប​សាកល្បង ដោយ​បើក​ស្បែក​កម្រិត​ពណ៌​ខ្ពស់ a11y"
 
 #. Arguments and description for --help text
 #: ../src/arctica-greeter.vala:1006
@@ -264,6 +262,8 @@ msgid ""
 "Another alternative is to save files in the\n"
 "/var/guest-data folder."
 msgstr ""
+"ជម្រើស​មួយ​ទៀត គឺ​រក្សា​ទុក​ឯកសារ​ក្នុង​ថត\n"
+"/var/guest-data។"
 
 #: ../data/arctica-greeter.desktop.in.h:1
 msgid "Arctica Greeter"
@@ -273,260 +273,288 @@ msgstr "សារ​ស្វាគមន៍​របស់ Arctica"
 msgid ""
 "Background image file to use, either an image path or a color (e.g. #772953)."
 msgstr ""
+"ឯកសារ​រូបភាព​ផ្ទៃ​ខាងក្រោយ​ដែល​ត្រូវ​ប្រើ អាច​ជា​ផ្លូវ​រូបភាព ឬ​ពណ៌ (ឧ. #772953)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:2
 msgid "Background color (e.g. #772953), set before wallpaper is seen."
-msgstr ""
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #772953) ដែល​កំណត់​មុន​ពេល​មើល​ឃើញ​ផ្ទាំង​រូបភាព។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:3
 msgid "Background color (e.g. #000000 or #FFFFFF) for high contrast mode."
-msgstr ""
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #000000 ឬ #FFFFFF) សម្រាប់​របៀប​កម្រិត​ពណ៌​ខ្ពស់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:4
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for non-active/-hovered and non-"
 "selected session names in the session list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងមុខ​អក្សរ (ឧ. #A0A0A0) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​មិន​សកម្ម/មិន​ដាក់​ម៉ៅស៍​ពី​លើ និង​មិន​បាន​ជ្រើស​ក្នុង​ប"
+"ញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:5
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the active/hovered-above session "
 "name in the session list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងមុខ​អក្សរ (ឧ. #A0A0A0) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​សកម្ម/ដាក់​ម៉ៅស៍​ពី​លើ​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:6
 msgid ""
 "Font foreground color (e.g. #A0A0A0) for the selected session name in the "
 "session list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងមុខ​អក្សរ (ឧ. #A0A0A0) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​បាន​ជ្រើស​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:7
 msgid ""
 "Background color (e.g. #391C31) for non-active/-hovered and non-selected "
 "session names in the session list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​មិន​សកម្ម/មិន​ដាក់​ម៉ៅស៍​ពី​លើ និង​មិន​បាន​ជ្រើស​ក្នុង​បញ្ជី​"
+"សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:8
 msgid ""
 "Background color (e.g. #391C31) for the active/hovered-above session name in "
 "the session list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​សកម្ម/ដាក់​ម៉ៅស៍​ពី​លើ​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:9
 msgid ""
 "Background color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​បាន​ជ្រើស​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:10
 msgid ""
 "Border color (e.g. #391C31) for non-active/-hovered and non-selected session "
 "names in the session list."
 msgstr ""
+"ពណ៌​ព្រំ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​មិន​សកម្ម/មិន​ដាក់​ម៉ៅស៍​ពី​លើ និង​មិន​បាន​ជ្រើស​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:11
 msgid ""
 "Border color (e.g. #391C31) for the active/hovered-above session name in the "
 "session list."
 msgstr ""
+"ពណ៌​ព្រំ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​សកម្ម/ដាក់​ម៉ៅស៍​ពី​លើ​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:12
 msgid ""
 "Border color (e.g. #391C31) for the selected session name in the session "
 "list."
 msgstr ""
+"ពណ៌​ព្រំ (ឧ. #391C31) សម្រាប់​ឈ្មោះ​សម័យ​ដែល​បាន​ជ្រើស​ក្នុង​បញ្ជី​សម័យ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:13
 msgid ""
 "Background color (e.g. #391C31) of flat buttons (e.g. the session chooser "
 "icon)."
 msgstr ""
+"ពណ៌​ផ្ទៃ​ខាងក្រោយ (ឧ. #391C31) នៃ​ប៊ូតុង​រាបស្មើ (ឧ. រូបតំណាង​ឧបករណ៍​ជ្រើស​សម័យ)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:14
 msgid ""
 "Border color (e.g. #391C31) of flat buttons (e.g. the session chooser icon)."
 msgstr ""
+"ពណ៌​ព្រំ (ឧ. #391C31) នៃ​ប៊ូតុង​រាបស្មើ (ឧ. រូបតំណាង​ឧបករណ៍​ជ្រើស​សម័យ)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:15
 msgid "Determines how the background image is rendered."
-msgstr ""
+msgstr "កំណត់​របៀប​ដែល​រូបភាព​ផ្ទៃ​ខាងក្រោយ​ត្រូវ​បាន​បង្ហាញ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:16
 msgid "Whether to draw user backgrounds."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​គូរ​ផ្ទៃ​ខាងក្រោយ​អ្នក​ប្រើ​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:17
 msgid "Whether to draw an overlay grid."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​គូរ​ក្រឡាចត្រង្គ​ត្រួត​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:18
 msgid "Whether to show the hostname in the menubar."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​បង្ហាញ​ឈ្មោះ​ម៉ាស៊ីន​ក្នុង​របារ​ម៉ឺនុយ​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:19
 msgid ""
 "Whether to show 'Username:' and 'Password:' labels (etc.) in the login box."
 msgstr ""
+"ថា​តើ​ត្រូវ​បង្ហាញ​ស្លាក 'Username:' និង 'Password:' (ជាដើម) ក្នុង​ប្រអប់​ចូល​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:20
 msgid "Logo file to use."
-msgstr ""
+msgstr "ឯកសារ​និមិត្តសញ្ញា​ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:21
 msgid "Alpha value for blending the logo onto the background."
-msgstr ""
+msgstr "តម្លៃ​អាល់ហ្វា សម្រាប់​លាយ​និមិត្តសញ្ញា​ទៅ​លើ​ផ្ទៃ​ខាងក្រោយ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:22
 msgid "GTK+ theme to use."
-msgstr ""
+msgstr "ស្បែក GTK+ ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:23
 msgid "GTK+ theme to use in high contrast mode."
-msgstr ""
+msgstr "ស្បែក GTK+ ដែល​ត្រូវ​ប្រើ​ក្នុង​របៀប​កម្រិត​ពណ៌​ខ្ពស់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:24
 msgid "Icon theme to use."
-msgstr ""
+msgstr "ស្បែក​រូបតំណាង​ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:25
 msgid "Icon theme to use in high contrast mode."
-msgstr ""
+msgstr "ស្បែក​រូបតំណាង​ដែល​ត្រូវ​ប្រើ​ក្នុង​របៀប​កម្រិត​ពណ៌​ខ្ពស់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:26
 msgid "Cursor theme to use."
-msgstr ""
+msgstr "ស្បែក​ទស្សន៍ទ្រនិច​ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:27
 msgid "Size to use for cursors."
-msgstr ""
+msgstr "ទំហំ​ដែល​ត្រូវ​ប្រើ​សម្រាប់​ទស្សន៍ទ្រនិច។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:28
 msgid "Font to use."
-msgstr ""
+msgstr "ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:29
 msgid "Whether to antialias Xft fonts."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​ប្រើ antialias សម្រាប់​ពុម្ពអក្សរ Xft ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:30
 msgid "Resolution for Xft in dots per inch."
-msgstr ""
+msgstr "គុណភាព​បង្ហាញ Xft ជា​ចំណុច​ក្នុង​មួយ​អ៊ីញ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:31
 msgid "What degree of hinting to use."
-msgstr ""
+msgstr "កម្រិត hinting ដែល​ត្រូវ​ប្រើ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:32
 msgid "Type of subpixel antialiasing."
-msgstr ""
+msgstr "ប្រភេទ subpixel antialiasing។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:33
 msgid "Whether to enable the onscreen keyboard."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​បើក​ក្ដារចុច​លើ​អេក្រង់​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:34
 msgid "Whether to use a high contrast theme."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​ប្រើ​ស្បែក​កម្រិត​ពណ៌​ខ្ពស់​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:35
 msgid "Whether to enable the screen reader."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​បើក​កម្មវិធី​អាន​អេក្រង់​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:36
 msgid "Whether to play sound when greeter is ready."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​ចាក់​សំឡេង​នៅ​ពេល​ផ្ទាំង​ស្វាគមន៍​រួចរាល់​ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:37
 msgid "Which indicators to load."
-msgstr ""
+msgstr "តើ​ត្រូវ​ផ្ទុក​ឧបករណ៍​បង្ហាញ​ណា។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:38
 msgid ""
 "List of usernames that are hidden until a special key combination is hit."
 msgstr ""
+"បញ្ជី​ឈ្មោះ​អ្នក​ប្រើ​ដែល​ត្រូវ​បាន​លាក់ រហូត​ទាល់​តែ​ចុច​បន្សំ​គ្រាប់ចុច​ពិសេស។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:39
 msgid ""
 "List of groups that users must be part of to be shown (empty list shows all "
 "users)."
 msgstr ""
+"បញ្ជី​ក្រុម​ដែល​អ្នក​ប្រើ​ត្រូវ​ស្ថិត​ក្នុង​ក្រុម​ទាំង​នោះ ដើម្បី​បង្ហាញ (បញ្ជី​ទទេ​នឹង​បង្ហាញ​អ្នក​ប្រើ​ទាំងអស់)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:40
 msgid ""
 "Number of seconds of inactivity before blanking the screen. Set to 0 to "
 "never timeout."
 msgstr ""
+"ចំនួន​វិនាទី​នៃ​ភាព​អសកម្ម មុន​ពេល​ធ្វើ​ឲ្យ​អេក្រង់​ខ្មៅ។ កំណត់​ទៅ 0 ដើម្បី​កុំ​ឲ្យ​មាន​ការ​អស់​ពេល។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:41
 msgid "Whether to enable HiDPI support"
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​បើក​ការ​គាំទ្រ HiDPI ឬ​អត់"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:42
 msgid ""
 "Scaling factor for fonts that can be used to adjust the greeter's font sizes."
 msgstr ""
+"កត្តា​មាត្រដ្ឋាន​សម្រាប់​ពុម្ពអក្សរ ដែល​អាច​ប្រើ​ដើម្បី​កែ​ទំហំ​ពុម្ពអក្សរ​របស់​ផ្ទាំង​ស្វាគមន៍។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:43
 msgid ""
 "Alpha value for menubar, multiplied with the theme-provided transparency "
 "value. Not used in high contrast mode."
 msgstr ""
+"តម្លៃ​អាល់ហ្វា សម្រាប់​របារ​ម៉ឺនុយ ដែល​គុណ​នឹង​តម្លៃ​ភាព​ថ្លា​ដែល​ស្បែក​ផ្ដល់។ មិន​ប្រើ​ក្នុង​របៀប​កម្រិត​ពណ៌​ខ្ពស់​ទេ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:44
 msgid "Default FQDN for host offering Remote Logon Service."
-msgstr ""
+msgstr "FQDN លំនាំដើម សម្រាប់​ម៉ាស៊ីន​ដែល​ផ្ដល់​សេវា​ចូល​បញ្ជា​ពី​ចម្ងាយ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:45
 msgid ""
 "Whether to activate numlock. This features requires the installation of "
 "numlockx."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​បើក Num Lock ឬ​អត់។ មុខងារ​នេះ​ទាមទារ​ឲ្យ​ដំឡើង numlockx។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:46
 msgid "Monitor on which to show the Login GUI."
-msgstr ""
+msgstr "អេក្រង់​ដែល​ត្រូវ​បង្ហាញ​ចំណុចប្រទាក់​ចូល។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:47
 msgid ""
 "Name of the onscreen keyboard layout (see /usr/share/onboard/layouts/*."
 "onboard for available layout names)."
 msgstr ""
+"ឈ្មោះ​ប្លង់​ក្ដារចុច​លើ​អេក្រង់ (មើល /usr/share/onboard/layouts/*.onboard សម្រាប់​ឈ្មោះ​ប្លង់​ដែ"
+"ល​មាន)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:48
 msgid ""
 "Name of the onscreen keyboard theme (see /usr/share/onboard/themes/*.theme "
 "for available theme names)."
 msgstr ""
+"ឈ្មោះ​ស្បែក​ក្ដារចុច​លើ​អេក្រង់ (មើល /usr/share/onboard/themes/*.theme សម្រាប់​ឈ្មោះ​ស្បែក​ដែល​"
+"មាន)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:49
 msgid ""
 "Name of the onscreen keyboard theme when in high contrast mode (see /usr/"
 "share/onboard/themes/*.theme for available theme names)."
 msgstr ""
+"ឈ្មោះ​ស្បែក​ក្ដារចុច​លើ​អេក្រង់​នៅ​ពេល​ស្ថិត​ក្នុង​របៀប​កម្រិត​ពណ៌​ខ្ពស់ (មើល /usr/share/onboard/themes/"
+"*.theme សម្រាប់​ឈ្មោះ​ស្បែក​ដែល​មាន)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:50
 msgid "Whether to hide the 'lightdm-xsession' default X11 session type."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​លាក់​ប្រភេទ​សម័យ X11 លំនាំដើម 'lightdm-xsession' ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:51
 msgid "Whether to hide X11 sessions."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​លាក់​សម័យ X11 ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:52
 msgid "Whether to hide Wayland sessions."
-msgstr ""
+msgstr "ថា​តើ​ត្រូវ​លាក់​សម័យ Wayland ឬ​អត់។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:53
 msgid ""
 "Ordered list of preferred desktop sessions (for detecting the default "
 "session type)."
 msgstr ""
+"បញ្ជី​សម័យ​ផ្ទៃតុ​ដែល​ចូលចិត្ត​តាម​លំដាប់ (សម្រាប់​រក​ប្រភេទ​សម័យ​លំនាំដើម)។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:54
 msgid ""
 "Time in seconds until the shutdown dialog forcefully selects the default "
 "action. Set to 0 to disable."
 msgstr ""
+"ពេលវេលា​ជា​វិនាទី​រហូត​ដល់​ប្រអប់​បិទ​ម៉ាស៊ីន​ជ្រើស​សកម្មភាព​លំនាំដើម​ដោយ​បង្ខំ។ កំណត់​ទៅ 0 ដើម្បី​បិទ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:55
 msgid ""
@@ -534,6 +562,8 @@ msgid ""
 "explicitly listed sessions types will be offered by the greeter). Takes "
 "precedence over the excluded-sessions list."
 msgstr ""
+"បញ្ជី​សម័យ​ផ្ទៃតុ​ដែល​ត្រូវ​រួម​បញ្ចូល​តែប៉ុណ្ណោះ​ដោយ​គ្មាន​លំដាប់ (ប្រសិនបើ​មិន​ទទេ មាន​តែ​ប្រភេទ​សម័យ​ដែល​បាន​រាយ​ច្"
+"បាស់ៗ​ប៉ុណ្ណោះ​ដែល​ផ្ទាំង​ស្វាគមន៍​នឹង​ផ្ដល់​ឲ្យ)។ អាទិភាព​លើ​បញ្ជី​សម័យ​ដែល​បាន​ដក​ចេញ។"
 
 #: ../data/org.ArcticaProject.arctica-greeter.gschema.xml:56
 msgid ""
@@ -541,6 +571,8 @@ msgid ""
 "types will not be offered by the greeter). Only used if includeonly-sessions "
 "is empty."
 msgstr ""
+"បញ្ជី​សម័យ​ផ្ទៃតុ​ដែល​ត្រូវ​ដក​ចេញ​ដោយ​គ្មាន​លំដាប់ (ប្រសិនបើ​មិន​ទទេ ប្រភេទ​សម័យ​ដែល​បាន​រាយ​នឹង​មិន​ត្រូវ​ផ្ទាំង​ស្វា"
+"គមន៍​ផ្ដល់​ឲ្យ​ទេ)។ ប្រើ​តែ​ពេល includeonly-sessions ទទេ។"
 
 #~ msgid "Onscreen keyboard"
 #~ msgstr "ក្ដារចុច​លើ​អេក្រង់"
